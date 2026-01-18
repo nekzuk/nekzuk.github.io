@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>製品のご紹介 - nekzuk Software</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --accent: #22d3ee;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --bg-card-hover: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border: #334155;
+            --gradient-1: linear-gradient(135deg, #6366f1, #8b5cf6);
+            --gradient-2: linear-gradient(135deg, #06b6d4, #22d3ee);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* Background Effect */
+        .bg-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bg-effect::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 80%, rgba(34, 211, 238, 0.06) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-2%, 2%) rotate(1deg); }
+        }
+
+        /* Header */
+        header {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 4rem 2rem 3rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-description {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        main {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Product Card */
+        .product-card {
+            background: var(--bg-card);
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-header {
+            padding: 1.5rem 1.5rem 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .product-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 0.75rem;
+            flex-shrink: 0;
+            object-fit: cover;
+            background: var(--bg-dark);
+        }
+
+        .card-title-area {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .product-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: var(--text-primary);
+        }
+
+        .product-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .card-body {
+            padding: 0 1.5rem 1.25rem;
+            flex: 1;
+        }
+
+        .product-description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .features-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .features-list li {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.7rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0.4rem;
+            color: var(--text-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .features-list li.lang {
+            background: rgba(34, 211, 238, 0.1);
+            border-color: rgba(34, 211, 238, 0.2);
+            color: var(--accent);
+        }
+
+        .card-footer {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .price-badge {
+            font-size: 0.85rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 0.4rem;
+            font-weight: 500;
+        }
+
+        .price-badge.free {
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+        }
+
+        .price-badge.paid {
+            background: rgba(251, 191, 36, 0.15);
+            color: #fbbf24;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 0.9rem;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .btn svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateX(2px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--text-primary);
+        }
+
+        /* Workflow Section */
+        .workflow-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+        }
+
+        .workflow-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .workflow-title::before {
+            content: '💡';
+        }
+
+        .workflow-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .workflow-step {
+            text-align: center;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 0.75rem;
+            border: 1px solid var(--border);
+        }
+
+        .workflow-step-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--accent);
+        }
+
+        .workflow-step-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .workflow-arrow {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .workflow-pattern {
+            margin-bottom: 1.5rem;
+        }
+
+        .workflow-pattern:last-child {
+            margin-bottom: 0;
+        }
+
+        .workflow-label {
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .workflow-divider {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .workflow-divider::before,
+        .workflow-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: calc(50% - 2rem);
+            height: 1px;
+            background: var(--border);
+        }
+
+        .workflow-divider::before {
+            left: 0;
+        }
+
+        .workflow-divider::after {
+            right: 0;
+        }
+
+        .workflow-step.highlight {
+            border-color: rgba(99, 102, 241, 0.5);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .workflow-step.highlight .workflow-step-name {
+            color: #a5b4fc;
+        }
+
+        .workflow-step.free {
+            border-color: rgba(34, 197, 94, 0.5);
+            background: rgba(34, 197, 94, 0.1);
+        }
+
+        .workflow-step.free .workflow-step-name {
+            color: #4ade80;
+        }
+
+        .workflow-step small {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            display: block;
+            margin-top: 0.25rem;
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header {
+                padding: 3rem 1.5rem 2rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-footer {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .button-group {
+                justify-content: center;
+            }
+
+            .workflow-content {
+                flex-direction: column;
+            }
+
+            .workflow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-effect"></div>
+
+    <header>
+        <div class="header-badge">nekzuk Software</div>
+        <h1>製品のご紹介</h1>
+        <p class="header-description">
+            AI画像生成・編集のワークフローを効率化する各種ツールをご用意しています。
+            すべてWindows対応のデスクトップアプリケーションです。
+        </p>
+    </header>
+
+    <main>
+        <div class="products-grid">
+            <!-- AutoMosaic R18版 -->
+            <article class="product-card">
+                <div class="card-header">
+                    <img src="製品紹介/icons/app_R18.png" alt="AutoMosaic R18版" class="product-icon">
+                    <div class="card-title-area">
+                        <h2 class="product-name">AutoMosaic R18版</h2>
+                        <p class="product-subtitle">画像への連続自動モザイクツール</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="product-description">
+                        画像内のセンシティブ部位を自動検出し、複数の画像に連続でモザイク処理を施すツールです。
+                        GPU対応で1枚あたり約2秒の高速処理を実現。
+                    </p>
+                    <ul class="features-list">
+                        <li>AI自動検出</li>
+                        <li>高速GPU処理</li>
+                        <li>モザイク・黒塗り・セグメンテーション</li>
+                        <li>モデル追加対応</li>
+                        <li class="lang">日/英/中/韓</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="price-badge paid">有料</span>
+                    <div class="button-group">
+                        <a href="製品紹介/AutoMosaic_画像への連続自動モザイクツール.pdf" target="_blank" class="btn btn-secondary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                            詳しい説明
+                        </a>
+                        <a href="https://synekzuk.booth.pm/items/6510317" target="_blank" rel="noopener" class="btn btn-primary">
+                            BOOTH
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- AutoMosaic 通常版 -->
+            <article class="product-card">
+                <div class="card-header">
+                    <img src="製品紹介/icons/app_general.png" alt="AutoMosaic 通常版" class="product-icon">
+                    <div class="card-title-area">
+                        <h2 class="product-name">AutoMosaic 通常版</h2>
+                        <p class="product-subtitle">画像への連続自動モザイクツール</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="product-description">
+                        人物・顔・目・文字・ナンバープレート等を自動検出し、モザイク処理を施すツールです。
+                        漫画の吹き出しや効果音の検出にも対応。
+                    </p>
+                    <ul class="features-list">
+                        <li>顔・目・人物検出</li>
+                        <li>文字・ナンバープレート検出</li>
+                        <li>吹き出し・効果音検出</li>
+                        <li>モデル追加対応</li>
+                        <li class="lang">日/英/中/韓</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="price-badge paid">有料</span>
+                    <div class="button-group">
+                        <a href="製品紹介/AutoMosaic_画像への連続自動モザイクツール_通常.pdf" target="_blank" class="btn btn-secondary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                            詳しい説明
+                        </a>
+                        <a href="https://synekzuk.booth.pm/items/7075141" target="_blank" rel="noopener" class="btn btn-primary">
+                            BOOTH
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- AI Paint Cleaner -->
+            <article class="product-card">
+                <div class="card-header">
+                    <img src="製品紹介/icons/app2.png" alt="AI Paint Cleaner" class="product-icon">
+                    <div class="card-title-area">
+                        <h2 class="product-name">AI Paint Cleaner</h2>
+                        <p class="product-subtitle">複数画像の効率修正ツール</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="product-description">
+                        AIによる強力なインペイント機能と数多くのバッチ処理を搭載した、
+                        イラスト修正のオールインワンツールです。
+                    </p>
+                    <ul class="features-list">
+                        <li>AIインペイント</li>
+                        <li>モザイク除去・追加</li>
+                        <li>背景除去</li>
+                        <li>AIアップスケール</li>
+                        <li>一括処理対応</li>
+                        <li class="lang">日/英/中/韓</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="price-badge paid">有料</span>
+                    <div class="button-group">
+                        <a href="製品紹介/AI_Paint_Cleaner_複数画像の効率修正ツール.pdf" target="_blank" class="btn btn-secondary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                            詳しい説明
+                        </a>
+                        <a href="https://synekzuk.booth.pm/items/6649634" target="_blank" rel="noopener" class="btn btn-primary">
+                            BOOTH
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- AI Meta Cleaner -->
+            <article class="product-card">
+                <div class="card-header">
+                    <img src="製品紹介/icons/app3.png" alt="AI Meta Cleaner" class="product-icon">
+                    <div class="card-title-area">
+                        <h2 class="product-name">AI Meta Cleaner</h2>
+                        <p class="product-subtitle">AI埋込情報対応メタデータ削除ツール</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="product-description">
+                        画像のメタデータと生成AIの埋め込み情報をまとめて削除できるツールです。
+                        Stable DiffusionやNovelAIの生成情報も自動検出・削除します。
+                    </p>
+                    <ul class="features-list">
+                        <li>PNG / JPG / WEBP / GIF / TIFF</li>
+                        <li>EXIF・XMP削除</li>
+                        <li>SD/NovelAI情報削除</li>
+                        <li class="lang">日/英</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="price-badge free">無料</span>
+                    <div class="button-group">
+                        <a href="製品紹介/AI_Meta_Cleaner_AI埋込情報対応メタデータ削除ツール.pdf" target="_blank" class="btn btn-secondary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                            詳しい説明
+                        </a>
+                        <a href="https://synekzuk.booth.pm/items/7626627" target="_blank" rel="noopener" class="btn btn-primary">
+                            BOOTH
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Frame Craft -->
+            <article class="product-card">
+                <div class="card-header">
+                    <img src="製品紹介/icons/app5.png" alt="Frame Craft" class="product-icon">
+                    <div class="card-title-area">
+                        <h2 class="product-name">Frame Craft</h2>
+                        <p class="product-subtitle">動画フレーム抽出 & アニメーション変換ツール</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="product-description">
+                        動画ファイルから指定したフレームや秒間隔で画像を抽出したり、
+                        GIF/WEBPアニメーションに変換できるツールです。
+                    </p>
+                    <ul class="features-list">
+                        <li>高精度フレーム抽出</li>
+                        <li>重複画像自動削除</li>
+                        <li>黒帯自動削除</li>
+                        <li>Pixivうごイラ対応</li>
+                        <li>バッチ処理</li>
+                        <li class="lang">日/英</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="price-badge paid">有料</span>
+                    <div class="button-group">
+                        <a href="製品紹介/FRAME_Craft_フレーム抽出___アニメ変換ツール.pdf" target="_blank" class="btn btn-secondary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                            詳しい説明
+                        </a>
+                        <a href="https://synekzuk.booth.pm/items/7295171" target="_blank" rel="noopener" class="btn btn-primary">
+                            BOOTH
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Meta Converter -->
+            <article class="product-card">
+                <div class="card-header">
+                    <img src="製品紹介/icons/app4.png" alt="Meta Converter" class="product-icon">
+                    <div class="card-title-area">
+                        <h2 class="product-name">Meta Converter</h2>
+                        <p class="product-subtitle">メタデータ維持画像変換ツール</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="product-description">
+                        メタデータを保持したまま、複数画像をPNG/JPEG/WEBPに変換できるツールです。
+                        AI画像の保管・軽量化に最適。
+                    </p>
+                    <ul class="features-list">
+                        <li>メタデータ維持変換</li>
+                        <li>PNG→JPEG 1/10軽量化</li>
+                        <li>品質・サイズ調整</li>
+                        <li>Eagleライブラリ対応</li>
+                        <li>コマンドライン対応</li>
+                        <li class="lang">日/英</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="price-badge paid">有料</span>
+                    <div class="button-group">
+                        <a href="製品紹介/Meta_Converter_メタデータ維持画像変換ツール.pdf" target="_blank" class="btn btn-secondary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                            詳しい説明
+                        </a>
+                        <a href="https://synekzuk.booth.pm/items/6911255" target="_blank" rel="noopener" class="btn btn-primary">
+                            BOOTH
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Workflow Section -->
+        <section class="workflow-section">
+            <h3 class="workflow-title">おすすめワークフロー例（R18版）</h3>
+            
+            <div class="workflow-pattern">
+                <p class="workflow-label">パターン1：有料・オールインワン</p>
+                <div class="workflow-content">
+                    <div class="workflow-step">
+                        <p class="workflow-step-name">AutoMosaic R18版</p>
+                        <p class="workflow-step-desc">自動モザイク処理</p>
+                    </div>
+                    <span class="workflow-arrow">→</span>
+                    <div class="workflow-step highlight">
+                        <p class="workflow-step-name">AI Paint Cleaner</p>
+                        <p class="workflow-step-desc">細かい調整・編集<br><small>※メタデータ削除機能も内蔵</small></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="workflow-divider">または</div>
+
+            <div class="workflow-pattern">
+                <p class="workflow-label">パターン2：無料ツールで対応</p>
+                <div class="workflow-content">
+                    <div class="workflow-step">
+                        <p class="workflow-step-name">AutoMosaic R18版</p>
+                        <p class="workflow-step-desc">自動モザイク処理</p>
+                    </div>
+                    <span class="workflow-arrow">→</span>
+                    <div class="workflow-step free">
+                        <p class="workflow-step-name">AI Meta Cleaner</p>
+                        <p class="workflow-step-desc">メタデータ削除<br><small>※無料ソフト</small></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            製品に関するお問い合わせは
+            <a href="https://synekzuk.booth.pm/" target="_blank" rel="noopener">BOOTH</a>
+            までお願いいたします。
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# robots.txt for nekzuk.github.io
+
+# Allow all search engines to crawl all pages
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://nekzuk.github.io/sitemap.xml

@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Frame Craft - nekzuk Software</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Frame Craft extracts video frames and converts to GIF/WEBP animations. Batch processing, duplicate detection, and Pixiv ugoku-illust support. ¥480 / $5">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nekzuk.github.io/frame-craft.html?lang=en">
+  <meta property="og:title" content="Frame Craft - Video Frame Extraction & Animation Converter">
+  <meta property="og:description" content="Extract video frames with precision and convert to GIF/WEBP animations. Perfect for content creators and animation workflows.">
+  <meta property="og:image" content="https://nekzuk.github.io/assets/icons/app5.png">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@Synekzuk_AI">
+  <meta name="twitter:title" content="Frame Craft - Video Frame Extraction & Animation Converter">
+  <meta name="twitter:description" content="Extract video frames with precision and convert to GIF/WEBP animations. Supports 14 video formats.">
+  <meta name="twitter:image" content="https://nekzuk.github.io/assets/icons/app5.png">
+
+  <!-- Language SEO -->
+  <link rel="canonical" href="https://nekzuk.github.io/frame-craft.html?lang=en">
+  <link rel="alternate" hreflang="en" href="https://nekzuk.github.io/frame-craft.html?lang=en">
+  <link rel="alternate" hreflang="ja" href="https://nekzuk.github.io/frame-craft.html?lang=ja">
+  <link rel="alternate" hreflang="x-default" href="https://nekzuk.github.io/frame-craft.html?lang=en">
+
+  <style>
+    :root {
+      --bg:#0f172a; --card:#1e293b; --card2:#172136; --border:#334155;
+      --text:#f1f5f9; --muted:#94a3b8; --muted2:#64748b;
+      --accent:#22d3ee; --primary:#6366f1; --grad: linear-gradient(135deg,var(--primary),#8b5cf6);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh;padding:2.5rem 1.25rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    .container{max-width:980px;margin:0 auto}
+    .top{display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:1.25rem}
+    .small{font-size:.9rem;color:var(--muted)}
+    .pill{display:inline-flex;gap:.5rem;align-items:center;padding:.25rem .7rem;border-radius:999px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.05);color:var(--muted);font-size:.85rem}
+
+    .hero{background:var(--card);border:1px solid var(--border);border-radius:1.1rem;padding:1.6rem}
+    .pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+    .heroTop{display:flex;gap:1rem;align-items:flex-start}
+    
+    .appIcon{
+  width:110px;
+  height:110px;
+  border-radius:24px;
+  box-shadow:0 10px 22px rgba(0,0,0,.35);
+  flex:0 0 auto;
+}
+    .heroTitle{
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+}
+.heroTitle > div{max-width:760px;}
+.heroTitle h1{line-height:1.05;}
+.heroTitle .title{ margin:0; }
+.heroTitle .subtitle{ margin:0; color:var(--muted); line-height:1.35; max-width:640px; }
+
+    .btns{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1rem;border-radius:.7rem;border:1px solid var(--border);background:rgba(255,255,255,.06);color:var(--text);text-decoration:none;font-weight:650;font-size:.95rem}
+    .btn.primary{background:var(--grad);border-color:transparent}
+    .btn.sub{background:rgba(34,211,238,.15);border-color:rgba(34,211,238,.4);color:var(--accent)}
+    .btn.sub:hover{background:rgba(34,211,238,.25);text-decoration:none}
+    .btn.download{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.3);color:var(--accent);font-size:.9rem;padding:.5rem .9rem}
+    .btn.download:hover{background:rgba(34,211,238,.2);text-decoration:none}
+    .btn.ghost{background:transparent}
+    .price{font-size:1.1rem;font-weight:700;color:var(--accent);display:flex;align-items:baseline;gap:.5rem;margin-top:.6rem}
+
+    .grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1rem}
+    @media(min-width:920px){ .grid{grid-template-columns:1fr 1fr} }
+    .section{margin-top:1rem;background:var(--card);border:1px solid var(--border);border-radius:1.1rem;padding:1.4rem}
+    .section h2{font-size:1.2rem;margin-bottom:.7rem}
+    .section h3{font-size:1.05rem;margin:.9rem 0 .4rem}
+    .section > p, 
+	.section > ul, 
+	.section > ol, 
+	.section > dl, 
+	.section > h3 {
+	  padding-left: 0.5rem;
+	  padding-right: 0.5rem;
+	}
+	.section .hr {
+	  margin-left: 0.5rem;
+	  margin-right: 0.5rem;
+	}
+	.section > .twoCol {
+	  padding-left: 0.5rem;
+	  padding-right: 0.5rem;
+	}
+    ul{margin:.3rem 0 .8rem 1.25rem;color:var(--muted)} li{margin:.25rem 0}
+    .hr{height:1px;background:var(--border);margin:1.1rem 0}
+    .kpi{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin-top:.9rem}
+    @media(min-width:720px){ .kpi{grid-template-columns:repeat(4,minmax(0,1fr))} }
+    .kpi .box{background:var(--card2);border:1px solid rgba(255,255,255,.08);border-radius:1rem;padding:.85rem}
+
+    .heroFacts .box{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-start;
+  gap:.22rem;
+}
+.heroFacts .box .label{display:block;font-size:.75rem;opacity:.72;line-height:1.15;}
+.heroFacts .box .value{display:block;font-size:.98rem;font-weight:700;line-height:1.25;}
+
+    .kpi .kv{ display:flex; flex-direction:column; align-items:flex-start; gap:6px; }
+.kpi .kv .label{ margin:0; }
+.kpi .kv .value{ margin:0; }
+
+    /* Images */
+    .shot{background:var(--card2);border:1px solid rgba(255,255,255,.08);border-radius:1rem;overflow:hidden}
+    .shot img{display:block;width:100%;height:auto}
+    .shot .cap{padding:.7rem .85rem;color:var(--muted);font-size:.9rem}
+
+    .footer{text-align:center;margin-top:1.4rem;color:var(--muted2);font-size:.9rem}
+  
+  a.shot{display:block}
+  .shot img{width:100%;height:auto;max-height:420px;object-fit:contain;background:#0b1220}
+  .shot .cap{margin-top:.45rem}
+
+  #ui .shot img{max-height:760px;object-fit:contain}
+
+.twoCol{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width: 820px){.twoCol{grid-template-columns:1fr}}
+.twoCol > div { padding-left: 0; padding-right: 0; }
+.note{opacity:.9;font-size:.92rem;margin-top:.5rem}
+.section ul,.section ol{
+  margin:.8rem 0 0;
+  padding-left:1.25rem;
+}
+.section li{margin:.35rem 0;}
+  </style>
+
+  <script>
+  (function () {
+    function getParamLang() {
+      const params = new URLSearchParams(location.search);
+      const v = params.get('lang');
+      return (v === 'ja' || v === 'en') ? v : null;
+    }
+    function setParamLang(lang) {
+      const url = new URL(location.href);
+      url.searchParams.set('lang', lang);
+      location.replace(url.toString());
+    }
+    let stored = null;
+    try { stored = localStorage.getItem('site_lang'); } catch (e) { }
+    const paramLang = getParamLang();
+    if (stored === 'ja' && paramLang !== 'ja') { setParamLang('ja'); return; }
+    if (stored === 'en' && paramLang !== 'en') { setParamLang('en'); return; }
+    if (!stored && !paramLang) {
+      const navLang = (navigator.languages && navigator.languages[0]) ? navigator.languages[0] : (navigator.language || '');
+      if (String(navLang).toLowerCase().startsWith('ja')) { setParamLang('ja'); return; }
+    }
+    const lang = paramLang || 'en';
+    document.documentElement.lang = lang;
+    window.setSiteLang = function (lang) { try { localStorage.setItem('site_lang', lang); } catch (e) { } };
+    function applyLang() {
+      // 英語要素の表示/非表示
+      document.querySelectorAll('.lang-en').forEach(el => {
+        if (lang === 'en') {
+          // 要素のタイプに応じて適切なdisplayを設定
+          if (el.tagName === 'UL' || el.tagName === 'OL') {
+            el.style.display = 'block';
+          } else if (el.tagName === 'SPAN' || el.tagName === 'B') {
+            el.style.display = 'inline';
+          } else {
+            el.style.display = 'block';
+          }
+        } else {
+          el.style.display = 'none';
+        }
+      });
+      
+      // 日本語要素の表示/非表示
+      document.querySelectorAll('.lang-ja').forEach(el => {
+        if (lang === 'ja') {
+          // 要素のタイプに応じて適切なdisplayを設定
+          if (el.tagName === 'UL' || el.tagName === 'OL') {
+            el.style.display = 'block';
+          } else if (el.tagName === 'SPAN' || el.tagName === 'B') {
+            el.style.display = 'inline';
+          } else {
+            el.style.display = 'block';
+          }
+        } else {
+          el.style.display = 'none';
+        }
+      });
+      
+      const back = document.querySelector('a[data-role="back"]');
+      if (back) back.href = (lang === 'ja') ? 'index_j.html' : 'index.html';
+    }
+    document.addEventListener('DOMContentLoaded', () => { applyLang(); });
+  })();
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="top">
+      <a data-role="back" href="index.html">← <span class="lang-en">Back</span><span class="lang-ja">戻る</span></a>
+      <div class="small">
+        <a href="?lang=en" onclick="setSiteLang('en')">English</a> /
+        <a href="?lang=ja" onclick="setSiteLang('ja')">日本語</a>
+      </div>
+    </div>
+
+    <section class="hero">
+  <div class="pills">
+    <span class="pill">Windows</span>
+    <span class="pill">Desktop</span>
+    <span class="pill">Batch Processing</span>
+    <span class="pill">Offline Processing</span>
+  </div>
+
+  <div class="heroTop">
+    <div class="heroTitle">
+      <img class="appIcon" src="assets/icons/app5.png" alt="Frame Craft icon" />
+      <div>
+        <div class="titleRow lang-en">
+          <h1 class="title">Frame Craft</h1>
+          <p class="subtitle">Extract video frames and convert to animations (GIF/WEBP) with high precision. Perfect for screenshot extraction, animation creation, and Pixiv ugoku-illust workflows.</p>
+        </div>
+        <div class="titleRow lang-ja">
+          <h1 class="title">Frame Craft</h1>
+          <p class="subtitle">動画から高精度でフレーム抽出やGIF/WEBPアニメ変換が行えるツールです。スクショ取り、アニメ作成、Pixivうごイラストワークフローに最適です。</p>
+        </div>
+
+        <div class="price">
+          <span class="lang-ja">¥480</span>
+          <span class="lang-en">$5</span>
+        </div>
+
+        <div class="btns">
+          <a class="btn primary lang-ja" href="https://synekzuk.booth.pm/items/6911255" target="_blank" rel="noopener">BOOTH</a>
+          <a class="btn primary lang-en" href="https://payhip.com/b/D0wG5" target="_blank" rel="noopener">Payhip</a>
+          <a class="btn sub" href="#trial"><span class="lang-en">Trial Version</span><span class="lang-ja">体験版</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kpi heroFacts">
+    <div class="box">
+      <div class="kv">
+        <div class="label lang-en">Main Uses</div>
+        <div class="label lang-ja">主な用途</div>
+        <div class="value lang-en">Frame Extract</div>
+        <div class="value lang-ja">フレーム抽出</div>
+      </div>
+    </div>
+
+    <div class="box">
+  <div class="kv">
+    <div class="label lang-en">Outputs</div>
+    <div class="label lang-ja">出力形式</div>
+    <div class="value lang-en">Image / Anim</div>
+    <div class="value lang-ja">画像 / アニメ</div>
+  </div>
+</div>
+
+    <div class="box">
+  <div class="kv">
+    <div class="label lang-en">Processing</div>
+    <div class="label lang-ja">処理方式</div>
+    <div class="value lang-en">Batch</div>
+    <div class="value lang-ja">バッチ</div>
+  </div>
+</div>
+
+    <div class="box">
+  <div class="kv">
+    <div class="label lang-en">Formats</div>
+    <div class="label lang-ja">対応形式</div>
+    <div class="value lang-en">14 Types</div>
+    <div class="value lang-ja">14種類</div>
+  </div>
+</div>
+</section>
+
+    <div class="grid">
+      <section class="section">
+        <h2>
+          <span class="lang-en">Overview</span>
+          <span class="lang-ja">概要</span>
+        </h2>
+        <p class="lang-en">
+          Frame Craft is a powerful tool for extracting frames from videos and animation files at specified intervals, or converting them to animation formats (GIF/WEBP). It's designed for content creators who need precise frame extraction, duplicate image removal, and animation creation workflows.
+        </p>
+        <p class="lang-ja">
+          Frame Craftは、動画やアニメーションファイルから指定したフレームや秒間隔で画像を抽出したり、アニメーション形式（GIF/WEBP）に変換が行えるツールです。正確なフレーム抽出、重複画像削除、アニメーション作成ワークフローを必要とするコンテンツクリエイター向けに設計されています。
+        </p>
+        <div class="hr"></div>
+        <ul class="lang-en">
+          <li><b>High-precision extraction</b> with frame/second-based settings</li>
+          <li><b>Duplicate removal</b> using perceptual hash technology</li>
+          <li><b>Batch processing</b> via drag & drop</li>
+          <li><b>14 video formats</b> including MP4, AVI, MOV, GIF, WebP</li>
+          <li><b>Animation output</b>: GIF/WEBP + Pixiv ugoku-illust mode</li>
+        </ul>
+        <ul class="lang-ja">
+          <li><b>高精度抽出</b> - フレーム間隔や秒数間隔での正確な指定</li>
+          <li><b>重複削除</b> - パーセプチュアルハッシュ技術による類似画像検出</li>
+          <li><b>バッチ処理</b> - ドラッグ&ドロップで一括処理</li>
+          <li><b>14種類の動画形式</b> - MP4、AVI、MOV、GIF、WebPなど</li>
+          <li><b>アニメ出力</b> - GIF/WEBP、Pixivうごイラストモード対応</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>
+          <span class="lang-en">Supported Formats</span>
+          <span class="lang-ja">対応形式</span>
+        </h2>
+
+        <div class="twoCol">
+          <div>
+            <h3 class="lang-en">Input formats</h3>
+            <h3 class="lang-ja">入力形式</h3>
+            <ul class="lang-en">
+              <li>MP4, AVI, MOV</li>
+              <li>MKV, WMV, FLV</li>
+              <li>WebM, MPEG, MPG</li>
+              <li>M4V, TS, OGV</li>
+              <li>GIF, WebP (animation)</li>
+            </ul>
+            <ul class="lang-ja">
+              <li>MP4, AVI, MOV</li>
+              <li>MKV, WMV, FLV</li>
+              <li>WebM, MPEG, MPG</li>
+              <li>M4V, TS, OGV</li>
+              <li>GIF, WebP（アニメ）</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="lang-en">Outputs</h3>
+            <h3 class="lang-ja">出力</h3>
+            <ul class="lang-en">
+              <li>Images: JPG, PNG</li>
+              <li>Animations: GIF, WEBP</li>
+              <li>Pixiv ugoku-illust format</li>
+              <li>Last frame extraction</li>
+            </ul>
+            <ul class="lang-ja">
+              <li>画像: JPG、PNG</li>
+              <li>アニメ: GIF、WEBP</li>
+              <li>Pixivうごイラスト形式</li>
+              <li>最終フレーム抽出</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+  <section class="section">
+    <h2><span class="lang-en">Key Features</span><span class="lang-ja">基本機能</span></h2>
+
+    <h3 class="lang-en">■ High-precision Frame Extraction</h3>
+    <h3 class="lang-ja">■ 高精度画像抽出</h3>
+    <ul class="lang-en">
+      <li>Precise frame interval or second-based extraction</li>
+      <li>Automatic FPS detection for optimal extraction</li>
+      <li>Pixiv ugoku-illust output mode</li>
+      <li>Video to animation format conversion (GIF/WEBP)</li>
+    </ul>
+    <ul class="lang-ja">
+      <li>正確なフレーム間隔や秒数間隔での指定が可能</li>
+      <li>自動FPS検出機能で、動画に応じた最適な抽出を実現</li>
+      <li>Pixivうごイラスト用の出力モードを搭載</li>
+      <li>動画をアニメーション形式（GIF/WEBP）にも変換可能</li>
+    </ul>
+
+    <div class="hr"></div>
+
+    <h3 class="lang-en">■ Automatic Duplicate Removal</h3>
+    <h3 class="lang-ja">■ 重複画像自動削除</h3>
+    <ul class="lang-en">
+      <li>High-precision similar image detection using perceptual hash technology</li>
+      <li>Memory-efficient processing for large image batches</li>
+      <li>Removes duplicate and nearly identical frames automatically</li>
+    </ul>
+    <ul class="lang-ja">
+      <li>パーセプチュアルハッシュ技術による高精度な類似画像検出</li>
+      <li>メモリ効率的な処理で大量の画像にも対応</li>
+      <li>重複フレームやほぼ同一のフレームを自動的に削除</li>
+    </ul>
+
+    <div class="hr"></div>
+
+    <h3 class="lang-en">■ Batch Processing & Efficiency</h3>
+    <h3 class="lang-ja">■ バッチ処理と効率化</h3>
+    <ul class="lang-en">
+      <li>Drag & drop multiple videos for batch processing</li>
+      <li>Real-time progress display and detailed log output</li>
+      <li>Monitor processing status at a glance</li>
+    </ul>
+    <ul class="lang-ja">
+      <li>複数動画をドラッグ&ドロップで一括処理</li>
+      <li>リアルタイム進捗表示と詳細ログ出力で作業状況を把握</li>
+      <li>処理状況を一目で監視</li>
+    </ul>
+
+    <div class="hr"></div>
+
+    <h3 class="lang-en">■ Additional Convenient Features</h3>
+    <h3 class="lang-ja">■ 便利な追加機能</h3>
+    <ul class="lang-en">
+      <li>Automatic black bar removal (auto-crop borders)</li>
+      <li>Intuitive GUI design for easy operation</li>
+      <li>Last frame extraction for video concatenation workflows</li>
+    </ul>
+    <ul class="lang-ja">
+      <li>黒帯自動削除機能で、動画の上下左右の黒帯を自動トリミング</li>
+      <li>直観的なGUIで初心者にも使いやすい設計</li>
+      <li>動画生成の連結始点用の最終フレーム出力</li>
+    </ul>
+  </section>
+
+  <section class="section" id="ui">
+    <h2><span class="lang-en">How to use & UI screenshot</span><span class="lang-ja">基本的な使い方 & UIスクリーンショット</span></h2>
+
+    <h3 class="lang-en">How to use</h3>
+    <h3 class="lang-ja">基本的な使い方</h3>
+    
+    <ol class="lang-en">
+      <li>Click the "Add Video" button or drag & drop video files</li>
+      <li>Click the "Start Extraction" button to begin processing</li>
+    </ol>
+    <ol class="lang-ja">
+      <li>「動画を追加」ボタンをクリックまたは動画ファイルをドラッグ&ドロップ</li>
+      <li>「抽出を開始」ボタンで処理開始</li>
+    </ol>
+
+    <p class="note lang-en">
+      Simple two-step process makes it easy to extract frames from your videos and convert them to animations.
+    </p>
+    <p class="note lang-ja">
+      シンプルな2ステップで動画からフレーム抽出やアニメーション変換が簡単に行えます。
+    </p>
+
+    <div class="hr"></div>
+
+    <h3 class="lang-en">UI screenshot</h3>
+    <h3 class="lang-ja">UIスクリーンショット</h3>
+
+    <a class="shot lang-en" href="assets/Other/craft1_en.png" target="_blank" rel="noopener">
+      <img src="assets/Other/craft1_en.png" alt="Frame Craft UI (English)">
+      <div class="cap">UI (English)</div>
+    </a>
+
+    <a class="shot lang-ja" href="assets/Other/craft1.png" target="_blank" rel="noopener">
+      <img src="assets/Other/craft1.png" alt="Frame Craft UI (Japanese)">
+      <div class="cap">UI(日本語)</div>
+    </a>
+  </section>
+
+    <section class="section">
+      <h2><span class="lang-en">System requirements</span><span class="lang-ja">動作環境</span></h2>
+      
+      <ul class="lang-en">
+        <li>OS: Windows 10/11 (64 bit)</li>
+        <li>Memory: 4GB+ recommended</li>
+        <li>Storage: 100MB+ free space required</li>
+      </ul>
+      <ul class="lang-ja">
+        <li>OS: Windows 10 / Windows 11（64bit）</li>
+        <li>RAM: 4GB以上推奨</li>
+        <li>ストレージ: 100MB以上の空き容量</li>
+      </ul>
+
+      <p class="note lang-en">
+        No GPU required. Runs on CPU for universal compatibility.
+      </p>
+      <p class="note lang-ja">
+        GPU不要。CPUで動作し、幅広い環境で使用可能です。
+      </p>
+    </section>
+
+  <section class="section" id="trial">
+    <h2><span class="lang-en">Trial Version</span><span class="lang-ja">体験版</span></h2>
+    
+    <p class="lang-en"><b>Windows 10/11</b></p>
+    <p class="lang-ja"><b>Windows 10/11</b></p>
+    <p><a class="btn download" href="https://drive.google.com/file/d/1zQ0MpUKn5DzmExtLiLpBnqXWCWvfZAZ7/view?usp=drive_link" target="_blank" rel="noopener">Download from Google Drive</a></p>
+    
+    <div class="hr"></div>
+    
+    <h3 class="lang-en">Trial limitations</h3>
+    <h3 class="lang-ja">体験版の制限事項</h3>
+    <ul class="lang-en">
+      <li>Maximum 400 images/frames per video</li>
+      <li>Process 1 video at a time</li>
+      <li>Watermark added to output</li>
+    </ul>
+    <ul class="lang-ja">
+      <li>1動画あたり最大400画像/フレームまで</li>
+      <li>同時処理1動画まで</li>
+      <li>透かし付き出力</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2><span class="lang-en">Updates & Changelog</span><span class="lang-ja">更新情報・変更履歴</span></h2>
+    
+    <div class="kpi" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1rem">
+      <div class="box">
+        <div class="kv">
+          <div class="label lang-en">Current Version</div>
+          <div class="label lang-ja">最新バージョン</div>
+          <div class="value">v1.20</div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="kv">
+          <div class="label lang-en">Release Date</div>
+          <div class="label lang-ja">リリース日</div>
+          <div class="value">2025-11-01</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <h3 class="lang-en">Latest Updates</h3>
+    <h3 class="lang-ja">最新の更新内容</h3>
+    <ul class="lang-en">
+      <li>Added GIF/WEBP output support</li>
+      <li>Enhanced frame extraction precision</li>
+      <li>Improved duplicate detection algorithm</li>
+    </ul>
+    <ul class="lang-ja">
+      <li>GIF/WEBP出力追加</li>
+      <li>フレーム抽出精度の向上</li>
+      <li>重複検出アルゴリズムの改善</li>
+    </ul>
+
+    <p style="margin-top:1rem">
+      <a href="https://note.com/nekzuk/n/n079326e4a2e7" target="_blank" rel="noopener">
+        <span class="lang-en">→ Read detailed release notes</span>
+        <span class="lang-ja">→ 詳細な更新内容を読む</span>
+      </a>
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>
+      <span class="lang-en">License & Usage Notes</span>
+      <span class="lang-ja">ライセンス・ご利用上の注意</span>
+    </h2>
+
+    <h3 class="lang-en">License</h3>
+    <h3 class="lang-ja">ライセンス</h3>
+    <ul class="lang-en">
+      <li><b>Personal use (including commercial)</b>: Included with purchase</li>
+      <li><b>Corporate/enterprise use</b>: Please contact separately for licensing</li>
+    </ul>
+    <ul class="lang-ja">
+      <li><b>個人での商用利用</b>: 本製品の購入で利用可能</li>
+      <li><b>企業での商用利用</b>: 別途ご相談ください</li>
+    </ul>
+
+    <div class="hr"></div>
+
+    <h3 class="lang-en">Important Notes</h3>
+    <h3 class="lang-ja">重要な注意事項</h3>
+    <ul class="lang-en">
+      <li>Processing time may vary depending on video length and PC specifications</li>
+      <li>Always verify output results for accuracy</li>
+      <li>Frame extraction accuracy may depend on video quality and encoding</li>
+    </ul>
+    <ul class="lang-ja">
+      <li>処理時間は動画の長さやPCの性能により変動します</li>
+      <li>処理結果は必ずご確認ください</li>
+      <li>フレーム抽出精度は動画の品質やエンコードにより変動する場合があります</li>
+    </ul>
+  </section>
+
+    </div>
+
+   <div class="footer">
+      <div class="lang-en" style="margin-bottom:.75rem">
+        <b>Support:</b> <a href="https://x.com/Synekzuk_AI" target="_blank" rel="noopener">Twitter/X</a> | <a href="https://payhip.com/nekzuk/contact" target="_blank" rel="noopener">Payhip message</a>
+      </div>
+      <div class="lang-ja" style="margin-bottom:.75rem">
+        <b>サポート:</b> <a href="https://x.com/Synekzuk_AI" target="_blank" rel="noopener">Twitter/X</a> | <a href="https://accounts.booth.pm/conversations/49131834/messages" target="_blank" rel="noopener">BOOTHメッセージ</a>
+      </div>
+      © nekzuk Software
+    </div>
+  </div>
+</body>
+</html>

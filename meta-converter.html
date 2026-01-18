@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Meta Converter - nekzuk Software</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Meta Converter preserves metadata while converting images to PNG/JPEG/WEBP. Compatible with WebUI PNGinfo and Eagle software. ¥380 / $4">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nekzuk.github.io/meta-converter.html?lang=en">
+  <meta property="og:title" content="Meta Converter - Image Format Converter with Metadata Preservation">
+  <meta property="og:description" content="Convert images while preserving AI generation metadata. Compatible with WebUI, ComfyUI, NovelAI, and Eagle software.">
+  <meta property="og:image" content="https://nekzuk.github.io/assets/icons/app4.png">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@Synekzuk_AI">
+  <meta name="twitter:title" content="Meta Converter - Image Format Converter with Metadata Preservation">
+  <meta name="twitter:description" content="Convert images while preserving AI generation metadata. Compatible with WebUI, ComfyUI, NovelAI, and Eagle software.">
+  <meta name="twitter:image" content="https://nekzuk.github.io/assets/icons/app4.png">
+
+  <!-- Language SEO -->
+  <link rel="canonical" href="https://nekzuk.github.io/meta-converter.html?lang=en">
+  <link rel="alternate" hreflang="en" href="https://nekzuk.github.io/meta-converter.html?lang=en">
+  <link rel="alternate" hreflang="ja" href="https://nekzuk.github.io/meta-converter.html?lang=ja">
+  <link rel="alternate" hreflang="x-default" href="https://nekzuk.github.io/meta-converter.html?lang=en">
+
+  <style>
+    :root {
+      --bg:#0f172a; --card:#1e293b; --card2:#172136; --border:#334155;
+      --text:#f1f5f9; --muted:#94a3b8; --muted2:#64748b;
+      --accent:#22d3ee; --primary:#6366f1; --grad: linear-gradient(135deg,var(--primary),#8b5cf6);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh;padding:2.5rem 1.25rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    .container{max-width:980px;margin:0 auto}
+    .top{display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:1.25rem}
+    .small{font-size:.9rem;color:var(--muted)}
+    .pill{display:inline-flex;gap:.5rem;align-items:center;padding:.25rem .7rem;border-radius:999px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.05);color:var(--muted);font-size:.85rem}
+
+    .hero{background:var(--card);border:1px solid var(--border);border-radius:1.1rem;padding:1.6rem}
+    .heroTop{display:flex;gap:1rem;align-items:flex-start}
+    .heroIcon{
+  width:110px;
+  height:110px;
+  border-radius:18px;
+  overflow:hidden;
+  flex:0 0 auto;
+  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+}
+    .heroIcon img{width:100%;height:100%;object-fit:cover}
+    .hero h1{font-size:2rem;line-height:1.2;margin:.1rem 0 .4rem}
+    .hero p{color:var(--muted);margin-top:.4rem}
+    .badges{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0 .6rem}
+
+    .btns{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1rem;border-radius:.7rem;border:1px solid var(--border);background:rgba(255,255,255,.06);color:var(--text);text-decoration:none;font-weight:650;font-size:.95rem}
+    .btn.primary{background:var(--grad);border-color:transparent}
+    .btn.sub{background:rgba(34,211,238,.15);border-color:rgba(34,211,238,.4);color:var(--accent)}
+    .btn.sub:hover{background:rgba(34,211,238,.25);text-decoration:none}
+    .btn.download{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.3);color:var(--accent);font-size:.9rem;padding:.5rem .9rem}
+    .btn.download:hover{background:rgba(34,211,238,.2);text-decoration:none}
+    .btn.ghost{background:transparent}
+    .btn.disabled{opacity:.4;cursor:not-allowed;pointer-events:none}
+    .price{font-size:1.1rem;font-weight:700;color:var(--accent);display:flex;align-items:baseline;gap:.5rem}
+    .price .alt{font-size:.85rem;color:var(--muted2);font-weight:400}
+
+    .grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1rem}
+    @media(min-width:920px){ .grid{grid-template-columns:1fr 1fr} }
+    .section{margin-top:1rem;background:var(--card);border:1px solid var(--border);border-radius:1.1rem;padding:1.4rem}
+    .section h2{font-size:1.2rem;margin-bottom:.7rem}
+    .section h3{font-size:1.05rem;margin:.9rem 0 .4rem}
+    .section > p, 
+	.section > ul, 
+	.section > ol, 
+	.section > dl, 
+	.section > h3 {
+	  padding-left: 0.5rem;
+	  padding-right: 0.5rem;
+	}
+	.section .hr {
+	  margin-left: 0.5rem;
+	  margin-right: 0.5rem;
+	}
+	.section > .twoCol, 
+	.section > .grid-2 {
+	  padding-left: 0.5rem;
+	  padding-right: 0.5rem;
+	}
+    ul{margin:.3rem 0 .8rem 1.25rem;color:var(--muted)} li{margin:.25rem 0}
+    .hr{height:1px;background:var(--border);margin:1.1rem 0}
+    .kpi{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin-top:.9rem}
+    @media(min-width:720px){ .kpi{grid-template-columns:repeat(4,minmax(0,1fr))} }
+    .kpi .box{background:var(--card2);border:1px solid rgba(255,255,255,.08);border-radius:1rem;padding:.85rem}
+    .kpi .label{font-size:.8rem;color:var(--muted2);min-height:16px}
+    .kpi .value{font-weight:750;margin-top:.2rem;min-height:24px}
+
+    /* YouTube thumbnail link */
+    .yt{position:relative;width:100%;aspect-ratio:16/9;border-radius:1rem;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#000;display:block;text-decoration:none}
+    .ytThumb{width:100%;height:100%;object-fit:cover;display:block;transition:opacity 0.3s}
+    .yt:hover .ytThumb{opacity:0.8}
+    .ytOverlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.4));pointer-events:none}
+    .ytPlay{width:72px;height:72px;border-radius:50%;background:rgba(255,0,0,.9);display:flex;align-items:center;justify-content:center;transition:all 0.2s}
+    .yt:hover .ytPlay{background:rgba(255,0,0,1);transform:scale(1.1)}
+    .ytPlay:before{content:"";display:block;width:0;height:0;border-left:20px solid white;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+    .two-col{display:grid;grid-template-columns:1fr;gap:1rem} @media(min-width:920px){ .two-col{grid-template-columns:1fr 1fr} }
+    .note{font-size:.9rem;color:var(--muted)} code{background:rgba(255,255,255,.06);padding:.1rem .35rem;border-radius:.35rem;border:1px solid rgba(255,255,255,.08)}
+
+    /* Images */
+    .gallery{display:grid;grid-template-columns:1fr;gap:.9rem} 
+    @media(min-width:920px){ .gallery{grid-template-columns:1fr 1fr} }
+    .shot{background:var(--card2);border:1px solid rgba(255,255,255,.08);border-radius:1rem;overflow:hidden}
+    .shot img{display:block;width:100%;height:auto}
+    .shot .cap{padding:.7rem .85rem;color:var(--muted);font-size:.9rem}
+
+    .faq dt{font-weight:700;margin-top:.7rem} .faq dd{color:var(--muted);margin:.2rem 0 .6rem}
+    .footer{text-align:center;margin-top:1.4rem;color:var(--muted2);font-size:.9rem}
+    span.lang-en, p.lang-en, h2.lang-en, h3.lang-en, b.lang-en {display:inline} 
+span.lang-ja, p.lang-ja, h2.lang-ja, h3.lang-ja, b.lang-ja {display:none}
+ul.lang-en, ol.lang-en {display:block; padding-right:1.25rem}
+ul.lang-ja, ol.lang-ja {display:none}
+  
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  @media (max-width: 860px){.grid-2{grid-template-columns:1fr}}
+  a.shot{display:block}
+  .shot img{width:100%;height:auto;max-height:420px;object-fit:contain;background:#0b1220}
+  .shot .cap{margin-top:.45rem}
+
+  .section-head{display:flex;gap:1rem;align-items:flex-end;justify-content:space-between;flex-wrap:wrap}
+  #ui .shot img{max-height:760px;object-fit:contain}
+
+.twoCol{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width: 820px){.twoCol{grid-template-columns:1fr}}
+.note{opacity:.9;font-size:.92rem;margin-top:.5rem}
+.hr{height:1px;background:rgba(255,255,255,.08);margin:14px 0}
+.section h3{margin:10px 0 6px 0;font-size:1rem;opacity:.95}
+.section ol{padding-left:1.2rem}
+.section ol li{margin:.35rem 0}
+
+.appIcon{
+  width:110px;
+  height:110px;
+  border-radius:24px;
+  box-shadow:0 10px 22px rgba(0,0,0,.35);
+  flex:0 0 auto;
+}
+.heroTitle{
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+  padding:22px 22px 12px;
+}
+.heroTitle .title{ margin:0; }
+.heroTitle .subtitle{ margin:0; color:var(--muted); line-height:1.35; max-width:640px; }
+.heroText .titleRow{ display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; }
+.heroText .titleRow .subtitle{ max-width:640px; }
+.heroText .titleRow h1{ margin:0; }
+
+.kpi .kv{ display:flex; flex-direction:column; align-items:flex-start; gap:6px; }
+.kpi .kv .label{ margin:0; }
+.kpi .kv .value{ margin:0; }
+
+.heroText{
+  flex:1;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+.heroText .title{
+  line-height:1.08;
+}
+.heroText .subtitle{
+  margin-top:10px;
+  line-height:1.5;
+  max-width:110ch;
+  text-wrap:balance;
+}
+
+.kv .label{ font-size:.75rem; opacity:.72; line-height:1.15; }
+.kv .value{ font-size:.98rem; font-weight:700; line-height:1.25; }
+.box ul{ margin:.55rem 0 0; padding-left:1.15rem; }
+.box li{ margin:.32rem 0; }
+
+.heroTitle > div{max-width:760px;}
+.heroTitle h1{line-height:1.05;}
+.heroTitle .subtitle{
+  max-width:760px;
+  line-height:1.35;
+  text-wrap:balance;
+  margin-top:.25rem;
+}
+
+.heroFacts .box{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-start;
+  gap:.22rem;
+}
+.heroFacts .box .label{display:block;}
+.heroFacts .box .value{display:block;}
+
+.section ul,.section ol{
+  margin:.8rem 0 0;
+  padding-left:1.25rem;
+}
+.section li{margin:.35rem 0;}
+
+.twoCol > div { padding-left: 0.5rem; padding-right: 0.5rem; }
+
+/* Before/After special layout: left 2 images stacked, right 1 large */
+.beforeAfterGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+}
+@media(max-width:860px){
+  .beforeAfterGrid{grid-template-columns:1fr}
+}
+.beforeAfterLeft{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+
+</style>
+
+  <script>
+  (function () {
+    function getParamLang() {
+      const params = new URLSearchParams(location.search);
+      const v = params.get('lang');
+      return (v === 'ja' || v === 'en') ? v : null;
+    }
+    function setParamLang(lang) {
+      const url = new URL(location.href);
+      url.searchParams.set('lang', lang);
+      location.replace(url.toString());
+    }
+    let stored = null;
+    try { stored = localStorage.getItem('site_lang'); } catch (e) { }
+    const paramLang = getParamLang();
+    if (stored === 'ja' && paramLang !== 'ja') { setParamLang('ja'); return; }
+    if (stored === 'en' && paramLang !== 'en') { setParamLang('en'); return; }
+    if (!stored && !paramLang) {
+      const navLang = (navigator.languages && navigator.languages[0]) ? navigator.languages[0] : (navigator.language || '');
+      if (String(navLang).toLowerCase().startsWith('ja')) { setParamLang('ja'); return; }
+    }
+    const lang = paramLang || 'en';
+    document.documentElement.lang = lang;
+    window.setSiteLang = function (lang) { try { localStorage.setItem('site_lang', lang); } catch (e) { } };
+    function applyLang() {
+      // 英語要素の表示/非表示
+      document.querySelectorAll('.lang-en').forEach(el => {
+        if (lang === 'en') {
+          // 要素のタイプに応じて適切なdisplayを設定
+          if (el.tagName === 'UL' || el.tagName === 'OL') {
+            el.style.display = 'block';
+          } else if (el.tagName === 'SPAN' || el.tagName === 'B') {
+            el.style.display = 'inline';
+          } else {
+            el.style.display = 'block';
+          }
+        } else {
+          el.style.display = 'none';
+        }
+      });
+      
+      // 日本語要素の表示/非表示
+      document.querySelectorAll('.lang-ja').forEach(el => {
+        if (lang === 'ja') {
+          // 要素のタイプに応じて適切なdisplayを設定
+          if (el.tagName === 'UL' || el.tagName === 'OL') {
+            el.style.display = 'block';
+          } else if (el.tagName === 'SPAN' || el.tagName === 'B') {
+            el.style.display = 'inline';
+          } else {
+            el.style.display = 'block';
+          }
+        } else {
+          el.style.display = 'none';
+        }
+      });
+      
+      const back = document.querySelector('a[data-role="back"]');
+      if (back) back.href = (lang === 'ja') ? 'index_j.html' : 'index.html';
+    }
+    document.addEventListener('DOMContentLoaded', () => { applyLang(); });
+  })();
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="top">
+      <a data-role="back" href="index.html">← <span class="lang-en">Back</span><span class="lang-ja">戻る</span></a>
+      <div class="small">
+        <a href="?lang=en" onclick="setSiteLang('en')">English</a> /
+        <a href="?lang=ja" onclick="setSiteLang('ja')">日本語</a>
+      </div>
+    </div>
+
+    <section class="hero">
+  <div class="pills">
+    <span class="pill">Windows</span>
+    <span class="pill">Desktop</span>
+    <span class="pill">Batch Processing</span>
+    <span class="pill">Metadata Preservation</span>
+  </div>
+
+  <div class="heroTop">
+    <div class="heroTitle">
+      <img class="appIcon" src="assets/icons/app4.png" alt="Meta Converter icon" />
+      <div>
+        <div class="titleRow lang-en">
+          <h1 class="title">Meta Converter</h1>
+          <p class="subtitle">Convert images to PNG/JPEG/WEBP while preserving metadata. Perfect for AI-generated images with support for WebUI, ComfyUI, NovelAI, and Eagle software.</p>
+        </div>
+        <div class="titleRow lang-ja">
+          <h1 class="title">Meta Converter</h1>
+          <p class="subtitle">メタデータを保持したまま、複数画像をPNG/JPEG/WEBPに変換できるツールです。WebUIのPNGinfoに取り込みが可能な状態で変換・圧縮でき、Eagleソフトウェアにも対応しています。</p>
+        </div>
+
+        <div class="price">
+          <span class="lang-ja">¥380</span>
+          <span class="lang-en">$4</span>
+        </div>
+
+        <div class="btns">
+          <a class="btn primary lang-ja" href="https://synekzuk.booth.pm/items/6911255" target="_blank" rel="noopener">BOOTH</a>
+          <a class="btn primary lang-en" href="https://payhip.com/b/4Gwc2" target="_blank" rel="noopener">Payhip</a>
+          <a class="btn sub" href="#trial"><span class="lang-en">Trial Version</span><span class="lang-ja">体験版</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kpi heroFacts">
+    <div class="box">
+      <div class="kv">
+        <div class="label lang-en">Conversion</div>
+        <div class="label lang-ja">変換</div>
+        <div class="value">PNG / JPEG / WEBP</div>
+      </div>
+    </div>
+
+    <div class="box">
+  <div class="kv">
+    <div class="label lang-en">For</div>
+    <div class="label lang-ja">用途</div>
+    <div class="value lang-en">AI Image Management</div>
+    <div class="value lang-ja">AI画像管理</div>
+  </div>
+</div>
+
+    <div class="box">
+  <div class="kv">
+    <div class="label lang-en">Processing</div>
+    <div class="label lang-ja">処理</div>
+    <div class="value lang-en">Batch</div>
+    <div class="value lang-ja">一括処理</div>
+  </div>
+</div>
+
+    <div class="box">
+  <div class="kv">
+    <div class="label lang-en">Language UI</div>
+    <div class="label lang-ja">UI言語</div>
+    <div class="value">JP / EN</div>
+  </div>
+</div>
+</section>
+
+    <div class="grid">
+      <section class="section">
+        <h2>
+          <span class="lang-en">Overview</span>
+          <span class="lang-ja">概要</span>
+        </h2>
+        <p class="lang-en">
+          Meta Converter is specifically designed for AI-generated images, allowing you to convert and compress images while maintaining all generation metadata. The converted images can be directly imported into WebUI's PNGinfo, and it also supports Eagle software library conversion.
+        </p>
+        <p class="lang-ja">
+          主にAI画像の変換を想定し、メタデータを維持したまま画像の変換・圧縮が可能です。変換した画像はWebUIに取り込み可能で、Eagle（https://jp.eagle.cool）のライブラリの変換にも対応しています。
+        </p>
+        <div class="hr"></div>
+        <ul class="lang-en">
+          <li><b>Batch conversion</b>: Convert multiple images while preserving metadata</li>
+          <li><b>Format support</b>: PNG/WEBP → JPEG/PNG/WEBP conversion</li>
+          <li><b>File size reduction</b>: PNG → JPEG reduces file size to 1/10 with significant compression</li>
+          <li><b>WebUI compatible</b>: Direct import to WebUI after conversion</li>
+          <li><b>Quality adjustment</b>: Fine-tune quality and image resizing options</li>
+          <li><b>Eagle support</b>: Eagle library conversion support</li>
+          <li><b>CLI support</b>: Command-line interface support</li>
+        </ul>
+        <ul class="lang-ja">
+          <li><b>一括変換</b>: メタデータを維持したまま、複数画像の変換（PNG/WEBP→JPEG/PNG/WEBP）</li>
+          <li><b>大幅圧縮</b>: PNG→JPEGはサイズ1/10と画像データの大幅なサイズ削減が可能</li>
+          <li><b>WebUI対応</b>: 変換した画像はWebUIに取り込み可能</li>
+          <li><b>品質調整</b>: 品質の調整や画像サイズの縮小等の微修正も可能</li>
+          <li><b>Eagle対応</b>: Eagle（https://jp.eagle.cool）のライブラリの変換に対応</li>
+          <li><b>CLI対応</b>: コマンドラインでの起動にも対応</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>
+          <span class="lang-en">Supported AI Formats</span>
+          <span class="lang-ja">対応AIデータ</span>
+        </h2>
+
+        <h3 class="lang-en">A1111 WebUI</h3>
+        <h3 class="lang-ja">A1111 WebUI</h3>
+        <p class="lang-en">PNGinfo readable after conversion</p>
+        <p class="lang-ja">変換後もPNGInfo読み込み可</p>
+
+        <div class="hr"></div>
+
+        <h3 class="lang-en">ComfyUI</h3>
+        <h3 class="lang-ja">ComfyUI</h3>
+        <p class="lang-en">For JPG conversion, workflow is output as a separate JSON file</p>
+        <p class="lang-ja">JPGへの変換ではワークフローはjsonファイルとして別出力</p>
+
+        <div class="hr"></div>
+
+        <h3 class="lang-en">NovelAI</h3>
+        <h3 class="lang-ja">NovelAI</h3>
+        <p class="lang-en">For JPG/WEBP conversion, metadata is preserved in a separate mini-file</p>
+        <p class="lang-ja">JPG,WEBPへの変換ではメタデータ保持用のミニファイルを別出力</p>
+
+      </section>
+
+      <section class="section">
+        <h2>
+          <span class="lang-en">How to use</span>
+          <span class="lang-ja">基本的な使い方</span>
+        </h2>
+        <ol class="lang-en">
+          <li>Select a folder containing images or drag and drop image files/folders</li>
+          <li>Adjust conversion format, quality settings, etc.</li>
+          <li>Click "Start Conversion" button</li>
+        </ol>
+        <ol class="lang-ja">
+          <li>画像の入ったフォルダを選択 or 画像ファイルやフォルダをドラッグアンドドロップ</li>
+          <li>変換形式/変換品質などを変更</li>
+          <li>「変換開始」ボタンをクリック</li>
+        </ol>
+      </section>
+
+    <section class="section">
+      <h2><span class="lang-en">System requirements</span><span class="lang-ja">動作環境</span></h2>
+      <ul>
+        <li><span class="lang-en">OS: Windows 10/11 (64-bit)</span><span class="lang-ja">OS: Windows 10/11 64bit</span></li>
+        <li><span class="lang-en">Memory: 8 GB or more recommended</span><span class="lang-ja">メモリ: 8GB 以上推奨</span></li>
+        <li><span class="lang-en">Storage: 30MB+ free space require</span><span class="lang-ja">ストレージ: 30MB以上の空き容量</span></li>
+      </ul>
+      <p class="note lang-en">
+        No GPU required. Runs on CPU for universal compatibility.
+      </p>
+      <p class="note lang-ja">
+        GPU不要。CPUで動作し、幅広い環境で使用可能です。
+      </p>
+    </section>
+
+      <section class="section" id="ui">
+        <h2><span class="lang-en">UI screenshot</span><span class="lang-ja">UIスクリーンショット</span></h2>
+
+        <a class="shot lang-en" href="assets/Other/meta1_en.png" target="_blank" rel="noopener">
+          <img src="assets/Other/meta1_en.png" alt="Meta Converter UI (English)">
+          <div class="cap">UI (English)</div>
+        </a>
+
+        <a class="shot lang-ja" href="assets/Other/meta1.png" target="_blank" rel="noopener">
+          <img src="assets/Other/meta1.png" alt="Meta Converter UI (Japanese)">
+          <div class="cap">UI(日本語)</div>
+        </a>
+  </section>
+
+
+<section class="section" id="trial">
+      <h2><span class="lang-en">Trial Version</span><span class="lang-ja">体験版</span></h2>
+      
+      <p><a class="btn download" href="https://drive.google.com/file/d/1o77ckEDZpA6JMj6XHUdAzszhXNmi2meE/view?usp=drive_link" target="_blank" rel="noopener">Download from Google Drive</a></p>
+      
+      <div class="hr"></div>
+      
+      <h3 class="lang-en">Trial Version Limitations</h3>
+      <h3 class="lang-ja">体験版の制限事項</h3>
+      <ul class="lang-en">
+        <li>Maximum 8 images per batch</li>
+      </ul>
+      <ul class="lang-ja">
+        <li>1回の処理可能枚数: 8枚まで</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2><span class="lang-en">Updates & Changelog</span><span class="lang-ja">更新情報・変更履歴</span></h2>
+      
+      <div class="kpi" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1rem">
+        <div class="box">
+          <div class="kv">
+            <div class="label lang-en">Current Version</div>
+            <div class="label lang-ja">最新バージョン</div>
+            <div class="value">v3.00</div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="kv">
+            <div class="label lang-en">Release Date</div>
+            <div class="label lang-ja">リリース日</div>
+            <div class="value">2025-11-07</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <h3 class="lang-en">Latest Updates</h3>
+      <h3 class="lang-ja">最新の更新内容</h3>
+      <ul class="lang-en">
+        <li>NovelAI support</li>
+      </ul>
+      <ul class="lang-ja">
+        <li>NovelAI対応</li>
+      </ul>
+
+      <p style="margin-top:1rem">
+        <a href="https://note.com/nekzuk/n/na7837cdb4a7b" target="_blank" rel="noopener">
+          <span class="lang-en">→ Read detailed release notes</span>
+          <span class="lang-ja">→ 詳細な更新内容を読む</span>
+        </a>
+      </p>
+    </section>
+
+      <section class="section">
+        <h2>
+          <span class="lang-en">License & Usage Notes</span>
+          <span class="lang-ja">ライセンス・ご利用上の注意</span>
+        </h2>
+
+        <h3 class="lang-en">License</h3>
+        <h3 class="lang-ja">ライセンス</h3>
+        <ul class="lang-en">
+          <li><b>Personal use (including commercial)</b>: Included with purchase</li>
+          <li><b>Corporate/enterprise use</b>: Please contact separately for licensing</li>
+        </ul>
+        <ul class="lang-ja">
+          <li><b>個人での商用利用</b>: 本製品の購入で問題ありません</li>
+          <li><b>企業での商用利用</b>: 別途ご相談ください</li>
+        </ul>
+
+        <div class="hr"></div>
+
+        <h3 class="lang-en">Important Notes</h3>
+        <h3 class="lang-ja">注意事項</h3>
+        <ul class="lang-en">
+          <li>Processing may take time</li>
+          <li>Trial version has limitations</li>
+          <li>Please verify all processing results</li>
+        </ul>
+        <ul class="lang-ja">
+          <li>処理には時間がかかる場合があります</li>
+          <li>体験版には制限事項があります</li>
+          <li>処理結果は必ずご確認ください</li>
+        </ul>
+      </section>
+
+  </div>
+
+   <div class="footer">
+      <div class="lang-en" style="margin-bottom:.75rem">
+        <b>Support:</b> <a href="https://x.com/Synekzuk_AI" target="_blank" rel="noopener">Twitter/X</a> | <a href="https://payhip.com/nekzuk/contact" target="_blank" rel="noopener">Payhip message</a>
+      </div>
+      <div class="lang-ja" style="margin-bottom:.75rem">
+        <b>サポート:</b> <a href="https://x.com/Synekzuk_AI" target="_blank" rel="noopener">Twitter/X</a> | <a href="https://accounts.booth.pm/conversations/49131834/messages" target="_blank" rel="noopener">BOOTHメッセージ</a>
+      </div>
+      © nekzuk Software
+    </div>
+  </div>
+</body>
+</html>
