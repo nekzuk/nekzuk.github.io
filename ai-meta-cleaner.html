@@ -23,7 +23,18 @@
   <meta name="twitter:image" content="https://nekzuk.com/assets/icons/app3.png">
 
   <!-- Language SEO -->
-  <link rel="canonical" href="https://nekzuk.com/ai-meta-cleaner.html?lang=en">
+  <!-- Canonical tag (dynamic) -->
+    <script>
+    (function() {
+        const params = new URLSearchParams(window.location.search);
+        const lang = params.get('lang') || 'en';
+        const canonical = document.createElement('link');
+        canonical.rel = 'canonical';
+        canonical.href = window.location.origin + window.location.pathname + '?lang=' + lang;
+        document.head.appendChild(canonical);
+    })();
+    </script>
+    
   <link rel="alternate" hreflang="en" href="https://nekzuk.com/ai-meta-cleaner.html?lang=en">
   <link rel="alternate" hreflang="ja" href="https://nekzuk.com/ai-meta-cleaner.html?lang=ja">
   <link rel="alternate" hreflang="x-default" href="https://nekzuk.com/ai-meta-cleaner.html?lang=en">
