@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Top Pages -->
   <url>
-    <loc>https://nekzuk.github.io/</loc>
+    <loc>https://nekzuk.com/</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://nekzuk.github.io/index_j.html</loc>
+    <loc>https://nekzuk.com/index_j.html</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -16,73 +16,73 @@
 
   <!-- Product Pages (query-based language) -->
   <url>
-    <loc>https://nekzuk.github.io/automosaic.html?lang=en</loc>
+    <loc>https://nekzuk.com/automosaic.html?lang=en</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nekzuk.github.io/automosaic.html?lang=ja</loc>
+    <loc>https://nekzuk.com/automosaic.html?lang=ja</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nekzuk.github.io/automosaic-r18.html?lang=en</loc>
+    <loc>https://nekzuk.com/automosaic-r18.html?lang=en</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nekzuk.github.io/automosaic-r18.html?lang=ja</loc>
+    <loc>https://nekzuk.com/automosaic-r18.html?lang=ja</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nekzuk.github.io/ai-paint-cleaner.html?lang=en</loc>
+    <loc>https://nekzuk.com/ai-paint-cleaner.html?lang=en</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nekzuk.github.io/ai-paint-cleaner.html?lang=ja</loc>
+    <loc>https://nekzuk.com/ai-paint-cleaner.html?lang=ja</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nekzuk.github.io/ai-meta-cleaner.html?lang=en</loc>
+    <loc>https://nekzuk.com/ai-meta-cleaner.html?lang=en</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nekzuk.github.io/ai-meta-cleaner.html?lang=ja</loc>
+    <loc>https://nekzuk.com/ai-meta-cleaner.html?lang=ja</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nekzuk.github.io/frame-craft.html?lang=en</loc>
+    <loc>https://nekzuk.com/frame-craft.html?lang=en</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nekzuk.github.io/frame-craft.html?lang=ja</loc>
+    <loc>https://nekzuk.com/frame-craft.html?lang=ja</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nekzuk.github.io/meta-converter.html?lang=en</loc>
+    <loc>https://nekzuk.com/meta-converter.html?lang=en</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nekzuk.github.io/meta-converter.html?lang=ja</loc>
+    <loc>https://nekzuk.com/meta-converter.html?lang=ja</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
