@@ -545,9 +545,25 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "nekzuk Software",
+      "alternateName": "nekzuk",
       "url": "https://nekzuk.com/",
       "logo": "https://nekzuk.com/assets/favicons/icon-512.png",
-      "description": "AI image processing tools for content creators. Specializing in automatic mosaic, image editing, and workflow automation.",
+      "description": "Developer of AI-powered image processing tools for content creators and AI artists. Specializing in automatic mosaic, batch image editing, metadata management, and workflow automation for AI-generated content.",
+      "foundingDate": "2024",
+      "knowsAbout": [
+        "AI Image Processing",
+        "Automatic Mosaic",
+        "Batch Image Editing",
+        "AI Inpainting",
+        "Metadata Management",
+        "Stable Diffusion",
+        "Content Privacy Protection",
+        "Workflow Automation"
+      ],
+      "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide"
+      },
       "sameAs": [
         "https://x.com/Synekzuk_AI",
         "https://nekzuk.booth.pm/",
@@ -556,7 +572,8 @@
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "Customer Support",
-        "availableLanguage": ["English", "Japanese"]
+        "availableLanguage": ["English", "Japanese", "Chinese", "Korean"],
+        "contactOption": "TollFree"
       }
     }
     </script>
@@ -567,9 +584,144 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "nekzuk Software",
+      "alternateName": "nekzuk",
       "url": "https://nekzuk.com/",
-      "description": "Tools to accelerate AI image generation and editing workflows",
-      "inLanguage": ["en", "ja"]
+      "description": "Professional AI image processing tools for content creators. Batch mosaic, AI inpainting, metadata management, and more. All Windows desktop applications with GPU acceleration.",
+      "inLanguage": ["en", "ja"],
+      "publisher": {
+        "@type": "Organization",
+        "name": "nekzuk Software",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://nekzuk.com/assets/favicons/icon-512.png"
+        }
+      }
+    }
+    </script>
+    
+    <!-- 構造化データ：ItemList (Product Catalog) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "nekzuk Software Products",
+      "description": "Complete catalog of AI image processing tools",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "AutoMosaic (R18)",
+            "url": "https://nekzuk.com/automosaic-r18.html",
+            "image": "https://nekzuk.com/assets/icons/app_R18.png",
+            "description": "GPU-accelerated batch mosaic tool for sensitive images",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Windows 10, Windows 11",
+            "offers": {
+              "@type": "AggregateOffer",
+              "lowPrice": "2980",
+              "highPrice": "25",
+              "priceCurrency": "JPY"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "AutoMosaic (General)",
+            "url": "https://nekzuk.com/automosaic.html",
+            "image": "https://nekzuk.com/assets/icons/app_general.png",
+            "description": "Automatic mosaic for faces, text, license plates, and comics",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Windows 10, Windows 11",
+            "offers": {
+              "@type": "AggregateOffer",
+              "lowPrice": "2980",
+              "highPrice": "25",
+              "priceCurrency": "JPY"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "AI Paint Cleaner",
+            "url": "https://nekzuk.com/ai-paint-cleaner.html",
+            "image": "https://nekzuk.com/assets/icons/app2.png",
+            "description": "All-in-one batch editing suite with AI inpainting",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Windows 10, Windows 11",
+            "offers": {
+              "@type": "AggregateOffer",
+              "lowPrice": "2000",
+              "highPrice": "20",
+              "priceCurrency": "JPY"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "AI Meta Cleaner",
+            "url": "https://nekzuk.com/ai-meta-cleaner.html",
+            "image": "https://nekzuk.com/assets/icons/app3.png",
+            "description": "Free metadata cleaner for AI-generated images",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Windows 10, Windows 11",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "JPY"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Frame Craft",
+            "url": "https://nekzuk.com/frame-craft.html",
+            "image": "https://nekzuk.com/assets/icons/app5.png",
+            "description": "Video frame extractor and animation converter",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Windows 10, Windows 11",
+            "offers": {
+              "@type": "AggregateOffer",
+              "lowPrice": "480",
+              "highPrice": "5",
+              "priceCurrency": "JPY"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Meta Converter",
+            "url": "https://nekzuk.com/meta-converter.html",
+            "image": "https://nekzuk.com/assets/icons/app4.png",
+            "description": "Image converter that preserves metadata",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Windows 10, Windows 11",
+            "offers": {
+              "@type": "AggregateOffer",
+              "lowPrice": "380",
+              "highPrice": "4",
+              "priceCurrency": "JPY"
+            }
+          }
+        }
+      ]
     }
     </script>
 </head>

@@ -217,7 +217,7 @@
   })();
   </script>
 
-    <!-- 構造化データ：SoftwareApplication -->
+    <!-- 構造化データ：SoftwareApplication (Enhanced) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -225,16 +225,30 @@
       "name": "Frame Craft",
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "Windows 10, Windows 11",
-      "description": "Extract frames from video files by frame index or time interval, and convert to GIF/WEBP animations.",
+      "description": "Extract frames from video files by frame index or time interval, and convert to GIF/WEBP animations. Perfect for creating animation references and extracting specific frames.",
+      "screenshot": "https://nekzuk.com/assets/Other/craft1_en.png",
+      "featureList": [
+        "High-precision frame extraction by index or time interval",
+        "Automatic duplicate frame removal",
+        "Automatic black bar detection and removal",
+        "Pixiv Ugoira format support",
+        "GIF and WEBP animation conversion",
+        "Batch processing for multiple videos",
+        "Multi-language interface (English, Japanese)"
+      ],
+      "softwareVersion": "1.20",
       "offers": {
-        "@type": "Offer",
-        "price": "5",
-        "priceCurrency": "USD",
+        "@type": "AggregateOffer",
+        "lowPrice": "480",
+        "highPrice": "5",
+        "priceCurrency": "JPY",
         "availability": "https://schema.org/InStock",
-        "url": "https://payhip.com/b/D0wG5",
-        "seller": {"@type": "Organization", "name": "nekzuk Software"}
+        "offers": [
+          {"@type": "Offer", "name": "BOOTH", "price": "480", "priceCurrency": "JPY", "url": "https://synekzuk.booth.pm/items/7295171", "seller": {"@type": "Organization", "name": "nekzuk Software"}},
+          {"@type": "Offer", "name": "Payhip", "price": "5", "priceCurrency": "USD", "url": "https://payhip.com/b/D0wG5", "seller": {"@type": "Organization", "name": "nekzuk Software"}}
+        ]
       },
-      "author": {"@type": "Organization", "name": "nekzuk Software"}
+      "author": {"@type": "Organization", "name": "nekzuk Software", "url": "https://nekzuk.com"}
     }
     </script>
 
