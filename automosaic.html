@@ -1,45 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>AutoMosaic (General) - nekzuk Software</title>
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="AutoMosaic is a batch auto-mosaic tool that detects faces, people, text, and license plates. GPU-accelerated, offline processing for privacy protection. ¥2,980 / $25">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nekzuk.com/automosaic.html?lang=en">
-  <meta property="og:title" content="AutoMosaic (General) - Batch Auto-Mosaic Tool">
-  <meta property="og:description" content="Automatically detects and anonymizes faces, text, and license plates. GPU-accelerated batch processing. Perfect for content creators and privacy protection.">
-  <meta property="og:image" content="https://nekzuk.com/assets/icons/app_general.png">
-  
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@Synekzuk_AI">
-  <meta name="twitter:title" content="AutoMosaic (General) - Batch Auto-Mosaic Tool">
-  <meta name="twitter:description" content="Automatically detects and anonymizes faces, text, and license plates. GPU-accelerated batch processing.">
-  <meta name="twitter:image" content="https://nekzuk.com/assets/icons/app_general.png">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>AutoMosaic – Batch Auto Mosaic/Blur/Fill for Images | nekzuk</title><link href="https://nekzuk.com/automosaic.html?lang=en" rel="canonical"/>
+<!-- SEO Meta Tags -->
+<meta content="AutoMosaic automatically detects targets in images and applies mosaic/blur/fill in batch. Face/person/text detection, GPU acceleration, offline processing. ¥2,980 / $25" name="description"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="https://nekzuk.com/automosaic.html?lang=en" property="og:url"/>
+<meta content="AutoMosaic – Batch Auto Mosaic/Blur/Fill Tool" property="og:title"/>
+<meta content="Automatically detect faces/people/text and apply mosaic/blur/fill in batch. GPU-accelerated offline processing for privacy protection." property="og:description"/>
+<meta content="https://nekzuk.com/assets/icons/app_general.png" property="og:image"/>
+<!-- Twitter -->
+<meta content="summary" name="twitter:card"/>
+<meta content="@Synekzuk_AI" name="twitter:site"/>
+<meta content="AutoMosaic – Batch Auto Mosaic/Blur/Fill Tool" name="twitter:title"/>
+<meta content="Automatically detect faces/people/text and apply mosaic/blur/fill in batch. GPU-accelerated offline processing for privacy protection." name="twitter:description"/>
+<meta content="https://nekzuk.com/assets/icons/app_general.png" name="twitter:image"/>
+<!-- Language SEO -->
+<!-- Canonical tag (dynamic) -->
 
-  <!-- Language SEO -->
-  <!-- Canonical tag (dynamic) -->
-    <script>
-    (function() {
-        const params = new URLSearchParams(window.location.search);
-        const lang = params.get('lang') || 'en';
-        const canonical = document.createElement('link');
-        canonical.rel = 'canonical';
-        canonical.href = window.location.origin + window.location.pathname + '?lang=' + lang;
-        document.head.appendChild(canonical);
-    })();
-    </script>
-    
-  <link rel="alternate" hreflang="en" href="https://nekzuk.com/automosaic.html?lang=en">
-  <link rel="alternate" hreflang="ja" href="https://nekzuk.com/automosaic.html?lang=ja">
-  <link rel="alternate" hreflang="x-default" href="https://nekzuk.com/automosaic.html?lang=en">
+<script>/* NEKZUK_META_LANG */
+(function() {
+  try {
+    const params = new URLSearchParams(location.search);
+    const lang = (params.get('lang') === 'ja') ? 'ja' : 'en';
+    const META = {"en": {"title": "AutoMosaic – Batch Auto Mosaic/Blur/Fill for Images | nekzuk", "desc": "AutoMosaic automatically detects targets in images and applies mosaic/blur/fill in batch. Face/person/text detection, GPU acceleration, offline processing. ¥2,980 / $25", "og_title": "AutoMosaic – Batch Auto Mosaic/Blur/Fill Tool", "og_desc": "Automatically detect faces/people/text and apply mosaic/blur/fill in batch. GPU-accelerated offline processing for privacy protection."}, "ja": {"title": "AutoMosaic – 画像の自動モザイク/ぼかしを一括処理 | nekzuk", "desc": "AutoMosaicは顔・人物・文字などを自動検出し、モザイク/ぼかし/塗りつぶしを一括適用するWindowsソフト。GPU対応・オフライン処理。¥2,980", "og_title": "AutoMosaic – 自動モザイク/ぼかし一括ツール", "og_desc": "顔・人物・文字などを自動検出し、モザイク/ぼかし/塗りつぶしを一括適用。GPU対応のオフライン処理で匿名化に最適。"}};
+    const m = META[lang] || META.en;
+    if (m && m.title) document.title = m.title;
 
-  <style>
+    const set = (selector, attr, value) => {
+      const el = document.querySelector(selector);
+      if (el && value) el.setAttribute(attr, value);
+    };
+
+    set('meta[name="description"]', 'content', m.desc);
+    set('meta[property="og:title"]', 'content', m.og_title);
+    set('meta[property="og:description"]', 'content', m.og_desc);
+    set('meta[name="twitter:title"]', 'content', m.og_title);
+    set('meta[name="twitter:description"]', 'content', m.og_desc);
+
+    const url = location.origin + location.pathname + '?lang=' + lang;
+    set('meta[property="og:url"]', 'content', url);
+    set('meta[name="twitter:url"]', 'content', url);
+
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', url);
+  } catch (e) {}
+})();</script><link href="https://nekzuk.com/automosaic.html?lang=en" hreflang="en" rel="alternate"/>
+<link href="https://nekzuk.com/automosaic.html?lang=ja" hreflang="ja" rel="alternate"/>
+<link href="https://nekzuk.com/automosaic.html?lang=en" hreflang="x-default" rel="alternate"/>
+<style>
     :root {
       --bg:#0f172a; --card:#1e293b; --card2:#172136; --border:#334155;
       --text:#f1f5f9; --muted:#94a3b8; --muted2:#64748b;
@@ -244,8 +257,7 @@ ul.lang-ja, ol.lang-ja {display:none}
 }
 
 </style>
-
-  <script>
+<script>
   (function () {
     function getParamLang() {
       const params = new URLSearchParams(location.search);
@@ -308,9 +320,8 @@ ul.lang-ja, ol.lang-ja {display:none}
     document.addEventListener('DOMContentLoaded', () => { applyLang(); });
   })();
   </script>
-
-    <!-- 構造化データ：SoftwareApplication (Enhanced) -->
-    <script type="application/ld+json">
+<!-- 構造化データ：SoftwareApplication (Enhanced) -->
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
@@ -352,407 +363,354 @@ ul.lang-ja, ol.lang-ja {display:none}
       "author": {"@type": "Organization", "name": "nekzuk Software", "url": "https://nekzuk.com"}
     }
     </script>
-
-</head>
-
+<meta content="https://nekzuk.com/automosaic.html?lang=en" name="twitter:url"/></head>
 <body>
-  <div class="container">
-    <div class="top">
-      <a data-role="back" href="index.html">← <span class="lang-en">Back</span><span class="lang-ja">戻る</span></a>
-      <div class="small">
-        <a href="?lang=en" onclick="setSiteLang('en')">English</a> /
+<div class="container">
+<div class="top">
+<a data-role="back" href="index.html">← <span class="lang-en">Back</span><span class="lang-ja">戻る</span></a>
+<div class="small">
+<a href="?lang=en" onclick="setSiteLang('en')">English</a> /
         <a href="?lang=ja" onclick="setSiteLang('ja')">日本語</a>
-      </div>
-    </div>
-
-    <section class="hero">
-  <div class="pills">
-    <span class="pill">Windows</span>
-    <span class="pill">Desktop</span>
-    <span class="pill">Batch Processing</span>
-    <span class="pill">Offline Processing</span>
-  </div>
-
-  <div class="heroTop">
-    <div class="heroTitle">
-      <img class="appIcon" src="assets/icons/app_general.png" alt="AutoMosaic icon" />
-      <div>
-        <div class="titleRow lang-en">
-          <h1 class="title">AutoMosaic (General)</h1>
-          <p class="subtitle">A desktop tool that automatically detects targets in images and applies mosaic / blur / fill in batch. Great for anonymization and comic/illustration editing workflows.</p>
-        </div>
-        <div class="titleRow lang-ja">
-          <h1 class="title">AutoMosaic (通常版)</h1>
-          <p class="subtitle">画像内の対象(顔・人物・文字など)を自動検出し、モザイク/ぼかし/塗りつぶしを一括適用するWindows向けデスクトップソフトです。 匿名化や漫画・イラスト編集の作業効率を上げます。</p>
-        </div>
-
-        <div class="price">
-          <span class="lang-ja">¥2,980</span>
-          <span class="lang-en">$25</span>
-        </div>
-
-        <div class="btns">
-          <a class="btn primary lang-ja" href="https://synekzuk.booth.pm/items/7075141" target="_blank" rel="noopener">BOOTH</a>
-          <a class="btn primary lang-en" href="https://payhip.com/b/mit2r" target="_blank" rel="noopener">Payhip</a>
-          <a class="btn sub" href="#trial"><span class="lang-en">Trial Version</span><span class="lang-ja">体験版</span></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="kpi heroFacts">
-    <div class="box">
-      <div class="kv">
-        <div class="label lang-en">Targets</div>
-        <div class="label lang-ja">対象</div>
-        <div class="value lang-en">People / Face / Eyes / Text / Plates</div>
-        <div class="value lang-ja">人・顔・目・文字・ナンバープレート</div>
-      </div>
-    </div>
-
-    <div class="box">
-  <div class="kv">
-    <div class="label lang-en">For</div>
-    <div class="label lang-ja">用途</div>
-    <div class="value lang-en">Anonymize &amp; Edit</div>
-    <div class="value lang-ja">匿名化・編集</div>
-  </div>
 </div>
-
-    <div class="box">
-  <div class="kv">
-    <div class="label lang-en">Processing</div>
-    <div class="label lang-ja">処理</div>
-    <div class="value lang-en">Batch</div>
-    <div class="value lang-ja">一括処理</div>
-  </div>
 </div>
-
-    <div class="box">
-  <div class="kv">
-    <div class="label lang-en">Language UI</div>
-    <div class="label lang-ja">UI言語</div>
-    <div class="value">JP / EN (+ more)</div>
-  </div>
+<section class="hero">
+<div class="pills">
+<span class="pill">Windows</span>
+<span class="pill">Desktop</span>
+<span class="pill">Batch Processing</span>
+<span class="pill">Offline Processing</span>
 </div>
-</section>
+<div class="heroTop">
+<div class="heroTitle">
+<img alt="AutoMosaic icon" class="appIcon" src="assets/icons/app_general.png"/>
+<div>
+<div class="titleRow"><h1 class="title"><span class="lang-en">AutoMosaic (General)</span><span class="lang-ja">AutoMosaic (通常版)</span></h1><p class="subtitle"><span class="lang-en">A desktop tool that automatically detects targets in images and applies mosaic / blur / fill in batch. Great for anonymization and comic/illustration editing workflows.</span><span class="lang-ja">画像内の対象(顔・人物・文字など)を自動検出し、モザイク/ぼかし/塗りつぶしを一括適用するWindows向けデスクトップソフトです。 匿名化や漫画・イラスト編集の作業効率を上げます。</span></p></div>
 
-    <div class="grid">
-      <section class="section">
-        <h2>
-          <span class="lang-en">Overview</span>
-          <span class="lang-ja">概要</span>
-        </h2>
-        <p class="lang-en">
+<div class="price">
+<span class="lang-ja">¥2,980</span>
+<span class="lang-en">$25</span>
+</div>
+<div class="btns">
+<a class="btn primary lang-ja" href="https://synekzuk.booth.pm/items/7075141" rel="noopener" target="_blank">BOOTH</a>
+<a class="btn primary lang-en" href="https://payhip.com/b/mit2r" rel="noopener" target="_blank">Payhip</a>
+<a class="btn sub" href="#trial"><span class="lang-en">Trial Version</span><span class="lang-ja">体験版</span></a>
+</div>
+</div>
+</div>
+</div>
+<div class="kpi heroFacts">
+<div class="box">
+<div class="kv">
+<div class="label lang-en">Targets</div>
+<div class="label lang-ja">対象</div>
+<div class="value lang-en">People / Face / Eyes / Text / Plates</div>
+<div class="value lang-ja">人・顔・目・文字・ナンバープレート</div>
+</div>
+</div>
+<div class="box">
+<div class="kv">
+<div class="label lang-en">For</div>
+<div class="label lang-ja">用途</div>
+<div class="value lang-en">Anonymize &amp; Edit</div>
+<div class="value lang-ja">匿名化・編集</div>
+</div>
+</div>
+<div class="box">
+<div class="kv">
+<div class="label lang-en">Processing</div>
+<div class="label lang-ja">処理</div>
+<div class="value lang-en">Batch</div>
+<div class="value lang-ja">一括処理</div>
+</div>
+</div>
+<div class="box">
+<div class="kv">
+<div class="label lang-en">Language UI</div>
+<div class="label lang-ja">UI言語</div>
+<div class="value">JP / EN (+ more)</div>
+</div>
+</div>
+</div></section>
+<div class="grid">
+<section class="section">
+<h2>
+<span class="lang-en">Overview</span>
+<span class="lang-ja">概要</span>
+</h2>
+<p class="lang-en">
           AutoMosaic automatically detects selected targets in images and applies mosaic/blur/fill to many images in a batch.
           It works fully offline (no network), so you can process private images safely.
         </p>
-        <p class="lang-ja">
+<p class="lang-ja">
           AutoMosaicは画像内の対象を自動検出し、複数の画像に連続でモザイク/ぼかし/塗りつぶしを一括適用するツールです。
           完全にネットワークを介さず動作するため、プライバシー面も安心です。
         </p>
-        <div class="hr"></div>
-        <ul class="lang-en">
-          <li><b>Offline</b>: no uploads, no cloud processing</li>
-          <li><b>Batch</b>: process many images at once</li>
-          <li><b>Presets</b>: pick what to detect and the output style</li>
-          <li><b>Supported formats</b>: JPG / PNG / BMP / GIF / WEBP</li>
-          <li><b>Processing speed</b>: 1-3 sec (GPU) / 5-8 sec (CPU)</li>
-        </ul>
-        <ul class="lang-ja">
-          <li><b>オフライン動作</b>:アップロード不要、クラウド処理なし</li>
-          <li><b>バッチ処理</b>:複数画像をまとめて処理</li>
-          <li><b>プリセット</b>:検出対象と出力スタイルを選ぶだけ</li>
-          <li><b>対応画像形式</b>:JPG / PNG / BMP / GIF / WEBP</li>
-          <li><b>処理速度</b>:1-3秒(GPU) / 5-8秒(CPU)</li>
-        </ul>
-      </section>
+<div class="hr"></div>
+<ul class="lang-en">
+<li><b>Offline</b>: no uploads, no cloud processing</li>
+<li><b>Batch</b>: process many images at once</li>
+<li><b>Presets</b>: pick what to detect and the output style</li>
+<li><b>Supported formats</b>: JPG / PNG / BMP / GIF / WEBP</li>
+<li><b>Processing speed</b>: 1-3 sec (GPU) / 5-8 sec (CPU)</li>
+</ul>
+<ul class="lang-ja">
+<li><b>オフライン動作</b>:アップロード不要、クラウド処理なし</li>
+<li><b>バッチ処理</b>:複数画像をまとめて処理</li>
+<li><b>プリセット</b>:検出対象と出力スタイルを選ぶだけ</li>
+<li><b>対応画像形式</b>:JPG / PNG / BMP / GIF / WEBP</li>
+<li><b>処理速度</b>:1-3秒(GPU) / 5-8秒(CPU)</li>
+</ul>
+</section>
+<section class="section">
+<h2>
+<span class="lang-en">Detectable targets / Outputs</span>
+<span class="lang-ja">検出対象 / 出力</span>
+</h2>
+<div class="twoCol">
+<div>
+<h3><span class="lang-en">Detectable targets</span><span class="lang-ja">検出対象</span></h3>
 
-      <section class="section">
-        <h2>
-          <span class="lang-en">Detectable targets / Outputs</span>
-          <span class="lang-ja">検出対象 / 出力</span>
-        </h2>
+<ul class="lang-en">
+<li>People</li>
+<li>Face (male / female / full)</li>
+<li>Eyes</li>
+<li>Text (horizontal / vertical)</li>
+<li>Comic speech bubbles</li>
+<li>Comic sound effects</li>
+<li>License plates</li>
+</ul>
+<ul class="lang-ja">
+<li>人</li>
+<li>顔(男性/女性/全体)</li>
+<li>目</li>
+<li>文字(縦書き/横書き)</li>
+<li>漫画の吹き出し</li>
+<li>漫画の効果音</li>
+<li>ナンバープレート</li>
+</ul>
+</div>
+<div>
+<h3><span class="lang-en">Outputs</span><span class="lang-ja">出力</span></h3>
 
-        <div class="twoCol">
-          <div>
-            <h3 class="lang-en">Detectable targets</h3>
-            <h3 class="lang-ja">検出対象</h3>
-            <ul class="lang-en">
-              <li>People</li>
-              <li>Face (male / female / full)</li>
-              <li>Eyes</li>
-              <li>Text (horizontal / vertical)</li>
-              <li>Comic speech bubbles</li>
-              <li>Comic sound effects</li>
-              <li>License plates</li>
-            </ul>
-            <ul class="lang-ja">
-              <li>人</li>
-              <li>顔(男性/女性/全体)</li>
-              <li>目</li>
-              <li>文字(縦書き/横書き)</li>
-              <li>漫画の吹き出し</li>
-              <li>漫画の効果音</li>
-              <li>ナンバープレート</li>
-            </ul>
-          </div>
+<ul class="lang-en">
+<li>Mosaic</li>
+<li>Blur</li>
+<li>Fill (black / white)</li>
+</ul>
+<ul class="lang-ja">
+<li>モザイク</li>
+<li>ぼかし</li>
+<li>塗りつぶし(黒/白)</li>
+</ul>
+<div class="hr"></div>
+<h3><span class="lang-en">UI languages</span><span class="lang-ja">UI言語</span></h3>
 
-          <div>
-            <h3 class="lang-en">Outputs</h3>
-            <h3 class="lang-ja">出力</h3>
-            <ul class="lang-en">
-              <li>Mosaic</li>
-              <li>Blur</li>
-              <li>Fill (black / white)</li>
-            </ul>
-            <ul class="lang-ja">
-              <li>モザイク</li>
-              <li>ぼかし</li>
-              <li>塗りつぶし(黒/白)</li>
-            </ul>
-
-            <div class="hr"></div>
-
-            <h3 class="lang-en">UI languages</h3>
-            <h3 class="lang-ja">UI言語</h3>
-            <ul class="lang-en">
-              <li>Japanese</li>
-              <li>English</li>
-              <li>Chinese (Simplified / Traditional)</li>
-              <li>Korean</li>
-            </ul>
-            <ul class="lang-ja">
-              <li>日本語</li>
-              <li>英語</li>
-              <li>中国語(簡体/繁体)</li>
-              <li>韓国語</li>
-            </ul>
-          </div>
-        </div>
-
-        <p class="note lang-en" style="margin-top:1rem;font-size:0.85rem;">* Sensitive-part detection is available in the <a href="automosaic-r18.html">R18 version</a>.</p>
-        <p class="note lang-ja" style="margin-top:1rem;font-size:0.85rem;">* センシティブ部位の検出は<a href="automosaic-r18.html">R18版</a>をご利用ください。</p>
-
-      </section>
-
-      <section class="section">
-        <h2>
-          <span class="lang-en">How to use</span>
-          <span class="lang-ja">基本的な使い方</span>
-        </h2>
-        <ol class="lang-en">
-          <li>Select a preset</li>
-          <li>Select an input folder</li>
-          <li>Adjust settings (e.g., mosaic size)</li>
-          <li>Click <b>Run</b> to start processing</li>
-        </ol>
-        <ol class="lang-ja">
-          <li>プリセットを選択</li>
-          <li>入力フォルダを選択</li>
-          <li>モザイクサイズなどの設定を調整</li>
-          <li>「処理実行」ボタンをクリック</li>
-        </ol>
-      </section>
-
-    <section class="section">
-      <h2><span class="lang-en">System requirements</span><span class="lang-ja">動作環境</span></h2>
-      <ul>
-        <li><span class="lang-en">OS: Windows 10/11 (64-bit)</span><span class="lang-ja">OS: Windows 10/11(64bit)</span></li>
-        <li><span class="lang-en">Memory: 8GB+ recommended</span><span class="lang-ja">メモリ: 8GB以上推奨</span></li>
-        <li><span class="lang-en">Storage (available/free space): 8GB or more</span><span class="lang-ja">ストレージ（空き容量）: 8GB以上</span></li>
-        <li><span class="lang-en">GPU: NVIDIA GPU / VRAM: 4GB+ recommended</span><span class="lang-ja">GPU: NVIDIA製GPU / VRAM: 4GB以上推奨</span></li>
-        <li><span class="lang-en">It can run without a GPU, but processing will be slower.</span><span class="lang-ja">GPUなしでも動作しますが、処理速度は低下します。</span></li>
-      </ul>
-    </section>
-
-      <section class="section">
-        <h2><span class="lang-en">Before / After</span><span class="lang-ja">処理例(Before / After)</span></h2>
-    <p class="muted lang-en">Real examples of AutoMosaic output. Click to open full size.</p>
-    <p class="muted lang-ja">AutoMosaicの処理例です(クリックで拡大表示)。</p>
-
-    <div class="beforeAfterGrid">
-      <div class="beforeAfterLeft">
-        <a class="shot" href="assets/automosaic/sample_people.png" target="_blank" rel="noopener">
-          <img src="assets/automosaic/sample_people.png" alt="Business people face blur example">
-          <div class="cap"><span class="lang-en">Business photo: face anonymization</span><span class="lang-ja">ビジネス写真: 顔の匿名化</span></div>
-        </a>
-
-        <a class="shot" href="assets/automosaic/sample_plate.png" target="_blank" rel="noopener">
-          <img src="assets/automosaic/sample_plate.png" alt="License plate detection example">
-          <div class="cap"><span class="lang-en">Street photo: license plate detection</span><span class="lang-ja">街の風景: ナンバープレート検出</span></div>
-        </a>
-      </div>
-
-      <a class="shot" href="assets/automosaic/sample_family.png" target="_blank" rel="noopener">
-        <img src="assets/automosaic/sample_family.png" alt="Family photo face anonymization example">
-        <div class="cap"><span class="lang-en">Family photo: face anonymization</span><span class="lang-ja">家族写真: 顔の匿名化</span></div>
-      </a>
-    </div>
-
-    <p class="note" style="margin-top:1.5rem">
-      <span class="lang-en">💡 <b>Tip:</b> After automatic processing, you can use <a href="ai-paint-cleaner.html">AI Paint Cleaner</a> for fine adjustments (remove extra mosaic, add missing mosaic, inpaint, etc.).</span>
-      <span class="lang-ja">💡 <b>Tip:</b> 自動処理後、<a href="ai-paint-cleaner.html">AI Paint Cleaner</a>で微調整(余計なモザイクの除去、モザイク追加、インペイント等)が可能です。</span>
-    </p>
-
-  </section>
-
-  <section class="section" id="ui">
-    <h2><span class="lang-en">UI screenshot</span><span class="lang-ja">UIスクリーンショット</span></h2>
-
-    <a class="shot lang-en" href="assets/automosaic/ui_en.png" target="_blank" rel="noopener">
-      <img src="assets/automosaic/ui_en.png" alt="AutoMosaic UI (English)">
-      <div class="cap">UI (English)</div>
-    </a>
-
-    <a class="shot lang-ja" href="assets/automosaic/ui_ja.png" target="_blank" rel="noopener">
-      <img src="assets/automosaic/ui_ja.png" alt="AutoMosaic UI (Japanese)">
-      <div class="cap">UI(日本語)</div>
-    </a>
-  </section>
-
-  <section class="section" id="video">
-    <h2><span class="lang-en">Video demo</span><span class="lang-ja">紹介動画</span></h2>
-    <p class="muted" style="margin-bottom:1rem">
-      <span class="lang-en">1-minute overview covering the interface and basic operations (steps 1-4).</span>
-      <span class="lang-ja">1分で概要と基本操作（ステップ1-4）を説明します</span>
-    </p>
-
-    <div class="lang-en">
-      <a class="yt" href="https://www.youtube.com/watch?v=vR8GQbJrgR4" target="_blank" rel="noopener">
-        <img class="ytThumb" src="https://i.ytimg.com/vi/vR8GQbJrgR4/maxresdefault.jpg" alt="AutoMosaic English demo thumbnail">
-        <div class="ytOverlay">
-          <div class="ytPlay"></div>
-        </div>
-      </a>
-    </div>
-
-    <div class="lang-ja">
-      <a class="yt" href="https://www.youtube.com/watch?v=dS3HW6hs5Y4" target="_blank" rel="noopener">
-        <img class="ytThumb" src="https://i.ytimg.com/vi/dS3HW6hs5Y4/maxresdefault.jpg" alt="AutoMosaic Japanese demo thumbnail">
-        <div class="ytOverlay">
-          <div class="ytPlay"></div>
-        </div>
-      </a>
-    </div>
-  </section>
-
+<ul class="lang-en">
+<li>Japanese</li>
+<li>English</li>
+<li>Chinese (Simplified / Traditional)</li>
+<li>Korean</li>
+</ul>
+<ul class="lang-ja">
+<li>日本語</li>
+<li>英語</li>
+<li>中国語(簡体/繁体)</li>
+<li>韓国語</li>
+</ul>
+</div>
+</div>
+<p class="note lang-en" style="margin-top:1rem;font-size:0.85rem;">* Sensitive-part detection is available in the <a href="automosaic-r18.html">R18 version</a>.</p>
+<p class="note lang-ja" style="margin-top:1rem;font-size:0.85rem;">* センシティブ部位の検出は<a href="automosaic-r18.html">R18版</a>をご利用ください。</p>
+</section>
+<section class="section">
+<h2>
+<span class="lang-en">How to use</span>
+<span class="lang-ja">基本的な使い方</span>
+</h2>
+<ol class="lang-en">
+<li>Select a preset</li>
+<li>Select an input folder</li>
+<li>Adjust settings (e.g., mosaic size)</li>
+<li>Click <b>Run</b> to start processing</li>
+</ol>
+<ol class="lang-ja">
+<li>プリセットを選択</li>
+<li>入力フォルダを選択</li>
+<li>モザイクサイズなどの設定を調整</li>
+<li>「処理実行」ボタンをクリック</li>
+</ol>
+</section>
+<section class="section">
+<h2><span class="lang-en">System requirements</span><span class="lang-ja">動作環境</span></h2>
+<ul>
+<li><span class="lang-en">OS: Windows 10/11 (64-bit)</span><span class="lang-ja">OS: Windows 10/11(64bit)</span></li>
+<li><span class="lang-en">Memory: 8GB+ recommended</span><span class="lang-ja">メモリ: 8GB以上推奨</span></li>
+<li><span class="lang-en">Storage (available/free space): 8GB or more</span><span class="lang-ja">ストレージ（空き容量）: 8GB以上</span></li>
+<li><span class="lang-en">GPU: NVIDIA GPU / VRAM: 4GB+ recommended</span><span class="lang-ja">GPU: NVIDIA製GPU / VRAM: 4GB以上推奨</span></li>
+<li><span class="lang-en">It can run without a GPU, but processing will be slower.</span><span class="lang-ja">GPUなしでも動作しますが、処理速度は低下します。</span></li>
+</ul>
+</section>
+<section class="section">
+<h2><span class="lang-en">Before / After</span><span class="lang-ja">処理例(Before / After)</span></h2>
+<p class="muted lang-en">Real examples of AutoMosaic output. Click to open full size.</p>
+<p class="muted lang-ja">AutoMosaicの処理例です(クリックで拡大表示)。</p>
+<div class="beforeAfterGrid">
+<div class="beforeAfterLeft">
+<a class="shot" href="assets/automosaic/sample_people.png" rel="noopener" target="_blank">
+<img alt="Business people face blur example" src="assets/automosaic/sample_people.png"/>
+<div class="cap"><span class="lang-en">Business photo: face anonymization</span><span class="lang-ja">ビジネス写真: 顔の匿名化</span></div>
+</a>
+<a class="shot" href="assets/automosaic/sample_plate.png" rel="noopener" target="_blank">
+<img alt="License plate detection example" src="assets/automosaic/sample_plate.png"/>
+<div class="cap"><span class="lang-en">Street photo: license plate detection</span><span class="lang-ja">街の風景: ナンバープレート検出</span></div>
+</a>
+</div>
+<a class="shot" href="assets/automosaic/sample_family.png" rel="noopener" target="_blank">
+<img alt="Family photo face anonymization example" src="assets/automosaic/sample_family.png"/>
+<div class="cap"><span class="lang-en">Family photo: face anonymization</span><span class="lang-ja">家族写真: 顔の匿名化</span></div>
+</a>
+</div>
+<p class="note" style="margin-top:1.5rem">
+<span class="lang-en">💡 <b>Tip:</b> After automatic processing, you can use <a href="ai-paint-cleaner.html">AI Paint Cleaner</a> for fine adjustments (remove extra mosaic, add missing mosaic, inpaint, etc.).</span>
+<span class="lang-ja">💡 <b>Tip:</b> 自動処理後、<a href="ai-paint-cleaner.html">AI Paint Cleaner</a>で微調整(余計なモザイクの除去、モザイク追加、インペイント等)が可能です。</span>
+</p>
+</section>
+<section class="section" id="ui">
+<h2><span class="lang-en">UI screenshot</span><span class="lang-ja">UIスクリーンショット</span></h2>
+<a class="shot lang-en" href="assets/automosaic/ui_en.png" rel="noopener" target="_blank">
+<img alt="AutoMosaic UI (English)" src="assets/automosaic/ui_en.png"/>
+<div class="cap">UI (English)</div>
+</a>
+<a class="shot lang-ja" href="assets/automosaic/ui_ja.png" rel="noopener" target="_blank">
+<img alt="AutoMosaic UI (Japanese)" src="assets/automosaic/ui_ja.png"/>
+<div class="cap">UI(日本語)</div>
+</a>
+</section>
+<section class="section" id="video">
+<h2><span class="lang-en">Video demo</span><span class="lang-ja">紹介動画</span></h2>
+<p class="muted" style="margin-bottom:1rem">
+<span class="lang-en">1-minute overview covering the interface and basic operations (steps 1-4).</span>
+<span class="lang-ja">1分で概要と基本操作（ステップ1-4）を説明します</span>
+</p>
+<div class="lang-en">
+<a class="yt" href="https://www.youtube.com/watch?v=vR8GQbJrgR4" rel="noopener" target="_blank">
+<img alt="AutoMosaic English demo thumbnail" class="ytThumb" src="https://i.ytimg.com/vi/vR8GQbJrgR4/maxresdefault.jpg"/>
+<div class="ytOverlay">
+<div class="ytPlay"></div>
+</div>
+</a>
+</div>
+<div class="lang-ja">
+<a class="yt" href="https://www.youtube.com/watch?v=dS3HW6hs5Y4" rel="noopener" target="_blank">
+<img alt="AutoMosaic Japanese demo thumbnail" class="ytThumb" src="https://i.ytimg.com/vi/dS3HW6hs5Y4/maxresdefault.jpg"/>
+<div class="ytOverlay">
+<div class="ytPlay"></div>
+</div>
+</a>
+</div>
+</section>
 <section class="section" id="trial">
-      <h2><span class="lang-en">Trial Version</span><span class="lang-ja">体験版</span></h2>
-      
-      <p class="lang-en"><b>Windows (No GPU / GPU: RTX 50XX series or earlier)</b></p>
-      <p class="lang-ja"><b>Windows (GPUなし / GPU: RTX 50XXシリーズ以前)</b></p>
-      <p class="lang-en"><a class="btn download" href="https://drive.google.com/file/d/1wi35eLTgcNxW8hpu_qL_bHJlB2lhOxsw/view?usp=drive_link" target="_blank" rel="noopener">Download from Google Drive</a></p>
-      <p class="lang-ja"><a class="btn download" href="https://drive.google.com/file/d/1RgszzanxW8jHVOoISSjQja31IxVkVhic/view?usp=drive_link" target="_blank" rel="noopener">Download from Google Drive</a></p>
-      <div class="hr"></div>
+<h2><span class="lang-en">Trial Version</span><span class="lang-ja">体験版</span></h2>
+<p class="lang-en"><b>Windows (No GPU / GPU: RTX 50XX series or earlier)</b></p>
+<p class="lang-ja"><b>Windows (GPUなし / GPU: RTX 50XXシリーズ以前)</b></p>
+<p class="lang-en"><a class="btn download" href="https://drive.google.com/file/d/1wi35eLTgcNxW8hpu_qL_bHJlB2lhOxsw/view?usp=drive_link" rel="noopener" target="_blank">Download from Google Drive</a></p>
+<p class="lang-ja"><a class="btn download" href="https://drive.google.com/file/d/1RgszzanxW8jHVOoISSjQja31IxVkVhic/view?usp=drive_link" rel="noopener" target="_blank">Download from Google Drive</a></p>
+<div class="hr"></div>
+<p class="lang-en"><b>Windows (GPU: RTX 50XX series or later)</b></p>
+<p class="lang-ja"><b>Windows (GPU: RTX 50XXシリーズ以降)</b></p>
+<p class="lang-en"><a class="btn download" href="https://drive.google.com/file/d/17D-cdbT-1yATGme7W2pCdCEQH1RjNGHr/view?usp=drive_link" rel="noopener" target="_blank">Download from Google Drive</a></p>
+<p class="lang-ja"><a class="btn download" href="https://drive.google.com/file/d/1r29vEboWGw1WygKhCy9rUDJq_TuPZeTU/view?usp=drive_link" rel="noopener" target="_blank">Download from Google Drive</a></p>
+<div class="hr"></div>
+<h3><span class="lang-en">What's included</span><span class="lang-ja">体験版の内容</span></h3>
 
-      <p class="lang-en"><b>Windows (GPU: RTX 50XX series or later)</b></p>
-      <p class="lang-ja"><b>Windows (GPU: RTX 50XXシリーズ以降)</b></p>
-      <p class="lang-en"><a class="btn download" href="https://drive.google.com/file/d/17D-cdbT-1yATGme7W2pCdCEQH1RjNGHr/view?usp=drive_link" target="_blank" rel="noopener">Download from Google Drive</a></p>
-      <p class="lang-ja"><a class="btn download" href="https://drive.google.com/file/d/1r29vEboWGw1WygKhCy9rUDJq_TuPZeTU/view?usp=drive_link" target="_blank" rel="noopener">Download from Google Drive</a></p>
-      <div class="hr"></div>
-      
-      <h3 class="lang-en">What's included</h3>
-      <h3 class="lang-ja">体験版の内容</h3>
-      <ul class="lang-en">
-        <li>✓ All features available</li>
-        <li>✓ Process up to 5 images per batch</li>
-        <li>✗ Watermark added to processed images</li>
-      </ul>
-      <ul class="lang-ja">
-        <li>✓ 全機能を試せます</li>
-        <li>✓ 最大5枚まで処理可能</li>
-        <li>✗ ウォーターマーク付き</li>
-      </ul>
-    </section>
+<ul class="lang-en">
+<li>✓ All features available</li>
+<li>✓ Process up to 5 images per batch</li>
+<li>✗ Watermark added to processed images</li>
+</ul>
+<ul class="lang-ja">
+<li>✓ 全機能を試せます</li>
+<li>✓ 最大5枚まで処理可能</li>
+<li>✗ ウォーターマーク付き</li>
+</ul>
+</section>
+<section class="section">
+<h2><span class="lang-en">Updates &amp; Changelog</span><span class="lang-ja">更新情報・変更履歴</span></h2>
+<div class="kpi" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1rem">
+<div class="box">
+<div class="kv">
+<div class="label lang-en">Current Version</div>
+<div class="label lang-ja">最新バージョン</div>
+<div class="value">v3.10</div>
+</div>
+</div>
+<div class="box">
+<div class="kv">
+<div class="label lang-en">Release Date</div>
+<div class="label lang-ja">リリース日</div>
+<div class="value">2026-01-01</div>
+</div>
+</div>
+</div>
+<div class="hr"></div>
+<h3><span class="lang-en">Latest Updates</span><span class="lang-ja">最新の更新内容</span></h3>
 
-    <section class="section">
-      <h2><span class="lang-en">Updates & Changelog</span><span class="lang-ja">更新情報・変更履歴</span></h2>
-      
-      <div class="kpi" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1rem">
-        <div class="box">
-          <div class="kv">
-            <div class="label lang-en">Current Version</div>
-            <div class="label lang-ja">最新バージョン</div>
-            <div class="value">v3.10</div>
-          </div>
-        </div>
-        <div class="box">
-          <div class="kv">
-            <div class="label lang-en">Release Date</div>
-            <div class="label lang-ja">リリース日</div>
-            <div class="value">2026-01-01</div>
-          </div>
-        </div>
-      </div>
+<ul class="lang-en">
+<li>Performance improvements</li>
+<li>Bug fixes</li>
+<li>User feature requests</li>
+</ul>
+<ul class="lang-ja">
+<li>処理速度改善</li>
+<li>バグ修正</li>
+<li>要望対応</li>
+</ul>
+<p style="margin-top:1rem">
+<a href="https://note.com/nekzuk/n/ne47a6b685ff4" rel="noopener" target="_blank">
+<span class="lang-en">→ Read detailed release notes</span>
+<span class="lang-ja">→ 詳細な更新内容を読む</span>
+</a>
+</p>
+</section>
+<section class="section">
+<h2>
+<span class="lang-en">License &amp; Usage Notes</span>
+<span class="lang-ja">ライセンス・ご利用上の注意</span>
+</h2>
+<h3><span class="lang-en">License</span><span class="lang-ja">ライセンス</span></h3>
 
-      <div class="hr"></div>
+<ul class="lang-en">
+<li><b>Personal use (including commercial)</b>: Included with purchase</li>
+<li><b>Corporate/enterprise use</b>: Please contact separately for licensing</li>
+</ul>
+<ul class="lang-ja">
+<li><b>個人での商用利用</b>: 本製品の購入で利用可能</li>
+<li><b>企業での商用利用</b>: 別途ご相談ください</li>
+</ul>
+<div class="hr"></div>
+<h3><span class="lang-en">Important Notes</span><span class="lang-ja">重要な注意事項</span></h3>
 
-      <h3 class="lang-en">Latest Updates</h3>
-      <h3 class="lang-ja">最新の更新内容</h3>
-      <ul class="lang-en">
-        <li>Performance improvements</li>
-        <li>Bug fixes</li>
-        <li>User feature requests</li>
-      </ul>
-      <ul class="lang-ja">
-        <li>処理速度改善</li>
-        <li>バグ修正</li>
-        <li>要望対応</li>
-      </ul>
-
-      <p style="margin-top:1rem">
-        <a href="https://note.com/nekzuk/n/ne47a6b685ff4" target="_blank" rel="noopener">
-          <span class="lang-en">→ Read detailed release notes</span>
-          <span class="lang-ja">→ 詳細な更新内容を読む</span>
-        </a>
-      </p>
-    </section>
-
-      <section class="section">
-        <h2>
-          <span class="lang-en">License & Usage Notes</span>
-          <span class="lang-ja">ライセンス・ご利用上の注意</span>
-        </h2>
-
-        <h3 class="lang-en">License</h3>
-        <h3 class="lang-ja">ライセンス</h3>
-        <ul class="lang-en">
-          <li><b>Personal use (including commercial)</b>: Included with purchase</li>
-          <li><b>Corporate/enterprise use</b>: Please contact separately for licensing</li>
-        </ul>
-        <ul class="lang-ja">
-          <li><b>個人での商用利用</b>: 本製品の購入で利用可能</li>
-          <li><b>企業での商用利用</b>: 別途ご相談ください</li>
-        </ul>
-
-        <div class="hr"></div>
-
-        <h3 class="lang-en">Important Notes</h3>
-        <h3 class="lang-ja">重要な注意事項</h3>
-        <ul class="lang-en">
-          <li>Processing may take time depending on your PC/GPU specifications</li>
-          <li>Please review all outputs after processing to ensure accuracy</li>
-          <li>Detection accuracy may vary depending on image quality and conditions</li>
-        </ul>
-        <ul class="lang-ja">
-          <li>処理にはお使いのPC/GPUの性能に応じて時間がかかる場合があります</li>
-          <li>処理結果は必ずご確認ください</li>
-          <li>検出精度は画像の品質や条件により変動する場合があります</li>
-        </ul>
-      </section>
-
-  </div>
-  
-   <div class="footer">
-      <div class="lang-en" style="margin-bottom:.75rem">
-        <b>Support:</b> <a href="https://x.com/Synekzuk_AI" target="_blank" rel="noopener">Twitter/X</a> | <a href="https://payhip.com/nekzuk/contact" target="_blank" rel="noopener">Payhip message</a>
-      </div>
-      <div class="lang-ja" style="margin-bottom:.75rem">
-        <b>サポート:</b> <a href="https://x.com/Synekzuk_AI" target="_blank" rel="noopener">Twitter/X</a> | <a href="https://accounts.booth.pm/conversations/49131834/messages" target="_blank" rel="noopener">BOOTHメッセージ</a>
-      </div>
+<ul class="lang-en">
+<li>Processing may take time depending on your PC/GPU specifications</li>
+<li>Please review all outputs after processing to ensure accuracy</li>
+<li>Detection accuracy may vary depending on image quality and conditions</li>
+</ul>
+<ul class="lang-ja">
+<li>処理にはお使いのPC/GPUの性能に応じて時間がかかる場合があります</li>
+<li>処理結果は必ずご確認ください</li>
+<li>検出精度は画像の品質や条件により変動する場合があります</li>
+</ul>
+</section>
+</div>
+<div class="footer">
+<div class="lang-en" style="margin-bottom:.75rem">
+<b>Support:</b> <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank">Twitter/X</a> | <a href="https://payhip.com/nekzuk/contact" rel="noopener" target="_blank">Payhip message</a>
+</div>
+<div class="lang-ja" style="margin-bottom:.75rem">
+<b>サポート:</b> <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank">Twitter/X</a> | <a href="https://accounts.booth.pm/conversations/49131834/messages" rel="noopener" target="_blank">BOOTHメッセージ</a>
+</div>
       © nekzuk Software
     </div>
-  </div>
+</div>
 </body>
 </html>

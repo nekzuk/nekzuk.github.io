@@ -1,45 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Meta Converter - nekzuk Software</title>
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Meta Converter preserves metadata while converting images to PNG/JPEG/WEBP. Compatible with WebUI PNGinfo and Eagle software. ¥380 / $4">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nekzuk.com/meta-converter.html?lang=en">
-  <meta property="og:title" content="Meta Converter - Image Format Converter with Metadata Preservation">
-  <meta property="og:description" content="Convert images while preserving AI generation metadata. Compatible with WebUI, ComfyUI, NovelAI, and Eagle software.">
-  <meta property="og:image" content="https://nekzuk.com/assets/icons/app4.png">
-  
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@Synekzuk_AI">
-  <meta name="twitter:title" content="Meta Converter - Image Format Converter with Metadata Preservation">
-  <meta name="twitter:description" content="Convert images while preserving AI generation metadata. Compatible with WebUI, ComfyUI, NovelAI, and Eagle software.">
-  <meta name="twitter:image" content="https://nekzuk.com/assets/icons/app4.png">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Meta Converter – Convert PNG/JPEG/WEBP with Metadata | nekzuk</title><link href="https://nekzuk.com/meta-converter.html?lang=en" rel="canonical"/>
+<!-- SEO Meta Tags -->
+<meta content="Meta Converter converts images to PNG/JPEG/WEBP while preserving AI metadata. Works with A1111 WebUI PNGinfo, ComfyUI, NovelAI, and Eagle. ¥380 / $4" name="description"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="https://nekzuk.com/meta-converter.html?lang=en" property="og:url"/>
+<meta content="Meta Converter – Image Converter with Metadata Preservation" property="og:title"/>
+<meta content="Convert images while preserving AI generation metadata. Compatible with A1111 WebUI, ComfyUI, NovelAI, and Eagle software." property="og:description"/>
+<meta content="https://nekzuk.com/assets/icons/app4.png" property="og:image"/>
+<!-- Twitter -->
+<meta content="summary" name="twitter:card"/>
+<meta content="@Synekzuk_AI" name="twitter:site"/>
+<meta content="Meta Converter – Image Converter with Metadata Preservation" name="twitter:title"/>
+<meta content="Convert images while preserving AI generation metadata. Compatible with A1111 WebUI, ComfyUI, NovelAI, and Eagle software." name="twitter:description"/>
+<meta content="https://nekzuk.com/assets/icons/app4.png" name="twitter:image"/>
+<!-- Language SEO -->
+<!-- Canonical tag (dynamic) -->
 
-  <!-- Language SEO -->
-  <!-- Canonical tag (dynamic) -->
-    <script>
-    (function() {
-        const params = new URLSearchParams(window.location.search);
-        const lang = params.get('lang') || 'en';
-        const canonical = document.createElement('link');
-        canonical.rel = 'canonical';
-        canonical.href = window.location.origin + window.location.pathname + '?lang=' + lang;
-        document.head.appendChild(canonical);
-    })();
-    </script>
-    
-  <link rel="alternate" hreflang="en" href="https://nekzuk.com/meta-converter.html?lang=en">
-  <link rel="alternate" hreflang="ja" href="https://nekzuk.com/meta-converter.html?lang=ja">
-  <link rel="alternate" hreflang="x-default" href="https://nekzuk.com/meta-converter.html?lang=en">
+<script>/* NEKZUK_META_LANG */
+(function() {
+  try {
+    const params = new URLSearchParams(location.search);
+    const lang = (params.get('lang') === 'ja') ? 'ja' : 'en';
+    const META = {"en": {"title": "Meta Converter – Convert PNG/JPEG/WEBP with Metadata | nekzuk", "desc": "Meta Converter converts images to PNG/JPEG/WEBP while preserving AI metadata. Works with A1111 WebUI PNGinfo, ComfyUI, NovelAI, and Eagle. ¥380 / $4", "og_title": "Meta Converter – Image Converter with Metadata Preservation", "og_desc": "Convert images while preserving AI generation metadata. Compatible with A1111 WebUI, ComfyUI, NovelAI, and Eagle software."}, "ja": {"title": "Meta Converter – メタデータ保持の画像変換（PNG/JPEG/WEBP）| nekzuk", "desc": "Meta Converterはメタデータを保持したまま画像をPNG/JPEG/WEBPへ一括変換。WebUI PNGinfo取り込み対応、ComfyUI/NovelAI/Eagle対応。¥380", "og_title": "Meta Converter – メタデータ保持の画像変換", "og_desc": "生成AIのメタデータを保持したままPNG/JPEG/WEBPへ変換。WebUI/ComfyUI/NovelAI/Eagleに対応。"}};
+    const m = META[lang] || META.en;
+    if (m && m.title) document.title = m.title;
 
-  <style>
+    const set = (selector, attr, value) => {
+      const el = document.querySelector(selector);
+      if (el && value) el.setAttribute(attr, value);
+    };
+
+    set('meta[name="description"]', 'content', m.desc);
+    set('meta[property="og:title"]', 'content', m.og_title);
+    set('meta[property="og:description"]', 'content', m.og_desc);
+    set('meta[name="twitter:title"]', 'content', m.og_title);
+    set('meta[name="twitter:description"]', 'content', m.og_desc);
+
+    const url = location.origin + location.pathname + '?lang=' + lang;
+    set('meta[property="og:url"]', 'content', url);
+    set('meta[name="twitter:url"]', 'content', url);
+
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', url);
+  } catch (e) {}
+})();</script><link href="https://nekzuk.com/meta-converter.html?lang=en" hreflang="en" rel="alternate"/>
+<link href="https://nekzuk.com/meta-converter.html?lang=ja" hreflang="ja" rel="alternate"/>
+<link href="https://nekzuk.com/meta-converter.html?lang=en" hreflang="x-default" rel="alternate"/>
+<style>
     :root {
       --bg:#0f172a; --card:#1e293b; --card2:#172136; --border:#334155;
       --text:#f1f5f9; --muted:#94a3b8; --muted2:#64748b;
@@ -244,8 +257,7 @@ ul.lang-ja, ol.lang-ja {display:none}
 }
 
 </style>
-
-  <script>
+<script>
   (function () {
     function getParamLang() {
       const params = new URLSearchParams(location.search);
@@ -308,9 +320,8 @@ ul.lang-ja, ol.lang-ja {display:none}
     document.addEventListener('DOMContentLoaded', () => { applyLang(); });
   })();
   </script>
-
-    <!-- 構造化データ：SoftwareApplication (Enhanced) -->
-    <script type="application/ld+json">
+<!-- 構造化データ：SoftwareApplication (Enhanced) -->
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
@@ -343,296 +354,251 @@ ul.lang-ja, ol.lang-ja {display:none}
       "author": {"@type": "Organization", "name": "nekzuk Software", "url": "https://nekzuk.com"}
     }
     </script>
-
-</head>
-
+<meta content="https://nekzuk.com/meta-converter.html?lang=en" name="twitter:url"/></head>
 <body>
-  <div class="container">
-    <div class="top">
-      <a data-role="back" href="index.html">← <span class="lang-en">Back</span><span class="lang-ja">戻る</span></a>
-      <div class="small">
-        <a href="?lang=en" onclick="setSiteLang('en')">English</a> /
+<div class="container">
+<div class="top">
+<a data-role="back" href="index.html">← <span class="lang-en">Back</span><span class="lang-ja">戻る</span></a>
+<div class="small">
+<a href="?lang=en" onclick="setSiteLang('en')">English</a> /
         <a href="?lang=ja" onclick="setSiteLang('ja')">日本語</a>
-      </div>
-    </div>
-
-    <section class="hero">
-  <div class="pills">
-    <span class="pill">Windows</span>
-    <span class="pill">Desktop</span>
-    <span class="pill">Batch Processing</span>
-    <span class="pill">Metadata Preservation</span>
-  </div>
-
-  <div class="heroTop">
-    <div class="heroTitle">
-      <img class="appIcon" src="assets/icons/app4.png" alt="Meta Converter icon" />
-      <div>
-        <div class="titleRow lang-en">
-          <h1 class="title">Meta Converter</h1>
-          <p class="subtitle">Convert images to PNG/JPEG/WEBP while preserving metadata. Perfect for AI-generated images with support for WebUI, ComfyUI, NovelAI, and Eagle software.</p>
-        </div>
-        <div class="titleRow lang-ja">
-          <h1 class="title">Meta Converter</h1>
-          <p class="subtitle">メタデータを保持したまま、複数画像をPNG/JPEG/WEBPに変換できるツールです。WebUIのPNGinfoに取り込みが可能な状態で変換・圧縮でき、Eagleソフトウェアにも対応しています。</p>
-        </div>
-
-        <div class="price">
-          <span class="lang-ja">¥380</span>
-          <span class="lang-en">$4</span>
-        </div>
-
-        <div class="btns">
-          <a class="btn primary lang-ja" href="https://synekzuk.booth.pm/items/6911255" target="_blank" rel="noopener">BOOTH</a>
-          <a class="btn primary lang-en" href="https://payhip.com/b/4Gwc2" target="_blank" rel="noopener">Payhip</a>
-          <a class="btn sub" href="#trial"><span class="lang-en">Trial Version</span><span class="lang-ja">体験版</span></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="kpi heroFacts">
-    <div class="box">
-      <div class="kv">
-        <div class="label lang-en">Conversion</div>
-        <div class="label lang-ja">変換</div>
-        <div class="value">PNG / JPEG / WEBP</div>
-      </div>
-    </div>
-
-    <div class="box">
-  <div class="kv">
-    <div class="label lang-en">For</div>
-    <div class="label lang-ja">用途</div>
-    <div class="value lang-en">AI Image Management</div>
-    <div class="value lang-ja">AI画像管理</div>
-  </div>
 </div>
-
-    <div class="box">
-  <div class="kv">
-    <div class="label lang-en">Processing</div>
-    <div class="label lang-ja">処理</div>
-    <div class="value lang-en">Batch</div>
-    <div class="value lang-ja">一括処理</div>
-  </div>
 </div>
-
-    <div class="box">
-  <div class="kv">
-    <div class="label lang-en">Language UI</div>
-    <div class="label lang-ja">UI言語</div>
-    <div class="value">JP / EN</div>
-  </div>
+<section class="hero">
+<div class="pills">
+<span class="pill">Windows</span>
+<span class="pill">Desktop</span>
+<span class="pill">Batch Processing</span>
+<span class="pill">Metadata Preservation</span>
 </div>
-</section>
+<div class="heroTop">
+<div class="heroTitle">
+<img alt="Meta Converter icon" class="appIcon" src="assets/icons/app4.png"/>
+<div>
+<div class="titleRow"><h1 class="title"><span class="lang-en">Meta Converter</span><span class="lang-ja">Meta Converter</span></h1><p class="subtitle"><span class="lang-en">Convert images to PNG/JPEG/WEBP while preserving metadata. Perfect for AI-generated images with support for WebUI, ComfyUI, NovelAI, and Eagle software.</span><span class="lang-ja">メタデータを保持したまま、複数画像をPNG/JPEG/WEBPに変換できるツールです。WebUIのPNGinfoに取り込みが可能な状態で変換・圧縮でき、Eagleソフトウェアにも対応しています。</span></p></div>
 
-    <div class="grid">
-      <section class="section">
-        <h2>
-          <span class="lang-en">Overview</span>
-          <span class="lang-ja">概要</span>
-        </h2>
-        <p class="lang-en">
+<div class="price">
+<span class="lang-ja">¥380</span>
+<span class="lang-en">$4</span>
+</div>
+<div class="btns">
+<a class="btn primary lang-ja" href="https://synekzuk.booth.pm/items/6911255" rel="noopener" target="_blank">BOOTH</a>
+<a class="btn primary lang-en" href="https://payhip.com/b/4Gwc2" rel="noopener" target="_blank">Payhip</a>
+<a class="btn sub" href="#trial"><span class="lang-en">Trial Version</span><span class="lang-ja">体験版</span></a>
+</div>
+</div>
+</div>
+</div>
+<div class="kpi heroFacts">
+<div class="box">
+<div class="kv">
+<div class="label lang-en">Conversion</div>
+<div class="label lang-ja">変換</div>
+<div class="value">PNG / JPEG / WEBP</div>
+</div>
+</div>
+<div class="box">
+<div class="kv">
+<div class="label lang-en">For</div>
+<div class="label lang-ja">用途</div>
+<div class="value lang-en">AI Image Management</div>
+<div class="value lang-ja">AI画像管理</div>
+</div>
+</div>
+<div class="box">
+<div class="kv">
+<div class="label lang-en">Processing</div>
+<div class="label lang-ja">処理</div>
+<div class="value lang-en">Batch</div>
+<div class="value lang-ja">一括処理</div>
+</div>
+</div>
+<div class="box">
+<div class="kv">
+<div class="label lang-en">Language UI</div>
+<div class="label lang-ja">UI言語</div>
+<div class="value">JP / EN</div>
+</div>
+</div>
+</div></section>
+<div class="grid">
+<section class="section">
+<h2>
+<span class="lang-en">Overview</span>
+<span class="lang-ja">概要</span>
+</h2>
+<p class="lang-en">
           Meta Converter is specifically designed for AI-generated images, allowing you to convert and compress images while maintaining all generation metadata. The converted images can be directly imported into WebUI's PNGinfo, and it also supports Eagle software library conversion.
         </p>
-        <p class="lang-ja">
+<p class="lang-ja">
           主にAI画像の変換を想定し、メタデータを維持したまま画像の変換・圧縮が可能です。変換した画像はWebUIに取り込み可能で、Eagle（https://jp.eagle.cool）のライブラリの変換にも対応しています。
         </p>
-        <div class="hr"></div>
-        <ul class="lang-en">
-          <li><b>Batch conversion</b>: Convert multiple images while preserving metadata</li>
-          <li><b>Format support</b>: PNG/WEBP → JPEG/PNG/WEBP conversion</li>
-          <li><b>File size reduction</b>: PNG → JPEG reduces file size to 1/10 with significant compression</li>
-          <li><b>WebUI compatible</b>: Direct import to WebUI after conversion</li>
-          <li><b>Quality adjustment</b>: Fine-tune quality and image resizing options</li>
-          <li><b>Eagle support</b>: Eagle library conversion support</li>
-          <li><b>CLI support</b>: Command-line interface support</li>
-        </ul>
-        <ul class="lang-ja">
-          <li><b>一括変換</b>: メタデータを維持したまま、複数画像の変換（PNG/WEBP→JPEG/PNG/WEBP）</li>
-          <li><b>大幅圧縮</b>: PNG→JPEGはサイズ1/10と画像データの大幅なサイズ削減が可能</li>
-          <li><b>WebUI対応</b>: 変換した画像はWebUIに取り込み可能</li>
-          <li><b>品質調整</b>: 品質の調整や画像サイズの縮小等の微修正も可能</li>
-          <li><b>Eagle対応</b>: Eagle（https://jp.eagle.cool）のライブラリの変換に対応</li>
-          <li><b>CLI対応</b>: コマンドラインでの起動にも対応</li>
-        </ul>
-      </section>
+<div class="hr"></div>
+<ul class="lang-en">
+<li><b>Batch conversion</b>: Convert multiple images while preserving metadata</li>
+<li><b>Format support</b>: PNG/WEBP → JPEG/PNG/WEBP conversion</li>
+<li><b>File size reduction</b>: PNG → JPEG reduces file size to 1/10 with significant compression</li>
+<li><b>WebUI compatible</b>: Direct import to WebUI after conversion</li>
+<li><b>Quality adjustment</b>: Fine-tune quality and image resizing options</li>
+<li><b>Eagle support</b>: Eagle library conversion support</li>
+<li><b>CLI support</b>: Command-line interface support</li>
+</ul>
+<ul class="lang-ja">
+<li><b>一括変換</b>: メタデータを維持したまま、複数画像の変換（PNG/WEBP→JPEG/PNG/WEBP）</li>
+<li><b>大幅圧縮</b>: PNG→JPEGはサイズ1/10と画像データの大幅なサイズ削減が可能</li>
+<li><b>WebUI対応</b>: 変換した画像はWebUIに取り込み可能</li>
+<li><b>品質調整</b>: 品質の調整や画像サイズの縮小等の微修正も可能</li>
+<li><b>Eagle対応</b>: Eagle（https://jp.eagle.cool）のライブラリの変換に対応</li>
+<li><b>CLI対応</b>: コマンドラインでの起動にも対応</li>
+</ul>
+</section>
+<section class="section">
+<h2>
+<span class="lang-en">Supported AI Formats</span>
+<span class="lang-ja">対応AIデータ</span>
+</h2>
+<h3><span class="lang-en">A1111 WebUI</span><span class="lang-ja">A1111 WebUI</span></h3>
 
-      <section class="section">
-        <h2>
-          <span class="lang-en">Supported AI Formats</span>
-          <span class="lang-ja">対応AIデータ</span>
-        </h2>
+<p class="lang-en">PNGinfo readable after conversion</p>
+<p class="lang-ja">変換後もPNGInfo読み込み可</p>
+<div class="hr"></div>
+<h3><span class="lang-en">ComfyUI</span><span class="lang-ja">ComfyUI</span></h3>
 
-        <h3 class="lang-en">A1111 WebUI</h3>
-        <h3 class="lang-ja">A1111 WebUI</h3>
-        <p class="lang-en">PNGinfo readable after conversion</p>
-        <p class="lang-ja">変換後もPNGInfo読み込み可</p>
+<p class="lang-en">For JPG conversion, workflow is output as a separate JSON file</p>
+<p class="lang-ja">JPGへの変換ではワークフローはjsonファイルとして別出力</p>
+<div class="hr"></div>
+<h3><span class="lang-en">NovelAI</span><span class="lang-ja">NovelAI</span></h3>
 
-        <div class="hr"></div>
-
-        <h3 class="lang-en">ComfyUI</h3>
-        <h3 class="lang-ja">ComfyUI</h3>
-        <p class="lang-en">For JPG conversion, workflow is output as a separate JSON file</p>
-        <p class="lang-ja">JPGへの変換ではワークフローはjsonファイルとして別出力</p>
-
-        <div class="hr"></div>
-
-        <h3 class="lang-en">NovelAI</h3>
-        <h3 class="lang-ja">NovelAI</h3>
-        <p class="lang-en">For JPG/WEBP conversion, metadata is preserved in a separate mini-file</p>
-        <p class="lang-ja">JPG,WEBPへの変換ではメタデータ保持用のミニファイルを別出力</p>
-
-      </section>
-
-      <section class="section">
-        <h2>
-          <span class="lang-en">How to use</span>
-          <span class="lang-ja">基本的な使い方</span>
-        </h2>
-        <ol class="lang-en">
-          <li>Select a folder containing images or drag and drop image files/folders</li>
-          <li>Adjust conversion format, quality settings, etc.</li>
-          <li>Click "Start Conversion" button</li>
-        </ol>
-        <ol class="lang-ja">
-          <li>画像の入ったフォルダを選択 or 画像ファイルやフォルダをドラッグアンドドロップ</li>
-          <li>変換形式/変換品質などを変更</li>
-          <li>「変換開始」ボタンをクリック</li>
-        </ol>
-      </section>
-
-    <section class="section">
-      <h2><span class="lang-en">System requirements</span><span class="lang-ja">動作環境</span></h2>
-      <ul>
-        <li><span class="lang-en">OS: Windows 10/11 (64-bit)</span><span class="lang-ja">OS: Windows 10/11 64bit</span></li>
-        <li><span class="lang-en">Memory: 8 GB or more recommended</span><span class="lang-ja">メモリ: 8GB 以上推奨</span></li>
-        <li><span class="lang-en">Storage: 30MB+ free space require</span><span class="lang-ja">ストレージ: 30MB以上の空き容量</span></li>
-      </ul>
-      <p class="note lang-en">
+<p class="lang-en">For JPG/WEBP conversion, metadata is preserved in a separate mini-file</p>
+<p class="lang-ja">JPG,WEBPへの変換ではメタデータ保持用のミニファイルを別出力</p>
+</section>
+<section class="section">
+<h2>
+<span class="lang-en">How to use</span>
+<span class="lang-ja">基本的な使い方</span>
+</h2>
+<ol class="lang-en">
+<li>Select a folder containing images or drag and drop image files/folders</li>
+<li>Adjust conversion format, quality settings, etc.</li>
+<li>Click "Start Conversion" button</li>
+</ol>
+<ol class="lang-ja">
+<li>画像の入ったフォルダを選択 or 画像ファイルやフォルダをドラッグアンドドロップ</li>
+<li>変換形式/変換品質などを変更</li>
+<li>「変換開始」ボタンをクリック</li>
+</ol>
+</section>
+<section class="section">
+<h2><span class="lang-en">System requirements</span><span class="lang-ja">動作環境</span></h2>
+<ul>
+<li><span class="lang-en">OS: Windows 10/11 (64-bit)</span><span class="lang-ja">OS: Windows 10/11 64bit</span></li>
+<li><span class="lang-en">Memory: 8 GB or more recommended</span><span class="lang-ja">メモリ: 8GB 以上推奨</span></li>
+<li><span class="lang-en">Storage: 30MB+ free space require</span><span class="lang-ja">ストレージ: 30MB以上の空き容量</span></li>
+</ul>
+<p class="note lang-en">
         No GPU required. Runs on CPU for universal compatibility.
       </p>
-      <p class="note lang-ja">
+<p class="note lang-ja">
         GPU不要。CPUで動作し、幅広い環境で使用可能です。
       </p>
-    </section>
-
-      <section class="section" id="ui">
-        <h2><span class="lang-en">UI screenshot</span><span class="lang-ja">UIスクリーンショット</span></h2>
-
-        <a class="shot lang-en" href="assets/Other/meta1_en.png" target="_blank" rel="noopener">
-          <img src="assets/Other/meta1_en.png" alt="Meta Converter UI (English)">
-          <div class="cap">UI (English)</div>
-        </a>
-
-        <a class="shot lang-ja" href="assets/Other/meta1.png" target="_blank" rel="noopener">
-          <img src="assets/Other/meta1.png" alt="Meta Converter UI (Japanese)">
-          <div class="cap">UI(日本語)</div>
-        </a>
-  </section>
-
-
+</section>
+<section class="section" id="ui">
+<h2><span class="lang-en">UI screenshot</span><span class="lang-ja">UIスクリーンショット</span></h2>
+<a class="shot lang-en" href="assets/Other/meta1_en.png" rel="noopener" target="_blank">
+<img alt="Meta Converter UI (English)" src="assets/Other/meta1_en.png"/>
+<div class="cap">UI (English)</div>
+</a>
+<a class="shot lang-ja" href="assets/Other/meta1.png" rel="noopener" target="_blank">
+<img alt="Meta Converter UI (Japanese)" src="assets/Other/meta1.png"/>
+<div class="cap">UI(日本語)</div>
+</a>
+</section>
 <section class="section" id="trial">
-      <h2><span class="lang-en">Trial Version</span><span class="lang-ja">体験版</span></h2>
-      
-      <p><a class="btn download" href="https://drive.google.com/file/d/1o77ckEDZpA6JMj6XHUdAzszhXNmi2meE/view?usp=drive_link" target="_blank" rel="noopener">Download from Google Drive</a></p>
-      
-      <div class="hr"></div>
-      
-      <h3 class="lang-en">Trial Version Limitations</h3>
-      <h3 class="lang-ja">体験版の制限事項</h3>
-      <ul class="lang-en">
-        <li>Maximum 8 images per batch</li>
-      </ul>
-      <ul class="lang-ja">
-        <li>1回の処理可能枚数: 8枚まで</li>
-      </ul>
-    </section>
+<h2><span class="lang-en">Trial Version</span><span class="lang-ja">体験版</span></h2>
+<p><a class="btn download" href="https://drive.google.com/file/d/1o77ckEDZpA6JMj6XHUdAzszhXNmi2meE/view?usp=drive_link" rel="noopener" target="_blank">Download from Google Drive</a></p>
+<div class="hr"></div>
+<h3><span class="lang-en">Trial Version Limitations</span><span class="lang-ja">体験版の制限事項</span></h3>
 
-    <section class="section">
-      <h2><span class="lang-en">Updates & Changelog</span><span class="lang-ja">更新情報・変更履歴</span></h2>
-      
-      <div class="kpi" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1rem">
-        <div class="box">
-          <div class="kv">
-            <div class="label lang-en">Current Version</div>
-            <div class="label lang-ja">最新バージョン</div>
-            <div class="value">v3.00</div>
-          </div>
-        </div>
-        <div class="box">
-          <div class="kv">
-            <div class="label lang-en">Release Date</div>
-            <div class="label lang-ja">リリース日</div>
-            <div class="value">2025-11-07</div>
-          </div>
-        </div>
-      </div>
+<ul class="lang-en">
+<li>Maximum 8 images per batch</li>
+</ul>
+<ul class="lang-ja">
+<li>1回の処理可能枚数: 8枚まで</li>
+</ul>
+</section>
+<section class="section">
+<h2><span class="lang-en">Updates &amp; Changelog</span><span class="lang-ja">更新情報・変更履歴</span></h2>
+<div class="kpi" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1rem">
+<div class="box">
+<div class="kv">
+<div class="label lang-en">Current Version</div>
+<div class="label lang-ja">最新バージョン</div>
+<div class="value">v3.00</div>
+</div>
+</div>
+<div class="box">
+<div class="kv">
+<div class="label lang-en">Release Date</div>
+<div class="label lang-ja">リリース日</div>
+<div class="value">2025-11-07</div>
+</div>
+</div>
+</div>
+<div class="hr"></div>
+<h3><span class="lang-en">Latest Updates</span><span class="lang-ja">最新の更新内容</span></h3>
 
-      <div class="hr"></div>
+<ul class="lang-en">
+<li>NovelAI support</li>
+</ul>
+<ul class="lang-ja">
+<li>NovelAI対応</li>
+</ul>
+<p style="margin-top:1rem">
+<a href="https://note.com/nekzuk/n/na7837cdb4a7b" rel="noopener" target="_blank">
+<span class="lang-en">→ Read detailed release notes</span>
+<span class="lang-ja">→ 詳細な更新内容を読む</span>
+</a>
+</p>
+</section>
+<section class="section">
+<h2>
+<span class="lang-en">License &amp; Usage Notes</span>
+<span class="lang-ja">ライセンス・ご利用上の注意</span>
+</h2>
+<h3><span class="lang-en">License</span><span class="lang-ja">ライセンス</span></h3>
 
-      <h3 class="lang-en">Latest Updates</h3>
-      <h3 class="lang-ja">最新の更新内容</h3>
-      <ul class="lang-en">
-        <li>NovelAI support</li>
-      </ul>
-      <ul class="lang-ja">
-        <li>NovelAI対応</li>
-      </ul>
+<ul class="lang-en">
+<li><b>Personal use (including commercial)</b>: Included with purchase</li>
+<li><b>Corporate/enterprise use</b>: Please contact separately for licensing</li>
+</ul>
+<ul class="lang-ja">
+<li><b>個人での商用利用</b>: 本製品の購入で問題ありません</li>
+<li><b>企業での商用利用</b>: 別途ご相談ください</li>
+</ul>
+<div class="hr"></div>
+<h3><span class="lang-en">Important Notes</span><span class="lang-ja">注意事項</span></h3>
 
-      <p style="margin-top:1rem">
-        <a href="https://note.com/nekzuk/n/na7837cdb4a7b" target="_blank" rel="noopener">
-          <span class="lang-en">→ Read detailed release notes</span>
-          <span class="lang-ja">→ 詳細な更新内容を読む</span>
-        </a>
-      </p>
-    </section>
-
-      <section class="section">
-        <h2>
-          <span class="lang-en">License & Usage Notes</span>
-          <span class="lang-ja">ライセンス・ご利用上の注意</span>
-        </h2>
-
-        <h3 class="lang-en">License</h3>
-        <h3 class="lang-ja">ライセンス</h3>
-        <ul class="lang-en">
-          <li><b>Personal use (including commercial)</b>: Included with purchase</li>
-          <li><b>Corporate/enterprise use</b>: Please contact separately for licensing</li>
-        </ul>
-        <ul class="lang-ja">
-          <li><b>個人での商用利用</b>: 本製品の購入で問題ありません</li>
-          <li><b>企業での商用利用</b>: 別途ご相談ください</li>
-        </ul>
-
-        <div class="hr"></div>
-
-        <h3 class="lang-en">Important Notes</h3>
-        <h3 class="lang-ja">注意事項</h3>
-        <ul class="lang-en">
-          <li>Processing may take time</li>
-          <li>Trial version has limitations</li>
-          <li>Please verify all processing results</li>
-        </ul>
-        <ul class="lang-ja">
-          <li>処理には時間がかかる場合があります</li>
-          <li>体験版には制限事項があります</li>
-          <li>処理結果は必ずご確認ください</li>
-        </ul>
-      </section>
-
-  </div>
-
-   <div class="footer">
-      <div class="lang-en" style="margin-bottom:.75rem">
-        <b>Support:</b> <a href="https://x.com/Synekzuk_AI" target="_blank" rel="noopener">Twitter/X</a> | <a href="https://payhip.com/nekzuk/contact" target="_blank" rel="noopener">Payhip message</a>
-      </div>
-      <div class="lang-ja" style="margin-bottom:.75rem">
-        <b>サポート:</b> <a href="https://x.com/Synekzuk_AI" target="_blank" rel="noopener">Twitter/X</a> | <a href="https://accounts.booth.pm/conversations/49131834/messages" target="_blank" rel="noopener">BOOTHメッセージ</a>
-      </div>
+<ul class="lang-en">
+<li>Processing may take time</li>
+<li>Trial version has limitations</li>
+<li>Please verify all processing results</li>
+</ul>
+<ul class="lang-ja">
+<li>処理には時間がかかる場合があります</li>
+<li>体験版には制限事項があります</li>
+<li>処理結果は必ずご確認ください</li>
+</ul>
+</section>
+</div>
+<div class="footer">
+<div class="lang-en" style="margin-bottom:.75rem">
+<b>Support:</b> <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank">Twitter/X</a> | <a href="https://payhip.com/nekzuk/contact" rel="noopener" target="_blank">Payhip message</a>
+</div>
+<div class="lang-ja" style="margin-bottom:.75rem">
+<b>サポート:</b> <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank">Twitter/X</a> | <a href="https://accounts.booth.pm/conversations/49131834/messages" rel="noopener" target="_blank">BOOTHメッセージ</a>
+</div>
       © nekzuk Software
     </div>
-  </div>
+</div>
 </body>
 </html>

@@ -1,45 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>AI Meta Cleaner - nekzuk Software</title>
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="AI Meta Cleaner - Free tool to remove metadata and AI generation info from images. Supports PNG, JPG, WEBP, GIF, TIFF.">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nekzuk.com/ai-meta-cleaner.html?lang=en">
-  <meta property="og:title" content="AI Meta Cleaner - Free Metadata Removal Tool">
-  <meta property="og:description" content="Remove metadata and AI generation info from images. Free tool supporting PNG, JPG, WEBP, GIF, TIFF.">
-  <meta property="og:image" content="https://nekzuk.com/assets/icons/app3.png">
-  
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@Synekzuk_AI">
-  <meta name="twitter:title" content="AI Meta Cleaner - Free Metadata Removal Tool">
-  <meta name="twitter:description" content="Remove metadata and AI generation info from images. Free tool supporting PNG, JPG, WEBP, GIF, TIFF.">
-  <meta name="twitter:image" content="https://nekzuk.com/assets/icons/app3.png">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>AI Meta Cleaner – Remove Metadata &amp; AI Info (Free) | nekzuk</title><link href="https://nekzuk.com/ai-meta-cleaner.html?lang=en" rel="canonical"/>
+<!-- SEO Meta Tags -->
+<meta content="AI Meta Cleaner is a free tool to remove metadata and embedded AI generation info from images. Supports PNG, JPG, WEBP, GIF, and TIFF." name="description"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="https://nekzuk.com/ai-meta-cleaner.html?lang=en" property="og:url"/>
+<meta content="AI Meta Cleaner – Free Metadata Removal Tool" property="og:title"/>
+<meta content="Remove metadata and embedded AI generation info from images. Free tool supporting PNG, JPG, WEBP, GIF, and TIFF." property="og:description"/>
+<meta content="https://nekzuk.com/assets/icons/app3.png" property="og:image"/>
+<!-- Twitter -->
+<meta content="summary" name="twitter:card"/>
+<meta content="@Synekzuk_AI" name="twitter:site"/>
+<meta content="AI Meta Cleaner – Free Metadata Removal Tool" name="twitter:title"/>
+<meta content="Remove metadata and embedded AI generation info from images. Free tool supporting PNG, JPG, WEBP, GIF, and TIFF." name="twitter:description"/>
+<meta content="https://nekzuk.com/assets/icons/app3.png" name="twitter:image"/>
+<!-- Language SEO -->
+<!-- Canonical tag (dynamic) -->
 
-  <!-- Language SEO -->
-  <!-- Canonical tag (dynamic) -->
-    <script>
-    (function() {
-        const params = new URLSearchParams(window.location.search);
-        const lang = params.get('lang') || 'en';
-        const canonical = document.createElement('link');
-        canonical.rel = 'canonical';
-        canonical.href = window.location.origin + window.location.pathname + '?lang=' + lang;
-        document.head.appendChild(canonical);
-    })();
-    </script>
-    
-  <link rel="alternate" hreflang="en" href="https://nekzuk.com/ai-meta-cleaner.html?lang=en">
-  <link rel="alternate" hreflang="ja" href="https://nekzuk.com/ai-meta-cleaner.html?lang=ja">
-  <link rel="alternate" hreflang="x-default" href="https://nekzuk.com/ai-meta-cleaner.html?lang=en">
+<script>/* NEKZUK_META_LANG */
+(function() {
+  try {
+    const params = new URLSearchParams(location.search);
+    const lang = (params.get('lang') === 'ja') ? 'ja' : 'en';
+    const META = {"en": {"title": "AI Meta Cleaner – Remove Metadata & AI Info (Free) | nekzuk", "desc": "AI Meta Cleaner is a free tool to remove metadata and embedded AI generation info from images. Supports PNG, JPG, WEBP, GIF, and TIFF.", "og_title": "AI Meta Cleaner – Free Metadata Removal Tool", "og_desc": "Remove metadata and embedded AI generation info from images. Free tool supporting PNG, JPG, WEBP, GIF, and TIFF."}, "ja": {"title": "AI Meta Cleaner – 画像メタデータ/AI情報を削除（無料）| nekzuk", "desc": "AI Meta Cleanerは画像のメタデータや生成AIの埋め込み情報をまとめて削除できる無料ツール。PNG/JPG/WEBP/GIF/TIFF対応。", "og_title": "AI Meta Cleaner – メタデータ削除ツール（無料）", "og_desc": "画像のメタデータと生成AIの埋め込み情報を削除。PNG/JPG/WEBP/GIF/TIFF対応の無料ツール。"}};
+    const m = META[lang] || META.en;
+    if (m && m.title) document.title = m.title;
 
-  <style>
+    const set = (selector, attr, value) => {
+      const el = document.querySelector(selector);
+      if (el && value) el.setAttribute(attr, value);
+    };
+
+    set('meta[name="description"]', 'content', m.desc);
+    set('meta[property="og:title"]', 'content', m.og_title);
+    set('meta[property="og:description"]', 'content', m.og_desc);
+    set('meta[name="twitter:title"]', 'content', m.og_title);
+    set('meta[name="twitter:description"]', 'content', m.og_desc);
+
+    const url = location.origin + location.pathname + '?lang=' + lang;
+    set('meta[property="og:url"]', 'content', url);
+    set('meta[name="twitter:url"]', 'content', url);
+
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', url);
+  } catch (e) {}
+})();</script><link href="https://nekzuk.com/ai-meta-cleaner.html?lang=en" hreflang="en" rel="alternate"/>
+<link href="https://nekzuk.com/ai-meta-cleaner.html?lang=ja" hreflang="ja" rel="alternate"/>
+<link href="https://nekzuk.com/ai-meta-cleaner.html?lang=en" hreflang="x-default" rel="alternate"/>
+<style>
     :root {
       --bg:#0f172a; --card:#1e293b; --card2:#172136; --border:#334155;
       --text:#f1f5f9; --muted:#94a3b8; --muted2:#64748b;
@@ -244,8 +257,7 @@ ul.lang-ja, ol.lang-ja {display:none}
 }
 
 </style>
-
-  <script>
+<script>
   (function () {
     function getParamLang() {
       const params = new URLSearchParams(location.search);
@@ -312,9 +324,8 @@ ul.lang-ja, ol.lang-ja {display:none}
     document.addEventListener('DOMContentLoaded', () => { applyLang(); });
   })();
   </script>
-
-    <!-- 構造化データ：SoftwareApplication (Enhanced) -->
-    <script type="application/ld+json">
+<!-- 構造化データ：SoftwareApplication (Enhanced) -->
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
@@ -344,241 +355,208 @@ ul.lang-ja, ol.lang-ja {display:none}
       "author": {"@type": "Organization", "name": "nekzuk Software", "url": "https://nekzuk.com"}
     }
     </script>
-
-</head>
-
+<meta content="https://nekzuk.com/ai-meta-cleaner.html?lang=en" name="twitter:url"/></head>
 <body>
-  <div class="container">
-    <div class="top">
-      <a data-role="back" href="index.html">← <span class="lang-en">Back</span><span class="lang-ja">戻る</span></a>
-      <div class="small">
-        <a href="?lang=en" onclick="setSiteLang('en')">English</a> /
+<div class="container">
+<div class="top">
+<a data-role="back" href="index.html">← <span class="lang-en">Back</span><span class="lang-ja">戻る</span></a>
+<div class="small">
+<a href="?lang=en" onclick="setSiteLang('en')">English</a> /
         <a href="?lang=ja" onclick="setSiteLang('ja')">日本語</a>
-      </div>
-    </div>
-
-    <section class="hero">
-  <div class="pills">
-    <span class="pill">Windows</span>
-    <span class="pill">Desktop</span>
-    <span class="pill">Free</span>
-    <span class="pill">Metadata Removal</span>
-  </div>
-
-  <div class="heroTop">
-    <div class="heroTitle">
-      <img class="appIcon" src="assets/icons/app3.png" alt="AI Meta Cleaner icon" />
-      <div>
-        <div class="titleRow lang-en">
-          <h1 class="title">AI Meta Cleaner</h1>
-          <p class="subtitle">Remove metadata and embedded AI generation info from images.</p>
-        </div>
-        <div class="titleRow lang-ja">
-          <h1 class="title">AI Meta Cleaner</h1>
-          <p class="subtitle">画像のメタデータと生成AIの埋め込み情報をまとめて削除できるツールです。</p>
-        </div>
-
-        <div class="price">
-          <span class="lang-en">Free</span>
-          <span class="lang-ja">無料</span>
-        </div>
-
-        <div class="btns">
-          <a class="btn primary lang-ja" href="https://synekzuk.booth.pm/items/7626627" target="_blank" rel="noopener">BOOTH</a>
-          <a class="btn primary lang-en" href="https://payhip.com/b/LdoFB" target="_blank" rel="noopener">Payhip</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="kpi heroFacts">
-    <div class="box">
-      <div class="kv">
-        <div class="label lang-en">Supported Formats</div>
-        <div class="label lang-ja">対応形式</div>
-        <div class="value">5 formats</div>
-      </div>
-    </div>
-
-    <div class="box">
-  <div class="kv">
-    <div class="label lang-en">Removal Types</div>
-    <div class="label lang-ja">削除対応データ</div>
-    <div class="value">3+ types</div>
-  </div>
 </div>
-
-    <div class="box">
-  <div class="kv">
-    <div class="label lang-en">UI Languages</div>
-    <div class="label lang-ja">UI言語</div>
-    <div class="value">JP / EN</div>
-  </div>
 </div>
-
-    <div class="box">
-  <div class="kv">
-    <div class="label lang-en">Price</div>
-    <div class="label lang-ja">価格</div>
-    <div class="value lang-en">Free</div>
-    <div class="value lang-ja">無料</div>
-  </div>
+<section class="hero">
+<div class="pills">
+<span class="pill">Windows</span>
+<span class="pill">Desktop</span>
+<span class="pill">Free</span>
+<span class="pill">Metadata Removal</span>
 </div>
-</section>
+<div class="heroTop">
+<div class="heroTitle">
+<img alt="AI Meta Cleaner icon" class="appIcon" src="assets/icons/app3.png"/>
+<div>
+<div class="titleRow"><h1 class="title"><span class="lang-en">AI Meta Cleaner</span><span class="lang-ja">AI Meta Cleaner</span></h1><p class="subtitle"><span class="lang-en">Remove metadata and embedded AI generation info from images.</span><span class="lang-ja">画像のメタデータと生成AIの埋め込み情報をまとめて削除できるツールです。</span></p></div>
 
-    <div class="grid">
-      <section class="section">
-        <h2>
-          <span class="lang-en">Overview</span>
-          <span class="lang-ja">概要</span>
-        </h2>
-        <p class="lang-en">
+<div class="price">
+<span class="lang-en">Free</span>
+<span class="lang-ja">無料</span>
+</div>
+<div class="btns">
+<a class="btn primary lang-ja" href="https://synekzuk.booth.pm/items/7626627" rel="noopener" target="_blank">BOOTH</a>
+<a class="btn primary lang-en" href="https://payhip.com/b/LdoFB" rel="noopener" target="_blank">Payhip</a>
+</div>
+</div>
+</div>
+</div>
+<div class="kpi heroFacts">
+<div class="box">
+<div class="kv">
+<div class="label lang-en">Supported Formats</div>
+<div class="label lang-ja">対応形式</div>
+<div class="value">5 formats</div>
+</div>
+</div>
+<div class="box">
+<div class="kv">
+<div class="label lang-en">Removal Types</div>
+<div class="label lang-ja">削除対応データ</div>
+<div class="value">3+ types</div>
+</div>
+</div>
+<div class="box">
+<div class="kv">
+<div class="label lang-en">UI Languages</div>
+<div class="label lang-ja">UI言語</div>
+<div class="value">JP / EN</div>
+</div>
+</div>
+<div class="box">
+<div class="kv">
+<div class="label lang-en">Price</div>
+<div class="label lang-ja">価格</div>
+<div class="value lang-en">Free</div>
+<div class="value lang-ja">無料</div>
+</div>
+</div>
+</div></section>
+<div class="grid">
+<section class="section">
+<h2>
+<span class="lang-en">Overview</span>
+<span class="lang-ja">概要</span>
+</h2>
+<p class="lang-en">
           AI Meta Cleaner is a free tool that removes metadata and AI generation information embedded in images. It supports various image formats and can clean multiple files at once.
         </p>
-        <p class="lang-ja">
+<p class="lang-ja">
           AI Meta Cleanerは、画像のメタデータと生成AIの埋め込み情報をまとめて削除できる無料ツールです。複数の画像形式に対応し、一括処理が可能です。
         </p>
-      </section>
+</section>
+<section class="section">
+<h2>
+<span class="lang-en">Supported Formats / Removal Types</span>
+<span class="lang-ja">対応形式 / 削除対応データ</span>
+</h2>
+<div class="twoCol">
+<div>
+<h3><span class="lang-en">Supported Formats</span><span class="lang-ja">対応形式</span></h3>
 
-      <section class="section">
-        <h2>
-          <span class="lang-en">Supported Formats / Removal Types</span>
-          <span class="lang-ja">対応形式 / 削除対応データ</span>
-        </h2>
+<ul class="lang-en">
+<li>PNG</li>
+<li>JPG / JPEG</li>
+<li>WEBP</li>
+<li>GIF</li>
+<li>TIFF</li>
+</ul>
+<ul class="lang-ja">
+<li>PNG</li>
+<li>JPG / JPEG</li>
+<li>WEBP</li>
+<li>GIF</li>
+<li>TIFF</li>
+</ul>
+</div>
+<div>
+<h3><span class="lang-en">Removal Types</span><span class="lang-ja">削除対応データ</span></h3>
 
-        <div class="twoCol">
-          <div>
-            <h3 class="lang-en">Supported Formats</h3>
-            <h3 class="lang-ja">対応形式</h3>
-            <ul class="lang-en">
-              <li>PNG</li>
-              <li>JPG / JPEG</li>
-              <li>WEBP</li>
-              <li>GIF</li>
-              <li>TIFF</li>
-            </ul>
-            <ul class="lang-ja">
-              <li>PNG</li>
-              <li>JPG / JPEG</li>
-              <li>WEBP</li>
-              <li>GIF</li>
-              <li>TIFF</li>
-            </ul>
-          </div>
+<ul class="lang-en">
+<li>General metadata (EXIF, XMP, ICC Profile, etc.)</li>
+<li>Automatic1111 (SD format): AI generation info</li>
+<li>NovelAI format: AI generation info</li>
+</ul>
+<ul class="lang-ja">
+<li>一般メタデータ（EXIF、XMP、ICC Profile等）</li>
+<li>Automatic1111（SD形式）：生成情報の画像埋め込み</li>
+<li>NovelAI形式：生成情報の画像埋め込み</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>
+<span class="lang-en">How to use</span>
+<span class="lang-ja">基本的な使い方</span>
+</h2>
+<ol class="lang-en">
+<li>Drag and drop a folder containing images or image files</li>
+<li>Click the "Start Processing" button</li>
+</ol>
+<ol class="lang-ja">
+<li>画像の入ったフォルダまたは画像ファイルをドラッグアンドドロップ</li>
+<li>「処理開始」ボタンをクリック</li>
+</ol>
+</section>
+<section class="section">
+<h2>
+<span class="lang-en">System requirements</span>
+<span class="lang-ja">動作環境</span>
+</h2>
+<ul class="lang-en">
+<li>OS: Windows 10/11 (64 bit)</li>
+<li>Memory: 8 GB or more recommended</li>
+</ul>
+<ul class="lang-ja">
+<li>OS: Windows 10/11（64bit）</li>
+<li>メモリ: 8GB 以上推奨</li>
+</ul>
+</section>
+<section class="section" id="ui">
+<h2><span class="lang-en">UI screenshot</span><span class="lang-ja">UIスクリーンショット</span></h2>
+<a class="shot lang-en" href="assets/Other/clean_en.png" rel="noopener" target="_blank">
+<img alt="AI Meta Cleaner UI (English)" src="assets/Other/clean_en.png"/>
+<div class="cap">UI (English)</div>
+</a>
+<a class="shot lang-ja" href="assets/Other/clean.png" rel="noopener" target="_blank">
+<img alt="AI Meta Cleaner UI (Japanese)" src="assets/Other/clean.png"/>
+<div class="cap">UI（日本語）</div>
+</a>
+</section>
+<section class="section">
+<h2><span class="lang-en">Updates &amp; Changelog</span><span class="lang-ja">更新情報・変更履歴</span></h2>
+<div class="kpi" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1rem">
+<div class="box">
+<div class="kv">
+<div class="label lang-en">Current Version</div>
+<div class="label lang-ja">最新バージョン</div>
+<div class="value">v1.00</div>
+</div>
+</div>
+<div class="box">
+<div class="kv">
+<div class="label lang-en">Release Date</div>
+<div class="label lang-ja">リリース日</div>
+<div class="value">2025-11-07</div>
+</div>
+</div>
+</div>
+<div class="hr"></div>
+<h3><span class="lang-en">Latest Updates</span><span class="lang-ja">最新の更新内容</span></h3>
 
-          <div>
-            <h3 class="lang-en">Removal Types</h3>
-            <h3 class="lang-ja">削除対応データ</h3>
-            <ul class="lang-en">
-              <li>General metadata (EXIF, XMP, ICC Profile, etc.)</li>
-              <li>Automatic1111 (SD format): AI generation info</li>
-              <li>NovelAI format: AI generation info</li>
-            </ul>
-            <ul class="lang-ja">
-              <li>一般メタデータ（EXIF、XMP、ICC Profile等）</li>
-              <li>Automatic1111（SD形式）：生成情報の画像埋め込み</li>
-              <li>NovelAI形式：生成情報の画像埋め込み</li>
-            </ul>
-          </div>
-        </div>
-
-      </section>
-
-      <section class="section">
-        <h2>
-          <span class="lang-en">How to use</span>
-          <span class="lang-ja">基本的な使い方</span>
-        </h2>
-        <ol class="lang-en">
-          <li>Drag and drop a folder containing images or image files</li>
-          <li>Click the "Start Processing" button</li>
-        </ol>
-        <ol class="lang-ja">
-          <li>画像の入ったフォルダまたは画像ファイルをドラッグアンドドロップ</li>
-          <li>「処理開始」ボタンをクリック</li>
-        </ol>
-      </section>
-
-      <section class="section">
-        <h2>
-          <span class="lang-en">System requirements</span>
-          <span class="lang-ja">動作環境</span>
-        </h2>
-        <ul class="lang-en">
-          <li>OS: Windows 10/11 (64 bit)</li>
-          <li>Memory: 8 GB or more recommended</li>
-        </ul>
-        <ul class="lang-ja">
-          <li>OS: Windows 10/11（64bit）</li>
-          <li>メモリ: 8GB 以上推奨</li>
-        </ul>
-      </section>
-
-  <section class="section" id="ui">
-    <h2><span class="lang-en">UI screenshot</span><span class="lang-ja">UIスクリーンショット</span></h2>
-
-    <a class="shot lang-en" href="assets/Other/clean_en.png" target="_blank" rel="noopener">
-      <img src="assets/Other/clean_en.png" alt="AI Meta Cleaner UI (English)">
-      <div class="cap">UI (English)</div>
-    </a>
-
-    <a class="shot lang-ja" href="assets/Other/clean.png" target="_blank" rel="noopener">
-      <img src="assets/Other/clean.png" alt="AI Meta Cleaner UI (Japanese)">
-      <div class="cap">UI（日本語）</div>
-    </a>
-  </section>
-
-    <section class="section">
-      <h2><span class="lang-en">Updates & Changelog</span><span class="lang-ja">更新情報・変更履歴</span></h2>
-      
-      <div class="kpi" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1rem">
-        <div class="box">
-          <div class="kv">
-            <div class="label lang-en">Current Version</div>
-            <div class="label lang-ja">最新バージョン</div>
-            <div class="value">v1.00</div>
-          </div>
-        </div>
-        <div class="box">
-          <div class="kv">
-            <div class="label lang-en">Release Date</div>
-            <div class="label lang-ja">リリース日</div>
-            <div class="value">2025-11-07</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hr"></div>
-
-      <h3 class="lang-en">Latest Updates</h3>
-      <h3 class="lang-ja">最新の更新内容</h3>
-      <ul class="lang-en">
-        <li>v1.00 (2025/11/07) - Initial release</li>
-      </ul>
-      <ul class="lang-ja">
-        <li>v1.00 (2025/11/07) - 初回リリース</li>
-      </ul>
-
-      <p style="margin-top:1rem">
-        <a href="https://note.com/nekzuk/n/n70c0d33d4488" target="_blank" rel="noopener">
-          <span class="lang-en">→ Read detailed release notes</span>
-          <span class="lang-ja">→ 詳細な更新内容を読む</span>
-        </a>
-      </p>
-    </section>
-    </div>
-
-  </div>
-
-   <div class="footer">
-      <div class="lang-en" style="margin-bottom:.75rem">
-        <b>Support:</b> <a href="https://x.com/Synekzuk_AI" target="_blank" rel="noopener">Twitter/X</a> | <a href="https://payhip.com/nekzuk/contact" target="_blank" rel="noopener">Payhip message</a>
-      </div>
-      <div class="lang-ja" style="margin-bottom:.75rem">
-        <b>サポート:</b> <a href="https://x.com/Synekzuk_AI" target="_blank" rel="noopener">Twitter/X</a> | <a href="https://accounts.booth.pm/conversations/49131834/messages" target="_blank" rel="noopener">BOOTHメッセージ</a>
-      </div>
+<ul class="lang-en">
+<li>v1.00 (2025/11/07) - Initial release</li>
+</ul>
+<ul class="lang-ja">
+<li>v1.00 (2025/11/07) - 初回リリース</li>
+</ul>
+<p style="margin-top:1rem">
+<a href="https://note.com/nekzuk/n/n70c0d33d4488" rel="noopener" target="_blank">
+<span class="lang-en">→ Read detailed release notes</span>
+<span class="lang-ja">→ 詳細な更新内容を読む</span>
+</a>
+</p>
+</section>
+</div>
+</div>
+<div class="footer">
+<div class="lang-en" style="margin-bottom:.75rem">
+<b>Support:</b> <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank">Twitter/X</a> | <a href="https://payhip.com/nekzuk/contact" rel="noopener" target="_blank">Payhip message</a>
+</div>
+<div class="lang-ja" style="margin-bottom:.75rem">
+<b>サポート:</b> <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank">Twitter/X</a> | <a href="https://accounts.booth.pm/conversations/49131834/messages" rel="noopener" target="_blank">BOOTHメッセージ</a>
+</div>
       © nekzuk Software
     </div>
-  </div>
+
 </body>
 </html>
