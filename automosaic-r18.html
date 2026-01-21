@@ -3,39 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>AutoMosaic R18 - nekzuk Software</title>
+  <title>AutoMosaic (R18) – Batch Auto-Mosaic Tool for Windows | nekzuk</title>
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="AutoMosaic R18 is a batch auto-mosaic tool for sensitive images. GPU-accelerated, offline processing, highest detection accuracy in its price range. ¥2,980">
+  <meta name="description" content="GPU-accelerated batch auto-mosaic tool for Windows. Automatically detects sensitive regions and applies mosaic offline with high accuracy.">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nekzuk.com/automosaic-r18.html?lang=en">
-  <meta property="og:title" content="AutoMosaic (R18) - Batch Auto-Mosaic Tool">
-  <meta property="og:description" content="GPU-accelerated batch mosaic tool for sensitive images. 99% detection rate, offline processing. Windows 10/11 compatible.">
+  <meta property="og:title" content="AutoMosaic (R18) – Batch Auto-Mosaic Tool">
+  <meta property="og:description" content="GPU-accelerated batch mosaic tool for sensitive images. Offline processing. Windows 10/11 compatible.">
   <meta property="og:image" content="https://nekzuk.com/assets/icons/app_R18.png">
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@Synekzuk_AI">
-  <meta name="twitter:title" content="AutoMosaic (R18) - Batch Auto-Mosaic Tool">
-  <meta name="twitter:description" content="GPU-accelerated batch mosaic tool for sensitive images. 99% detection rate, offline processing.">
+  <meta name="twitter:title" content="AutoMosaic (R18) – Batch Auto-Mosaic Tool">
+  <meta name="twitter:description" content="GPU-accelerated batch mosaic tool for sensitive images. Offline processing. Windows 10/11 compatible.">
   <meta name="twitter:image" content="https://nekzuk.com/assets/icons/app_R18.png">
 
   <!-- Language SEO -->
-  <!-- Canonical tag (dynamic) -->
-    <script>
-    (function() {
-        const params = new URLSearchParams(window.location.search);
-        const lang = params.get('lang') || 'en';
-        const canonical = document.createElement('link');
-        canonical.rel = 'canonical';
-        canonical.href = window.location.origin + window.location.pathname + '?lang=' + lang;
-        document.head.appendChild(canonical);
-    })();
-    </script>
-    
-  <link rel="alternate" hreflang="en" href="https://nekzuk.com/automosaic-r18.html?lang=en">
+  <link rel="canonical" href="https://nekzuk.com/automosaic-r18.html?lang=en" />
+<link rel="alternate" hreflang="en" href="https://nekzuk.com/automosaic-r18.html?lang=en">
   <link rel="alternate" hreflang="ja" href="https://nekzuk.com/automosaic-r18.html?lang=ja">
   <link rel="alternate" hreflang="x-default" href="https://nekzuk.com/automosaic-r18.html?lang=en">
 
@@ -357,6 +346,58 @@ ul.lang-ja, ol.lang-ja {display:none}
     }
     </script>
 
+
+  <script>
+  (function() {
+    function getLang() {
+      const p = new URLSearchParams(location.search);
+      const v = p.get('lang');
+      return (v === 'ja' || v === 'en') ? v : (document.documentElement.lang || 'en');
+    }
+    function setMetaName(name, content) {
+      let el = document.querySelector('meta[name="' + name + '"]');
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute('name', name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    }
+    function setMetaProp(prop, content) {
+      let el = document.querySelector('meta[property="' + prop + '"]');
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute('property', prop);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    }
+    function setCanonical(url) {
+      let link = document.querySelector('link[rel="canonical"]');
+      if (!link) {
+        link = document.createElement('link');
+        link.setAttribute('rel', 'canonical');
+        document.head.appendChild(link);
+      }
+      link.setAttribute('href', url);
+    }
+
+    const metas = {"en": {"title": "AutoMosaic (R18) – Batch Auto-Mosaic Tool for Windows | nekzuk", "description": "GPU-accelerated batch auto-mosaic tool for Windows. Automatically detects sensitive regions and applies mosaic offline with high accuracy.", "og_title": "AutoMosaic (R18) – Batch Auto-Mosaic Tool", "og_description": "GPU-accelerated batch mosaic tool for sensitive images. Offline processing. Windows 10/11 compatible."}, "ja": {"title": "AutoMosaic（R18）自動モザイクツール（Windows）| nekzuk", "description": "GPU対応の一括自動モザイクツール。センシティブ部位を自動検出し、オフラインで高速処理。Windows 10/11対応。", "og_title": "AutoMosaic（R18）自動モザイクツール", "og_description": "センシティブ部位を自動検出して一括モザイク。GPU対応・オフライン処理。Windows 10/11対応。"}};
+    const lang = getLang();
+    const m = metas[lang] || metas.en;
+    const url = location.origin + location.pathname + '?lang=' + lang;
+
+    document.title = m.title;
+    setMetaName('description', m.description);
+    setMetaProp('og:title', m.og_title);
+    setMetaProp('og:description', m.og_description);
+    setMetaProp('og:url', url);
+    setMetaName('twitter:title', m.twitter_title || m.og_title);
+    setMetaName('twitter:description', m.twitter_description || m.og_description);
+    setMetaName('twitter:url', url);
+    setCanonical(url);
+  })();
+  </script>
 </head>
 <body>
   <div class="container">
@@ -380,13 +421,12 @@ ul.lang-ja, ol.lang-ja {display:none}
     <div class="heroTitle">
       <img class="appIcon" src="assets/icons/app_R18.png" alt="AutoMosaic R18 icon" />
       <div>
-        <div class="titleRow lang-en">
-          <h1 class="title">AutoMosaic (R18)</h1>
-          <p class="subtitle">Batch auto-mosaic tool designed for sensitive images. GPU-accelerated for fast processing across multiple images.</p>
-        </div>
-        <div class="titleRow lang-ja">
-          <h1 class="title">AutoMosaic (R18)</h1>
-          <p class="subtitle">画像内のセンシティブ部位を自動検出し、複数画像に連続でモザイク処理を施すツールです。GPU対応により高速処理を実現。</p>
+        <div class="titleRow">
+
+          <h1 class="title"><span class="lang-en">AutoMosaic (R18)</span><span class="lang-ja">AutoMosaic (R18)</span></h1>
+
+          <p class="subtitle"><span class="lang-en">Batch auto-mosaic tool designed for sensitive images. GPU-accelerated for fast processing across multiple images.</span><span class="lang-ja">画像内のセンシティブ部位を自動検出し、複数画像に連続でモザイク処理を施すツールです。GPU対応により高速処理を実現。</span></p>
+
         </div>
 
         <div class="price">
@@ -477,8 +517,10 @@ ul.lang-ja, ol.lang-ja {display:none}
 
         <div class="twoCol">
           <div>
-            <h3 class="lang-en">Detectable targets</h3>
-            <h3 class="lang-ja">検出対象</h3>
+            <h3>
+              <span class="lang-en">Detectable targets</span>
+              <span class="lang-ja">検出対象</span>
+            </h3>
             <ul class="lang-en">
               <li>Female genitalia</li>
               <li>Male genitalia</li>
@@ -492,8 +534,10 @@ ul.lang-ja, ol.lang-ja {display:none}
           </div>
 
           <div>
-            <h3 class="lang-en">Outputs</h3>
-            <h3 class="lang-ja">出力</h3>
+            <h3>
+              <span class="lang-en">Outputs</span>
+              <span class="lang-ja">出力</span>
+            </h3>
             <ul class="lang-en">
               <li>Mosaic (FANZA / DLSite / Booth standard sizes)</li>
               <li>Blur</li>
@@ -509,8 +553,10 @@ ul.lang-ja, ol.lang-ja {display:none}
 
             <div class="hr"></div>
 
-            <h3 class="lang-en">UI languages</h3>
-            <h3 class="lang-ja">UI言語</h3>
+            <h3>
+              <span class="lang-en">UI languages</span>
+              <span class="lang-ja">UI言語</span>
+            </h3>
             <ul class="lang-en">
               <li>Japanese</li>
               <li>English</li>
@@ -564,8 +610,10 @@ ul.lang-ja, ol.lang-ja {display:none}
       <section class="section">
         <h2><span class="lang-en">Before / After & Detection Accuracy</span><span class="lang-ja">処理例(Before / After)と検出精度</span></h2>
 
-    <h3 class="lang-en">Sample Images</h3>
-    <h3 class="lang-ja">サンプル画像</h3>
+    <h3>
+      <span class="lang-en">Sample Images</span>
+      <span class="lang-ja">サンプル画像</span>
+    </h3>
     <p class="lang-en">
       Due to content sensitivity, sample images are available at the following link:
     </p>
@@ -581,8 +629,10 @@ ul.lang-ja, ol.lang-ja {display:none}
 
     <div class="hr"></div>
 
-    <h3 class="lang-en">Detection Accuracy Data</h3>
-    <h3 class="lang-ja">検出精度データ</h3>
+    <h3>
+      <span class="lang-en">Detection Accuracy Data</span>
+      <span class="lang-ja">検出精度データ</span>
+    </h3>
     <p class="lang-en">v3.10 (Latest version, highest accuracy settings): 333 sample images processed</p>
     <p class="lang-ja">v3.10（最新版・精度最強設定）：333枚のサンプル処理結果</p>
 
@@ -697,8 +747,10 @@ ul.lang-ja, ol.lang-ja {display:none}
       
       <div class="hr"></div>
       
-      <h3 class="lang-en">What's included</h3>
-      <h3 class="lang-ja">体験版の内容</h3>
+      <h3>
+        <span class="lang-en">What's included</span>
+        <span class="lang-ja">体験版の内容</span>
+      </h3>
       <ul class="lang-en">
         <li>✓ All features available</li>
         <li>✓ Process up to 5 images per batch</li>
@@ -733,8 +785,10 @@ ul.lang-ja, ol.lang-ja {display:none}
 
       <div class="hr"></div>
 
-      <h3 class="lang-en">Latest Updates</h3>
-      <h3 class="lang-ja">最新の更新内容</h3>
+      <h3>
+        <span class="lang-en">Latest Updates</span>
+        <span class="lang-ja">最新の更新内容</span>
+      </h3>
       <ul class="lang-en">
         <li>Performance improvements</li>
         <li>Bug fixes</li>
@@ -760,8 +814,10 @@ ul.lang-ja, ol.lang-ja {display:none}
           <span class="lang-ja">ライセンス・ご利用上の注意</span>
         </h2>
 
-        <h3 class="lang-en">License</h3>
-        <h3 class="lang-ja">ライセンス</h3>
+        <h3>
+          <span class="lang-en">License</span>
+          <span class="lang-ja">ライセンス</span>
+        </h3>
         <ul class="lang-en">
           <li><b>Personal use (including commercial)</b>: Included with purchase</li>
           <li><b>Corporate/enterprise use</b>: Please contact separately for licensing</li>
@@ -773,8 +829,10 @@ ul.lang-ja, ol.lang-ja {display:none}
 
         <div class="hr"></div>
 
-        <h3 class="lang-en">Important Notes</h3>
-        <h3 class="lang-ja">重要な注意事項</h3>
+        <h3>
+          <span class="lang-en">Important Notes</span>
+          <span class="lang-ja">重要な注意事項</span>
+        </h3>
         <ul class="lang-en">
           <li>Processing may take time depending on your PC/GPU specifications</li>
           <li>Please review all outputs after processing to ensure accuracy</li>

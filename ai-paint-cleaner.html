@@ -3,39 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>AI Paint Cleaner - nekzuk Software</title>
+  <title>AI Paint Cleaner – Inpainting Cleanup & Batch Edit Tool for Windows | nekzuk</title>
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="AI Paint Cleaner is an all-in-one image editing tool with AI inpainting and batch processing capabilities. Efficiently edit multiple images with various utilities. ¥2,000 / $20">
+  <meta name="description" content="All-in-one Windows tool for AI image post-processing: inpainting cleanup (paint remover) plus batch utilities to edit many images efficiently.">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nekzuk.com/ai-paint-cleaner.html?lang=en">
-  <meta property="og:title" content="AI Paint Cleaner - All-in-One Image Editing Tool">
-  <meta property="og:description" content="AI-powered inpainting plus batch utilities for efficient image editing. Perfect for AI-generated art and content creators.">
+  <meta property="og:title" content="AI Paint Cleaner – Image Cleanup Tool">
+  <meta property="og:description" content="All-in-one tool for AI image post-processing: inpainting cleanup plus a wide range of batch utilities. Windows 10/11 compatible.">
   <meta property="og:image" content="https://nekzuk.com/assets/icons/app2.png">
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@Synekzuk_AI">
-  <meta name="twitter:title" content="AI Paint Cleaner - All-in-One Image Editing Tool">
-  <meta name="twitter:description" content="AI-powered inpainting plus batch utilities for efficient image editing.">
+  <meta name="twitter:title" content="AI Paint Cleaner – Image Cleanup Tool">
+  <meta name="twitter:description" content="All-in-one tool for AI image post-processing: inpainting cleanup plus a wide range of batch utilities. Windows 10/11 compatible.">
   <meta name="twitter:image" content="https://nekzuk.com/assets/icons/app2.png">
 
   <!-- Language SEO -->
-  <!-- Canonical tag (dynamic) -->
-    <script>
-    (function() {
-        const params = new URLSearchParams(window.location.search);
-        const lang = params.get('lang') || 'en';
-        const canonical = document.createElement('link');
-        canonical.rel = 'canonical';
-        canonical.href = window.location.origin + window.location.pathname + '?lang=' + lang;
-        document.head.appendChild(canonical);
-    })();
-    </script>
-    
-  <link rel="alternate" hreflang="en" href="https://nekzuk.com/ai-paint-cleaner.html?lang=en">
+  <link rel="canonical" href="https://nekzuk.com/ai-paint-cleaner.html?lang=en" />
+<link rel="alternate" hreflang="en" href="https://nekzuk.com/ai-paint-cleaner.html?lang=en">
   <link rel="alternate" hreflang="ja" href="https://nekzuk.com/ai-paint-cleaner.html?lang=ja">
   <link rel="alternate" hreflang="x-default" href="https://nekzuk.com/ai-paint-cleaner.html?lang=en">
 
@@ -352,6 +341,58 @@ ul.lang-ja, ol.lang-ja {display:none}
     }
     </script>
 
+
+  <script>
+  (function() {
+    function getLang() {
+      const p = new URLSearchParams(location.search);
+      const v = p.get('lang');
+      return (v === 'ja' || v === 'en') ? v : (document.documentElement.lang || 'en');
+    }
+    function setMetaName(name, content) {
+      let el = document.querySelector('meta[name="' + name + '"]');
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute('name', name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    }
+    function setMetaProp(prop, content) {
+      let el = document.querySelector('meta[property="' + prop + '"]');
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute('property', prop);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    }
+    function setCanonical(url) {
+      let link = document.querySelector('link[rel="canonical"]');
+      if (!link) {
+        link = document.createElement('link');
+        link.setAttribute('rel', 'canonical');
+        document.head.appendChild(link);
+      }
+      link.setAttribute('href', url);
+    }
+
+    const metas = {"en": {"title": "AI Paint Cleaner – Inpainting Cleanup & Batch Edit Tool for Windows | nekzuk", "description": "All-in-one Windows tool for AI image post-processing: inpainting cleanup (paint remover) plus batch utilities to edit many images efficiently.", "og_title": "AI Paint Cleaner – Image Cleanup Tool", "og_description": "All-in-one tool for AI image post-processing: inpainting cleanup plus a wide range of batch utilities. Windows 10/11 compatible."}, "ja": {"title": "AI Paint Cleaner インペイントのゴミ取り・一括編集ツール（Windows）| nekzuk", "description": "AIインペイントのゴミ取り（塗り残し除去）＋豊富なバッチ処理を搭載したイラスト修正オールインワンツール。Windows 10/11対応。", "og_title": "AI Paint Cleaner（ゴミ取り・一括編集）", "og_description": "AIインペイントのゴミ取り＋一括処理をまとめた画像編集ツール。Windows 10/11対応。"}};
+    const lang = getLang();
+    const m = metas[lang] || metas.en;
+    const url = location.origin + location.pathname + '?lang=' + lang;
+
+    document.title = m.title;
+    setMetaName('description', m.description);
+    setMetaProp('og:title', m.og_title);
+    setMetaProp('og:description', m.og_description);
+    setMetaProp('og:url', url);
+    setMetaName('twitter:title', m.twitter_title || m.og_title);
+    setMetaName('twitter:description', m.twitter_description || m.og_description);
+    setMetaName('twitter:url', url);
+    setCanonical(url);
+  })();
+  </script>
 </head>
 
 <body>
@@ -376,13 +417,12 @@ ul.lang-ja, ol.lang-ja {display:none}
     <div class="heroTitle">
       <img class="appIcon" src="assets/icons/app2.png" alt="AI Paint Cleaner icon" />
       <div>
-        <div class="titleRow lang-en">
-          <h1 class="title">AI Paint Cleaner</h1>
-          <p class="subtitle">All-in-one tool for editing multiple images efficiently: AI inpainting plus a wide range of batch utilities.</p>
-        </div>
-        <div class="titleRow lang-ja">
-          <h1 class="title">AI Paint Cleaner</h1>
-          <p class="subtitle">AIインペイント＋豊富なバッチ処理を搭載したイラスト修正オールインワンツール。</p>
+        <div class="titleRow">
+
+          <h1 class="title"><span class="lang-en">AI Paint Cleaner</span><span class="lang-ja">AI Paint Cleaner</span></h1>
+
+          <p class="subtitle"><span class="lang-en">All-in-one tool for editing multiple images efficiently: AI inpainting plus a wide range of batch utilities.</span><span class="lang-ja">AIインペイント＋豊富なバッチ処理を搭載したイラスト修正オールインワンツール。</span></p>
+
         </div>
 
         <div class="price">
@@ -465,8 +505,10 @@ ul.lang-ja, ol.lang-ja {display:none}
 
         <div class="hr"></div>
 
-        <h3 class="lang-en">Supported Languages</h3>
-        <h3 class="lang-ja">対応言語</h3>
+        <h3>
+          <span class="lang-en">Supported Languages</span>
+          <span class="lang-ja">対応言語</span>
+        </h3>
         <ul class="lang-en">
           <li>Japanese</li>
           <li>English</li>
@@ -621,8 +663,10 @@ ul.lang-ja, ol.lang-ja {display:none}
         
         <div class="hr"></div>
         
-        <h3 class="lang-en">What's included</h3>
-        <h3 class="lang-ja">体験版の内容</h3>
+        <h3>
+          <span class="lang-en">What's included</span>
+          <span class="lang-ja">体験版の内容</span>
+        </h3>
         <ul class="lang-en">
           <li>✓ All features available</li>
           <li>✗ Cannot save images</li>
@@ -659,8 +703,10 @@ ul.lang-ja, ol.lang-ja {display:none}
 
         <div class="hr"></div>
 
-        <h3 class="lang-en">Latest Updates</h3>
-        <h3 class="lang-ja">最新の更新内容</h3>
+        <h3>
+          <span class="lang-en">Latest Updates</span>
+          <span class="lang-ja">最新の更新内容</span>
+        </h3>
         <ul class="lang-en">
           <li>Added automatic object selection feature</li>
           <li>Bug fixes</li>
@@ -686,8 +732,10 @@ ul.lang-ja, ol.lang-ja {display:none}
           <span class="lang-ja">ライセンス・ご利用上の注意</span>
         </h2>
 
-        <h3 class="lang-en">License</h3>
-        <h3 class="lang-ja">ライセンス</h3>
+        <h3>
+          <span class="lang-en">License</span>
+          <span class="lang-ja">ライセンス</span>
+        </h3>
         <ul class="lang-en">
           <li><b>Personal use (including commercial)</b>: Included with purchase</li>
           <li><b>Corporate/enterprise use</b>: Please contact separately for licensing</li>
@@ -699,8 +747,10 @@ ul.lang-ja, ol.lang-ja {display:none}
 
         <div class="hr"></div>
 
-        <h3 class="lang-en">Important Notes</h3>
-        <h3 class="lang-ja">注意事項</h3>
+        <h3>
+          <span class="lang-en">Important Notes</span>
+          <span class="lang-ja">注意事項</span>
+        </h3>
         <ul class="lang-en">
           <li>Processing may take time depending on your PC/GPU specifications</li>
           <li>Please review all outputs after processing to ensure accuracy</li>
