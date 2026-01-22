@@ -1,0 +1,36 @@
+<!-- ファビコン・アイコン設定 -->
+<!-- 以下のコードを index.html と index_j.html の <head> 内、<title> タグの直前に追加してください -->
+<!-- ※すでに同じ <link rel="icon"> / OGP の meta がある場合は、重複しないように既存の方を削除してください -->
+
+<!-- ファビコン（レガシーブラウザ対応） -->
+<link rel="icon" href="/assets/favicons/favicon.ico" sizes="32x32">
+
+<!-- モダンブラウザ用SVGアイコン（ダークモード対応可能） -->
+<link rel="icon" href="/assets/favicons/icon.svg" type="image/svg+xml">
+
+<!-- Apple Touch Icon（iOS/iPadOS） -->
+<link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png">
+
+<!-- PWA用アイコン（Android等） -->
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicons/icon-512.png">
+
+<!-- テーマカラー（ブラウザのUIカラー） -->
+<meta name="theme-color" content="#6366f1">
+
+<!-- OGP / Twitter画像（絶対URL推奨。更新したら ?v= の数字を上げるとキャッシュ対策になります） -->
+<meta property="og:image" content="https://nekzuk.com/assets/favicons/og-image.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="nekzuk Software – AI Image Processing Tools">
+
+<!-- 正方形版（提示だけできます。小さい時だけ使う…のような出し分けはできず、採用はサービス依存です） -->
+<meta property="og:image" content="https://nekzuk.com/assets/favicons/og-image-square.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="nekzuk Software – AI Image Processing Tools">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nekzuk.com/assets/favicons/og-image.png?v=2">
