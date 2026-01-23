@@ -251,9 +251,28 @@
             background: var(--bg-dark);
         }
 
+        .product-icon-link {
+            display: block;
+            transition: transform 0.2s ease;
+        }
+
+        .product-icon-link:hover {
+            transform: scale(1.05);
+        }
+
         .card-title-area {
             flex: 1;
             min-width: 0;
+        }
+
+        .product-name-link {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s ease;
+        }
+
+        .product-name-link:hover .product-name {
+            color: var(--accent);
         }
 
         .product-name {
@@ -261,6 +280,7 @@
             font-weight: 700;
             margin-bottom: 0.25rem;
             color: var(--text-primary);
+            transition: color 0.2s ease;
         }
 
         .product-subtitle {
@@ -362,14 +382,16 @@
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--text-secondary);
-            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.10);
+            color: var(--text-primary);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.12);
-            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
         }
 
         /* Workflow Section */
@@ -408,6 +430,15 @@
             background: rgba(255, 255, 255, 0.03);
             border-radius: 0.75rem;
             border: 1px solid var(--border);
+        }
+
+        .workflow-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 0.5rem;
+            margin: 0 auto 0.75rem;
+            display: block;
+            object-fit: cover;
         }
 
         .workflow-step-name {
@@ -741,7 +772,7 @@
         <h1>Products</h1>
         <p class="header-description">
             Tools to accelerate AI image generation and editing workflows.<br>
-            All products are Windows desktop applications.
+            All products are Windows-only desktop applications.
         </p>
     </header>
 
@@ -750,9 +781,13 @@
             <!-- AutoMosaic R18 -->
             <article class="product-card">
                 <div class="card-header">
-                    <img src="assets/icons/app_R18.png" alt="AutoMosaic R18" class="product-icon" width="64" height="64">
+                    <a href="automosaic-r18.html?lang=en" class="product-icon-link">
+                        <img src="assets/icons/app_R18.png" alt="AutoMosaic R18" class="product-icon" width="64" height="64">
+                    </a>
                     <div class="card-title-area">
-                        <h2 class="product-name">AutoMosaic (R18)</h2>
+                        <a href="automosaic-r18.html?lang=en" class="product-name-link">
+                            <h2 class="product-name">AutoMosaic (R18)</h2>
+                        </a>
                         <p class="product-subtitle">Batch auto mosaic tool for images</p>
                     </div>
                 </div>
@@ -794,9 +829,13 @@
             <!-- AutoMosaic (General) -->
             <article class="product-card">
                 <div class="card-header">
-                    <img src="assets/icons/app_general.png" alt="AutoMosaic (General)" class="product-icon" width="64" height="64">
+                    <a href="automosaic.html?lang=en" class="product-icon-link">
+                        <img src="assets/icons/app_general.png" alt="AutoMosaic (General)" class="product-icon" width="64" height="64">
+                    </a>
                     <div class="card-title-area">
-                        <h2 class="product-name">AutoMosaic (General)</h2>
+                        <a href="automosaic.html?lang=en" class="product-name-link">
+                            <h2 class="product-name">AutoMosaic (General)</h2>
+                        </a>
                         <p class="product-subtitle">Batch auto mosaic tool for images</p>
                     </div>
                 </div>
@@ -838,9 +877,13 @@
             <!-- AI Paint Cleaner -->
             <article class="product-card">
                 <div class="card-header">
-                    <img src="assets/icons/app2.png" alt="AI Paint Cleaner" class="product-icon" width="64" height="64">
+                    <a href="ai-paint-cleaner.html?lang=en" class="product-icon-link">
+                        <img src="assets/icons/app2.png" alt="AI Paint Cleaner" class="product-icon" width="64" height="64">
+                    </a>
                     <div class="card-title-area">
-                        <h2 class="product-name">AI Paint Cleaner</h2>
+                        <a href="ai-paint-cleaner.html?lang=en" class="product-name-link">
+                            <h2 class="product-name">AI Paint Cleaner</h2>
+                        </a>
                         <p class="product-subtitle">Batch editing tool for images</p>
                     </div>
                 </div>
@@ -882,9 +925,13 @@
             <!-- AI Meta Cleaner -->
             <article class="product-card">
                 <div class="card-header">
-                    <img src="assets/icons/app3.png" alt="AI Meta Cleaner" class="product-icon" width="64" height="64">
+                    <a href="ai-meta-cleaner.html?lang=en" class="product-icon-link">
+                        <img src="assets/icons/app3.png" alt="AI Meta Cleaner" class="product-icon" width="64" height="64">
+                    </a>
                     <div class="card-title-area">
-                        <h2 class="product-name">AI Meta Cleaner</h2>
+                        <a href="ai-meta-cleaner.html?lang=en" class="product-name-link">
+                            <h2 class="product-name">AI Meta Cleaner</h2>
+                        </a>
                         <p class="product-subtitle">Metadata cleaner for AI-generated images</p>
                     </div>
                 </div>
@@ -925,9 +972,13 @@
             <!-- Frame Craft -->
             <article class="product-card">
                 <div class="card-header">
-                    <img src="assets/icons/app5.png" alt="Frame Craft" class="product-icon" width="64" height="64">
+                    <a href="frame-craft.html?lang=en" class="product-icon-link">
+                        <img src="assets/icons/app5.png" alt="Frame Craft" class="product-icon" width="64" height="64">
+                    </a>
                     <div class="card-title-area">
-                        <h2 class="product-name">Frame Craft</h2>
+                        <a href="frame-craft.html?lang=en" class="product-name-link">
+                            <h2 class="product-name">Frame Craft</h2>
+                        </a>
                         <p class="product-subtitle">Video frame extractor & animation converter</p>
                     </div>
                 </div>
@@ -970,9 +1021,13 @@
             <!-- Meta Converter -->
             <article class="product-card">
                 <div class="card-header">
-                    <img src="assets/icons/app4.png" alt="Meta Converter" class="product-icon" width="64" height="64">
+                    <a href="meta-converter.html?lang=en" class="product-icon-link">
+                        <img src="assets/icons/app4.png" alt="Meta Converter" class="product-icon" width="64" height="64">
+                    </a>
                     <div class="card-title-area">
-                        <h2 class="product-name">Meta Converter</h2>
+                        <a href="meta-converter.html?lang=en" class="product-name-link">
+                            <h2 class="product-name">Meta Converter</h2>
+                        </a>
                         <p class="product-subtitle">Image converter that preserves metadata</p>
                     </div>
                 </div>
@@ -1021,11 +1076,13 @@
                 <p class="workflow-label">Pattern 1: Paid, all-in-one</p>
                 <div class="workflow-content">
                     <div class="workflow-step">
+                        <img src="assets/icons/app_R18.png" alt="AutoMosaic R18" class="workflow-icon">
                         <p class="workflow-step-name">AutoMosaic (R18)</p>
                         <p class="workflow-step-desc">Automatic mosaic</p>
                     </div>
                     <span class="workflow-arrow">→</span>
                     <div class="workflow-step highlight">
+                        <img src="assets/icons/app2.png" alt="AI Paint Cleaner" class="workflow-icon">
                         <p class="workflow-step-name">AI Paint Cleaner</p>
                         <p class="workflow-step-desc">Fine adjustments / editing<br><small>*Includes metadata cleaning</small></p>
                     </div>
@@ -1038,11 +1095,13 @@
                 <p class="workflow-label">Pattern 2: Use free tools</p>
                 <div class="workflow-content">
                     <div class="workflow-step">
+                        <img src="assets/icons/app_R18.png" alt="AutoMosaic R18" class="workflow-icon">
                         <p class="workflow-step-name">AutoMosaic R18</p>
-                        <p class="workflow-step-desc">Automatic mosaic</p>
+                        <p class="workflow-step-desc">Automatic mosaic<br><small>*Paid software</small></p>
                     </div>
                     <span class="workflow-arrow">→</span>
                     <div class="workflow-step free">
+                        <img src="assets/icons/app3.png" alt="AI Meta Cleaner" class="workflow-icon">
                         <p class="workflow-step-name">AI Meta Cleaner</p>
                         <p class="workflow-step-desc">Metadata cleaning<br><small>*Free tool</small></p>
                     </div>

@@ -251,9 +251,28 @@
             background: var(--bg-dark);
         }
 
+        .product-icon-link {
+            display: block;
+            transition: transform 0.2s ease;
+        }
+
+        .product-icon-link:hover {
+            transform: scale(1.05);
+        }
+
         .card-title-area {
             flex: 1;
             min-width: 0;
+        }
+
+        .product-name-link {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s ease;
+        }
+
+        .product-name-link:hover .product-name {
+            color: var(--accent);
         }
 
         .product-name {
@@ -261,6 +280,7 @@
             font-weight: 700;
             margin-bottom: 0.25rem;
             color: var(--text-primary);
+            transition: color 0.2s ease;
         }
 
         .product-subtitle {
@@ -362,14 +382,16 @@
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--text-secondary);
-            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.10);
+            color: var(--text-primary);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.12);
-            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
         }
 
         /* Workflow Section */
@@ -408,6 +430,15 @@
             background: rgba(255, 255, 255, 0.03);
             border-radius: 0.75rem;
             border: 1px solid var(--border);
+        }
+
+        .workflow-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 0.5rem;
+            margin: 0 auto 0.75rem;
+            display: block;
+            object-fit: cover;
         }
 
         .workflow-step-name {
@@ -741,7 +772,7 @@
         <h1>製品のご紹介</h1>
         <p class="header-description">
             AI画像生成・編集のワークフローを効率化する各種ツールをご用意しています。
-            すべてWindows対応のデスクトップアプリケーションです。
+            すべてWindows専用のデスクトップアプリケーションです。
         </p>
     </header>
 
@@ -750,9 +781,13 @@
             <!-- AutoMosaic R18版 -->
             <article class="product-card">
                 <div class="card-header">
-                    <img src="assets/icons/app_R18.png" alt="AutoMosaic R18版" class="product-icon" width="64" height="64">
+                    <a href="automosaic-r18.html?lang=ja" class="product-icon-link">
+                        <img src="assets/icons/app_R18.png" alt="AutoMosaic R18版" class="product-icon" width="64" height="64">
+                    </a>
                     <div class="card-title-area">
-                        <h2 class="product-name">AutoMosaic R18版</h2>
+                        <a href="automosaic-r18.html?lang=ja" class="product-name-link">
+                            <h2 class="product-name">AutoMosaic R18版</h2>
+                        </a>
                         <p class="product-subtitle">画像への連続自動モザイクツール</p>
                     </div>
                 </div>
@@ -794,9 +829,13 @@
             <!-- AutoMosaic (通常版) -->
             <article class="product-card">
                 <div class="card-header">
-                    <img src="assets/icons/app_general.png" alt="AutoMosaic (通常版)" class="product-icon" width="64" height="64">
+                    <a href="automosaic.html?lang=ja" class="product-icon-link">
+                        <img src="assets/icons/app_general.png" alt="AutoMosaic (通常版)" class="product-icon" width="64" height="64">
+                    </a>
                     <div class="card-title-area">
-                        <h2 class="product-name">AutoMosaic (通常版)</h2>
+                        <a href="automosaic.html?lang=ja" class="product-name-link">
+                            <h2 class="product-name">AutoMosaic (通常版)</h2>
+                        </a>
                         <p class="product-subtitle">画像への連続自動モザイクツール</p>
                     </div>
                 </div>
@@ -838,9 +877,13 @@
             <!-- AI Paint Cleaner -->
             <article class="product-card">
                 <div class="card-header">
-                    <img src="assets/icons/app2.png" alt="AI Paint Cleaner" class="product-icon" width="64" height="64">
+                    <a href="ai-paint-cleaner.html?lang=ja" class="product-icon-link">
+                        <img src="assets/icons/app2.png" alt="AI Paint Cleaner" class="product-icon" width="64" height="64">
+                    </a>
                     <div class="card-title-area">
-                        <h2 class="product-name">AI Paint Cleaner</h2>
+                        <a href="ai-paint-cleaner.html?lang=ja" class="product-name-link">
+                            <h2 class="product-name">AI Paint Cleaner</h2>
+                        </a>
                         <p class="product-subtitle">複数画像の効率修正ツール</p>
                     </div>
                 </div>
@@ -883,9 +926,13 @@
             <!-- AI Meta Cleaner -->
             <article class="product-card">
                 <div class="card-header">
-                    <img src="assets/icons/app3.png" alt="AI Meta Cleaner" class="product-icon" width="64" height="64">
+                    <a href="ai-meta-cleaner.html?lang=ja" class="product-icon-link">
+                        <img src="assets/icons/app3.png" alt="AI Meta Cleaner" class="product-icon" width="64" height="64">
+                    </a>
                     <div class="card-title-area">
-                        <h2 class="product-name">AI Meta Cleaner</h2>
+                        <a href="ai-meta-cleaner.html?lang=ja" class="product-name-link">
+                            <h2 class="product-name">AI Meta Cleaner</h2>
+                        </a>
                         <p class="product-subtitle">AI埋込情報対応メタデータ削除ツール</p>
                     </div>
                 </div>
@@ -926,9 +973,13 @@
             <!-- Frame Craft -->
             <article class="product-card">
                 <div class="card-header">
-                    <img src="assets/icons/app5.png" alt="Frame Craft" class="product-icon" width="64" height="64">
+                    <a href="frame-craft.html?lang=ja" class="product-icon-link">
+                        <img src="assets/icons/app5.png" alt="Frame Craft" class="product-icon" width="64" height="64">
+                    </a>
                     <div class="card-title-area">
-                        <h2 class="product-name">Frame Craft</h2>
+                        <a href="frame-craft.html?lang=ja" class="product-name-link">
+                            <h2 class="product-name">Frame Craft</h2>
+                        </a>
                         <p class="product-subtitle">動画フレーム抽出 & アニメーション変換ツール</p>
                     </div>
                 </div>
@@ -971,9 +1022,13 @@
             <!-- Meta Converter -->
             <article class="product-card">
                 <div class="card-header">
-                    <img src="assets/icons/app4.png" alt="Meta Converter" class="product-icon" width="64" height="64">
+                    <a href="meta-converter.html?lang=ja" class="product-icon-link">
+                        <img src="assets/icons/app4.png" alt="Meta Converter" class="product-icon" width="64" height="64">
+                    </a>
                     <div class="card-title-area">
-                        <h2 class="product-name">Meta Converter</h2>
+                        <a href="meta-converter.html?lang=ja" class="product-name-link">
+                            <h2 class="product-name">Meta Converter</h2>
+                        </a>
                         <p class="product-subtitle">メタデータ維持画像変換ツール</p>
                     </div>
                 </div>
@@ -1022,11 +1077,13 @@
                 <p class="workflow-label">パターン1：有料・オールインワン</p>
                 <div class="workflow-content">
                     <div class="workflow-step">
+                        <img src="assets/icons/app_R18.png" alt="AutoMosaic R18版" class="workflow-icon">
                         <p class="workflow-step-name">AutoMosaic R18版</p>
                         <p class="workflow-step-desc">自動モザイク処理</p>
                     </div>
                     <span class="workflow-arrow">→</span>
                     <div class="workflow-step highlight">
+                        <img src="assets/icons/app2.png" alt="AI Paint Cleaner" class="workflow-icon">
                         <p class="workflow-step-name">AI Paint Cleaner</p>
                         <p class="workflow-step-desc">細かい調整・編集<br><small>※メタデータ削除機能も内蔵</small></p>
                     </div>
@@ -1039,11 +1096,13 @@
                 <p class="workflow-label">パターン2：無料ツールで対応</p>
                 <div class="workflow-content">
                     <div class="workflow-step">
+                        <img src="assets/icons/app_R18.png" alt="AutoMosaic R18版" class="workflow-icon">
                         <p class="workflow-step-name">AutoMosaic R18版</p>
-                        <p class="workflow-step-desc">自動モザイク処理</p>
+                        <p class="workflow-step-desc">自動モザイク処理<br><small>※有料ソフト</small></p>
                     </div>
                     <span class="workflow-arrow">→</span>
                     <div class="workflow-step free">
+                        <img src="assets/icons/app3.png" alt="AI Meta Cleaner" class="workflow-icon">
                         <p class="workflow-step-name">AI Meta Cleaner</p>
                         <p class="workflow-step-desc">メタデータ削除<br><small>※無料ソフト</small></p>
                     </div>
