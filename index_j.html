@@ -1,80 +1,49 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="AI画像生成・編集を効率化するWindows向けツール集。自動モザイク（AutoMosaic）、総合編集ツール（AI Paint Cleaner）、メタデータ変換など。">
-    <meta name="keywords" content="AI画像ツール,AutoMosaic,自動モザイク,画像編集,Windowsソフト,AI Paint Cleaner">
-    <meta name="author" content="nekzuk Software">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nekzuk.com/index_j.html">
-    <meta property="og:title" content="AI画像編集・生成ワークフロー高速化ツール（Windows）| nekzuk Software">
-    <meta property="og:description" content="AI画像生成・編集を効率化するWindows向けツール集。自動モザイク（AutoMosaic）、総合編集ツール（AI Paint Cleaner）、メタデータ変換など。">
-    <meta property="og:image" content="https://nekzuk.com/assets/favicons/og-image.png?v=3">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:alt" content="nekzuk Software – AI Image Tools">
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://nekzuk.com/index_j.html">
-    <meta name="twitter:title" content="AI画像編集・生成ワークフロー高速化ツール（Windows）| nekzuk Software">
-    <meta name="twitter:description" content="AI画像生成・編集を効率化するWindows向けツール集。自動モザイク（AutoMosaic）、総合編集ツール（AI Paint Cleaner）、メタデータ変換など。">
-    <meta name="twitter:image" content="https://nekzuk.com/assets/favicons/og-image.png?v=3">
-    <meta name="twitter:site" content="@Synekzuk_AI">
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YGXKWM2RG5"></script>
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- SEO Meta Tags -->
+<meta content="AI画像生成・編集を効率化するWindows向けツール集。自動モザイク（AutoMosaic）、総合編集ツール（AI Paint Cleaner）、メタデータ変換など。" name="description"/>
+<meta content="AI画像ツール,AutoMosaic,自動モザイク,画像編集,Windowsソフト,AI Paint Cleaner" name="keywords"/>
+<meta content="nekzuk Software" name="author"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="https://nekzuk.com/index_j.html" property="og:url"/>
+<meta content="AI画像編集・生成ワークフロー高速化ツール（Windows）| nekzuk Software" property="og:title"/>
+<meta content="AI画像生成・編集を効率化するWindows向けツール集。自動モザイク（AutoMosaic）、総合編集ツール（AI Paint Cleaner）、メタデータ変換など。" property="og:description"/>
+<meta content="https://nekzuk.com/assets/favicons/og-image.png?v=3" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="nekzuk Software – AI Image Tools" property="og:image:alt"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://nekzuk.com/index_j.html" name="twitter:url"/>
+<meta content="AI画像編集・生成ワークフロー高速化ツール（Windows）| nekzuk Software" name="twitter:title"/>
+<meta content="AI画像生成・編集を効率化するWindows向けツール集。自動モザイク（AutoMosaic）、総合編集ツール（AI Paint Cleaner）、メタデータ変換など。" name="twitter:description"/>
+<meta content="https://nekzuk.com/assets/favicons/og-image.png?v=3" name="twitter:image"/>
+<meta content="@Synekzuk_AI" name="twitter:site"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-YGXKWM2RG5"></script>
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-YGXKWM2RG5');
     </script>
-    
-    <!-- Language SEO -->
-    <link rel="canonical" href="https://nekzuk.com/index_j.html">
-    <link rel="alternate" hreflang="en" href="https://nekzuk.com/">
-    <link rel="alternate" hreflang="ja" href="https://nekzuk.com/index_j.html">
-    <link rel="alternate" hreflang="x-default" href="https://nekzuk.com/">
-    <!-- Language auto-detect (first visit) + remember choice -->
-    <script>
-    (function () {
-        try {
-            const stored = localStorage.getItem('site_lang'); // 'en' | 'ja'
-            const isJa = location.pathname.endsWith('index_j.html');
-
-            // Respect user choice if saved
-            if (stored === 'ja' && !isJa) { location.replace('index_j.html'); return; }
-            if (stored === 'en' &&  isJa) { location.replace('index.html'); return; }
-
-            // First visit: auto-detect
-            if (!stored) {
-                const navLang = (navigator.languages && navigator.languages[0]) ? navigator.languages[0] : (navigator.language || '');
-                if (navLang.toLowerCase().startsWith('ja') && !isJa) {
-                    location.replace('index_j.html');
-                }
-            }
-        } catch (e) {
-            // ignore
-        }
-    })();
-    </script>
-    
-    <!-- Favicon & Icons -->
-    <link rel="icon" href="/assets/favicons/favicon.ico" sizes="32x32">
-    <link rel="icon" href="/assets/favicons/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/icon-192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicons/icon-512.png">
-    <meta name="theme-color" content="#6366f1">
-    
+<!-- Language SEO -->
+<!-- Language auto-detect (first visit) + remember choice -->
+<!-- Favicon & Icons -->
+<link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32"/>
+<link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/assets/favicons/icon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/assets/favicons/icon-512.png" rel="icon" sizes="512x512" type="image/png"/>
+<meta content="#6366f1" name="theme-color"/>
 <title>AI画像編集・生成ワークフロー高速化ツール（Windows）| AutoMosaic・AI Paint Cleaner - nekzuk</title>
-    <style>
+<style>
         :root {
             --primary: #6366f1;
             --primary-dark: #4f46e5;
@@ -572,555 +541,546 @@
             }
         }
     </style>
-    
-    <!-- 構造化データ：Organization -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "nekzuk Software",
-      "alternateName": "nekzuk",
-      "url": "https://nekzuk.com/",
-      "logo": "https://nekzuk.com/assets/favicons/icon-512.png",
-      "description": "AI画像処理ツールの開発者。コンテンツクリエイターやAIアーティスト向けの自動モザイク、バッチ画像編集、メタデータ管理、ワークフロー自動化ツールを専門としています。",
-      "foundingDate": "2024",
-      "knowsAbout": [
-        "AI画像処理",
-        "自動モザイク",
-        "バッチ画像編集",
-        "AIインペイント",
-        "メタデータ管理",
-        "Stable Diffusion",
-        "コンテンツプライバシー保護",
-        "ワークフロー自動化"
-      ],
-      "areaServed": {
-        "@type": "Place",
-        "name": "Worldwide"
-      },
-      "sameAs": [
-        "https://x.com/Synekzuk_AI",
-        "https://nekzuk.booth.pm/",
-        "https://payhip.com/nekzuk"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "Customer Support",
-        "availableLanguage": ["English", "Japanese", "Chinese", "Korean"],
-        "contactOption": "TollFree"
-      }
+<!-- 構造化データ：Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "nekzuk Software",
+  "alternateName": "nekzuk",
+  "url": "https://nekzuk.com/",
+  "logo": "https://nekzuk.com/assets/favicons/icon-512.png",
+  "description": "AI画像処理ツールの開発者。コンテンツクリエイターやAIアーティスト向けの自動モザイク、バッチ画像編集、メタデータ管理、ワークフロー自動化ツールを専門としています。",
+  "foundingDate": "2024",
+  "knowsAbout": [
+    "AI画像処理",
+    "自動モザイク",
+    "バッチ画像編集",
+    "AIインペイント",
+    "メタデータ管理",
+    "Stable Diffusion",
+    "コンテンツプライバシー保護",
+    "ワークフロー自動化"
+  ],
+  "areaServed": {
+    "@type": "Place",
+    "name": "Worldwide"
+  },
+  "sameAs": [
+    "https://x.com/Synekzuk_AI",
+    "https://nekzuk.booth.pm/",
+    "https://payhip.com/nekzuk"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Support",
+    "availableLanguage": [
+      "English",
+      "Japanese",
+      "Chinese",
+      "Korean"
+    ],
+    "contactOption": "TollFree"
+  },
+  "inLanguage": "ja"
+}
+</script>
+<!-- 構造化データ：WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "nekzuk Software",
+  "alternateName": "nekzuk",
+  "url": "https://nekzuk.com/",
+  "description": "コンテンツクリエイター向けのプロフェッショナルAI画像処理ツール。バッチモザイク、AIインペイント、メタデータ管理など。GPU高速化対応のWindowsデスクトップアプリケーション。",
+  "inLanguage": "ja",
+  "publisher": {
+    "@type": "Organization",
+    "name": "nekzuk Software",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://nekzuk.com/assets/favicons/icon-512.png"
     }
-    </script>
-    
-    <!-- 構造化データ：WebSite -->
-    <script type="application/ld+json">
+  }
+}
+</script>
+<!-- 構造化データ：ItemList (製品カタログ) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "nekzuk Software 製品一覧",
+  "description": "AI画像処理ツールの完全カタログ",
+  "numberOfItems": 6,
+  "itemListElement": [
     {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "nekzuk Software",
-      "alternateName": "nekzuk",
-      "url": "https://nekzuk.com/",
-      "description": "コンテンツクリエイター向けのプロフェッショナルAI画像処理ツール。バッチモザイク、AIインペイント、メタデータ管理など。GPU高速化対応のWindowsデスクトップアプリケーション。",
-      "inLanguage": ["en", "ja"],
-      "publisher": {
-        "@type": "Organization",
-        "name": "nekzuk Software",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://nekzuk.com/assets/favicons/icon-512.png"
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AutoMosaic R18版",
+        "url": "https://nekzuk.com/automosaic-r18.html",
+        "image": "https://nekzuk.com/assets/icons/app_R18.png",
+        "description": "GPU高速化バッチ自動モザイクツール",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Windows 10, Windows 11",
+        "offers": {
+          "@type": "AggregateOffer",
+          "lowPrice": "2980",
+          "highPrice": "25",
+          "priceCurrency": "JPY"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AutoMosaic 通常版",
+        "url": "https://nekzuk.com/automosaic.html",
+        "image": "https://nekzuk.com/assets/icons/app_general.png",
+        "description": "顔・文字・ナンバープレート・漫画の自動モザイク",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Windows 10, Windows 11",
+        "offers": {
+          "@type": "AggregateOffer",
+          "lowPrice": "2980",
+          "highPrice": "25",
+          "priceCurrency": "JPY"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AI Paint Cleaner",
+        "url": "https://nekzuk.com/ai-paint-cleaner.html",
+        "image": "https://nekzuk.com/assets/icons/app2.png",
+        "description": "AIインペイント搭載オールインワンバッチ編集ツール",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Windows 10, Windows 11",
+        "offers": {
+          "@type": "AggregateOffer",
+          "lowPrice": "2000",
+          "highPrice": "20",
+          "priceCurrency": "JPY"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AI Meta Cleaner",
+        "url": "https://nekzuk.com/ai-meta-cleaner.html",
+        "image": "https://nekzuk.com/assets/icons/app3.png",
+        "description": "AI画像用無料メタデータ削除ツール",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Windows 10, Windows 11",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "JPY"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Frame Craft",
+        "url": "https://nekzuk.com/frame-craft.html",
+        "image": "https://nekzuk.com/assets/icons/app5.png",
+        "description": "動画フレーム抽出・アニメーション変換ツール",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Windows 10, Windows 11",
+        "offers": {
+          "@type": "AggregateOffer",
+          "lowPrice": "480",
+          "highPrice": "5",
+          "priceCurrency": "JPY"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Meta Converter",
+        "url": "https://nekzuk.com/meta-converter.html",
+        "image": "https://nekzuk.com/assets/icons/app4.png",
+        "description": "メタデータ維持画像変換ツール",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Windows 10, Windows 11",
+        "offers": {
+          "@type": "AggregateOffer",
+          "lowPrice": "380",
+          "highPrice": "4",
+          "priceCurrency": "JPY"
         }
       }
     }
-    </script>
-    
-    <!-- 構造化データ：ItemList (製品カタログ) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "nekzuk Software 製品一覧",
-      "description": "AI画像処理ツールの完全カタログ",
-      "numberOfItems": 6,
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "item": {
-            "@type": "SoftwareApplication",
-            "name": "AutoMosaic R18版",
-            "url": "https://nekzuk.com/automosaic-r18.html",
-            "image": "https://nekzuk.com/assets/icons/app_R18.png",
-            "description": "GPU高速化バッチ自動モザイクツール",
-            "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "Windows 10, Windows 11",
-            "offers": {
-              "@type": "AggregateOffer",
-              "lowPrice": "2980",
-              "highPrice": "25",
-              "priceCurrency": "JPY"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "item": {
-            "@type": "SoftwareApplication",
-            "name": "AutoMosaic 通常版",
-            "url": "https://nekzuk.com/automosaic.html",
-            "image": "https://nekzuk.com/assets/icons/app_general.png",
-            "description": "顔・文字・ナンバープレート・漫画の自動モザイク",
-            "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "Windows 10, Windows 11",
-            "offers": {
-              "@type": "AggregateOffer",
-              "lowPrice": "2980",
-              "highPrice": "25",
-              "priceCurrency": "JPY"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "item": {
-            "@type": "SoftwareApplication",
-            "name": "AI Paint Cleaner",
-            "url": "https://nekzuk.com/ai-paint-cleaner.html",
-            "image": "https://nekzuk.com/assets/icons/app2.png",
-            "description": "AIインペイント搭載オールインワンバッチ編集ツール",
-            "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "Windows 10, Windows 11",
-            "offers": {
-              "@type": "AggregateOffer",
-              "lowPrice": "2000",
-              "highPrice": "20",
-              "priceCurrency": "JPY"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "item": {
-            "@type": "SoftwareApplication",
-            "name": "AI Meta Cleaner",
-            "url": "https://nekzuk.com/ai-meta-cleaner.html",
-            "image": "https://nekzuk.com/assets/icons/app3.png",
-            "description": "AI画像用無料メタデータ削除ツール",
-            "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "Windows 10, Windows 11",
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "JPY"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "item": {
-            "@type": "SoftwareApplication",
-            "name": "Frame Craft",
-            "url": "https://nekzuk.com/frame-craft.html",
-            "image": "https://nekzuk.com/assets/icons/app5.png",
-            "description": "動画フレーム抽出・アニメーション変換ツール",
-            "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "Windows 10, Windows 11",
-            "offers": {
-              "@type": "AggregateOffer",
-              "lowPrice": "480",
-              "highPrice": "5",
-              "priceCurrency": "JPY"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 6,
-          "item": {
-            "@type": "SoftwareApplication",
-            "name": "Meta Converter",
-            "url": "https://nekzuk.com/meta-converter.html",
-            "image": "https://nekzuk.com/assets/icons/app4.png",
-            "description": "メタデータ維持画像変換ツール",
-            "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "Windows 10, Windows 11",
-            "offers": {
-              "@type": "AggregateOffer",
-              "lowPrice": "380",
-              "highPrice": "4",
-              "priceCurrency": "JPY"
-            }
-          }
-        }
-      ]
-    }
-    </script>
-</head>
+  ],
+  "inLanguage": "ja"
+}
+</script>
+<link href="https://nekzuk.com/index_j.html" rel="canonical"/><link href="https://nekzuk.com/" hreflang="en" rel="alternate"/><link href="https://nekzuk.com/index_j.html" hreflang="ja" rel="alternate"/><link href="https://nekzuk.com/" hreflang="x-default" rel="alternate"/><meta content="ja_JP" property="og:locale"/></head>
 <body>
-    <div class="bg-effect"></div>
-
-    <header>
-        <div class="header-badge">nekzuk Software</div>
-        <div class="lang-switch">
-            <a href="index.html" class="lang-btn " onclick="setSiteLang('en')">English</a>
-            <a href="index_j.html" class="lang-btn active" onclick="setSiteLang('ja')">日本語</a>
-        </div>
-    
-        <h1>製品のご紹介</h1>
-        <p class="header-description">
-            AI画像生成・編集のワークフローを効率化する各種ツールをご用意しています。<br>
+<div class="bg-effect"></div>
+<header>
+<div class="header-badge">nekzuk Software</div>
+<div class="lang-switch">
+<a class="lang-btn" href="/" onclick="setSiteLang('en')">English</a>
+<a class="lang-btn active" href="/index_j.html" onclick="setSiteLang('ja')">日本語</a>
+</div>
+<h1>製品のご紹介</h1>
+<p class="header-description">
+            AI画像生成・編集のワークフローを効率化する各種ツールをご用意しています。<br/>
             すべてWindows専用のデスクトップアプリケーションです。
         </p>
-    </header>
-
-    <main>
-        <div class="products-grid">
-            <!-- AutoMosaic R18版 -->
-            <article class="product-card">
-                <div class="card-header">
-                    <a href="automosaic-r18.html?lang=ja" class="product-icon-link">
-                        <img src="assets/icons/app_R18.png" alt="AutoMosaic R18版" class="product-icon" width="64" height="64">
-                    </a>
-                    <div class="card-title-area">
-                        <a href="automosaic-r18.html?lang=ja" class="product-name-link">
-                            <h2 class="product-name">AutoMosaic R18版</h2>
-                        </a>
-                        <p class="product-subtitle">画像への連続自動モザイクツール</p>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="product-description">
+</header>
+<main>
+<div class="products-grid">
+<!-- AutoMosaic R18版 -->
+<article class="product-card">
+<div class="card-header">
+<a class="product-icon-link" href="automosaic-r18_j.html">
+<img alt="AutoMosaic R18版" class="product-icon" height="64" src="assets/icons/app_R18.png" width="64"/>
+</a>
+<div class="card-title-area">
+<a class="product-name-link" href="automosaic-r18_j.html">
+<h2 class="product-name">AutoMosaic R18版</h2>
+</a>
+<p class="product-subtitle">画像への連続自動モザイクツール</p>
+</div>
+</div>
+<div class="card-body">
+<p class="product-description">
                         画像内のセンシティブ部位を自動検出し、複数の画像に連続でモザイク処理を施すツールです。
                         GPU対応で1枚あたり約2秒の高速処理を実現。
                     </p>
-                    <ul class="features-list">
-                        <li>AI自動検出</li>
-                        <li>高速GPU処理</li>
-                        <li>モザイク・黒塗り・セグメンテーション</li>
-                        <li>モデル追加対応</li>
-                        <li class="lang">日/英/中/韓</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="price-badge paid">¥2,980</span>
-                    <div class="button-group">
-                        <a href="automosaic-r18.html?lang=ja" class="btn btn-secondary">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                            </svg>
+<ul class="features-list">
+<li>AI自動検出</li>
+<li>高速GPU処理</li>
+<li>モザイク・黒塗り・セグメンテーション</li>
+<li>モデル追加対応</li>
+<li class="lang">日/英/中/韓</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="price-badge paid">¥2,980</span>
+<div class="button-group">
+<a class="btn btn-secondary" href="automosaic-r18_j.html">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<line x1="16" x2="8" y1="13" y2="13"></line>
+<line x1="16" x2="8" y1="17" y2="17"></line>
+</svg>
                             製品詳細
                         </a>
-                        <a href="https://synekzuk.booth.pm/items/6510317" target="_blank" rel="noopener" class="btn btn-primary">
+<a class="btn btn-primary" href="https://synekzuk.booth.pm/items/6510317" rel="noopener" target="_blank">
                             BOOTH
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- AutoMosaic (通常版) -->
-            <article class="product-card">
-                <div class="card-header">
-                    <a href="automosaic.html?lang=ja" class="product-icon-link">
-                        <img src="assets/icons/app_general.png" alt="AutoMosaic (通常版)" class="product-icon" width="64" height="64">
-                    </a>
-                    <div class="card-title-area">
-                        <a href="automosaic.html?lang=ja" class="product-name-link">
-                            <h2 class="product-name">AutoMosaic (通常版)</h2>
-                        </a>
-                        <p class="product-subtitle">画像への連続自動モザイクツール</p>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="product-description">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M7 17L17 7M17 7H7M17 7V17"></path>
+</svg>
+</a>
+</div>
+</div>
+</article>
+<!-- AutoMosaic (通常版) -->
+<article class="product-card">
+<div class="card-header">
+<a class="product-icon-link" href="automosaic_j.html">
+<img alt="AutoMosaic (通常版)" class="product-icon" height="64" src="assets/icons/app_general.png" width="64"/>
+</a>
+<div class="card-title-area">
+<a class="product-name-link" href="automosaic_j.html">
+<h2 class="product-name">AutoMosaic (通常版)</h2>
+</a>
+<p class="product-subtitle">画像への連続自動モザイクツール</p>
+</div>
+</div>
+<div class="card-body">
+<p class="product-description">
                         人物・顔・目・文字・ナンバープレート等を自動検出し、モザイク処理を施すツールです。
                         漫画の吹き出しや効果音の検出にも対応。
                     </p>
-                    <ul class="features-list">
-                        <li>顔・目・人物検出</li>
-                        <li>文字・ナンバープレート検出</li>
-                        <li>吹き出し・効果音検出</li>
-                        <li>モデル追加対応</li>
-                        <li class="lang">日/英/中/韓</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="price-badge paid">¥2,980</span>
-                    <div class="button-group">
-                        <a href="automosaic.html?lang=ja" class="btn btn-secondary">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                            </svg>
+<ul class="features-list">
+<li>顔・目・人物検出</li>
+<li>文字・ナンバープレート検出</li>
+<li>吹き出し・効果音検出</li>
+<li>モデル追加対応</li>
+<li class="lang">日/英/中/韓</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="price-badge paid">¥2,980</span>
+<div class="button-group">
+<a class="btn btn-secondary" href="automosaic_j.html">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<line x1="16" x2="8" y1="13" y2="13"></line>
+<line x1="16" x2="8" y1="17" y2="17"></line>
+</svg>
                             製品詳細
                         </a>
-                        <a href="https://synekzuk.booth.pm/items/7075141" target="_blank" rel="noopener" class="btn btn-primary">
+<a class="btn btn-primary" href="https://synekzuk.booth.pm/items/7075141" rel="noopener" target="_blank">
                             BOOTH
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- AI Paint Cleaner -->
-            <article class="product-card">
-                <div class="card-header">
-                    <a href="ai-paint-cleaner.html?lang=ja" class="product-icon-link">
-                        <img src="assets/icons/app2.png" alt="AI Paint Cleaner" class="product-icon" width="64" height="64">
-                    </a>
-                    <div class="card-title-area">
-                        <a href="ai-paint-cleaner.html?lang=ja" class="product-name-link">
-                            <h2 class="product-name">AI Paint Cleaner</h2>
-                        </a>
-                        <p class="product-subtitle">複数画像の効率修正ツール</p>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="product-description">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M7 17L17 7M17 7H7M17 7V17"></path>
+</svg>
+</a>
+</div>
+</div>
+</article>
+<!-- AI Paint Cleaner -->
+<article class="product-card">
+<div class="card-header">
+<a class="product-icon-link" href="ai-paint-cleaner_j.html">
+<img alt="AI Paint Cleaner" class="product-icon" height="64" src="assets/icons/app2.png" width="64"/>
+</a>
+<div class="card-title-area">
+<a class="product-name-link" href="ai-paint-cleaner_j.html">
+<h2 class="product-name">AI Paint Cleaner</h2>
+</a>
+<p class="product-subtitle">複数画像の効率修正ツール</p>
+</div>
+</div>
+<div class="card-body">
+<p class="product-description">
                         AIによる強力なインペイント機能と数多くのバッチ処理を搭載した、
                         イラスト修正のオールインワンツールです。
                     </p>
-                    <ul class="features-list">
-                        <li>AIインペイント</li>
-                        <li>モザイク除去・追加</li>
-                        <li>背景除去</li>
-                        <li>AIアップスケール</li>
-                        <li>一括処理対応</li>
-                        <li class="lang">日/英/中/韓</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="price-badge paid">¥2,000</span>
-                    <div class="button-group">
-                        <a href="ai-paint-cleaner.html?lang=ja" class="btn btn-secondary">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                            </svg>
+<ul class="features-list">
+<li>AIインペイント</li>
+<li>モザイク除去・追加</li>
+<li>背景除去</li>
+<li>AIアップスケール</li>
+<li>一括処理対応</li>
+<li class="lang">日/英/中/韓</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="price-badge paid">¥2,000</span>
+<div class="button-group">
+<a class="btn btn-secondary" href="ai-paint-cleaner_j.html">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<line x1="16" x2="8" y1="13" y2="13"></line>
+<line x1="16" x2="8" y1="17" y2="17"></line>
+</svg>
                             製品詳細
                         </a>
-                        <a href="https://synekzuk.booth.pm/items/6649634" target="_blank" rel="noopener" class="btn btn-primary">
+<a class="btn btn-primary" href="https://synekzuk.booth.pm/items/6649634" rel="noopener" target="_blank">
                             BOOTH
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- AI Meta Cleaner -->
-            <article class="product-card">
-                <div class="card-header">
-                    <a href="ai-meta-cleaner.html?lang=ja" class="product-icon-link">
-                        <img src="assets/icons/app3.png" alt="AI Meta Cleaner" class="product-icon" width="64" height="64">
-                    </a>
-                    <div class="card-title-area">
-                        <a href="ai-meta-cleaner.html?lang=ja" class="product-name-link">
-                            <h2 class="product-name">AI Meta Cleaner</h2>
-                        </a>
-                        <p class="product-subtitle">AI埋込情報対応メタデータ削除ツール</p>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="product-description">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M7 17L17 7M17 7H7M17 7V17"></path>
+</svg>
+</a>
+</div>
+</div>
+</article>
+<!-- AI Meta Cleaner -->
+<article class="product-card">
+<div class="card-header">
+<a class="product-icon-link" href="ai-meta-cleaner_j.html">
+<img alt="AI Meta Cleaner" class="product-icon" height="64" src="assets/icons/app3.png" width="64"/>
+</a>
+<div class="card-title-area">
+<a class="product-name-link" href="ai-meta-cleaner_j.html">
+<h2 class="product-name">AI Meta Cleaner</h2>
+</a>
+<p class="product-subtitle">AI埋込情報対応メタデータ削除ツール</p>
+</div>
+</div>
+<div class="card-body">
+<p class="product-description">
                         画像のメタデータと生成AIの埋め込み情報をまとめて削除できるツールです。
                         Stable DiffusionやNovelAIの生成情報も自動検出・削除します。
                     </p>
-                    <ul class="features-list">
-                        <li>PNG / JPG / WEBP / GIF / TIFF</li>
-                        <li>EXIF・XMP削除</li>
-                        <li>SD/NovelAI情報削除</li>
-                        <li class="lang">日/英</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="price-badge free">無料</span>
-                    <div class="button-group">
-                        <a href="ai-meta-cleaner.html?lang=ja" class="btn btn-secondary">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                            </svg>
+<ul class="features-list">
+<li>PNG / JPG / WEBP / GIF / TIFF</li>
+<li>EXIF・XMP削除</li>
+<li>SD/NovelAI情報削除</li>
+<li class="lang">日/英</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="price-badge free">無料</span>
+<div class="button-group">
+<a class="btn btn-secondary" href="ai-meta-cleaner_j.html">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<line x1="16" x2="8" y1="13" y2="13"></line>
+<line x1="16" x2="8" y1="17" y2="17"></line>
+</svg>
                             製品詳細
                         </a>
-                        <a href="https://synekzuk.booth.pm/items/7626627" target="_blank" rel="noopener" class="btn btn-primary">
+<a class="btn btn-primary" href="https://synekzuk.booth.pm/items/7626627" rel="noopener" target="_blank">
                             BOOTH
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Frame Craft -->
-            <article class="product-card">
-                <div class="card-header">
-                    <a href="frame-craft.html?lang=ja" class="product-icon-link">
-                        <img src="assets/icons/app5.png" alt="Frame Craft" class="product-icon" width="64" height="64">
-                    </a>
-                    <div class="card-title-area">
-                        <a href="frame-craft.html?lang=ja" class="product-name-link">
-                            <h2 class="product-name">Frame Craft</h2>
-                        </a>
-                        <p class="product-subtitle">動画フレーム抽出 & アニメーション変換ツール</p>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="product-description">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M7 17L17 7M17 7H7M17 7V17"></path>
+</svg>
+</a>
+</div>
+</div>
+</article>
+<!-- Frame Craft -->
+<article class="product-card">
+<div class="card-header">
+<a class="product-icon-link" href="frame-craft_j.html">
+<img alt="Frame Craft" class="product-icon" height="64" src="assets/icons/app5.png" width="64"/>
+</a>
+<div class="card-title-area">
+<a class="product-name-link" href="frame-craft_j.html">
+<h2 class="product-name">Frame Craft</h2>
+</a>
+<p class="product-subtitle">動画フレーム抽出 &amp; アニメーション変換ツール</p>
+</div>
+</div>
+<div class="card-body">
+<p class="product-description">
                         動画ファイルから指定したフレームや秒間隔で画像を抽出したり、
                         GIF/WEBPアニメーションに変換できるツールです。
                     </p>
-                    <ul class="features-list">
-                        <li>高精度フレーム抽出</li>
-                        <li>重複画像自動削除</li>
-                        <li>黒帯自動削除</li>
-                        <li>Pixivうごイラ対応</li>
-                        <li>バッチ処理</li>
-                        <li class="lang">日/英</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="price-badge paid">¥480</span>
-                    <div class="button-group">
-                        <a href="frame-craft.html?lang=ja" class="btn btn-secondary">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                            </svg>
+<ul class="features-list">
+<li>高精度フレーム抽出</li>
+<li>重複画像自動削除</li>
+<li>黒帯自動削除</li>
+<li>Pixivうごイラ対応</li>
+<li>バッチ処理</li>
+<li class="lang">日/英</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="price-badge paid">¥480</span>
+<div class="button-group">
+<a class="btn btn-secondary" href="frame-craft_j.html">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<line x1="16" x2="8" y1="13" y2="13"></line>
+<line x1="16" x2="8" y1="17" y2="17"></line>
+</svg>
                             製品詳細
                         </a>
-                        <a href="https://synekzuk.booth.pm/items/7295171" target="_blank" rel="noopener" class="btn btn-primary">
+<a class="btn btn-primary" href="https://synekzuk.booth.pm/items/7295171" rel="noopener" target="_blank">
                             BOOTH
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Meta Converter -->
-            <article class="product-card">
-                <div class="card-header">
-                    <a href="meta-converter.html?lang=ja" class="product-icon-link">
-                        <img src="assets/icons/app4.png" alt="Meta Converter" class="product-icon" width="64" height="64">
-                    </a>
-                    <div class="card-title-area">
-                        <a href="meta-converter.html?lang=ja" class="product-name-link">
-                            <h2 class="product-name">Meta Converter</h2>
-                        </a>
-                        <p class="product-subtitle">メタデータ維持画像変換ツール</p>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="product-description">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M7 17L17 7M17 7H7M17 7V17"></path>
+</svg>
+</a>
+</div>
+</div>
+</article>
+<!-- Meta Converter -->
+<article class="product-card">
+<div class="card-header">
+<a class="product-icon-link" href="meta-converter_j.html">
+<img alt="Meta Converter" class="product-icon" height="64" src="assets/icons/app4.png" width="64"/>
+</a>
+<div class="card-title-area">
+<a class="product-name-link" href="meta-converter_j.html">
+<h2 class="product-name">Meta Converter</h2>
+</a>
+<p class="product-subtitle">メタデータ維持画像変換ツール</p>
+</div>
+</div>
+<div class="card-body">
+<p class="product-description">
                         メタデータを保持したまま、複数画像をPNG/JPEG/WEBPに変換できるツールです。
                         AI画像の保管・軽量化に最適。
                     </p>
-                    <ul class="features-list">
-                        <li>メタデータ維持変換</li>
-                        <li>PNG→JPEG 1/10軽量化</li>
-                        <li>品質・サイズ調整</li>
-                        <li>Eagleライブラリ対応</li>
-                        <li>コマンドライン対応</li>
-                        <li class="lang">日/英</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="price-badge paid">¥380</span>
-                    <div class="button-group">
-                        <a href="meta-converter.html?lang=ja" class="btn btn-secondary">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                            </svg>
+<ul class="features-list">
+<li>メタデータ維持変換</li>
+<li>PNG→JPEG 1/10軽量化</li>
+<li>品質・サイズ調整</li>
+<li>Eagleライブラリ対応</li>
+<li>コマンドライン対応</li>
+<li class="lang">日/英</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="price-badge paid">¥380</span>
+<div class="button-group">
+<a class="btn btn-secondary" href="meta-converter_j.html">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<line x1="16" x2="8" y1="13" y2="13"></line>
+<line x1="16" x2="8" y1="17" y2="17"></line>
+</svg>
                             製品詳細
                         </a>
-                        <a href="https://synekzuk.booth.pm/items/6911255" target="_blank" rel="noopener" class="btn btn-primary">
+<a class="btn btn-primary" href="https://synekzuk.booth.pm/items/6911255" rel="noopener" target="_blank">
                             BOOTH
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </article>
-        </div>
-
-        <!-- Workflow Section -->
-        <section class="workflow-section">
-            <h3 class="workflow-title">おすすめワークフロー例（R18版）</h3>
-            
-            <div class="workflow-pattern">
-                <p class="workflow-label">パターン1：有料・オールインワン</p>
-                <div class="workflow-content">
-                    <div class="workflow-step">
-                        <img src="assets/icons/app_R18.png" alt="AutoMosaic R18版" class="workflow-icon">
-                        <p class="workflow-step-name">AutoMosaic R18版</p>
-                        <p class="workflow-step-desc">自動モザイク処理</p>
-                    </div>
-                    <span class="workflow-arrow">→</span>
-                    <div class="workflow-step highlight">
-                        <img src="assets/icons/app2.png" alt="AI Paint Cleaner" class="workflow-icon">
-                        <p class="workflow-step-name">AI Paint Cleaner</p>
-                        <p class="workflow-step-desc">細かい調整・編集<br><small>※メタデータ削除機能も内蔵</small></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="workflow-divider">または</div>
-
-            <div class="workflow-pattern">
-                <p class="workflow-label">パターン2：無料ツールで対応</p>
-                <div class="workflow-content">
-                    <div class="workflow-step">
-                        <img src="assets/icons/app_R18.png" alt="AutoMosaic R18版" class="workflow-icon">
-                        <p class="workflow-step-name">AutoMosaic R18版</p>
-                        <p class="workflow-step-desc">自動モザイク処理<br><small>※有料ソフト</small></p>
-                    </div>
-                    <span class="workflow-arrow">→</span>
-                    <div class="workflow-step free">
-                        <img src="assets/icons/app3.png" alt="AI Meta Cleaner" class="workflow-icon">
-                        <p class="workflow-step-name">AI Meta Cleaner</p>
-                        <p class="workflow-step-desc">メタデータ削除<br><small>※無料ソフト</small></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M7 17L17 7M17 7H7M17 7V17"></path>
+</svg>
+</a>
+</div>
+</div>
+</article>
+</div>
+<!-- Workflow Section -->
+<section class="workflow-section">
+<h3 class="workflow-title">おすすめワークフロー例（R18版）</h3>
+<div class="workflow-pattern">
+<p class="workflow-label">パターン1：有料・オールインワン</p>
+<div class="workflow-content">
+<div class="workflow-step">
+<img alt="AutoMosaic R18版" class="workflow-icon" src="assets/icons/app_R18.png"/>
+<p class="workflow-step-name">AutoMosaic R18版</p>
+<p class="workflow-step-desc">自動モザイク処理</p>
+</div>
+<span class="workflow-arrow">→</span>
+<div class="workflow-step highlight">
+<img alt="AI Paint Cleaner" class="workflow-icon" src="assets/icons/app2.png"/>
+<p class="workflow-step-name">AI Paint Cleaner</p>
+<p class="workflow-step-desc">細かい調整・編集<br/><small>※メタデータ削除機能も内蔵</small></p>
+</div>
+</div>
+</div>
+<div class="workflow-divider">または</div>
+<div class="workflow-pattern">
+<p class="workflow-label">パターン2：無料ツールで対応</p>
+<div class="workflow-content">
+<div class="workflow-step">
+<img alt="AutoMosaic R18版" class="workflow-icon" src="assets/icons/app_R18.png"/>
+<p class="workflow-step-name">AutoMosaic R18版</p>
+<p class="workflow-step-desc">自動モザイク処理<br/><small>※有料ソフト</small></p>
+</div>
+<span class="workflow-arrow">→</span>
+<div class="workflow-step free">
+<img alt="AI Meta Cleaner" class="workflow-icon" src="assets/icons/app3.png"/>
+<p class="workflow-step-name">AI Meta Cleaner</p>
+<p class="workflow-step-desc">メタデータ削除<br/><small>※無料ソフト</small></p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<p>
             製品に関するお問い合わせは
-            <a href="https://x.com/Synekzuk_AI" target="_blank" rel="noopener">Twitter/X</a>
+            <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank">Twitter/X</a>
             または
-            <a href="https://accounts.booth.pm/conversations/49131834/messages" target="_blank" rel="noopener">BOOTH</a>
+            <a href="https://accounts.booth.pm/conversations/49131834/messages" rel="noopener" target="_blank">BOOTH</a>
             までお願いいたします。
         </p>
-    </footer>
-    <script>
+</footer>
+<script>
     function setSiteLang(lang) {
         try { localStorage.setItem('site_lang', lang); } catch (e) {}
     }

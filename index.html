@@ -1,80 +1,49 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Windows desktop tools to speed up AI image generation and post-processing: AutoMosaic, AI Paint Cleaner, metadata conversion, and more.">
-    <meta name="keywords" content="AI image tools,AutoMosaic,automatic mosaic,image editing,Windows software,AI Paint Cleaner">
-    <meta name="author" content="nekzuk Software">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nekzuk.com/">
-    <meta property="og:title" content="AI Image Tools for Creators | nekzuk Software">
-    <meta property="og:description" content="Windows desktop tools to speed up AI image generation and post-processing: AutoMosaic, AI Paint Cleaner,metadata conversion, and more.">
-    <meta property="og:image" content="https://nekzuk.com/assets/favicons/og-image.png?v=3">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:alt" content="nekzuk Software – AI Image Tools">
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://nekzuk.com/">
-    <meta name="twitter:title" content="AI Image Tools for Creators | nekzuk Softwarek">
-    <meta name="twitter:description" content="Windows desktop tools to speed up AI image generation and post-processing: AutoMosaic, AI Paint Cleaner, metadata conversion, and more.">
-    <meta name="twitter:image" content="https://nekzuk.com/assets/favicons/og-image.png?v=3">
-    <meta name="twitter:site" content="@Synekzuk_AI">
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YGXKWM2RG5"></script>
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- SEO Meta Tags -->
+<meta content="Windows desktop tools to speed up AI image generation and post-processing: AutoMosaic, AI Paint Cleaner, metadata conversion, and more." name="description"/>
+<meta content="AI image tools,AutoMosaic,automatic mosaic,image editing,Windows software,AI Paint Cleaner" name="keywords"/>
+<meta content="nekzuk Software" name="author"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="https://nekzuk.com/" property="og:url"/>
+<meta content="AI Image Tools for Creators | nekzuk Software" property="og:title"/>
+<meta content="Windows desktop tools to speed up AI image generation and post-processing: AutoMosaic, AI Paint Cleaner,metadata conversion, and more." property="og:description"/>
+<meta content="https://nekzuk.com/assets/favicons/og-image.png?v=3" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="nekzuk Software – AI Image Tools" property="og:image:alt"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://nekzuk.com/" name="twitter:url"/>
+<meta content="AI Image Tools for Creators | nekzuk Software" name="twitter:title"/>
+<meta content="Windows desktop tools to speed up AI image generation and post-processing: AutoMosaic, AI Paint Cleaner,metadata conversion, and more." name="twitter:description"/>
+<meta content="https://nekzuk.com/assets/favicons/og-image.png?v=3" name="twitter:image"/>
+<meta content="@Synekzuk_AI" name="twitter:site"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-YGXKWM2RG5"></script>
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-YGXKWM2RG5');
     </script>
-    
-    <!-- Language SEO -->
-    <link rel="canonical" href="https://nekzuk.com/">
-    <link rel="alternate" hreflang="en" href="https://nekzuk.com/">
-    <link rel="alternate" hreflang="ja" href="https://nekzuk.com/index_j.html">
-    <link rel="alternate" hreflang="x-default" href="https://nekzuk.com/">
-    <!-- Language auto-detect (first visit) + remember choice -->
-    <script>
-    (function () {
-        try {
-            const stored = localStorage.getItem('site_lang'); // 'en' | 'ja'
-            const isJa = location.pathname.endsWith('index_j.html');
-
-            // Respect user choice if saved
-            if (stored === 'ja' && !isJa) { location.replace('index_j.html'); return; }
-            if (stored === 'en' &&  isJa) { location.replace('index.html'); return; }
-
-            // First visit: auto-detect
-            if (!stored) {
-                const navLang = (navigator.languages && navigator.languages[0]) ? navigator.languages[0] : (navigator.language || '');
-                if (navLang.toLowerCase().startsWith('ja') && !isJa) {
-                    location.replace('index_j.html');
-                }
-            }
-        } catch (e) {
-            // ignore
-        }
-    })();
-    </script>
-    
-    <!-- Favicon & Icons -->
-    <link rel="icon" href="/assets/favicons/favicon.ico" sizes="32x32">
-    <link rel="icon" href="/assets/favicons/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/icon-192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicons/icon-512.png">
-    <meta name="theme-color" content="#6366f1">
-    
-<title>AI Image Tools for Creators | AutoMosaic & AI Paint Cleaner - nekzuk</title>
-    <style>
+<!-- Language SEO -->
+<!-- Language auto-detect (first visit) + remember choice -->
+<!-- Favicon & Icons -->
+<link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32"/>
+<link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/assets/favicons/icon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/assets/favicons/icon-512.png" rel="icon" sizes="512x512" type="image/png"/>
+<meta content="#6366f1" name="theme-color"/>
+<title>AI Image Tools for Creators | AutoMosaic &amp; AI Paint Cleaner - nekzuk</title>
+<style>
         :root {
             --primary: #6366f1;
             --primary-dark: #4f46e5;
@@ -572,554 +541,545 @@
             }
         }
     </style>
-    
-    <!-- 構造化データ：Organization -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "nekzuk Software",
-      "alternateName": "nekzuk",
-      "url": "https://nekzuk.com/",
-      "logo": "https://nekzuk.com/assets/favicons/icon-512.png",
-      "description": "Developer of AI-powered image processing tools for content creators and AI artists. Specializing in automatic mosaic, batch image editing, metadata management, and workflow automation for AI-generated content.",
-      "foundingDate": "2024",
-      "knowsAbout": [
-        "AI Image Processing",
-        "Automatic Mosaic",
-        "Batch Image Editing",
-        "AI Inpainting",
-        "Metadata Management",
-        "Stable Diffusion",
-        "Content Privacy Protection",
-        "Workflow Automation"
-      ],
-      "areaServed": {
-        "@type": "Place",
-        "name": "Worldwide"
-      },
-      "sameAs": [
-        "https://x.com/Synekzuk_AI",
-        "https://nekzuk.booth.pm/",
-        "https://payhip.com/nekzuk"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "Customer Support",
-        "availableLanguage": ["English", "Japanese", "Chinese", "Korean"],
-        "contactOption": "TollFree"
-      }
+<!-- 構造化データ：Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "nekzuk Software",
+  "alternateName": "nekzuk",
+  "url": "https://nekzuk.com/",
+  "logo": "https://nekzuk.com/assets/favicons/icon-512.png",
+  "description": "Developer of AI-powered image processing tools for content creators and AI artists. Specializing in automatic mosaic, batch image editing, metadata management, and workflow automation for AI-generated content.",
+  "foundingDate": "2024",
+  "knowsAbout": [
+    "AI Image Processing",
+    "Automatic Mosaic",
+    "Batch Image Editing",
+    "AI Inpainting",
+    "Metadata Management",
+    "Stable Diffusion",
+    "Content Privacy Protection",
+    "Workflow Automation"
+  ],
+  "areaServed": {
+    "@type": "Place",
+    "name": "Worldwide"
+  },
+  "sameAs": [
+    "https://x.com/Synekzuk_AI",
+    "https://nekzuk.booth.pm/",
+    "https://payhip.com/nekzuk"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Support",
+    "availableLanguage": [
+      "English",
+      "Japanese",
+      "Chinese",
+      "Korean"
+    ],
+    "contactOption": "TollFree"
+  },
+  "inLanguage": "en"
+}
+</script>
+<!-- 構造化データ：WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "nekzuk Software",
+  "alternateName": "nekzuk",
+  "url": "https://nekzuk.com/",
+  "description": "Professional AI image processing tools for content creators. Batch mosaic, AI inpainting, metadata management, and more. All Windows desktop applications with GPU acceleration.",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "nekzuk Software",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://nekzuk.com/assets/favicons/icon-512.png"
     }
-    </script>
-    
-    <!-- 構造化データ：WebSite -->
-    <script type="application/ld+json">
+  }
+}
+</script>
+<!-- 構造化データ：ItemList (Product Catalog) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "nekzuk Software Products",
+  "description": "Complete catalog of AI image processing tools",
+  "numberOfItems": 6,
+  "itemListElement": [
     {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "nekzuk Software",
-      "alternateName": "nekzuk",
-      "url": "https://nekzuk.com/",
-      "description": "Professional AI image processing tools for content creators. Batch mosaic, AI inpainting, metadata management, and more. All Windows desktop applications with GPU acceleration.",
-      "inLanguage": ["en", "ja"],
-      "publisher": {
-        "@type": "Organization",
-        "name": "nekzuk Software",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://nekzuk.com/assets/favicons/icon-512.png"
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AutoMosaic (R18)",
+        "url": "https://nekzuk.com/automosaic-r18.html",
+        "image": "https://nekzuk.com/assets/icons/app_R18.png",
+        "description": "GPU-accelerated batch mosaic tool for sensitive images",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Windows 10, Windows 11",
+        "offers": {
+          "@type": "AggregateOffer",
+          "lowPrice": "2980",
+          "highPrice": "25",
+          "priceCurrency": "JPY"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AutoMosaic (General)",
+        "url": "https://nekzuk.com/automosaic.html",
+        "image": "https://nekzuk.com/assets/icons/app_general.png",
+        "description": "Automatic mosaic for faces, text, license plates, and comics",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Windows 10, Windows 11",
+        "offers": {
+          "@type": "AggregateOffer",
+          "lowPrice": "2980",
+          "highPrice": "25",
+          "priceCurrency": "JPY"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AI Paint Cleaner",
+        "url": "https://nekzuk.com/ai-paint-cleaner.html",
+        "image": "https://nekzuk.com/assets/icons/app2.png",
+        "description": "All-in-one batch editing suite with AI inpainting",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Windows 10, Windows 11",
+        "offers": {
+          "@type": "AggregateOffer",
+          "lowPrice": "2000",
+          "highPrice": "20",
+          "priceCurrency": "JPY"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AI Meta Cleaner",
+        "url": "https://nekzuk.com/ai-meta-cleaner.html",
+        "image": "https://nekzuk.com/assets/icons/app3.png",
+        "description": "Free metadata cleaner for AI-generated images",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Windows 10, Windows 11",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "JPY"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Frame Craft",
+        "url": "https://nekzuk.com/frame-craft.html",
+        "image": "https://nekzuk.com/assets/icons/app5.png",
+        "description": "Video frame extractor and animation converter",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Windows 10, Windows 11",
+        "offers": {
+          "@type": "AggregateOffer",
+          "lowPrice": "480",
+          "highPrice": "5",
+          "priceCurrency": "JPY"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Meta Converter",
+        "url": "https://nekzuk.com/meta-converter.html",
+        "image": "https://nekzuk.com/assets/icons/app4.png",
+        "description": "Image converter that preserves metadata",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Windows 10, Windows 11",
+        "offers": {
+          "@type": "AggregateOffer",
+          "lowPrice": "380",
+          "highPrice": "4",
+          "priceCurrency": "JPY"
         }
       }
     }
-    </script>
-    
-    <!-- 構造化データ：ItemList (Product Catalog) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "nekzuk Software Products",
-      "description": "Complete catalog of AI image processing tools",
-      "numberOfItems": 6,
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "item": {
-            "@type": "SoftwareApplication",
-            "name": "AutoMosaic (R18)",
-            "url": "https://nekzuk.com/automosaic-r18.html",
-            "image": "https://nekzuk.com/assets/icons/app_R18.png",
-            "description": "GPU-accelerated batch mosaic tool for sensitive images",
-            "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "Windows 10, Windows 11",
-            "offers": {
-              "@type": "AggregateOffer",
-              "lowPrice": "2980",
-              "highPrice": "25",
-              "priceCurrency": "JPY"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "item": {
-            "@type": "SoftwareApplication",
-            "name": "AutoMosaic (General)",
-            "url": "https://nekzuk.com/automosaic.html",
-            "image": "https://nekzuk.com/assets/icons/app_general.png",
-            "description": "Automatic mosaic for faces, text, license plates, and comics",
-            "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "Windows 10, Windows 11",
-            "offers": {
-              "@type": "AggregateOffer",
-              "lowPrice": "2980",
-              "highPrice": "25",
-              "priceCurrency": "JPY"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "item": {
-            "@type": "SoftwareApplication",
-            "name": "AI Paint Cleaner",
-            "url": "https://nekzuk.com/ai-paint-cleaner.html",
-            "image": "https://nekzuk.com/assets/icons/app2.png",
-            "description": "All-in-one batch editing suite with AI inpainting",
-            "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "Windows 10, Windows 11",
-            "offers": {
-              "@type": "AggregateOffer",
-              "lowPrice": "2000",
-              "highPrice": "20",
-              "priceCurrency": "JPY"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "item": {
-            "@type": "SoftwareApplication",
-            "name": "AI Meta Cleaner",
-            "url": "https://nekzuk.com/ai-meta-cleaner.html",
-            "image": "https://nekzuk.com/assets/icons/app3.png",
-            "description": "Free metadata cleaner for AI-generated images",
-            "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "Windows 10, Windows 11",
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "JPY"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "item": {
-            "@type": "SoftwareApplication",
-            "name": "Frame Craft",
-            "url": "https://nekzuk.com/frame-craft.html",
-            "image": "https://nekzuk.com/assets/icons/app5.png",
-            "description": "Video frame extractor and animation converter",
-            "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "Windows 10, Windows 11",
-            "offers": {
-              "@type": "AggregateOffer",
-              "lowPrice": "480",
-              "highPrice": "5",
-              "priceCurrency": "JPY"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 6,
-          "item": {
-            "@type": "SoftwareApplication",
-            "name": "Meta Converter",
-            "url": "https://nekzuk.com/meta-converter.html",
-            "image": "https://nekzuk.com/assets/icons/app4.png",
-            "description": "Image converter that preserves metadata",
-            "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "Windows 10, Windows 11",
-            "offers": {
-              "@type": "AggregateOffer",
-              "lowPrice": "380",
-              "highPrice": "4",
-              "priceCurrency": "JPY"
-            }
-          }
-        }
-      ]
-    }
-    </script>
-</head>
+  ],
+  "inLanguage": "en"
+}
+</script>
+<link href="https://nekzuk.com/" rel="canonical"/><link href="https://nekzuk.com/" hreflang="en" rel="alternate"/><link href="https://nekzuk.com/index_j.html" hreflang="ja" rel="alternate"/><link href="https://nekzuk.com/" hreflang="x-default" rel="alternate"/><meta content="en_US" property="og:locale"/></head>
 <body>
-    <div class="bg-effect"></div>
-
-    <header>
-        <div class="header-badge">nekzuk Software</div>
-        <div class="lang-switch">
-            <a href="index.html" class="lang-btn active" onclick="setSiteLang('en')">English</a>
-            <a href="index_j.html" class="lang-btn " onclick="setSiteLang('ja')">日本語</a>
-        </div>
-    
-        <h1>Products</h1>
-        <p class="header-description">
-            Tools to accelerate AI image generation and editing workflows.<br>
+<div class="bg-effect"></div>
+<header>
+<div class="header-badge">nekzuk Software</div>
+<div class="lang-switch">
+<a class="lang-btn active" href="/" onclick="setSiteLang('en')">English</a>
+<a class="lang-btn" href="/index_j.html" onclick="setSiteLang('ja')">日本語</a>
+</div>
+<h1>Products</h1>
+<p class="header-description">
+            Tools to accelerate AI image generation and editing workflows.<br/>
             All products are Windows-only desktop applications.
         </p>
-    </header>
-
-    <main>
-        <div class="products-grid">
-            <!-- AutoMosaic R18 -->
-            <article class="product-card">
-                <div class="card-header">
-                    <a href="automosaic-r18.html?lang=en" class="product-icon-link">
-                        <img src="assets/icons/app_R18.png" alt="AutoMosaic R18" class="product-icon" width="64" height="64">
-                    </a>
-                    <div class="card-title-area">
-                        <a href="automosaic-r18.html?lang=en" class="product-name-link">
-                            <h2 class="product-name">AutoMosaic (R18)</h2>
-                        </a>
-                        <p class="product-subtitle">Batch auto mosaic tool for images</p>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="product-description">
+</header>
+<main>
+<div class="products-grid">
+<!-- AutoMosaic R18 -->
+<article class="product-card">
+<div class="card-header">
+<a class="product-icon-link" href="automosaic-r18.html">
+<img alt="AutoMosaic R18" class="product-icon" height="64" src="assets/icons/app_R18.png" width="64"/>
+</a>
+<div class="card-title-area">
+<a class="product-name-link" href="automosaic-r18.html">
+<h2 class="product-name">AutoMosaic (R18)</h2>
+</a>
+<p class="product-subtitle">Batch auto mosaic tool for images</p>
+</div>
+</div>
+<div class="card-body">
+<p class="product-description">
                         Automatically detects sensitive regions and applies mosaic/blur/fill to many images in batch.
                         GPU-accelerated (about ~2 seconds per image).
                     </p>
-                    <ul class="features-list">
-                        <li>AI auto detection</li>
-                        <li>Fast GPU acceleration</li>
-                        <li>Mosaic / black bar / segmentation</li>
-                        <li>Extensible model support</li>
-                        <li class="lang">EN/JP/ZH/KR</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="price-badge paid">$25</span>
-                    <div class="button-group">
-                        <a href="automosaic-r18.html?lang=en" class="btn btn-secondary">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                            </svg>
+<ul class="features-list">
+<li>AI auto detection</li>
+<li>Fast GPU acceleration</li>
+<li>Mosaic / black bar / segmentation</li>
+<li>Extensible model support</li>
+<li class="lang">EN/JP/ZH/KR</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="price-badge paid">$25</span>
+<div class="button-group">
+<a class="btn btn-secondary" href="automosaic-r18.html">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<line x1="16" x2="8" y1="13" y2="13"></line>
+<line x1="16" x2="8" y1="17" y2="17"></line>
+</svg>
                             Product Details
                         </a>
-                        <a href="https://payhip.com/b/BO3TR" target="_blank" rel="noopener" class="btn btn-primary">
+<a class="btn btn-primary" href="https://payhip.com/b/BO3TR" rel="noopener" target="_blank">
                             Payhip
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- AutoMosaic (General) -->
-            <article class="product-card">
-                <div class="card-header">
-                    <a href="automosaic.html?lang=en" class="product-icon-link">
-                        <img src="assets/icons/app_general.png" alt="AutoMosaic (General)" class="product-icon" width="64" height="64">
-                    </a>
-                    <div class="card-title-area">
-                        <a href="automosaic.html?lang=en" class="product-name-link">
-                            <h2 class="product-name">AutoMosaic (General)</h2>
-                        </a>
-                        <p class="product-subtitle">Batch auto mosaic tool for images</p>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="product-description">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M7 17L17 7M17 7H7M17 7V17"></path>
+</svg>
+</a>
+</div>
+</div>
+</article>
+<!-- AutoMosaic (General) -->
+<article class="product-card">
+<div class="card-header">
+<a class="product-icon-link" href="automosaic.html">
+<img alt="AutoMosaic (General)" class="product-icon" height="64" src="assets/icons/app_general.png" width="64"/>
+</a>
+<div class="card-title-area">
+<a class="product-name-link" href="automosaic.html">
+<h2 class="product-name">AutoMosaic (General)</h2>
+</a>
+<p class="product-subtitle">Batch auto mosaic tool for images</p>
+</div>
+</div>
+<div class="card-body">
+<p class="product-description">
                         Automatically detects people, faces/eyes, text, license plates, and comic elements, then applies mosaic/blur/fill in batch.
                         Supports speech bubbles and SFX text detection.
                     </p>
-                    <ul class="features-list">
-                        <li>Face / eye / person detection</li>
-                        <li>Text / license plate detection</li>
-                        <li>Speech bubble / SFX text detection</li>
-                        <li>Extensible model support</li>
-                        <li class="lang">EN/JP/ZH/KR</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="price-badge paid">$25</span>
-                    <div class="button-group">
-                        <a href="automosaic.html?lang=en" class="btn btn-secondary">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                            </svg>
+<ul class="features-list">
+<li>Face / eye / person detection</li>
+<li>Text / license plate detection</li>
+<li>Speech bubble / SFX text detection</li>
+<li>Extensible model support</li>
+<li class="lang">EN/JP/ZH/KR</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="price-badge paid">$25</span>
+<div class="button-group">
+<a class="btn btn-secondary" href="automosaic.html">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<line x1="16" x2="8" y1="13" y2="13"></line>
+<line x1="16" x2="8" y1="17" y2="17"></line>
+</svg>
                             Product Details
                         </a>
-                        <a href="https://payhip.com/b/mit2r" target="_blank" rel="noopener" class="btn btn-primary">
+<a class="btn btn-primary" href="https://payhip.com/b/mit2r" rel="noopener" target="_blank">
                             Payhip
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- AI Paint Cleaner -->
-            <article class="product-card">
-                <div class="card-header">
-                    <a href="ai-paint-cleaner.html?lang=en" class="product-icon-link">
-                        <img src="assets/icons/app2.png" alt="AI Paint Cleaner" class="product-icon" width="64" height="64">
-                    </a>
-                    <div class="card-title-area">
-                        <a href="ai-paint-cleaner.html?lang=en" class="product-name-link">
-                            <h2 class="product-name">AI Paint Cleaner</h2>
-                        </a>
-                        <p class="product-subtitle">Batch editing tool for images</p>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="product-description">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M7 17L17 7M17 7H7M17 7V17"></path>
+</svg>
+</a>
+</div>
+</div>
+</article>
+<!-- AI Paint Cleaner -->
+<article class="product-card">
+<div class="card-header">
+<a class="product-icon-link" href="ai-paint-cleaner.html">
+<img alt="AI Paint Cleaner" class="product-icon" height="64" src="assets/icons/app2.png" width="64"/>
+</a>
+<div class="card-title-area">
+<a class="product-name-link" href="ai-paint-cleaner.html">
+<h2 class="product-name">AI Paint Cleaner</h2>
+</a>
+<p class="product-subtitle">Batch editing tool for images</p>
+</div>
+</div>
+<div class="card-body">
+<p class="product-description">
                         All-in-one batch editing suite with powerful AI inpainting and many utilities for cleaning large sets of images.
                     </p>
-                    <ul class="features-list">
-                        <li>AI inpainting</li>
-                        <li>Mosaic remove / add</li>
-                        <li>Background removal</li>
-                        <li>AI upscaling</li>
-                        <li>Batch processing</li>
-                        <li class="lang">EN/JP/ZH/KR</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="price-badge paid">$20</span>
-                    <div class="button-group">
-                        <a href="ai-paint-cleaner.html?lang=en" class="btn btn-secondary">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                            </svg>
+<ul class="features-list">
+<li>AI inpainting</li>
+<li>Mosaic remove / add</li>
+<li>Background removal</li>
+<li>AI upscaling</li>
+<li>Batch processing</li>
+<li class="lang">EN/JP/ZH/KR</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="price-badge paid">$20</span>
+<div class="button-group">
+<a class="btn btn-secondary" href="ai-paint-cleaner.html">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<line x1="16" x2="8" y1="13" y2="13"></line>
+<line x1="16" x2="8" y1="17" y2="17"></line>
+</svg>
                             Product Details
                         </a>
-                        <a href="https://payhip.com/b/KVIw4" target="_blank" rel="noopener" class="btn btn-primary">
+<a class="btn btn-primary" href="https://payhip.com/b/KVIw4" rel="noopener" target="_blank">
                             Payhip
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- AI Meta Cleaner -->
-            <article class="product-card">
-                <div class="card-header">
-                    <a href="ai-meta-cleaner.html?lang=en" class="product-icon-link">
-                        <img src="assets/icons/app3.png" alt="AI Meta Cleaner" class="product-icon" width="64" height="64">
-                    </a>
-                    <div class="card-title-area">
-                        <a href="ai-meta-cleaner.html?lang=en" class="product-name-link">
-                            <h2 class="product-name">AI Meta Cleaner</h2>
-                        </a>
-                        <p class="product-subtitle">Metadata cleaner for AI-generated images</p>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="product-description">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M7 17L17 7M17 7H7M17 7V17"></path>
+</svg>
+</a>
+</div>
+</div>
+</article>
+<!-- AI Meta Cleaner -->
+<article class="product-card">
+<div class="card-header">
+<a class="product-icon-link" href="ai-meta-cleaner.html">
+<img alt="AI Meta Cleaner" class="product-icon" height="64" src="assets/icons/app3.png" width="64"/>
+</a>
+<div class="card-title-area">
+<a class="product-name-link" href="ai-meta-cleaner.html">
+<h2 class="product-name">AI Meta Cleaner</h2>
+</a>
+<p class="product-subtitle">Metadata cleaner for AI-generated images</p>
+</div>
+</div>
+<div class="card-body">
+<p class="product-description">
                         Bulk-remove metadata and embedded AI generation info from images.
                         Automatically detects and removes Stable Diffusion / NovelAI metadata.
                     </p>
-                    <ul class="features-list">
-                        <li>PNG / JPG / WEBP / GIF / TIFF</li>
-                        <li>Remove EXIF / XMP</li>
-                        <li>Remove SD/NovelAI metadata</li>
-                        <li class="lang">EN/JP</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="price-badge free">Free</span>
-                    <div class="button-group">
-                        <a href="ai-meta-cleaner.html?lang=en" class="btn btn-secondary">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                            </svg>
+<ul class="features-list">
+<li>PNG / JPG / WEBP / GIF / TIFF</li>
+<li>Remove EXIF / XMP</li>
+<li>Remove SD/NovelAI metadata</li>
+<li class="lang">EN/JP</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="price-badge free">Free</span>
+<div class="button-group">
+<a class="btn btn-secondary" href="ai-meta-cleaner.html">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<line x1="16" x2="8" y1="13" y2="13"></line>
+<line x1="16" x2="8" y1="17" y2="17"></line>
+</svg>
                             Product Details
                         </a>
-                        <a href="https://payhip.com/b/LdoFB" target="_blank" rel="noopener" class="btn btn-primary">
+<a class="btn btn-primary" href="https://payhip.com/b/LdoFB" rel="noopener" target="_blank">
                             Payhip
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Frame Craft -->
-            <article class="product-card">
-                <div class="card-header">
-                    <a href="frame-craft.html?lang=en" class="product-icon-link">
-                        <img src="assets/icons/app5.png" alt="Frame Craft" class="product-icon" width="64" height="64">
-                    </a>
-                    <div class="card-title-area">
-                        <a href="frame-craft.html?lang=en" class="product-name-link">
-                            <h2 class="product-name">Frame Craft</h2>
-                        </a>
-                        <p class="product-subtitle">Video frame extractor & animation converter</p>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="product-description">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M7 17L17 7M17 7H7M17 7V17"></path>
+</svg>
+</a>
+</div>
+</div>
+</article>
+<!-- Frame Craft -->
+<article class="product-card">
+<div class="card-header">
+<a class="product-icon-link" href="frame-craft.html">
+<img alt="Frame Craft" class="product-icon" height="64" src="assets/icons/app5.png" width="64"/>
+</a>
+<div class="card-title-area">
+<a class="product-name-link" href="frame-craft.html">
+<h2 class="product-name">Frame Craft</h2>
+</a>
+<p class="product-subtitle">Video frame extractor &amp; animation converter</p>
+</div>
+</div>
+<div class="card-body">
+<p class="product-description">
                         Extract frames from video files by frame index or time interval,
                         and convert to GIF/WEBP animations.
                     </p>
-                    <ul class="features-list">
-                        <li>High-precision frame extraction</li>
-                        <li>Auto duplicate removal</li>
-                        <li>Auto black bar removal</li>
-                        <li>Pixiv Ugoira support</li>
-                        <li>Batch processing</li>
-                        <li class="lang">EN/JP</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="price-badge paid">$5</span>
-                    <div class="button-group">
-                        <a href="frame-craft.html?lang=en" class="btn btn-secondary">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                            </svg>
+<ul class="features-list">
+<li>High-precision frame extraction</li>
+<li>Auto duplicate removal</li>
+<li>Auto black bar removal</li>
+<li>Pixiv Ugoira support</li>
+<li>Batch processing</li>
+<li class="lang">EN/JP</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="price-badge paid">$5</span>
+<div class="button-group">
+<a class="btn btn-secondary" href="frame-craft.html">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<line x1="16" x2="8" y1="13" y2="13"></line>
+<line x1="16" x2="8" y1="17" y2="17"></line>
+</svg>
                             Product Details
                         </a>
-                        <a href="https://payhip.com/b/D0wG5" target="_blank" rel="noopener" class="btn btn-primary">
+<a class="btn btn-primary" href="https://payhip.com/b/D0wG5" rel="noopener" target="_blank">
                             Payhip
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Meta Converter -->
-            <article class="product-card">
-                <div class="card-header">
-                    <a href="meta-converter.html?lang=en" class="product-icon-link">
-                        <img src="assets/icons/app4.png" alt="Meta Converter" class="product-icon" width="64" height="64">
-                    </a>
-                    <div class="card-title-area">
-                        <a href="meta-converter.html?lang=en" class="product-name-link">
-                            <h2 class="product-name">Meta Converter</h2>
-                        </a>
-                        <p class="product-subtitle">Image converter that preserves metadata</p>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="product-description">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M7 17L17 7M17 7H7M17 7V17"></path>
+</svg>
+</a>
+</div>
+</div>
+</article>
+<!-- Meta Converter -->
+<article class="product-card">
+<div class="card-header">
+<a class="product-icon-link" href="meta-converter.html">
+<img alt="Meta Converter" class="product-icon" height="64" src="assets/icons/app4.png" width="64"/>
+</a>
+<div class="card-title-area">
+<a class="product-name-link" href="meta-converter.html">
+<h2 class="product-name">Meta Converter</h2>
+</a>
+<p class="product-subtitle">Image converter that preserves metadata</p>
+</div>
+</div>
+<div class="card-body">
+<p class="product-description">
                         Batch-convert images to PNG/JPEG/WEBP while preserving metadata where possible.
                         Useful for organizing and optimizing AI-generated images.
                     </p>
-                    <ul class="features-list">
-                        <li>Convert while preserving metadata</li>
-                        <li>PNG→JPEG (up to 1/10 size)</li>
-                        <li>Quality / size tuning</li>
-                        <li>Eagle library support</li>
-                        <li>CLI support</li>
-                        <li class="lang">EN/JP</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="price-badge paid">$4</span>
-                    <div class="button-group">
-                        <a href="meta-converter.html?lang=en" class="btn btn-secondary">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                            </svg>
+<ul class="features-list">
+<li>Convert while preserving metadata</li>
+<li>PNG→JPEG (up to 1/10 size)</li>
+<li>Quality / size tuning</li>
+<li>Eagle library support</li>
+<li>CLI support</li>
+<li class="lang">EN/JP</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="price-badge paid">$4</span>
+<div class="button-group">
+<a class="btn btn-secondary" href="meta-converter.html">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<line x1="16" x2="8" y1="13" y2="13"></line>
+<line x1="16" x2="8" y1="17" y2="17"></line>
+</svg>
                             Product Details
                         </a>
-                        <a href="https://payhip.com/b/4Gwc2" target="_blank" rel="noopener" class="btn btn-primary">
+<a class="btn btn-primary" href="https://payhip.com/b/4Gwc2" rel="noopener" target="_blank">
                             Payhip
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </article>
-        </div>
-
-        <!-- Workflow Section -->
-        <section class="workflow-section">
-            <h3 class="workflow-title">Suggested workflows (Sensitive edition)</h3>
-            
-            <div class="workflow-pattern">
-                <p class="workflow-label">Pattern 1: Paid, all-in-one</p>
-                <div class="workflow-content">
-                    <div class="workflow-step">
-                        <img src="assets/icons/app_R18.png" alt="AutoMosaic R18" class="workflow-icon">
-                        <p class="workflow-step-name">AutoMosaic (R18)</p>
-                        <p class="workflow-step-desc">Automatic mosaic</p>
-                    </div>
-                    <span class="workflow-arrow">→</span>
-                    <div class="workflow-step highlight">
-                        <img src="assets/icons/app2.png" alt="AI Paint Cleaner" class="workflow-icon">
-                        <p class="workflow-step-name">AI Paint Cleaner</p>
-                        <p class="workflow-step-desc">Fine adjustments / editing<br><small>*Includes metadata cleaning</small></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="workflow-divider">or</div>
-
-            <div class="workflow-pattern">
-                <p class="workflow-label">Pattern 2: Use free tools</p>
-                <div class="workflow-content">
-                    <div class="workflow-step">
-                        <img src="assets/icons/app_R18.png" alt="AutoMosaic R18" class="workflow-icon">
-                        <p class="workflow-step-name">AutoMosaic R18</p>
-                        <p class="workflow-step-desc">Automatic mosaic<br><small>*Paid software</small></p>
-                    </div>
-                    <span class="workflow-arrow">→</span>
-                    <div class="workflow-step free">
-                        <img src="assets/icons/app3.png" alt="AI Meta Cleaner" class="workflow-icon">
-                        <p class="workflow-step-name">AI Meta Cleaner</p>
-                        <p class="workflow-step-desc">Metadata cleaning<br><small>*Free tool</small></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M7 17L17 7M17 7H7M17 7V17"></path>
+</svg>
+</a>
+</div>
+</div>
+</article>
+</div>
+<!-- Workflow Section -->
+<section class="workflow-section">
+<h3 class="workflow-title">Suggested workflows (Sensitive edition)</h3>
+<div class="workflow-pattern">
+<p class="workflow-label">Pattern 1: Paid, all-in-one</p>
+<div class="workflow-content">
+<div class="workflow-step">
+<img alt="AutoMosaic R18" class="workflow-icon" src="assets/icons/app_R18.png"/>
+<p class="workflow-step-name">AutoMosaic (R18)</p>
+<p class="workflow-step-desc">Automatic mosaic</p>
+</div>
+<span class="workflow-arrow">→</span>
+<div class="workflow-step highlight">
+<img alt="AI Paint Cleaner" class="workflow-icon" src="assets/icons/app2.png"/>
+<p class="workflow-step-name">AI Paint Cleaner</p>
+<p class="workflow-step-desc">Fine adjustments / editing<br/><small>*Includes metadata cleaning</small></p>
+</div>
+</div>
+</div>
+<div class="workflow-divider">or</div>
+<div class="workflow-pattern">
+<p class="workflow-label">Pattern 2: Use free tools</p>
+<div class="workflow-content">
+<div class="workflow-step">
+<img alt="AutoMosaic R18" class="workflow-icon" src="assets/icons/app_R18.png"/>
+<p class="workflow-step-name">AutoMosaic R18</p>
+<p class="workflow-step-desc">Automatic mosaic<br/><small>*Paid software</small></p>
+</div>
+<span class="workflow-arrow">→</span>
+<div class="workflow-step free">
+<img alt="AI Meta Cleaner" class="workflow-icon" src="assets/icons/app3.png"/>
+<p class="workflow-step-name">AI Meta Cleaner</p>
+<p class="workflow-step-desc">Metadata cleaning<br/><small>*Free tool</small></p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<p>
             For inquiries, please contact via
-            <a href="https://x.com/Synekzuk_AI" target="_blank" rel="noopener">Twitter/X</a>
+            <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank">Twitter/X</a>
             or
-            <a href="https://payhip.com/nekzuk/contact" target="_blank" rel="noopener">Payhip</a>
+            <a href="https://payhip.com/nekzuk/contact" rel="noopener" target="_blank">Payhip</a>
             .
         </p>
-    </footer>
-    <script>
+</footer>
+<script>
     function setSiteLang(lang) {
         try { localStorage.setItem('site_lang', lang); } catch (e) {}
     }

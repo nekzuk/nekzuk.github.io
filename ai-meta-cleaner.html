@@ -2,9 +2,16 @@
 
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
+<meta charset="utf-8"/><script>(function(){
+  try {
+    const p = new URLSearchParams(location.search);
+    const lang = p.get('lang');
+    if (lang === 'ja') { location.replace('ai-meta-cleaner_j.html'); return; }
+    if (lang === 'en' && location.search) { location.replace('ai-meta-cleaner.html'); }
+  } catch(e) {}
+})();</script>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>AI Meta Cleaner – Remove Metadata &amp; AI Info (Free) | nekzuk</title><link href="https://nekzuk.com/ai-meta-cleaner.html?lang=en" rel="canonical"/>
+<title>AI Meta Cleaner – Remove Metadata &amp; AI Info (Free) | nekzuk</title>
 <!-- SEO Meta Tags -->
 <meta content="AI Meta Cleaner is a free tool to remove metadata and embedded AI generation info from images. Supports PNG, JPG, WEBP, GIF, and TIFF." name="description"/>
 <!-- Open Graph / Facebook -->
@@ -21,46 +28,13 @@
 <meta content="https://nekzuk.com/assets/icons/app3.png" name="twitter:image"/>
 <!-- Language SEO -->
 <!-- Canonical tag (dynamic) -->
-
-<script>/* NEKZUK_META_LANG */
-(function() {
-  try {
-    const params = new URLSearchParams(location.search);
-    const lang = (params.get('lang') === 'ja') ? 'ja' : 'en';
-    const META = {"en": {"title": "AI Meta Cleaner – Remove Metadata & AI Info (Free) | nekzuk", "desc": "AI Meta Cleaner is a free tool to remove metadata and embedded AI generation info from images. Supports PNG, JPG, WEBP, GIF, and TIFF.", "og_title": "AI Meta Cleaner – Free Metadata Removal Tool", "og_desc": "Remove metadata and embedded AI generation info from images. Free tool supporting PNG, JPG, WEBP, GIF, and TIFF."}, "ja": {"title": "AI Meta Cleaner – 画像メタデータ/AI情報を削除（無料）| nekzuk", "desc": "AI Meta Cleanerは画像のメタデータや生成AIの埋め込み情報をまとめて削除できる無料ツール。PNG/JPG/WEBP/GIF/TIFF対応。", "og_title": "AI Meta Cleaner – メタデータ削除ツール（無料）", "og_desc": "画像のメタデータと生成AIの埋め込み情報を削除。PNG/JPG/WEBP/GIF/TIFF対応の無料ツール。"}};
-    const m = META[lang] || META.en;
-    if (m && m.title) document.title = m.title;
-
-    const set = (selector, attr, value) => {
-      const el = document.querySelector(selector);
-      if (el && value) el.setAttribute(attr, value);
-    };
-
-    set('meta[name="description"]', 'content', m.desc);
-    set('meta[property="og:title"]', 'content', m.og_title);
-    set('meta[property="og:description"]', 'content', m.og_desc);
-    set('meta[name="twitter:title"]', 'content', m.og_title);
-    set('meta[name="twitter:description"]', 'content', m.og_desc);
-
-    const url = location.origin + location.pathname + '?lang=' + lang;
-    set('meta[property="og:url"]', 'content', url);
-    set('meta[name="twitter:url"]', 'content', url);
-
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) canonical.setAttribute('href', url);
-  } catch (e) {}
-})();</script><link href="https://nekzuk.com/ai-meta-cleaner.html?lang=en" hreflang="en" rel="alternate"/>
-<link href="https://nekzuk.com/ai-meta-cleaner.html?lang=ja" hreflang="ja" rel="alternate"/>
-<link href="https://nekzuk.com/ai-meta-cleaner.html?lang=en" hreflang="x-default" rel="alternate"/>
-
 <!-- Favicon & Icons -->
-<link rel="icon" href="/assets/favicons/favicon.ico" sizes="32x32">
-<link rel="icon" href="/assets/favicons/icon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/icon-192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicons/icon-512.png">
-<meta name="theme-color" content="#6366f1">
-
+<link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32"/>
+<link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/assets/favicons/icon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/assets/favicons/icon-512.png" rel="icon" sizes="512x512" type="image/png"/>
+<meta content="#6366f1" name="theme-color"/>
 <style>
     :root {
       --bg:#0f172a; --card:#1e293b; --card2:#172136; --border:#334155;
@@ -266,112 +240,53 @@ ul.lang-ja, ol.lang-ja {display:none}
 }
 
 </style>
-<script>
-  (function () {
-    function getParamLang() {
-      const params = new URLSearchParams(location.search);
-      const v = params.get('lang');
-      return (v === 'ja' || v === 'en') ? v : null;
-    }
-    function setParamLang(lang) {
-      const url = new URL(location.href);
-      url.searchParams.set('lang', lang);
-      location.replace(url.toString());
-    }
-    let stored = null;
-    try { stored = localStorage.getItem('site_lang'); } catch (e) { }
-    const paramLang = getParamLang();
-    if (stored === 'ja' && paramLang !== 'ja') { setParamLang('ja'); return; }
-    if (stored === 'en' && paramLang !== 'en') { setParamLang('en'); return; }
-    if (!stored && !paramLang) {
-      const navLang = (navigator.languages && navigator.languages[0]) ? navigator.languages[0] : (navigator.language || '');
-      if (String(navLang).toLowerCase().startsWith('ja')) { setParamLang('ja'); return; }
-    }
-    const lang = paramLang || 'en';
-    document.documentElement.lang = lang;
-    window.setSiteLang = function (lang) { try { localStorage.setItem('site_lang', lang); } catch (e) { } };
-    function applyLang() {
-      // 英語要素の表示/非表示
-      document.querySelectorAll('.lang-en').forEach(el => {
-        if (lang === 'en') {
-          // 要素のタイプに応じて適切なdisplayを設定
-          if (el.tagName === 'UL' || el.tagName === 'OL') {
-            el.style.display = 'block';
-          } else if (el.tagName === 'SPAN' || el.tagName === 'B') {
-            el.style.display = 'inline';
-          } else if (el.tagName === 'A' && el.classList.contains('btn')) {
-            el.style.display = 'inline-flex';
-          } else {
-            el.style.display = 'block';
-          }
-        } else {
-          el.style.display = 'none';
-        }
-      });
-      
-      // 日本語要素の表示/非表示
-      document.querySelectorAll('.lang-ja').forEach(el => {
-        if (lang === 'ja') {
-          // 要素のタイプに応じて適切なdisplayを設定
-          if (el.tagName === 'UL' || el.tagName === 'OL') {
-            el.style.display = 'block';
-          } else if (el.tagName === 'SPAN' || el.tagName === 'B') {
-            el.style.display = 'inline';
-          } else if (el.tagName === 'A' && el.classList.contains('btn')) {
-            el.style.display = 'inline-flex';
-          } else {
-            el.style.display = 'block';
-          }
-        } else {
-          el.style.display = 'none';
-        }
-      });
-      
-      const back = document.querySelector('a[data-role="back"]');
-      if (back) back.href = (lang === 'ja') ? 'index_j.html' : 'index.html';
-    }
-    document.addEventListener('DOMContentLoaded', () => { applyLang(); });
-  })();
-  </script>
 <!-- 構造化データ：SoftwareApplication (Enhanced) -->
 <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "AI Meta Cleaner",
-      "applicationCategory": "MultimediaApplication",
-      "operatingSystem": "Windows 10, Windows 11",
-      "description": "Free tool to bulk-remove metadata and embedded AI generation info from images. Automatically detects and removes Stable Diffusion and NovelAI metadata to protect your privacy.",
-      "screenshot": "https://nekzuk.com/assets/Other/clean_en.png",
-      "featureList": [
-        "Support for PNG, JPG, WEBP, GIF, and TIFF formats",
-        "Remove EXIF and XMP metadata",
-        "Automatic detection and removal of Stable Diffusion metadata",
-        "Automatic detection and removal of NovelAI metadata",
-        "Batch processing for multiple images",
-        "Multi-language interface (English, Japanese)",
-        "Completely free to use"
-      ],
-      "softwareVersion": "1.00",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "JPY",
-        "availability": "https://schema.org/InStock",
-        "url": "https://payhip.com/b/LdoFB",
-        "seller": {"@type": "Organization", "name": "nekzuk Software"}
-      },
-      "author": {"@type": "Organization", "name": "nekzuk Software", "url": "https://nekzuk.com"}
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "AI Meta Cleaner",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "description": "Free tool to bulk-remove metadata and embedded AI generation info from images. Automatically detects and removes Stable Diffusion and NovelAI metadata to protect your privacy.",
+  "screenshot": "https://nekzuk.com/assets/Other/clean_en.png",
+  "featureList": [
+    "Support for PNG, JPG, WEBP, GIF, and TIFF formats",
+    "Remove EXIF and XMP metadata",
+    "Automatic detection and removal of Stable Diffusion metadata",
+    "Automatic detection and removal of NovelAI metadata",
+    "Batch processing for multiple images",
+    "Multi-language interface (English, Japanese)",
+    "Completely free to use"
+  ],
+  "softwareVersion": "1.00",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY",
+    "availability": "https://schema.org/InStock",
+    "url": "https://payhip.com/b/LdoFB",
+    "seller": {
+      "@type": "Organization",
+      "name": "nekzuk Software"
     }
-    </script>
-<meta content="https://nekzuk.com/ai-meta-cleaner.html?lang=en" name="twitter:url"/></head>
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "nekzuk Software",
+    "url": "https://nekzuk.com"
+  },
+  "inLanguage": "en"
+}
+</script>
+<meta content="https://nekzuk.com/ai-meta-cleaner.html?lang=en" name="twitter:url"/><link href="https://nekzuk.com/ai-meta-cleaner.html" rel="canonical"/><link href="https://nekzuk.com/ai-meta-cleaner.html" hreflang="en" rel="alternate"/><link href="https://nekzuk.com/ai-meta-cleaner_j.html" hreflang="ja" rel="alternate"/><link href="https://nekzuk.com/ai-meta-cleaner.html" hreflang="x-default" rel="alternate"/><meta content="en_US" property="og:locale"/></head>
 <body>
 <div class="container">
 <div class="top">
-<a data-role="back" href="index.html">← <span class="lang-en">Back</span><span class="lang-ja">戻る</span></a>
+<a data-role="back" href="/">← <span class="lang-en">Back</span></a>
 <div class="small">
-<a href="?lang=en" onclick="setSiteLang('en')">English</a> /
-        <a href="?lang=ja" onclick="setSiteLang('ja')">日本語</a>
+<a href="ai-meta-cleaner.html" onclick="setSiteLang('en')">English</a> /
+        <a href="ai-meta-cleaner_j.html" onclick="setSiteLang('ja')">日本語</a>
 </div>
 </div>
 <section class="hero">
@@ -385,14 +300,11 @@ ul.lang-ja, ol.lang-ja {display:none}
 <div class="heroTitle">
 <img alt="AI Meta Cleaner icon" class="appIcon" src="assets/icons/app3.png"/>
 <div>
-<div class="titleRow"><h1 class="title"><span class="lang-en">AI Meta Cleaner</span><span class="lang-ja">AI Meta Cleaner</span></h1><p class="subtitle"><span class="lang-en">Remove metadata and embedded AI generation info from images.</span><span class="lang-ja">画像のメタデータと生成AIの埋め込み情報をまとめて削除できるツールです。</span></p></div>
-
+<div class="titleRow"><h1 class="title"><span class="lang-en">AI Meta Cleaner</span></h1><p class="subtitle"><span class="lang-en">Remove metadata and embedded AI generation info from images.</span></p></div>
 <div class="price">
 <span class="lang-en">Free</span>
-<span class="lang-ja">無料</span>
 </div>
 <div class="btns">
-<a class="btn primary lang-ja" href="https://synekzuk.booth.pm/items/7626627" rel="noopener" target="_blank">BOOTH</a>
 <a class="btn primary lang-en" href="https://payhip.com/b/LdoFB" rel="noopener" target="_blank">Payhip</a>
 </div>
 </div>
@@ -402,30 +314,25 @@ ul.lang-ja, ol.lang-ja {display:none}
 <div class="box">
 <div class="kv">
 <div class="label lang-en">Supported Formats</div>
-<div class="label lang-ja">対応形式</div>
 <div class="value">5 formats</div>
 </div>
 </div>
 <div class="box">
 <div class="kv">
 <div class="label lang-en">Removal Types</div>
-<div class="label lang-ja">削除対応データ</div>
 <div class="value">3+ types</div>
 </div>
 </div>
 <div class="box">
 <div class="kv">
 <div class="label lang-en">UI Languages</div>
-<div class="label lang-ja">UI言語</div>
 <div class="value">JP / EN</div>
 </div>
 </div>
 <div class="box">
 <div class="kv">
 <div class="label lang-en">Price</div>
-<div class="label lang-ja">価格</div>
 <div class="value lang-en">Free</div>
-<div class="value lang-ja">無料</div>
 </div>
 </div>
 </div></section>
@@ -433,32 +340,19 @@ ul.lang-ja, ol.lang-ja {display:none}
 <section class="section">
 <h2>
 <span class="lang-en">Overview</span>
-<span class="lang-ja">概要</span>
 </h2>
 <p class="lang-en">
           AI Meta Cleaner is a free tool that removes metadata and AI generation information embedded in images. It supports various image formats and can clean multiple files at once.
-        </p>
-<p class="lang-ja">
-          AI Meta Cleanerは、画像のメタデータと生成AIの埋め込み情報をまとめて削除できる無料ツールです。複数の画像形式に対応し、一括処理が可能です。
         </p>
 </section>
 <section class="section">
 <h2>
 <span class="lang-en">Supported Formats / Removal Types</span>
-<span class="lang-ja">対応形式 / 削除対応データ</span>
 </h2>
 <div class="twoCol">
 <div>
-<h3><span class="lang-en">Supported Formats</span><span class="lang-ja">対応形式</span></h3>
-
+<h3><span class="lang-en">Supported Formats</span></h3>
 <ul class="lang-en">
-<li>PNG</li>
-<li>JPG / JPEG</li>
-<li>WEBP</li>
-<li>GIF</li>
-<li>TIFF</li>
-</ul>
-<ul class="lang-ja">
 <li>PNG</li>
 <li>JPG / JPEG</li>
 <li>WEBP</li>
@@ -467,17 +361,11 @@ ul.lang-ja, ol.lang-ja {display:none}
 </ul>
 </div>
 <div>
-<h3><span class="lang-en">Removal Types</span><span class="lang-ja">削除対応データ</span></h3>
-
+<h3><span class="lang-en">Removal Types</span></h3>
 <ul class="lang-en">
 <li>General metadata (EXIF, XMP, ICC Profile, etc.)</li>
 <li>Automatic1111 (SD format): AI generation info</li>
 <li>NovelAI format: AI generation info</li>
-</ul>
-<ul class="lang-ja">
-<li>一般メタデータ（EXIF、XMP、ICC Profile等）</li>
-<li>Automatic1111（SD形式）：生成情報の画像埋め込み</li>
-<li>NovelAI形式：生成情報の画像埋め込み</li>
 </ul>
 </div>
 </div>
@@ -485,73 +373,52 @@ ul.lang-ja, ol.lang-ja {display:none}
 <section class="section">
 <h2>
 <span class="lang-en">How to use</span>
-<span class="lang-ja">基本的な使い方</span>
 </h2>
 <ol class="lang-en">
 <li>Drag and drop a folder containing images or image files</li>
 <li>Click the "Start Processing" button</li>
 </ol>
-<ol class="lang-ja">
-<li>画像の入ったフォルダまたは画像ファイルをドラッグアンドドロップ</li>
-<li>「処理開始」ボタンをクリック</li>
-</ol>
 </section>
 <section class="section">
 <h2>
 <span class="lang-en">System requirements</span>
-<span class="lang-ja">動作環境</span>
 </h2>
 <ul class="lang-en">
 <li>OS: Windows 10/11 (64 bit)</li>
 <li>Memory: 8 GB or more recommended</li>
 </ul>
-<ul class="lang-ja">
-<li>OS: Windows 10/11（64bit）</li>
-<li>メモリ: 8GB 以上推奨</li>
-</ul>
 </section>
 <section class="section" id="ui">
-<h2><span class="lang-en">UI screenshot</span><span class="lang-ja">UIスクリーンショット</span></h2>
+<h2><span class="lang-en">UI screenshot</span></h2>
 <a class="shot lang-en" href="assets/Other/clean_en.png" rel="noopener" target="_blank">
 <img alt="AI Meta Cleaner UI (English)" src="assets/Other/clean_en.png"/>
 <div class="cap">UI (English)</div>
 </a>
-<a class="shot lang-ja" href="assets/Other/clean.png" rel="noopener" target="_blank">
-<img alt="AI Meta Cleaner UI (Japanese)" src="assets/Other/clean.png"/>
-<div class="cap">UI（日本語）</div>
-</a>
 </section>
 <section class="section">
-<h2><span class="lang-en">Updates &amp; Changelog</span><span class="lang-ja">更新情報・変更履歴</span></h2>
+<h2><span class="lang-en">Updates &amp; Changelog</span></h2>
 <div class="kpi" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1rem">
 <div class="box">
 <div class="kv">
 <div class="label lang-en">Current Version</div>
-<div class="label lang-ja">最新バージョン</div>
 <div class="value">v1.00</div>
 </div>
 </div>
 <div class="box">
 <div class="kv">
 <div class="label lang-en">Release Date</div>
-<div class="label lang-ja">リリース日</div>
 <div class="value">2025-11-07</div>
 </div>
 </div>
 </div>
 <div class="hr"></div>
-<h3><span class="lang-en">Latest Updates</span><span class="lang-ja">最新の更新内容</span></h3>
-
+<h3><span class="lang-en">Latest Updates</span></h3>
 <ul class="lang-en">
 <li>v1.00 (2025/11/07) - Initial release</li>
-</ul>
-<ul class="lang-ja">
-<li>v1.00 (2025/11/07) - 初回リリース</li>
 </ul>
 <p style="margin-top:1rem">
 <a href="https://note.com/nekzuk/n/n70c0d33d4488" rel="noopener" target="_blank">
 <span class="lang-en">→ Read detailed release notes</span>
-<span class="lang-ja">→ 詳細な更新内容を読む</span>
 </a>
 </p>
 </section>
@@ -561,11 +428,8 @@ ul.lang-ja, ol.lang-ja {display:none}
 <div class="lang-en" style="margin-bottom:.75rem">
 <b>Support:</b> <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank">Twitter/X</a> | <a href="https://payhip.com/nekzuk/contact" rel="noopener" target="_blank">Payhip message</a>
 </div>
-<div class="lang-ja" style="margin-bottom:.75rem">
-<b>サポート:</b> <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank">Twitter/X</a> | <a href="https://accounts.booth.pm/conversations/49131834/messages" rel="noopener" target="_blank">BOOTHメッセージ</a>
-</div>
+
       © nekzuk Software
     </div>
-
 </body>
 </html>

@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8"/><script>(function(){
   try {
     const p = new URLSearchParams(location.search);
     const lang = p.get('lang');
-    if (lang === 'ja') { location.replace('ai-paint-cleaner_j.html'); return; }
-    if (lang === 'en' && location.search) { location.replace('ai-paint-cleaner.html'); }
+    if (lang === 'en') { location.replace('automosaic.html'); return; }
+    if (lang === 'ja' && location.search) { location.replace('automosaic_j.html'); }
   } catch(e) {}
 })();</script>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>AI Paint Cleaner – Inpainting Cleanup &amp; Batch Edit Tool for Windows | nekzuk</title>
+<title>AutoMosaic – 画像の自動モザイク/ぼかしを一括処理 | nekzuk</title>
 <!-- SEO Meta Tags -->
-<meta content="All-in-one Windows tool for AI image post-processing: inpainting cleanup (paint remover) plus batch utilities to edit many images efficiently." name="description"/>
+<meta content="AutoMosaicは顔・人物・文字などを自動検出し、モザイク/ぼかし/塗りつぶしを一括適用するWindowsソフト。GPU対応・オフライン処理。¥2,980" name="description"/>
 <!-- Open Graph / Facebook -->
 <meta content="website" property="og:type"/>
-<meta content="https://nekzuk.com/ai-paint-cleaner.html?lang=en" property="og:url"/>
-<meta content="AI Paint Cleaner – Image Cleanup Tool" property="og:title"/>
-<meta content="All-in-one tool for AI image post-processing: inpainting cleanup plus a wide range of batch utilities. Windows 10/11 compatible." property="og:description"/>
-<meta content="https://nekzuk.com/assets/icons/app2.png" property="og:image"/>
+<meta content="https://nekzuk.com/automosaic.html?lang=en" property="og:url"/>
+<meta content="AutoMosaic – 自動モザイク/ぼかし一括ツール" property="og:title"/>
+<meta content="顔・人物・文字などを自動検出し、モザイク/ぼかし/塗りつぶしを一括適用。GPU対応のオフライン処理で匿名化に最適。" property="og:description"/>
+<meta content="https://nekzuk.com/assets/icons/app_general.png" property="og:image"/>
 <!-- Twitter -->
 <meta content="summary" name="twitter:card"/>
 <meta content="@Synekzuk_AI" name="twitter:site"/>
-<meta content="AI Paint Cleaner – Image Cleanup Tool" name="twitter:title"/>
-<meta content="All-in-one tool for AI image post-processing: inpainting cleanup plus a wide range of batch utilities. Windows 10/11 compatible." name="twitter:description"/>
-<meta content="https://nekzuk.com/assets/icons/app2.png" name="twitter:image"/>
+<meta content="AutoMosaic – 自動モザイク/ぼかし一括ツール" name="twitter:title"/>
+<meta content="顔・人物・文字などを自動検出し、モザイク/ぼかし/塗りつぶしを一括適用。GPU対応のオフライン処理で匿名化に最適。" name="twitter:description"/>
+<meta content="https://nekzuk.com/assets/icons/app_general.png" name="twitter:image"/>
 <!-- Language SEO -->
+<!-- Canonical tag (dynamic) -->
 <!-- Favicon & Icons -->
 <link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32"/>
 <link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml"/>
@@ -223,63 +224,64 @@ ul.lang-ja, ol.lang-ja {display:none}
 
 .twoCol > div { padding-left: 0.5rem; padding-right: 0.5rem; }
 
-.pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+/* Before/After special layout: left 2 images stacked, right 1 large */
+.beforeAfterGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+}
+@media(max-width:860px){
+  .beforeAfterGrid{grid-template-columns:1fr}
+}
+.beforeAfterLeft{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
 
-.placeholder-section{
-  background:var(--card2);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:1rem;
-  padding:2rem;
-  text-align:center;
-  color:var(--muted2);
-}
-.placeholder-section h3{
-  margin-bottom:0.5rem;
-  color:var(--muted);
-}
-  </style>
+</style>
 <!-- 構造化データ：SoftwareApplication (Enhanced) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "AI Paint Cleaner",
+  "name": "AutoMosaic (General)",
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "Windows 10, Windows 11",
-  "description": "All-in-one image editing tool with AI inpainting, batch processing, and metadata cleaning utilities. Perfect for cleaning and editing large sets of AI-generated images.",
-  "screenshot": "https://nekzuk.com/assets/aipaintcleaner/AIPaintCleaner_1_en.jpg",
+  "description": "Automatically detects people, faces/eyes, text, license plates, and comic elements, then applies mosaic/blur/fill in batch. Perfect for privacy protection and content moderation.",
+  "screenshot": "https://nekzuk.com/assets/automosaic/ui_en.png",
   "featureList": [
-    "AI-powered inpainting for object removal and touch-ups",
-    "Mosaic removal and addition",
-    "Background removal with AI segmentation",
-    "AI upscaling for image enhancement",
-    "Metadata cleaning utilities",
-    "Batch processing for multiple images",
-    "Multi-language interface (English, Japanese, Chinese, Korean)"
+    "Advanced face, eye, and person detection",
+    "Text and license plate recognition",
+    "Speech bubble and SFX text detection for comics",
+    "Extensible model support for custom detection",
+    "Multi-language interface (English, Japanese, Chinese, Korean)",
+    "GPU-accelerated batch processing",
+    "Offline processing - no internet required"
   ],
-  "softwareVersion": "2.22",
-  "releaseNotes": "https://note.com/nekzuk/n/n5bc9a483671d",
+  "softwareVersion": "3.10",
+  "releaseNotes": "https://note.com/nekzuk/n/ne47a6b685ff4",
   "video": {
     "@type": "VideoObject",
-    "name": "AI Paint Cleaner Demo (English)",
-    "description": "Comprehensive demo showcasing AI inpainting and batch editing features",
-    "thumbnailUrl": "https://i.ytimg.com/vi/7g61LO9kZRE/maxresdefault.jpg",
-    "contentUrl": "https://www.youtube.com/watch?v=7g61LO9kZRE",
-    "embedUrl": "https://www.youtube.com/embed/7g61LO9kZRE"
+    "name": "AutoMosaic General Demo (English)",
+    "description": "1-minute overview covering the interface and basic operations",
+    "thumbnailUrl": "https://i.ytimg.com/vi/vR8GQbJrgR4/maxresdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=vR8GQbJrgR4",
+    "embedUrl": "https://www.youtube.com/embed/vR8GQbJrgR4"
   },
   "offers": {
     "@type": "AggregateOffer",
-    "lowPrice": "2000",
-    "highPrice": "20",
+    "lowPrice": "2980",
+    "highPrice": "25",
     "priceCurrency": "JPY",
     "availability": "https://schema.org/InStock",
     "offers": [
       {
         "@type": "Offer",
         "name": "BOOTH",
-        "price": "2000",
+        "price": "2980",
         "priceCurrency": "JPY",
-        "url": "https://synekzuk.booth.pm/items/6649634",
+        "url": "https://synekzuk.booth.pm/items/7075141",
         "seller": {
           "@type": "Organization",
           "name": "nekzuk Software"
@@ -288,9 +290,9 @@ ul.lang-ja, ol.lang-ja {display:none}
       {
         "@type": "Offer",
         "name": "Payhip",
-        "price": "20",
+        "price": "25",
         "priceCurrency": "USD",
-        "url": "https://payhip.com/b/KVIw4",
+        "url": "https://payhip.com/b/mit2r",
         "seller": {
           "@type": "Organization",
           "name": "nekzuk Software"
@@ -303,17 +305,17 @@ ul.lang-ja, ol.lang-ja {display:none}
     "name": "nekzuk Software",
     "url": "https://nekzuk.com"
   },
-  "inLanguage": "en"
+  "inLanguage": "ja"
 }
 </script>
-<link href="https://nekzuk.com/ai-paint-cleaner.html" rel="canonical"/><link href="https://nekzuk.com/ai-paint-cleaner.html" hreflang="en" rel="alternate"/><link href="https://nekzuk.com/ai-paint-cleaner_j.html" hreflang="ja" rel="alternate"/><link href="https://nekzuk.com/ai-paint-cleaner.html" hreflang="x-default" rel="alternate"/><meta content="en_US" property="og:locale"/></head>
+<meta content="https://nekzuk.com/automosaic.html?lang=en" name="twitter:url"/><link href="https://nekzuk.com/automosaic_j.html" rel="canonical"/><link href="https://nekzuk.com/automosaic.html" hreflang="en" rel="alternate"/><link href="https://nekzuk.com/automosaic_j.html" hreflang="ja" rel="alternate"/><link href="https://nekzuk.com/automosaic.html" hreflang="x-default" rel="alternate"/><meta content="ja_JP" property="og:locale"/></head>
 <body>
 <div class="container">
 <div class="top">
-<a data-role="back" href="/">← <span class="lang-en">Back</span></a>
+<a data-role="back" href="/index_j.html">← <span class="lang-ja">戻る</span></a>
 <div class="small">
-<a href="ai-paint-cleaner.html" onclick="setSiteLang('en')">English</a> /
-        <a href="ai-paint-cleaner_j.html" onclick="setSiteLang('ja')">日本語</a>
+<a href="automosaic_j.html" onclick="setSiteLang('en')">English</a> /
+        <a href="automosaic_j.html" onclick="setSiteLang('ja')">日本語</a>
 </div>
 </div>
 <section class="hero">
@@ -325,18 +327,15 @@ ul.lang-ja, ol.lang-ja {display:none}
 </div>
 <div class="heroTop">
 <div class="heroTitle">
-<img alt="AI Paint Cleaner icon" class="appIcon" src="assets/icons/app2.png"/>
+<img alt="AutoMosaic icon" class="appIcon" src="assets/icons/app_general.png"/>
 <div>
-<div class="titleRow">
-<h1 class="title"><span class="lang-en">AI Paint Cleaner</span></h1>
-<p class="subtitle"><span class="lang-en">All-in-one tool for editing multiple images efficiently: AI inpainting plus a wide range of batch utilities.</span></p>
-</div>
+<div class="titleRow"><h1 class="title"><span class="lang-ja">AutoMosaic (通常版)</span></h1><p class="subtitle"><span class="lang-ja">画像内の対象(顔・人物・文字など)を自動検出し、モザイク/ぼかし/塗りつぶしを一括適用するWindows向けデスクトップソフトです。 匿名化や漫画・イラスト編集の作業効率を上げます。</span></p></div>
 <div class="price">
-<span class="lang-en">$20</span>
+<span class="lang-ja">¥2,980</span>
 </div>
 <div class="btns">
-<a class="btn primary lang-en" href="https://payhip.com/b/KVIw4" rel="noopener" target="_blank">Payhip</a>
-<a class="btn sub" href="#trial"><span class="lang-en">Trial Version</span></a>
+<a class="btn primary lang-ja" href="https://synekzuk.booth.pm/items/7075141" rel="noopener" target="_blank">BOOTH</a>
+<a class="btn sub" href="#trial"><span class="lang-ja">体験版</span></a>
 </div>
 </div>
 </div>
@@ -344,25 +343,25 @@ ul.lang-ja, ol.lang-ja {display:none}
 <div class="kpi heroFacts">
 <div class="box">
 <div class="kv">
-<div class="label lang-en">Main Features</div>
-<div class="value lang-en">AI Inpainting + Batch Tools</div>
+<div class="label lang-ja">対象</div>
+<div class="value lang-ja">人・顔・目・文字・ナンバープレート</div>
 </div>
 </div>
 <div class="box">
 <div class="kv">
-<div class="label lang-en">For</div>
-<div class="value lang-en">Image Editing &amp; Processing</div>
+<div class="label lang-ja">用途</div>
+<div class="value lang-ja">匿名化・編集</div>
 </div>
 </div>
 <div class="box">
 <div class="kv">
-<div class="label lang-en">Processing</div>
-<div class="value lang-en">Sequential &amp; Batch</div>
+<div class="label lang-ja">処理</div>
+<div class="value lang-ja">一括処理</div>
 </div>
 </div>
 <div class="box">
 <div class="kv">
-<div class="label lang-en">Language UI</div>
+<div class="label lang-ja">UI言語</div>
 <div class="value">JP / EN (+ more)</div>
 </div>
 </div>
@@ -370,96 +369,116 @@ ul.lang-ja, ol.lang-ja {display:none}
 <div class="grid">
 <section class="section">
 <h2>
-<span class="lang-en">Overview</span>
+<span class="lang-ja">概要</span>
 </h2>
-<p class="lang-en">
-          AI Paint Cleaner is a comprehensive image editing tool designed for efficiently editing multiple images. 
-          It combines powerful AI inpainting capabilities with numerous batch processing features and integration with AutoMosaic, 
-          making it an all-in-one solution for illustration editing.
+<p class="lang-ja">
+          AutoMosaicは画像内の対象を自動検出し、複数の画像に連続でモザイク/ぼかし/塗りつぶしを一括適用するツールです。
+          完全にネットワークを介さず動作するため、プライバシー面も安心です。
         </p>
 <div class="hr"></div>
-<ul class="lang-en">
-<li><b>Offline processing</b>: Primarily local processing (some API features require network connection)</li>
-<li><b>Batch processing</b>: Process many images at once</li>
-<li><b>Preset formats</b>: JPG / PNG / BMP / GIF / WEBP</li>
+<ul class="lang-ja">
+<li><b>オフライン動作</b>:アップロード不要、クラウド処理なし</li>
+<li><b>バッチ処理</b>:複数画像をまとめて処理</li>
+<li><b>プリセット</b>:検出対象と出力スタイルを選ぶだけ</li>
+<li><b>対応画像形式</b>:JPG / PNG / BMP / GIF / WEBP</li>
+<li><b>処理速度</b>:1-3秒(GPU) / 5-8秒(CPU)</li>
+</ul>
+</section>
+<section class="section">
+<h2>
+<span class="lang-ja">検出対象 / 出力</span>
+</h2>
+<div class="twoCol">
+<div>
+<h3><span class="lang-ja">検出対象</span></h3>
+<ul class="lang-ja">
+<li>人</li>
+<li>顔(男性/女性/全体)</li>
+<li>目</li>
+<li>文字(縦書き/横書き)</li>
+<li>漫画の吹き出し</li>
+<li>漫画の効果音</li>
+<li>ナンバープレート</li>
+</ul>
+</div>
+<div>
+<h3><span class="lang-ja">出力</span></h3>
+<ul class="lang-ja">
+<li>モザイク</li>
+<li>ぼかし</li>
+<li>塗りつぶし(黒/白)</li>
 </ul>
 <div class="hr"></div>
-<h3>
-<span class="lang-en">Supported Languages</span>
-</h3>
-<ul class="lang-en">
-<li>Japanese</li>
-<li>English</li>
-<li>Chinese (Simplified/Traditional)</li>
-<li>Korean</li>
+<h3><span class="lang-ja">UI言語</span></h3>
+<ul class="lang-ja">
+<li>日本語</li>
+<li>英語</li>
+<li>中国語(簡体/繁体)</li>
+<li>韓国語</li>
 </ul>
+</div>
+</div>
+<p class="note lang-ja" style="margin-top:1rem;font-size:0.85rem;">* センシティブ部位の検出は<a href="automosaic-r18_j.html">R18版</a>をご利用ください。</p>
 </section>
 <section class="section">
 <h2>
-<span class="lang-en">Key Features</span>
+<span class="lang-ja">基本的な使い方</span>
 </h2>
-<p class="lang-en">Designed primarily for AI-generated image editing:</p>
-<ul class="lang-en">
-<li>Sequential display of images within a folder</li>
-<li>AI-powered object removal and inpainting</li>
-<li>Automatic object selection</li>
-<li>Standard editing tools (pen, eraser, fill, etc.)</li>
-<li>Mosaic tool</li>
-<li>Selection &amp; bookmark tool</li>
-<li>Image metadata &amp; embedded info display</li>
-<li>Format conversion - single or batch (JPG, PNG, WEBP, PDF)</li>
-<li>Resize / AI upscaling / background removal - single or batch</li>
-<li>Tag generation (Tagger) - single or batch</li>
-<li>Color correction (AI &amp; manual) - single or batch</li>
-<li>Metadata removal - single or batch</li>
-</ul>
-</section>
-<section class="section">
-<h2>
-<span class="lang-en">How to Use</span>
-</h2>
-<ol class="lang-en">
-<li>Select an image (open file or drag &amp; drop)</li>
-<li>Edit images by switching through images in the folder</li>
-<li>Apply batch processing to images in the folder as needed</li>
+<ol class="lang-ja">
+<li>プリセットを選択</li>
+<li>入力フォルダを選択</li>
+<li>モザイクサイズなどの設定を調整</li>
+<li>「処理実行」ボタンをクリック</li>
 </ol>
 </section>
 <section class="section">
-<h2><span class="lang-en">System Requirements</span></h2>
+<h2><span class="lang-ja">動作環境</span></h2>
 <ul>
-<li><span class="lang-en">OS: Windows 10/11 (64-bit)</span></li>
-<li><span class="lang-en">Memory: 8GB+ recommended</span></li>
-<li><span class="lang-en">Storage: 15GB or more</span></li>
-<li><span class="lang-en">GPU: NVIDIA GPU with CUDA support / VRAM: 8GB+ recommended</span></li>
-<li><span class="lang-en">It can run without a GPU, but some AI processing will be limited.</span></li>
+<li><span class="lang-ja">OS: Windows 10/11(64bit)</span></li>
+<li><span class="lang-ja">メモリ: 8GB以上推奨</span></li>
+<li><span class="lang-ja">ストレージ（空き容量）: 8GB以上</span></li>
+<li><span class="lang-ja">GPU: NVIDIA製GPU / VRAM: 4GB以上推奨</span></li>
+<li><span class="lang-ja">GPUなしでも動作しますが、処理速度は低下します。</span></li>
 </ul>
 </section>
-</div>
-<div class="grid">
 <section class="section">
-<h2><span class="lang-en">Processing Sample 1</span></h2>
-<a class="shot lang-en" href="assets/aipaintcleaner/AIPaintCleaner_1_en.jpg" rel="noopener" target="_blank">
-<img alt="AI object removal and inpainting example" src="assets/aipaintcleaner/AIPaintCleaner_1_en.jpg"/>
-<div class="cap">AI object removal and detailed inpainting</div>
+<h2><span class="lang-ja">処理例(Before / After)</span></h2>
+<p class="muted lang-ja">AutoMosaicの処理例です(クリックで拡大表示)。</p>
+<div class="beforeAfterGrid">
+<div class="beforeAfterLeft">
+<a class="shot" href="assets/automosaic/sample_people.png" rel="noopener" target="_blank">
+<img alt="Business people face blur example" src="assets/automosaic/sample_people.png"/>
+<div class="cap"><span class="lang-ja">ビジネス写真: 顔の匿名化</span></div>
 </a>
-</section>
-<section class="section">
-<h2><span class="lang-en">Processing Sample 2</span></h2>
-<a class="shot lang-en" href="assets/aipaintcleaner/AIPaintCleaner_2_en.jpg" rel="noopener" target="_blank">
-<img alt="AI color correction and background removal example" src="assets/aipaintcleaner/AIPaintCleaner_2_en.jpg"/>
-<div class="cap">AI automatic color correction and background removal</div>
+<a class="shot" href="assets/automosaic/sample_plate.png" rel="noopener" target="_blank">
+<img alt="License plate detection example" src="assets/automosaic/sample_plate.png"/>
+<div class="cap"><span class="lang-ja">街の風景: ナンバープレート検出</span></div>
 </a>
-</section>
 </div>
-<div class="grid">
-<section class="section" id="video">
-<h2><span class="lang-en">Video Demo</span></h2>
-<p class="muted" style="margin-bottom:1rem">
-<span class="lang-en">Introduction to AI Paint Cleaner's various features and functions.</span>
+<a class="shot" href="assets/automosaic/sample_family.png" rel="noopener" target="_blank">
+<img alt="Family photo face anonymization example" src="assets/automosaic/sample_family.png"/>
+<div class="cap"><span class="lang-ja">家族写真: 顔の匿名化</span></div>
+</a>
+</div>
+<p class="note" style="margin-top:1.5rem">
+<span class="lang-ja">💡 <b>Tip:</b> 自動処理後、<a href="ai-paint-cleaner_j.html">AI Paint Cleaner</a>で微調整(余計なモザイクの除去、モザイク追加、インペイント等)が可能です。</span>
 </p>
-<div class="lang-en">
-<a class="yt" href="https://www.youtube.com/watch?v=7g61LO9kZRE" rel="noopener" target="_blank">
-<img alt="AI Paint Cleaner demo thumbnail" class="ytThumb" src="https://i.ytimg.com/vi/7g61LO9kZRE/maxresdefault.jpg"/>
+</section>
+<section class="section" id="ui">
+<h2><span class="lang-ja">UIスクリーンショット</span></h2>
+<a class="shot lang-ja" href="assets/automosaic/ui_ja.png" rel="noopener" target="_blank">
+<img alt="AutoMosaic UI (Japanese)" src="assets/automosaic/ui_ja.png"/>
+<div class="cap">UI(日本語)</div>
+</a>
+</section>
+<section class="section" id="video">
+<h2><span class="lang-ja">紹介動画</span></h2>
+<p class="muted" style="margin-bottom:1rem">
+<span class="lang-ja">1分で概要と基本操作（ステップ1-4）を説明します</span>
+</p>
+<div class="lang-ja">
+<a class="yt" href="https://www.youtube.com/watch?v=dS3HW6hs5Y4" rel="noopener" target="_blank">
+<img alt="AutoMosaic Japanese demo thumbnail" class="ytThumb" src="https://i.ytimg.com/vi/dS3HW6hs5Y4/maxresdefault.jpg"/>
 <div class="ytOverlay">
 <div class="ytPlay"></div>
 </div>
@@ -467,83 +486,73 @@ ul.lang-ja, ol.lang-ja {display:none}
 </div>
 </section>
 <section class="section" id="trial">
-<h2><span class="lang-en">Trial Version</span></h2>
-<p class="lang-en"><b>Windows (No GPU / GPU: RTX 50XX series or earlier)</b></p>
-<p><a class="btn download" href="https://drive.google.com/file/d/1uacxPfvkyURg2dsLjfxGXYMgWr5FLzOp/view?usp=drive_link" rel="noopener" target="_blank">Download from Google Drive</a></p>
+<h2><span class="lang-ja">体験版</span></h2>
+<p class="lang-ja"><b>Windows (GPUなし / GPU: RTX 50XXシリーズ以前)</b></p>
+<p class="lang-ja"><a class="btn download" href="https://drive.google.com/file/d/1RgszzanxW8jHVOoISSjQja31IxVkVhic/view?usp=drive_link" rel="noopener" target="_blank">Download from Google Drive</a></p>
 <div class="hr"></div>
-<p class="lang-en"><b>Windows (GPU: RTX 50XX series or later)</b></p>
-<p><a class="btn download" href="https://drive.google.com/file/d/1BuR8efOl3JVfiUDoGia9PLWKIrVqMklY/view?usp=drive_link" rel="noopener" target="_blank">Download from Google Drive</a></p>
+<p class="lang-ja"><b>Windows (GPU: RTX 50XXシリーズ以降)</b></p>
+<p class="lang-ja"><a class="btn download" href="https://drive.google.com/file/d/1r29vEboWGw1WygKhCy9rUDJq_TuPZeTU/view?usp=drive_link" rel="noopener" target="_blank">Download from Google Drive</a></p>
 <div class="hr"></div>
-<h3>
-<span class="lang-en">What's included</span>
-</h3>
-<ul class="lang-en">
-<li>✓ All features available</li>
-<li>✗ Cannot save images</li>
-<li>✗ Cannot execute batch processing</li>
+<h3><span class="lang-ja">体験版の内容</span></h3>
+<ul class="lang-ja">
+<li>✓ 全機能を試せます</li>
+<li>✓ 最大5枚まで処理可能</li>
+<li>✗ ウォーターマーク付き</li>
 </ul>
 </section>
-</div>
-<div class="grid">
 <section class="section">
-<h2><span class="lang-en">Updates &amp; Changelog</span></h2>
+<h2><span class="lang-ja">更新情報・変更履歴</span></h2>
 <div class="kpi" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1rem">
 <div class="box">
 <div class="kv">
-<div class="label lang-en">Current Version</div>
-<div class="value">v2.22</div>
+<div class="label lang-ja">最新バージョン</div>
+<div class="value">v3.10</div>
 </div>
 </div>
 <div class="box">
 <div class="kv">
-<div class="label lang-en">Release Date</div>
+<div class="label lang-ja">リリース日</div>
 <div class="value">2026-01-01</div>
 </div>
 </div>
 </div>
 <div class="hr"></div>
-<h3>
-<span class="lang-en">Latest Updates</span>
-</h3>
-<ul class="lang-en">
-<li>Added automatic object selection feature</li>
-<li>Bug fixes</li>
-<li>User feature requests</li>
+<h3><span class="lang-ja">最新の更新内容</span></h3>
+<ul class="lang-ja">
+<li>処理速度改善</li>
+<li>バグ修正</li>
+<li>要望対応</li>
 </ul>
 <p style="margin-top:1rem">
-<a href="https://note.com/nekzuk/n/n5bc9a483671d" rel="noopener" target="_blank">
-<span class="lang-en">→ Read detailed release notes</span>
+<a href="https://note.com/nekzuk/n/ne47a6b685ff4" rel="noopener" target="_blank">
+<span class="lang-ja">→ 詳細な更新内容を読む</span>
 </a>
 </p>
 </section>
 <section class="section">
 <h2>
-<span class="lang-en">License &amp; Usage Notes</span>
+<span class="lang-ja">ライセンス・ご利用上の注意</span>
 </h2>
-<h3>
-<span class="lang-en">License</span>
-</h3>
-<ul class="lang-en">
-<li><b>Personal use (including commercial)</b>: Included with purchase</li>
-<li><b>Corporate/enterprise use</b>: Please contact separately for licensing</li>
+<h3><span class="lang-ja">ライセンス</span></h3>
+<ul class="lang-ja">
+<li><b>個人での商用利用</b>: 本製品の購入で利用可能</li>
+<li><b>企業での商用利用</b>: 別途ご相談ください</li>
 </ul>
 <div class="hr"></div>
-<h3>
-<span class="lang-en">Important Notes</span>
-</h3>
-<ul class="lang-en">
-<li>Processing may take time depending on your PC/GPU specifications</li>
-<li>Please review all outputs after processing to ensure accuracy</li>
+<h3><span class="lang-ja">重要な注意事項</span></h3>
+<ul class="lang-ja">
+<li>処理にはお使いのPC/GPUの性能に応じて時間がかかる場合があります</li>
+<li>処理結果は必ずご確認ください</li>
+<li>検出精度は画像の品質や条件により変動する場合があります</li>
 </ul>
 </section>
 </div>
-</div>
 <div class="footer">
-<div class="lang-en" style="margin-bottom:.75rem">
-<b>Support:</b> <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank">Twitter/X</a> | <a href="https://payhip.com/nekzuk/contact" rel="noopener" target="_blank">Payhip message</a>
+<div class="lang-ja" style="margin-bottom:.75rem">
+<b>サポート:</b> <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank">Twitter/X</a> | <a href="https://accounts.booth.pm/conversations/49131834/messages" rel="noopener" target="_blank">BOOTHメッセージ</a>
 </div>
-
       © nekzuk Software
     </div>
+</div>
 </body>
 </html>
