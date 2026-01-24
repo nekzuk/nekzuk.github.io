@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- SEO Meta Tags -->
 <meta content="AI画像生成・編集を効率化するWindows向けツール集。自動モザイク（AutoMosaic）、総合編集ツール（AI Paint Cleaner）、メタデータ変換など。" name="description"/>
-<meta content="AI画像ツール,AutoMosaic,自動モザイク,画像編集,Windowsソフト,AI Paint Cleaner" name="keywords"/>
+
 <meta content="nekzuk Software" name="author"/>
 <!-- Open Graph / Facebook -->
 <meta content="website" property="og:type"/>
@@ -100,6 +100,12 @@
         @keyframes float {
             0%, 100% { transform: translate(0, 0) rotate(0deg); }
             50% { transform: translate(-2%, 2%) rotate(1deg); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .bg-effect::before {
+                animation: none;
+            }
         }
 
         /* Header */
@@ -620,15 +626,14 @@
       "item": {
         "@type": "SoftwareApplication",
         "name": "AutoMosaic R18版",
-        "url": "https://nekzuk.com/automosaic-r18.html",
+        "url": "https://nekzuk.com/automosaic-r18_j.html",
         "image": "https://nekzuk.com/assets/icons/app_R18.png",
         "description": "GPU高速化バッチ自動モザイクツール",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Windows 10, Windows 11",
         "offers": {
-          "@type": "AggregateOffer",
-          "lowPrice": "2980",
-          "highPrice": "25",
+          "@type": "Offer",
+          "price": "2980",
           "priceCurrency": "JPY"
         }
       }
@@ -639,15 +644,14 @@
       "item": {
         "@type": "SoftwareApplication",
         "name": "AutoMosaic 通常版",
-        "url": "https://nekzuk.com/automosaic.html",
+        "url": "https://nekzuk.com/automosaic_j.html",
         "image": "https://nekzuk.com/assets/icons/app_general.png",
         "description": "顔・文字・ナンバープレート・漫画の自動モザイク",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Windows 10, Windows 11",
         "offers": {
-          "@type": "AggregateOffer",
-          "lowPrice": "2980",
-          "highPrice": "25",
+          "@type": "Offer",
+          "price": "2980",
           "priceCurrency": "JPY"
         }
       }
@@ -658,15 +662,14 @@
       "item": {
         "@type": "SoftwareApplication",
         "name": "AI Paint Cleaner",
-        "url": "https://nekzuk.com/ai-paint-cleaner.html",
+        "url": "https://nekzuk.com/ai-paint-cleaner_j.html",
         "image": "https://nekzuk.com/assets/icons/app2.png",
         "description": "AIインペイント搭載オールインワンバッチ編集ツール",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Windows 10, Windows 11",
         "offers": {
-          "@type": "AggregateOffer",
-          "lowPrice": "2000",
-          "highPrice": "20",
+          "@type": "Offer",
+          "price": "2000",
           "priceCurrency": "JPY"
         }
       }
@@ -677,7 +680,7 @@
       "item": {
         "@type": "SoftwareApplication",
         "name": "AI Meta Cleaner",
-        "url": "https://nekzuk.com/ai-meta-cleaner.html",
+        "url": "https://nekzuk.com/ai-meta-cleaner_j.html",
         "image": "https://nekzuk.com/assets/icons/app3.png",
         "description": "AI画像用無料メタデータ削除ツール",
         "applicationCategory": "MultimediaApplication",
@@ -695,15 +698,14 @@
       "item": {
         "@type": "SoftwareApplication",
         "name": "Frame Craft",
-        "url": "https://nekzuk.com/frame-craft.html",
+        "url": "https://nekzuk.com/frame-craft_j.html",
         "image": "https://nekzuk.com/assets/icons/app5.png",
         "description": "動画フレーム抽出・アニメーション変換ツール",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Windows 10, Windows 11",
         "offers": {
-          "@type": "AggregateOffer",
-          "lowPrice": "480",
-          "highPrice": "5",
+          "@type": "Offer",
+          "price": "480",
           "priceCurrency": "JPY"
         }
       }
@@ -714,15 +716,14 @@
       "item": {
         "@type": "SoftwareApplication",
         "name": "Meta Converter",
-        "url": "https://nekzuk.com/meta-converter.html",
+        "url": "https://nekzuk.com/meta-converter_j.html",
         "image": "https://nekzuk.com/assets/icons/app4.png",
         "description": "メタデータ維持画像変換ツール",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Windows 10, Windows 11",
         "offers": {
-          "@type": "AggregateOffer",
-          "lowPrice": "380",
-          "highPrice": "4",
+          "@type": "Offer",
+          "price": "380",
           "priceCurrency": "JPY"
         }
       }
@@ -740,7 +741,7 @@
 <a class="lang-btn" href="index.html">English</a>
 <a class="lang-btn active" href="index_j.html">日本語</a>
 </div>
-<h1>製品のご紹介</h1>
+<h1>AI画像処理ツール製品一覧 – nekzuk Software</h1>
 <p class="header-description">
             AI画像生成・編集のワークフローを効率化する各種ツールをご用意しています。<br/>
             すべてWindows専用のデスクトップアプリケーションです。
@@ -778,7 +779,7 @@
 <span class="price-badge paid">¥2,980</span>
 <div class="button-group">
 <a class="btn btn-secondary" href="automosaic-r18_j.html">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
 <line x1="16" x2="8" y1="13" y2="13"></line>
@@ -788,7 +789,7 @@
                         </a>
 <a class="btn btn-primary" href="https://synekzuk.booth.pm/items/6510317" rel="noopener" target="_blank">
                             BOOTH
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M7 17L17 7M17 7H7M17 7V17"></path>
 </svg>
 </a>
@@ -825,7 +826,7 @@
 <span class="price-badge paid">¥2,980</span>
 <div class="button-group">
 <a class="btn btn-secondary" href="automosaic_j.html">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
 <line x1="16" x2="8" y1="13" y2="13"></line>
@@ -835,7 +836,7 @@
                         </a>
 <a class="btn btn-primary" href="https://synekzuk.booth.pm/items/7075141" rel="noopener" target="_blank">
                             BOOTH
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M7 17L17 7M17 7H7M17 7V17"></path>
 </svg>
 </a>
@@ -873,7 +874,7 @@
 <span class="price-badge paid">¥2,000</span>
 <div class="button-group">
 <a class="btn btn-secondary" href="ai-paint-cleaner_j.html">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
 <line x1="16" x2="8" y1="13" y2="13"></line>
@@ -883,7 +884,7 @@
                         </a>
 <a class="btn btn-primary" href="https://synekzuk.booth.pm/items/6649634" rel="noopener" target="_blank">
                             BOOTH
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M7 17L17 7M17 7H7M17 7V17"></path>
 </svg>
 </a>
@@ -919,7 +920,7 @@
 <span class="price-badge free">無料</span>
 <div class="button-group">
 <a class="btn btn-secondary" href="ai-meta-cleaner_j.html">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
 <line x1="16" x2="8" y1="13" y2="13"></line>
@@ -929,7 +930,7 @@
                         </a>
 <a class="btn btn-primary" href="https://synekzuk.booth.pm/items/7626627" rel="noopener" target="_blank">
                             BOOTH
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M7 17L17 7M17 7H7M17 7V17"></path>
 </svg>
 </a>
@@ -967,7 +968,7 @@
 <span class="price-badge paid">¥480</span>
 <div class="button-group">
 <a class="btn btn-secondary" href="frame-craft_j.html">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
 <line x1="16" x2="8" y1="13" y2="13"></line>
@@ -977,7 +978,7 @@
                         </a>
 <a class="btn btn-primary" href="https://synekzuk.booth.pm/items/7295171" rel="noopener" target="_blank">
                             BOOTH
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M7 17L17 7M17 7H7M17 7V17"></path>
 </svg>
 </a>
@@ -1015,7 +1016,7 @@
 <span class="price-badge paid">¥380</span>
 <div class="button-group">
 <a class="btn btn-secondary" href="meta-converter_j.html">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
 <line x1="16" x2="8" y1="13" y2="13"></line>
@@ -1025,7 +1026,7 @@
                         </a>
 <a class="btn btn-primary" href="https://synekzuk.booth.pm/items/6911255" rel="noopener" target="_blank">
                             BOOTH
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M7 17L17 7M17 7H7M17 7V17"></path>
 </svg>
 </a>
@@ -1040,14 +1041,18 @@
 <p class="workflow-label">パターン1：有料・オールインワン</p>
 <div class="workflow-content">
 <div class="workflow-step">
+<a href="automosaic-r18_j.html" style="display: block; text-decoration: none; color: inherit;">
 <img alt="AutoMosaic R18版" class="workflow-icon" src="assets/icons/app_R18.png"/>
 <p class="workflow-step-name">AutoMosaic R18版</p>
+</a>
 <p class="workflow-step-desc">自動モザイク処理</p>
 </div>
 <span class="workflow-arrow">→</span>
 <div class="workflow-step highlight">
+<a href="ai-paint-cleaner_j.html" style="display: block; text-decoration: none; color: inherit;">
 <img alt="AI Paint Cleaner" class="workflow-icon" src="assets/icons/app2.png"/>
 <p class="workflow-step-name">AI Paint Cleaner</p>
+</a>
 <p class="workflow-step-desc">細かい調整・編集<br/><small>※メタデータ削除機能も内蔵</small></p>
 </div>
 </div>
@@ -1057,14 +1062,18 @@
 <p class="workflow-label">パターン2：無料ツールで対応</p>
 <div class="workflow-content">
 <div class="workflow-step">
+<a href="automosaic-r18_j.html" style="display: block; text-decoration: none; color: inherit;">
 <img alt="AutoMosaic R18版" class="workflow-icon" src="assets/icons/app_R18.png"/>
 <p class="workflow-step-name">AutoMosaic R18版</p>
+</a>
 <p class="workflow-step-desc">自動モザイク処理<br/><small>※有料ソフト</small></p>
 </div>
 <span class="workflow-arrow">→</span>
 <div class="workflow-step free">
+<a href="ai-meta-cleaner_j.html" style="display: block; text-decoration: none; color: inherit;">
 <img alt="AI Meta Cleaner" class="workflow-icon" src="assets/icons/app3.png"/>
 <p class="workflow-step-name">AI Meta Cleaner</p>
+</a>
 <p class="workflow-step-desc">メタデータ削除<br/><small>※無料ソフト</small></p>
 </div>
 </div>
