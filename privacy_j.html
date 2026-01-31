@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- SEO Meta Tags -->
+<meta content="nekzuk Softwareのプライバシーポリシー。Webサイトでの情報収集、ソフトウェアの動作、個人情報の取り扱いについて説明しています。" name="description"/>
+<meta content="nekzuk Software" name="author"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="https://nekzuk.com/privacy_j.html" property="og:url"/>
+<meta content="プライバシーポリシー | nekzuk Software" property="og:title"/>
+<meta content="nekzuk Softwareのプライバシーポリシー。Webサイトでの情報収集、ソフトウェアの動作、個人情報の取り扱いについて説明しています。" property="og:description"/>
+<meta content="https://nekzuk.com/assets/favicons/og-image.png?v=3" property="og:image"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://nekzuk.com/privacy_j.html" name="twitter:url"/>
+<meta content="プライバシーポリシー | nekzuk Software" name="twitter:title"/>
+<meta content="nekzuk Softwareのプライバシーポリシー。Webサイトでの情報収集、ソフトウェアの動作、個人情報の取り扱いについて説明しています。" name="twitter:description"/>
+<meta content="https://nekzuk.com/assets/favicons/og-image.png?v=3" name="twitter:image"/>
+<meta content="@Synekzuk_AI" name="twitter:site"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-040P2W2ZZK"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-040P2W2ZZK');
+    </script>
+<!-- Favicon & Icons -->
+<link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32"/>
+<link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/assets/favicons/icon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/assets/favicons/icon-512.png" rel="icon" sizes="512x512" type="image/png"/>
+<meta content="#6366f1" name="theme-color"/>
+<title>プライバシーポリシー | nekzuk Software</title>
+<style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --accent: #22d3ee;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --bg-card-hover: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border: #334155;
+            --gradient-1: linear-gradient(135deg, #6366f1, #8b5cf6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', YuGothic, Meiryo, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        .bg-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bg-effect::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 80%, rgba(34, 211, 238, 0.06) 0%, transparent 50%);
+        }
+
+        header {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 3rem 2rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .lang-btn {
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: var(--text-secondary);
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .lang-btn:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .lang-btn.active {
+            color: var(--text-primary);
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .last-updated {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .content-section {
+            background: var(--bg-card);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        strong {
+            color: var(--text-primary);
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            margin: 0 0.5rem;
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            main {
+                padding: 2rem 1.5rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+<link href="https://nekzuk.com/privacy_j.html" rel="canonical"/>
+<link href="https://nekzuk.com/privacy.html" hreflang="en" rel="alternate"/>
+<link href="https://nekzuk.com/privacy_j.html" hreflang="ja" rel="alternate"/>
+<link href="https://nekzuk.com/privacy.html" hreflang="x-default" rel="alternate"/>
+</head>
+<body>
+<div class="bg-effect"></div>
+<header>
+<div class="lang-switch">
+<a class="lang-btn" href="privacy.html">English</a>
+<a class="lang-btn active" href="privacy_j.html">日本語</a>
+</div>
+<h1>プライバシーポリシー</h1>
+<p class="last-updated">最終更新日: 2026年1月31日</p>
+</header>
+
+<main>
+<div class="content-section">
+<h2>1. はじめに</h2>
+<p>nekzuk Software（以下「当社」といいます）は、お客様のプライバシーを尊重し、個人情報の保護に努めています。本プライバシーポリシーは、当社のWebサイト（https://nekzuk.com）およびソフトウェア製品における情報の取り扱いについて説明するものです。</p>
+</div>
+
+<div class="content-section">
+<h2>2. Webサイトでの情報収集</h2>
+
+<h3>2.1 Google Analytics</h3>
+<p>当社のWebサイトでは、サイトの改善とユーザー体験の向上を目的として、Google Analyticsを使用しています。</p>
+<ul>
+<li><strong>収集する情報</strong>: ページ閲覧数、訪問者数、滞在時間、参照元、使用デバイス情報など</li>
+<li><strong>IPアドレスの匿名化</strong>: IPアドレスは匿名化されており、個人を特定することはできません</li>
+<li><strong>Cookieの使用</strong>: Google Analyticsはクッキーを使用してアクセス情報を収集します</li>
+<li><strong>オプトアウト</strong>: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analyticsオプトアウトアドオン</a>を使用することで、データ収集を無効化できます</li>
+</ul>
+<p>Google Analyticsの詳細については、<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googleのプライバシーポリシー</a>をご確認ください。</p>
+</div>
+
+<div class="content-section">
+<h2>3. ソフトウェアにおける情報の取り扱い</h2>
+
+<h3>3.1 完全ローカル動作</h3>
+<p>当社のソフトウェア製品は、以下の特徴を持ちます：</p>
+<ul>
+<li><strong>完全ローカル動作</strong>: すべての処理はお客様のPC内で完結します</li>
+<li><strong>情報収集なし</strong>: ユーザー情報、使用状況データ、画像データなどを一切収集しません</li>
+<li><strong>インターネット通信なし</strong>: 初回ダウンロード後は、基本的にインターネット接続を必要としません</li>
+<li><strong>ライセンス認証なし</strong>: オンライン認証や個人情報の登録は不要です</li>
+</ul>
+
+<h3>3.2 API機能について（一部製品で実装予定）</h3>
+<p>一部の製品では、ユーザーの利便性向上のため、外部サービス（NovelAI等）のAPI機能を実装する予定です。この機能については以下の通りです：</p>
+<ul>
+<li><strong>APIキーの保存</strong>: ユーザーが取得したAPIキーは、お客様のPC内にのみ保存されます</li>
+<li><strong>当社による収集・保存なし</strong>: 当社はAPIキーやAPI通信内容を収集・保存しません</li>
+<li><strong>直接通信</strong>: API通信は、お客様と各サービス間で直接行われます</li>
+<li><strong>通信ログ</strong>: ローカルでの通信ログ保存は、ユーザーの選択により有効/無効を切り替えられます。保存される場合もお客様のPC内にのみ保存されます</li>
+</ul>
+</div>
+
+<div class="content-section">
+<h2>4. お問い合わせ時の情報</h2>
+<p>お客様が当社にお問い合わせされる際、以下のプラットフォームを経由する場合があります：</p>
+<ul>
+<li><strong>Twitter/X</strong>: ユーザー名、メッセージ内容</li>
+<li><strong>BOOTH</strong>: BOOTHのメッセージシステムを通じたお問い合わせ</li>
+</ul>
+<p>これらの情報は、各プラットフォームのプライバシーポリシーに従って管理され、当社はサポート目的でのみ利用します。</p>
+</div>
+
+<div class="content-section">
+<h2>5. 販売プラットフォーム</h2>
+<p>当社の製品は、以下のプラットフォームを通じて販売されています：</p>
+<ul>
+<li><strong>BOOTH</strong>: <a href="https://policies.booth.pm/privacy" target="_blank" rel="noopener">BOOTHプライバシーポリシー</a></li>
+<li><strong>Payhip</strong>: <a href="https://payhip.com/privacy" target="_blank" rel="noopener">Payhipプライバシーポリシー</a></li>
+</ul>
+<p>決済情報や購入者情報は、各プラットフォームが管理しており、当社は直接取得しません。詳細は各プラットフォームのプライバシーポリシーをご確認ください。</p>
+</div>
+
+<div class="content-section">
+<h2>6. 情報の第三者提供</h2>
+<p>当社は、以下の場合を除き、お客様の情報を第三者に提供することはありません：</p>
+<ul>
+<li>お客様の同意がある場合</li>
+<li>法令に基づく場合</li>
+<li>人の生命、身体または財産の保護のために必要がある場合</li>
+</ul>
+</div>
+
+<div class="content-section">
+<h2>7. お客様の権利</h2>
+<p>お客様は、ご自身の個人情報について、以下の権利を有します：</p>
+<ul>
+<li>アクセス、訂正、削除の要求</li>
+<li>データ処理の制限または異議申し立て</li>
+<li>データポータビリティの要求</li>
+</ul>
+<p>これらの権利を行使されたい場合は、下記の連絡先までお問い合わせください。</p>
+</div>
+
+<div class="content-section">
+<h2>8. プライバシーポリシーの変更</h2>
+<p>当社は、必要に応じて本プライバシーポリシーを変更することがあります。変更後のプライバシーポリシーは、本ページに掲載された時点で効力を生じるものとします。</p>
+</div>
+
+<div class="content-section">
+<h2>9. お問い合わせ</h2>
+<p>本プライバシーポリシーに関するご質問やご不明な点がございましたら、以下までお問い合わせください：</p>
+<ul>
+<li><strong>Twitter/X</strong>: <a href="https://x.com/Synekzuk_AI" target="_blank" rel="noopener">@Synekzuk_AI</a></li>
+<li><strong>BOOTH</strong>: <a href="https://accounts.booth.pm/conversations/49131834/messages" target="_blank" rel="noopener">BOOTHメッセージ</a></li>
+</ul>
+</div>
+</main>
+
+<footer>
+<p>
+© 2024-2026 nekzuk Software. All rights reserved.
+</p>
+<div class="footer-links">
+<a href="index_j.html">ホーム</a>
+<a href="privacy_j.html">プライバシーポリシー</a>
+<a href="terms_j.html">利用規約</a>
+</div>
+</footer>
+</body>
+</html>
