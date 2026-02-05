@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/><script>(function(){
+  try {
+    const p = new URLSearchParams(location.search);
+    const lang = p.get('lang');
+    if (lang === 'en') { location.replace('nai-smart-studio.html'); return; }
+    if (lang === 'ja' && location.search) { location.replace('nai-smart-studio_j.html'); }
+  } catch(e) {}
+})();</script>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>NAI Smart Studio | nekzuk</title>
+<!-- SEO Meta Tags -->
+<meta content="NovelAIの画像生成を強化するWindows向けデスクトップアプリ。ワイルドカード、連続生成、プロンプト検索など便利な機能を搭載。" name="description"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="https://nekzuk.com/nai-smart-studio.html?lang=en" property="og:url"/>
+<meta content="NAI Smart Studio – NovelAI Enhancement Tool" property="og:title"/>
+<meta content="NovelAIの画像生成を強化するWindows向けデスクトップアプリ。ワイルドカード、連続生成、プロンプト検索など便利な機能を搭載。" property="og:description"/>
+<meta content="https://nekzuk.com/assets/icons/app_nai.png" property="og:image"/>
+<!-- Twitter -->
+<meta content="summary" name="twitter:card"/>
+<meta content="@Synekzuk_AI" name="twitter:site"/>
+<meta content="NAI Smart Studio – NovelAI Enhancement Tool" name="twitter:title"/>
+<meta content="NovelAIの画像生成を強化するWindows向けデスクトップアプリ。ワイルドカード、連続生成、プロンプト検索など便利な機能を搭載。" name="twitter:description"/>
+<meta content="https://nekzuk.com/assets/icons/app_nai.png" name="twitter:image"/>
+<!-- Language SEO -->
+<!-- Favicon & Icons -->
+<link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32"/>
+<link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/assets/favicons/icon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/assets/favicons/icon-512.png" rel="icon" sizes="512x512" type="image/png"/>
+<meta content="#6366f1" name="theme-color"/>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-040P2W2ZZK"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-040P2W2ZZK');
+</script>
+
+<style>
+    :root {
+      --bg:#0f172a; --card:#1e293b; --card2:#172136; --border:#334155;
+      --text:#f1f5f9; --muted:#94a3b8; --muted2:#64748b;
+      --accent:#22d3ee; --primary:#6366f1; --grad: linear-gradient(135deg,var(--primary),#8b5cf6);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh;padding:2.5rem 1.25rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    .container{max-width:980px;margin:0 auto}
+    .top{display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:1.25rem}
+    .small{font-size:.9rem;color:var(--muted)}
+    .pill{display:inline-flex;gap:.5rem;align-items:center;padding:.25rem .7rem;border-radius:999px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.05);color:var(--muted);font-size:.85rem}
+
+    .hero{background:var(--card);border:1px solid var(--border);border-radius:1.1rem;padding:1.6rem}
+    .heroTop{display:flex;gap:1rem;align-items:flex-start}
+    .heroIcon{
+  width:110px;
+  height:110px;
+  border-radius:18px;
+  overflow:hidden;
+  flex:0 0 auto;
+  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+}
+    .heroIcon img{width:100%;height:100%;object-fit:cover}
+    .hero h1{font-size:2rem;line-height:1.2;margin:.1rem 0 .4rem}
+    .hero p{color:var(--muted);margin-top:.4rem}
+    .pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+
+    .btns{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1rem;border-radius:.7rem;border:1px solid var(--border);background:rgba(255,255,255,.06);color:var(--text);text-decoration:none;font-weight:650;font-size:.95rem}
+    .btn.primary{background:var(--grad);border-color:transparent}
+    .btn.sub{background:rgba(34,211,238,.15);border-color:rgba(34,211,238,.4);color:var(--accent)}
+    .btn.sub:hover{background:rgba(34,211,238,.25);text-decoration:none}
+    .btn.download{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.3);color:var(--accent);font-size:.9rem;padding:.5rem .9rem}
+    .btn.download:hover{background:rgba(34,211,238,.2);text-decoration:none}
+    .btn.ghost{background:transparent}
+    .btn.disabled{opacity:.4;cursor:not-allowed;pointer-events:none}
+    .price{font-size:1.1rem;font-weight:700;color:var(--accent);display:flex;align-items:baseline;gap:.5rem}
+    .price .alt{font-size:.85rem;color:var(--muted2);font-weight:400}
+
+    .grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1rem}
+    @media(min-width:920px){ .grid{grid-template-columns:1fr 1fr} }
+    .section{margin-top:1rem;background:var(--card);border:1px solid var(--border);border-radius:1.1rem;padding:1.4rem}
+    .section h2{font-size:1.2rem;margin-bottom:.7rem}
+    .section h3{font-size:1.05rem;margin:.9rem 0 .4rem}
+    .section > p, 
+	.section > ul, 
+	.section > ol, 
+	.section > dl, 
+	.section > h3 {
+	  padding-left: 0.5rem;
+	  padding-right: 0.5rem;
+	}
+	.section .hr {
+	  margin-left: 0.5rem;
+	  margin-right: 0.5rem;
+	}
+	.section > .twoCol, 
+	.section > .grid-2 {
+	  padding-left: 0.5rem;
+	  padding-right: 0.5rem;
+	}
+    ul{margin:.3rem 0 .8rem 1.25rem;color:var(--muted)} li{margin:.25rem 0}
+    .hr{height:1px;background:var(--border);margin:1.1rem 0}
+    .kpi{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin-top:.9rem}
+    @media(min-width:720px){ .kpi{grid-template-columns:repeat(4,minmax(0,1fr))} }
+    .kpi .box{background:var(--card2);border:1px solid rgba(255,255,255,.08);border-radius:1rem;padding:.85rem}
+    .kpi .label{font-size:.8rem;color:var(--muted2);min-height:16px}
+    .kpi .value{font-weight:750;margin-top:.2rem;min-height:24px}
+
+    /* YouTube thumbnail link */
+    .yt{position:relative;width:100%;aspect-ratio:16/9;border-radius:1rem;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#000;display:block;text-decoration:none}
+    .ytThumb{width:100%;height:100%;object-fit:cover;display:block;transition:opacity 0.3s}
+    .yt:hover .ytThumb{opacity:0.8}
+    .ytOverlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.4));pointer-events:none}
+    .ytPlay{width:72px;height:72px;border-radius:50%;background:rgba(255,0,0,.9);display:flex;align-items:center;justify-content:center;transition:all 0.2s}
+    .yt:hover .ytPlay{background:rgba(255,0,0,1);transform:scale(1.1)}
+    .ytPlay:before{content:"";display:block;width:0;height:0;border-left:20px solid white;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+    .two-col{display:grid;grid-template-columns:1fr;gap:1rem} @media(min-width:920px){ .two-col{grid-template-columns:1fr 1fr} }
+    .note{font-size:.9rem;color:var(--muted)} code{background:rgba(255,255,255,.06);padding:.1rem .35rem;border-radius:.35rem;border:1px solid rgba(255,255,255,.08)}
+
+    /* Images */
+    .gallery{display:grid;grid-template-columns:1fr;gap:.9rem} 
+    @media(min-width:920px){ .gallery{grid-template-columns:1fr 1fr} }
+    .shot{background:var(--card2);border:1px solid rgba(255,255,255,.08);border-radius:1rem;overflow:hidden}
+    .shot img{display:block;width:100%;height:auto}
+    .shot .cap{padding:.7rem .85rem;color:var(--muted);font-size:.9rem}
+
+    .faq dt{font-weight:700;margin-top:.7rem} .faq dd{color:var(--muted);margin:.2rem 0 .6rem}
+    .footer{text-align:center;margin-top:1.4rem;color:var(--muted2);font-size:.9rem}
+    span.lang-en, p.lang-en, h2.lang-en, h3.lang-en, b.lang-en {display:none} 
+span.lang-ja, p.lang-ja, h2.lang-ja, h3.lang-ja, b.lang-ja {display:inline}
+ul.lang-en, ol.lang-en {display:none; padding-right:1.25rem}
+ul.lang-ja, ol.lang-ja {display:block}
+  
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  @media (max-width: 860px){.grid-2{grid-template-columns:1fr}}
+  a.shot{display:block}
+  .shot img{width:100%;height:auto;max-height:420px;object-fit:contain;background:#0b1220}
+  .shot .cap{margin-top:.45rem}
+
+  .section-head{display:flex;gap:1rem;align-items:flex-end;justify-content:space-between;flex-wrap:wrap}
+  #ui .shot img{max-height:760px;object-fit:contain}
+
+.twoCol{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width: 820px){.twoCol{grid-template-columns:1fr}}
+.note{opacity:.9;font-size:.92rem;margin-top:.5rem}
+.hr{height:1px;background:rgba(255,255,255,.08);margin:14px 0}
+.section h3{margin:10px 0 6px 0;font-size:1rem;opacity:.95}
+.section ol{padding-left:1.2rem}
+.section ol li{margin:.35rem 0}
+
+.appIcon{
+  width:110px;
+  height:110px;
+  border-radius:24px;
+  box-shadow:0 10px 22px rgba(0,0,0,.35);
+  flex:0 0 auto;
+}
+.heroTitle{
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+}
+.heroTitle .title{ margin:0; }
+.heroTitle .subtitle{ margin:0; color:var(--muted); line-height:1.35; max-width:640px; }
+.heroText .titleRow{ display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; }
+.heroText .titleRow .subtitle{ max-width:640px; }
+.heroText .titleRow h1{ margin:0; }
+
+.kpi .kv{ display:flex; flex-direction:column; align-items:flex-start; gap:6px; }
+.kpi .kv .label{ margin:0; }
+.kpi .kv .value{ margin:0; }
+
+.heroText{
+  flex:1;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+.heroText .title{
+  line-height:1.08;
+}
+.heroText .subtitle{
+  margin-top:10px;
+  line-height:1.5;
+  max-width:110ch;
+  text-wrap:balance;
+}
+
+.kv .label{ font-size:.75rem; opacity:.72; line-height:1.15; }
+.kv .value{ font-size:.98rem; font-weight:700; line-height:1.25; }
+.box ul{ margin:.55rem 0 0; padding-left:1.15rem; }
+.box li{ margin:.32rem 0; }
+
+.heroTitle > div{max-width:760px;}
+.heroTitle h1{line-height:1.05;}
+.heroTitle .subtitle{
+  max-width:760px;
+  text-wrap:balance;
+  line-height:1.35;
+  margin-top:.25rem;
+}
+.twoCol{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+@media (max-width:820px){.twoCol{grid-template-columns:1fr;}}
+
+.heroFacts .box{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-start;
+  gap:.22rem;
+}
+.heroFacts .box .label{display:block;}
+.heroFacts .box .value{display:block;}
+
+.section ul,.section ol{
+  margin:.8rem 0 0;
+  padding-left:1.25rem;
+}
+.section li{margin:.35rem 0;}
+
+.twoCol > div { padding-left: 0.5rem; padding-right: 0.5rem; }
+
+.placeholder-box {
+  background: var(--card2);
+  border: 2px dashed rgba(255,255,255,.12);
+  border-radius: 1rem;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.placeholder-box .icon {
+  font-size: 2rem;
+  opacity: 0.3;
+}
+  </style>
+<!-- 構造化データ：SoftwareApplication (Enhanced) -->
+<link href="https://nekzuk.com/nai-smart-studio_j.html" rel="canonical"/><link href="https://nekzuk.com/nai-smart-studio.html" hreflang="en" rel="alternate"/><link href="https://nekzuk.com/nai-smart-studio_j.html" hreflang="ja" rel="alternate"/><link href="https://nekzuk.com/nai-smart-studio.html" hreflang="x-default" rel="alternate"/><meta content="ja_JP" property="og:locale"/></head>
+<body>
+<div class="container">
+<div class="top">
+<a data-role="back" href="/index_j.html">← <span class="lang-ja">戻る</span></a>
+<div class="small">
+<a href="nai-smart-studio.html">English</a> /
+        <a href="nai-smart-studio_j.html">日本語</a>
+</div>
+</div>
+<section class="hero">
+<div class="pills">
+<span class="pill">Windows</span>
+<span class="pill">Desktop</span>
+<span class="pill">NovelAI</span>
+<span class="pill">日本語UI</span>
+</div>
+<div class="heroTop">
+<div class="heroTitle">
+<img alt="NAI Smart Studio icon" class="appIcon" src="assets/icons/app_nai.png"/>
+<div>
+<div class="titleRow">
+<h1 class="title"><span class="lang-ja">NAI Smart Studio</span></h1>
+<p class="subtitle"><span class="lang-ja">NovelAI画像生成を強化するWindows向けデスクトップアプリケーション。ワイルドカード、連続生成、プロンプト検索など便利な機能を搭載。</span></p>
+</div>
+<div class="price">
+<span class="lang-ja">¥2,000 <span class="alt">(予定)</span></span>
+</div>
+<div class="btns">
+<a class="btn primary disabled lang-ja" href="#" rel="noopener" target="_blank">BOOTH (準備中)</a>
+<a class="btn ghost" href="#trial"><span class="lang-ja">体験版</span></a>
+<a class="btn sub" href="assets/manual/nai-smart-studio/nai-smart-studio_online_manual_j.html" rel="noopener" target="_blank"><span class="lang-ja">オンラインマニュアル</span></a>
+</div>
+</div>
+</div>
+</div>
+<div class="kpi heroFacts">
+<div class="box">
+<div class="kv">
+<div class="label lang-ja">対象サービス</div>
+<div class="value lang-ja">NovelAI</div>
+</div>
+</div>
+<div class="box">
+<div class="kv">
+<div class="label lang-ja">主な機能</div>
+<div class="value lang-ja">連続生成・ワイルドカード</div>
+</div>
+</div>
+<div class="box">
+<div class="kv">
+<div class="label lang-ja">データ保存</div>
+<div class="value lang-ja">ローカル保存</div>
+</div>
+</div>
+<div class="box">
+<div class="kv">
+<div class="label lang-ja">UI言語</div>
+<div class="value">日本語</div>
+</div>
+</div>
+</div></section>
+<div class="grid">
+<section class="section">
+<h2>
+<span class="lang-ja">NAI Smart Studioについて</span>
+</h2>
+<p class="lang-ja">
+          NAI Smart Studioは、NovelAI（ノベルエーアイ）というAI画像生成サービスをより使いやすくするWindows向けスタンドアローンソフトウェアです。公式WebUIにはない様々な制作支援機能を搭載し、快適な画像生成ワークフローを実現します。
+        </p>
+<div class="hr"></div>
+<p class="lang-ja" style="margin-top:1.2rem;">
+<span style="background:rgba(255,180,0,0.3);padding:0.2rem 0.4rem;border-radius:0.2rem;"><strong>⚠️ 重要:</strong></span><br>
+このソフトウェアを使用するには、NovelAIのサブスクリプション契約が必要です。Tablet、Scroll、Opusいずれのプランでもご利用いただけます。
+</p>
+<br><p class="lang-ja" style="margin-top:1.2rem;">
+<span style="background:rgba(34,211,238,0.25);padding:0.2rem 0.4rem;border-radius:0.2rem;"><strong>💡 言語サポート:</strong></span><br>
+現在、ソフトウェアは日本語のみに対応しています。多言語対応は今後のアップデートで対応予定です。
+</p>
+<div class="hr"></div>
+<br>
+<h2 class="lang-ja">基本的な使い方</h2>
+<ol class="lang-ja">
+<li>NovelAIのアカウントを取得</li>
+<li>NovelAI公式サイトからAPIキーを取得</li>
+<li>NAI Smart Studioの設定画面にAPIキーを入力</li>
+<li>プロンプトを入力して生成開始</li>
+</ol>
+<p class="note lang-ja" style="margin-top:1rem">詳細な操作方法は<a href="assets/manual/nai-smart-studio/nai-smart-studio_online_manual_j.html" rel="noopener" target="_blank">オンラインマニュアル</a>をご覧ください。</p>
+</section>
+<section class="section">
+<h2>
+<span class="lang-ja">主な機能</span>
+</h2>
+<div class="twoCol">
+<div>
+<h3>
+<span class="lang-ja">NovelAI基本機能</span>
+</h3>
+<ul class="lang-ja">
+<li>画像生成の基本機能をほぼすべて利用可能（※ディレクターツール除く）</li>
+<li>Image-to-Image、Vibe Transfer対応</li>
+<li>キャラクターリファレンス機能</li>
+</ul>
+<div class="hr"></div>
+<h3>
+<span class="lang-ja">制作支援機能</span>
+</h3>
+<ul class="lang-ja">
+<li>使いやすく洗練されたUI</li>
+<li>連続生成機能（複数バッチの自動生成）</li>
+<li>ワイルドカード対応</li>
+<li>プロンプト検索・履歴管理</li>
+<li>タグ補完・プリセット機能</li>
+<li>生成履歴の自動保存</li>
+</ul>
+</div>
+<div>
+<h3>
+<span class="lang-ja">プライバシー保護</span>
+</h3>
+<ul class="lang-ja">
+<li>すべてのデータをローカルに保存</li>
+<li>NovelAI APIとの通信のみでオンライン接続</li>
+<li>プロンプトや画像は外部に送信されません</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2><span class="lang-ja">動作環境</span></h2>
+<ul>
+<li><span class="lang-ja">OS: Windows 10/11 (64bit)</span></li>
+<li><span class="lang-ja">メモリ: 8GB以上推奨</span></li>
+<li><span class="lang-ja">ストレージ（空き容量）: 800MB以上</span></li>
+<li><span class="lang-ja">インターネット接続: 必須（NovelAI APIとの通信のみ）</span></li>
+<li><span class="lang-ja">NovelAIサブスクリプション: 必須（Tablet/Scroll/Opusいずれでも可）</span></li>
+</ul>
+</section>
+<section class="section" id="ui">
+<h2><span class="lang-ja">UIスクリーンショット</span></h2>
+<a class="shot lang-ja" href="assets/nai/001.png" rel="noopener" target="_blank">
+<img alt="NAI Smart Studio UI" src="assets/nai/001.png"/>
+<div class="cap">メインUI画面</div>
+</a>
+</section>
+<section class="section" id="video">
+<h2><span class="lang-ja">紹介動画</span></h2>
+<div class="placeholder-box">
+<div class="icon">🎬</div>
+<p><strong>紹介動画は近日公開予定です</strong></p>
+<p class="small">準備が整い次第、こちらに動画を掲載します</p>
+</div>
+</section>
+<section class="section" id="trial">
+<h2><span class="lang-ja">体験版</span></h2>
+<div class="placeholder-box">
+<div class="icon">💾</div>
+<p><strong>体験版は近日公開予定です</strong></p>
+<p class="small">準備が整い次第、ダウンロードリンクを掲載します</p>
+</div>
+</section>
+<section class="section">
+<h2><span class="lang-ja">更新情報・変更履歴</span></h2>
+<div class="kpi" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1rem">
+<div class="box">
+<div class="kv">
+<div class="label lang-ja">最新バージョン</div>
+<div class="value">v1.0</div>
+</div>
+</div>
+<div class="box">
+<div class="kv">
+<div class="label lang-ja">リリース予定日</div>
+<div class="value">2026-02-15</div>
+</div>
+</div>
+</div>
+<div class="hr"></div>
+<h3>
+<span class="lang-ja">初回リリース内容</span>
+</h3>
+<ul class="lang-ja">
+<li>NovelAI画像生成の基本機能実装</li>
+<li>連続生成機能</li>
+<li>ワイルドカード対応</li>
+<li>プロンプト検索・履歴管理</li>
+<li>日本語UI</li>
+</ul>
+</section>
+<section class="section">
+<h2>
+<span class="lang-ja">ライセンス・ご利用上の注意</span>
+</h2>
+<h3>
+<span class="lang-ja">ライセンス</span>
+</h3>
+<ul class="lang-ja">
+<li><b>個人での商用利用</b>: 本製品の購入で利用可能</li>
+<li><b>企業での商用利用</b>: 別途ご相談ください</li>
+</ul>
+<div class="hr"></div>
+<h3>
+<span class="lang-ja">重要な注意事項</span>
+</h3>
+<ul class="lang-ja">
+<li>NovelAIのサブスクリプション契約が必要です</li>
+<li>インターネット接続が必須です（NovelAI APIとの通信のみ）</li>
+<li>NovelAIの利用規約に従ってご利用ください</li>
+<li>生成される画像の権利はNovelAIの利用規約に準じます</li>
+</ul>
+</section>
+</div>
+<div class="footer">
+<div class="lang-ja" style="margin-bottom:.75rem">
+<b>サポート:</b> <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank">Twitter/X</a> | <a href="https://accounts.booth.pm/conversations/49131834/messages" rel="noopener" target="_blank">BOOTHメッセージ</a>
+</div>
+      © nekzuk Software
+    </div>
+</div>
+</body>
+</html>
+</html>

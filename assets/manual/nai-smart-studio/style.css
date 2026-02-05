@@ -220,3 +220,27 @@ img.screenshot {
 ::-webkit-scrollbar-thumb:hover {
   background: #565f89;
 }
+
+.sidebar-footer {
+  padding: 20px 20px 0;
+  border-top: 1px solid var(--border-color);
+  margin-top: auto;
+}
+
+.back-to-product {
+  display: block;
+  padding: 12px 20px;
+  color: var(--accent-color);
+  text-decoration: none;
+  background-color: rgba(122, 162, 247, 0.1);
+  border-radius: 6px;
+  text-align: center;
+  transition: background-color 0.2s, transform 0.2s;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.back-to-product:hover {
+  background-color: rgba(122, 162, 247, 0.2);
+  transform: translateX(-2px);
+}
