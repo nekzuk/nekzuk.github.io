@@ -369,6 +369,53 @@
             transform: translateY(-1px);
         }
 
+        .btn-disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        /* Placeholder Card */
+        .placeholder-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 280px;
+            border-style: dashed;
+            border-color: var(--border);
+            background: rgba(30, 41, 59, 0.5);
+        }
+
+        .placeholder-card:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: var(--border);
+        }
+
+        .placeholder-content {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .placeholder-icon {
+            font-size: 2.5rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .placeholder-text {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 0.25rem;
+        }
+
+        .placeholder-subtext {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            opacity: 0.6;
+        }
+
         /* Workflow Section */
         .workflow-section {
             margin-top: 3rem;
@@ -618,7 +665,7 @@
   "@type": "ItemList",
   "name": "nekzuk Software Products",
   "description": "Complete catalog of AI image processing tools",
-  "numberOfItems": 6,
+  "numberOfItems": 7,
   "itemListElement": [
     {
       "@type": "ListItem",
@@ -679,6 +726,25 @@
       "position": 4,
       "item": {
         "@type": "SoftwareApplication",
+        "name": "NAI Smart Studio",
+        "url": "https://nekzuk.com/nai-smart-studio.html",
+        "image": "https://nekzuk.com/assets/icons/app_nai.png",
+        "description": "Desktop application to enhance NovelAI image generation with wildcards, batch generation, and prompt search",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Windows 10, Windows 11",
+        "offers": {
+          "@type": "Offer",
+          "price": "20",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/PreOrder"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "SoftwareApplication",
         "name": "AI Meta Cleaner",
         "url": "https://nekzuk.com/ai-meta-cleaner.html",
         "image": "https://nekzuk.com/assets/icons/app3.png",
@@ -694,7 +760,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 5,
+      "position": 6,
       "item": {
         "@type": "SoftwareApplication",
         "name": "Frame Craft",
@@ -712,7 +778,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 6,
+      "position": 7,
       "item": {
         "@type": "SoftwareApplication",
         "name": "Meta Converter",
@@ -889,6 +955,51 @@
 </div>
 </div>
 </article>
+<!-- NAI Smart Studio -->
+<article class="product-card">
+<div class="card-header">
+<a class="product-icon-link" href="nai-smart-studio.html">
+<img alt="NAI Smart Studio" class="product-icon" height="64" src="assets/icons/app_nai.png" width="64"/>
+</a>
+<div class="card-title-area">
+<a class="product-name-link" href="nai-smart-studio.html">
+<h2 class="product-name">NAI Smart Studio</h2>
+</a>
+<p class="product-subtitle">NovelAI image generation enhancement tool</p>
+</div>
+</div>
+<div class="card-body">
+<p class="product-description">
+                        Desktop application for Windows to enhance NovelAI image generation.
+                        Features wildcards, batch generation, prompt search, and more.
+                    </p>
+<ul class="features-list">
+<li>Batch generation</li>
+<li>Wildcards</li>
+<li>Prompt search</li>
+<li>Tag completion</li>
+<li>Local storage</li>
+<li class="lang">JP</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="price-badge paid">$20 (Planned)</span>
+<div class="button-group">
+<a class="btn btn-secondary" href="nai-smart-studio.html">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<line x1="16" x2="8" y1="13" y2="13"></line>
+<line x1="16" x2="8" y1="17" y2="17"></line>
+</svg>
+                            Product Details
+                        </a>
+<span class="btn btn-primary btn-disabled">
+                            Coming Soon
+                        </span>
+</div>
+</div>
+</article>
 <!-- AI Meta Cleaner -->
 <article class="product-card">
 <div class="card-header">
@@ -1029,6 +1140,14 @@
 </svg>
 </a>
 </div>
+</div>
+</article>
+<!-- Coming Soon Placeholder -->
+<article class="product-card placeholder-card">
+<div class="placeholder-content">
+<div class="placeholder-icon">＋</div>
+<p class="placeholder-text">New tools in development</p>
+<p class="placeholder-subtext">Coming Soon</p>
 </div>
 </article>
 </div>
