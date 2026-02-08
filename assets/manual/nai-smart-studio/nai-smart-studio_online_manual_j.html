@@ -17,6 +17,7 @@
         <li><a href="#intro" class="active">はじめに</a></li>
         <li><a href="#setup">初回セットアップ</a></li>
         <li><a href="#basic">画像生成の基本</a></li>
+        <li><a href="#import">画像インポート</a></li>
         <li><a href="#i2i">Image-to-Image</a></li>
         <li><a href="#batch">連続生成</a></li>
         <li><a href="#vibe">NovelAIポーション</a></li>
@@ -157,18 +158,49 @@
             </p>
           </section>
 
+          <section id="import">
+            <h1>画像インポート</h1>
+            <p>
+              キャンバスに画像ファイルをドラッグ＆ドロップ、もしくは右パネルの履歴から画像を「Shift
+              + クリック」で選ぶことで<br />
+              画像インポートウィンドウが表示されます。
+            </p>
+            <img
+              src="images/IMPORT_001.png"
+              alt="Mask Tools"
+              class="screenshot"
+            />
+            <p>
+              画像インポートウィンドウでは画像をどこにセットするか選択できます。
+            </p>
+            <ul>
+              <li>
+                <strong>Image to image / inpaint</strong>:
+                画像をキャンパスにセットします。
+              </li>
+              <li>
+                <strong>NovelAI ポーション</strong>: 画像をNovelAI
+                ポーションタブにセットします。
+              </li>
+              <li>
+                <strong>精密参照</strong>: 画像を精密参照タブにセットします。
+              </li>
+              <li>
+                <strong>メタデータをインポート</strong>:
+                メタデータをインポートし、画像をキャンパスにセットします
+              </li>
+            </ul>
+            <p>
+              右パネルの履歴から画像を通常クリックで選択した場合は「Image to
+              image / inpaint (画像をキャンパスにセット)」になります。
+            </p>
+          </section>
+
           <section id="i2i">
             <h1>Image-to-Image / Inpaint</h1>
             <p>
               既存の画像を元に新しい画像を生成したり、画像の一部だけを描き直す機能です。
             </p>
-            <h3>画像の読み込み</h3>
-            <p>以下のいずれかの方法でキャンバスに画像を読み込みます：</p>
-            <ul>
-              <li>キャンバスに画像ファイルをドラッグ＆ドロップ</li>
-              <li>右パネルの履歴から画像をクリック</li>
-              <li>クリップボードから貼り付け（Ctrl+V）</li>
-            </ul>
             <img src="images/002.png" alt="Mask Tools" class="screenshot" />
             <h3>Inpaint（部分修正）</h3>
             <p>
@@ -227,6 +259,10 @@
                 <strong>中断するまで</strong>:
                 停止ボタンを押すまで無限に生成します。
               </li>
+              <div class="note">
+                ※短期間に大量の画像生成を行うこと、短い遅延時間で連続生成することはアカウント制限やBANのリスクがあります。
+                <br />　使用においては十分な待機時間を設定し、上記リスクを認識の上でご使用ください。
+              </div>
             </ul>
           </section>
 
@@ -361,7 +397,8 @@
               <li>詳しくはユーザーマニュアル.mdを参照ください</li>
             </ul>
             <div class="note">
-              中央パネルの「Wildcards」タブから、既存ファイルの確認や編集ができます。
+              中央パネルの「Wildcards」タブから、既存ファイルの内容確認ができます
+              （内容編集は後日アップデートで対応予定です）。
             </div>
           </section>
 
@@ -433,6 +470,14 @@
                 <strong>レーティング</strong>: 検索対象のレーティング（General,
                 Sensitiveなど）をフィルタリングします。
               </li>
+              <li>
+                <strong>出力フィルタリング設定</strong>:
+                作品名やキャラクター名などを生成時に自動除外します。
+              </li>
+              <li>
+                <strong>Prompt Upscaler設定</strong>:
+                検索したプロンプト内容を補強（タグ追加）します。※PCスペックによって処理に時間がかかる可能性があります。
+              </li>
             </ul>
             <p>
               検索結果はリスト表示され、クリックで詳細を確認できます。<br />
@@ -449,8 +494,26 @@
           <section id="settings">
             <h1>設定・その他機能</h1>
 
-            <h3>プロンプト入力補完＆タグ詳細確認</h3>
-            <p>プロンプトの入力補完やタグの詳細確認が行えます</p>
+            <h3>プロンプト入力補完＆タグ詳細表示</h3>
+            <p>プロンプトの入力補完やタグ詳細表示が行えます</p>
+            <ul>
+              <li>
+                <strong>プロンプト入力補完</strong>:
+                入力時に入力候補が表示されます、英語のほか日本語のキーワードにも対応しており、<br />プロンプト入力を効率的に行えます。
+                候補から選ばない場合は ,(カンマ)で補完ウィンドウを閉じます。
+              </li>
+              <li>
+                <strong>タグ詳細表示</strong>:
+                「タグ詳細」ボタンからタグの詳細を確認できます。<br />
+                タグを選ぶことでそのタグを削除できるほか、？を押すことでwikiの説明の確認が可能です。
+              </li>
+              <li>
+                <strong>設定</strong>:
+                これら入力補助の設定はファイル→設定→入力補助 (Assistance)
+                (Assistance)タブから変更可能です。<br />
+                またプロンプト欄のフォントや文字サイズも変更可能です。
+              </li>
+            </ul>
             <img
               src="images/010.png"
               alt="Eagle Integration"
@@ -477,8 +540,12 @@
                 <img src="images/013.png" alt="Input" />
               </div>
               <div>
+                <h4>検索 (Search)</h4>
+                <img src="images/014.png" alt="Input" />
+              </div>
+              <div>
                 <h4>その他 (Other)</h4>
-                <img src="images/014.png" alt="Other" />
+                <img src="images/015.png" alt="Other" />
               </div>
             </div>
           </section>
