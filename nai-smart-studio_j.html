@@ -101,10 +101,10 @@
     .section{margin-top:1rem;background:var(--card);border:1px solid var(--border);border-radius:1.1rem;padding:1.4rem}
     .section h2{font-size:1.2rem;margin-bottom:.7rem}
     .section h3{font-size:1.05rem;margin:.9rem 0 .4rem}
-    .section > p, 
-	.section > ul, 
-	.section > ol, 
-	.section > dl, 
+    .section > p,
+	.section > ul,
+	.section > ol,
+	.section > dl,
 	.section > h3 {
 	  padding-left: 0.5rem;
 	  padding-right: 0.5rem;
@@ -113,7 +113,7 @@
 	  margin-left: 0.5rem;
 	  margin-right: 0.5rem;
 	}
-	.section > .twoCol, 
+	.section > .twoCol,
 	.section > .grid-2 {
 	  padding-left: 0.5rem;
 	  padding-right: 0.5rem;
@@ -138,7 +138,7 @@
     .note{font-size:.9rem;color:var(--muted)} code{background:rgba(255,255,255,.06);padding:.1rem .35rem;border-radius:.35rem;border:1px solid rgba(255,255,255,.08)}
 
     /* Images */
-    .gallery{display:grid;grid-template-columns:1fr;gap:.9rem} 
+    .gallery{display:grid;grid-template-columns:1fr;gap:.9rem}
     @media(min-width:920px){ .gallery{grid-template-columns:1fr 1fr} }
     .shot{background:var(--card2);border:1px solid rgba(255,255,255,.08);border-radius:1rem;overflow:hidden}
     .shot img{display:block;width:100%;height:auto}
@@ -146,11 +146,11 @@
 
     .faq dt{font-weight:700;margin-top:.7rem} .faq dd{color:var(--muted);margin:.2rem 0 .6rem}
     .footer{text-align:center;margin-top:1.4rem;color:var(--muted2);font-size:.9rem}
-    span.lang-en, p.lang-en, h2.lang-en, h3.lang-en, b.lang-en {display:none} 
+    span.lang-en, p.lang-en, h2.lang-en, h3.lang-en, b.lang-en {display:none}
 span.lang-ja, p.lang-ja, h2.lang-ja, h3.lang-ja, b.lang-ja {display:inline}
 ul.lang-en, ol.lang-en {display:none; padding-right:1.25rem}
 ul.lang-ja, ol.lang-ja {display:block}
-  
+
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
   @media (max-width: 860px){.grid-2{grid-template-columns:1fr}}
   a.shot{display:block}
@@ -272,12 +272,13 @@ ul.lang-ja, ol.lang-ja {display:block}
   "screenshot": "https://nekzuk.com/assets/nai/001.png",
   "featureList": [
     "NovelAIの画像生成機能をほぼすべて利用可能",
-    "Image-to-Image・Vibe Transfer対応",
-    "キャラクターリファレンス機能",
+    "Image-to-Image・NovelAIポーション対応",
+    "精密参照機能",
     "連続生成機能（複数バッチの自動生成）",
     "プロンプトのバリエーション生成用ワイルドカード対応",
     "プロンプト検索・履歴管理",
     "タグ補完・プリセット機能",
+    "Eagle連携機能",
     "プライバシー保護のためすべてのデータをローカル保存",
     "日本語UI（多言語対応予定）"
   ],
@@ -425,8 +426,8 @@ ul.lang-ja, ol.lang-ja {display:block}
 </h3>
 <ul class="lang-ja">
 <li>画像生成の基本機能をほぼすべて利用可能（※ディレクターツール除く）</li>
-<li>Image-to-Image、Vibe Transfer対応</li>
-<li>キャラクターリファレンス機能</li>
+<li>Image-to-Image、NovelAIポーション</li>
+<li>精密参照機能</li>
 </ul>
 <div class="hr"></div>
 <h3>
@@ -439,6 +440,7 @@ ul.lang-ja, ol.lang-ja {display:block}
 <li>プロンプト検索・履歴管理</li>
 <li>タグ補完・プリセット機能</li>
 <li>生成履歴の自動保存</li>
+<li>Eagle連携機能</li>
 </ul>
 </div>
 <div>
@@ -459,7 +461,7 @@ ul.lang-ja, ol.lang-ja {display:block}
 <ul>
 <li><span class="lang-ja">OS: Windows 10/11 (64bit)</span></li>
 <li><span class="lang-ja">メモリ: 8GB以上推奨</span></li>
-<li><span class="lang-ja">ストレージ（空き容量）: 800MB以上</span></li>
+<li><span class="lang-ja">ストレージ（空き容量）: 最低800MB、最大8GB</span></li>
 <li><span class="lang-ja">インターネット接続: 必須（NovelAI APIとの通信のみ）</span></li>
 <li><span class="lang-ja">NovelAIサブスクリプション: 必須（Tablet/Scroll/Opusいずれでも可）</span></li>
 </ul>
@@ -511,7 +513,7 @@ ul.lang-ja, ol.lang-ja {display:block}
 <li>NovelAI画像生成の基本機能実装</li>
 <li>連続生成機能</li>
 <li>ワイルドカード対応</li>
-<li>プロンプト検索・履歴管理</li>
+<li>プロンプト検索・プリセット・履歴管理</li>
 <li>日本語UI</li>
 </ul>
 </section>
@@ -532,7 +534,7 @@ ul.lang-ja, ol.lang-ja {display:block}
 </h3>
 <ul class="lang-ja">
 <li>NovelAIのサブスクリプション契約が必要です</li>
-<li>インターネット接続が必須です（NovelAI APIとの通信のみ）</li>
+<li>インターネット接続が必須です（NovelAI APIとの通信）</li>
 <li>NovelAIの利用規約に従ってご利用ください</li>
 <li>生成される画像の権利はNovelAIの利用規約に準じます</li>
 </ul>
