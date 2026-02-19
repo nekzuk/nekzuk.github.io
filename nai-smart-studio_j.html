@@ -93,8 +93,10 @@
     .btn.download:hover{background:rgba(34,211,238,.2);text-decoration:none}
     .btn.ghost{background:transparent}
     .btn.disabled{opacity:.4;cursor:not-allowed;pointer-events:none}
-    .price{font-size:1.1rem;font-weight:700;color:var(--accent);display:flex;align-items:baseline;gap:.5rem}
+    .price{font-size:1.1rem;font-weight:700;color:var(--accent);display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap}
     .price .alt{font-size:.85rem;color:var(--muted2);font-weight:400}
+    .price .original{font-size:.95rem;color:var(--muted2);font-weight:400;text-decoration:line-through}
+    .price .badge{font-size:.78rem;font-weight:700;color:#fff;background:linear-gradient(135deg,#f59e0b,#ef4444);padding:.15rem .55rem;border-radius:999px;align-self:center;white-space:nowrap}
 
     .grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1rem}
     @media(min-width:920px){ .grid{grid-template-columns:1fr 1fr} }
@@ -351,7 +353,9 @@ ul.lang-ja, ol.lang-ja {display:block}
 <p class="subtitle"><span class="lang-ja">NovelAI画像生成を強化するWindows向けデスクトップアプリケーション。ワイルドカード、連続生成、プロンプト検索など便利な機能を搭載。</span></p>
 </div>
 <div class="price">
-<span class="lang-ja">¥2,000 <span class="alt">(予定)</span></span>
+<span class="lang-ja">¥2,000</span>
+<span class="original lang-ja">¥2,500</span>
+<span class="badge lang-ja">🎉 リリース割引 20%OFF</span>
 </div>
 <div class="btns">
 <a class="btn primary disabled lang-ja" href="#" rel="noopener" target="_blank">BOOTH (準備中)</a>
