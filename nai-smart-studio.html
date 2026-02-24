@@ -259,6 +259,40 @@ ul.lang-ja, ol.lang-ja {display:none}
   font-size: 2rem;
   opacity: 0.3;
 }
+
+.trial-box{
+  background:transparent;
+  border:none;
+  border-radius:0;
+  padding:0;
+}
+.trial-platform{
+  font-size:1.05rem;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:.65rem;
+}
+.trial-box .btn.download{
+  min-width:260px;
+  justify-content:center;
+}
+.trial-divider{
+  height:1px;
+  background:var(--border);
+  margin:1rem 0;
+}
+.trial-note-title{
+  font-size:1.05rem;
+  font-weight:700;
+  color:var(--text);
+}
+.trial-list{
+  margin:.5rem 0 0 1.2rem;
+  color:var(--muted);
+}
+.trial-list li{
+  margin:.25rem 0;
+}
   </style>
 <!-- 構造化データ：SoftwareApplication (Enhanced) -->
 <script type="application/ld+json">
@@ -481,10 +515,14 @@ Currently, the software is available in Japanese only. Multi-language support is
 </section>
 <section class="section" id="trial">
 <h2><span class="lang-en">Trial Version</span></h2>
-<div class="placeholder-box">
-<div class="icon">💾</div>
-<p><strong>Trial version coming soon</strong></p>
-<p class="small">Download link will be available once ready</p>
+<div class="trial-box">
+<p class="trial-platform"><span class="lang-en">Windows</span></p>
+<a class="btn download" href="https://drive.google.com/file/d/1m_W4T134rB_GOJHVAUYro4O84tK7SJ6D/view?usp=drive_link" rel="noopener" target="_blank">Download from Google Drive</a>
+<div class="trial-divider"></div>
+<p class="trial-note-title"><span class="lang-en">Trial Limitation</span></p>
+<ul class="trial-list lang-en">
+<li>A watermark is added to trial output images.</li>
+</ul>
 </div>
 </section>
 <section class="section">
