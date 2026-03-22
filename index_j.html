@@ -1,1224 +1,1502 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="ja">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<!-- SEO Meta Tags -->
-<meta content="AI画像生成・編集を効率化するWindows向けツール集。自動モザイク（AutoMosaic）、総合編集ツール（AI Paint Cleaner）、NovelAI強化ツール（NAI Smart Studio）、メタデータ変換など。" name="description"/>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <!-- SEO Meta Tags -->
+    <meta
+      content="AI画像生成・編集を効率化するWindows向けツール集。自動モザイク（AutoMosaic）、総合編集ツール（AI Paint Cleaner）、NovelAI強化ツール（NAI Smart Studio）、メタデータ変換など。"
+      name="description"
+    />
 
-<meta content="nekzuk Software" name="author"/>
-<!-- Open Graph / Facebook -->
-<meta content="website" property="og:type"/>
-<meta content="https://nekzuk.com/index_j.html" property="og:url"/>
-<meta content="AI画像編集・生成ワークフロー高速化ツール（Windows）| nekzuk Software" property="og:title"/>
-<meta content="AI画像生成・編集を効率化するWindows向けツール集。自動モザイク（AutoMosaic）、総合編集ツール（AI Paint Cleaner）、NovelAI強化ツール（NAI Smart Studio）、メタデータ変換など。" property="og:description"/>
-<meta content="https://nekzuk.com/assets/favicons/og-image.png?v=3" property="og:image"/>
-<meta content="1200" property="og:image:width"/>
-<meta content="630" property="og:image:height"/>
-<meta content="image/png" property="og:image:type"/>
-<meta content="nekzuk Software – AI Image Tools" property="og:image:alt"/>
-<!-- Twitter -->
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="https://nekzuk.com/index_j.html" name="twitter:url"/>
-<meta content="AI画像編集・生成ワークフロー高速化ツール（Windows）| nekzuk Software" name="twitter:title"/>
-<meta content="AI画像生成・編集を効率化するWindows向けツール集。自動モザイク（AutoMosaic）、総合編集ツール（AI Paint Cleaner）、NovelAI強化ツール（NAI Smart Studio）、メタデータ変換など。" name="twitter:description"/>
-<meta content="https://nekzuk.com/assets/favicons/og-image.png?v=3" name="twitter:image"/>
-<meta content="@Synekzuk_AI" name="twitter:site"/>
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-040P2W2ZZK"></script>
-<script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-040P2W2ZZK');
+    <meta content="nekzuk Software" name="author" />
+    <!-- Open Graph / Facebook -->
+    <meta content="website" property="og:type" />
+    <meta content="https://nekzuk.com/index_j.html" property="og:url" />
+    <meta
+      content="AI画像編集・生成ワークフロー高速化ツール（Windows）| nekzuk Software"
+      property="og:title"
+    />
+    <meta
+      content="AI画像生成・編集を効率化するWindows向けツール集。自動モザイク（AutoMosaic）、総合編集ツール（AI Paint Cleaner）、NovelAI強化ツール（NAI Smart Studio）、メタデータ変換など。"
+      property="og:description"
+    />
+    <meta
+      content="https://nekzuk.com/assets/favicons/og-image.png?v=3"
+      property="og:image"
+    />
+    <meta content="1200" property="og:image:width" />
+    <meta content="630" property="og:image:height" />
+    <meta content="image/png" property="og:image:type" />
+    <meta content="nekzuk Software – AI Image Tools" property="og:image:alt" />
+    <!-- Twitter -->
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="https://nekzuk.com/index_j.html" name="twitter:url" />
+    <meta
+      content="AI画像編集・生成ワークフロー高速化ツール（Windows）| nekzuk Software"
+      name="twitter:title"
+    />
+    <meta
+      content="AI画像生成・編集を効率化するWindows向けツール集。自動モザイク（AutoMosaic）、総合編集ツール（AI Paint Cleaner）、NovelAI強化ツール（NAI Smart Studio）、メタデータ変換など。"
+      name="twitter:description"
+    />
+    <meta
+      content="https://nekzuk.com/assets/favicons/og-image.png?v=3"
+      name="twitter:image"
+    />
+    <meta content="@Synekzuk_AI" name="twitter:site" />
+    <!-- Google Analytics -->
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-040P2W2ZZK"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-040P2W2ZZK");
     </script>
-<!-- Language SEO -->
-<link rel="canonical" href="https://nekzuk.com/index_j.html" />
-<link rel="alternate" hreflang="ja" href="https://nekzuk.com/index_j.html" />
-<link rel="alternate" hreflang="en" href="https://nekzuk.com/" />
-<link rel="alternate" hreflang="x-default" href="https://nekzuk.com/" />
-<!-- Language auto-detect (first visit) + remember choice -->
-<!-- Favicon & Icons -->
-<link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32"/>
-<link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml"/>
-<link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon"/>
-<link href="/assets/favicons/icon-192.png" rel="icon" sizes="192x192" type="image/png"/>
-<link href="/assets/favicons/icon-512.png" rel="icon" sizes="512x512" type="image/png"/>
-<meta content="#6366f1" name="theme-color"/>
-<title>AI画像編集・生成ワークフロー高速化ツール（Windows）| nekzuk Software</title>
-<style>
-        :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --accent: #22d3ee;
-            --bg-dark: #0f172a;
-            --bg-card: #1e293b;
-            --bg-card-hover: #334155;
-            --text-primary: #f1f5f9;
-            --text-secondary: #94a3b8;
-            --text-muted: #64748b;
-            --border: #334155;
-            --gradient-1: linear-gradient(135deg, #6366f1, #8b5cf6);
-            --gradient-2: linear-gradient(135deg, #06b6d4, #22d3ee);
-        }
+    <!-- Language SEO -->
+    <link rel="canonical" href="https://nekzuk.com/index_j.html" />
+    <link
+      rel="alternate"
+      hreflang="ja"
+      href="https://nekzuk.com/index_j.html"
+    />
+    <link rel="alternate" hreflang="en" href="https://nekzuk.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://nekzuk.com/" />
+    <!-- Language auto-detect (first visit) + remember choice -->
+    <!-- Favicon & Icons -->
+    <link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32" />
+    <link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml" />
+    <link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link
+      href="/assets/favicons/icon-192.png"
+      rel="icon"
+      sizes="192x192"
+      type="image/png"
+    />
+    <link
+      href="/assets/favicons/icon-512.png"
+      rel="icon"
+      sizes="512x512"
+      type="image/png"
+    />
+    <meta content="#6366f1" name="theme-color" />
+    <title>
+      AI画像編集・生成ワークフロー高速化ツール（Windows）| nekzuk Software
+    </title>
+    <style>
+      :root {
+        --primary: #6366f1;
+        --primary-dark: #4f46e5;
+        --accent: #22d3ee;
+        --bg-dark: #0f172a;
+        --bg-card: #1e293b;
+        --bg-card-hover: #334155;
+        --text-primary: #f1f5f9;
+        --text-secondary: #94a3b8;
+        --text-muted: #64748b;
+        --border: #334155;
+        --gradient-1: linear-gradient(135deg, #6366f1, #8b5cf6);
+        --gradient-2: linear-gradient(135deg, #06b6d4, #22d3ee);
+      }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', YuGothic, Meiryo, sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-primary);
-            line-height: 1.7;
-            min-height: 100vh;
-        }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP",
+          "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic,
+          Meiryo, sans-serif;
+        background: var(--bg-dark);
+        color: var(--text-primary);
+        line-height: 1.7;
+        min-height: 100vh;
+      }
 
-        /* Background Effect */
-        .bg-effect {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
+      /* Background Effect */
+      .bg-effect {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+      }
 
+      .bg-effect::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background:
+          radial-gradient(
+            ellipse at 30% 20%,
+            rgba(99, 102, 241, 0.08) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 70% 80%,
+            rgba(34, 211, 238, 0.06) 0%,
+            transparent 50%
+          );
+        animation: float 20s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        50% {
+          transform: translate(-2%, 2%) rotate(1deg);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
         .bg-effect::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(ellipse at 30% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
-                        radial-gradient(ellipse at 70% 80%, rgba(34, 211, 238, 0.06) 0%, transparent 50%);
-            animation: float 20s ease-in-out infinite;
+          animation: none;
         }
+      }
 
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-2%, 2%) rotate(1deg); }
-        }
+      /* Header */
+      header {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding: 4rem 2rem 3rem;
+        border-bottom: 1px solid var(--border);
+      }
 
-        @media (prefers-reduced-motion: reduce) {
-            .bg-effect::before {
-                animation: none;
-            }
-        }
+      .header-badge {
+        display: inline-block;
+        padding: 0.4rem 1rem;
+        background: rgba(99, 102, 241, 0.15);
+        border: 1px solid rgba(99, 102, 241, 0.3);
+        border-radius: 2rem;
+        font-size: 0.85rem;
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.05em;
+      }
 
-        /* Header */
+      h1 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: linear-gradient(
+          135deg,
+          var(--text-primary) 0%,
+          var(--accent) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .header-description {
+        font-size: 1rem;
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Language Switch */
+      .lang-switch {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      .lang-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.35rem 0.85rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        text-decoration: none;
+        color: var(--text-secondary);
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid var(--border);
+        transition: all 0.2s ease;
+      }
+      .lang-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--text-primary);
+      }
+      .lang-btn.active {
+        color: white;
+        background: rgba(99, 102, 241, 0.35);
+        border-color: rgba(99, 102, 241, 0.6);
+      }
+
+      /* Main Content */
+      main {
+        position: relative;
+        z-index: 1;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem 4rem;
+      }
+
+      /* Products Grid */
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 1.5rem;
+      }
+
+      /* Product Card */
+      .product-card {
+        background: var(--bg-card);
+        border-radius: 1rem;
+        border: 1px solid var(--border);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .product-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(99, 102, 241, 0.4);
+        box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+      }
+
+      .card-header {
+        padding: 1.5rem 1.5rem 1rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .product-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 0.75rem;
+        flex-shrink: 0;
+        object-fit: cover;
+        background: var(--bg-dark);
+      }
+
+      .product-icon-link {
+        display: block;
+        transition: transform 0.2s ease;
+      }
+
+      .product-icon-link:hover {
+        transform: scale(1.05);
+      }
+
+      .card-title-area {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .product-name-link {
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.2s ease;
+      }
+
+      .product-name-link:hover .product-name {
+        color: var(--accent);
+      }
+
+      .product-name {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+        color: var(--text-primary);
+        transition: color 0.2s ease;
+      }
+
+      .product-subtitle {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+
+      .card-body {
+        padding: 0 1.5rem 1.25rem;
+        flex: 1;
+      }
+
+      .product-description {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+      }
+
+      .features-list {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .features-list li {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.7rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 0.4rem;
+        color: var(--text-secondary);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .features-list li.lang {
+        background: rgba(34, 211, 238, 0.1);
+        border-color: rgba(34, 211, 238, 0.2);
+        color: var(--accent);
+      }
+
+      .card-footer {
+        padding: 1rem 1.5rem;
+        border-top: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .price-badge {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.8rem;
+        border-radius: 0.4rem;
+        font-weight: 500;
+      }
+
+      .price-badge.free {
+        background: rgba(34, 197, 94, 0.15);
+        color: #4ade80;
+      }
+
+      .price-badge.paid {
+        background: rgba(251, 191, 36, 0.15);
+        color: #fbbf24;
+      }
+
+      .button-group {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.5rem 0.9rem;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+        transition: all 0.2s ease;
+      }
+
+      .btn svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      .btn-primary {
+        background: var(--gradient-1);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        transform: translateX(2px);
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--text-primary);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.15);
+        color: white;
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-1px);
+      }
+
+      /* Placeholder Card */
+      .placeholder-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 280px;
+        border-style: dashed;
+        border-color: var(--border);
+        background: rgba(30, 41, 59, 0.5);
+      }
+
+      .placeholder-card:hover {
+        transform: none;
+        box-shadow: none;
+        border-color: var(--border);
+      }
+
+      .placeholder-content {
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .placeholder-icon {
+        font-size: 2.5rem;
+        color: var(--text-muted);
+        margin-bottom: 1rem;
+        opacity: 0.5;
+      }
+
+      .placeholder-text {
+        font-size: 1rem;
+        color: var(--text-muted);
+        margin-bottom: 0.25rem;
+      }
+
+      .placeholder-subtext {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        opacity: 0.6;
+      }
+
+      /* Workflow Section */
+      .workflow-section {
+        margin-top: 3rem;
+        padding: 2rem;
+        background: var(--bg-card);
+        border-radius: 1rem;
+        border: 1px solid var(--border);
+      }
+
+      .workflow-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .workflow-title::before {
+        content: "💡";
+      }
+
+      .workflow-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .workflow-step {
+        text-align: center;
+        padding: 1rem 1.5rem;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border);
+      }
+
+      .workflow-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 0.5rem;
+        margin: 0 auto 0.75rem;
+        display: block;
+        object-fit: cover;
+      }
+
+      .workflow-step-name {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        color: var(--accent);
+      }
+
+      .workflow-step-desc {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+
+      .workflow-arrow {
+        font-size: 1.5rem;
+        color: var(--text-muted);
+      }
+
+      .workflow-pattern {
+        margin-bottom: 1.5rem;
+      }
+
+      .workflow-pattern:last-child {
+        margin-bottom: 0;
+      }
+
+      .workflow-label {
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+      }
+
+      .workflow-divider {
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        margin: 1.5rem 0;
+        position: relative;
+      }
+
+      .workflow-divider::before,
+      .workflow-divider::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: calc(50% - 2rem);
+        height: 1px;
+        background: var(--border);
+      }
+
+      .workflow-divider::before {
+        left: 0;
+      }
+
+      .workflow-divider::after {
+        right: 0;
+      }
+
+      .workflow-step.highlight {
+        border-color: rgba(99, 102, 241, 0.5);
+        background: rgba(99, 102, 241, 0.1);
+      }
+
+      .workflow-step.highlight .workflow-step-name {
+        color: #a5b4fc;
+      }
+
+      .workflow-step.free {
+        border-color: rgba(34, 197, 94, 0.5);
+        background: rgba(34, 197, 94, 0.1);
+      }
+
+      .workflow-step.free .workflow-step-name {
+        color: #4ade80;
+      }
+
+      .workflow-step small {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        display: block;
+        margin-top: 0.25rem;
+      }
+
+      /* Footer */
+      footer {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding: 2rem;
+        border-top: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      footer a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
         header {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            padding: 4rem 2rem 3rem;
-            border-bottom: 1px solid var(--border);
+          padding: 3rem 1.5rem 2rem;
         }
 
-        .header-badge {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            background: rgba(99, 102, 241, 0.15);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            border-radius: 2rem;
-            font-size: 0.85rem;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.05em;
-        }
-
-        h1 {
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .header-description {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-
-        /* Language Switch */
-        .lang-switch{
-            margin-top: 1rem;
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-        .lang-btn{
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.35rem 0.85rem;
-            border-radius: 999px;
-            font-size: 0.85rem;
-            text-decoration: none;
-            color: var(--text-secondary);
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid var(--border);
-            transition: all 0.2s ease;
-        }
-        .lang-btn:hover{
-            background: rgba(255, 255, 255, 0.10);
-            color: var(--text-primary);
-        }
-        .lang-btn.active{
-            color: white;
-            background: rgba(99, 102, 241, 0.35);
-            border-color: rgba(99, 102, 241, 0.6);
-        }
-
-        /* Main Content */
-        main {
-            position: relative;
-            z-index: 1;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem 4rem;
-        }
-
-        /* Products Grid */
         .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 1.5rem;
-        }
-
-        /* Product Card */
-        .product-card {
-            background: var(--bg-card);
-            border-radius: 1rem;
-            border: 1px solid var(--border);
-            overflow: hidden;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(99, 102, 241, 0.4);
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
-        }
-
-        .card-header {
-            padding: 1.5rem 1.5rem 1rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .product-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 0.75rem;
-            flex-shrink: 0;
-            object-fit: cover;
-            background: var(--bg-dark);
-        }
-
-        .product-icon-link {
-            display: block;
-            transition: transform 0.2s ease;
-        }
-
-        .product-icon-link:hover {
-            transform: scale(1.05);
-        }
-
-        .card-title-area {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .product-name-link {
-            text-decoration: none;
-            color: inherit;
-            transition: color 0.2s ease;
-        }
-
-        .product-name-link:hover .product-name {
-            color: var(--accent);
-        }
-
-        .product-name {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-            color: var(--text-primary);
-            transition: color 0.2s ease;
-        }
-
-        .product-subtitle {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .card-body {
-            padding: 0 1.5rem 1.25rem;
-            flex: 1;
-        }
-
-        .product-description {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .features-list {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .features-list li {
-            font-size: 0.8rem;
-            padding: 0.3rem 0.7rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 0.4rem;
-            color: var(--text-secondary);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .features-list li.lang {
-            background: rgba(34, 211, 238, 0.1);
-            border-color: rgba(34, 211, 238, 0.2);
-            color: var(--accent);
+          grid-template-columns: 1fr;
         }
 
         .card-footer {
-            padding: 1rem 1.5rem;
-            border-top: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .price-badge {
-            font-size: 0.85rem;
-            padding: 0.3rem 0.8rem;
-            border-radius: 0.4rem;
-            font-weight: 500;
-        }
-
-        .price-badge.free {
-            background: rgba(34, 197, 94, 0.15);
-            color: #4ade80;
-        }
-
-        .price-badge.paid {
-            background: rgba(251, 191, 36, 0.15);
-            color: #fbbf24;
+          flex-direction: column;
+          align-items: stretch;
         }
 
         .button-group {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.5rem 0.9rem;
-            text-decoration: none;
-            border-radius: 0.5rem;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-
-        .btn svg {
-            width: 14px;
-            height: 14px;
-        }
-
-        .btn-primary {
-            background: var(--gradient-1);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateX(2px);
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.10);
-            color: var(--text-primary);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            border-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-1px);
-        }
-
-        /* Placeholder Card */
-        .placeholder-card {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 280px;
-            border-style: dashed;
-            border-color: var(--border);
-            background: rgba(30, 41, 59, 0.5);
-        }
-
-        .placeholder-card:hover {
-            transform: none;
-            box-shadow: none;
-            border-color: var(--border);
-        }
-
-        .placeholder-content {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .placeholder-icon {
-            font-size: 2.5rem;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-            opacity: 0.5;
-        }
-
-        .placeholder-text {
-            font-size: 1rem;
-            color: var(--text-muted);
-            margin-bottom: 0.25rem;
-        }
-
-        .placeholder-subtext {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            opacity: 0.6;
-        }
-
-        /* Workflow Section */
-        .workflow-section {
-            margin-top: 3rem;
-            padding: 2rem;
-            background: var(--bg-card);
-            border-radius: 1rem;
-            border: 1px solid var(--border);
-        }
-
-        .workflow-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .workflow-title::before {
-            content: '💡';
+          justify-content: center;
         }
 
         .workflow-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .workflow-step {
-            text-align: center;
-            padding: 1rem 1.5rem;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 0.75rem;
-            border: 1px solid var(--border);
-        }
-
-        .workflow-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 0.5rem;
-            margin: 0 auto 0.75rem;
-            display: block;
-            object-fit: cover;
-        }
-
-        .workflow-step-name {
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-            color: var(--accent);
-        }
-
-        .workflow-step-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
+          flex-direction: column;
         }
 
         .workflow-arrow {
-            font-size: 1.5rem;
-            color: var(--text-muted);
+          transform: rotate(90deg);
         }
-
-        .workflow-pattern {
-            margin-bottom: 1.5rem;
-        }
-
-        .workflow-pattern:last-child {
-            margin-bottom: 0;
-        }
-
-        .workflow-label {
-            text-align: center;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .workflow-divider {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin: 1.5rem 0;
-            position: relative;
-        }
-
-        .workflow-divider::before,
-        .workflow-divider::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: calc(50% - 2rem);
-            height: 1px;
-            background: var(--border);
-        }
-
-        .workflow-divider::before {
-            left: 0;
-        }
-
-        .workflow-divider::after {
-            right: 0;
-        }
-
-        .workflow-step.highlight {
-            border-color: rgba(99, 102, 241, 0.5);
-            background: rgba(99, 102, 241, 0.1);
-        }
-
-        .workflow-step.highlight .workflow-step-name {
-            color: #a5b4fc;
-        }
-
-        .workflow-step.free {
-            border-color: rgba(34, 197, 94, 0.5);
-            background: rgba(34, 197, 94, 0.1);
-        }
-
-        .workflow-step.free .workflow-step-name {
-            color: #4ade80;
-        }
-
-        .workflow-step small {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            display: block;
-            margin-top: 0.25rem;
-        }
-
-        /* Footer */
-        footer {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            header {
-                padding: 3rem 1.5rem 2rem;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .card-footer {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .button-group {
-                justify-content: center;
-            }
-
-            .workflow-content {
-                flex-direction: column;
-            }
-
-            .workflow-arrow {
-                transform: rotate(90deg);
-            }
-        }
+      }
     </style>
-<!-- 構造化データ：Organization -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "nekzuk Software",
-  "alternateName": "nekzuk",
-  "url": "https://nekzuk.com/",
-  "logo": "https://nekzuk.com/assets/favicons/icon-512.png",
-  "description": "AI画像処理ツールの開発者。コンテンツクリエイターやAIアーティスト向けの自動モザイク、バッチ画像編集、メタデータ管理、ワークフロー自動化ツールを専門としています。",
-  "foundingDate": "2024",
-  "knowsAbout": [
-    "AI画像処理",
-    "自動モザイク",
-    "バッチ画像編集",
-    "AIインペイント",
-    "メタデータ管理",
-    "Stable Diffusion",
-    "コンテンツプライバシー保護",
-    "ワークフロー自動化"
-  ],
-  "areaServed": {
-    "@type": "Place",
-    "name": "Worldwide"
-  },
-  "sameAs": [
-    "https://x.com/Synekzuk_AI",
-    "https://nekzuk.booth.pm/",
-    "https://payhip.com/nekzuk"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "Customer Support",
-    "availableLanguage": [
-      "English",
-      "Japanese",
-      "Chinese",
-      "Korean"
-    ],
-    "contactOption": "TollFree"
-  },
-  "inLanguage": "ja"
-}
-</script>
-<!-- 構造化データ：WebSite -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "nekzuk Software",
-  "alternateName": "nekzuk",
-  "url": "https://nekzuk.com/",
-  "description": "コンテンツクリエイター向けのプロフェッショナルAI画像処理ツール。バッチモザイク、AIインペイント、メタデータ管理など。GPU高速化対応のWindowsデスクトップアプリケーション。",
-  "inLanguage": "ja",
-  "publisher": {
-    "@type": "Organization",
-    "name": "nekzuk Software",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://nekzuk.com/assets/favicons/icon-512.png"
-    }
-  }
-}
-</script>
-<!-- 構造化データ：ItemList (製品カタログ) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "nekzuk Software 製品一覧",
-  "description": "AI画像処理ツールの完全カタログ",
-  "numberOfItems": 7,
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "item": {
-        "@type": "SoftwareApplication",
-        "name": "AutoMosaic (R18版)",
-        "url": "https://nekzuk.com/automosaic-r18_j.html",
-        "image": "https://nekzuk.com/assets/icons/app_R18.png",
-        "description": "センシティブ部位を自動検出する完全オフラインGPU高速バッチモザイクツール",
-        "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "Windows 10, Windows 11",
-        "offers": {
-          "@type": "Offer",
-          "price": "2980",
-          "priceCurrency": "JPY"
-        }
+    <!-- 構造化データ：Organization -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "nekzuk Software",
+        "alternateName": "nekzuk",
+        "url": "https://nekzuk.com/",
+        "logo": "https://nekzuk.com/assets/favicons/icon-512.png",
+        "description": "AI画像処理ツールの開発者。コンテンツクリエイターやAIアーティスト向けの自動モザイク、バッチ画像編集、メタデータ管理、ワークフロー自動化ツールを専門としています。",
+        "foundingDate": "2024",
+        "knowsAbout": [
+          "AI画像処理",
+          "自動モザイク",
+          "バッチ画像編集",
+          "AIインペイント",
+          "メタデータ管理",
+          "Stable Diffusion",
+          "コンテンツプライバシー保護",
+          "ワークフロー自動化"
+        ],
+        "areaServed": {
+          "@type": "Place",
+          "name": "Worldwide"
+        },
+        "sameAs": [
+          "https://x.com/Synekzuk_AI",
+          "https://nekzuk.booth.pm/",
+          "https://payhip.com/nekzuk"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Support",
+          "availableLanguage": ["English", "Japanese", "Chinese", "Korean"],
+          "contactOption": "TollFree"
+        },
+        "inLanguage": "ja"
       }
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "item": {
-        "@type": "SoftwareApplication",
-        "name": "AutoMosaic 通常版",
-        "url": "https://nekzuk.com/automosaic_j.html",
-        "image": "https://nekzuk.com/assets/icons/app_general.png",
-        "description": "顔・文字・ナンバープレート等を自動検出する完全オフラインGPU高速バッチモザイクツール",
-        "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "Windows 10, Windows 11",
-        "offers": {
-          "@type": "Offer",
-          "price": "2980",
-          "priceCurrency": "JPY"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "item": {
-        "@type": "SoftwareApplication",
-        "name": "AI Paint Cleaner",
-        "url": "https://nekzuk.com/ai-paint-cleaner_j.html",
-        "image": "https://nekzuk.com/assets/icons/app2.png",
-        "description": "AIインペイント搭載オールインワンバッチ編集ツール",
-        "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "Windows 10, Windows 11",
-        "offers": {
-          "@type": "Offer",
-          "price": "2000",
-          "priceCurrency": "JPY"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "item": {
-        "@type": "SoftwareApplication",
-        "name": "NAI Smart Studio",
-        "url": "https://nekzuk.com/nai-smart-studio_j.html",
-        "image": "https://nekzuk.com/assets/icons/app_nai.png",
-        "description": "NovelAI画像生成を強化するデスクトップアプリ。ワイルドカード、連続生成、プロンプト検索など搭載。",
-        "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "Windows 10, Windows 11",
-        "offers": {
-          "@type": "Offer",
-          "price": "2000",
-          "priceCurrency": "JPY",
-          "availability": "https://schema.org/PreOrder"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 5,
-      "item": {
-        "@type": "SoftwareApplication",
-        "name": "AI Meta Cleaner",
-        "url": "https://nekzuk.com/ai-meta-cleaner_j.html",
-        "image": "https://nekzuk.com/assets/icons/app3.png",
-        "description": "AI画像用無料メタデータ削除ツール",
-        "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "Windows 10, Windows 11",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "JPY"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 6,
-      "item": {
-        "@type": "SoftwareApplication",
-        "name": "Frame Craft",
-        "url": "https://nekzuk.com/frame-craft_j.html",
-        "image": "https://nekzuk.com/assets/icons/app5.png",
-        "description": "動画フレーム抽出・アニメーション変換ツール",
-        "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "Windows 10, Windows 11",
-        "offers": {
-          "@type": "Offer",
-          "price": "480",
-          "priceCurrency": "JPY"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 7,
-      "item": {
-        "@type": "SoftwareApplication",
-        "name": "Meta Converter",
-        "url": "https://nekzuk.com/meta-converter_j.html",
-        "image": "https://nekzuk.com/assets/icons/app4.png",
-        "description": "メタデータ維持画像変換ツール",
-        "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "Windows 10, Windows 11",
-        "offers": {
-          "@type": "Offer",
-          "price": "380",
-          "priceCurrency": "JPY"
-        }
-      }
-    }
-  ],
-  "inLanguage": "ja"
-}
-</script>
-<meta content="ja_JP" property="og:locale"/></head>
-<body>
-<div class="bg-effect"></div>
-<header>
-<div class="lang-switch">
-<a class="lang-btn" href="index.html">English</a>
-<a class="lang-btn active" href="index_j.html">日本語</a>
-</div>
-<h1>AI画像処理ツール製品一覧 – nekzuk Software</h1>
-<p class="header-description">
-            AI画像生成・編集のワークフローを効率化する各種ツールをご用意しています。<br/>
-            すべてWindows専用のデスクトップアプリケーションです。
-        </p>
-</header>
-<main>
-<div class="products-grid">
-<!-- AutoMosaic (R18版) -->
-<article class="product-card">
-<div class="card-header">
-<a class="product-icon-link" href="automosaic-r18_j.html">
-<img alt="AutoMosaic (R18版)" class="product-icon" height="64" src="assets/icons/app_R18.png" width="64"/>
-</a>
-<div class="card-title-area">
-<a class="product-name-link" href="automosaic-r18_j.html">
-<h2 class="product-name">AutoMosaic (R18版)</h2>
-</a>
-<p class="product-subtitle">画像への連続自動モザイクツール</p>
-</div>
-</div>
-<div class="card-body">
-<p class="product-description">
-                        画像内のセンシティブ部位を自動検出し、複数の画像に連続でモザイク処理を施すツールです。
-                        完全オフライン対応、GPU処理で1枚あたり約2秒の高速処理を実現。
-                    </p>
-<ul class="features-list">
-<li>AI自動検出</li>
-<li>高速GPU処理</li>
-<li>モザイク・黒塗り・セグメンテーション</li>
-<li>コマンドライン対応</li>
-<li class="lang">日/英/中/韓</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="price-badge paid">¥2,980</span>
-<div class="button-group">
-<a class="btn btn-secondary" href="automosaic-r18_j.html">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-<polyline points="14 2 14 8 20 8"></polyline>
-<line x1="16" x2="8" y1="13" y2="13"></line>
-<line x1="16" x2="8" y1="17" y2="17"></line>
-</svg>
-                            製品詳細
-                        </a>
-<a class="btn btn-primary" href="https://synekzuk.booth.pm/items/6510317" rel="noopener" target="_blank">
-                            BOOTH
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M7 17L17 7M17 7H7M17 7V17"></path>
-</svg>
-</a>
-</div>
-</div>
-</article>
-<!-- AutoMosaic (通常版) -->
-<article class="product-card">
-<div class="card-header">
-<a class="product-icon-link" href="automosaic_j.html">
-<img alt="AutoMosaic (通常版)" class="product-icon" height="64" src="assets/icons/app_general.png" width="64"/>
-</a>
-<div class="card-title-area">
-<a class="product-name-link" href="automosaic_j.html">
-<h2 class="product-name">AutoMosaic (通常版)</h2>
-</a>
-<p class="product-subtitle">画像への連続自動モザイクツール</p>
-</div>
-</div>
-<div class="card-body">
-<p class="product-description">
-                        画像内の人物・顔・目・文字・ナンバープレート等を自動検出し、複数の画像に連続でモザイク処理を施すツールです。
-                        完全オフライン対応、GPU処理で1枚あたり約2秒の高速処理を実現。
-                    </p>
-<ul class="features-list">
-<li>AI自動検出</li>
-<li>高速GPU処理</li>
-<li>モザイク・黒塗り・セグメンテーション</li>
-<li>コマンドライン対応</li>
-<li class="lang">日/英/中/韓</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="price-badge paid">¥2,980</span>
-<div class="button-group">
-<a class="btn btn-secondary" href="automosaic_j.html">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-<polyline points="14 2 14 8 20 8"></polyline>
-<line x1="16" x2="8" y1="13" y2="13"></line>
-<line x1="16" x2="8" y1="17" y2="17"></line>
-</svg>
-                            製品詳細
-                        </a>
-<a class="btn btn-primary" href="https://synekzuk.booth.pm/items/7075141" rel="noopener" target="_blank">
-                            BOOTH
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M7 17L17 7M17 7H7M17 7V17"></path>
-</svg>
-</a>
-</div>
-</div>
-</article>
-<!-- AI Paint Cleaner -->
-<article class="product-card">
-<div class="card-header">
-<a class="product-icon-link" href="ai-paint-cleaner_j.html">
-<img alt="AI Paint Cleaner" class="product-icon" height="64" src="assets/icons/app2.png" width="64"/>
-</a>
-<div class="card-title-area">
-<a class="product-name-link" href="ai-paint-cleaner_j.html">
-<h2 class="product-name">AI Paint Cleaner</h2>
-</a>
-<p class="product-subtitle">複数画像の効率修正ツール</p>
-</div>
-</div>
-<div class="card-body">
-<p class="product-description">
-                        AIによる強力なインペイント機能と数多くのバッチ処理を搭載した、
-                        イラスト修正のオールインワンツールです。
-                    </p>
-<ul class="features-list">
-<li>AIインペイント</li>
-<li>モザイク除去・追加</li>
-<li>背景除去</li>
-<li>AIアップスケール</li>
-<li>一括処理対応</li>
-<li class="lang">日/英/中/韓</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="price-badge paid">¥2,000</span>
-<div class="button-group">
-<a class="btn btn-secondary" href="ai-paint-cleaner_j.html">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-<polyline points="14 2 14 8 20 8"></polyline>
-<line x1="16" x2="8" y1="13" y2="13"></line>
-<line x1="16" x2="8" y1="17" y2="17"></line>
-</svg>
-                            製品詳細
-                        </a>
-<a class="btn btn-primary" href="https://synekzuk.booth.pm/items/6649634" rel="noopener" target="_blank">
-                            BOOTH
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M7 17L17 7M17 7H7M17 7V17"></path>
-</svg>
-</a>
-</div>
-</div>
-</article>
-<!-- NAI Smart Studio -->
-<article class="product-card">
-<div class="card-header">
-<a class="product-icon-link" href="nai-smart-studio_j.html">
-<img alt="NAI Smart Studio" class="product-icon" height="64" src="assets/icons/app_nai.png" width="64"/>
-</a>
-<div class="card-title-area">
-<a class="product-name-link" href="nai-smart-studio_j.html">
-<h2 class="product-name">NAI Smart Studio</h2>
-</a>
-<p class="product-subtitle">NovelAI画像生成強化ツール</p>
-</div>
-</div>
-<div class="card-body">
-<p class="product-description">
-                        NovelAI画像生成を強化するWindows向けデスクトップアプリケーション。
-                        ワイルドカード、連続生成、プロンプト検索など便利な機能を搭載。
-                    </p>
-<ul class="features-list">
-<li>連続生成・ワイルドカード</li>
-<li>プロンプト検索・履歴</li>
-<li>タグ補完・プリセット</li>
-<li>ローカル保存</li>
-<li class="lang">日本語</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="price-badge paid">¥2,000</span>
-<div class="button-group">
-<a class="btn btn-secondary" href="nai-smart-studio_j.html">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-<polyline points="14 2 14 8 20 8"></polyline>
-<line x1="16" x2="8" y1="13" y2="13"></line>
-<line x1="16" x2="8" y1="17" y2="17"></line>
-</svg>
-                            製品詳細
-                        </a>
-<a class="btn btn-primary" href="https://synekzuk.booth.pm/items/7969637" rel="noopener" target="_blank">
-                            BOOTH
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M7 17L17 7M17 7H7M17 7V17"></path>
-</svg>
-</a>
-</div>
-</div>
-</article>
-<!-- AI Meta Cleaner -->
-<article class="product-card">
-<div class="card-header">
-<a class="product-icon-link" href="ai-meta-cleaner_j.html">
-<img alt="AI Meta Cleaner" class="product-icon" height="64" src="assets/icons/app3.png" width="64"/>
-</a>
-<div class="card-title-area">
-<a class="product-name-link" href="ai-meta-cleaner_j.html">
-<h2 class="product-name">AI Meta Cleaner</h2>
-</a>
-<p class="product-subtitle">AI埋込情報対応メタデータ削除ツール</p>
-</div>
-</div>
-<div class="card-body">
-<p class="product-description">
-                        画像のメタデータと生成AIの埋め込み情報をまとめて削除できるツールです。
-                        Stable DiffusionやNovelAIの生成情報も自動検出・削除します。
-                    </p>
-<ul class="features-list">
-<li>PNG / JPG / WEBP / GIF / TIFF</li>
-<li>EXIF・XMP削除</li>
-<li>SD/NovelAI情報削除</li>
-<li class="lang">日/英</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="price-badge free">無料</span>
-<div class="button-group">
-<a class="btn btn-secondary" href="ai-meta-cleaner_j.html">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-<polyline points="14 2 14 8 20 8"></polyline>
-<line x1="16" x2="8" y1="13" y2="13"></line>
-<line x1="16" x2="8" y1="17" y2="17"></line>
-</svg>
-                            製品詳細
-                        </a>
-<a class="btn btn-primary" href="https://synekzuk.booth.pm/items/7626627" rel="noopener" target="_blank">
-                            BOOTH
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M7 17L17 7M17 7H7M17 7V17"></path>
-</svg>
-</a>
-</div>
-</div>
-</article>
-<!-- Frame Craft -->
-<article class="product-card">
-<div class="card-header">
-<a class="product-icon-link" href="frame-craft_j.html">
-<img alt="Frame Craft" class="product-icon" height="64" src="assets/icons/app5.png" width="64"/>
-</a>
-<div class="card-title-area">
-<a class="product-name-link" href="frame-craft_j.html">
-<h2 class="product-name">Frame Craft</h2>
-</a>
-<p class="product-subtitle">動画フレーム抽出 &amp; アニメーション変換ツール</p>
-</div>
-</div>
-<div class="card-body">
-<p class="product-description">
-                        動画ファイルから指定したフレームや秒間隔で画像を抽出したり、
-                        GIF/WEBPアニメーションに変換できるツールです。
-                    </p>
-<ul class="features-list">
-<li>高精度フレーム抽出</li>
-<li>重複画像自動削除</li>
-<li>黒帯自動削除</li>
-<li>Pixivうごイラ対応</li>
-<li>バッチ処理</li>
-<li class="lang">日/英</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="price-badge paid">¥480</span>
-<div class="button-group">
-<a class="btn btn-secondary" href="frame-craft_j.html">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-<polyline points="14 2 14 8 20 8"></polyline>
-<line x1="16" x2="8" y1="13" y2="13"></line>
-<line x1="16" x2="8" y1="17" y2="17"></line>
-</svg>
-                            製品詳細
-                        </a>
-<a class="btn btn-primary" href="https://synekzuk.booth.pm/items/7295171" rel="noopener" target="_blank">
-                            BOOTH
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M7 17L17 7M17 7H7M17 7V17"></path>
-</svg>
-</a>
-</div>
-</div>
-</article>
-<!-- Meta Converter -->
-<article class="product-card">
-<div class="card-header">
-<a class="product-icon-link" href="meta-converter_j.html">
-<img alt="Meta Converter" class="product-icon" height="64" src="assets/icons/app4.png" width="64"/>
-</a>
-<div class="card-title-area">
-<a class="product-name-link" href="meta-converter_j.html">
-<h2 class="product-name">Meta Converter</h2>
-</a>
-<p class="product-subtitle">メタデータ維持画像変換ツール</p>
-</div>
-</div>
-<div class="card-body">
-<p class="product-description">
-                        メタデータを保持したまま、複数画像をPNG/JPEG/WEBPに変換できるツールです。
-                        AI画像の保管・軽量化に最適。
-                    </p>
-<ul class="features-list">
-<li>メタデータ維持変換</li>
-<li>PNG→JPEG 1/10軽量化</li>
-<li>品質・サイズ調整</li>
-<li>Eagleライブラリ対応</li>
-<li>コマンドライン対応</li>
-<li class="lang">日/英</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="price-badge paid">¥380</span>
-<div class="button-group">
-<a class="btn btn-secondary" href="meta-converter_j.html">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-<polyline points="14 2 14 8 20 8"></polyline>
-<line x1="16" x2="8" y1="13" y2="13"></line>
-<line x1="16" x2="8" y1="17" y2="17"></line>
-</svg>
-                            製品詳細
-                        </a>
-<a class="btn btn-primary" href="https://synekzuk.booth.pm/items/6911255" rel="noopener" target="_blank">
-                            BOOTH
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M7 17L17 7M17 7H7M17 7V17"></path>
-</svg>
-</a>
-</div>
-</div>
-</article>
-<!-- Coming Soon Placeholder -->
-<article class="product-card placeholder-card">
-<div class="placeholder-content">
-<div class="placeholder-icon">＋</div>
-<p class="placeholder-text">新しいツールを準備中です</p>
-<p class="placeholder-subtext">Coming Soon</p>
-</div>
-</article>
-</div>
-<!-- Workflow Section -->
-<section class="workflow-section">
-<h3 class="workflow-title">おすすめワークフロー例（R18版）</h3>
-<div class="workflow-pattern">
-<p class="workflow-label">パターン1：有料・オールインワン</p>
-<div class="workflow-content">
-<div class="workflow-step">
-<a href="automosaic-r18_j.html" style="display: block; text-decoration: none; color: inherit;">
-<img alt="AutoMosaic R18版" class="workflow-icon" src="assets/icons/app_R18.png"/>
-<p class="workflow-step-name">AutoMosaic (R18版)</p>
-</a>
-<p class="workflow-step-desc">自動モザイク処理</p>
-</div>
-<span class="workflow-arrow">→</span>
-<div class="workflow-step highlight">
-<a href="ai-paint-cleaner_j.html" style="display: block; text-decoration: none; color: inherit;">
-<img alt="AI Paint Cleaner" class="workflow-icon" src="assets/icons/app2.png"/>
-<p class="workflow-step-name">AI Paint Cleaner</p>
-</a>
-<p class="workflow-step-desc">細かい調整・編集<br/><small>※メタデータ削除機能も内蔵</small></p>
-</div>
-</div>
-</div>
-<div class="workflow-divider">または</div>
-<div class="workflow-pattern">
-<p class="workflow-label">パターン2：無料ツールで対応</p>
-<div class="workflow-content">
-<div class="workflow-step">
-<a href="automosaic-r18_j.html" style="display: block; text-decoration: none; color: inherit;">
-<img alt="AutoMosaic R18版" class="workflow-icon" src="assets/icons/app_R18.png"/>
-<p class="workflow-step-name">AutoMosaic (R18版)</p>
-</a>
-<p class="workflow-step-desc">自動モザイク処理<br/><small>※有料ソフト</small></p>
-</div>
-<span class="workflow-arrow">→</span>
-<div class="workflow-step free">
-<a href="ai-meta-cleaner_j.html" style="display: block; text-decoration: none; color: inherit;">
-<img alt="AI Meta Cleaner" class="workflow-icon" src="assets/icons/app3.png"/>
-<p class="workflow-step-name">AI Meta Cleaner</p>
-</a>
-<p class="workflow-step-desc">メタデータ削除<br/><small>※無料ソフト</small></p>
-</div>
-</div>
-</div>
-</section>
-</main>
-<footer>
-<p>
-            製品に関するお問い合わせは
-            <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank">Twitter/X</a>
-            または
-            <a href="https://accounts.booth.pm/conversations/49131834/messages" rel="noopener" target="_blank">BOOTH</a>
-            までお願いいたします。
-        </p>
-<p style="margin-top: 1rem; font-size: 0.85rem;">
-            <a href="privacy_j.html">プライバシーポリシー</a>
-            ·
-            <a href="terms_j.html">利用規約</a>
-        </p>
-<p style="margin-top: 0.5rem; font-size: 0.85rem;">
-            © 2024-2026 nekzuk Software. All rights reserved.
-        </p>
-</footer>
-<script>
-    function setSiteLang(lang) {
-        try { localStorage.setItem('site_lang', lang); } catch (e) {}
-    }
     </script>
-</body>
+    <!-- 構造化データ：WebSite -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "nekzuk Software",
+        "alternateName": "nekzuk",
+        "url": "https://nekzuk.com/",
+        "description": "コンテンツクリエイター向けのプロフェッショナルAI画像処理ツール。バッチモザイク、AIインペイント、メタデータ管理など。GPU高速化対応のWindowsデスクトップアプリケーション。",
+        "inLanguage": "ja",
+        "publisher": {
+          "@type": "Organization",
+          "name": "nekzuk Software",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://nekzuk.com/assets/favicons/icon-512.png"
+          }
+        }
+      }
+    </script>
+    <!-- 構造化データ：ItemList (製品カタログ) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "nekzuk Software 製品一覧",
+        "description": "AI画像処理ツールの完全カタログ",
+        "numberOfItems": 7,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "AutoMosaic (R18版)",
+              "url": "https://nekzuk.com/automosaic-r18_j.html",
+              "image": "https://nekzuk.com/assets/icons/app_R18.png",
+              "description": "センシティブ部位を自動検出する完全オフラインGPU高速バッチモザイクツール",
+              "applicationCategory": "MultimediaApplication",
+              "operatingSystem": "Windows 10, Windows 11",
+              "offers": {
+                "@type": "Offer",
+                "price": "3000",
+                "priceCurrency": "JPY"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "AutoMosaic 通常版",
+              "url": "https://nekzuk.com/automosaic_j.html",
+              "image": "https://nekzuk.com/assets/icons/app_general.png",
+              "description": "顔・文字・ナンバープレート等を自動検出する完全オフラインGPU高速バッチモザイクツール",
+              "applicationCategory": "MultimediaApplication",
+              "operatingSystem": "Windows 10, Windows 11",
+              "offers": {
+                "@type": "Offer",
+                "price": "3000",
+                "priceCurrency": "JPY"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "AI Paint Cleaner",
+              "url": "https://nekzuk.com/ai-paint-cleaner_j.html",
+              "image": "https://nekzuk.com/assets/icons/app2.png",
+              "description": "AIインペイント搭載オールインワンバッチ編集ツール",
+              "applicationCategory": "MultimediaApplication",
+              "operatingSystem": "Windows 10, Windows 11",
+              "offers": {
+                "@type": "Offer",
+                "price": "2000",
+                "priceCurrency": "JPY"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "NAI Smart Studio",
+              "url": "https://nekzuk.com/nai-smart-studio_j.html",
+              "image": "https://nekzuk.com/assets/icons/app_nai.png",
+              "description": "NovelAI画像生成を強化するデスクトップアプリ。ワイルドカード、連続生成、プロンプト検索など搭載。",
+              "applicationCategory": "MultimediaApplication",
+              "operatingSystem": "Windows 10, Windows 11",
+              "offers": {
+                "@type": "Offer",
+                "price": "2000",
+                "priceCurrency": "JPY",
+                "availability": "https://schema.org/PreOrder"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "AI Meta Cleaner",
+              "url": "https://nekzuk.com/ai-meta-cleaner_j.html",
+              "image": "https://nekzuk.com/assets/icons/app3.png",
+              "description": "AI画像用無料メタデータ削除ツール",
+              "applicationCategory": "MultimediaApplication",
+              "operatingSystem": "Windows 10, Windows 11",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "JPY"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Frame Craft",
+              "url": "https://nekzuk.com/frame-craft_j.html",
+              "image": "https://nekzuk.com/assets/icons/app5.png",
+              "description": "動画フレーム抽出・アニメーション変換ツール",
+              "applicationCategory": "MultimediaApplication",
+              "operatingSystem": "Windows 10, Windows 11",
+              "offers": {
+                "@type": "Offer",
+                "price": "500",
+                "priceCurrency": "JPY"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Meta Converter",
+              "url": "https://nekzuk.com/meta-converter_j.html",
+              "image": "https://nekzuk.com/assets/icons/app4.png",
+              "description": "メタデータ維持画像変換ツール",
+              "applicationCategory": "MultimediaApplication",
+              "operatingSystem": "Windows 10, Windows 11",
+              "offers": {
+                "@type": "Offer",
+                "price": "380",
+                "priceCurrency": "JPY"
+              }
+            }
+          }
+        ],
+        "inLanguage": "ja"
+      }
+    </script>
+    <meta content="ja_JP" property="og:locale" />
+  </head>
+  <body>
+    <div class="bg-effect"></div>
+    <header>
+      <div class="lang-switch">
+        <a class="lang-btn" href="index.html">English</a>
+        <a class="lang-btn active" href="index_j.html">日本語</a>
+      </div>
+      <h1>AI画像処理ツール製品一覧 – nekzuk Software</h1>
+      <p class="header-description">
+        AI画像生成・編集のワークフローを効率化する各種ツールをご用意しています。<br />
+        すべてWindows専用のデスクトップアプリケーションです。
+      </p>
+    </header>
+    <main>
+      <div class="products-grid">
+        <!-- AutoMosaic (R18版) -->
+        <article class="product-card">
+          <div class="card-header">
+            <a class="product-icon-link" href="automosaic-r18_j.html">
+              <img
+                alt="AutoMosaic (R18版)"
+                class="product-icon"
+                height="64"
+                src="assets/icons/app_R18.png"
+                width="64"
+              />
+            </a>
+            <div class="card-title-area">
+              <a class="product-name-link" href="automosaic-r18_j.html">
+                <h2 class="product-name">AutoMosaic (R18版)</h2>
+              </a>
+              <p class="product-subtitle">画像への連続自動モザイクツール</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="product-description">
+              画像内のセンシティブ部位を自動検出し、複数の画像に連続でモザイク処理を施すツールです。
+              完全オフライン対応、GPU処理で1枚あたり約2秒の高速処理を実現。
+            </p>
+            <ul class="features-list">
+              <li>AI自動検出</li>
+              <li>高速GPU処理</li>
+              <li>モザイク・黒塗り・セグメンテーション</li>
+              <li>コマンドライン対応</li>
+              <li class="lang">日/英/中/韓</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <span class="price-badge paid">¥2,980</span>
+            <div class="button-group">
+              <a class="btn btn-secondary" href="automosaic-r18_j.html">
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewbox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" x2="8" y1="13" y2="13"></line>
+                  <line x1="16" x2="8" y1="17" y2="17"></line>
+                </svg>
+                製品詳細
+              </a>
+              <a
+                class="btn btn-primary"
+                href="https://synekzuk.booth.pm/items/6510317"
+                rel="noopener"
+                target="_blank"
+              >
+                BOOTH
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewbox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17L17 7M17 7H7M17 7V17"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <!-- AutoMosaic (通常版) -->
+        <article class="product-card">
+          <div class="card-header">
+            <a class="product-icon-link" href="automosaic_j.html">
+              <img
+                alt="AutoMosaic (通常版)"
+                class="product-icon"
+                height="64"
+                src="assets/icons/app_general.png"
+                width="64"
+              />
+            </a>
+            <div class="card-title-area">
+              <a class="product-name-link" href="automosaic_j.html">
+                <h2 class="product-name">AutoMosaic (通常版)</h2>
+              </a>
+              <p class="product-subtitle">画像への連続自動モザイクツール</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="product-description">
+              画像内の人物・顔・目・文字・ナンバープレート等を自動検出し、複数の画像に連続でモザイク処理を施すツールです。
+              完全オフライン対応、GPU処理で1枚あたり約2秒の高速処理を実現。
+            </p>
+            <ul class="features-list">
+              <li>AI自動検出</li>
+              <li>高速GPU処理</li>
+              <li>モザイク・黒塗り・セグメンテーション</li>
+              <li>コマンドライン対応</li>
+              <li class="lang">日/英/中/韓</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <span class="price-badge paid">¥2,980</span>
+            <div class="button-group">
+              <a class="btn btn-secondary" href="automosaic_j.html">
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewbox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" x2="8" y1="13" y2="13"></line>
+                  <line x1="16" x2="8" y1="17" y2="17"></line>
+                </svg>
+                製品詳細
+              </a>
+              <a
+                class="btn btn-primary"
+                href="https://synekzuk.booth.pm/items/7075141"
+                rel="noopener"
+                target="_blank"
+              >
+                BOOTH
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewbox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17L17 7M17 7H7M17 7V17"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <!-- AI Paint Cleaner -->
+        <article class="product-card">
+          <div class="card-header">
+            <a class="product-icon-link" href="ai-paint-cleaner_j.html">
+              <img
+                alt="AI Paint Cleaner"
+                class="product-icon"
+                height="64"
+                src="assets/icons/app2.png"
+                width="64"
+              />
+            </a>
+            <div class="card-title-area">
+              <a class="product-name-link" href="ai-paint-cleaner_j.html">
+                <h2 class="product-name">AI Paint Cleaner</h2>
+              </a>
+              <p class="product-subtitle">複数画像の効率修正ツール</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="product-description">
+              AIによる強力なインペイント機能と数多くのバッチ処理を搭載した、
+              イラスト修正のオールインワンツールです。
+            </p>
+            <ul class="features-list">
+              <li>AIインペイント</li>
+              <li>モザイク除去・追加</li>
+              <li>背景除去</li>
+              <li>AIアップスケール</li>
+              <li>一括処理対応</li>
+              <li class="lang">日/英/中/韓</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <span class="price-badge paid">¥2,000</span>
+            <div class="button-group">
+              <a class="btn btn-secondary" href="ai-paint-cleaner_j.html">
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewbox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" x2="8" y1="13" y2="13"></line>
+                  <line x1="16" x2="8" y1="17" y2="17"></line>
+                </svg>
+                製品詳細
+              </a>
+              <a
+                class="btn btn-primary"
+                href="https://synekzuk.booth.pm/items/6649634"
+                rel="noopener"
+                target="_blank"
+              >
+                BOOTH
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewbox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17L17 7M17 7H7M17 7V17"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <!-- NAI Smart Studio -->
+        <article class="product-card">
+          <div class="card-header">
+            <a class="product-icon-link" href="nai-smart-studio_j.html">
+              <img
+                alt="NAI Smart Studio"
+                class="product-icon"
+                height="64"
+                src="assets/icons/app_nai.png"
+                width="64"
+              />
+            </a>
+            <div class="card-title-area">
+              <a class="product-name-link" href="nai-smart-studio_j.html">
+                <h2 class="product-name">NAI Smart Studio</h2>
+              </a>
+              <p class="product-subtitle">NovelAI画像生成強化ツール</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="product-description">
+              NovelAI画像生成を強化するWindows向けデスクトップアプリケーション。
+              ワイルドカード、連続生成、プロンプト検索など便利な機能を搭載。
+            </p>
+            <ul class="features-list">
+              <li>連続生成・ワイルドカード</li>
+              <li>プロンプト検索・履歴</li>
+              <li>タグ補完・プリセット</li>
+              <li>ローカル保存</li>
+              <li class="lang">日本語</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <span class="price-badge paid">¥2,000</span>
+            <div class="button-group">
+              <a class="btn btn-secondary" href="nai-smart-studio_j.html">
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewbox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" x2="8" y1="13" y2="13"></line>
+                  <line x1="16" x2="8" y1="17" y2="17"></line>
+                </svg>
+                製品詳細
+              </a>
+              <a
+                class="btn btn-primary"
+                href="https://synekzuk.booth.pm/items/7969637"
+                rel="noopener"
+                target="_blank"
+              >
+                BOOTH
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewbox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17L17 7M17 7H7M17 7V17"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <!-- AI Meta Cleaner -->
+        <article class="product-card">
+          <div class="card-header">
+            <a class="product-icon-link" href="ai-meta-cleaner_j.html">
+              <img
+                alt="AI Meta Cleaner"
+                class="product-icon"
+                height="64"
+                src="assets/icons/app3.png"
+                width="64"
+              />
+            </a>
+            <div class="card-title-area">
+              <a class="product-name-link" href="ai-meta-cleaner_j.html">
+                <h2 class="product-name">AI Meta Cleaner</h2>
+              </a>
+              <p class="product-subtitle">AI埋込情報対応メタデータ削除ツール</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="product-description">
+              画像のメタデータと生成AIの埋め込み情報をまとめて削除できるツールです。
+              Stable DiffusionやNovelAIの生成情報も自動検出・削除します。
+            </p>
+            <ul class="features-list">
+              <li>PNG / JPG / WEBP / GIF / TIFF</li>
+              <li>EXIF・XMP削除</li>
+              <li>SD/NovelAI情報削除</li>
+              <li class="lang">日/英</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <span class="price-badge free">無料</span>
+            <div class="button-group">
+              <a class="btn btn-secondary" href="ai-meta-cleaner_j.html">
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewbox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" x2="8" y1="13" y2="13"></line>
+                  <line x1="16" x2="8" y1="17" y2="17"></line>
+                </svg>
+                製品詳細
+              </a>
+              <a
+                class="btn btn-primary"
+                href="https://synekzuk.booth.pm/items/7626627"
+                rel="noopener"
+                target="_blank"
+              >
+                BOOTH
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewbox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17L17 7M17 7H7M17 7V17"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <!-- Frame Craft -->
+        <article class="product-card">
+          <div class="card-header">
+            <a class="product-icon-link" href="frame-craft_j.html">
+              <img
+                alt="Frame Craft"
+                class="product-icon"
+                height="64"
+                src="assets/icons/app5.png"
+                width="64"
+              />
+            </a>
+            <div class="card-title-area">
+              <a class="product-name-link" href="frame-craft_j.html">
+                <h2 class="product-name">Frame Craft</h2>
+              </a>
+              <p class="product-subtitle">
+                動画フレーム抽出 &amp; アニメーション変換ツール
+              </p>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="product-description">
+              動画ファイルから指定したフレームや秒間隔で画像を抽出したり、
+              GIF/WEBPアニメーションに変換できるツールです。
+            </p>
+            <ul class="features-list">
+              <li>高精度フレーム抽出</li>
+              <li>重複画像自動削除</li>
+              <li>黒帯自動削除</li>
+              <li>Pixivうごイラ対応</li>
+              <li>バッチ処理</li>
+              <li class="lang">日/英</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <span class="price-badge paid">¥480</span>
+            <div class="button-group">
+              <a class="btn btn-secondary" href="frame-craft_j.html">
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewbox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" x2="8" y1="13" y2="13"></line>
+                  <line x1="16" x2="8" y1="17" y2="17"></line>
+                </svg>
+                製品詳細
+              </a>
+              <a
+                class="btn btn-primary"
+                href="https://synekzuk.booth.pm/items/7295171"
+                rel="noopener"
+                target="_blank"
+              >
+                BOOTH
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewbox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17L17 7M17 7H7M17 7V17"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <!-- Meta Converter -->
+        <article class="product-card">
+          <div class="card-header">
+            <a class="product-icon-link" href="meta-converter_j.html">
+              <img
+                alt="Meta Converter"
+                class="product-icon"
+                height="64"
+                src="assets/icons/app4.png"
+                width="64"
+              />
+            </a>
+            <div class="card-title-area">
+              <a class="product-name-link" href="meta-converter_j.html">
+                <h2 class="product-name">Meta Converter</h2>
+              </a>
+              <p class="product-subtitle">メタデータ維持画像変換ツール</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="product-description">
+              メタデータを保持したまま、複数画像をPNG/JPEG/WEBPに変換できるツールです。
+              AI画像の保管・軽量化に最適。
+            </p>
+            <ul class="features-list">
+              <li>メタデータ維持変換</li>
+              <li>PNG→JPEG 1/10軽量化</li>
+              <li>品質・サイズ調整</li>
+              <li>Eagleライブラリ対応</li>
+              <li>コマンドライン対応</li>
+              <li class="lang">日/英</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <span class="price-badge paid">¥380</span>
+            <div class="button-group">
+              <a class="btn btn-secondary" href="meta-converter_j.html">
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewbox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" x2="8" y1="13" y2="13"></line>
+                  <line x1="16" x2="8" y1="17" y2="17"></line>
+                </svg>
+                製品詳細
+              </a>
+              <a
+                class="btn btn-primary"
+                href="https://synekzuk.booth.pm/items/6911255"
+                rel="noopener"
+                target="_blank"
+              >
+                BOOTH
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewbox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17L17 7M17 7H7M17 7V17"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <!-- Coming Soon Placeholder -->
+        <article class="product-card placeholder-card">
+          <div class="placeholder-content">
+            <div class="placeholder-icon">＋</div>
+            <p class="placeholder-text">新しいツールを準備中です</p>
+            <p class="placeholder-subtext">Coming Soon</p>
+          </div>
+        </article>
+      </div>
+      <!-- Workflow Section -->
+      <section class="workflow-section">
+        <h3 class="workflow-title">おすすめワークフロー例（R18版）</h3>
+        <div class="workflow-pattern">
+          <p class="workflow-label">パターン1：有料・オールインワン</p>
+          <div class="workflow-content">
+            <div class="workflow-step">
+              <a
+                href="automosaic-r18_j.html"
+                style="display: block; text-decoration: none; color: inherit"
+              >
+                <img
+                  alt="AutoMosaic R18版"
+                  class="workflow-icon"
+                  src="assets/icons/app_R18.png"
+                />
+                <p class="workflow-step-name">AutoMosaic (R18版)</p>
+              </a>
+              <p class="workflow-step-desc">自動モザイク処理</p>
+            </div>
+            <span class="workflow-arrow">→</span>
+            <div class="workflow-step highlight">
+              <a
+                href="ai-paint-cleaner_j.html"
+                style="display: block; text-decoration: none; color: inherit"
+              >
+                <img
+                  alt="AI Paint Cleaner"
+                  class="workflow-icon"
+                  src="assets/icons/app2.png"
+                />
+                <p class="workflow-step-name">AI Paint Cleaner</p>
+              </a>
+              <p class="workflow-step-desc">
+                細かい調整・編集<br /><small>※メタデータ削除機能も内蔵</small>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="workflow-divider">または</div>
+        <div class="workflow-pattern">
+          <p class="workflow-label">パターン2：無料ツールで対応</p>
+          <div class="workflow-content">
+            <div class="workflow-step">
+              <a
+                href="automosaic-r18_j.html"
+                style="display: block; text-decoration: none; color: inherit"
+              >
+                <img
+                  alt="AutoMosaic R18版"
+                  class="workflow-icon"
+                  src="assets/icons/app_R18.png"
+                />
+                <p class="workflow-step-name">AutoMosaic (R18版)</p>
+              </a>
+              <p class="workflow-step-desc">
+                自動モザイク処理<br /><small>※有料ソフト</small>
+              </p>
+            </div>
+            <span class="workflow-arrow">→</span>
+            <div class="workflow-step free">
+              <a
+                href="ai-meta-cleaner_j.html"
+                style="display: block; text-decoration: none; color: inherit"
+              >
+                <img
+                  alt="AI Meta Cleaner"
+                  class="workflow-icon"
+                  src="assets/icons/app3.png"
+                />
+                <p class="workflow-step-name">AI Meta Cleaner</p>
+              </a>
+              <p class="workflow-step-desc">
+                メタデータ削除<br /><small>※無料ソフト</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>
+        製品に関するお問い合わせは
+        <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank"
+          >Twitter/X</a
+        >
+        または
+        <a
+          href="https://accounts.booth.pm/conversations/49131834/messages"
+          rel="noopener"
+          target="_blank"
+          >BOOTH</a
+        >
+        までお願いいたします。
+      </p>
+      <p style="margin-top: 1rem; font-size: 0.85rem">
+        <a href="privacy_j.html">プライバシーポリシー</a>
+        ·
+        <a href="terms_j.html">利用規約</a>
+      </p>
+      <p style="margin-top: 0.5rem; font-size: 0.85rem">
+        © 2024-2026 nekzuk Software. All rights reserved.
+      </p>
+    </footer>
+    <script>
+      function setSiteLang(lang) {
+        try {
+          localStorage.setItem("site_lang", lang);
+        } catch (e) {}
+      }
+    </script>
+  </body>
 </html>
