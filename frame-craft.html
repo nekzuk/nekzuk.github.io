@@ -1,469 +1,850 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
-<head>
-<meta charset="utf-8"/><script>(function(){
-  try {
-    const p = new URLSearchParams(location.search);
-    const lang = p.get('lang');
-    if (lang === 'ja') { location.replace('frame-craft_j.html'); return; }
-    if (lang === 'en' && location.search) { location.replace('frame-craft.html'); }
-  } catch(e) {}
-})();</script>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>Frame Craft – Video Frame Extractor &amp; GIF/WEBP Converter | nekzuk</title>
-<!-- SEO Meta Tags -->
-<meta content="Frame Craft extracts video frames and converts them to GIF/WEBP animations. Batch processing, duplicate removal, black-bar detection, and Pixiv ugoira support. ¥480 / $5" name="description"/>
-<!-- Open Graph / Facebook -->
-<meta content="product" property="og:type"/>
-<meta content="https://nekzuk.com/frame-craft.html" property="og:url"/>
-<meta content="Frame Craft – Video Frame Extractor &amp; GIF/WEBP Converter" property="og:title"/>
-<meta content="Extract video frames with precision and convert to GIF/WEBP animations. Batch processing, duplicate removal, black-bar detection, and Pixiv ugoira support." property="og:description"/>
-<meta content="https://nekzuk.com/assets/icons/app5.png" property="og:image"/>
-<meta content="nekzuk Software" property="og:site_name"/>
-<!-- Twitter -->
-<meta content="summary" name="twitter:card"/>
-<meta content="@Synekzuk_AI" name="twitter:site"/>
-<meta content="Frame Craft – Video Frame Extractor &amp; GIF/WEBP Converter" name="twitter:title"/>
-<meta content="Extract video frames with precision and convert to GIF/WEBP animations. Batch processing, duplicate removal, black-bar detection, and Pixiv ugoira support." name="twitter:description"/>
-<meta content="https://nekzuk.com/assets/icons/app5.png" name="twitter:image"/>
-<!-- Language SEO -->
-<link rel="canonical" href="https://nekzuk.com/frame-craft.html"/>
-<link rel="alternate" hreflang="en" href="https://nekzuk.com/frame-craft.html"/>
-<link rel="alternate" hreflang="ja" href="https://nekzuk.com/frame-craft_j.html"/>
-<link rel="alternate" hreflang="x-default" href="https://nekzuk.com/frame-craft.html"/>
-<meta content="en_US" property="og:locale"/>
-<!-- Favicon & Icons -->
-<link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32"/>
-<link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml"/>
-<link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon"/>
-<link href="/assets/favicons/icon-192.png" rel="icon" sizes="192x192" type="image/png"/>
-<link href="/assets/favicons/icon-512.png" rel="icon" sizes="512x512" type="image/png"/>
-<meta content="#6366f1" name="theme-color"/>
-<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin/>
-<link rel="preconnect" href="https://i.ytimg.com" crossorigin/>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-040P2W2ZZK"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-040P2W2ZZK');
-</script>
-
-<style>
-    :root {
-      --bg:#0f172a; --card:#1e293b; --card2:#172136; --border:#334155;
-      --text:#f1f5f9; --muted:#94a3b8; --muted2:#64748b;
-      --accent:#22d3ee; --primary:#6366f1; --grad: linear-gradient(135deg,var(--primary),#8b5cf6);
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh;padding:2.5rem 1.25rem;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
-    .container{max-width:980px;margin:0 auto}
-    .top{display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:1.25rem}
-    .small{font-size:.9rem;color:var(--muted)}
-    .pill{display:inline-flex;gap:.5rem;align-items:center;padding:.25rem .7rem;border-radius:999px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.05);color:var(--muted);font-size:.85rem}
-
-    .hero{background:var(--card);border:1px solid var(--border);border-radius:1.1rem;padding:1.6rem}
-    .pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
-    .heroTop{display:flex;gap:1rem;align-items:flex-start}
-    
-    .appIcon{
-  width:110px;
-  height:110px;
-  border-radius:24px;
-  box-shadow:0 10px 22px rgba(0,0,0,.35);
-  flex:0 0 auto;
-}
-    .heroTitle{
-  display:flex;
-  align-items:flex-start;
-  gap:18px;
-}
-.heroTitle > div{max-width:760px;}
-.heroTitle h1{line-height:1.05;}
-.heroTitle .title{ margin:0; }
-.heroTitle .subtitle{ margin:0; color:var(--muted); line-height:1.35; max-width:640px; }
-
-    .btns{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem;align-items:center}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1rem;border-radius:.7rem;border:1px solid var(--border);background:rgba(255,255,255,.06);color:var(--text);text-decoration:none;font-weight:650;font-size:.95rem}
-    .btn.primary{background:var(--grad);border-color:transparent}
-    .btn.sub{background:rgba(34,211,238,.15);border-color:rgba(34,211,238,.4);color:var(--accent)}
-    .btn.sub:hover{background:rgba(34,211,238,.25);text-decoration:none}
-    .btn.download{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.3);color:var(--accent);font-size:.9rem;padding:.5rem .9rem}
-    .btn.download:hover{background:rgba(34,211,238,.2);text-decoration:none}
-    .btn.ghost{background:transparent}
-    .price{font-size:1.1rem;font-weight:700;color:var(--accent);display:flex;align-items:baseline;gap:.5rem;margin-top:.6rem}
-
-    .grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1rem}
-    @media(min-width:920px){ .grid{grid-template-columns:1fr 1fr} }
-    .section{margin-top:1rem;background:var(--card);border:1px solid var(--border);border-radius:1.1rem;padding:1.4rem}
-    .section h2{font-size:1.2rem;margin-bottom:.7rem}
-    .section h3{font-size:1.05rem;margin:.9rem 0 .4rem}
-    .section > p, 
-	.section > ul, 
-	.section > ol, 
-	.section > dl, 
-	.section > h3 {
-	  padding-left: 0.5rem;
-	  padding-right: 0.5rem;
-	}
-	.section .hr {
-	  margin-left: 0.5rem;
-	  margin-right: 0.5rem;
-	}
-	.section > .twoCol {
-	  padding-left: 0.5rem;
-	  padding-right: 0.5rem;
-	}
-    ul{margin:.3rem 0 .8rem 1.25rem;color:var(--muted)} li{margin:.25rem 0}
-    .hr{height:1px;background:var(--border);margin:1.1rem 0}
-    .kpi{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin-top:.9rem}
-    @media(min-width:720px){ .kpi{grid-template-columns:repeat(4,minmax(0,1fr))} }
-    .kpi .box{background:var(--card2);border:1px solid rgba(255,255,255,.08);border-radius:1rem;padding:.85rem}
-
-    .heroFacts .box{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  justify-content:flex-start;
-  gap:.22rem;
-}
-.heroFacts .box .label{display:block;font-size:.75rem;opacity:.72;line-height:1.15;}
-.heroFacts .box .value{display:block;font-size:.98rem;font-weight:700;line-height:1.25;}
-
-    .kpi .kv{ display:flex; flex-direction:column; align-items:flex-start; gap:6px; }
-.kpi .kv .label{ margin:0; }
-.kpi .kv .value{ margin:0; }
-
-    /* Images */
-    .shot{background:var(--card2);border:1px solid rgba(255,255,255,.08);border-radius:1rem;overflow:hidden}
-    .shot img{display:block;width:100%;height:auto}
-    .shot .cap{padding:.7rem .85rem;color:var(--muted);font-size:.9rem}
-
-    .footer{text-align:center;margin-top:1.4rem;color:var(--muted2);font-size:.9rem}
-  
-  a.shot{display:block}
-  .shot img{width:100%;height:auto;max-height:420px;object-fit:contain;background:#0b1220}
-  .shot .cap{margin-top:.45rem}
-
-  #ui .shot img{max-height:760px;object-fit:contain}
-
-.twoCol{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-@media (max-width: 820px){.twoCol{grid-template-columns:1fr}}
-.twoCol > div { padding-left: 0; padding-right: 0; }
-.note{opacity:.9;font-size:.92rem;margin-top:.5rem}
-.section ul,.section ol{
-  margin:.8rem 0 0;
-  padding-left:1.25rem;
-}
-.section li{margin:.35rem 0;}
-  </style>
-<!-- 構造化データ：SoftwareApplication (Enhanced) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Frame Craft",
-  "applicationCategory": "MultimediaApplication",
-  "operatingSystem": "Windows 10, Windows 11",
-  "description": "Extract frames from video files by frame index or time interval, and convert to GIF/WEBP animations. Perfect for creating animation references and extracting specific frames.",
-  "screenshot": "https://nekzuk.com/assets/Other/craft1_en.png",
-  "featureList": [
-    "High-precision frame extraction by index or time interval",
-    "Automatic duplicate frame removal",
-    "Automatic black bar detection and removal",
-    "Pixiv Ugoira format support",
-    "GIF and WEBP animation conversion",
-    "Batch processing for multiple videos",
-    "Multi-language interface (English, Japanese)"
-  ],
-  "softwareVersion": "1.20",
-  "offers": [
-    {
-      "@type": "Offer",
-      "name": "BOOTH",
-      "price": "480",
-      "priceCurrency": "JPY",
-      "url": "https://synekzuk.booth.pm/items/7295171",
-      "availability": "https://schema.org/InStock",
-      "seller": {
-        "@type": "Organization",
-        "name": "nekzuk Software"
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      (function () {
+        try {
+          const p = new URLSearchParams(location.search);
+          const lang = p.get("lang");
+          if (lang === "ja") {
+            location.replace("frame-craft_j.html");
+            return;
+          }
+          if (lang === "en" && location.search) {
+            location.replace("frame-craft.html");
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>
+      Frame Craft – Video Frame Extractor &amp; GIF/WEBP Converter | nekzuk
+    </title>
+    <!-- SEO Meta Tags -->
+    <meta
+      content="Frame Craft extracts video frames and converts them to GIF/WEBP animations. Batch processing, duplicate removal, black-bar detection, and Pixiv ugoira support. ¥480 / $5"
+      name="description"
+    />
+    <!-- Open Graph / Facebook -->
+    <meta content="product" property="og:type" />
+    <meta content="https://nekzuk.com/frame-craft.html" property="og:url" />
+    <meta
+      content="Frame Craft – Video Frame Extractor &amp; GIF/WEBP Converter"
+      property="og:title"
+    />
+    <meta
+      content="Extract video frames with precision and convert to GIF/WEBP animations. Batch processing, duplicate removal, black-bar detection, and Pixiv ugoira support."
+      property="og:description"
+    />
+    <meta
+      content="https://nekzuk.com/assets/icons/app5.png"
+      property="og:image"
+    />
+    <meta content="nekzuk Software" property="og:site_name" />
+    <!-- Twitter -->
+    <meta content="summary" name="twitter:card" />
+    <meta content="@Synekzuk_AI" name="twitter:site" />
+    <meta
+      content="Frame Craft – Video Frame Extractor &amp; GIF/WEBP Converter"
+      name="twitter:title"
+    />
+    <meta
+      content="Extract video frames with precision and convert to GIF/WEBP animations. Batch processing, duplicate removal, black-bar detection, and Pixiv ugoira support."
+      name="twitter:description"
+    />
+    <meta
+      content="https://nekzuk.com/assets/icons/app5.png"
+      name="twitter:image"
+    />
+    <!-- Language SEO -->
+    <link rel="canonical" href="https://nekzuk.com/frame-craft.html" />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://nekzuk.com/frame-craft.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="ja"
+      href="https://nekzuk.com/frame-craft_j.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://nekzuk.com/frame-craft.html"
+    />
+    <meta content="en_US" property="og:locale" />
+    <!-- Favicon & Icons -->
+    <link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32" />
+    <link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml" />
+    <link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link
+      href="/assets/favicons/icon-192.png"
+      rel="icon"
+      sizes="192x192"
+      type="image/png"
+    />
+    <link
+      href="/assets/favicons/icon-512.png"
+      rel="icon"
+      sizes="512x512"
+      type="image/png"
+    />
+    <meta content="#6366f1" name="theme-color" />
+    <link
+      rel="preconnect"
+      href="https://www.googletagmanager.com"
+      crossorigin
+    />
+    <link rel="preconnect" href="https://i.ytimg.com" crossorigin />
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-040P2W2ZZK"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
       }
-    },
-    {
-      "@type": "Offer",
-      "name": "Payhip",
-      "price": "5",
-      "priceCurrency": "USD",
-      "url": "https://payhip.com/b/D0wG5",
-      "availability": "https://schema.org/InStock",
-      "seller": {
-        "@type": "Organization",
-        "name": "nekzuk Software"
-      }
-    }
-  ],
-  "author": {
-    "@type": "Organization",
-    "name": "nekzuk Software",
-    "url": "https://nekzuk.com"
-  },
-  "inLanguage": "en"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://nekzuk.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Frame Craft",
-      "item": "https://nekzuk.com/frame-craft.html"
-    }
-  ]
-}
-</script>
-</head>
-<body>
-<div class="container">
-<div class="top">
-<a data-role="back" href="/">← <span class="lang-en">Back</span></a>
-<div class="small">
-<a href="frame-craft.html">English</a> /
-        <a href="frame-craft_j.html">日本語</a>
-</div>
-</div>
-<section class="hero">
-<div class="pills">
-<span class="pill">Windows</span>
-<span class="pill">Desktop</span>
-<span class="pill">Batch Processing</span>
-<span class="pill">Offline Processing</span>
-</div>
-<div class="heroTop">
-<div class="heroTitle">
-<img alt="Frame Craft icon" class="appIcon" src="assets/icons/app5.png"/>
-<div>
-<div class="titleRow"><h1 class="title"><span class="lang-en">Frame Craft</span></h1><p class="subtitle"><span class="lang-en">Extract video frames and convert to animations (GIF/WEBP) with high precision. Perfect for screenshot extraction, animation creation, and Pixiv ugoku-illust workflows.</span></p></div>
-<div class="price">
-<span class="lang-en">$5</span>
-</div>
-<div class="btns">
-<a class="btn primary lang-en" href="https://payhip.com/b/D0wG5" rel="noopener" target="_blank">Payhip</a>
-<a class="btn sub" href="#trial"><span class="lang-en">Trial Version</span></a>
-</div>
-</div>
-</div>
-</div>
-<div class="kpi heroFacts">
-<div class="box">
-<div class="kv">
-<div class="label lang-en">Main Uses</div>
-<div class="value lang-en">Frame Extract</div>
-</div>
-</div>
-<div class="box">
-<div class="kv">
-<div class="label lang-en">Outputs</div>
-<div class="value lang-en">Image / Anim</div>
-</div>
-</div>
-<div class="box">
-<div class="kv">
-<div class="label lang-en">Processing</div>
-<div class="value lang-en">Batch</div>
-</div>
-</div>
-<div class="box">
-<div class="kv">
-<div class="label lang-en">Formats</div>
-<div class="value lang-en">14 Types</div>
-</div>
-</div>
-</div></section>
-<div class="grid">
-<section class="section">
-<h2>
-<span class="lang-en">Overview</span>
-</h2>
-<p class="lang-en">
-          Frame Craft is a powerful tool for extracting frames from videos and animation files at specified intervals, or converting them to animation formats (GIF/WEBP). It's designed for content creators who need precise frame extraction, duplicate image removal, and animation creation workflows.
-        </p>
-<div class="hr"></div>
-<ul class="lang-en">
-<li><b>High-precision extraction</b> with frame/second-based settings</li>
-<li><b>Duplicate removal</b> using perceptual hash technology</li>
-<li><b>Batch processing</b> via drag &amp; drop</li>
-<li><b>14 video formats</b> including MP4, AVI, MOV, GIF, WebP</li>
-<li><b>Animation output</b>: GIF/WEBP + Pixiv ugoku-illust mode</li>
-</ul>
-</section>
-<section class="section">
-<h2>
-<span class="lang-en">Supported Formats</span>
-</h2>
-<div class="twoCol">
-<div>
-<h3><span class="lang-en">Input formats</span></h3>
-<ul class="lang-en">
-<li>MP4, AVI, MOV</li>
-<li>MKV, WMV, FLV</li>
-<li>WebM, MPEG, MPG</li>
-<li>M4V, TS, OGV</li>
-<li>GIF, WebP (animation)</li>
-</ul>
-</div>
-<div>
-<h3><span class="lang-en">Outputs</span></h3>
-<ul class="lang-en">
-<li>Images: JPG, PNG</li>
-<li>Animations: GIF, WEBP</li>
-<li>Pixiv ugoku-illust format</li>
-<li>Last frame extraction</li>
-</ul>
-</div>
-</div>
-</section>
-<section class="section">
-<h2><span class="lang-en">Key Features</span></h2>
-<h3><span class="lang-en">■ High-precision Frame Extraction</span></h3>
-<ul class="lang-en">
-<li>Precise frame interval or second-based extraction</li>
-<li>Automatic FPS detection for optimal extraction</li>
-<li>Pixiv ugoku-illust output mode</li>
-<li>Video to animation format conversion (GIF/WEBP)</li>
-</ul>
-<div class="hr"></div>
-<h3><span class="lang-en">■ Automatic Duplicate Removal</span></h3>
-<ul class="lang-en">
-<li>High-precision similar image detection using perceptual hash technology</li>
-<li>Memory-efficient processing for large image batches</li>
-<li>Removes duplicate and nearly identical frames automatically</li>
-</ul>
-<div class="hr"></div>
-<h3><span class="lang-en">■ Batch Processing &amp; Efficiency</span></h3>
-<ul class="lang-en">
-<li>Drag &amp; drop multiple videos for batch processing</li>
-<li>Real-time progress display and detailed log output</li>
-<li>Monitor processing status at a glance</li>
-</ul>
-<div class="hr"></div>
-<h3><span class="lang-en">■ Additional Convenient Features</span></h3>
-<ul class="lang-en">
-<li>Automatic black bar removal (auto-crop borders)</li>
-<li>Intuitive GUI design for easy operation</li>
-<li>Last frame extraction for video concatenation workflows</li>
-</ul>
-</section>
-<section class="section" id="ui">
-<h2><span class="lang-en">How to use &amp; UI screenshot</span></h2>
-<h3><span class="lang-en">How to use</span></h3>
-<ol class="lang-en">
-<li>Click the "Add Video" button or drag &amp; drop video files</li>
-<li>Click the "Start Extraction" button to begin processing</li>
-</ol>
-<p class="note lang-en">
-      Simple two-step process makes it easy to extract frames from your videos and convert them to animations.
-    </p>
-<div class="hr"></div>
-<h3><span class="lang-en">UI screenshot</span></h3>
-<a class="shot lang-en" href="assets/Other/craft1_en.png" rel="noopener" target="_blank">
-<img loading="lazy" alt="Frame Craft UI (English)" src="assets/Other/craft1_en.png"/>
-<div class="cap">UI (English)</div>
-</a>
-</section>
-<section class="section">
-<h2><span class="lang-en">System requirements</span></h2>
-<ul class="lang-en">
-<li>OS: Windows 10/11 (64 bit)</li>
-<li>Memory: 4GB+ recommended</li>
-<li>Storage: 100MB+ free space required</li>
-</ul>
-<p class="note lang-en">
-        No GPU required. Runs on CPU for universal compatibility.
-      </p>
-</section>
-<section class="section" id="trial">
-<h2><span class="lang-en">Trial Version</span></h2>
-<p class="lang-en"><b>Windows 10/11</b></p>
-<p><a class="btn download" href="https://drive.google.com/file/d/1zQ0MpUKn5DzmExtLiLpBnqXWCWvfZAZ7/view?usp=drive_link" rel="noopener" target="_blank">Download from Google Drive</a></p>
-<div class="hr"></div>
-<h3><span class="lang-en">Trial limitations</span></h3>
-<ul class="lang-en">
-<li>Maximum 400 images/frames per video</li>
-<li>Process 1 video at a time</li>
-<li>Watermark added to output</li>
-</ul>
-</section>
-<section class="section">
-<h2><span class="lang-en">Updates &amp; Changelog</span></h2>
-<div class="kpi" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1rem">
-<div class="box">
-<div class="kv">
-<div class="label lang-en">Current Version</div>
-<div class="value">v1.20</div>
-</div>
-</div>
-<div class="box">
-<div class="kv">
-<div class="label lang-en">Release Date</div>
-<div class="value">2025-11-01</div>
-</div>
-</div>
-</div>
-<div class="hr"></div>
-<h3><span class="lang-en">Latest Updates</span></h3>
-<ul class="lang-en">
-<li>Added GIF/WEBP output support</li>
-<li>Enhanced frame extraction precision</li>
-<li>Improved duplicate detection algorithm</li>
-</ul>
-<p style="margin-top:1rem">
-<a href="https://note.com/nekzuk/n/n079326e4a2e7" rel="noopener" target="_blank">
-<span class="lang-en">→ Read detailed release notes</span>
-</a>
-</p>
-</section>
-<section class="section">
-<h2>
-<span class="lang-en">License &amp; Usage Notes</span>
-</h2>
-<h3><span class="lang-en">License</span></h3>
-<ul class="lang-en">
-<li><b>Personal use (including commercial)</b>: Included with purchase</li>
-<li><b>Corporate/enterprise use</b>: Please contact separately for licensing</li>
-</ul>
-<div class="hr"></div>
-<h3><span class="lang-en">Important Notes</span></h3>
-<ul class="lang-en">
-<li>Processing time may vary depending on video length and PC specifications</li>
-<li>Always verify output results for accuracy</li>
-<li>Frame extraction accuracy may depend on video quality and encoding</li>
-</ul>
-</section>
-</div>
-<div class="footer">
-<div class="lang-en" style="margin-bottom:.75rem">
-<b>Support:</b> <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank">Twitter/X</a> | <a href="https://payhip.com/nekzuk/contact" rel="noopener" target="_blank">Payhip message</a>
-</div>
+      gtag("js", new Date());
+      gtag("config", "G-040P2W2ZZK");
+    </script>
 
-      © nekzuk Software
+    <style>
+      :root {
+        --bg: #0f172a;
+        --card: #1e293b;
+        --card2: #172136;
+        --border: #334155;
+        --text: #f1f5f9;
+        --muted: #94a3b8;
+        --muted2: #64748b;
+        --accent: #22d3ee;
+        --primary: #6366f1;
+        --grad: linear-gradient(135deg, var(--primary), #8b5cf6);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP",
+          sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        min-height: 100vh;
+        padding: 2.5rem 1.25rem;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .container {
+        max-width: 980px;
+        margin: 0 auto;
+      }
+      .top {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 1.25rem;
+      }
+      .small {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+      .pill {
+        display: inline-flex;
+        gap: 0.5rem;
+        align-items: center;
+        padding: 0.25rem 0.7rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      .hero {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 1.1rem;
+        padding: 1.6rem;
+      }
+      .pills {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+      }
+      .heroTop {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .appIcon {
+        width: 110px;
+        height: 110px;
+        border-radius: 24px;
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+        flex: 0 0 auto;
+      }
+      .heroTitle {
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+      }
+      .heroTitle > div {
+        max-width: 760px;
+      }
+      .heroTitle h1 {
+        line-height: 1.05;
+      }
+      .heroTitle .title {
+        margin: 0;
+      }
+      .heroTitle .subtitle {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.35;
+        max-width: 640px;
+      }
+
+      .btns {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+        align-items: center;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1rem;
+        border-radius: 0.7rem;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 650;
+        font-size: 0.95rem;
+      }
+      .btn.primary {
+        background: var(--grad);
+        border-color: transparent;
+      }
+      .btn.sub {
+        background: rgba(34, 211, 238, 0.15);
+        border-color: rgba(34, 211, 238, 0.4);
+        color: var(--accent);
+      }
+      .btn.sub:hover {
+        background: rgba(34, 211, 238, 0.25);
+        text-decoration: none;
+      }
+      .btn.download {
+        background: rgba(34, 211, 238, 0.1);
+        border-color: rgba(34, 211, 238, 0.3);
+        color: var(--accent);
+        font-size: 0.9rem;
+        padding: 0.5rem 0.9rem;
+      }
+      .btn.download:hover {
+        background: rgba(34, 211, 238, 0.2);
+        text-decoration: none;
+      }
+      .btn.ghost {
+        background: transparent;
+      }
+      .price {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--accent);
+        display: flex;
+        align-items: baseline;
+        gap: 0.5rem;
+        margin-top: 0.6rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      @media (min-width: 920px) {
+        .grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .section {
+        margin-top: 1rem;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 1.1rem;
+        padding: 1.4rem;
+      }
+      .section h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0.7rem;
+      }
+      .section h3 {
+        font-size: 1.05rem;
+        margin: 0.9rem 0 0.4rem;
+      }
+      .section > p,
+      .section > ul,
+      .section > ol,
+      .section > dl,
+      .section > h3 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+      .section .hr {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+      }
+      .section > .twoCol {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+      ul {
+        margin: 0.3rem 0 0.8rem 1.25rem;
+        color: var(--muted);
+      }
+      li {
+        margin: 0.25rem 0;
+      }
+      .hr {
+        height: 1px;
+        background: var(--border);
+        margin: 1.1rem 0;
+      }
+      .kpi {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+        margin-top: 0.9rem;
+      }
+      @media (min-width: 720px) {
+        .kpi {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+      .kpi .box {
+        background: var(--card2);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 1rem;
+        padding: 0.85rem;
+      }
+
+      .heroFacts .box {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0.22rem;
+      }
+      .heroFacts .box .label {
+        display: block;
+        font-size: 0.75rem;
+        opacity: 0.72;
+        line-height: 1.15;
+      }
+      .heroFacts .box .value {
+        display: block;
+        font-size: 0.98rem;
+        font-weight: 700;
+        line-height: 1.25;
+      }
+
+      .kpi .kv {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+      .kpi .kv .label {
+        margin: 0;
+      }
+      .kpi .kv .value {
+        margin: 0;
+      }
+
+      /* Images */
+      .shot {
+        background: var(--card2);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 1rem;
+        overflow: hidden;
+      }
+      .shot img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .shot .cap {
+        padding: 0.7rem 0.85rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 1.4rem;
+        color: var(--muted2);
+        font-size: 0.9rem;
+      }
+
+      a.shot {
+        display: block;
+      }
+      .shot img {
+        width: 100%;
+        height: auto;
+        max-height: 420px;
+        object-fit: contain;
+        background: #0b1220;
+      }
+      .shot .cap {
+        margin-top: 0.45rem;
+      }
+
+      #ui .shot img {
+        max-height: 760px;
+        object-fit: contain;
+      }
+
+      .twoCol {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      @media (max-width: 820px) {
+        .twoCol {
+          grid-template-columns: 1fr;
+        }
+      }
+      .twoCol > div {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .note {
+        opacity: 0.9;
+        font-size: 0.92rem;
+        margin-top: 0.5rem;
+      }
+      .section ul,
+      .section ol {
+        margin: 0.8rem 0 0;
+        padding-left: 1.25rem;
+      }
+      .section li {
+        margin: 0.35rem 0;
+      }
+    </style>
+    <!-- 構造化データ：SoftwareApplication (Enhanced) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Frame Craft",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Windows 10, Windows 11",
+        "description": "Extract frames from video files by frame index or time interval, and convert to GIF/WEBP animations. Perfect for creating animation references and extracting specific frames.",
+        "screenshot": "https://nekzuk.com/assets/Other/craft1_en.png",
+        "featureList": [
+          "High-precision frame extraction by index or time interval",
+          "Automatic duplicate frame removal",
+          "Automatic black bar detection and removal",
+          "Optimize several site output",
+          "Pixiv/X/Note/Mastodon/Threads/Zen/Qlita/Tumblr",
+          "GIF and WEBP animation conversion",
+          "Batch processing for multiple videos",
+          "Multi-language interface (English, Japanese)"
+        ],
+        "softwareVersion": "30",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "BOOTH",
+            "price": "500",
+            "priceCurrency": "JPY",
+            "url": "https://synekzuk.booth.pm/items/7295171",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@type": "Organization",
+              "name": "nekzuk Software"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Payhip",
+            "price": "5",
+            "priceCurrency": "USD",
+            "url": "https://payhip.com/b/D0wG5",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@type": "Organization",
+              "name": "nekzuk Software"
+            }
+          }
+        ],
+        "author": {
+          "@type": "Organization",
+          "name": "nekzuk Software",
+          "url": "https://nekzuk.com"
+        },
+        "inLanguage": "en"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://nekzuk.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Frame Craft",
+            "item": "https://nekzuk.com/frame-craft.html"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+        <a data-role="back" href="/">← <span class="lang-en">Back</span></a>
+        <div class="small">
+          <a href="frame-craft.html">English</a> /
+          <a href="frame-craft_j.html">日本語</a>
+        </div>
+      </div>
+      <section class="hero">
+        <div class="pills">
+          <span class="pill">Windows</span>
+          <span class="pill">Desktop</span>
+          <span class="pill">Batch Processing</span>
+          <span class="pill">Offline Processing</span>
+        </div>
+        <div class="heroTop">
+          <div class="heroTitle">
+            <img
+              alt="Frame Craft icon"
+              class="appIcon"
+              src="assets/icons/app5.png"
+            />
+            <div>
+              <div class="titleRow">
+                <h1 class="title"><span class="lang-en">Frame Craft</span></h1>
+                <p class="subtitle">
+                  <span class="lang-en"
+                    >Extract video frames and convert to animations (GIF/WEBP)
+                    with high precision. Perfect for screenshot extraction,
+                    animation creation, and Pixiv ugoku-illust workflows.</span
+                  >
+                </p>
+              </div>
+              <div class="price">
+                <span class="lang-en">$5</span>
+              </div>
+              <div class="btns">
+                <a
+                  class="btn primary lang-en"
+                  href="https://payhip.com/b/D0wG5"
+                  rel="noopener"
+                  target="_blank"
+                  >Payhip</a
+                >
+                <a class="btn sub" href="#trial"
+                  ><span class="lang-en">Trial Version</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="kpi heroFacts">
+          <div class="box">
+            <div class="kv">
+              <div class="label lang-en">Main Uses</div>
+              <div class="value lang-en">Frame Extract</div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="kv">
+              <div class="label lang-en">Outputs</div>
+              <div class="value lang-en">Image / Anim</div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="kv">
+              <div class="label lang-en">Processing</div>
+              <div class="value lang-en">Batch</div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="kv">
+              <div class="label lang-en">Formats</div>
+              <div class="value lang-en">14 Types</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="grid">
+        <section class="section">
+          <h2>
+            <span class="lang-en">Overview</span>
+          </h2>
+          <p class="lang-en">
+            Frame Craft is a powerful tool for extracting frames from videos and
+            animation files at specified intervals, or converting them to
+            animation formats (GIF/WEBP). It's designed for content creators who
+            need precise frame extraction, duplicate image removal, and
+            animation creation workflows.
+          </p>
+          <div class="hr"></div>
+          <ul class="lang-en">
+            <li>
+              <b>High-precision extraction</b> with frame/second-based settings
+            </li>
+            <li><b>Duplicate removal</b> using perceptual hash technology</li>
+            <li><b>Batch processing</b> via drag &amp; drop</li>
+            <li><b>14 video formats</b> including MP4, AVI, MOV, GIF, WebP</li>
+            <li>
+              <b>Animation output</b>: GIF/WEBP + Pixiv ugoku-illust & Other
+              site mode
+            </li>
+          </ul>
+        </section>
+        <section class="section">
+          <h2>
+            <span class="lang-en">Supported Formats</span>
+          </h2>
+          <div class="twoCol">
+            <div>
+              <h3><span class="lang-en">Input formats</span></h3>
+              <ul class="lang-en">
+                <li>MP4, AVI, MOV</li>
+                <li>MKV, WMV, FLV</li>
+                <li>WebM, MPEG, MPG</li>
+                <li>M4V, TS, OGV</li>
+                <li>GIF, WebP (animation)</li>
+              </ul>
+            </div>
+            <div>
+              <h3><span class="lang-en">Outputs</span></h3>
+              <ul class="lang-en">
+                <li>Images: JPG, PNG</li>
+                <li>Animations: GIF, WEBP</li>
+                <li>Pixiv ugoku-illust format</li>
+                <li>Last frame extraction</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <h2><span class="lang-en">Key Features</span></h2>
+          <h3>
+            <span class="lang-en">■ High-precision Frame Extraction</span>
+          </h3>
+          <ul class="lang-en">
+            <li>Precise frame interval or second-based extraction</li>
+            <li>Automatic FPS detection for optimal extraction</li>
+            <li>Pixiv ugoku-illust output mode</li>
+            <li>Video to animation format conversion (GIF/WEBP)</li>
+          </ul>
+          <div class="hr"></div>
+          <h3><span class="lang-en">■ Automatic Duplicate Removal</span></h3>
+          <ul class="lang-en">
+            <li>
+              High-precision similar image detection using perceptual hash
+              technology
+            </li>
+            <li>Memory-efficient processing for large image batches</li>
+            <li>Removes duplicate and nearly identical frames automatically</li>
+          </ul>
+          <div class="hr"></div>
+          <h3>
+            <span class="lang-en">■ Batch Processing &amp; Efficiency</span>
+          </h3>
+          <ul class="lang-en">
+            <li>Drag &amp; drop multiple videos for batch processing</li>
+            <li>Real-time progress display and detailed log output</li>
+            <li>Monitor processing status at a glance</li>
+          </ul>
+          <div class="hr"></div>
+          <h3><span class="lang-en">■ Additional Convenient Features</span></h3>
+          <ul class="lang-en">
+            <li>Automatic black bar removal (auto-crop borders)</li>
+            <li>Intuitive GUI design for easy operation</li>
+            <li>Last frame extraction for video concatenation workflows</li>
+          </ul>
+        </section>
+        <section class="section" id="ui">
+          <h2><span class="lang-en">How to use &amp; UI screenshot</span></h2>
+          <h3><span class="lang-en">How to use</span></h3>
+          <ol class="lang-en">
+            <li>Click the "Add Video" button or drag &amp; drop video files</li>
+            <li>Click the "Start Extraction" button to begin processing</li>
+          </ol>
+          <p class="note lang-en">
+            Simple two-step process makes it easy to extract frames from your
+            videos and convert them to animations.
+          </p>
+          <div class="hr"></div>
+          <h3><span class="lang-en">UI screenshot</span></h3>
+          <a
+            class="shot lang-en"
+            href="assets/Other/craft1_en.png"
+            rel="noopener"
+            target="_blank"
+          >
+            <img
+              loading="lazy"
+              alt="Frame Craft UI (English)"
+              src="assets/Other/craft1_en.png"
+            />
+            <div class="cap">UI (English)</div>
+          </a>
+        </section>
+        <section class="section">
+          <h2><span class="lang-en">System requirements</span></h2>
+          <ul class="lang-en">
+            <li>OS: Windows 10/11 (64 bit)</li>
+            <li>Memory: 4GB+ recommended</li>
+            <li>Storage: 100MB+ free space required</li>
+          </ul>
+          <p class="note lang-en">
+            No GPU required. Runs on CPU for universal compatibility.
+          </p>
+        </section>
+        <section class="section" id="trial">
+          <h2><span class="lang-en">Trial Version</span></h2>
+          <p class="lang-en"><b>Windows 10/11</b></p>
+          <p>
+            <a
+              class="btn download"
+              href="https://drive.google.com/file/d/1ZBpCfguoNaV8CcHMssKZpibZg_EHz5Sf/view?usp=drive_link"
+              rel="noopener"
+              target="_blank"
+              >Download from Google Drive</a
+            >
+          </p>
+          <div class="hr"></div>
+          <h3><span class="lang-en">Trial limitations</span></h3>
+          <ul class="lang-en">
+            <li>Maximum 400 images/frames per video</li>
+            <li>Process 1 video at a time</li>
+            <li>Watermark added to output</li>
+          </ul>
+        </section>
+        <section class="section">
+          <h2><span class="lang-en">Updates &amp; Changelog</span></h2>
+          <div
+            class="kpi"
+            style="
+              grid-template-columns: repeat(2, minmax(0, 1fr));
+              margin-top: 1rem;
+            "
+          >
+            <div class="box">
+              <div class="kv">
+                <div class="label lang-en">Current Version</div>
+                <div class="value">v1.30</div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="kv">
+                <div class="label lang-en">Release Date</div>
+                <div class="value">2026-03-21</div>
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+          <h3><span class="lang-en">Latest Updates</span></h3>
+          <ul class="lang-en">
+            <li>add various site optimise</li>
+            <li>Improved duplicate detection algorithm</li>
+          </ul>
+          <p style="margin-top: 1rem">
+            <a
+              href="https://note.com/nekzuk/n/n06bae326716f"
+              rel="noopener"
+              target="_blank"
+            >
+              <span class="lang-en">→ Read detailed release notes</span>
+            </a>
+          </p>
+        </section>
+        <section class="section">
+          <h2>
+            <span class="lang-en">License &amp; Usage Notes</span>
+          </h2>
+          <h3><span class="lang-en">License</span></h3>
+          <ul class="lang-en">
+            <li>
+              <b>Personal use (including commercial)</b>: Included with purchase
+            </li>
+            <li>
+              <b>Corporate/enterprise use</b>: Please contact separately for
+              licensing
+            </li>
+          </ul>
+          <div class="hr"></div>
+          <h3><span class="lang-en">Important Notes</span></h3>
+          <ul class="lang-en">
+            <li>
+              Processing time may vary depending on video length and PC
+              specifications
+            </li>
+            <li>Always verify output results for accuracy</li>
+            <li>
+              Frame extraction accuracy may depend on video quality and encoding
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="footer">
+        <div class="lang-en" style="margin-bottom: 0.75rem">
+          <b>Support:</b>
+          <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank"
+            >Twitter/X</a
+          >
+          |
+          <a
+            href="https://payhip.com/nekzuk/contact"
+            rel="noopener"
+            target="_blank"
+            >Payhip message</a
+          >
+        </div>
+
+        © nekzuk Software
+      </div>
     </div>
-</div>
-</body>
+  </body>
 </html>
