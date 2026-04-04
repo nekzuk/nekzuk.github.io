@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NAI Smart Studio - Operation Manual</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        NAI Smart Studio <br />
+        <span style="font-size: 0.8em; color: #565f89">Operation Manual</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#intro" class="active">Introduction</a></li>
+        <li><a href="#setup">Initial Setup</a></li>
+        <li><a href="#basic">Basic Generation</a></li>
+        <li><a href="#import">Importing Images</a></li>
+        <li><a href="#i2i">Image-to-Image</a></li>
+        <li><a href="#upscale">Simple Upscale</a></li>
+        <li><a href="#batch">Continuous Generation</a></li>
+        <li><a href="#vibe">NovelAI Potion</a></li>
+        <li><a href="#reference">Precise Reference</a></li>
+        <li><a href="#tagger">Tagger</a></li>
+        <li><a href="#chunk">Prompt Chunks</a></li>
+        <li><a href="#wildcards">Wildcards</a></li>
+        <li><a href="#presets">Presets</a></li>
+        <li><a href="#search">Prompt Search</a></li>
+        <li><a href="#settings">Settings & Extras</a></li>
+        <li><a href="#shortcuts">Shortcuts</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <a
+          href="https://nekzuk.com/nai-smart-studio.html"
+          class="back-to-product"
+        >
+          ← Back to Product Page
+        </a>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <header class="top-bar">
+        <div class="top-bar-inner">
+          <span class="doc-version">v1.10 Documentation</span>
+          <div class="language-switch">
+            <a href="nai-smart-studio_online_manual.html" class="current"
+              >English</a
+            >
+            <span class="divider">/</span>
+            <a href="nai-smart-studio_online_manual_j.html">日本語</a>
+          </div>
+        </div>
+      </header>
+
+      <div class="content-scroll">
+        <div class="content-wrapper">
+          <section id="intro">
+            <h1>Introduction</h1>
+            <p>
+              NAI Smart Studio is a desktop tool designed to make NovelAI image generation easier to handle from a single screen. It combines Text-to-Image, Image-to-Image, Inpaint, Wildcards, Prompt Search, Tagger, Prompt Chunks, continuous generation, NovelAI Potion, Precise Reference, and Eagle integration in one workflow.
+            </p>
+            <div class="note">
+              <strong>Note:</strong>
+              For core NovelAI parameters such as Steps, Scale, and Sampler, please also refer to the
+              <a
+                href="https://docs.novelai.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >official NovelAI documentation</a
+              >.
+              This manual focuses on what you can do inside NAI Smart Studio.
+            </div>
+
+            <h3>Screen Layout</h3>
+            <p>The interface is divided into three main areas.</p>
+            <ul>
+              <li>
+                <strong>Left panel</strong>:
+                Prompt / Negative, character prompts, generation settings, continuous generation, NovelAI Potion, and Precise Reference.
+              </li>
+              <li>
+                <strong>Center panel</strong>:
+                The Canvas plus tabs such as Wildcards, Presets, Prompt Search, Tagger, and Prompt Chunks.
+              </li>
+              <li>
+                <strong>Right panel</strong>:
+                Image history. Normal click loads the image into the canvas, Shift+click opens the import dialog, and right-click opens file actions.
+              </li>
+            </ul>
+            <img src="images/000_EN.png" alt="Main UI" class="screenshot" />
+            <p class="figure-caption">Layout example.</p>
+          </section>
+
+          <section id="setup">
+            <h1>Initial Setup</h1>
+            <p>
+              On first launch, start by registering your NovelAI API key. If no API key is set, the app will guide you to the settings screen.
+            </p>
+            <img
+              src="images/API_001_EN.png"
+              alt="API Key Dialog"
+              class="screenshot"
+            />
+
+            <h3>How to get your API key</h3>
+            <ol>
+              <li>
+                Log in to the
+                <a
+                  href="https://novelai.net/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >NovelAI website</a
+                >.
+              </li>
+              <li>Open your account settings from the top-right menu.</li>
+              <li>Copy your permanent API token.</li>
+            </ol>
+            <img
+              src="images/API_002_EN.png"
+              alt="API Key Settings"
+              class="screenshot"
+            />
+
+            <h3>Recommended first settings</h3>
+            <p>
+              After adding your API key, open <strong>File → Settings</strong> and review these items in the General page.
+            </p>
+            <ul>
+              <li><strong>API key management</strong>: Register and switch between multiple accounts.</li>
+              <li><strong>Output folder</strong>: Choose where generated files are saved.</li>
+              <li><strong>Wildcard folder</strong>: Set the folder used by Wildcards.</li>
+              <li><strong>UI language</strong>: Switch between Japanese, English, and other supported languages.</li>
+            </ul>
+            <img
+              src="images/API_003_EN.png"
+              alt="API Key Registration"
+              class="screenshot"
+            />
+            <div class="note">
+              The settings screen also includes connection tests, output format options, and startup update checks.
+            </div>
+          </section>
+
+          <section id="basic">
+            <h1>Basic Generation</h1>
+            <p>
+              Set your Prompt and generation options in the left panel, then press Generate. Use <span class="kbd">Ctrl + Enter</span> for normal generation, or <span class="kbd">Ctrl + Alt + Enter</span> when you want to run a single job.
+            </p>
+            <img src="images/001_EN.png" alt="Side bar" class="screenshot" />
+
+            <h3>Prompt / Negative</h3>
+            <ul>
+              <li><strong>Prompt</strong>: Describe what you want to create.</li>
+              <li><strong>Negative</strong>: Describe what you want to avoid.</li>
+              <li>
+                <strong>Details</strong>: Useful for reviewing and cleaning tags. Token count is also shown under the prompt box.
+              </li>
+            </ul>
+
+            <h3>Character prompts</h3>
+            <p>
+              Use “Add Character” when you want to separate prompts for multiple characters. This is helpful for scenes with more than one person.
+            </p>
+
+            <h3>Basic parameters</h3>
+            <p>
+              Resolution templates, width and height, Steps, CFG, Seed, Sampler, and Model are grouped in the left panel. Your commonly used settings are kept for the next launch.
+            </p>
+
+            <h3>Estimated cost</h3>
+            <p>
+              The Generate button shows an estimated Anlas cost based on the current settings, and it updates automatically when you change model, size, or Steps.
+            </p>
+          </section>
+
+          <section id="import">
+            <h1>Importing Images</h1>
+            <p>
+              You can import images by drag and drop, <span class="kbd">Ctrl + O</span>, Shift+clicking an image in history, or using the “Import” entry in the image context menu.
+            </p>
+            <img
+              src="images/IMPORT_001_EN.png"
+              alt="Import Dialog"
+              class="screenshot"
+            />
+
+            <h3>Importing a single image</h3>
+            <p>A single image can be sent to several destinations.</p>
+            <ul>
+              <li><strong>Image-to-Image / Inpaint</strong>: Load it into the canvas.</li>
+              <li><strong>NovelAI Potion</strong>: Add it to a potion slot.</li>
+              <li><strong>Precise Reference</strong>: Add it to a reference slot.</li>
+              <li><strong>Tagger</strong>: Send it directly to the Tagger tab.</li>
+              <li>
+                <strong>Import metadata</strong>: Reapply Prompt, Negative, character data, settings, Seed, potion data, and more to the current screen.
+              </li>
+            </ul>
+
+            <h3>Importing multiple images</h3>
+            <p>
+              When you drop multiple files at once, you can send them in bulk to NovelAI Potion, Precise Reference, or Tagger.
+            </p>
+
+            <h3>When metadata import is useful</h3>
+            <p>
+              If you want to reproduce or reuse an older result, Shift+click an image from history and import only the fields you need.
+            </p>
+          </section>
+
+          <section id="i2i">
+            <h1>Image-to-Image / Inpaint</h1>
+            <p>
+              Use this mode when you want to change an existing image or redraw only a selected area. Once an image is loaded into the canvas, the relevant controls become available.
+            </p>
+            <img src="images/002_EN.png" alt="Mask Tools" class="screenshot" />
+
+            <h3>Basic flow</h3>
+            <ol>
+              <li>Load an image into the canvas.</li>
+              <li>Generate without a mask to run Image-to-Image.</li>
+              <li>Generate with a mask to run Inpaint.</li>
+            </ol>
+
+            <h3>Mask tools</h3>
+            <ul>
+              <li><strong>Brush</strong>: Draw freehand.</li>
+              <li><strong>Rectangle</strong>: Mask a rectangular region.</li>
+              <li><strong>Polyline</strong>: Mask a polygonal area.</li>
+              <li><strong>Right-drag</strong>: Erase the mask.</li>
+            </ul>
+
+            <h3>Common controls</h3>
+            <ul>
+              <li><strong>Strength</strong>: How far the result moves away from the source image.</li>
+              <li><strong>Noise</strong>: How much detail change to add.</li>
+              <li><strong>Brush Size</strong>: The size of the mask brush.</li>
+            </ul>
+
+            <h3>Undo / Redo</h3>
+            <p>
+              Use <span class="kbd">Ctrl + Z</span> / <span class="kbd">Ctrl + Y</span> for mask undo/redo, and <span class="kbd">←</span> / <span class="kbd">→</span> for canvas image undo/redo.
+            </p>
+          </section>
+
+          <section id="upscale">
+            <h1>Simple Upscale</h1>
+            <p>
+              This mode upscales an image currently loaded in the canvas. Once an image is loaded, a button appears below the canvas to switch into Simple Upscale mode.
+            </p>
+            <img
+              src="images/UPSCALE_001_EN.png"
+              alt="Simple Upscale"
+              class="screenshot"
+            />
+
+            <h3>How to use it</h3>
+            <ol>
+              <li>Load the source image into the canvas.</li>
+              <li>Click the Simple Upscale mode button.</li>
+              <li>Choose the upscaler, scale, and strength.</li>
+              <li>Check the output size and tile plan, then run it.</li>
+            </ol>
+
+            <h3>Things to know</h3>
+            <ul>
+              <li>This feature is intended for Opus accounts.</li>
+              <li>Some upscalers require local model files to be present.</li>
+              <li>If stream preview is enabled, you can watch progress while it runs.</li>
+              <li>The result is saved to <code>output/YYYY-MM-DD/</code>.</li>
+            </ul>
+            <div class="note">
+              Upscaled files are saved with a filename beginning with <code>nai_sd_upscale_</code>.
+            </div>
+          </section>
+
+          <section id="batch">
+            <h1>Continuous Generation</h1>
+            <p>
+              Continuous generation lets you run repeated jobs based on a count or time limit. It is also useful when processing queues created from Prompt Search.
+            </p>
+            <img src="images/005_EN.png" alt="Batch Settings" class="screenshot" />
+
+            <h3>Generation modes</h3>
+            <ul>
+              <li><strong>One-time</strong>: Run only once.</li>
+              <li><strong>Count</strong>: Stop after the specified number of images.</li>
+              <li><strong>Time</strong>: Continue until the selected time expires.</li>
+              <li><strong>Until stopped</strong>: Keep going until you stop it manually.</li>
+            </ul>
+
+            <h3>Helper options</h3>
+            <ul>
+              <li><strong>Delay</strong>: Wait time between jobs.</li>
+              <li><strong>Random delay</strong>: Vary the delay slightly each run.</li>
+              <li><strong>Error behavior</strong>: Stop immediately or wait and retry later.</li>
+            </ul>
+
+            <div class="note">
+              Running large batches at very short intervals can increase account risk. Use reasonable delays.
+            </div>
+          </section>
+
+          <section id="vibe">
+            <h1>NovelAI Potion</h1>
+            <p>
+              NovelAI Potion extracts visual mood and style from reference images and applies that influence to generation. You can mix multiple slots together.
+            </p>
+            <img
+              src="images/003_EN.png"
+              alt="NovelAI Potion"
+              class="screenshot"
+            />
+
+            <h3>How to use it</h3>
+            <ol>
+              <li>Open the “NovelAI Potion” section in the left panel.</li>
+              <li>Add images or potion files using the plus button.</li>
+              <li>Adjust reference strength and information extracted.</li>
+              <li>Run generation. If a slot is not mixed yet, the app will mix it automatically first.</li>
+            </ol>
+
+            <h3>What you can do</h3>
+            <ul>
+              <li><strong>Multiple slots</strong>: Turn each slot on or off independently.</li>
+              <li>
+                <strong>Save and load</strong>: Use <code>.naiv4vibe</code> and <code>.naiv4vibeBundle</code> files.
+              </li>
+              <li><strong>Embed into images</strong>: Export an image with bundle data included.</li>
+            </ul>
+          </section>
+
+          <section id="reference">
+            <h1>Precise Reference</h1>
+            <p>
+              Use Precise Reference when you want character design or visual style to stay closer to a reference image. You can add multiple reference images and tune how strongly they affect the result.
+            </p>
+            <img
+              src="images/004_EN.png"
+              alt="Precision Reference"
+              class="screenshot"
+            />
+
+            <h3>How to use it</h3>
+            <ol>
+              <li>Open “Precise Reference” in the left panel.</li>
+              <li>Add one or more reference images.</li>
+              <li>Choose whether to reference character, style, or both.</li>
+              <li>Adjust strength and extraction, then generate.</li>
+            </ol>
+
+            <h3>Notes</h3>
+            <ul>
+              <li>You can compare multiple references side by side.</li>
+              <li>Background preview can be toggled in settings.</li>
+              <li>This feature is mainly intended for v4 model workflows.</li>
+            </ul>
+          </section>
+
+          <section id="tagger">
+            <h1>Tagger</h1>
+            <p>
+              Tagger analyzes an image and suggests prompt tags. It becomes available after Prompt Search has been set up and the required data files have been prepared.
+            </p>
+
+            <h3>How to use it</h3>
+            <ol>
+              <li>Send an image to the Tagger tab from the import dialog or by opening the tab directly.</li>
+              <li>Adjust the threshold and run inference.</li>
+              <li>Review the tag list and select only the tags you want.</li>
+              <li>Add the selected tags, or all visible tags, to your prompt.</li>
+            </ol>
+
+            <h3>What you can do</h3>
+            <ul>
+              <li><strong>Score review</strong>: Check confidence scores before adding tags.</li>
+              <li><strong>Japanese aliases</strong>: Supported tags can also display Japanese aliases.</li>
+              <li><strong>Wiki lookup</strong>: Open the Danbooru wiki with the <code>?</code> button.</li>
+            </ul>
+            <img
+              src="images/TAGGER_001_EN.png"
+              alt="Tagger tab"
+              class="screenshot"
+            />
+            <p class="figure-caption">Tagger tab screen.</p>
+          </section>
+
+          <section id="chunk">
+            <h1>Prompt Chunks</h1>
+            <p>
+              Prompt Chunks let you save reusable parts of your prompts and insert them later as building blocks. They are useful for quality tags, style blocks, recurring character sets, or any other prompt text you use often.
+            </p>
+
+            <h3>First-time setup</h3>
+            <ol>
+              <li>Enable Prompt Chunks in the Settings window.</li>
+              <li>Open the setup wizard.</li>
+              <li>Complete authentication with email/password or the Google login helper.</li>
+              <li>After setup, the Prompt Chunks tab appears in the center panel.</li>
+            </ol>
+
+            <h3>How to use it</h3>
+            <ul>
+              <li><strong>Create</strong>: Make categories and save Prompt Chunks inside them.</li>
+              <li><strong>Insert</strong>: Insert a Prompt Chunk into the current prompt from the list.</li>
+              <li><strong>Refresh</strong>: Pull the latest data again when needed.</li>
+            </ul>
+            <img
+              src="images/PROMPT_CHUNKS_001_EN.png"
+              alt="Prompt Chunks tab"
+              class="screenshot"
+            />
+            <p class="figure-caption">Prompt Chunks tab screen.</p>
+            <img
+              src="images/PROMPT_CHUNKS_SETUP_001_EN.png"
+              alt="Prompt Chunks setup wizard"
+              class="screenshot"
+            />
+            <p class="figure-caption">Prompt Chunks setup wizard.</p>
+          </section>
+
+          <section id="wildcards">
+            <h1>Wildcards</h1>
+            <p>
+              Wildcards insert random elements from prepared lists. They are especially useful for generating variations in hair color, clothing, poses, or backgrounds.
+            </p>
+            <img src="images/006_EN.png" alt="Wildcards Tab" class="screenshot" />
+
+            <h3>Basic syntax</h3>
+            <ul>
+              <li><code>{A|B|C}</code>: Randomly choose one item from the list.</li>
+              <li><code>__name__</code>: Pick one item from a wildcard file.</li>
+              <li><code>__folder/name__</code>: Include a folder path in the wildcard name.</li>
+              <li><code>__file/key__</code>: Target a specific YAML key.</li>
+            </ul>
+
+            <h3>How to use it</h3>
+            <ol>
+              <li>Prepare TXT or YAML files inside your wildcard folder.</li>
+              <li>Open the Wildcards tab to browse them and copy the syntax you need.</li>
+              <li>Paste the wildcard expression into your prompt and generate.</li>
+            </ol>
+
+            <h3>Notes</h3>
+            <ul>
+              <li>TXT files use one candidate per line. Empty lines and <code>#</code> comments are ignored.</li>
+              <li>YAML files are useful when you want to group entries by key.</li>
+              <li>Edit wildcard files with your preferred text editor.</li>
+            </ul>
+          </section>
+
+          <section id="presets">
+            <h1>Presets</h1>
+            <p>
+              Presets let you save and switch shared Prefix / Suffix rules, exclusions, and formatting options. You can access them from the Presets tab and from the preset selector above the prompt.
+            </p>
+            <img
+              src="images/007_EN.png"
+              alt="Preset Settings"
+              class="screenshot"
+            />
+
+            <h3>Main features</h3>
+            <ul>
+              <li><strong>Prefix / Suffix</strong>: Automatically add commonly used tags.</li>
+              <li><strong>Auto exclusion</strong>: Remove unwanted words automatically.</li>
+              <li><strong>Formatting</strong>: Clean duplicates and spacing.</li>
+              <li><strong>Save and switch</strong>: Keep multiple presets for different workflows.</li>
+            </ul>
+            <div class="note">
+              Prefix / Suffix behavior mainly affects Text-to-Image generation.
+            </div>
+          </section>
+
+          <section id="search">
+            <h1>Prompt Search</h1>
+            <p>
+              Prompt Search lets you search the prompt database and send matching results directly into the generation queue.
+            </p>
+
+            <h3>Setup</h3>
+            <p>
+              The first use requires downloading and preparing the search data. Open the setup wizard from <strong>Settings → Search</strong>.
+            </p>
+            <img src="images/008_EN.png" alt="Setup Wizard" class="screenshot" />
+            <p>
+              Once setup is complete and Prompt Search is enabled, the Prompt Search tab appears in the center panel. Tagger becomes available as well.
+            </p>
+
+            <h3>Search flow</h3>
+            <img src="images/009_EN.png" alt="Prompt Search" class="screenshot" />
+            <ol>
+              <li>Set include tags, exclude tags, and rating filters.</li>
+              <li>Review the results.</li>
+              <li>Add the results to the generation queue.</li>
+              <li>Press Generate to process queued prompts in order.</li>
+            </ol>
+
+            <h3>Extra options</h3>
+            <ul>
+              <li><strong>Output filtering</strong>: Helps remove unwanted tags or names.</li>
+              <li>
+                <strong>Prompt Upscaler</strong>:
+                Uses tag inference during queue processing to enrich prompts automatically.
+              </li>
+            </ul>
+          </section>
+
+          <section id="settings">
+            <h1>Settings & Other Features</h1>
+
+            <h3>General</h3>
+            <ul>
+              <li><strong>API key management</strong>: Register, test, and switch active keys.</li>
+              <li><strong>Folders</strong>: Set output and wildcard folders.</li>
+              <li><strong>UI language</strong>: Change the interface language.</li>
+              <li><strong>Other items</strong>: Output format, stream preview, update checks, and more.</li>
+            </ul>
+
+            <h3>Input assistance</h3>
+            <p>
+              Configure tag completion, emphasis highlighting, Japanese completion, auto-comma behavior, and prompt font settings in one place.
+            </p>
+            <img
+              src="images/010_EN.png"
+              alt="Input Assistance"
+              class="screenshot"
+            />
+
+            <h3>Eagle integration</h3>
+            <p>
+              If you use Eagle, you can send generated images manually or automatically. Prompt and metadata can also be converted into Eagle tags.
+            </p>
+            <img
+              src="images/011_EN.png"
+              alt="Eagle Integration"
+              class="screenshot"
+            />
+
+            <h3>History & image actions</h3>
+            <ul>
+              <li><strong>Normal click</strong>: Load the history image into the canvas.</li>
+              <li><strong>Shift+click</strong>: Open the import dialog.</li>
+              <li>
+                <strong>Right-click</strong>: Save As, Copy, send to Eagle, open the folder, or import the image again.
+              </li>
+            </ul>
+
+            <h3>Search / Prompt Chunks / Others</h3>
+            <ul>
+              <li><strong>Search</strong>: Enable Prompt Search and review setup status.</li>
+              <li><strong>Prompt Chunks</strong>: Enable Prompt Chunks, check authentication status, and reopen setup.</li>
+              <li><strong>Others</strong>: Configure logging and storage limits.</li>
+            </ul>
+
+            <h3>Settings gallery</h3>
+            <div class="gallery">
+              <div>
+                <h4>General</h4>
+                <img src="images/012_EN.png" alt="General" />
+              </div>
+              <div>
+                <h4>Input Assistance</h4>
+                <img src="images/013_EN.png" alt="Input Assistance" />
+              </div>
+              <div>
+                <h4>Search</h4>
+                <img src="images/014_EN.png" alt="Search Settings" />
+              </div>
+              <div>
+                <h4>Others</h4>
+                <img src="images/015_EN.png" alt="Other Settings" />
+              </div>
+              <div>
+                <h4>Prompt Chunks</h4>
+                <img
+                  src="images/SETTINGS_CHUNKS_001_EN.png"
+                  alt="Prompt Chunks settings"
+                />
+              </div>
+            </div>
+          </section>
+
+          <section id="shortcuts">
+            <h1>Shortcuts</h1>
+            <p>
+              Here is a list of commonly used shortcuts. You can also review them from the “Shortcuts” menu inside the app.
+            </p>
+            <img
+              src="images/SHORTCUTS_001_EN.png"
+              alt="Shortcut List"
+              class="screenshot"
+            />
+
+            <h3>Generation</h3>
+            <ul>
+              <li><span class="kbd">Ctrl + Enter</span>: Start generation</li>
+              <li><span class="kbd">Ctrl + Alt + Enter</span>: Generate once</li>
+              <li>
+                <span class="kbd">Ctrl + Shift + Enter</span>: Start continuous generation
+              </li>
+            </ul>
+
+            <h3>Canvas / Mask</h3>
+            <ul>
+              <li><span class="kbd">←</span>: Canvas image Undo</li>
+              <li><span class="kbd">→</span>: Canvas image Redo</li>
+              <li><span class="kbd">Ctrl + Z</span>: Mask Undo</li>
+              <li><span class="kbd">Ctrl + Y</span>: Mask Redo</li>
+            </ul>
+
+            <h3>Prompt editing</h3>
+            <ul>
+              <li><span class="kbd">Ctrl + /</span>: Toggle comment</li>
+              <li><span class="kbd">Ctrl + ↑</span>: Increase emphasis</li>
+              <li><span class="kbd">Ctrl + ↓</span>: Decrease emphasis</li>
+              <li><span class="kbd">Shift + Enter</span>: Insert a blank line below</li>
+              <li><span class="kbd">Ctrl + P</span>: Prompt Chunk completion / insertion helper</li>
+            </ul>
+
+            <h3>Image file actions</h3>
+            <ul>
+              <li><span class="kbd">Ctrl + O</span>: Open image</li>
+              <li><span class="kbd">Ctrl + S</span>: Save As</li>
+              <li><span class="kbd">Ctrl + C</span>: Copy image</li>
+              <li><span class="kbd">Ctrl + E</span>: Send to Eagle</li>
+              <li><span class="kbd">Ctrl + Shift + E</span>: Open containing folder</li>
+            </ul>
+          </section>
+
+          <br /><br /><br />
+          <footer
+            style="
+              border-top: 1px solid #414868;
+              padding-top: 20px;
+              color: #565f89;
+              text-align: center;
+            "
+          >
+            &copy; 2026 NAI Smart Studio Project
+          </footer>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const sections = document.querySelectorAll("section");
+      const navLi = document.querySelectorAll(".nav-links li a");
+      const scrollContainer = document.querySelector(".content-scroll");
+
+      scrollContainer.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (scrollContainer.scrollTop >= sectionTop - 150) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLi.forEach((a) => {
+          a.classList.remove("active");
+          if (a.getAttribute("href").includes(current) && current !== "") {
+            a.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

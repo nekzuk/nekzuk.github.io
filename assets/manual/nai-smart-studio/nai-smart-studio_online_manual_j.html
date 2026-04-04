@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Sidebar Navigation -->
     <nav class="sidebar">
       <div class="sidebar-header">
         NAI Smart Studio <br />
@@ -23,7 +22,9 @@
         <li><a href="#batch">連続生成</a></li>
         <li><a href="#vibe">NovelAIポーション</a></li>
         <li><a href="#reference">精密参照</a></li>
-        <li><a href="#wildcards">Wildcards（ランダム要素）</a></li>
+        <li><a href="#tagger">Tagger</a></li>
+        <li><a href="#chunk">プロンプトチャンク</a></li>
+        <li><a href="#wildcards">Wildcards</a></li>
         <li><a href="#presets">プリセット</a></li>
         <li><a href="#search">プロンプト検索</a></li>
         <li><a href="#settings">設定・その他機能</a></li>
@@ -39,53 +40,64 @@
       </div>
     </nav>
 
-    <!-- Main Content Area -->
     <main class="main-content">
-      <header class="top-bar">v1.0 ドキュメント</header>
+      <header class="top-bar">
+        <div class="top-bar-inner">
+          <span class="doc-version">v1.10 ドキュメント</span>
+          <div class="language-switch">
+            <a href="nai-smart-studio_online_manual.html">English</a>
+            <span class="divider">/</span>
+            <a href="nai-smart-studio_online_manual_j.html" class="current"
+              >日本語</a
+            >
+          </div>
+        </div>
+      </header>
 
       <div class="content-scroll">
         <div class="content-wrapper">
           <section id="intro">
             <h1>はじめに</h1>
             <p>
-              NAI Smart
-              Studioは、NovelAIでの画像生成をより快適に行うためのツールです。
-              Text-to-Image / Image-to-Image / Inpaint
-              に加え、ワイルドカード、プロンプト検索、連続生成、かんたんアップスケールなど、公式UIにはない便利な機能を提供します。
+              NAI Smart Studio は、NovelAI の画像生成を 1 画面で扱いやすくするためのデスクトップツールです。
+              Text-to-Image / Image-to-Image / Inpaint に加えて、Wildcards、プロンプト検索、Tagger、プロンプトチャンク、連続生成、NovelAIポーション、精密参照、Eagle 連携などをまとめて利用できます。
             </p>
             <div class="note">
-              <strong>注意:</strong> 基本的な生成パラメータ（Steps, Scale,
-              Samplerなど）や、NovelAI自体の標準機能については、<a
+              <strong>注意:</strong>
+              Steps、Scale、Sampler などの基本パラメータや NovelAI 本体の標準仕様については
+              <a
                 href="https://docs.novelai.net/"
                 target="_blank"
-                style="color: var(--accent-color)"
+                rel="noopener noreferrer"
                 >NovelAI公式ドキュメント</a
-              >をご参照ください。本マニュアルでは、本ツール独自の機能を中心に解説します。
+              >
+              もあわせてご確認ください。このページでは、NAI Smart Studio 側で使える機能と操作を中心に紹介します。
             </div>
 
             <h3>画面構成</h3>
-            <p>画面は3つのエリアに分かれています。</p>
+            <p>画面は大きく 3 つのエリアに分かれています。</p>
             <ul>
               <li>
                 <strong>左パネル</strong>:
-                プロンプトやパラメーターの設定パネル（横幅の調整が可能です）。
+                Prompt / Negative、キャラクタープロンプト、生成パラメータ、連続生成、NovelAIポーション、精密参照などをまとめて設定します。
               </li>
               <li>
-                <strong>中央パネル</strong>: Canvas（キャンバス）と各種タブ
+                <strong>中央パネル</strong>:
+                Canvas を中心に、Wildcards、プリセット、Prompt Search、Tagger、プロンプトチャンク などのタブを切り替えて使います。
               </li>
               <li>
                 <strong>右パネル</strong>:
-                生成履歴パネル（表示/非表示の切り替えが可能です）
+                保存済み画像の履歴です。通常クリックでキャンバスに読み込み、Shift+クリックでインポート、右クリックで保存や Eagle 送信などを行えます。
               </li>
             </ul>
             <img src="images/000.png" alt="Main UI" class="screenshot" />
+            <p class="figure-caption">画面レイアウトのイメージです。</p>
           </section>
 
           <section id="setup">
             <h1>初回セットアップ</h1>
             <p>
-              本ツールを使用するには、NovelAIのAPIキーが必要です。
-              初回起動時にAPIキーが設定されていない場合、設定を促すダイアログが表示されます。
+              初回起動時は、まず NovelAI の API キーを登録します。API キーが未設定の場合はチュートリアルや設定画面から入力できます。
             </p>
             <img
               src="images/API_001.png"
@@ -99,15 +111,14 @@
                 <a
                   href="https://novelai.net/"
                   target="_blank"
-                  style="color: var(--accent-color)"
+                  rel="noopener noreferrer"
                   >NovelAI公式サイト</a
-                >にログインします。
+                >
+                にログインします。
               </li>
+              <li>右上のアカウントメニューから「アカウント設定」を開きます。</li>
               <li>
-                右上のアカウントメニューから「アカウント設定」を開きます。
-              </li>
-              <li>
-                「アカウント」タブ内の「永続的APIトークンを取得」から、APIキーを取得・コピーします。
+                「永続的APIトークンを取得」から API キーをコピーします。
               </li>
             </ol>
             <img
@@ -115,142 +126,132 @@
               alt="API Key Settings"
               class="screenshot"
             />
-            <h3>APIキーの登録</h3>
+
+            <h3>登録しておくと便利な項目</h3>
             <p>
-              初回起動時はチュートリアルに沿えば自動的に設定画面が開かれるため、「一般」タブでAPIキーを登録します。
+              API キーの登録後は、<strong>ファイル → 設定</strong> の「一般」タブで次の項目も確認しておくとスムーズです。
             </p>
+            <ul>
+              <li><strong>APIキー管理</strong>: 複数アカウントを登録して切り替えできます。</li>
+              <li><strong>出力先フォルダ</strong>: 生成画像の保存場所を変更できます。</li>
+              <li><strong>Wildcardフォルダ</strong>: Wildcards で使うファイルの参照先です。</li>
+              <li><strong>UI言語</strong>: 日本語 / English などに切り替えられます。</li>
+            </ul>
             <img
               src="images/API_003.png"
               alt="API Key Registration"
               class="screenshot"
             />
             <div class="note">
-              複数のNovelAIアカウントを持っている場合、複数のAPIキーを登録して切り替えることができます。
+              設定画面では API キーの接続確認、出力形式の選択、起動時の更新確認なども行えます。
             </div>
           </section>
 
           <section id="basic">
             <h1>画像生成の基本</h1>
             <p>
-              左パネルにプロンプトと各種パラメーターを設定し、「生成」ボタンをクリックすると画像が生成されます。
+              左パネルで Prompt と各種設定を決めて、「生成」を押すと画像が作成されます。通常生成は <span class="kbd">Ctrl + Enter</span>、1回だけ生成したい場合は <span class="kbd">Ctrl + Alt + Enter</span> も使えます。
             </p>
             <img src="images/001.png" alt="Side bar" class="screenshot" />
-            <h3>プロンプト入力</h3>
+
+            <h3>Prompt / Negative</h3>
             <ul>
+              <li><strong>Prompt</strong>: 作りたい内容を入力します。</li>
+              <li><strong>Negative</strong>: 出したくない要素を入力します。</li>
               <li>
-                <strong>メインプロンプト</strong>:
-                生成したい画像の内容を記述します。
-              </li>
-              <li>
-                <strong>ネガティブプロンプト</strong>:
-                生成から除外したい要素を記述します。
+                <strong>詳細</strong>: タグの確認や整理に使えます。プロンプトの量は右下のトークン表示でも確認できます。
               </li>
             </ul>
 
             <h3>キャラクタープロンプト</h3>
             <p>
-              複数のキャラクターを描く場合、「キャラクターを追加」ボタンから個別のプロンプト欄を追加できます。<br />
-              これにより、各キャラクターの特徴を分けて指定できます。
+              「キャラクターを追加」から、キャラクターごとの Prompt / Negative を分けて入力できます。複数人を描き分けたいときに便利です。
             </p>
 
-            <h3>基本パラメーター設定</h3>
+            <h3>基本パラメータ</h3>
             <p>
-              「解像度テンプレート」から定番サイズを選択するか、幅・高さを個別に指定できます。
-              <br />手動でも調整可能な他、ステップ数、CFGスケール、サンプラーやモデルなど、基本的なパラメーターが設定可能です。
+              解像度テンプレート、幅・高さ、Steps、CFG、Seed、Sampler、Model など、普段の生成設定は左パネルにまとまっています。よく使う値がある場合は、そのまま保存され次回起動時にも引き継がれます。
             </p>
 
             <h3>生成コスト表示</h3>
             <p>
-              生成ボタンの右側に、推定Anlasコストが表示されます。
-              解像度やステップ数によってコストが変動します。<br />
+              生成ボタンの右側には、現在の設定での推定 Anlas コストが表示されます。モデルやサイズ、Steps を変えると自動で更新されます。
             </p>
           </section>
 
           <section id="import">
             <h1>画像インポート</h1>
             <p>
-              キャンバスに画像ファイルをドラッグ＆ドロップ、もしくは右パネルの履歴から画像を「Shift
-              + クリック」で選ぶことで<br />
-              画像インポートウィンドウが表示されます。
+              画像ファイルはドラッグ＆ドロップ、<span class="kbd">Ctrl + O</span>、履歴からの Shift+クリック、画像の右クリックメニューの「インポート」から取り込めます。
             </p>
             <img
               src="images/IMPORT_001.png"
-              alt="Mask Tools"
+              alt="Import Dialog"
               class="screenshot"
             />
-            <p>
-              画像インポートウィンドウでは画像をどこにセットするか選択できます。
-            </p>
+
+            <h3>単一画像を取り込む</h3>
+            <p>単一画像のインポートでは、次のような使い分けができます。</p>
             <ul>
+              <li><strong>Image-to-Image / Inpaint</strong>: 画像をキャンバスに読み込みます。</li>
+              <li><strong>NovelAIポーション</strong>: ポーション用スロットに画像を追加します。</li>
+              <li><strong>精密参照</strong>: 精密参照スロットに画像を追加します。</li>
+              <li><strong>Tagger</strong>: 画像を Tagger タブに送り、タグ推論に使います。</li>
               <li>
-                <strong>Image to image / inpaint</strong>:
-                画像をキャンパスにセットします。
-              </li>
-              <li>
-                <strong>NovelAI ポーション</strong>: 画像をNovelAI
-                ポーションタブにセットします。
-              </li>
-              <li>
-                <strong>精密参照</strong>: 画像を精密参照タブにセットします。
-              </li>
-              <li>
-                <strong>メタデータをインポート</strong>:
-                画像のメタデータをインポートします（インポートする情報は選択可能）。
+                <strong>メタデータをインポート</strong>: Prompt、Negative、キャラクター、生成設定、Seed、ポーション情報などを今の画面に反映できます。
               </li>
             </ul>
+
+            <h3>複数画像をまとめて取り込む</h3>
             <p>
-              右パネルの履歴から画像を通常選択した場合は「Image to image /
-              inpaint (画像をキャンパスにセット)」になります。
+              複数画像を一度にドロップした場合は、まとめて NovelAIポーション、精密参照、Tagger に送れます。参照画像を一気に用意したいときに便利です。
+            </p>
+
+            <h3>メタデータ取り込みの使いどころ</h3>
+            <p>
+              過去画像の再現や流用をしたいときは、履歴から Shift+クリックしてメタデータを取り込むのが便利です。必要な項目だけを選んで反映できます。
             </p>
           </section>
 
           <section id="i2i">
             <h1>Image-to-Image / Inpaint</h1>
             <p>
-              既存の画像を元に新しい画像を生成したり、画像の一部だけを描き直す機能です。
+              既存画像をベースに変化を付けたり、一部だけ描き直したいときに使います。キャンバスに画像を読み込むと、このモード向けの操作が使えるようになります。
             </p>
             <img src="images/002.png" alt="Mask Tools" class="screenshot" />
-            <h3>Inpaint（部分修正）</h3>
-            <p>
-              画像の一部だけを描き直したい場合は、マスクを描画します。
-              青く塗られた部分だけが再生成されます。<br />左ドラック：マスク描画、右ドラッグ：マスク消去
-            </p>
+
+            <h3>基本の流れ</h3>
+            <ol>
+              <li>画像をキャンバスに読み込みます。</li>
+              <li>そのまま生成すると Image-to-Image として動作します。</li>
+              <li>マスクを描いた状態で生成すると Inpaint になります。</li>
+            </ol>
+
+            <h3>マスク操作</h3>
             <ul>
-              <li><strong>ブラシ</strong>: フリーハンドでマスクを描画</li>
-              <li><strong>長方形</strong>: 矩形範囲を選択</li>
-              <li><strong>折れ線</strong>: 多角形範囲を選択</li>
+              <li><strong>ブラシ</strong>: フリーハンドで塗れます。</li>
+              <li><strong>長方形</strong>: 四角い範囲を一度に指定できます。</li>
+              <li><strong>折れ線</strong>: 多角形の範囲を指定できます。</li>
+              <li><strong>右ドラッグ</strong>: 塗ったマスクを消せます。</li>
             </ul>
 
-            <h3>Strength（強度）</h3>
-            <p>
-              元画像からどれだけ変化させるかを調整します。
-              値が大きいほど元画像から離れた結果になります。
-            </p>
+            <h3>よく使う調整項目</h3>
             <ul>
-              <li><strong>1.0</strong>: 完全に新しく生成（マスク部分）</li>
-              <li><strong>0.0</strong>: ほぼ元画像のまま</li>
-            </ul>
-
-            <h3>Noise</h3>
-            <p>AIが画像にディテールを追加する程度。</p>
-            <ul>
-              <li><strong>1.0</strong>: 元画像にディティールを追加する</li>
-              <li><strong>0.0</strong>: 元画像のディティールを維持する</li>
+              <li><strong>Strength</strong>: 元画像からどれだけ離れるかを調整します。</li>
+              <li><strong>Noise</strong>: 細部の変化量を調整します。</li>
+              <li><strong>Brush Size</strong>: マスク描画の太さを変えられます。</li>
             </ul>
 
             <h3>Undo / Redo</h3>
             <p>
-              生成結果を元に戻したい場合は「←
-              Undo」ボタンで直前の画像に戻れます。「→
-              Redo」で取り消した操作をやり直せます。
+              マスクのやり直しは <span class="kbd">Ctrl + Z</span> / <span class="kbd">Ctrl + Y</span>、キャンバス画像の戻し・やり直しは <span class="kbd">←</span> / <span class="kbd">→</span> です。
             </p>
           </section>
 
           <section id="upscale">
-            <h1>かんたんアップスケール（Opus専用）</h1>
+            <h1>かんたんアップスケール</h1>
             <p>
-              画像を高解像度化する専用モードです。NovelAI標準のアップスケールと比べて、<strong>元画像の雰囲気を保ちやすい</strong>ことを重視しています。<br />
-              また、Opusユーザー向けの動作に最適化されており、通常利用範囲では<strong>追加Anlas消費ゼロ</strong>でアップスケールできます。
+              キャンバスに読み込んだ画像を高解像度化するモードです。画像を読み込むと、中央下部に「かんたんアップスケール」への切り替えボタンが表示されます。
             </p>
             <img
               src="images/UPSCALE_001.png"
@@ -260,319 +261,282 @@
 
             <h3>使い方</h3>
             <ol>
-              <li>Canvasに画像を読み込みます（履歴クリックでも可）。</li>
-              <li>
-                中央下部の「かんたんアップスケール」を押してモードを切り替えます。
-              </li>
+              <li>アップスケールしたい画像をキャンバスに読み込みます。</li>
+              <li>「かんたんアップスケール」を押してモードを切り替えます。</li>
               <li>アップスケーラー、倍率、強度を調整します。</li>
-              <li>「生成」ボタンでアップスケールを実行します。</li>
+              <li>情報欄で出力サイズや分割数を確認してから実行します。</li>
             </ol>
-            <p>
-              出力画像は通常生成と同じく
-              <code>output/YYYY-MM-DD/</code> に保存されます。
-            </p>
+
+            <h3>覚えておきたいポイント</h3>
+            <ul>
+              <li>Opus アカウント向けの機能です。</li>
+              <li>選んだアップスケーラーによっては、ローカルモデルが必要です。</li>
+              <li>処理中プレビューが有効なら、進行中の見た目も確認できます。</li>
+              <li>
+                保存先は通常生成と同じ <code>output/YYYY-MM-DD/</code> です。
+              </li>
+            </ul>
             <div class="note">
-              画像ファイル名は
-              <code>nai_sd_upscale_YYYYMMDD_HHMMSS.png</code>
-              形式で保存されます。
+              ファイル名は <code>nai_sd_upscale_日時</code> 形式で保存されます。
             </div>
           </section>
 
           <section id="batch">
             <h1>連続生成</h1>
             <p>
-              自動で大量の画像を生成するための機能です。枚数指定のほか、時間指定などにも対応しています。<br />
-              左パネル「連続生成」セクションから設定します。
+              連続生成では、指定枚数や指定時間に合わせて自動で生成を続けられます。Prompt Search のキューを消化したいときにも便利です。
             </p>
             <img src="images/005.png" alt="Batch Settings" class="screenshot" />
+
             <h3>生成モード</h3>
             <ul>
-              <li>
-                <strong>枚数指定</strong>: 指定した枚数（例:
-                100枚）を生成して終了します。
-              </li>
-              <li>
-                <strong>時間指定</strong>: 指定した時間（例:
-                60分）が経過するまで生成し続けます。
-              </li>
-              <li>
-                <strong>中断するまで</strong>:
-                停止ボタンを押すまで無限に生成します。
-              </li>
-              <div class="note">
-                ※短期間に大量の画像生成を行うこと、短い遅延時間で連続生成することはアカウント制限やBANのリスクがあります。
-                <br />　使用においては十分な待機時間を設定し、上記リスクを認識の上でご使用ください。
-              </div>
+              <li><strong>1回だけ</strong>: その場で 1 回だけ生成します。</li>
+              <li><strong>枚数指定</strong>: 指定枚数に達するまで生成します。</li>
+              <li><strong>時間指定</strong>: 指定時間が終わるまで生成します。</li>
+              <li><strong>中断するまで</strong>: 停止するまで生成し続けます。</li>
             </ul>
+
+            <h3>補助設定</h3>
+            <ul>
+              <li><strong>遅延時間</strong>: 1 枚ごとの待機時間です。</li>
+              <li><strong>ランダム遅延</strong>: 毎回少しずつ待機時間をずらせます。</li>
+              <li><strong>エラー時の動作</strong>: 停止するか、待機して再開するかを選べます。</li>
+            </ul>
+
+            <div class="note">
+              短い間隔で大量生成を続けると、アカウント制限のリスクがあります。十分な待機時間を設けてご利用ください。
+            </div>
           </section>
 
           <section id="vibe">
             <h1>NovelAIポーション</h1>
             <p>
-              参照画像から「雰囲気」「画風」「構図」を抽出して生成画像に適用します。
-              NovelAI v3～V4.5モデルで使用できます。
+              参照画像から雰囲気や画風の要素を取り込み、生成結果に反映させる機能です。複数スロットを使って混ぜることもできます。
             </p>
             <img
               src="images/003.png"
-              alt="NovelAI Portion"
+              alt="NovelAI Potion"
               class="screenshot"
             />
+
             <h3>使い方</h3>
             <ol>
-              <li>左パネルの「NovelAIポーション」セクションを開きます。</li>
-              <li>
-                「＋」ボタンをクリックして画像やポーションを追加します（複数追加可能）。
-              </li>
+              <li>左パネルの「NovelAIポーション」を開きます。</li>
+              <li>「＋」から画像やポーションファイルを追加します。</li>
               <li>参照強度と情報抽出度を調整します。</li>
-              <li>
-                その後、生成ボタンを押します（スロット上の「調合」ボタンを押してない場合、自動で調合が行われます）
-              </li>
+              <li>生成を実行します。未調合なら自動で調合してから進みます。</li>
             </ol>
 
-            <h3>パラメーター</h3>
+            <h3>できること</h3>
             <ul>
+              <li><strong>複数スロット</strong>: 画像ごとに ON / OFF を切り替えられます。</li>
               <li>
-                <strong>参照強度 (Reference Strength)</strong>:
-                参照画像の影響度合い。高いほど参照に近づきます。
+                <strong>保存と読込</strong>: <code>.naiv4vibe</code> / <code>.naiv4vibeBundle</code> を保存・読込できます。
               </li>
-              <li>
-                <strong>情報抽出度 (Information Extracted)</strong>:
-                参照から抽出する情報量。高いほど詳細を取り込みます。
-              </li>
-            </ul>
-
-            <h3>ポーションセット</h3>
-            <p>
-              よく使う参照画像の組み合わせはセットとして保存できます。保存したセットは後から読み込んで再利用できます。
-            </p>
-            <ul>
-              <li>
-                <strong>.naiv4vibe / .naiv4vibeBundle</strong>:
-                ポーションセットの保存・読み込みに対応
-              </li>
-              <li>
-                <strong>画像へのBundle埋め込み</strong>:
-                画像ファイルへポーション情報を含めて保存可能
-              </li>
+              <li><strong>画像への埋め込み</strong>: Bundle 情報を含めた画像として書き出せます。</li>
             </ul>
           </section>
 
           <section id="reference">
             <h1>精密参照</h1>
             <p>
-              キャラクターのデザインやスタイルを固定・参照させます。キャラ参照機能から拡張された機能です。
-              ※v4～V4.5のモデルでのみ使用できます。
+              キャラクターデザインや絵柄をより強く寄せたいときに使います。複数の参照画像を追加でき、参照の種類も切り替えられます。
             </p>
             <img
               src="images/004.png"
-              alt="NovelAI reference"
+              alt="Precision Reference"
               class="screenshot"
             />
+
             <h3>使い方</h3>
             <ol>
-              <li>左パネルの「精密参照」セクションを開きます。</li>
-              <li>
-                「＋」ボタンをクリックして参照画像を追加します（複数追加可能）。
-              </li>
-              <li>
-                キャラクター / 絵柄 /
-                キャラクターと絵柄のどれを参照するか選択します。
-              </li>
-              <li>参照強度と情報抽出度を調整します。</li>
-              <li>設定後、生成ボタンを押します。</li>
+              <li>左パネルの「精密参照」を開きます。</li>
+              <li>「＋」から参照画像を追加します。</li>
+              <li>キャラクター / 絵柄 / 両方のどれを参照するか選びます。</li>
+              <li>強度と抽出度を調整して生成します。</li>
             </ol>
 
-            <h3>パラメーター</h3>
+            <h3>補足</h3>
             <ul>
-              <li>
-                <strong>強度 (Strength)</strong>: 参照画像の視覚的要素を、AI
-                がどれだけ強く再現しようとするかをコントロールします。
-              </li>
-              <li>
-                <strong>抽出度 (Extracted)</strong>: 0
-                のときは旧バージョンの挙動（スタイルや全体構図に対してやや柔軟）になり、1
-                に近づけるほど新しい挙動（キャラクターのディテールがより出やすい）になります。
-              </li>
+              <li>複数画像を並べて比較しながら設定できます。</li>
+              <li>背景プレビューは設定で ON / OFF を切り替えられます。</li>
+              <li>主に v4 系モデル向けの機能です。</li>
             </ul>
+          </section>
+
+          <section id="tagger">
+            <h1>Tagger</h1>
+            <p>
+              画像からタグ候補を自動抽出して、Prompt 作成を補助するタブです。Prompt Search のセットアップが完了すると利用できるようになります。
+            </p>
+
+            <h3>使い方</h3>
+            <ol>
+              <li>画像を Tagger タブに送ります。インポートダイアログからも直接送れます。</li>
+              <li>しきい値を調整してタグ推論を実行します。</li>
+              <li>候補一覧を確認し、必要なタグだけ選択します。</li>
+              <li>「選択を追加」または「すべて追加」で Prompt に反映します。</li>
+            </ol>
+
+            <h3>できること</h3>
+            <ul>
+              <li><strong>スコア確認</strong>: 各タグの推定スコアを見ながら絞り込めます。</li>
+              <li><strong>日本語別名表示</strong>: 対応タグは日本語別名も確認できます。</li>
+              <li><strong>Wiki参照</strong>: <code>?</code> ボタンから Danbooru Wiki を開けます。</li>
+            </ul>
+            <img
+              src="images/TAGGER_001.png"
+              alt="Tagger タブ"
+              class="screenshot"
+            />
+            <p class="figure-caption">Tagger タブの画面です。</p>
+          </section>
+
+          <section id="chunk">
+            <h1>プロンプトチャンク</h1>
+            <p>
+              よく使うプロンプト片を保存して、必要なときに呼び出せる機能です。頻繁に使う品質タグや作風、共通フレーズを「部品」としてまとめておきたいときに便利です。
+            </p>
+
+            <h3>最初の準備</h3>
+            <ol>
+              <li>「設定」の「プロンプトチャンク」で機能を有効にします。</li>
+              <li>セットアップウィザードを開きます。</li>
+              <li>メール / パスワードまたは Google ログイン補助を使って認証します。</li>
+              <li>完了すると中央タブに「プロンプトチャンク」が表示されます。</li>
+            </ol>
+
+            <h3>使い方</h3>
+            <ul>
+              <li><strong>登録</strong>: カテゴリを作り、その中にプロンプトチャンクを保存します。</li>
+              <li><strong>挿入</strong>: 一覧から選んで Prompt に挿入します。</li>
+              <li><strong>更新</strong>: 必要に応じてサーバー側の内容を取得し直せます。</li>
+            </ul>
+            <img
+              src="images/PROMPT_CHUNKS_001.png"
+              alt="プロンプトチャンクタブ"
+              class="screenshot"
+            />
+            <p class="figure-caption">プロンプトチャンクタブの画面です。</p>
+            <img
+              src="images/PROMPT_CHUNKS_SETUP_001.png"
+              alt="プロンプトチャンクセットアップ"
+              class="screenshot"
+            />
+            <p class="figure-caption">プロンプトチャンクのセットアップ画面です。</p>
           </section>
 
           <section id="wildcards">
             <h1>Wildcards（ランダム要素）</h1>
             <p>
-              指定した単語リストからランダムに1つを選んでプロンプトに挿入する機能です。<br />
-              髪の色、服装、背景などをランダム化して、バリエーション豊かな生成ができます。
-              TXT / YAMLの2種のファイルに対応しています
+              指定した候補の中からランダムで単語を挿入できる機能です。髪色、服装、背景、ポーズの差分をまとめて作るときに便利です。
             </p>
             <img src="images/006.png" alt="Wildcards Tab" class="screenshot" />
-            <h3>基本の文法</h3>
+
+            <h3>基本の書き方</h3>
             <ul>
-              <li>{A|B|C}: 候補の中から1つをランダムに選択</li>
-              <li>__name__: Wildcard ファイル から1つをランダムに選択</li>
-              <li>以下の拡張構文は現バージョンでは非対応になります</li>
-              <ul>
-                <li>重み指定 {0.5::red|0.1::white|0.2::black}</li>
-                <li>複数選択 {2$$cat|dog|bird` や 範囲 {1-2$$cat|dog}</li>
-                <li>変数 ${name=...} など</li>
-              </ul>
+              <li><code>{A|B|C}</code>: 候補の中から 1 つをランダムに選びます。</li>
+              <li><code>__name__</code>: Wildcard ファイルから 1 つを選びます。</li>
+              <li><code>__folder/name__</code>: フォルダを含めて指定できます。</li>
+              <li><code>__file/key__</code>: YAML ファイルのキーを指定できます。</li>
             </ul>
-            <h3>基本の使い方</h3>
+
+            <h3>使い方</h3>
             <ol>
-              <li>
-                <strong>ファイルの用意</strong>:
-                wildcardsフォルダー内にTXTかYAMLのワイルドカードファイルを用意します
-              </li>
-              <li>
-                <strong>プロンプトへの記述</strong>:
-                使用したいワイルドカードを選び、「構文をコピー」ボタンを押します
-              </li>
-              <li>
-                <strong>生成</strong>:
-                プロンプトにコピーしたものを貼り付けます。生成実行時に__name__
-                の部分がランダムな要素に置き換えられます
-              </li>
+              <li>Wildcard フォルダに TXT または YAML ファイルを用意します。</li>
+              <li>中央の Wildcards タブで内容を確認し、構文をコピーします。</li>
+              <li>Prompt に貼り付けて生成します。</li>
             </ol>
 
-            <h4>Wildcards：TXT文法</h4>
+            <h3>補足</h3>
             <ul>
-              <li>TXTのワイルドカードファイル は 1行=1候補 です</li>
-              <li>空行と # で始まる行は無視されます</li>
+              <li>TXT は 1 行 1 候補です。空行と <code>#</code> 行は無視されます。</li>
+              <li>YAML ではキーごとに候補を分けて管理できます。</li>
+              <li>ファイルの編集は別途テキストエディタで行ってください。</li>
             </ul>
-            <h4>Wildcards：YAML文法</h4>
-            <ul>
-              <li>
-                YAMLのワイルドカードファイルは key: list 形式で階層化できます
-              </li>
-              <li>詳しくはサンプルのyamlファイルを参照ください</li>
-            </ul>
-            <div class="note">
-              中央パネルの「Wildcards」タブから、既存ファイルの内容確認ができます
-              （ファイル編集は後日アップデートで対応予定です）。
-            </div>
           </section>
 
           <section id="presets">
             <h1>プリセット</h1>
             <p>
-              よく使う共通プロンプトや除外タグをテンプレートとして管理する機能です。
-              中央パネルの「プリセット」タブからアクセスできます。
+              よく使う Prefix / Suffix や除外ルール、整形ルールを保存して切り替える機能です。中央の「プリセット」タブと、Prompt 上部のプリセット選択から利用できます。
             </p>
-            <h3>主な機能</h3>
-            <ul>
-              <li>
-                <strong>先頭/末尾タグ (Prefix/Suffix)</strong>:
-                すべての生成プロンプトの先頭または末尾に、指定したテキストを自動挿入します。<br />
-                例: 画質タグ（<code>masterpiece, best quality</code
-                >）を常に末尾につける、など。
-              </li>
-              <li>
-                <strong>自動除外 (Exclusion)</strong>:
-                プロンプトに特定の単語が含まれていた場合、生成時に自動的に削除します。
-              </li>
-              <li>
-                <strong>プロンプト整形・整理</strong>:
-                重複削除やスペース削除などの整形が自動で行われます
-              </li>
-              <li>
-                <strong>プリセット保存</strong>:
-                上記の設定を名前付きで保存し、切り替えて使用できます。
-              </li>
-            </ul>
             <img
               src="images/007.png"
-              alt="Advanced Prompt Settings"
+              alt="Preset Settings"
               class="screenshot"
             />
+
+            <h3>主な機能</h3>
+            <ul>
+              <li><strong>Prefix / Suffix</strong>: よく使うタグを自動で付けられます。</li>
+              <li><strong>自動除外</strong>: 指定した単語を自動で取り除けます。</li>
+              <li><strong>整形</strong>: 重複整理や余分なスペース整理をまとめて行えます。</li>
+              <li><strong>保存と切替</strong>: 用途別に複数のプリセットを登録できます。</li>
+            </ul>
+            <div class="note">
+              プリセットの Prefix / Suffix は主に Text-to-Image 生成時に反映されます。
+            </div>
           </section>
 
           <section id="search">
             <h1>プロンプト検索</h1>
             <p>
-              プロンプトデータベースから関連するプロンプトサンプルを検索し、生成キューへ直接投入できる機能です。
+              プロンプトデータベースを検索して、ヒットした結果を生成キューへ送れる機能です。複数の候補をまとめて試したいときに向いています。
             </p>
 
             <h3>セットアップ</h3>
             <p>
-              初回使用時は、検索用データベースの構築が必要です。<br />
-              「設定」→「検索(Search)」セクションの「セットアップウィザードを起動」をクリックしてください。<br />
-              ※7.6GBのダウンロードが必要のため、時間に余裕のあるときに実施ください。
+              初回利用時は、検索データのダウンロードとセットアップが必要です。「設定」→「検索」からセットアップウィザードを起動してください。
             </p>
             <img src="images/008.png" alt="Setup Wizard" class="screenshot" />
             <p>
-              自動的にデータをダウンロードし、インデックスを作成します。完了後、プロンプト検索を有効にすると、中央パネルに「プロンプト検索」タブが表示されます。
+              セットアップが完了して Prompt Search を有効にすると、中央タブに「プロンプト検索」が表示されます。Tagger もあわせて使えるようになります。
             </p>
-            <h3>検索の実行</h3>
-            <p>中央パネルの「プロンプト検索」タブを使用します。</p>
-            <img src="images/009.png" alt="Prompt Search" class="screenshot" />
 
+            <h3>検索の流れ</h3>
+            <img src="images/009.png" alt="Prompt Search" class="screenshot" />
+            <ol>
+              <li>含めたいタグ、除外したいタグ、レーティングを指定します。</li>
+              <li>検索結果を確認します。</li>
+              <li>「検索結果を生成キューに追加」でキューへ送ります。</li>
+              <li>通常の「生成」を押すと、キューに積まれた内容から順に生成されます。</li>
+            </ol>
+
+            <h3>補助機能</h3>
             <ul>
+              <li><strong>出力フィルタリング</strong>: 作品名や不要なタグの整理に使えます。</li>
               <li>
-                <strong>含めるタグ</strong>:
-                検索したいキーワードを入力します。AND検索はコンマ区切り、OR検索は
-                <code>{A|B}</code> の形式で指定します。
-              </li>
-              <li>
-                <strong>除外するタグ</strong>:
-                検索結果から除外したいキーワードを入力します。
-              </li>
-              <li>
-                <strong>レーティング</strong>: 検索対象のレーティング（General,
-                Sensitiveなど）をフィルタリングします。
-              </li>
-              <li>
-                <strong>出力フィルタリング設定</strong>:
-                作品名やキャラクター名などを生成時に自動除外します。
-              </li>
-              <li>
-                <strong>Prompt Upscaler設定</strong>:
-                生成キュー実行時にタグ推論を使ってプロンプトを補強します。※PCスペックによって処理に時間がかかる可能性があります。
+                <strong>Prompt Upscaler</strong>:
+                キュー処理中にタグ推論を使って Prompt を補強できます。
               </li>
             </ul>
-            <p>
-              検索結果はリスト表示され、クリックで詳細を確認できます。<br />
-              ヒット件数が多い場合、表示は最大1000件までに制限されます（検索自体は全件対象）。
-            </p>
-
-            <p>
-              <strong>「検索結果を生成キューに追加」</strong>
-              ボタンは、結果をシャッフル順で<strong>1000件ずつ</strong>キューに追加します。<br />
-              「生成」ボタンを押すと、キューに登録されたプロンプトが順番に使用されます。<br />
-              モデル、画像サイズ、Steps等のパラメーターは<strong>現在のメイン画面の設定</strong>が適用されます。
-            </p>
           </section>
 
           <section id="settings">
             <h1>設定・その他機能</h1>
 
-            <h3>プロンプト入力補完＆タグ詳細表示</h3>
-            <p>プロンプトの入力補完やタグ詳細表示が行えます</p>
+            <h3>一般</h3>
             <ul>
-              <li>
-                <strong>プロンプト入力補完</strong>:
-                入力時に入力候補が表示されます、英語のほか日本語のキーワードにも対応しており、<br />プロンプト入力を効率的に行えます。
-                候補から選ばない場合は ,(カンマ)で補完ウィンドウを閉じます。
-              </li>
-              <li>
-                <strong>タグ詳細表示</strong>:
-                「タグ詳細」ボタンからタグの詳細を確認できます。<br />
-                タグを選ぶことでそのタグを削除できるほか、？を押すことでwikiの説明の確認が可能です。
-              </li>
-              <li>
-                <strong>設定</strong>:
-                これら入力補助の設定はファイル→設定→入力補助 (Assistance)
-                タブから変更可能です。<br />
-                またプロンプト欄のフォントや文字サイズも変更可能です。
-              </li>
+              <li><strong>APIキー管理</strong>: 複数キーの登録、接続確認、アクティブ切替ができます。</li>
+              <li><strong>保存先</strong>: 出力フォルダや Wildcard フォルダを設定できます。</li>
+              <li><strong>UI言語</strong>: 表示言語を切り替えられます。</li>
+              <li><strong>その他</strong>: 画像形式、処理中プレビュー、起動時更新確認などを設定できます。</li>
             </ul>
+
+            <h3>入力補助</h3>
+            <p>
+              タグ補完、強調表示、日本語補完、入力後のカンマ補助、Prompt フォント変更などをまとめて設定できます。
+            </p>
             <img
               src="images/010.png"
               alt="Input Assistance"
               class="screenshot"
             />
+
             <h3>Eagle 連携</h3>
             <p>
-              画像管理ソフト「Eagle」への連携設定です。プロンプト情報もタグとしてEagleへ送信されます。<br />
-              ・履歴から右クリックで選択した画像のみをEagleへ送信する<br />
-              ・生成した全ての画像をEagleへ送信する
+              Eagle を使っている場合は、生成画像を自動または手動で送れます。Prompt やメタデータをタグ化して一緒に送ることもできます。
             </p>
             <img
               src="images/011.png"
@@ -580,35 +544,46 @@
               class="screenshot"
             />
 
-            <h3>補助機能</h3>
+            <h3>履歴・画像操作</h3>
             <ul>
+              <li><strong>通常クリック</strong>: 履歴画像をキャンバスに読み込みます。</li>
+              <li><strong>Shift+クリック</strong>: インポートダイアログを開きます。</li>
               <li>
-                <strong>生成中プレビュー</strong>:
-                設定の「一般」で有効化すると、生成中の途中プレビューをCanvasに表示できます。
+                <strong>右クリック</strong>: 保存、コピー、Eagle 送信、保存先フォルダを開く、インポートが行えます。
               </li>
-              <li>
-                <strong>起動時アップデート確認</strong>:
-                設定の「一般」で有効化すると、起動時に新バージョン確認を行います。
-              </li>
+            </ul>
+
+            <h3>検索 / プロンプトチャンク / その他</h3>
+            <ul>
+              <li><strong>検索</strong>: Prompt Search の有効化とセットアップ状況を確認できます。</li>
+              <li><strong>プロンプトチャンク</strong>: プロンプトチャンクの有効化、認証状況、セットアップを管理できます。</li>
+              <li><strong>その他</strong>: ログ出力や容量関連の設定ができます。</li>
             </ul>
 
             <h3>設定画面一覧</h3>
             <div class="gallery">
               <div>
-                <h4>一般 (General)</h4>
+                <h4>一般</h4>
                 <img src="images/012.png" alt="General" />
               </div>
               <div>
-                <h4>入力補助 (Assistance)</h4>
-                <img src="images/013.png" alt="Input" />
+                <h4>入力補助</h4>
+                <img src="images/013.png" alt="Input Assistance" />
               </div>
               <div>
-                <h4>検索 (Search)</h4>
-                <img src="images/014.png" alt="Input" />
+                <h4>検索</h4>
+                <img src="images/014.png" alt="Search Settings" />
               </div>
               <div>
-                <h4>その他 (Others)</h4>
-                <img src="images/015.png" alt="Other" />
+                <h4>その他</h4>
+                <img src="images/015.png" alt="Other Settings" />
+              </div>
+              <div>
+                <h4>プロンプトチャンク</h4>
+                <img
+                  src="images/SETTINGS_CHUNKS_001.png"
+                  alt="プロンプトチャンク設定"
+                />
               </div>
             </div>
           </section>
@@ -616,7 +591,7 @@
           <section id="shortcuts">
             <h1>ショートカット</h1>
             <p>
-              よく使うショートカットの一覧です。メニュー「ショートカット(S)」からも確認できます。
+              よく使うショートカットの一覧です。メニュー「ショートカット」からも確認できます。
             </p>
             <img
               src="images/SHORTCUTS_001.png"
@@ -627,6 +602,7 @@
             <h3>生成・実行</h3>
             <ul>
               <li><span class="kbd">Ctrl + Enter</span>: 生成開始</li>
+              <li><span class="kbd">Ctrl + Alt + Enter</span>: 1回だけ生成</li>
               <li>
                 <span class="kbd">Ctrl + Shift + Enter</span>: 連続生成開始
               </li>
@@ -634,37 +610,28 @@
 
             <h3>キャンバス / マスク</h3>
             <ul>
-              <li><span class="kbd">←</span>: 画像履歴 Undo</li>
-              <li><span class="kbd">→</span>: 画像履歴 Redo</li>
+              <li><span class="kbd">←</span>: キャンバス画像 Undo</li>
+              <li><span class="kbd">→</span>: キャンバス画像 Redo</li>
               <li><span class="kbd">Ctrl + Z</span>: マスク Undo</li>
               <li><span class="kbd">Ctrl + Y</span>: マスク Redo</li>
             </ul>
 
-            <h3>プロンプト</h3>
+            <h3>プロンプト編集</h3>
             <ul>
-              <li><span class="kbd">Ctrl + /</span>: 行コメント切替</li>
-              <li><span class="kbd">Ctrl + ↑</span>: 現在行を上へ移動</li>
-              <li><span class="kbd">Ctrl + ↓</span>: 現在行を下へ移動</li>
+              <li><span class="kbd">Ctrl + /</span>: コメント切替</li>
+              <li><span class="kbd">Ctrl + ↑</span>: 強調を増やす</li>
+              <li><span class="kbd">Ctrl + ↓</span>: 強調を減らす</li>
               <li><span class="kbd">Shift + Enter</span>: 下に空行を追加</li>
+              <li><span class="kbd">Ctrl + P</span>: プロンプトチャンクの補完 / 挿入補助</li>
             </ul>
 
-            <h3>ファイル操作</h3>
+            <h3>画像ファイル操作</h3>
             <ul>
               <li><span class="kbd">Ctrl + O</span>: 画像を開く</li>
-              <li>
-                <span class="kbd">Ctrl + S</span>:
-                名前を付けて保存（画像選択時）
-              </li>
-              <li>
-                <span class="kbd">Ctrl + C</span>: 画像をコピー（画像選択時）
-              </li>
-              <li>
-                <span class="kbd">Ctrl + E</span>: Eagleに保存（画像選択時）
-              </li>
-              <li>
-                <span class="kbd">Ctrl + Shift + E</span>:
-                保存先フォルダを開く（画像選択時）
-              </li>
+              <li><span class="kbd">Ctrl + S</span>: 名前を付けて保存</li>
+              <li><span class="kbd">Ctrl + C</span>: 画像をコピー</li>
+              <li><span class="kbd">Ctrl + E</span>: Eagle に送信</li>
+              <li><span class="kbd">Ctrl + Shift + E</span>: 保存先フォルダを開く</li>
             </ul>
           </section>
 
@@ -684,32 +651,26 @@
     </main>
 
     <script>
-      // Simple script to highlight active section in sidebar
       const sections = document.querySelectorAll("section");
       const navLi = document.querySelectorAll(".nav-links li a");
+      const scrollContainer = document.querySelector(".content-scroll");
 
-      document
-        .querySelector(".content-scroll")
-        .addEventListener("scroll", () => {
-          let current = "";
-          sections.forEach((section) => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (
-              document.querySelector(".content-scroll").scrollTop >=
-              sectionTop - 150
-            ) {
-              current = section.getAttribute("id");
-            }
-          });
-
-          navLi.forEach((a) => {
-            a.classList.remove("active");
-            if (a.getAttribute("href").includes(current)) {
-              if (current !== "") a.classList.add("active");
-            }
-          });
+      scrollContainer.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (scrollContainer.scrollTop >= sectionTop - 150) {
+            current = section.getAttribute("id");
+          }
         });
+
+        navLi.forEach((a) => {
+          a.classList.remove("active");
+          if (a.getAttribute("href").includes(current) && current !== "") {
+            a.classList.add("active");
+          }
+        });
+      });
     </script>
   </body>
 </html>
