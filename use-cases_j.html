@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AI画像生成・編集・投稿準備でどのnekzuk Software製品を選ぶか迷った方向けの購入ガイド。AutoMosaic、AI Paint Cleaner、NAI Smart Studio、AI Meta Cleaner、Meta Converter、Frame Craftを用途別に整理。"
+    />
+    <meta name="author" content="nekzuk Software" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nekzuk.com/use-cases_j.html" />
+    <meta property="og:title" content="どのツールを選ぶ？用途別購入ガイド | nekzuk Software" />
+    <meta
+      property="og:description"
+      content="R18モザイク、一般画像の匿名化、AI画像の修正、NovelAI生成、メタデータ削除、画像変換、動画フレーム抽出など、目的別におすすめ製品を整理。"
+    />
+    <meta property="og:image" content="https://nekzuk.com/assets/favicons/og-image.png?v=3" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Synekzuk_AI" />
+    <meta name="twitter:title" content="どのツールを選ぶ？用途別購入ガイド | nekzuk Software" />
+    <meta
+      name="twitter:description"
+      content="AI画像制作・編集・投稿準備に必要なツールを、目的別に選べる購入ガイド。"
+    />
+    <meta name="twitter:image" content="https://nekzuk.com/assets/favicons/og-image.png?v=3" />
+    <link rel="canonical" href="https://nekzuk.com/use-cases_j.html" />
+    <link rel="alternate" hreflang="ja" href="https://nekzuk.com/use-cases_j.html" />
+    <link rel="alternate" hreflang="en" href="https://nekzuk.com/use-cases.html" />
+    <link rel="alternate" hreflang="x-default" href="https://nekzuk.com/use-cases.html" />
+    <link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32" />
+    <link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml" />
+    <link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon" />
+    <meta name="theme-color" content="#6366f1" />
+    <title>どのツールを選ぶ？用途別購入ガイド | nekzuk Software</title>
+    <style>
+      :root {
+        --primary: #6366f1;
+        --primary-dark: #4f46e5;
+        --accent: #22d3ee;
+        --bg-dark: #0f172a;
+        --bg-card: #1e293b;
+        --bg-card-soft: #24304a;
+        --text-primary: #f1f5f9;
+        --text-secondary: #a7b4c8;
+        --text-muted: #718096;
+        --border: #334155;
+        --success: #4ade80;
+        --warning: #fbbf24;
+        --gradient-1: linear-gradient(135deg, #6366f1, #8b5cf6);
+        --gradient-2: linear-gradient(135deg, #06b6d4, #22d3ee);
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, Meiryo, sans-serif;
+        background: var(--bg-dark);
+        color: var(--text-primary);
+        line-height: 1.75;
+        min-height: 100vh;
+      }
+      .bg-effect {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+      }
+      .bg-effect::before {
+        content: "";
+        position: absolute;
+        inset: -50%;
+        background:
+          radial-gradient(ellipse at 25% 10%, rgba(99,102,241,.13) 0%, transparent 42%),
+          radial-gradient(ellipse at 80% 20%, rgba(34,211,238,.10) 0%, transparent 40%),
+          radial-gradient(ellipse at 50% 90%, rgba(139,92,246,.08) 0%, transparent 48%);
+        animation: float 22s ease-in-out infinite;
+      }
+      @keyframes float { 0%,100% { transform: translate(0,0) rotate(0); } 50% { transform: translate(-1.5%,2%) rotate(1deg); } }
+      @media (prefers-reduced-motion: reduce) { .bg-effect::before { animation: none; } html { scroll-behavior: auto; } }
+      a { color: inherit; }
+      .page {
+        position: relative;
+        z-index: 1;
+      }
+      .container {
+        width: min(1180px, calc(100% - 2rem));
+        margin: 0 auto;
+      }
+      header {
+        padding: 2rem 0 3.5rem;
+        border-bottom: 1px solid var(--border);
+      }
+      .top-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 4rem;
+      }
+      .lang-switch, .nav-links {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        flex-wrap: wrap;
+      }
+      .pill-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.6rem;
+        padding: .55rem 1rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-size: .92rem;
+        color: var(--text-secondary);
+        background: rgba(255,255,255,.06);
+        border: 1px solid var(--border);
+        transition: .2s ease;
+      }
+      .pill-link:hover {
+        color: var(--text-primary);
+        background: rgba(255,255,255,.1);
+        transform: translateY(-1px);
+      }
+      .pill-link.active {
+        color: #fff;
+        background: rgba(99,102,241,.35);
+        border-color: rgba(99,102,241,.65);
+      }
+      .hero {
+        max-width: 980px;
+      }
+      .eyebrow {
+        display: inline-block;
+        color: var(--accent);
+        font-size: .85rem;
+        font-weight: 800;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+      h1 {
+        font-size: clamp(2.15rem, 6vw, 4.5rem);
+        line-height: 1.1;
+        letter-spacing: -.04em;
+        margin-bottom: 1.25rem;
+        background: linear-gradient(135deg, #f8fafc 0%, #93f0ff 90%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .hero p {
+        color: var(--text-secondary);
+        font-size: clamp(1rem, 2vw, 1.18rem);
+        max-width: 760px;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .75rem;
+        margin-top: 1.7rem;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: .45rem;
+        min-height: 3rem;
+        padding: .7rem 1.1rem;
+        border-radius: .75rem;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: .95rem;
+        transition: .2s ease;
+      }
+      .btn-primary {
+        background: var(--gradient-1);
+        color: white;
+      }
+      .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(99,102,241,.35); }
+      .btn-secondary {
+        background: rgba(255,255,255,.08);
+        border: 1px solid rgba(255,255,255,.17);
+        color: var(--text-primary);
+      }
+      .btn-secondary:hover { background: rgba(255,255,255,.13); transform: translateY(-1px); }
+      main { padding: 3.5rem 0 4.5rem; }
+      section { margin-bottom: 4.5rem; }
+      .section-head { margin-bottom: 1.4rem; max-width: 820px; }
+      .section-head h2 {
+        font-size: clamp(1.7rem, 3.8vw, 2.7rem);
+        line-height: 1.2;
+        margin-bottom: .65rem;
+        letter-spacing: -.03em;
+      }
+      .section-head p { color: var(--text-secondary); font-size: 1.04rem; }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+      .usecase-card, .compare-card, .notice-card {
+        background: rgba(30,41,59,.92);
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+        overflow: hidden;
+      }
+      .usecase-card {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+      }
+      .usecase-main { padding: 1.35rem; flex: 1; }
+      .tags { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1rem; }
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        padding: .24rem .65rem;
+        border-radius: 999px;
+        font-size: .78rem;
+        font-weight: 800;
+        border: 1px solid rgba(255,255,255,.12);
+        background: rgba(255,255,255,.07);
+        color: var(--text-secondary);
+      }
+      .tag.primary { color: #c4b5fd; border-color: rgba(139,92,246,.5); background: rgba(139,92,246,.15); }
+      .tag.free { color: var(--success); border-color: rgba(74,222,128,.35); background: rgba(74,222,128,.12); }
+      .tag.paid { color: var(--warning); border-color: rgba(251,191,36,.35); background: rgba(251,191,36,.12); }
+      .tag.nai { color: #93c5fd; border-color: rgba(96,165,250,.35); background: rgba(96,165,250,.12); }
+      .tag.utility { color: #67e8f9; border-color: rgba(34,211,238,.35); background: rgba(34,211,238,.1); }
+      .card-title-row {
+        display: flex;
+        gap: .9rem;
+        align-items: flex-start;
+        margin-bottom: .85rem;
+      }
+      .icons { display: flex; flex: 0 0 auto; gap: .45rem; }
+      .app-icon {
+        width: 56px;
+        height: 56px;
+        object-fit: cover;
+        border-radius: .75rem;
+        background: #0b1220;
+      }
+      .usecase-card h3, .compare-card h3, .notice-card h3 {
+        font-size: 1.17rem;
+        line-height: 1.45;
+        margin-bottom: .35rem;
+      }
+      .usecase-card p, .compare-card p, .notice-card p {
+        color: var(--text-secondary);
+      }
+      .product-chip-row { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; }
+      .product-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: .35rem;
+        padding: .45rem .65rem;
+        border-radius: .55rem;
+        background: rgba(255,255,255,.07);
+        border: 1px solid rgba(255,255,255,.12);
+        font-size: .88rem;
+        font-weight: 700;
+      }
+      .arrow { color: var(--text-muted); font-weight: 700; align-self: center; }
+      .check-list {
+        list-style: none;
+        display: grid;
+        gap: .6rem;
+        margin-top: 1rem;
+      }
+      .check-list li {
+        position: relative;
+        padding-left: 1.35rem;
+        color: var(--text-secondary);
+      }
+      .check-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: 900;
+      }
+      .card-footer {
+        border-top: 1px solid var(--border);
+        padding: 1rem 1.35rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: .75rem;
+        flex-wrap: wrap;
+      }
+      .price {
+        color: var(--warning);
+        font-weight: 900;
+      }
+      .price.free { color: var(--success); }
+      .mini-actions { display: flex; gap: .55rem; flex-wrap: wrap; }
+      .mini-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.7rem;
+        padding: .55rem .85rem;
+        border-radius: .65rem;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: .9rem;
+        background: rgba(255,255,255,.09);
+        border: 1px solid rgba(255,255,255,.15);
+      }
+      .mini-btn:hover { background: rgba(255,255,255,.14); }
+      .mini-btn.buy { background: var(--gradient-1); border: 0; color: #fff; }
+      .compare-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+      .compare-card { padding: 1.35rem; }
+      .compare-card strong { color: var(--text-primary); }
+      .final-cta {
+        background: linear-gradient(135deg, rgba(99,102,241,.22), rgba(34,211,238,.11));
+        border: 1px solid rgba(99,102,241,.35);
+        border-radius: 1.25rem;
+        padding: 2rem;
+        text-align: center;
+      }
+      .final-cta h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: .6rem; }
+      .final-cta p { color: var(--text-secondary); max-width: 760px; margin: 0 auto 1.3rem; }
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 2rem 0;
+        color: var(--text-muted);
+        font-size: .92rem;
+      }
+      footer .container { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+      footer a { color: var(--accent); text-decoration: none; }
+      footer a:hover { text-decoration: underline; }
+      @media (max-width: 980px) {
+        .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .compare-grid { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 640px) {
+        .container { width: min(100% - 1.2rem, 1180px); }
+        header { padding-top: 1rem; }
+        .top-nav { justify-content: center; margin-bottom: 2.6rem; }
+        .lang-switch, .nav-links { justify-content: center; width: 100%; }
+        .grid { grid-template-columns: 1fr; }
+        .card-title-row { flex-direction: column; }
+        .card-footer { align-items: stretch; }
+        .mini-actions, .mini-btn { width: 100%; }
+        .mini-btn { flex: 1; }
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "inLanguage": "ja",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "AI Meta CleanerとAI Paint Cleanerは両方必要ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI Paint Cleanerにはメタデータ表示・削除機能も含まれるため、AI画像の修正や補正も行う場合はAI Paint Cleanerを選べば十分です。メタデータ削除だけを無料で行いたい場合はAI Meta Cleanerが向いています。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "R18画像のモザイク作業にはどの製品を選べばよいですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "センシティブ部位の自動検出と一括モザイク処理にはAutoMosaic R18版が向いています。自動処理後の微調整や追加修正まで行う場合はAI Paint Cleanerとの併用が便利です。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "NovelAI向けにはどの製品を選べばよいですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "NovelAIの連続生成、ワイルドカード、Tagger、プロンプト検索などを使いたい場合はNAI Smart Studioが向いています。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="bg-effect"></div>
+    <div class="page">
+      <header>
+        <div class="container">
+          <nav class="top-nav" aria-label="ページナビゲーション">
+            <div class="lang-switch" aria-label="Language switch">
+              <a class="pill-link" href="use-cases.html">English</a>
+              <a class="pill-link active" href="use-cases_j.html">日本語</a>
+            </div>
+            <div class="nav-links">
+              <a class="pill-link" href="index_j.html">製品一覧へ</a>
+            </div>
+          </nav>
+          <div class="hero">
+            <span class="eyebrow">Buying Guide</span>
+            <h1>どれを買えばよいか迷ったら</h1>
+            <p>
+              AI画像の生成・編集・投稿準備で「何を楽にしたいか」から選ぶための購入ガイドです。
+              目的に合う主製品と、必要な場合だけ追加すると便利な製品を整理しました。
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#choose">目的から選ぶ</a>
+              <a class="btn btn-secondary" href="#differences">迷いやすい違いを見る</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <section id="choose">
+          <div class="section-head">
+            <span class="eyebrow">Choose by Goal</span>
+            <h2>目的から選ぶ</h2>
+            <p>まずは一番近い作業を選んでください。価格は主製品単体、または「必要なら」追加する製品を含めた目安です。最新情報と体験版は各製品ページで確認できます。</p>
+          </div>
+
+          <div class="grid">
+            <article class="usecase-card">
+              <div class="usecase-main">
+                <div class="tags"><span class="tag primary">R18</span><span class="tag paid">主力</span></div>
+                <div class="card-title-row">
+                  <div class="icons">
+                    <img class="app-icon" src="assets/icons/app_R18.png" alt="AutoMosaic R18 icon" />
+                    <img class="app-icon" src="assets/icons/app2.png" alt="AI Paint Cleaner icon" />
+                  </div>
+                  <div>
+                    <h3>成人向け画像のモザイク作業を一括で進めたい</h3>
+                    <p>センシティブ部位の自動検出・一括処理はAutoMosaic R18。仕上げ確認や追加修正まで行うならAI Paint Cleanerが向いています。</p>
+                  </div>
+                </div>
+                <div class="product-chip-row">
+                  <span class="product-chip">AutoMosaic R18</span><span class="arrow">→</span><span class="product-chip">必要ならAI Paint Cleaner</span>
+                </div>
+                <ul class="check-list">
+                  <li>多数の画像をまとめて処理したい場合に向いています。</li>
+                  <li>AI Paint Cleanerは、漏れ・誤検出・追加修正・インペイントなどの仕上げ用です。</li>
+                  <li>メタデータ削除だけで十分なら、AI Paint Cleanerではなく無料のAI Meta Cleanerでも対応できます。</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <span class="price">¥3,000〜¥5,500</span>
+                <div class="mini-actions"><a class="mini-btn" href="automosaic-r18_j.html">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/6510317?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank">BOOTH</a></div>
+              </div>
+            </article>
+
+            <article class="usecase-card">
+              <div class="usecase-main">
+                <div class="tags"><span class="tag utility">一般画像</span><span class="tag paid">匿名化</span></div>
+                <div class="card-title-row">
+                  <div class="icons">
+                    <img class="app-icon" src="assets/icons/app_general.png" alt="AutoMosaic General icon" />
+                    <img class="app-icon" src="assets/icons/app2.png" alt="AI Paint Cleaner icon" />
+                  </div>
+                  <div>
+                    <h3>顔・文字・ナンバーなどを隠したい</h3>
+                    <p>人物、顔、目、文字、ナンバープレートなどの匿名化にはAutoMosaic 通常版。処理後の手直しが多い場合はAI Paint Cleanerを追加候補にできます。</p>
+                  </div>
+                </div>
+                <div class="product-chip-row">
+                  <span class="product-chip">AutoMosaic 通常版</span><span class="arrow">→</span><span class="product-chip">必要ならAI Paint Cleaner</span>
+                </div>
+                <ul class="check-list">
+                  <li>R18のセンシティブ部位検出ではなく、一般画像の匿名化向けです。</li>
+                  <li>モザイク・ぼかし・塗りつぶしを一括適用できます。</li>
+                  <li>処理後に細かく直す作業が多い人はAI Paint Cleanerも検討できます。</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <span class="price">¥3,000〜¥5,500</span>
+                <div class="mini-actions"><a class="mini-btn" href="automosaic_j.html">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/7075141?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank">BOOTH</a></div>
+              </div>
+            </article>
+
+            <article class="usecase-card">
+              <div class="usecase-main">
+                <div class="tags"><span class="tag primary">AI編集</span><span class="tag paid">仕上げ</span></div>
+                <div class="card-title-row">
+                  <div class="icons">
+                    <img class="app-icon" src="assets/icons/app2.png" alt="AI Paint Cleaner icon" />
+                  </div>
+                  <div>
+                    <h3>AI画像の修正・補正・タグ整理をまとめたい</h3>
+                    <p>インペイント、外部AI画像編集、AI補正、背景除去、タグ生成、メタデータ表示/削除までまとめて扱うならAI Paint Cleanerが中心です。</p>
+                  </div>
+                </div>
+                <div class="product-chip-row"><span class="product-chip">AI Paint Cleaner</span></div>
+                <ul class="check-list">
+                  <li>AutoMosaic後の仕上げにも、単体のAI画像編集ツールとしても使えます。</li>
+                  <li>メタデータ削除機能も含まれるため、メタ削除目的でAI Meta Cleanerを別途使う必要はありません。</li>
+                  <li>保存やバッチ処理の可否は体験版制限を確認してください。</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <span class="price">¥2,500</span>
+                <div class="mini-actions"><a class="mini-btn" href="ai-paint-cleaner_j.html">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/6649634?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank">BOOTH</a></div>
+              </div>
+            </article>
+
+            <article class="usecase-card">
+              <div class="usecase-main">
+                <div class="tags"><span class="tag nai">NovelAI</span><span class="tag paid">生成支援</span></div>
+                <div class="card-title-row">
+                  <div class="icons">
+                    <img class="app-icon" src="assets/icons/app_nai.png" alt="NAI Smart Studio icon" />
+                  </div>
+                  <div>
+                    <h3>NovelAIの生成作業を効率化したい</h3>
+                    <p>連続生成、ワイルドカード、Tagger、プロンプト検索、履歴管理など、NovelAIでの生成作業を強化したい場合はNAI Smart Studioです。</p>
+                  </div>
+                </div>
+                <div class="product-chip-row"><span class="product-chip">NAI Smart Studio</span></div>
+                <ul class="check-list">
+                  <li>NovelAIを日常的に使い、プロンプトや生成履歴を扱う人向けです。</li>
+                  <li>画像編集そのものが目的ならAI Paint Cleanerの方が向いています。</li>
+                  <li>製品ページから体験版・オンラインマニュアルを確認できます。</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <span class="price">¥2,500</span>
+                <div class="mini-actions"><a class="mini-btn" href="nai-smart-studio_j.html">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/7969637?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank">BOOTH</a></div>
+              </div>
+            </article>
+
+            <article class="usecase-card">
+              <div class="usecase-main">
+                <div class="tags"><span class="tag free">無料</span><span class="tag utility">投稿前</span></div>
+                <div class="card-title-row">
+                  <div class="icons">
+                    <img class="app-icon" src="assets/icons/app3.png" alt="AI Meta Cleaner icon" />
+                  </div>
+                  <div>
+                    <h3>投稿前にメタデータだけ削除したい</h3>
+                    <p>画像の一般メタデータやStable Diffusion / NovelAI形式の生成情報を削除したいだけなら、無料のAI Meta Cleanerで十分です。</p>
+                  </div>
+                </div>
+                <div class="product-chip-row"><span class="product-chip">AI Meta Cleaner</span></div>
+                <ul class="check-list">
+                  <li>無料で導入できる投稿前チェック用ツールです。</li>
+                  <li>画像の修正・補正・タグ生成まで行いたい場合はAI Paint Cleanerを選ぶ方が自然です。</li>
+                  <li>AI Paint Cleanerを使う場合、メタデータ削除目的でこのツールを併用する必要はありません。</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <span class="price free">無料</span>
+                <div class="mini-actions"><a class="mini-btn" href="ai-meta-cleaner_j.html">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/7626627?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank">BOOTH</a></div>
+              </div>
+            </article>
+
+            <article class="usecase-card">
+              <div class="usecase-main">
+                <div class="tags"><span class="tag utility">画像変換</span><span class="tag paid">低価格</span></div>
+                <div class="card-title-row">
+                  <div class="icons">
+                    <img class="app-icon" src="assets/icons/app4.png" alt="Meta Converter icon" />
+                  </div>
+                  <div>
+                    <h3>AI画像を軽量化・形式変換したい</h3>
+                    <p>PNG/JPEG/WEBPへの一括変換や、可能な範囲でメタデータを維持した変換・圧縮をしたい場合はMeta Converterです。</p>
+                  </div>
+                </div>
+                <div class="product-chip-row"><span class="product-chip">Meta Converter</span></div>
+                <ul class="check-list">
+                  <li>画像の保管・軽量化・形式変換向けの単体ユーティリティです。</li>
+                  <li>メタデータを消したい場合はAI Meta Cleaner、編集までしたい場合はAI Paint Cleanerを選びます。</li>
+                  <li>GPU不要でCPU動作します。</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <span class="price">¥380</span>
+                <div class="mini-actions"><a class="mini-btn" href="meta-converter_j.html">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/6911255?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank">BOOTH</a></div>
+              </div>
+            </article>
+
+            <article class="usecase-card">
+              <div class="usecase-main">
+                <div class="tags"><span class="tag utility">動画</span><span class="tag paid">うごイラ</span></div>
+                <div class="card-title-row">
+                  <div class="icons">
+                    <img class="app-icon" src="assets/icons/app5.png" alt="Frame Craft icon" />
+                  </div>
+                  <div>
+                    <h3>動画からフレーム抽出・GIF/WEBPアニメを作りたい</h3>
+                    <p>動画から画像を抽出したり、GIF/WEBPアニメーションやPixivうごイラ向けの出力を扱う場合はFrame Craftです。</p>
+                  </div>
+                </div>
+                <div class="product-chip-row"><span class="product-chip">Frame Craft</span></div>
+                <ul class="check-list">
+                  <li>動画・アニメーション入力から静止画やアニメ出力を作る用途に向いています。</li>
+                  <li>重複削除や黒帯自動削除など、動画由来の素材整理に使えます。</li>
+                  <li>画像変換だけが目的ならMeta Converterを選びます。</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <span class="price">¥500</span>
+                <div class="mini-actions"><a class="mini-btn" href="frame-craft_j.html">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/7295171?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank">BOOTH</a></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="differences">
+          <div class="section-head">
+            <span class="eyebrow">Differences</span>
+            <h2>迷いやすい違い</h2>
+            <p>名前や用途が近い製品の違いだけをまとめました。</p>
+          </div>
+          <div class="compare-grid">
+            <article class="compare-card">
+              <h3>AutoMosaic R18版 / 通常版</h3>
+              <p><strong>R18版</strong>は成人向けコンテンツのセンシティブ部位検出向けです。<strong>通常版</strong>は顔・人物・文字・ナンバープレートなど、一般画像の匿名化向けです。</p>
+            </article>
+            <article class="compare-card">
+              <h3>AI Paint Cleaner / AI Meta Cleaner</h3>
+              <p><strong>AI Paint Cleaner</strong>は画像修正・AI編集・補正・タグ生成・メタデータ削除まで含む総合編集ツールです。<strong>AI Meta Cleaner</strong>はメタデータ削除だけを無料で行う単体ツールです。</p>
+            </article>
+            <article class="compare-card">
+              <h3>AI Meta Cleaner / Meta Converter</h3>
+              <p><strong>AI Meta Cleaner</strong>はメタデータを削除するツールです。<strong>Meta Converter</strong>は、可能な範囲でメタデータを維持しながら画像を変換・軽量化するツールです。</p>
+            </article>
+            <article class="compare-card">
+              <h3>AI Paint Cleaner / NAI Smart Studio</h3>
+              <p><strong>AI Paint Cleaner</strong>は生成後の画像編集・仕上げ向けです。<strong>NAI Smart Studio</strong>はNovelAIでの生成作業そのものを効率化するためのツールです。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="final-cta">
+          <h2>価格・体験版・更新履歴を確認する</h2>
+          <p>各製品の最新価格、体験版、動作環境、更新履歴は製品ページに掲載しています。製品名から選びたい場合は一覧ページへ進んでください。</p>
+          <div class="hero-actions" style="justify-content:center; margin-top: 0;">
+            <a class="btn btn-primary" href="index_j.html">製品一覧へ</a>
+            <a class="btn btn-secondary" href="https://synekzuk.booth.pm" rel="noopener" target="_blank">BOOTHショップへ</a>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="container">
+          <span>© 2024-2026 nekzuk Software. All rights reserved.</span>
+          <span><a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank">X / Twitter</a> · <a href="https://note.com/nekzuk/n/nd5d31374fb64" rel="noopener" target="_blank">noteまとめ</a> · <a href="privacy_j.html">プライバシーポリシー</a> · <a href="terms_j.html">利用規約</a></span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

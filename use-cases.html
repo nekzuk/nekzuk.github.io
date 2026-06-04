@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A buying guide for choosing nekzuk Software tools by workflow: AutoMosaic, AI Paint Cleaner, NAI Smart Studio, AI Meta Cleaner, Meta Converter, and Frame Craft."
+    />
+    <meta name="author" content="nekzuk Software" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nekzuk.com/use-cases.html" />
+    <meta property="og:title" content="Which tool should I choose? Use-case buying guide | nekzuk Software" />
+    <meta
+      property="og:description"
+      content="Choose by goal: sensitive-image mosaics, general anonymization, AI image cleanup, NovelAI generation, metadata cleaning, image conversion, and video frame extraction."
+    />
+    <meta property="og:image" content="https://nekzuk.com/assets/favicons/og-image.png?v=3" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Synekzuk_AI" />
+    <meta name="twitter:title" content="Which tool should I choose? Use-case buying guide | nekzuk Software" />
+    <meta
+      name="twitter:description"
+      content="A buying guide for AI image generation, editing, cleanup, and posting workflows."
+    />
+    <meta name="twitter:image" content="https://nekzuk.com/assets/favicons/og-image.png?v=3" />
+    <link rel="canonical" href="https://nekzuk.com/use-cases.html" />
+    <link rel="alternate" hreflang="en" href="https://nekzuk.com/use-cases.html" />
+    <link rel="alternate" hreflang="ja" href="https://nekzuk.com/use-cases_j.html" />
+    <link rel="alternate" hreflang="x-default" href="https://nekzuk.com/use-cases.html" />
+    <link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32" />
+    <link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml" />
+    <link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon" />
+    <meta name="theme-color" content="#6366f1" />
+    <title>Which tool should I choose? Use-case buying guide | nekzuk Software</title>
+    <style>
+      :root {
+        --primary: #6366f1;
+        --primary-dark: #4f46e5;
+        --accent: #22d3ee;
+        --bg-dark: #0f172a;
+        --bg-card: #1e293b;
+        --bg-card-soft: #24304a;
+        --text-primary: #f1f5f9;
+        --text-secondary: #a7b4c8;
+        --text-muted: #718096;
+        --border: #334155;
+        --success: #4ade80;
+        --warning: #fbbf24;
+        --gradient-1: linear-gradient(135deg, #6366f1, #8b5cf6);
+        --gradient-2: linear-gradient(135deg, #06b6d4, #22d3ee);
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        background: var(--bg-dark);
+        color: var(--text-primary);
+        line-height: 1.75;
+        min-height: 100vh;
+      }
+      .bg-effect { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+      .bg-effect::before {
+        content: "";
+        position: absolute;
+        inset: -50%;
+        background:
+          radial-gradient(ellipse at 25% 10%, rgba(99,102,241,.13) 0%, transparent 42%),
+          radial-gradient(ellipse at 80% 20%, rgba(34,211,238,.10) 0%, transparent 40%),
+          radial-gradient(ellipse at 50% 90%, rgba(139,92,246,.08) 0%, transparent 48%);
+        animation: float 22s ease-in-out infinite;
+      }
+      @keyframes float { 0%,100% { transform: translate(0,0) rotate(0); } 50% { transform: translate(-1.5%,2%) rotate(1deg); } }
+      @media (prefers-reduced-motion: reduce) { .bg-effect::before { animation: none; } html { scroll-behavior: auto; } }
+      a { color: inherit; }
+      .page { position: relative; z-index: 1; }
+      .container { width: min(1180px, calc(100% - 2rem)); margin: 0 auto; }
+      header { padding: 2rem 0 3.5rem; border-bottom: 1px solid var(--border); }
+      .top-nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 4rem; }
+      .lang-switch, .nav-links { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+      .pill-link {
+        display: inline-flex; align-items: center; justify-content: center; min-height: 2.6rem; padding: .55rem 1rem; border-radius: 999px;
+        text-decoration: none; font-size: .92rem; color: var(--text-secondary); background: rgba(255,255,255,.06); border: 1px solid var(--border); transition: .2s ease;
+      }
+      .pill-link:hover { color: var(--text-primary); background: rgba(255,255,255,.1); transform: translateY(-1px); }
+      .pill-link.active { color: #fff; background: rgba(99,102,241,.35); border-color: rgba(99,102,241,.65); }
+      .hero { max-width: 980px; }
+      .eyebrow { display: inline-block; color: var(--accent); font-size: .85rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 1rem; }
+      h1 {
+        font-size: clamp(2.15rem, 6vw, 4.5rem); line-height: 1.1; letter-spacing: -.04em; margin-bottom: 1.25rem;
+        background: linear-gradient(135deg, #f8fafc 0%, #93f0ff 90%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      }
+      .hero p { color: var(--text-secondary); font-size: clamp(1rem, 2vw, 1.18rem); max-width: 760px; }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.7rem; }
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: .45rem; min-height: 3rem; padding: .7rem 1.1rem;
+        border-radius: .75rem; text-decoration: none; font-weight: 700; font-size: .95rem; transition: .2s ease;
+      }
+      .btn-primary { background: var(--gradient-1); color: white; }
+      .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(99,102,241,.35); }
+      .btn-secondary { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.17); color: var(--text-primary); }
+      .btn-secondary:hover { background: rgba(255,255,255,.13); transform: translateY(-1px); }
+      main { padding: 3.5rem 0 4.5rem; }
+      section { margin-bottom: 4.5rem; }
+      .section-head { margin-bottom: 1.4rem; max-width: 820px; }
+      .section-head h2 { font-size: clamp(1.7rem, 3.8vw, 2.7rem); line-height: 1.2; margin-bottom: .65rem; letter-spacing: -.03em; }
+      .section-head p { color: var(--text-secondary); font-size: 1.04rem; }
+      .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+      .usecase-card, .compare-card { background: rgba(30,41,59,.92); border: 1px solid var(--border); border-radius: 1rem; overflow: hidden; }
+      .usecase-card { display: flex; flex-direction: column; min-height: 100%; }
+      .usecase-main { padding: 1.35rem; flex: 1; }
+      .tags { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1rem; }
+      .tag { display: inline-flex; align-items: center; padding: .24rem .65rem; border-radius: 999px; font-size: .78rem; font-weight: 800; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.07); color: var(--text-secondary); }
+      .tag.primary { color: #c4b5fd; border-color: rgba(139,92,246,.5); background: rgba(139,92,246,.15); }
+      .tag.free { color: var(--success); border-color: rgba(74,222,128,.35); background: rgba(74,222,128,.12); }
+      .tag.paid { color: var(--warning); border-color: rgba(251,191,36,.35); background: rgba(251,191,36,.12); }
+      .tag.nai { color: #93c5fd; border-color: rgba(96,165,250,.35); background: rgba(96,165,250,.12); }
+      .tag.utility { color: #67e8f9; border-color: rgba(34,211,238,.35); background: rgba(34,211,238,.1); }
+      .card-title-row { display: flex; gap: .9rem; align-items: flex-start; margin-bottom: .85rem; }
+      .icons { display: flex; flex: 0 0 auto; gap: .45rem; }
+      .app-icon { width: 56px; height: 56px; object-fit: cover; border-radius: .75rem; background: #0b1220; }
+      .usecase-card h3, .compare-card h3 { font-size: 1.17rem; line-height: 1.45; margin-bottom: .35rem; }
+      .usecase-card p, .compare-card p { color: var(--text-secondary); }
+      .product-chip-row { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; }
+      .product-chip { display: inline-flex; align-items: center; gap: .35rem; padding: .45rem .65rem; border-radius: .55rem; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); font-size: .88rem; font-weight: 700; }
+      .arrow { color: var(--text-muted); font-weight: 700; align-self: center; }
+      .check-list { list-style: none; display: grid; gap: .6rem; margin-top: 1rem; }
+      .check-list li { position: relative; padding-left: 1.35rem; color: var(--text-secondary); }
+      .check-list li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 900; }
+      .card-footer { border-top: 1px solid var(--border); padding: 1rem 1.35rem; display: flex; align-items: center; justify-content: space-between; gap: .75rem; flex-wrap: wrap; }
+      .price { color: var(--warning); font-weight: 900; }
+      .price.free { color: var(--success); }
+      .mini-actions { display: flex; gap: .55rem; flex-wrap: wrap; }
+      .mini-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 2.7rem; padding: .55rem .85rem; border-radius: .65rem; text-decoration: none; font-weight: 800; font-size: .9rem; background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.15); }
+      .mini-btn:hover { background: rgba(255,255,255,.14); }
+      .mini-btn.buy { background: var(--gradient-1); border: 0; color: #fff; }
+      .compare-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+      .compare-card { padding: 1.35rem; }
+      .compare-card strong { color: var(--text-primary); }
+      .final-cta { background: linear-gradient(135deg, rgba(99,102,241,.22), rgba(34,211,238,.11)); border: 1px solid rgba(99,102,241,.35); border-radius: 1.25rem; padding: 2rem; text-align: center; }
+      .final-cta h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: .6rem; }
+      .final-cta p { color: var(--text-secondary); max-width: 760px; margin: 0 auto 1.3rem; }
+      footer { border-top: 1px solid var(--border); padding: 2rem 0; color: var(--text-muted); font-size: .92rem; }
+      footer .container { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+      footer a { color: var(--accent); text-decoration: none; }
+      footer a:hover { text-decoration: underline; }
+      @media (max-width: 980px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .compare-grid { grid-template-columns: 1fr; } }
+      @media (max-width: 640px) { .container { width: min(100% - 1.2rem, 1180px); } header { padding-top: 1rem; } .top-nav { justify-content: center; margin-bottom: 2.6rem; } .lang-switch, .nav-links { justify-content: center; width: 100%; } .grid { grid-template-columns: 1fr; } .card-title-row { flex-direction: column; } .card-footer { align-items: stretch; } .mini-actions, .mini-btn { width: 100%; } .mini-btn { flex: 1; } }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "inLanguage": "en",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do I need both AI Meta Cleaner and AI Paint Cleaner?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI Paint Cleaner includes metadata viewing and deletion, so you do not need AI Meta Cleaner for metadata cleanup if you already use AI Paint Cleaner. AI Meta Cleaner is the free option when you only need metadata removal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which product should I choose for sensitive-image mosaic workflows?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Choose AutoMosaic R18 for automatic sensitive-region detection and batch mosaic processing. Add AI Paint Cleaner when you also need manual cleanup, extra corrections, or inpainting after AutoMosaic."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which product is for NovelAI workflows?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "NAI Smart Studio is designed for NovelAI workflows such as batch generation, wildcards, tagger features, prompt search, and local history management."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="bg-effect"></div>
+    <div class="page">
+      <header>
+        <div class="container">
+          <nav class="top-nav" aria-label="Page navigation">
+            <div class="lang-switch" aria-label="Language switch">
+              <a class="pill-link active" href="use-cases.html">English</a>
+              <a class="pill-link" href="use-cases_j.html">日本語</a>
+            </div>
+            <div class="nav-links">
+              <a class="pill-link" href="index.html">Product list</a>
+            </div>
+          </nav>
+          <div class="hero">
+            <span class="eyebrow">Buying Guide</span>
+            <h1>Not sure which tool to buy?</h1>
+            <p>
+              Choose by what you want to speed up in your AI image workflow: generation, editing, batch mosaics,
+              posting preparation, metadata cleanup, conversion, or video frame extraction.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#choose">Choose by goal</a>
+              <a class="btn btn-secondary" href="#differences">Compare similar tools</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <section id="choose">
+          <div class="section-head">
+            <span class="eyebrow">Choose by Goal</span>
+            <h2>Start with your workflow</h2>
+            <p>Select the workflow closest to what you do. Prices are reference ranges for the main product alone or with the optional add-on shown in the card; always check the product pages for the latest details and trial versions.</p>
+          </div>
+
+          <div class="grid">
+            <article class="usecase-card">
+              <div class="usecase-main">
+                <div class="tags"><span class="tag primary">Sensitive</span><span class="tag paid">Core</span></div>
+                <div class="card-title-row">
+                  <div class="icons"><img class="app-icon" src="assets/icons/app_R18.png" alt="AutoMosaic R18 icon" /><img class="app-icon" src="assets/icons/app2.png" alt="AI Paint Cleaner icon" /></div>
+                  <div><h3>Batch-process sensitive-image mosaics</h3><p>Use AutoMosaic R18 for automatic sensitive-region detection and batch processing. Add AI Paint Cleaner when you also need review, cleanup, extra corrections, or inpainting.</p></div>
+                </div>
+                <div class="product-chip-row"><span class="product-chip">AutoMosaic R18</span><span class="arrow">→</span><span class="product-chip">AI Paint Cleaner if needed</span></div>
+                <ul class="check-list"><li>Best for handling many images in one workflow.</li><li>AI Paint Cleaner is for post-processing and finishing, not required for metadata removal alone.</li><li>If you only need metadata cleanup after AutoMosaic, use the free AI Meta Cleaner.</li></ul>
+              </div>
+              <div class="card-footer"><span class="price">$25–$45</span><div class="mini-actions"><a class="mini-btn" href="automosaic-r18.html">Details</a><a class="mini-btn buy" href="https://payhip.com/b/BO3TR?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=en_usecase" rel="noopener" target="_blank">Payhip</a></div></div>
+            </article>
+
+            <article class="usecase-card">
+              <div class="usecase-main">
+                <div class="tags"><span class="tag utility">General</span><span class="tag paid">Anonymize</span></div>
+                <div class="card-title-row">
+                  <div class="icons"><img class="app-icon" src="assets/icons/app_general.png" alt="AutoMosaic General icon" /><img class="app-icon" src="assets/icons/app2.png" alt="AI Paint Cleaner icon" /></div>
+                  <div><h3>Hide faces, people, text, or license plates</h3><p>Choose AutoMosaic General for general-image anonymization. Add AI Paint Cleaner only if you often need manual cleanup after automatic processing.</p></div>
+                </div>
+                <div class="product-chip-row"><span class="product-chip">AutoMosaic General</span><span class="arrow">→</span><span class="product-chip">AI Paint Cleaner if needed</span></div>
+                <ul class="check-list"><li>Designed for general anonymization rather than sensitive-region detection.</li><li>Batch-apply mosaic, blur, or fill.</li><li>Useful for photos, illustrations, comics, and screenshots where specific information must be hidden.</li></ul>
+              </div>
+              <div class="card-footer"><span class="price">$25–$45</span><div class="mini-actions"><a class="mini-btn" href="automosaic.html">Details</a><a class="mini-btn buy" href="https://payhip.com/b/mit2r?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=en_usecase" rel="noopener" target="_blank">Payhip</a></div></div>
+            </article>
+
+            <article class="usecase-card">
+              <div class="usecase-main">
+                <div class="tags"><span class="tag primary">AI editing</span><span class="tag paid">Finishing</span></div>
+                <div class="card-title-row"><div class="icons"><img class="app-icon" src="assets/icons/app2.png" alt="AI Paint Cleaner icon" /></div><div><h3>Edit, correct, and organize AI images</h3><p>AI Paint Cleaner is the central tool for inpainting, cloud AI editing, correction, background removal, tags, and metadata viewing/deletion.</p></div></div>
+                <div class="product-chip-row"><span class="product-chip">AI Paint Cleaner</span></div>
+                <ul class="check-list"><li>Works as an AutoMosaic companion or a standalone AI image finishing tool.</li><li>Includes metadata deletion, so you do not need AI Meta Cleaner for that purpose.</li><li>Check trial limitations before purchase if saving or batch processing is important.</li></ul>
+              </div>
+              <div class="card-footer"><span class="price">$20</span><div class="mini-actions"><a class="mini-btn" href="ai-paint-cleaner.html">Details</a><a class="mini-btn buy" href="https://payhip.com/b/KVIw4?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=en_usecase" rel="noopener" target="_blank">Payhip</a></div></div>
+            </article>
+
+            <article class="usecase-card">
+              <div class="usecase-main">
+                <div class="tags"><span class="tag nai">NovelAI</span><span class="tag paid">Generation</span></div>
+                <div class="card-title-row"><div class="icons"><img class="app-icon" src="assets/icons/app_nai.png" alt="NAI Smart Studio icon" /></div><div><h3>Speed up NovelAI generation workflows</h3><p>Choose NAI Smart Studio for NovelAI batch generation, wildcards, tagger features, prompt search, presets, and local history management.</p></div></div>
+                <div class="product-chip-row"><span class="product-chip">NAI Smart Studio</span></div>
+                <ul class="check-list"><li>Best for people who use NovelAI frequently.</li><li>For editing finished images, choose AI Paint Cleaner instead.</li><li>The product page includes trial and manual links.</li></ul>
+              </div>
+              <div class="card-footer"><span class="price">$20</span><div class="mini-actions"><a class="mini-btn" href="nai-smart-studio.html">Details</a><a class="mini-btn buy" href="https://payhip.com/b/5mMZp?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=en_usecase" rel="noopener" target="_blank">Payhip</a></div></div>
+            </article>
+
+            <article class="usecase-card">
+              <div class="usecase-main">
+                <div class="tags"><span class="tag free">Free</span><span class="tag utility">Before posting</span></div>
+                <div class="card-title-row"><div class="icons"><img class="app-icon" src="assets/icons/app3.png" alt="AI Meta Cleaner icon" /></div><div><h3>Remove metadata before posting</h3><p>If you only need to remove image metadata and embedded Stable Diffusion / NovelAI generation info, AI Meta Cleaner is the free choice.</p></div></div>
+                <div class="product-chip-row"><span class="product-chip">AI Meta Cleaner</span></div>
+                <ul class="check-list"><li>Useful as a simple posting-preparation tool.</li><li>If you also need editing, correction, tags, or background removal, choose AI Paint Cleaner.</li><li>If you already use AI Paint Cleaner, you do not need this for metadata deletion.</li></ul>
+              </div>
+              <div class="card-footer"><span class="price free">Free</span><div class="mini-actions"><a class="mini-btn" href="ai-meta-cleaner.html">Details</a><a class="mini-btn buy" href="https://payhip.com/b/LdoFB?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=en_usecase" rel="noopener" target="_blank">Payhip</a></div></div>
+            </article>
+
+            <article class="usecase-card">
+              <div class="usecase-main">
+                <div class="tags"><span class="tag utility">Convert</span><span class="tag paid">Low price</span></div>
+                <div class="card-title-row"><div class="icons"><img class="app-icon" src="assets/icons/app4.png" alt="Meta Converter icon" /></div><div><h3>Convert or compress AI images</h3><p>Use Meta Converter when you want to batch-convert PNG/JPEG/WEBP while preserving metadata where possible.</p></div></div>
+                <div class="product-chip-row"><span class="product-chip">Meta Converter</span></div>
+                <ul class="check-list"><li>A standalone utility for image storage, conversion, and optimization.</li><li>To remove metadata, choose AI Meta Cleaner. To edit images, choose AI Paint Cleaner.</li><li>Runs on CPU; no GPU required.</li></ul>
+              </div>
+              <div class="card-footer"><span class="price">$4</span><div class="mini-actions"><a class="mini-btn" href="meta-converter.html">Details</a><a class="mini-btn buy" href="https://payhip.com/b/4Gwc2?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=en_usecase" rel="noopener" target="_blank">Payhip</a></div></div>
+            </article>
+
+            <article class="usecase-card">
+              <div class="usecase-main">
+                <div class="tags"><span class="tag utility">Video</span><span class="tag paid">Animation</span></div>
+                <div class="card-title-row"><div class="icons"><img class="app-icon" src="assets/icons/app5.png" alt="Frame Craft icon" /></div><div><h3>Extract frames or create GIF/WEBP animations</h3><p>Choose Frame Craft for extracting frames from videos and creating GIF/WEBP animations, including Pixiv Ugoira-oriented workflows.</p></div></div>
+                <div class="product-chip-row"><span class="product-chip">Frame Craft</span></div>
+                <ul class="check-list"><li>Designed for video and animation inputs.</li><li>Includes duplicate-frame removal and black-bar cropping features.</li><li>If you only need image conversion, choose Meta Converter instead.</li></ul>
+              </div>
+              <div class="card-footer"><span class="price">$5</span><div class="mini-actions"><a class="mini-btn" href="frame-craft.html">Details</a><a class="mini-btn buy" href="https://payhip.com/b/D0wG5?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=en_usecase" rel="noopener" target="_blank">Payhip</a></div></div>
+            </article>
+          </div>
+        </section>
+
+        <section id="differences">
+          <div class="section-head"><span class="eyebrow">Differences</span><h2>Common differences</h2><p>Quick comparisons for products that may look similar.</p></div>
+          <div class="compare-grid">
+            <article class="compare-card"><h3>AutoMosaic R18 vs General</h3><p><strong>R18</strong> is for sensitive-region detection. <strong>General</strong> is for anonymizing faces, people, text, and license plates.</p></article>
+            <article class="compare-card"><h3>AI Paint Cleaner vs AI Meta Cleaner</h3><p><strong>AI Paint Cleaner</strong> is a full image editing and finishing tool that includes metadata deletion. <strong>AI Meta Cleaner</strong> is the free metadata-cleaning-only tool.</p></article>
+            <article class="compare-card"><h3>AI Meta Cleaner vs Meta Converter</h3><p><strong>AI Meta Cleaner</strong> removes metadata. <strong>Meta Converter</strong> converts and compresses images while preserving metadata where possible.</p></article>
+            <article class="compare-card"><h3>AI Paint Cleaner vs NAI Smart Studio</h3><p><strong>AI Paint Cleaner</strong> is for editing generated images. <strong>NAI Smart Studio</strong> is for improving the NovelAI generation workflow itself.</p></article>
+          </div>
+        </section>
+
+        <section class="final-cta">
+          <h2>Check prices, trial versions, and updates</h2>
+          <p>Product pages include the latest price, trial version, system requirements, and update history. Use the product list if you already know the product name.</p>
+          <div class="hero-actions" style="justify-content:center; margin-top: 0;"><a class="btn btn-primary" href="index.html">Product list</a><a class="btn btn-secondary" href="https://payhip.com/nekzuk" rel="noopener" target="_blank">Payhip store</a></div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="container"><span>© 2024-2026 nekzuk Software. All rights reserved.</span><span><a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank">X / Twitter</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></span></div>
+      </footer>
+    </div>
+  </body>
+</html>
