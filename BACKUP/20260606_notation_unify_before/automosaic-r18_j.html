@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="utf-8" />
     <script>
@@ -8,34 +8,35 @@
         try {
           const p = new URLSearchParams(location.search);
           const lang = p.get("lang");
-          if (lang === "ja") {
-            location.replace("automosaic-r18_j.html");
+          if (lang === "en") {
+            location.replace("automosaic-r18.html");
             return;
           }
-          if (lang === "en" && location.search) {
-            location.replace("automosaic-r18.html");
+          if (lang === "ja" && location.search) {
+            location.replace("automosaic-r18_j.html");
           }
         } catch (e) {}
       })();
     </script>
     <meta content="width=device-width,initial-scale=1" name="viewport" />
-    <title>
-      AutoMosaic (R18) – Batch Auto-Mosaic Tool for Windows | nekzuk
-    </title>
+    <title>AutoMosaic (R18版) – 画像への連続自動モザイクツール | nekzuk</title>
     <!-- SEO Meta Tags -->
     <meta
-      content="GPU-accelerated batch auto-mosaic tool for Windows. Automatically detects sensitive regions and applies mosaic offline with high accuracy."
+      content="GPU対応の自動モザイクツール。画像のセンシティブな領域を自動検出し、高精度でモザイクを一括適用。オフライン処理・Windows対応。"
       name="description"
     />
     <!-- Open Graph / Facebook -->
     <meta content="product" property="og:type" />
-    <meta content="https://nekzuk.com/automosaic-r18.html" property="og:url" />
     <meta
-      content="AutoMosaic (R18) – Batch Auto-Mosaic Tool"
+      content="https://nekzuk.com/automosaic-r18_j.html"
+      property="og:url"
+    />
+    <meta
+      content="AutoMosaic (R18版) – 画像への連続自動モザイクツール"
       property="og:title"
     />
     <meta
-      content="GPU-accelerated batch mosaic tool for sensitive images. Offline processing. Windows 10/11 compatible."
+      content="GPU対応の自動モザイクツール。センシティブ画像のモザイク処理をオフラインで高精度に一括適用。Windows 10/11対応。"
       property="og:description"
     />
     <meta
@@ -47,11 +48,11 @@
     <meta content="summary" name="twitter:card" />
     <meta content="@Synekzuk_AI" name="twitter:site" />
     <meta
-      content="AutoMosaic (R18) – Batch Auto-Mosaic Tool"
+      content="AutoMosaic (R18版) – 画像への連続自動モザイクツール"
       name="twitter:title"
     />
     <meta
-      content="GPU-accelerated batch mosaic tool for sensitive images. Offline processing. Windows 10/11 compatible."
+      content="GPU対応の自動モザイクツール。センシティブ画像のモザイク処理をオフラインで高精度に一括適用。Windows 10/11対応。"
       name="twitter:description"
     />
     <meta
@@ -59,7 +60,7 @@
       name="twitter:image"
     />
     <!-- Language SEO -->
-    <link rel="canonical" href="https://nekzuk.com/automosaic-r18.html" />
+    <link rel="canonical" href="https://nekzuk.com/automosaic-r18_j.html" />
     <link
       rel="alternate"
       hreflang="en"
@@ -75,7 +76,7 @@
       hreflang="x-default"
       href="https://nekzuk.com/automosaic-r18.html"
     />
-    <meta content="en_US" property="og:locale" />
+    <meta content="ja_JP" property="og:locale" />
     <!-- Favicon & Icons -->
     <link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32" />
     <link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml" />
@@ -495,23 +496,23 @@
       h2.lang-en,
       h3.lang-en,
       b.lang-en {
-        display: inline;
+        display: none;
       }
       span.lang-ja,
       p.lang-ja,
       h2.lang-ja,
       h3.lang-ja,
       b.lang-ja {
-        display: none;
+        display: inline;
       }
       ul.lang-en,
       ol.lang-en {
-        display: block;
+        display: none;
         padding-right: 1.25rem;
       }
       ul.lang-ja,
       ol.lang-ja {
-        display: none;
+        display: block;
       }
 
       .grid-2 {
@@ -739,30 +740,30 @@
       {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "AutoMosaic (R18)",
+        "name": "AutoMosaic (R18版)",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Windows 10, Windows 11",
-        "description": "Automatically detects sensitive regions and applies mosaic/blur/fill to many images in batch. GPU-accelerated processing with highest detection accuracy in its price range.",
-        "screenshot": "https://nekzuk.com/assets/automosaic/ui_en_r18.png",
+        "description": "センシティブな領域を自動検出し、多数の画像にモザイク/ぼかし/塗りつぶしを一括適用。GPU高速化処理で同価格帯最高レベルの検出精度。",
+        "screenshot": "https://nekzuk.com/assets/automosaic/ui_ja_r18.png",
         "featureList": [
-          "AI-powered automatic detection of sensitive regions",
-          "GPU-accelerated processing (approximately 2 seconds per image)",
-          "Multiple processing modes: mosaic, black bar, segmentation",
-          "Extensible model support for custom detection",
-          "Multilingual UI (English / Japanese / Chinese (Simplified / Traditional) / Korean)",
-          "Batch processing for multiple images",
-          "Offline processing - no internet required"
+          "AIによるセンシティブ領域の自動検出",
+          "GPU高速処理（1画像あたり約2秒）",
+          "複数の処理モード：モザイク、黒帯、セグメンテーション",
+          "カスタム検出用の拡張モデル対応",
+          "多言語インターフェース（英語・日本語・中国語・韓国語）",
+          "複数画像の一括処理",
+          "オフライン処理 - インターネット接続不要"
         ],
         "softwareVersion": "3.40",
         "releaseNotes": "https://note.com/nekzuk/n/ndd4e4e44cdb9",
         "video": {
           "@type": "VideoObject",
-          "name": "AutoMosaic R18 Demo (English)",
-          "description": "1-minute overview covering the interface and basic operations",
+          "name": "AutoMosaic (R18版) デモ",
+          "description": "インターフェースと基本操作を紹介する約1分の概要動画",
           "thumbnailUrl": "https://i.ytimg.com/vi/vR8GQbJrgR4/maxresdefault.jpg",
           "contentUrl": "https://www.youtube.com/watch?v=vR8GQbJrgR4",
           "embedUrl": "https://www.youtube.com/embed/vR8GQbJrgR4",
-          "uploadDate": "2026-01-05"
+          "uploadDate": "2025-09-30"
         },
         "offers": [
           {
@@ -795,7 +796,7 @@
           "name": "nekzuk Software",
           "url": "https://nekzuk.com"
         },
-        "inLanguage": "en"
+        "inLanguage": "ja"
       }
     </script>
     <script type="application/ld+json">
@@ -806,14 +807,14 @@
           {
             "@type": "ListItem",
             "position": 1,
-            "name": "Home",
+            "name": "ホーム",
             "item": "https://nekzuk.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "AutoMosaic (R18)",
-            "item": "https://nekzuk.com/automosaic-r18.html"
+            "name": "AutoMosaic (R18版)",
+            "item": "https://nekzuk.com/automosaic-r18_j.html"
           }
         ]
       }
@@ -822,7 +823,9 @@
   <body>
     <div class="container">
       <div class="top">
-        <a data-role="back" href="/">← <span class="lang-en">Back</span></a>
+        <a data-role="back" href="/index_j.html"
+          >← <span class="lang-ja">戻る</span></a
+        >
         <div class="small">
           <a href="automosaic-r18.html">English</a> /
           <a href="automosaic-r18_j.html">日本語</a>
@@ -845,29 +848,27 @@
             <div>
               <div class="titleRow">
                 <h1 class="title">
-                  <span class="lang-en">AutoMosaic (R18)</span>
+                  <span class="lang-ja">AutoMosaic (R18版)</span>
                 </h1>
                 <p class="subtitle">
-                  <span class="lang-en"
-                    >Batch auto-mosaic tool designed for sensitive images.
-                    GPU-accelerated for fast processing across multiple
-                    images.</span
+                  <span class="lang-ja"
+                    >画像内のセンシティブ部位を自動検出し、複数画像に連続でモザイク処理を施すツールです。GPU対応により高速処理を実現。</span
                   >
                 </p>
               </div>
               <div class="price">
-                <span class="lang-en">$25</span>
+                <span class="lang-ja">¥3,000</span>
               </div>
               <div class="btns">
                 <a
-                  class="btn primary lang-en"
-                  href="https://payhip.com/b/BO3TR"
+                  class="btn primary lang-ja"
+                  href="https://synekzuk.booth.pm/items/6510317"
                   rel="noopener"
                   target="_blank"
-                  >Payhip</a
+                  >BOOTH</a
                 >
                 <a class="btn sub" href="#trial"
-                  ><span class="lang-en">Trial Version</span></a
+                  ><span class="lang-ja">体験版</span></a
                 >
               </div>
             </div>
@@ -876,26 +877,26 @@
         <div class="kpi heroFacts">
           <div class="box">
             <div class="kv">
-              <div class="label lang-en">Targets</div>
-              <div class="value lang-en">Female / Male genitalia / Anus</div>
+              <div class="label lang-ja">検出対象</div>
+              <div class="value lang-ja">女性器・男性器・肛門</div>
             </div>
           </div>
           <div class="box">
             <div class="kv">
-              <div class="label lang-en">For</div>
-              <div class="value lang-en">Sensitive Content</div>
+              <div class="label lang-ja">用途</div>
+              <div class="value lang-ja">成人向けコンテンツ</div>
             </div>
           </div>
           <div class="box">
             <div class="kv">
-              <div class="label lang-en">Processing</div>
-              <div class="value lang-en">Batch</div>
+              <div class="label lang-ja">処理</div>
+              <div class="value lang-ja">一括処理</div>
             </div>
           </div>
           <div class="box">
             <div class="kv">
-              <div class="label lang-en">UI Languages</div>
-              <div class="value">EN / JP / ZH / KR</div>
+              <div class="label lang-ja">UI言語</div>
+              <div class="value">JP / EN (+ more)</div>
             </div>
           </div>
         </div>
@@ -903,108 +904,100 @@
       <div class="grid">
         <section class="section">
           <h2>
-            <span class="lang-en">Overview</span>
+            <span class="lang-ja">概要</span>
           </h2>
-          <p class="lang-en">
-            Automatically detects specific regions in images and batch-processes
-            multiple images. Offers the highest detection accuracy in its price
-            range (free to a few thousand yen). Operates offline by default for
-            privacy protection. Try the trial version!
+          <p class="lang-ja">
+            画像内の特定部位を自動検出し、複数の画像に連続で画像処理を施していけるツールです。この価格帯（無料〜数千円）の類似ソフトウェアの中では検出精度は最も高いかと思います。基本はネットワークを介さず動作するため、プライバシーも安心です。ぜひ体験版でお試しください。
           </p>
           <div class="hr"></div>
-          <ul class="lang-en">
-            <li><b>Offline</b>: no uploads, no cloud processing</li>
-            <li><b>Batch</b>: process many images at once</li>
-            <li><b>Presets</b>: pick what to detect and the output style</li>
-            <li><b>Supported formats</b>: JPG / PNG / BMP / GIF / WEBP</li>
-            <li><b>Processing speed</b>: 1-3 sec (GPU) / 5-8 sec (CPU)</li>
+          <ul class="lang-ja">
+            <li><b>オフライン動作</b>:アップロード不要、クラウド処理なし</li>
+            <li><b>バッチ処理</b>:複数画像をまとめて処理</li>
+            <li><b>プリセット</b>:検出対象と出力スタイルを選ぶだけ</li>
+            <li><b>対応画像形式</b>:JPG / PNG / BMP / GIF / WEBP</li>
+            <li><b>処理速度</b>:1-3秒(GPU) / 5-8秒(CPU)</li>
           </ul>
         </section>
         <section class="section">
           <h2>
-            <span class="lang-en">Detectable targets / Outputs</span>
+            <span class="lang-ja">検出対象 / 出力</span>
           </h2>
           <div class="twoCol">
             <div>
               <h3>
-                <span class="lang-en">Detectable targets</span>
+                <span class="lang-ja">検出対象</span>
               </h3>
-              <ul class="lang-en">
-                <li>Female genitalia</li>
-                <li>Male genitalia</li>
-                <li>Anus</li>
+              <ul class="lang-ja">
+                <li>女性器</li>
+                <li>男性器</li>
+                <li>肛門</li>
               </ul>
             </div>
             <div>
               <h3>
-                <span class="lang-en">Outputs</span>
+                <span class="lang-ja">出力</span>
               </h3>
-              <ul class="lang-en">
-                <li>Mosaic (FANZA / DLSite / Booth standard sizes)</li>
-                <li>Blur</li>
-                <li>Black/white fill</li>
-                <li>Bar censorship (beta)</li>
+              <ul class="lang-ja">
+                <li>
+                  モザイク（FANZA / DLSite / Booth準拠サイズへの自動設定可）
+                </li>
+                <li>ぼかし</li>
+                <li>黒塗り（白塗り）</li>
+                <li>海苔（仮実装）</li>
               </ul>
               <div class="hr"></div>
               <h3>
-                <span class="lang-en">UI Languages</span>
+                <span class="lang-ja">UI言語</span>
               </h3>
-              <ul class="lang-en">
-                <li>Japanese</li>
-                <li>English</li>
-                <li>Chinese (Simplified / Traditional)</li>
-                <li>Korean</li>
+              <ul class="lang-ja">
+                <li>日本語</li>
+                <li>英語</li>
+                <li>中国語(簡体/繁体)</li>
+                <li>韓国語</li>
               </ul>
             </div>
           </div>
-          <p class="note lang-en" style="margin-top: 1rem; font-size: 0.85rem">
-            💡 <b>Tip:</b> You can expand functionality by adding Adetailer
-            models to the Models folder.
+          <p class="note lang-ja" style="margin-top: 1rem; font-size: 0.85rem">
+            💡 <b>Tip:</b> Adetailerモデルを Models
+            フォルダに追加することで、機能を追加していくことができます。
           </p>
         </section>
         <section class="section">
           <h2>
-            <span class="lang-en">How to use</span>
+            <span class="lang-ja">基本的な使い方</span>
           </h2>
-          <ol class="lang-en">
-            <li>Select a preset</li>
-            <li>Select an input folder</li>
-            <li>Adjust settings (e.g., mosaic size)</li>
-            <li>Click <b>Run</b> to start processing</li>
+          <ol class="lang-ja">
+            <li>プリセットを選択</li>
+            <li>入力フォルダを選択</li>
+            <li>モザイクサイズなどの設定を調整</li>
+            <li>「処理実行」ボタンをクリック</li>
           </ol>
         </section>
         <section class="section">
-          <h2><span class="lang-en">System Requirements</span></h2>
+          <h2><span class="lang-ja">動作環境</span></h2>
           <ul>
-            <li><span class="lang-en">OS: Windows 10/11 (64-bit)</span></li>
-            <li><span class="lang-en">Memory: 8GB+ recommended</span></li>
+            <li><span class="lang-ja">OS: Windows 10/11(64bit)</span></li>
+            <li><span class="lang-ja">メモリ: 8GB以上推奨</span></li>
             <li>
-              <span class="lang-en"
-                >Storage (available/free space): 8GB or more</span
-              >
+              <span class="lang-ja">ストレージ（空き容量）: 8GB以上</span>
             </li>
             <li>
-              <span class="lang-en"
-                >GPU: NVIDIA GPU / VRAM: 4GB+ recommended</span
-              >
+              <span class="lang-ja">GPU: NVIDIA製GPU / VRAM: 4GB以上推奨</span>
             </li>
             <li>
-              <span class="lang-en"
-                >It can run without a GPU, but processing will be slower.</span
+              <span class="lang-ja"
+                >GPUなしでも動作しますが、処理速度は低下します。</span
               >
             </li>
           </ul>
         </section>
         <section class="section">
-          <h2>
-            <span class="lang-en">Before / After &amp; Detection Accuracy</span>
-          </h2>
+          <h2><span class="lang-ja">処理例(Before / After)と検出精度</span></h2>
           <h3>
-            <span class="lang-en">Sample Images</span>
+            <span class="lang-ja">サンプル画像</span>
           </h3>
-          <p class="lang-en">
-            Due to content sensitivity, sample images are available at the
-            following link:
+          <p class="lang-ja">
+            サンプル画像の特性上、下記リンク先を参照ください：
           </p>
           <p style="margin-top: 0.5rem">
             <a
@@ -1013,16 +1006,15 @@
               rel="noopener"
               target="_blank"
             >
-              <span class="lang-en">→ View Processing Samples</span>
+              <span class="lang-ja">→ 処理サンプルを見る</span>
             </a>
           </p>
           <div class="hr"></div>
           <h3>
-            <span class="lang-en">Detection Accuracy Data</span>
+            <span class="lang-ja">検出精度データ</span>
           </h3>
-          <p class="lang-en">
-            v3.40 benchmark (normal settings): 470 sample images
-            processed
+          <p class="lang-ja">
+            v3.40（通常検出設定）ベンチマーク：470枚のサンプル処理結果
           </p>
           <div
             class="kpi"
@@ -1033,7 +1025,7 @@
           >
             <div class="box">
               <div class="kv">
-                <div class="label lang-en">Processing Time</div>
+                <div class="label lang-ja">処理時間</div>
                 <div class="value">
                   800<span
                     style="
@@ -1049,13 +1041,13 @@
             </div>
             <div class="box">
               <div class="kv">
-                <div class="label lang-en">Detection Rate</div>
+                <div class="label lang-ja">検出率</div>
                 <div class="value">450/470 (96%)</div>
               </div>
             </div>
             <div class="box">
               <div class="kv">
-                <div class="label lang-en">One-shot OK</div>
+                <div class="label lang-ja">一発OK</div>
                 <div class="value">428 (91%)</div>
               </div>
             </div>
@@ -1069,68 +1061,66 @@
           >
             <div class="box">
               <div class="kv">
-                <div class="label lang-en">Mosaic Leakage</div>
+                <div class="label lang-ja">モザイク漏れ</div>
                 <div class="value">15 (3%)</div>
               </div>
             </div>
             <div class="box">
               <div class="kv">
-                <div class="label lang-en">False Detection</div>
+                <div class="label lang-ja">誤検出</div>
                 <div class="value">7 (1%)</div>
               </div>
             </div>
             <div class="box">
               <div class="kv">
-                <div class="label lang-en">Not Detected</div>
+                <div class="label lang-ja">未検出</div>
                 <div class="value">20 (4%)</div>
               </div>
             </div>
           </div>
           <p class="note" style="margin-top: 1.5rem">
-            <span class="lang-en"
-              >💡 <b>Tip:</b> After automatic processing, you can use
-              <a href="ai-paint-cleaner.html">AI Paint Cleaner</a> for fine
-              adjustments (remove extra mosaic, add missing mosaic, inpaint,
-              etc.).</span
+            <span class="lang-ja"
+              >💡 <b>Tip:</b> 自動処理後、<a href="ai-paint-cleaner_j.html"
+                >AI Paint Cleaner</a
+              >で微調整(余計なモザイクの除去、モザイク追加、インペイント等)が可能です。</span
             >
           </p>
         </section>
         <section class="section" id="ui">
-          <h2><span class="lang-en">UI screenshot</span></h2>
+          <h2><span class="lang-ja">UIスクリーンショット</span></h2>
           <a
-            class="shot lang-en"
-            href="assets/automosaic/ui_en_r18.png"
+            class="shot lang-ja"
+            href="assets/automosaic/ui_ja_r18.png"
             rel="noopener"
             target="_blank"
           >
             <img
               loading="lazy"
-              alt="AutoMosaic R18 UI (English)"
-              src="assets/automosaic/ui_en_r18.png"
+              alt="AutoMosaic R18 UI (Japanese)"
+              src="assets/automosaic/ui_ja_r18.png"
             />
-            <div class="cap">UI (English)</div>
+            <div class="cap">UI(日本語)</div>
           </a>
         </section>
         <section class="section" id="video">
-          <h2><span class="lang-en">Video demo</span></h2>
+          <h2><span class="lang-ja">紹介動画</span></h2>
           <p class="muted" style="margin-bottom: 1rem">
-            <span class="lang-en"
-              >1-minute overview covering the interface and basic operations
-              (steps 1-4).</span
+            <span class="lang-ja"
+              >1分で概要と基本操作（ステップ1-4）を説明します</span
             >
           </p>
-          <div class="lang-en">
+          <div class="lang-ja">
             <a
               class="yt"
-              href="https://www.youtube.com/watch?v=vR8GQbJrgR4"
+              href="https://www.youtube.com/watch?v=dS3HW6hs5Y4"
               rel="noopener"
               target="_blank"
             >
               <img
                 loading="lazy"
-                alt="AutoMosaic English demo thumbnail"
+                alt="AutoMosaic Japanese demo thumbnail"
                 class="ytThumb"
-                src="https://i.ytimg.com/vi/vR8GQbJrgR4/maxresdefault.jpg"
+                src="https://i.ytimg.com/vi/dS3HW6hs5Y4/maxresdefault.jpg"
               />
               <div class="ytOverlay">
                 <div class="ytPlay"></div>
@@ -1139,11 +1129,11 @@
           </div>
         </section>
         <section class="section" id="trial">
-          <h2><span class="lang-en">Trial Version</span></h2>
-          <p class="lang-en">
-            <b>Windows (No GPU / GPU: RTX 50XX series or earlier)</b>
+          <h2><span class="lang-ja">体験版</span></h2>
+          <p class="lang-ja">
+            <b>Windows (GPUなし / GPU: RTX 50XXシリーズ以前)</b>
           </p>
-          <p class="lang-en">
+          <p class="lang-ja">
             <a
               class="btn download"
               href="https://drive.google.com/file/d/1DQ84WayzPmIvfTG2APZz9ySYMC9-ll5Z/view?usp=drive_link"
@@ -1153,8 +1143,8 @@
             >
           </p>
           <div class="hr"></div>
-          <p class="lang-en"><b>Windows (GPU: RTX 50XX series or later)</b></p>
-          <p class="lang-en">
+          <p class="lang-ja"><b>Windows (GPU: RTX 50XXシリーズ以降)</b></p>
+          <p class="lang-ja">
             <a
               class="btn download"
               href="https://drive.google.com/file/d/1wpOpMsBxOm6kH_2bFUG64pSlRko6QwpV/view?usp=drive_link"
@@ -1165,16 +1155,16 @@
           </p>
           <div class="hr"></div>
           <h3>
-            <span class="lang-en">What's included</span>
+            <span class="lang-ja">体験版の内容</span>
           </h3>
-          <ul class="lang-en">
-            <li>✓ All features available</li>
-            <li>✓ Process up to 20 images per batch</li>
-            <li>✗ Watermark added to processed images</li>
+          <ul class="lang-ja">
+            <li>✓ 全機能を試せます</li>
+            <li>✓ 連続20枚まで処理可能</li>
+            <li>✗ 体験版処理画像には透かし追加</li>
           </ul>
         </section>
         <section class="section">
-          <h2><span class="lang-en">Updates &amp; Changelog</span></h2>
+          <h2><span class="lang-ja">更新情報・変更履歴</span></h2>
           <div
             class="kpi"
             style="
@@ -1184,25 +1174,25 @@
           >
             <div class="box">
               <div class="kv">
-                <div class="label lang-en">Current Version</div>
+                <div class="label lang-ja">最新バージョン</div>
                 <div class="value">v3.40</div>
               </div>
             </div>
             <div class="box">
               <div class="kv">
-                <div class="label lang-en">Release Date</div>
+                <div class="label lang-ja">リリース日</div>
                 <div class="value">2026-05-31</div>
               </div>
             </div>
           </div>
           <div class="hr"></div>
           <h3>
-            <span class="lang-en">Latest Updates</span>
+            <span class="lang-ja">最新の更新内容</span>
           </h3>
-          <ul class="lang-en">
-            <li>Improved detection accuracy and speed</li>
-            <li>Addressed various user requests</li>
-            <li>Improved translations</li>
+          <ul class="lang-ja">
+            <li>検出精度と速度の向上</li>
+            <li>各種要望対応</li>
+            <li>翻訳の改善</li>
           </ul>
           <p style="margin-top: 1rem">
             <a
@@ -1210,59 +1200,48 @@
               rel="noopener"
               target="_blank"
             >
-              <span class="lang-en">→ Read detailed release notes</span>
+              <span class="lang-ja">→ 詳細な更新内容を読む</span>
             </a>
           </p>
         </section>
         <section class="section">
           <h2>
-            <span class="lang-en">License &amp; Usage Notes</span>
+            <span class="lang-ja">ライセンス・ご利用上の注意</span>
           </h2>
           <h3>
-            <span class="lang-en">License</span>
+            <span class="lang-ja">ライセンス</span>
           </h3>
-          <ul class="lang-en">
-            <li>
-              <b>Personal use (including commercial)</b>: Included with purchase
-            </li>
-            <li>
-              <b>Corporate/enterprise use</b>: Please contact separately for
-              licensing
-            </li>
+          <ul class="lang-ja">
+            <li><b>個人での商用利用</b>: 本製品の購入で利用可能</li>
+            <li><b>企業での商用利用</b>: 別途ご相談ください</li>
           </ul>
           <div class="hr"></div>
           <h3>
-            <span class="lang-en">Important Notes</span>
+            <span class="lang-ja">重要な注意事項</span>
           </h3>
-          <ul class="lang-en">
+          <ul class="lang-ja">
             <li>
-              Processing may take time depending on your PC/GPU specifications
+              処理にはお使いのPC/GPUの性能に応じて時間がかかる場合があります
             </li>
-            <li>
-              Please review all outputs after processing to ensure accuracy
-            </li>
-            <li>
-              Detection accuracy may vary depending on image quality and
-              conditions
-            </li>
+            <li>処理結果は必ずご確認ください</li>
+            <li>検出精度は画像の品質や条件により変動する場合があります</li>
           </ul>
         </section>
       </div>
       <div class="footer">
-        <div class="lang-en" style="margin-bottom: 0.75rem">
-          <b>Support:</b>
+        <div class="lang-ja" style="margin-bottom: 0.75rem">
+          <b>サポート:</b>
           <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank"
             >Twitter/X</a
           >
           |
           <a
-            href="https://payhip.com/nekzuk/contact"
+            href="https://accounts.booth.pm/conversations/49131834/messages"
             rel="noopener"
             target="_blank"
-            >Payhip message</a
+            >BOOTHメッセージ</a
           >
         </div>
-
         © nekzuk Software
       </div>
     </div>

@@ -6,32 +6,32 @@
   try {
     const p = new URLSearchParams(location.search);
     const lang = p.get('lang');
-    if (lang === 'ja') { location.replace('ai-paint-cleaner_j.html'); return; }
-    if (lang === 'en' && location.search) { location.replace('ai-paint-cleaner.html'); }
+    if (lang === 'ja') { location.replace('meta-converter_j.html'); return; }
+    if (lang === 'en' && location.search) { location.replace('meta-converter.html'); }
   } catch(e) {}
 })();</script>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>AI Paint Cleaner – AI Image Editor &amp; Batch Processing Tool for Windows | nekzuk</title>
+<title>Meta Converter – Convert PNG/JPEG/WEBP with Metadata | nekzuk</title>
 <!-- SEO Meta Tags -->
-<meta content="Windows AI image editor for AutoMosaic follow-up cleanup, AI inpainting, cloud AI editing, AI correction, tags, and CLI support." name="description"/>
+<meta content="Meta Converter converts images to PNG/JPEG/WEBP while preserving AI metadata. Works with A1111 WebUI PNGinfo, ComfyUI, NovelAI, and Eagle. ¥380 / $4" name="description"/>
 <!-- Open Graph / Facebook -->
 <meta content="product" property="og:type"/>
-<meta content="https://nekzuk.com/ai-paint-cleaner.html" property="og:url"/>
-<meta content="AI Paint Cleaner – AI Image Editor" property="og:title"/>
-<meta content="Windows AI image editor for AutoMosaic follow-up cleanup, AI inpainting, GPT Image / Gemini / NovelAI workflows, AI correction, tags, and CLI support." property="og:description"/>
-<meta content="https://nekzuk.com/assets/icons/app2.png" property="og:image"/>
+<meta content="https://nekzuk.com/meta-converter.html" property="og:url"/>
+<meta content="Meta Converter – Image Converter with Metadata Preservation" property="og:title"/>
+<meta content="Convert images while preserving AI generation metadata. Compatible with A1111 WebUI, ComfyUI, NovelAI, and Eagle software." property="og:description"/>
+<meta content="https://nekzuk.com/assets/icons/app4.png" property="og:image"/>
 <meta content="nekzuk Software" property="og:site_name"/>
 <!-- Twitter -->
 <meta content="summary" name="twitter:card"/>
 <meta content="@Synekzuk_AI" name="twitter:site"/>
-<meta content="AI Paint Cleaner – AI Image Editor" name="twitter:title"/>
-<meta content="Windows AI image editor for AutoMosaic follow-up cleanup, AI inpainting, GPT Image / Gemini / NovelAI workflows, AI correction, tags, and CLI support." name="twitter:description"/>
-<meta content="https://nekzuk.com/assets/icons/app2.png" name="twitter:image"/>
+<meta content="Meta Converter – Image Converter with Metadata Preservation" name="twitter:title"/>
+<meta content="Convert images while preserving AI generation metadata. Compatible with A1111 WebUI, ComfyUI, NovelAI, and Eagle software." name="twitter:description"/>
+<meta content="https://nekzuk.com/assets/icons/app4.png" name="twitter:image"/>
 <!-- Language SEO -->
-<link rel="canonical" href="https://nekzuk.com/ai-paint-cleaner.html"/>
-<link rel="alternate" hreflang="en" href="https://nekzuk.com/ai-paint-cleaner.html"/>
-<link rel="alternate" hreflang="ja" href="https://nekzuk.com/ai-paint-cleaner_j.html"/>
-<link rel="alternate" hreflang="x-default" href="https://nekzuk.com/ai-paint-cleaner.html"/>
+<link rel="canonical" href="https://nekzuk.com/meta-converter.html"/>
+<link rel="alternate" hreflang="en" href="https://nekzuk.com/meta-converter.html"/>
+<link rel="alternate" hreflang="ja" href="https://nekzuk.com/meta-converter_j.html"/>
+<link rel="alternate" hreflang="x-default" href="https://nekzuk.com/meta-converter.html"/>
 <meta content="en_US" property="og:locale"/>
 <!-- Favicon & Icons -->
 <link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32"/>
@@ -240,60 +240,49 @@ ul.lang-ja, ol.lang-ja {display:none}
 
 .twoCol > div { padding-left: 0.5rem; padding-right: 0.5rem; }
 
-.pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+/* Before/After special layout: left 2 images stacked, right 1 large */
+.beforeAfterGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+}
+@media(max-width:860px){
+  .beforeAfterGrid{grid-template-columns:1fr}
+}
+.beforeAfterLeft{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
 
-.placeholder-section{
-  background:var(--card2);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:1rem;
-  padding:2rem;
-  text-align:center;
-  color:var(--muted2);
-}
-.placeholder-section h3{
-  margin-bottom:0.5rem;
-  color:var(--muted);
-}
-  </style>
+</style>
 <!-- 構造化データ：SoftwareApplication (Enhanced) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "AI Paint Cleaner",
+  "name": "Meta Converter",
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "Windows 10, Windows 11",
-  "description": "Windows AI image editor for AutoMosaic follow-up cleanup, AI inpainting, cloud AI editing, AI correction, tags, metadata utilities, and CLI support.",
-  "screenshot": "https://nekzuk.com/assets/aipaintcleaner/AIPaintCleaner_1_en.jpg",
+  "description": "Batch-convert images to PNG/JPEG/WEBP while preserving metadata where possible. Useful for organizing and optimizing AI-generated images while keeping generation parameters.",
+  "screenshot": "https://nekzuk.com/assets/Other/meta1_en.png",
   "featureList": [
-    "Local AI inpainting for object removal and touch-ups",
-    "AutoMosaic follow-up cleanup and pinpoint mosaic adjustment",
-    "High-quality SDXL / ControlNet / reference-image inpainting",
-    "Cloud AI editing with GPT Image, Gemini, and NovelAI",
-    "AI correction, AI upscaling, and background removal",
-    "Tag generation, natural-language captions, and bulk tag editing",
-    "CLI support for image processing automation and batch work",
-    "Metadata display, editing, and cleaning utilities",
-    "Multilingual UI (English / Japanese / Chinese (Simplified / Traditional) / Korean)"
+    "Convert images while preserving metadata",
+    "PNG to JPEG compression (up to 1/10 file size reduction)",
+    "Quality and file size tuning options",
+    "Eagle library format support",
+    "Command-line interface (CLI) support for automation",
+    "Batch processing for multiple images",
+    "Multi-language interface (English, Japanese)"
   ],
-  "softwareVersion": "3.10",
-  "releaseNotes": "https://note.com/nekzuk/n/n7734e89e1b67",
-  "video": {
-    "@type": "VideoObject",
-    "name": "AI Paint Cleaner Demo (English)",
-    "description": "Comprehensive demo of AI inpainting, AI correction, background removal, tag generation, and batch processing features",
-    "thumbnailUrl": "https://i.ytimg.com/vi/7g61LO9kZRE/maxresdefault.jpg",
-    "contentUrl": "https://www.youtube.com/watch?v=7g61LO9kZRE",
-    "embedUrl": "https://www.youtube.com/embed/7g61LO9kZRE",
-    "uploadDate": "2026-03-16"
-  },
+  "softwareVersion": "3.00",
   "offers": [
     {
       "@type": "Offer",
       "name": "BOOTH",
-      "price": "2500",
+      "price": "380",
       "priceCurrency": "JPY",
-      "url": "https://synekzuk.booth.pm/items/6649634",
+      "url": "https://synekzuk.booth.pm/items/6911255",
       "availability": "https://schema.org/InStock",
       "seller": {
         "@type": "Organization",
@@ -303,9 +292,9 @@ ul.lang-ja, ol.lang-ja {display:none}
     {
       "@type": "Offer",
       "name": "Payhip",
-      "price": "20",
+      "price": "4",
       "priceCurrency": "USD",
-      "url": "https://payhip.com/b/KVIw4",
+      "url": "https://payhip.com/b/4Gwc2",
       "availability": "https://schema.org/InStock",
       "seller": {
         "@type": "Organization",
@@ -335,8 +324,8 @@ ul.lang-ja, ol.lang-ja {display:none}
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "AI Paint Cleaner",
-      "item": "https://nekzuk.com/ai-paint-cleaner.html"
+      "name": "Meta Converter",
+      "item": "https://nekzuk.com/meta-converter.html"
     }
   ]
 }
@@ -347,8 +336,8 @@ ul.lang-ja, ol.lang-ja {display:none}
 <div class="top">
 <a data-role="back" href="/">← <span class="lang-en">Back</span></a>
 <div class="small">
-<a href="ai-paint-cleaner.html">English</a> /
-        <a href="ai-paint-cleaner_j.html">日本語</a>
+<a href="meta-converter.html">English</a> /
+        <a href="meta-converter_j.html">日本語</a>
 </div>
 </div>
 <section class="hero">
@@ -356,22 +345,18 @@ ul.lang-ja, ol.lang-ja {display:none}
 <span class="pill">Windows</span>
 <span class="pill">Desktop</span>
 <span class="pill">Batch Processing</span>
-<span class="pill">Local-first</span>
-<span class="pill">Cloud AI optional</span>
+<span class="pill">Metadata Preservation</span>
 </div>
 <div class="heroTop">
 <div class="heroTitle">
-<img alt="AI Paint Cleaner icon" class="appIcon" src="assets/icons/app2.png"/>
+<img alt="Meta Converter icon" class="appIcon" src="assets/icons/app4.png"/>
 <div>
-<div class="titleRow">
-<h1 class="title"><span class="lang-en">AI Paint Cleaner</span></h1>
-<p class="subtitle"><span class="lang-en">AI image editor for AutoMosaic follow-up cleanup, inpainting, AI correction, tags, and CLI support.</span></p>
-</div>
+<div class="titleRow"><h1 class="title"><span class="lang-en">Meta Converter</span></h1><p class="subtitle"><span class="lang-en">Convert images to PNG/JPEG/WEBP while preserving metadata. Perfect for AI-generated images with support for WebUI, ComfyUI, NovelAI, and Eagle software.</span></p></div>
 <div class="price">
-<span class="lang-en">$20</span>
+<span class="lang-en">$4</span>
 </div>
 <div class="btns">
-<a class="btn primary lang-en" href="https://payhip.com/b/KVIw4" rel="noopener" target="_blank">Payhip</a>
+<a class="btn primary lang-en" href="https://payhip.com/b/4Gwc2" rel="noopener" target="_blank">Payhip</a>
 <a class="btn sub" href="#trial"><span class="lang-en">Trial Version</span></a>
 </div>
 </div>
@@ -380,26 +365,26 @@ ul.lang-ja, ol.lang-ja {display:none}
 <div class="kpi heroFacts">
 <div class="box">
 <div class="kv">
-<div class="label lang-en">Main Features</div>
-<div class="value lang-en">Cleanup + AI Editing</div>
+<div class="label lang-en">Conversion</div>
+<div class="value">PNG / JPEG / WEBP</div>
 </div>
 </div>
 <div class="box">
 <div class="kv">
 <div class="label lang-en">For</div>
-<div class="value lang-en">Cleanup / Finish / Organize</div>
+<div class="value lang-en">AI Image Management</div>
 </div>
 </div>
 <div class="box">
 <div class="kv">
 <div class="label lang-en">Processing</div>
-<div class="value lang-en">GUI / CLI</div>
+<div class="value lang-en">Batch</div>
 </div>
 </div>
 <div class="box">
 <div class="kv">
-<div class="label lang-en">UI Languages</div>
-<div class="value">EN / JP / ZH / KR</div>
+<div class="label lang-en">Language UI</div>
+<div class="value">JP / EN</div>
 </div>
 </div>
 </div></section>
@@ -409,142 +394,92 @@ ul.lang-ja, ol.lang-ja {display:none}
 <span class="lang-en">Overview</span>
 </h2>
 <p class="lang-en">
-          AI Paint Cleaner is a companion editor for AutoMosaic follow-up cleanup and AI image finishing.
-          It combines inpainting, cloud AI editing, AI correction, tag/caption generation, and batch processing in one Windows desktop app.
+          Meta Converter is specifically designed for AI-generated images, allowing you to convert and compress images while maintaining all generation metadata. The converted images can be directly imported into WebUI's PNGinfo, and it also supports Eagle software library conversion.
         </p>
 <div class="hr"></div>
 <ul class="lang-en">
-<li><b>Local-first processing</b>: Core features run locally. API keys and network access are required only when using cloud AI services.</li>
-<li><b>Batch processing</b>: Process many images at once</li>
-<li><b>Supported formats</b>: JPG / PNG / BMP / GIF / WEBP / TIFF, plus PDF export</li>
-</ul>
-<div class="hr"></div>
-<h3>
-<span class="lang-en">Supported Languages</span>
-</h3>
-<ul class="lang-en">
-<li>Japanese</li>
-<li>English</li>
-<li>Chinese (Simplified / Traditional)</li>
-<li>Korean</li>
+<li><b>Batch conversion</b>: Convert multiple images while preserving metadata</li>
+<li><b>Format support</b>: PNG/WEBP → JPEG/PNG/WEBP conversion</li>
+<li><b>File size reduction</b>: PNG → JPEG reduces file size to 1/10 with significant compression</li>
+<li><b>WebUI compatible</b>: Direct import to WebUI after conversion</li>
+<li><b>Quality adjustment</b>: Fine-tune quality and image resizing options</li>
+<li><b>Eagle support</b>: Eagle library conversion support</li>
+<li><b>CLI support</b>: Command-line interface support</li>
 </ul>
 </section>
 <section class="section">
 <h2>
-<span class="lang-en">Key Features</span>
+<span class="lang-en">Supported AI Formats</span>
 </h2>
-<p class="lang-en">Designed primarily for AI-generated image editing:</p>
-<ul class="lang-en">
-<li>Sequential browsing, sorting, and bookmarking</li>
-<li>AI inpainting, diff replacement, mosaic, blur, and fill for pinpoint fixes</li>
-<li>AutoMosaic follow-up cleanup and additional mosaic adjustments</li>
-<li>Cloud AI image editing with GPT Image, Gemini, and NovelAI</li>
-<li>SAM2 auto masks, pen, eraser, fill, text, speech bubbles, and asset insertion</li>
-<li>Format conversion, PDF export, resizing, AI upscaling, and background removal</li>
-<li>AI correction, manual color adjustment, denoise, deblur, artifact, and color-fringe cleanup</li>
-<li>Tag generation, natural-language captions, bulk tag editing, and metadata cleaning</li>
-<li>CLI support for background removal, AI correction, conversion, tags, and captions</li>
-</ul>
+<h3><span class="lang-en">A1111 WebUI</span></h3>
+<p class="lang-en">Convertible while preserving metadata in all formats</p>
+<div class="hr"></div>
+<h3><span class="lang-en">ComfyUI</span></h3>
+<p class="lang-en">PNG/WebP can be converted while preserving metadata.<br> When converting to JPG, the workflow is output separately as a JSON file.</p>
+<div class="hr"></div>
+<h3><span class="lang-en">NovelAI</span></h3>
+<p class="lang-en">PNG/WebP can be converted while preserving metadata.<br> When converting to JPG, a small companion file for metadata preservation is output separately.</p>
 </section>
 <section class="section">
 <h2>
-<span class="lang-en">How to Use</span>
+<span class="lang-en">How to use</span>
 </h2>
 <ol class="lang-en">
-<li>Select an image (open file or drag &amp; drop)</li>
-<li>Edit images by switching through images in the folder</li>
-<li>Apply batch processing to images in the folder as needed</li>
+<li>Select a folder containing images or drag and drop image files/folders</li>
+<li>Adjust conversion format, quality settings, etc.</li>
+<li>Click "Start Conversion" button</li>
 </ol>
 </section>
 <section class="section">
-<h2><span class="lang-en">System Requirements</span></h2>
+<h2><span class="lang-en">System requirements</span></h2>
 <ul>
 <li><span class="lang-en">OS: Windows 10/11 (64-bit)</span></li>
-<li><span class="lang-en">Memory: 8GB+ recommended</span></li>
-<li><span class="lang-en">Storage: 15GB or more</span></li>
-<li><span class="lang-en">GPU: NVIDIA GPU with CUDA support / VRAM: 8GB+ recommended</span></li>
-<li><span class="lang-en">It can run without a GPU, but some AI processing will be limited.</span></li>
+<li><span class="lang-en">Memory: 8 GB or more recommended</span></li>
+<li><span class="lang-en">Storage: 30MB+ free space require</span></li>
 </ul>
+<p class="note lang-en">
+        No GPU required. Runs on CPU for universal compatibility.
+      </p>
 </section>
-</div>
-<div class="grid">
-<section class="section">
-<h2><span class="lang-en">Processing Sample 1</span></h2>
-<a class="shot lang-en" href="assets/aipaintcleaner/AIPaintCleaner_1_en.jpg" rel="noopener" target="_blank">
-<img loading="lazy" alt="AI object removal and inpainting example" src="assets/aipaintcleaner/AIPaintCleaner_1_en.jpg"/>
-<div class="cap">AI object removal and detailed inpainting</div>
+<section class="section" id="ui">
+<h2><span class="lang-en">UI screenshot</span></h2>
+<a class="shot lang-en" href="assets/Other/meta1_en.png" rel="noopener" target="_blank">
+<img loading="lazy" alt="Meta Converter UI (English)" src="assets/Other/meta1_en.png"/>
+<div class="cap">UI (English)</div>
 </a>
-</section>
-<section class="section">
-<h2><span class="lang-en">Processing Sample 2</span></h2>
-<a class="shot lang-en" href="assets/aipaintcleaner/AIPaintCleaner_2_en.jpg" rel="noopener" target="_blank">
-<img loading="lazy" alt="AI color correction and background removal example" src="assets/aipaintcleaner/AIPaintCleaner_2_en.jpg"/>
-<div class="cap">AI automatic color correction and background removal</div>
-</a>
-</section>
-</div>
-<div class="grid">
-<section class="section" id="video">
-<h2><span class="lang-en">Video Demo</span></h2>
-<p class="muted" style="margin-bottom:1rem">
-<span class="lang-en">Introduction to AI Paint Cleaner's various features and functions.</span>
-</p>
-<div class="lang-en">
-<a class="yt" href="https://www.youtube.com/watch?v=7g61LO9kZRE" rel="noopener" target="_blank">
-<img loading="lazy" alt="AI Paint Cleaner demo thumbnail" class="ytThumb" src="https://i.ytimg.com/vi/7g61LO9kZRE/maxresdefault.jpg"/>
-<div class="ytOverlay">
-<div class="ytPlay"></div>
-</div>
-</a>
-</div>
 </section>
 <section class="section" id="trial">
 <h2><span class="lang-en">Trial Version</span></h2>
-<p class="lang-en"><b>Windows (No GPU / GPU: RTX 50XX series or earlier)</b></p>
-<p><a class="btn download" href="https://drive.google.com/file/d/19VgRYHdTpMLuOC-JSSL46iXN7-zMjePB/view?usp=drive_link" rel="noopener" target="_blank">Download from Google Drive</a></p>
+<p><a class="btn download" href="https://drive.google.com/file/d/1rHE54YDc_C7tZIhRtT8ai37bGif4S0OJ/view?usp=drive_link" rel="noopener" target="_blank">Download from Google Drive</a></p>
 <div class="hr"></div>
-<p class="lang-en"><b>Windows (GPU: RTX 50XX series or later)</b></p>
-<p><a class="btn download" href="https://drive.google.com/file/d/1_AJVsAj9oGNZVJmU0Qh2gywlOir--CUk/view?usp=drive_link" rel="noopener" target="_blank">Download from Google Drive</a></p>
-<div class="hr"></div>
-<h3>
-<span class="lang-en">What's included</span>
-</h3>
+<h3><span class="lang-en">Trial Version Limitations</span></h3>
 <ul class="lang-en">
-<li>✓ All features available</li>
-<li>✗ Cannot save images</li>
-<li>✗ Cannot execute batch processing</li>
+<li>Maximum 8 images per batch</li>
 </ul>
 </section>
-</div>
-<div class="grid">
 <section class="section">
 <h2><span class="lang-en">Updates &amp; Changelog</span></h2>
 <div class="kpi" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1rem">
 <div class="box">
 <div class="kv">
 <div class="label lang-en">Current Version</div>
-<div class="value">v3.10</div>
+<div class="value">v3.52</div>
 </div>
 </div>
 <div class="box">
 <div class="kv">
 <div class="label lang-en">Release Date</div>
-<div class="value">2026-05-20</div>
+<div class="value">2026-02-16</div>
 </div>
 </div>
 </div>
 <div class="hr"></div>
-<h3>
-<span class="lang-en">Latest Updates</span>
-</h3>
+<h3><span class="lang-en">Latest Updates</span></h3>
 <ul class="lang-en">
-<li>Added cloud AI image editing with GPT Image, Gemini, and NovelAI</li>
-<li>Expanded tag/caption generation, bulk tag editing, and CLI support</li>
-<li>Improved AI correction, background removal, upscaling, text, and speech-bubble tools</li>
-<li>Bug fixes and user-requested improvements</li>
+<li>NovelAI WebP support</li>
 </ul>
 <p style="margin-top:1rem">
-<a href="https://note.com/nekzuk/n/n7734e89e1b67" rel="noopener" target="_blank">
+<a href="https://note.com/nekzuk/n/nf8f1cad57493" rel="noopener" target="_blank">
 <span class="lang-en">→ Read detailed release notes</span>
 </a>
 </p>
@@ -553,23 +488,19 @@ ul.lang-ja, ol.lang-ja {display:none}
 <h2>
 <span class="lang-en">License &amp; Usage Notes</span>
 </h2>
-<h3>
-<span class="lang-en">License</span>
-</h3>
+<h3><span class="lang-en">License</span></h3>
 <ul class="lang-en">
 <li><b>Personal use (including commercial)</b>: Included with purchase</li>
 <li><b>Corporate/enterprise use</b>: Please contact separately for licensing</li>
 </ul>
 <div class="hr"></div>
-<h3>
-<span class="lang-en">Important Notes</span>
-</h3>
+<h3><span class="lang-en">Important Notes</span></h3>
 <ul class="lang-en">
-<li>Processing may take time depending on your PC/GPU specifications</li>
-<li>Please review all outputs after processing to ensure accuracy</li>
+<li>Processing may take time</li>
+<li>Trial version has limitations</li>
+<li>Please verify all processing results</li>
 </ul>
 </section>
-</div>
 </div>
 <div class="footer">
 <div class="lang-en" style="margin-bottom:.75rem">
@@ -578,5 +509,6 @@ ul.lang-ja, ol.lang-ja {display:none}
 
       © nekzuk Software
     </div>
+</div>
 </body>
 </html>

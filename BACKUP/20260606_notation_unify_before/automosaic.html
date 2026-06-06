@@ -9,37 +9,35 @@
           const p = new URLSearchParams(location.search);
           const lang = p.get("lang");
           if (lang === "ja") {
-            location.replace("automosaic-r18_j.html");
+            location.replace("automosaic_j.html");
             return;
           }
           if (lang === "en" && location.search) {
-            location.replace("automosaic-r18.html");
+            location.replace("automosaic.html");
           }
         } catch (e) {}
       })();
     </script>
     <meta content="width=device-width,initial-scale=1" name="viewport" />
-    <title>
-      AutoMosaic (R18) – Batch Auto-Mosaic Tool for Windows | nekzuk
-    </title>
+    <title>AutoMosaic – Batch Auto Mosaic/Blur/Fill for Images | nekzuk</title>
     <!-- SEO Meta Tags -->
     <meta
-      content="GPU-accelerated batch auto-mosaic tool for Windows. Automatically detects sensitive regions and applies mosaic offline with high accuracy."
+      content="AutoMosaic automatically detects targets in images and applies mosaic/blur/fill in batch. Face/person/text detection, GPU acceleration, offline processing. ¥3,000 / $25"
       name="description"
     />
     <!-- Open Graph / Facebook -->
     <meta content="product" property="og:type" />
-    <meta content="https://nekzuk.com/automosaic-r18.html" property="og:url" />
+    <meta content="https://nekzuk.com/automosaic.html" property="og:url" />
     <meta
-      content="AutoMosaic (R18) – Batch Auto-Mosaic Tool"
+      content="AutoMosaic – Batch Auto Mosaic/Blur/Fill Tool"
       property="og:title"
     />
     <meta
-      content="GPU-accelerated batch mosaic tool for sensitive images. Offline processing. Windows 10/11 compatible."
+      content="Automatically detect faces/people/text and apply mosaic/blur/fill in batch. GPU-accelerated offline processing for privacy protection."
       property="og:description"
     />
     <meta
-      content="https://nekzuk.com/assets/icons/app_R18.png"
+      content="https://nekzuk.com/assets/icons/app_general.png"
       property="og:image"
     />
     <meta content="nekzuk Software" property="og:site_name" />
@@ -47,33 +45,33 @@
     <meta content="summary" name="twitter:card" />
     <meta content="@Synekzuk_AI" name="twitter:site" />
     <meta
-      content="AutoMosaic (R18) – Batch Auto-Mosaic Tool"
+      content="AutoMosaic – Batch Auto Mosaic/Blur/Fill Tool"
       name="twitter:title"
     />
     <meta
-      content="GPU-accelerated batch mosaic tool for sensitive images. Offline processing. Windows 10/11 compatible."
+      content="Automatically detect faces/people/text and apply mosaic/blur/fill in batch. GPU-accelerated offline processing for privacy protection."
       name="twitter:description"
     />
     <meta
-      content="https://nekzuk.com/assets/icons/app_R18.png"
+      content="https://nekzuk.com/assets/icons/app_general.png"
       name="twitter:image"
     />
     <!-- Language SEO -->
-    <link rel="canonical" href="https://nekzuk.com/automosaic-r18.html" />
+    <link rel="canonical" href="https://nekzuk.com/automosaic.html" />
     <link
       rel="alternate"
       hreflang="en"
-      href="https://nekzuk.com/automosaic-r18.html"
+      href="https://nekzuk.com/automosaic.html"
     />
     <link
       rel="alternate"
       hreflang="ja"
-      href="https://nekzuk.com/automosaic-r18_j.html"
+      href="https://nekzuk.com/automosaic_j.html"
     />
     <link
       rel="alternate"
       hreflang="x-default"
-      href="https://nekzuk.com/automosaic-r18.html"
+      href="https://nekzuk.com/automosaic.html"
     />
     <meta content="en_US" property="og:locale" />
     <!-- Favicon & Icons -->
@@ -212,11 +210,11 @@
         color: var(--muted);
         margin-top: 0.4rem;
       }
-      .pills {
+      .badges {
         display: flex;
         gap: 0.5rem;
         flex-wrap: wrap;
-        margin-bottom: 1rem;
+        margin: 1rem 0 0.6rem;
       }
 
       .btns {
@@ -593,6 +591,7 @@
         display: flex;
         align-items: flex-start;
         gap: 18px;
+        padding: 22px 22px 12px;
       }
       .heroTitle .title {
         margin: 0;
@@ -672,19 +671,9 @@
       }
       .heroTitle .subtitle {
         max-width: 760px;
-        text-wrap: balance;
         line-height: 1.35;
+        text-wrap: balance;
         margin-top: 0.25rem;
-      }
-      .twoCol {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 22px;
-      }
-      @media (max-width: 820px) {
-        .twoCol {
-          grid-template-columns: 1fr;
-        }
       }
 
       .heroFacts .box {
@@ -715,23 +704,21 @@
         padding-right: 0.5rem;
       }
 
-      .placeholder-box {
-        background: var(--card2);
-        border: 2px dashed rgba(255, 255, 255, 0.12);
-        border-radius: 1rem;
-        padding: 2.5rem 1.5rem;
-        text-align: center;
-        color: var(--muted);
-        min-height: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 0.5rem;
+      /* Before/After special layout: left 2 images stacked, right 1 large */
+      .beforeAfterGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
       }
-      .placeholder-box .icon {
-        font-size: 2rem;
-        opacity: 0.3;
+      @media (max-width: 860px) {
+        .beforeAfterGrid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .beforeAfterLeft {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
       }
     </style>
     <!-- 構造化データ：SoftwareApplication (Enhanced) -->
@@ -739,25 +726,25 @@
       {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "AutoMosaic (R18)",
+        "name": "AutoMosaic (General)",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Windows 10, Windows 11",
-        "description": "Automatically detects sensitive regions and applies mosaic/blur/fill to many images in batch. GPU-accelerated processing with highest detection accuracy in its price range.",
-        "screenshot": "https://nekzuk.com/assets/automosaic/ui_en_r18.png",
+        "description": "Automatically detects people, faces/eyes, text, license plates, and comic elements, then applies mosaic/blur/fill in batch. Perfect for privacy protection and content moderation.",
+        "screenshot": "https://nekzuk.com/assets/automosaic/ui_en.png",
         "featureList": [
-          "AI-powered automatic detection of sensitive regions",
-          "GPU-accelerated processing (approximately 2 seconds per image)",
-          "Multiple processing modes: mosaic, black bar, segmentation",
+          "Advanced face, eye, and person detection",
+          "Text and license plate recognition",
+          "Speech bubble and SFX text detection for comics",
           "Extensible model support for custom detection",
-          "Multilingual UI (English / Japanese / Chinese (Simplified / Traditional) / Korean)",
-          "Batch processing for multiple images",
+          "Multi-language interface (English, Japanese, Chinese, Korean)",
+          "GPU-accelerated batch processing",
           "Offline processing - no internet required"
         ],
         "softwareVersion": "3.40",
         "releaseNotes": "https://note.com/nekzuk/n/ndd4e4e44cdb9",
         "video": {
           "@type": "VideoObject",
-          "name": "AutoMosaic R18 Demo (English)",
+          "name": "AutoMosaic General Demo (English)",
           "description": "1-minute overview covering the interface and basic operations",
           "thumbnailUrl": "https://i.ytimg.com/vi/vR8GQbJrgR4/maxresdefault.jpg",
           "contentUrl": "https://www.youtube.com/watch?v=vR8GQbJrgR4",
@@ -770,7 +757,7 @@
             "name": "BOOTH",
             "price": "3000",
             "priceCurrency": "JPY",
-            "url": "https://synekzuk.booth.pm/items/6510317",
+            "url": "https://synekzuk.booth.pm/items/7075141",
             "availability": "https://schema.org/InStock",
             "seller": {
               "@type": "Organization",
@@ -782,7 +769,7 @@
             "name": "Payhip",
             "price": "25",
             "priceCurrency": "USD",
-            "url": "https://payhip.com/b/BO3TR",
+            "url": "https://payhip.com/b/mit2r",
             "availability": "https://schema.org/InStock",
             "seller": {
               "@type": "Organization",
@@ -812,8 +799,8 @@
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "AutoMosaic (R18)",
-            "item": "https://nekzuk.com/automosaic-r18.html"
+            "name": "AutoMosaic (General)",
+            "item": "https://nekzuk.com/automosaic.html"
           }
         ]
       }
@@ -824,8 +811,8 @@
       <div class="top">
         <a data-role="back" href="/">← <span class="lang-en">Back</span></a>
         <div class="small">
-          <a href="automosaic-r18.html">English</a> /
-          <a href="automosaic-r18_j.html">日本語</a>
+          <a href="automosaic.html">English</a> /
+          <a href="automosaic_j.html">日本語</a>
         </div>
       </div>
       <section class="hero">
@@ -838,20 +825,21 @@
         <div class="heroTop">
           <div class="heroTitle">
             <img
-              alt="AutoMosaic R18 icon"
+              alt="AutoMosaic icon"
               class="appIcon"
-              src="assets/icons/app_R18.png"
+              src="assets/icons/app_general.png"
             />
             <div>
               <div class="titleRow">
                 <h1 class="title">
-                  <span class="lang-en">AutoMosaic (R18)</span>
+                  <span class="lang-en">AutoMosaic (General)</span>
                 </h1>
                 <p class="subtitle">
                   <span class="lang-en"
-                    >Batch auto-mosaic tool designed for sensitive images.
-                    GPU-accelerated for fast processing across multiple
-                    images.</span
+                    >A desktop tool that automatically detects targets in images
+                    and applies mosaic / blur / fill in batch. Great for
+                    anonymization and comic/illustration editing
+                    workflows.</span
                   >
                 </p>
               </div>
@@ -861,7 +849,7 @@
               <div class="btns">
                 <a
                   class="btn primary lang-en"
-                  href="https://payhip.com/b/BO3TR"
+                  href="https://payhip.com/b/mit2r"
                   rel="noopener"
                   target="_blank"
                   >Payhip</a
@@ -877,13 +865,15 @@
           <div class="box">
             <div class="kv">
               <div class="label lang-en">Targets</div>
-              <div class="value lang-en">Female / Male genitalia / Anus</div>
+              <div class="value lang-en">
+                People / Face / Eyes / Text / Plates
+              </div>
             </div>
           </div>
           <div class="box">
             <div class="kv">
               <div class="label lang-en">For</div>
-              <div class="value lang-en">Sensitive Content</div>
+              <div class="value lang-en">Anonymize &amp; Edit</div>
             </div>
           </div>
           <div class="box">
@@ -894,8 +884,8 @@
           </div>
           <div class="box">
             <div class="kv">
-              <div class="label lang-en">UI Languages</div>
-              <div class="value">EN / JP / ZH / KR</div>
+              <div class="label lang-en">Language UI</div>
+              <div class="value">JP / EN (+ more)</div>
             </div>
           </div>
         </div>
@@ -906,10 +896,9 @@
             <span class="lang-en">Overview</span>
           </h2>
           <p class="lang-en">
-            Automatically detects specific regions in images and batch-processes
-            multiple images. Offers the highest detection accuracy in its price
-            range (free to a few thousand yen). Operates offline by default for
-            privacy protection. Try the trial version!
+            AutoMosaic automatically detects selected targets in images and
+            applies mosaic/blur/fill to many images in a batch. It works fully
+            offline (no network), so you can process private images safely.
           </p>
           <div class="hr"></div>
           <ul class="lang-en">
@@ -926,29 +915,26 @@
           </h2>
           <div class="twoCol">
             <div>
-              <h3>
-                <span class="lang-en">Detectable targets</span>
-              </h3>
+              <h3><span class="lang-en">Detectable targets</span></h3>
               <ul class="lang-en">
-                <li>Female genitalia</li>
-                <li>Male genitalia</li>
-                <li>Anus</li>
+                <li>People</li>
+                <li>Face (male / female / full)</li>
+                <li>Eyes</li>
+                <li>Text (horizontal / vertical)</li>
+                <li>Comic speech bubbles</li>
+                <li>Comic sound effects</li>
+                <li>License plates</li>
               </ul>
             </div>
             <div>
-              <h3>
-                <span class="lang-en">Outputs</span>
-              </h3>
+              <h3><span class="lang-en">Outputs</span></h3>
               <ul class="lang-en">
-                <li>Mosaic (FANZA / DLSite / Booth standard sizes)</li>
+                <li>Mosaic</li>
                 <li>Blur</li>
-                <li>Black/white fill</li>
-                <li>Bar censorship (beta)</li>
+                <li>Fill (black / white)</li>
               </ul>
               <div class="hr"></div>
-              <h3>
-                <span class="lang-en">UI Languages</span>
-              </h3>
+              <h3><span class="lang-en">UI languages</span></h3>
               <ul class="lang-en">
                 <li>Japanese</li>
                 <li>English</li>
@@ -958,8 +944,8 @@
             </div>
           </div>
           <p class="note lang-en" style="margin-top: 1rem; font-size: 0.85rem">
-            💡 <b>Tip:</b> You can expand functionality by adding Adetailer
-            models to the Models folder.
+            * Sensitive-part detection is available in the
+            <a href="automosaic-r18.html">R18 version</a>.
           </p>
         </section>
         <section class="section">
@@ -974,7 +960,7 @@
           </ol>
         </section>
         <section class="section">
-          <h2><span class="lang-en">System Requirements</span></h2>
+          <h2><span class="lang-en">System requirements</span></h2>
           <ul>
             <li><span class="lang-en">OS: Windows 10/11 (64-bit)</span></li>
             <li><span class="lang-en">Memory: 8GB+ recommended</span></li>
@@ -996,95 +982,62 @@
           </ul>
         </section>
         <section class="section">
-          <h2>
-            <span class="lang-en">Before / After &amp; Detection Accuracy</span>
-          </h2>
-          <h3>
-            <span class="lang-en">Sample Images</span>
-          </h3>
-          <p class="lang-en">
-            Due to content sensitivity, sample images are available at the
-            following link:
+          <h2><span class="lang-en">Before / After</span></h2>
+          <p class="muted lang-en">
+            Real examples of AutoMosaic output. Click to open full size.
           </p>
-          <p style="margin-top: 0.5rem">
+          <div class="beforeAfterGrid">
+            <div class="beforeAfterLeft">
+              <a
+                class="shot"
+                href="assets/automosaic/sample_people.png"
+                rel="noopener"
+                target="_blank"
+              >
+                <img
+                  loading="lazy"
+                  alt="Business people face blur example"
+                  src="assets/automosaic/sample_people.png"
+                />
+                <div class="cap">
+                  <span class="lang-en"
+                    >Business photo: face anonymization</span
+                  >
+                </div>
+              </a>
+              <a
+                class="shot"
+                href="assets/automosaic/sample_plate.png"
+                rel="noopener"
+                target="_blank"
+              >
+                <img
+                  loading="lazy"
+                  alt="License plate detection example"
+                  src="assets/automosaic/sample_plate.png"
+                />
+                <div class="cap">
+                  <span class="lang-en"
+                    >Street photo: license plate detection</span
+                  >
+                </div>
+              </a>
+            </div>
             <a
-              class="btn"
-              href="https://booth.pximg.net/ee36a4ce-6d69-430c-bb8c-fd52cad286b6/i/6510317/497df713-140d-4fa4-af4b-8373a27e5a16.jpg"
+              class="shot"
+              href="assets/automosaic/sample_family.png"
               rel="noopener"
               target="_blank"
             >
-              <span class="lang-en">→ View Processing Samples</span>
+              <img
+                loading="lazy"
+                alt="Family photo face anonymization example"
+                src="assets/automosaic/sample_family.png"
+              />
+              <div class="cap">
+                <span class="lang-en">Family photo: face anonymization</span>
+              </div>
             </a>
-          </p>
-          <div class="hr"></div>
-          <h3>
-            <span class="lang-en">Detection Accuracy Data</span>
-          </h3>
-          <p class="lang-en">
-            v3.40 benchmark (normal settings): 470 sample images
-            processed
-          </p>
-          <div
-            class="kpi"
-            style="
-              grid-template-columns: repeat(3, minmax(0, 1fr));
-              margin-top: 1rem;
-            "
-          >
-            <div class="box">
-              <div class="kv">
-                <div class="label lang-en">Processing Time</div>
-                <div class="value">
-                  800<span
-                    style="
-                      font-size: 0.8rem;
-                      font-weight: 400;
-                      opacity: 0.7;
-                      margin-left: 0.25rem;
-                    "
-                    >sec</span
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="box">
-              <div class="kv">
-                <div class="label lang-en">Detection Rate</div>
-                <div class="value">450/470 (96%)</div>
-              </div>
-            </div>
-            <div class="box">
-              <div class="kv">
-                <div class="label lang-en">One-shot OK</div>
-                <div class="value">428 (91%)</div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="kpi"
-            style="
-              grid-template-columns: repeat(3, minmax(0, 1fr));
-              margin-top: 0.75rem;
-            "
-          >
-            <div class="box">
-              <div class="kv">
-                <div class="label lang-en">Mosaic Leakage</div>
-                <div class="value">15 (3%)</div>
-              </div>
-            </div>
-            <div class="box">
-              <div class="kv">
-                <div class="label lang-en">False Detection</div>
-                <div class="value">7 (1%)</div>
-              </div>
-            </div>
-            <div class="box">
-              <div class="kv">
-                <div class="label lang-en">Not Detected</div>
-                <div class="value">20 (4%)</div>
-              </div>
-            </div>
           </div>
           <p class="note" style="margin-top: 1.5rem">
             <span class="lang-en"
@@ -1099,14 +1052,14 @@
           <h2><span class="lang-en">UI screenshot</span></h2>
           <a
             class="shot lang-en"
-            href="assets/automosaic/ui_en_r18.png"
+            href="assets/automosaic/ui_en.png"
             rel="noopener"
             target="_blank"
           >
             <img
               loading="lazy"
-              alt="AutoMosaic R18 UI (English)"
-              src="assets/automosaic/ui_en_r18.png"
+              alt="AutoMosaic UI (English)"
+              src="assets/automosaic/ui_en.png"
             />
             <div class="cap">UI (English)</div>
           </a>
@@ -1146,7 +1099,7 @@
           <p class="lang-en">
             <a
               class="btn download"
-              href="https://drive.google.com/file/d/1DQ84WayzPmIvfTG2APZz9ySYMC9-ll5Z/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1BYPmeIW7krNaUIBklEda7A7cnzMECtEr/view?usp=drive_link"
               rel="noopener"
               target="_blank"
               >Download from Google Drive</a
@@ -1157,16 +1110,14 @@
           <p class="lang-en">
             <a
               class="btn download"
-              href="https://drive.google.com/file/d/1wpOpMsBxOm6kH_2bFUG64pSlRko6QwpV/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1zgYXheTVhuDu21kVC3p89lTWhT6z6lYN/view?usp=drive_link"
               rel="noopener"
               target="_blank"
               >Download from Google Drive</a
             >
           </p>
           <div class="hr"></div>
-          <h3>
-            <span class="lang-en">What's included</span>
-          </h3>
+          <h3><span class="lang-en">What's included</span></h3>
           <ul class="lang-en">
             <li>✓ All features available</li>
             <li>✓ Process up to 20 images per batch</li>
@@ -1196,9 +1147,7 @@
             </div>
           </div>
           <div class="hr"></div>
-          <h3>
-            <span class="lang-en">Latest Updates</span>
-          </h3>
+          <h3><span class="lang-en">Latest Updates</span></h3>
           <ul class="lang-en">
             <li>Improved detection accuracy and speed</li>
             <li>Addressed various user requests</li>
@@ -1218,9 +1167,7 @@
           <h2>
             <span class="lang-en">License &amp; Usage Notes</span>
           </h2>
-          <h3>
-            <span class="lang-en">License</span>
-          </h3>
+          <h3><span class="lang-en">License</span></h3>
           <ul class="lang-en">
             <li>
               <b>Personal use (including commercial)</b>: Included with purchase
@@ -1231,9 +1178,7 @@
             </li>
           </ul>
           <div class="hr"></div>
-          <h3>
-            <span class="lang-en">Important Notes</span>
-          </h3>
+          <h3><span class="lang-en">Important Notes</span></h3>
           <ul class="lang-en">
             <li>
               Processing may take time depending on your PC/GPU specifications
