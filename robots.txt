@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /BACKUP/
 
 Sitemap: https://nekzuk.com/sitemap.xml
