@@ -111,6 +111,10 @@
         box-sizing: border-box;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         font-family:
           -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP",
@@ -209,7 +213,7 @@
       .header-description {
         font-size: 1rem;
         color: var(--text-secondary);
-        max-width: 600px;
+        max-width: 60rem;
         margin: 0 auto;
       }
 
@@ -217,6 +221,94 @@
         margin-top: 1.25rem;
         display: flex;
         justify-content: center;
+      }
+
+      /* Hero Eyebrow (H1上の小見出し) */
+      .header-eyebrow {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        letter-spacing: 0.05em;
+      }
+
+      /* Hero CTA */
+      .hero-cta {
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .hero-cta .btn {
+        padding: 0.65rem 1.4rem;
+        font-size: 0.95rem;
+      }
+
+      /* News Section (更新情報) */
+      .news-section {
+        margin-bottom: 2.5rem;
+        padding: 1.25rem 1.5rem;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+      }
+
+      .news-title {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text-primary);
+      }
+
+      .news-title::before {
+        content: "📢";
+      }
+
+      .news-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .news-list li {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 0.35rem 0.75rem;
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+      }
+
+      .news-list time {
+        flex-shrink: 0;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .news-tag {
+        flex-shrink: 0;
+        font-size: 0.7rem;
+        padding: 0.1rem 0.5rem;
+        border-radius: 0.3rem;
+        background: rgba(99, 102, 241, 0.15);
+        border: 1px solid rgba(99, 102, 241, 0.3);
+        color: #a5b4fc;
+      }
+
+      .news-list a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .news-list a:hover {
+        text-decoration: underline;
       }
 
       /* Language Switch */
@@ -393,6 +485,12 @@
       .price-badge.paid {
         background: rgba(251, 191, 36, 0.15);
         color: #fbbf24;
+      }
+
+      .features-list li.trial {
+        background: rgba(34, 197, 94, 0.1);
+        border-color: rgba(34, 197, 94, 0.2);
+        color: #4ade80;
       }
 
       .button-group {
@@ -868,19 +966,41 @@
         <a class="lang-btn" href="index.html">English</a>
         <a class="lang-btn active" href="index_j.html">日本語</a>
       </div>
-      <h1>AI画像処理ツール製品一覧 – nekzuk Software</h1>
+      <p class="header-eyebrow">nekzuk Software – Windows向けAI画像・動画処理ツール</p>
+      <h1>面倒な画像処理は、AIに任せる。</h1>
       <p class="header-description">
-        AI画像生成・編集のワークフローを効率化する各種ツールをご用意しています。<br />
-        すべてWindows専用のデスクトップアプリケーションです。
+        自動モザイク・AI修正・メタデータ管理など、画像・動画の制作から公開準備までを効率化するツールを開発・販売しています。
       </p>
-      <div class="header-guide-link">
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#products">製品一覧を見る</a>
         <a class="btn btn-secondary" href="use-cases_j.html">
           どれを買うか迷ったら：用途別ガイド
         </a>
       </div>
     </header>
     <main>
-      <div class="products-grid">
+      <!-- News Section (更新情報) -->
+      <section class="news-section" aria-label="更新情報">
+        <h2 class="news-title">更新情報</h2>
+        <ul class="news-list">
+          <li>
+            <time datetime="2026-06-06">2026-06-06</time>
+            <span class="news-tag">アップデート</span>
+            <span><a href="nai-smart-studio_j.html">NAI Smart Studio</a> v1.20 を公開しました</span>
+          </li>
+          <li>
+            <time datetime="2026-05-31">2026-05-31</time>
+            <span class="news-tag">アップデート</span>
+            <span><a href="automosaic-r18_j.html">AutoMosaic</a> v3.40 を公開しました（<a href="automosaic-r18_j.html">R18版</a>・<a href="automosaic_j.html">通常版</a>）</span>
+          </li>
+          <li>
+            <time datetime="2026-05-20">2026-05-20</time>
+            <span class="news-tag">アップデート</span>
+            <span><a href="ai-paint-cleaner_j.html">AI Paint Cleaner</a> v3.10 を公開しました</span>
+          </li>
+        </ul>
+      </section>
+      <div class="products-grid" id="products">
         <!-- AutoMosaic (R18版) -->
         <article class="product-card">
           <div class="card-header">
@@ -910,6 +1030,7 @@
               <li>高速GPU処理</li>
               <li>モザイク・黒塗り・セグメンテーション</li>
               <li>コマンドライン対応</li>
+              <li class="trial">無料体験版あり</li>
               <li class="lang">日 / 英 / 中 / 韓</li>
             </ul>
           </div>
@@ -982,6 +1103,7 @@
               <li>高速GPU処理</li>
               <li>モザイク・黒塗り・セグメンテーション</li>
               <li>コマンドライン対応</li>
+              <li class="trial">無料体験版あり</li>
               <li class="lang">日 / 英 / 中 / 韓</li>
             </ul>
           </div>
@@ -1056,6 +1178,7 @@
               <li>AI補正・背景除去</li>
               <li>タグ生成</li>
               <li>コマンドライン対応</li>
+              <li class="trial">無料体験版あり</li>
               <li class="lang">日 / 英 / 中 / 韓</li>
             </ul>
           </div>
@@ -1128,6 +1251,7 @@
               <li>プロンプト検索・履歴</li>
               <li>タグ補完・プリセット</li>
               <li>ローカル保存</li>
+              <li class="trial">無料体験版あり</li>
               <li class="lang">日 / 英 / 中 / 韓</li>
             </ul>
           </div>
@@ -1274,6 +1398,7 @@
               <li>黒帯自動削除</li>
               <li>Pixivうごイラ対応</li>
               <li>バッチ処理</li>
+              <li class="trial">無料体験版あり</li>
               <li class="lang">日 / 英</li>
             </ul>
           </div>
@@ -1347,6 +1472,7 @@
               <li>品質・サイズ調整</li>
               <li>Eagleライブラリ対応</li>
               <li>コマンドライン対応</li>
+              <li class="trial">無料体験版あり</li>
               <li class="lang">日 / 英</li>
             </ul>
           </div>
