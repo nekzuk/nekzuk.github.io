@@ -5,24 +5,24 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- SEO Meta Tags -->
-<meta content="Windows desktop tools for AI image generation and post-processing: AutoMosaic, AI Paint Cleaner with cloud AI editing, AI correction, tags, and CLI support, NAI Smart Studio, metadata conversion, and more." name="description"/>
+<meta content="Windows desktop tools for AI image and video creation, editing, and automatic mosaic processing: AutoMosaic Video, AutoMosaic, AI Paint Cleaner, NAI Smart Studio, and more." name="description"/>
 
 <meta content="nekzuk Software" name="author"/>
 <!-- Open Graph / Facebook -->
 <meta content="website" property="og:type"/>
 <meta content="https://nekzuk.com/" property="og:url"/>
-<meta content="AI Image Tools for Creators | nekzuk Software" property="og:title"/>
-<meta content="Windows desktop tools for AI image generation and post-processing: AutoMosaic, AI Paint Cleaner with cloud AI editing, AI correction, tags, and CLI support, NAI Smart Studio, metadata conversion, and more." property="og:description"/>
+<meta content="AI Image &amp; Video Tools for Creators | nekzuk Software" property="og:title"/>
+<meta content="Windows desktop tools for AI image and video creation, editing, and automatic mosaic processing: AutoMosaic Video, AutoMosaic, AI Paint Cleaner, NAI Smart Studio, and more." property="og:description"/>
 <meta content="https://nekzuk.com/assets/favicons/og-image.png?v=3" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="image/png" property="og:image:type"/>
-<meta content="nekzuk Software – AI Image Tools" property="og:image:alt"/>
+<meta content="nekzuk Software – AI Image &amp; Video Tools" property="og:image:alt"/>
 <!-- Twitter -->
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="https://nekzuk.com/" name="twitter:url"/>
-<meta content="AI Image Tools for Creators | nekzuk Software" name="twitter:title"/>
-<meta content="Windows desktop tools for AI image generation and post-processing: AutoMosaic, AI Paint Cleaner with cloud AI editing, AI correction, tags, and CLI support, NAI Smart Studio, metadata conversion, and more." name="twitter:description"/>
+<meta content="AI Image &amp; Video Tools for Creators | nekzuk Software" name="twitter:title"/>
+<meta content="Windows desktop tools for AI image and video creation, editing, and automatic mosaic processing: AutoMosaic Video, AutoMosaic, AI Paint Cleaner, NAI Smart Studio, and more." name="twitter:description"/>
 <meta content="https://nekzuk.com/assets/favicons/og-image.png?v=3" name="twitter:image"/>
 <meta content="@Synekzuk_AI" name="twitter:site"/>
 <!-- Google Analytics -->
@@ -46,7 +46,7 @@
 <link href="/assets/favicons/icon-192.png" rel="icon" sizes="192x192" type="image/png"/>
 <link href="/assets/favicons/icon-512.png" rel="icon" sizes="512x512" type="image/png"/>
 <meta content="#6366f1" name="theme-color"/>
-<title>AI Image Tools for Creators | AutoMosaic &amp; AI Paint Cleaner - nekzuk</title>
+<title>AI Image &amp; Video Tools for Creators | nekzuk Software</title>
 <style>
         :root {
             --primary: #6366f1;
@@ -464,6 +464,17 @@
             box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
         }
 
+        .btn.disabled {
+            background: rgba(148, 163, 184, 0.16);
+            color: var(--text-muted);
+            border: 1px solid rgba(148, 163, 184, 0.28);
+            opacity: 1;
+            cursor: not-allowed;
+            pointer-events: none;
+            box-shadow: none;
+            transform: none;
+        }
+
         .btn-secondary {
             background: rgba(255, 255, 255, 0.10);
             color: var(--text-primary);
@@ -711,10 +722,11 @@
   "alternateName": "nekzuk",
   "url": "https://nekzuk.com/",
   "logo": "https://nekzuk.com/assets/favicons/icon-512.png",
-  "description": "Developer of AI-powered image processing tools for content creators and AI artists. Specializing in automatic mosaic, batch image editing, metadata management, and workflow automation for AI-generated content.",
+  "description": "Developer of AI-powered image and video processing tools for content creators and AI artists. Specializing in automatic mosaic, batch image and video editing, metadata management, and workflow automation for AI-generated content.",
   "foundingDate": "2024",
   "knowsAbout": [
     "AI Image Processing",
+    "AI Video Processing",
     "Automatic Mosaic",
     "Batch Image Editing",
     "AI Inpainting",
@@ -754,7 +766,7 @@
   "name": "nekzuk Software",
   "alternateName": "nekzuk",
   "url": "https://nekzuk.com/",
-  "description": "Professional AI image processing tools for content creators. Batch mosaic, AI inpainting, metadata management, and more. All Windows desktop applications with GPU acceleration.",
+  "description": "AI image and video processing tools for content creators, including automatic mosaic, AI inpainting, and metadata management in Windows desktop applications.",
   "inLanguage": "en",
   "publisher": {
     "@type": "Organization",
@@ -772,8 +784,8 @@
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "nekzuk Software Products",
-  "description": "Complete catalog of AI image processing tools",
-  "numberOfItems": 7,
+  "description": "Catalog of AI image and video processing tools",
+  "numberOfItems": 9,
   "itemListElement": [
     {
       "@type": "ListItem",
@@ -783,7 +795,7 @@
         "name": "AutoMosaic (R18)",
         "url": "https://nekzuk.com/automosaic-r18.html",
         "image": "https://nekzuk.com/assets/icons/app_R18.png",
-        "description": "Fully offline GPU-accelerated batch mosaic tool for sensitive images",
+        "description": "GPU-accelerated batch mosaic tool for sensitive images. Images are processed locally without uploads; update checks and initial model retrieval use the internet",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Windows 10, Windows 11",
         "offers": {
@@ -801,7 +813,7 @@
         "name": "AutoMosaic (General)",
         "url": "https://nekzuk.com/automosaic.html",
         "image": "https://nekzuk.com/assets/icons/app_general.png",
-        "description": "Fully offline GPU-accelerated batch mosaic tool for faces, text, license plates, and comics",
+        "description": "GPU-accelerated batch mosaic tool for faces, text, license plates, and comics. Images are processed locally without uploads; update checks use the internet",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Windows 10, Windows 11",
         "offers": {
@@ -814,6 +826,32 @@
     {
       "@type": "ListItem",
       "position": 3,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AutoMosaic Video (R18)",
+        "url": "https://nekzuk.com/automosaic-video-r18.html",
+        "image": "https://nekzuk.com/assets/icons/app_video_R18.jpg",
+        "description": "Batch video mosaic tool for Windows that automatically detects and tracks sensitive regions, then applies mosaic, blur, or fill",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Windows 10, Windows 11"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AutoMosaic Video (General)",
+        "url": "https://nekzuk.com/automosaic-video.html",
+        "image": "https://nekzuk.com/assets/icons/app_video_general.jpg",
+        "description": "Batch video mosaic tool for Windows that automatically detects and tracks people, faces, eyes, text, and license plates, then applies mosaic, blur, or fill",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Windows 10, Windows 11"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
       "item": {
         "@type": "SoftwareApplication",
         "name": "AI Paint Cleaner",
@@ -831,7 +869,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 4,
+      "position": 6,
       "item": {
         "@type": "SoftwareApplication",
         "name": "NAI Smart Studio",
@@ -850,7 +888,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 5,
+      "position": 7,
       "item": {
         "@type": "SoftwareApplication",
         "name": "AI Meta Cleaner",
@@ -868,7 +906,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 6,
+      "position": 8,
       "item": {
         "@type": "SoftwareApplication",
         "name": "Frame Craft",
@@ -886,7 +924,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 7,
+      "position": 9,
       "item": {
         "@type": "SoftwareApplication",
         "name": "Meta Converter",
@@ -965,12 +1003,12 @@
 <div class="card-body">
 <p class="product-description">
                         Automatically detects sensitive regions and applies mosaic/blur/fill to many images in batch.
-                        Fully offline, GPU-accelerated (~2 seconds per image).
+                        Images stay on your PC with no uploads. Internet is used for update checks and initial model retrieval. GPU-accelerated (~2 seconds per image).
                     </p>
 <ul class="features-list">
 <li>AI auto detection</li>
 <li>Fast GPU acceleration</li>
-<li>Mosaic / black bar / segmentation</li>
+<li>Mosaic / blur / fill / black bar</li>
 <li>CLI support</li>
 <li class="trial">Free trial available</li>
 <li class="lang">EN / JP / ZH / KR</li>
@@ -1013,12 +1051,12 @@
 <div class="card-body">
 <p class="product-description">
                         Automatically detects people, faces/eyes, text, license plates, and comic elements, then applies mosaic/blur/fill in batch.
-                        Fully offline, GPU-accelerated (~2 seconds per image).
+                        Images stay on your PC with no uploads. Internet is used for update checks. GPU-accelerated (~2 seconds per image).
                     </p>
 <ul class="features-list">
 <li>AI auto detection</li>
 <li>Fast GPU acceleration</li>
-<li>Mosaic / black bar / segmentation</li>
+<li>Mosaic / blur / fill</li>
 <li>CLI support</li>
 <li class="trial">Free trial available</li>
 <li class="lang">EN / JP / ZH / KR</li>
@@ -1042,6 +1080,102 @@
 <path d="M7 17L17 7M17 7H7M17 7V17"></path>
 </svg>
 </a>
+</div>
+</div>
+</article>
+<!-- AutoMosaic Video (R18) -->
+<article class="product-card">
+<div class="card-header">
+<a class="product-icon-link" href="automosaic-video-r18.html">
+<img alt="AutoMosaic Video (R18)" class="product-icon" height="64" src="assets/icons/app_video_R18.jpg" width="64"/>
+</a>
+<div class="card-title-area">
+<a class="product-name-link" href="automosaic-video-r18.html">
+<h2 class="product-name">AutoMosaic Video (R18)</h2>
+</a>
+<p class="product-subtitle">Batch auto mosaic tool for videos</p>
+</div>
+</div>
+<div class="card-body">
+<p class="product-description">
+                        Automatically detects and tracks sensitive regions in videos, then applies mosaic/blur/fill in batch.
+                        Video is processed locally with fast GPU acceleration.
+                    </p>
+<ul class="features-list">
+<li>AI auto detection &amp; tracking</li>
+<li>Fast GPU acceleration</li>
+<li>Mosaic / blur / fill</li>
+<li>CLI support</li>
+<li class="trial">Free trial planned</li>
+<li class="lang">EN / JP</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="price-badge paid">$25</span>
+<div class="button-group">
+<a class="btn btn-secondary" href="automosaic-video-r18.html">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<line x1="16" x2="8" y1="13" y2="13"></line>
+<line x1="16" x2="8" y1="17" y2="17"></line>
+</svg>
+                            Product Details
+                        </a>
+<span class="btn btn-primary disabled" aria-disabled="true">
+                            Payhip
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
+<path d="M7 17L17 7M17 7H7M17 7V17"></path>
+</svg>
+</span>
+</div>
+</div>
+</article>
+<!-- AutoMosaic Video (General) -->
+<article class="product-card">
+<div class="card-header">
+<a class="product-icon-link" href="automosaic-video.html">
+<img alt="AutoMosaic Video (General)" class="product-icon" height="64" src="assets/icons/app_video_general.jpg" width="64"/>
+</a>
+<div class="card-title-area">
+<a class="product-name-link" href="automosaic-video.html">
+<h2 class="product-name">AutoMosaic Video (General)</h2>
+</a>
+<p class="product-subtitle">Batch auto mosaic tool for videos</p>
+</div>
+</div>
+<div class="card-body">
+<p class="product-description">
+                        Automatically detects and tracks people, faces/eyes, text, and license plates in videos, then applies mosaic/blur/fill in batch.
+                        Video is processed locally with fast GPU acceleration.
+                    </p>
+<ul class="features-list">
+<li>AI auto detection &amp; tracking</li>
+<li>Fast GPU acceleration</li>
+<li>Mosaic / blur / fill</li>
+<li>CLI support</li>
+<li class="trial">Free trial planned</li>
+<li class="lang">EN / JP</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="price-badge paid">$25</span>
+<div class="button-group">
+<a class="btn btn-secondary" href="automosaic-video.html">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<line x1="16" x2="8" y1="13" y2="13"></line>
+<line x1="16" x2="8" y1="17" y2="17"></line>
+</svg>
+                            Product Details
+                        </a>
+<span class="btn btn-primary disabled" aria-disabled="true">
+                            Payhip
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
+<path d="M7 17L17 7M17 7H7M17 7V17"></path>
+</svg>
+</span>
 </div>
 </div>
 </article>

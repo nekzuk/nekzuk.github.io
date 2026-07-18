@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav class="sidebar">
+    <nav class="sidebar" id="manual-sidebar" aria-label="Contents">
+      <button
+        type="button"
+        class="sidebar-close"
+        aria-label="Close contents"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
       <div class="sidebar-header">
         NAI Smart Studio <br />
         <span style="font-size: 0.8em; color: #565f89">Operation Manual</span>
@@ -43,10 +50,23 @@
         </a>
       </div>
     </nav>
+    <div class="sidebar-overlay" aria-hidden="true"></div>
 
     <main class="main-content">
       <header class="top-bar">
         <div class="top-bar-inner">
+          <button
+            type="button"
+            class="sidebar-toggle"
+            aria-controls="manual-sidebar"
+            aria-expanded="false"
+            aria-label="Open contents"
+            data-open-label="Open contents"
+            data-close-label="Close contents"
+          >
+            <span aria-hidden="true">&#9776;</span>
+            <span>Contents</span>
+          </button>
           <span class="doc-version">v1.2 Documentation</span>
           <div class="language-switch">
             <a href="nai-smart-studio_online_manual.html" class="current"
@@ -797,9 +817,82 @@
       const sections = document.querySelectorAll("section");
       const navLi = document.querySelectorAll(".nav-links li a");
       const scrollContainer = document.querySelector(".content-scroll");
+      const sidebar = document.querySelector(".sidebar");
+      const sidebarToggle = document.querySelector(".sidebar-toggle");
+      const sidebarClose = document.querySelector(".sidebar-close");
+      const sidebarOverlay = document.querySelector(".sidebar-overlay");
+      const mobileSidebar = window.matchMedia("(max-width: 780px)");
       const optionalScreenshots = document.querySelectorAll(
         ".screenshot-placeholder[data-src]",
       );
+
+      const setSidebarOpen = (open, restoreFocus = false) => {
+        const shouldOpen = mobileSidebar.matches && open;
+
+        sidebar.classList.toggle("is-open", shouldOpen);
+        sidebarOverlay.classList.toggle("is-open", shouldOpen);
+        document.body.classList.toggle("sidebar-open", shouldOpen);
+        sidebarToggle.setAttribute("aria-expanded", String(shouldOpen));
+        sidebarToggle.setAttribute(
+          "aria-label",
+          shouldOpen
+            ? sidebarToggle.dataset.closeLabel
+            : sidebarToggle.dataset.openLabel,
+        );
+        sidebar.setAttribute(
+          "aria-hidden",
+          String(mobileSidebar.matches && !shouldOpen),
+        );
+        sidebar.inert = mobileSidebar.matches && !shouldOpen;
+
+        if (shouldOpen) {
+          sidebarClose.focus();
+        } else if (restoreFocus && mobileSidebar.matches) {
+          sidebarToggle.focus();
+        }
+      };
+
+      sidebarToggle.addEventListener("click", () => {
+        const isOpen = sidebarToggle.getAttribute("aria-expanded") === "true";
+        setSidebarOpen(!isOpen);
+      });
+
+      sidebarClose.addEventListener("click", () => {
+        setSidebarOpen(false, true);
+      });
+
+      sidebarOverlay.addEventListener("click", () => {
+        setSidebarOpen(false, true);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (
+          event.key === "Escape" &&
+          sidebarToggle.getAttribute("aria-expanded") === "true"
+        ) {
+          setSidebarOpen(false, true);
+        }
+      });
+
+      navLi.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (mobileSidebar.matches) {
+            setSidebarOpen(false);
+          }
+        });
+      });
+
+      const syncSidebarForViewport = () => {
+        setSidebarOpen(false);
+      };
+
+      if (typeof mobileSidebar.addEventListener === "function") {
+        mobileSidebar.addEventListener("change", syncSidebarForViewport);
+      } else {
+        mobileSidebar.addListener(syncSidebarForViewport);
+      }
+
+      syncSidebarForViewport();
 
       optionalScreenshots.forEach((placeholder) => {
         const img = new Image();

@@ -22,7 +22,7 @@
     <title>AutoMosaic (R18版) – 画像への連続自動モザイクツール | nekzuk</title>
     <!-- SEO Meta Tags -->
     <meta
-      content="GPU対応の自動モザイクツール。画像のセンシティブな領域を自動検出し、高精度でモザイクを一括適用。オフライン処理・Windows対応。"
+      content="GPU対応の自動モザイクツール。画像処理はローカルで、画像のアップロードなし。更新確認と初回モデル取得には通信を使用。"
       name="description"
     />
     <!-- Open Graph / Facebook -->
@@ -36,7 +36,7 @@
       property="og:title"
     />
     <meta
-      content="GPU対応の自動モザイクツール。センシティブ画像のモザイク処理をオフラインで高精度に一括適用。Windows 10/11対応。"
+      content="GPU対応の自動モザイクツール。画像処理はローカルで、画像のアップロードなし。更新確認と初回モデル取得には通信を使用。"
       property="og:description"
     />
     <meta
@@ -52,7 +52,7 @@
       name="twitter:title"
     />
     <meta
-      content="GPU対応の自動モザイクツール。センシティブ画像のモザイク処理をオフラインで高精度に一括適用。Windows 10/11対応。"
+      content="GPU対応の自動モザイクツール。画像処理はローカルで、画像のアップロードなし。更新確認と初回モデル取得には通信を使用。"
       name="twitter:description"
     />
     <meta
@@ -748,11 +748,11 @@
         "featureList": [
           "AIによるセンシティブ領域の自動検出",
           "GPU高速処理（1画像あたり約2秒）",
-          "複数の処理モード：モザイク、黒帯、セグメンテーション",
+          "複数の処理モード：モザイク、ぼかし、塗りつぶし、海苔",
           "カスタム検出用の拡張モデル対応",
           "多言語UI（日本語 / 英語 / 中国語（簡体字 / 繁体字） / 韓国語）",
           "複数画像の一括処理",
-          "オフライン処理 - インターネット接続不要"
+          "画像はアップロードせずローカル処理（更新確認・初回モデル取得時は通信）"
         ],
         "softwareVersion": "3.50",
         "releaseNotes": "https://note.com/nekzuk/n/ndd4e4e44cdb9",
@@ -760,10 +760,10 @@
           "@type": "VideoObject",
           "name": "AutoMosaic (R18版) デモ",
           "description": "インターフェースと基本操作を紹介する約1分の概要動画",
-          "thumbnailUrl": "https://i.ytimg.com/vi/vR8GQbJrgR4/maxresdefault.jpg",
-          "contentUrl": "https://www.youtube.com/watch?v=vR8GQbJrgR4",
-          "embedUrl": "https://www.youtube.com/embed/vR8GQbJrgR4",
-          "uploadDate": "2025-09-30"
+          "thumbnailUrl": "https://i.ytimg.com/vi/dS3HW6hs5Y4/maxresdefault.jpg",
+          "contentUrl": "https://www.youtube.com/watch?v=dS3HW6hs5Y4",
+          "embedUrl": "https://www.youtube.com/embed/dS3HW6hs5Y4",
+          "uploadDate": "2025-09-29"
         },
         "offers": [
           {
@@ -836,7 +836,7 @@
           <span class="pill">Windows</span>
           <span class="pill">Desktop</span>
           <span class="pill">一括処理</span>
-          <span class="pill">オフライン処理</span>
+          <span class="pill">ローカル処理</span>
         </div>
         <div class="heroTop">
           <div class="heroTitle">
@@ -906,11 +906,11 @@
             <span class="lang-ja">概要</span>
           </h2>
           <p class="lang-ja">
-            画像内の特定部位を自動検出し、複数の画像に連続で画像処理を施していけるツールです。この価格帯（無料〜数千円）の類似ソフトウェアの中では検出精度は最も高いかと思います。基本はネットワークを介さず動作するため、プライバシーも安心です。ぜひ体験版でお試しください。
+            画像内の特定部位を自動検出し、複数の画像に連続で画像処理を施していけるツールです。この価格帯（無料〜数千円）の類似ソフトウェアの中では検出精度は最も高いかと思います。画像処理はPC内で行われ、画像のアップロードはありません。更新確認と初回モデル取得にはインターネット接続を使用します。ぜひ体験版でお試しください。
           </p>
           <div class="hr"></div>
           <ul class="lang-ja">
-            <li><b>オフライン動作</b>:アップロード不要、クラウド処理なし</li>
+            <li><b>ローカル処理</b>:アップロード不要、クラウド処理なし</li>
             <li><b>バッチ処理</b>:複数画像をまとめて処理</li>
             <li><b>プリセット</b>:検出対象と出力スタイルを選ぶだけ</li>
             <li><b>対応画像形式</b>: JPG / PNG / BMP / GIF / WEBP</li>
@@ -941,8 +941,8 @@
                   モザイク（FANZA / DLSite / Booth準拠サイズへの自動設定可）
                 </li>
                 <li>ぼかし</li>
-                <li>黒塗り（白塗り）</li>
-                <li>海苔（仮実装）</li>
+                <li>塗りつぶし</li>
+                <li>海苔</li>
               </ul>
               <div class="hr"></div>
               <h3>
@@ -957,7 +957,7 @@
             </div>
           </div>
           <p class="note lang-ja" style="margin-top: 1rem; font-size: 0.85rem">
-            💡 <b>Tip:</b> Adetailerモデルを Models
+            💡 <b>Tip:</b> ADetailerモデルを Models
             フォルダに追加することで、機能を追加していくことができます。
           </p>
         </section>

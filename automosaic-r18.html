@@ -24,7 +24,7 @@
     </title>
     <!-- SEO Meta Tags -->
     <meta
-      content="GPU-accelerated batch auto-mosaic tool for Windows. Automatically detects sensitive regions and applies mosaic offline with high accuracy."
+      content="GPU-accelerated batch auto-mosaic tool for Windows. Images are processed locally without uploads; update checks and initial model retrieval use the internet."
       name="description"
     />
     <!-- Open Graph / Facebook -->
@@ -35,7 +35,7 @@
       property="og:title"
     />
     <meta
-      content="GPU-accelerated batch mosaic tool for sensitive images. Offline processing. Windows 10/11 compatible."
+      content="GPU-accelerated batch mosaic tool for sensitive images. Local processing without uploads; update checks and initial model retrieval use the internet."
       property="og:description"
     />
     <meta
@@ -51,7 +51,7 @@
       name="twitter:title"
     />
     <meta
-      content="GPU-accelerated batch mosaic tool for sensitive images. Offline processing. Windows 10/11 compatible."
+      content="GPU-accelerated batch mosaic tool for sensitive images. Local processing without uploads; update checks and initial model retrieval use the internet."
       name="twitter:description"
     />
     <meta
@@ -747,11 +747,11 @@
         "featureList": [
           "AI-powered automatic detection of sensitive regions",
           "GPU-accelerated processing (approximately 2 seconds per image)",
-          "Multiple processing modes: mosaic, black bar, segmentation",
+          "Multiple processing modes: mosaic, blur, fill, black bar",
           "Extensible model support for custom detection",
           "Multilingual UI (English / Japanese / Chinese (Simplified / Traditional) / Korean)",
           "Batch processing for multiple images",
-          "Offline processing - no internet required"
+          "Local image processing with no uploads; internet used for update checks and initial model retrieval"
         ],
         "softwareVersion": "3.50",
         "releaseNotes": "https://note.com/nekzuk/n/ndd4e4e44cdb9",
@@ -762,7 +762,7 @@
           "thumbnailUrl": "https://i.ytimg.com/vi/vR8GQbJrgR4/maxresdefault.jpg",
           "contentUrl": "https://www.youtube.com/watch?v=vR8GQbJrgR4",
           "embedUrl": "https://www.youtube.com/embed/vR8GQbJrgR4",
-          "uploadDate": "2026-01-05"
+          "uploadDate": "2026-01-04"
         },
         "offers": [
           {
@@ -833,7 +833,7 @@
           <span class="pill">Windows</span>
           <span class="pill">Desktop</span>
           <span class="pill">Batch Processing</span>
-          <span class="pill">Offline Processing</span>
+          <span class="pill">Local Processing</span>
         </div>
         <div class="heroTop">
           <div class="heroTitle">
@@ -907,12 +907,13 @@
           <p class="lang-en">
             Automatically detects specific regions in images and batch-processes
             multiple images. Offers the highest detection accuracy in its price
-            range (free to a few thousand yen). Operates offline by default for
-            privacy protection. Try the trial version!
+            range (free to a few thousand yen). Image processing stays on your
+            PC with no uploads. Internet is used only for update checks and
+            initial model retrieval. Try the trial version!
           </p>
           <div class="hr"></div>
           <ul class="lang-en">
-            <li><b>Offline</b>: no uploads, no cloud processing</li>
+            <li><b>Local processing</b>: no uploads, no cloud processing</li>
             <li><b>Batch</b>: process many images at once</li>
             <li><b>Presets</b>: pick what to detect and the output style</li>
             <li><b>Supported formats</b>: JPG / PNG / BMP / GIF / WEBP</li>
@@ -941,8 +942,8 @@
               <ul class="lang-en">
                 <li>Mosaic (FANZA / DLSite / Booth standard sizes)</li>
                 <li>Blur</li>
-                <li>Black/white fill</li>
-                <li>Bar censorship (beta)</li>
+                <li>Fill</li>
+                <li>Bar censorship</li>
               </ul>
               <div class="hr"></div>
               <h3>
@@ -957,7 +958,7 @@
             </div>
           </div>
           <p class="note lang-en" style="margin-top: 1rem; font-size: 0.85rem">
-            💡 <b>Tip:</b> You can expand functionality by adding Adetailer
+            💡 <b>Tip:</b> You can expand functionality by adding ADetailer
             models to the Models folder.
           </p>
         </section>
