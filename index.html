@@ -38,7 +38,16 @@
 <link rel="alternate" hreflang="en" href="https://nekzuk.com/" />
 <link rel="alternate" hreflang="ja" href="https://nekzuk.com/index_j.html" />
 <link rel="alternate" hreflang="x-default" href="https://nekzuk.com/" />
-<!-- Language auto-detect (first visit) + remember choice -->
+<!-- Remember the visitor's explicit language choice on the default entry page -->
+<script>
+    (function () {
+        try {
+            if (localStorage.getItem('site_lang') === 'ja') {
+                location.replace('index_j.html' + location.search + location.hash);
+            }
+        } catch (e) {}
+    })();
+</script>
 <!-- Favicon & Icons -->
 <link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32"/>
 <link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml"/>
@@ -57,7 +66,7 @@
             --bg-card-hover: #334155;
             --text-primary: #f1f5f9;
             --text-secondary: #94a3b8;
-            --text-muted: #64748b;
+            --text-muted: #94a3b8;
             --border: #334155;
             --gradient-1: linear-gradient(135deg, #6366f1, #8b5cf6);
             --gradient-2: linear-gradient(135deg, #06b6d4, #22d3ee);
@@ -79,6 +88,12 @@
             color: var(--text-primary);
             line-height: 1.7;
             min-height: 100vh;
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 0.35rem;
         }
 
         /* Background Effect */
@@ -494,45 +509,37 @@
             pointer-events: none;
         }
 
-        /* Placeholder Card */
-        .placeholder-card {
+        /* Coming Soon Banner */
+        .coming-soon-banner {
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 280px;
-            border-style: dashed;
-            border-color: var(--border);
+            gap: 0.85rem;
+            margin-top: 1.5rem;
+            padding: 1rem 1.25rem;
+            border: 1px dashed var(--border);
+            border-radius: 0.8rem;
             background: rgba(30, 41, 59, 0.5);
-        }
-
-        .placeholder-card:hover {
-            transform: none;
-            box-shadow: none;
-            border-color: var(--border);
-        }
-
-        .placeholder-content {
             text-align: center;
-            padding: 2rem;
         }
 
-        .placeholder-icon {
-            font-size: 2.5rem;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-            opacity: 0.5;
+        .coming-soon-icon {
+            color: var(--accent);
+            font-size: 1.35rem;
+            line-height: 1;
         }
 
-        .placeholder-text {
-            font-size: 1rem;
-            color: var(--text-muted);
-            margin-bottom: 0.25rem;
+        .coming-soon-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
         }
 
-        .placeholder-subtext {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            opacity: 0.6;
+        .coming-soon-label {
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
         /* Workflow Section */
@@ -573,6 +580,39 @@
             border: 1px solid var(--border);
         }
 
+        .workflow-step.edition-choice {
+            min-width: 250px;
+        }
+
+        .workflow-editions {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .workflow-edition-link {
+            min-width: 4.5rem;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .workflow-edition-link .workflow-icon {
+            margin-bottom: 0.35rem;
+        }
+
+        .workflow-edition-name {
+            display: block;
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .workflow-edition-link:hover .workflow-edition-name {
+            text-decoration: underline;
+        }
+
         .workflow-icon {
             width: 48px;
             height: 48px;
@@ -598,48 +638,6 @@
             color: var(--text-muted);
         }
 
-        .workflow-pattern {
-            margin-bottom: 1.5rem;
-        }
-
-        .workflow-pattern:last-child {
-            margin-bottom: 0;
-        }
-
-        .workflow-label {
-            text-align: center;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .workflow-divider {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin: 1.5rem 0;
-            position: relative;
-        }
-
-        .workflow-divider::before,
-        .workflow-divider::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: calc(50% - 2rem);
-            height: 1px;
-            background: var(--border);
-        }
-
-        .workflow-divider::before {
-            left: 0;
-        }
-
-        .workflow-divider::after {
-            right: 0;
-        }
-
         .workflow-step.highlight {
             border-color: rgba(99, 102, 241, 0.5);
             background: rgba(99, 102, 241, 0.1);
@@ -647,15 +645,6 @@
 
         .workflow-step.highlight .workflow-step-name {
             color: #a5b4fc;
-        }
-
-        .workflow-step.free {
-            border-color: rgba(34, 197, 94, 0.5);
-            background: rgba(34, 197, 94, 0.1);
-        }
-
-        .workflow-step.free .workflow-step-name {
-            color: #4ade80;
         }
 
         .workflow-step small {
@@ -966,12 +955,12 @@
 <body>
 <div class="bg-effect"></div>
 <header>
-<div class="lang-switch">
-<a class="lang-btn active" href="index.html">English</a>
-<a class="lang-btn" href="index_j.html">日本語</a>
+<div class="lang-switch" aria-label="Language switch">
+<a class="lang-btn active" data-site-lang="en" href="index.html" aria-current="page">English</a>
+<a class="lang-btn" data-site-lang="ja" href="index_j.html">日本語</a>
 </div>
 <p class="header-eyebrow">nekzuk Software – AI Image &amp; Video Tools for Windows</p>
-<h1>Let AI handle the tedious image work.</h1>
+<h1>Let AI handle the tedious image and video work.</h1>
 <p class="header-description">
             Tools that streamline your image and video workflow — automatic mosaic, AI retouching, metadata management, and more.
         </p>
@@ -1009,7 +998,7 @@
 <article class="product-card">
 <div class="card-header">
 <a class="product-icon-link" href="automosaic-r18.html">
-<img alt="AutoMosaic R18" class="product-icon" height="64" src="assets/icons/app_R18.png" width="64"/>
+<img alt="AutoMosaic R18" class="product-icon" height="64" src="assets/icons/optimized/app_R18_128.webp" srcset="assets/icons/optimized/app_R18_128.webp 128w, assets/icons/optimized/app_R18_256.webp 256w" sizes="64px" width="64" loading="lazy" decoding="async"/>
 </a>
 <div class="card-title-area">
 <a class="product-name-link" href="automosaic-r18.html">
@@ -1035,7 +1024,7 @@
 <div class="card-footer">
 <span class="price-badge paid">$25</span>
 <div class="button-group">
-<a class="btn btn-secondary" href="automosaic-r18.html">
+<a class="btn btn-secondary" href="automosaic-r18.html" aria-label="View AutoMosaic R18 product details">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
@@ -1044,7 +1033,7 @@
 </svg>
                             Product Details
                         </a>
-<a class="btn btn-primary" href="https://payhip.com/b/BO3TR" rel="noopener" target="_blank">
+<a class="btn btn-primary" href="https://payhip.com/b/BO3TR" rel="noopener" target="_blank" aria-label="View AutoMosaic R18 on Payhip">
                             Payhip
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M7 17L17 7M17 7H7M17 7V17"></path>
@@ -1057,7 +1046,7 @@
 <article class="product-card">
 <div class="card-header">
 <a class="product-icon-link" href="automosaic.html">
-<img alt="AutoMosaic (General)" class="product-icon" height="64" src="assets/icons/app_general.png" width="64"/>
+<img alt="AutoMosaic (General)" class="product-icon" height="64" src="assets/icons/optimized/app_general_128.webp" srcset="assets/icons/optimized/app_general_128.webp 128w, assets/icons/optimized/app_general_256.webp 256w" sizes="64px" width="64" loading="lazy" decoding="async"/>
 </a>
 <div class="card-title-area">
 <a class="product-name-link" href="automosaic.html">
@@ -1083,7 +1072,7 @@
 <div class="card-footer">
 <span class="price-badge paid">$25</span>
 <div class="button-group">
-<a class="btn btn-secondary" href="automosaic.html">
+<a class="btn btn-secondary" href="automosaic.html" aria-label="View AutoMosaic General product details">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
@@ -1092,7 +1081,7 @@
 </svg>
                             Product Details
                         </a>
-<a class="btn btn-primary" href="https://payhip.com/b/mit2r" rel="noopener" target="_blank">
+<a class="btn btn-primary" href="https://payhip.com/b/mit2r" rel="noopener" target="_blank" aria-label="View AutoMosaic General on Payhip">
                             Payhip
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M7 17L17 7M17 7H7M17 7V17"></path>
@@ -1105,7 +1094,7 @@
 <article class="product-card">
 <div class="card-header">
 <a class="product-icon-link" href="automosaic-video-r18.html">
-<img alt="AutoMosaic Video (R18)" class="product-icon" height="64" src="assets/icons/app_video_R18.jpg" width="64"/>
+<img alt="AutoMosaic Video (R18)" class="product-icon" height="64" src="assets/icons/optimized/app_video_R18_128.webp" srcset="assets/icons/optimized/app_video_R18_128.webp 128w, assets/icons/optimized/app_video_R18_256.webp 256w" sizes="64px" width="64" loading="lazy" decoding="async"/>
 </a>
 <div class="card-title-area">
 <a class="product-name-link" href="automosaic-video-r18.html">
@@ -1131,7 +1120,7 @@
 <div class="card-footer">
 <span class="price-badge paid">$30</span>
 <div class="button-group">
-<a class="btn btn-secondary" href="automosaic-video-r18.html">
+<a class="btn btn-secondary" href="automosaic-video-r18.html" aria-label="View AutoMosaic Video R18 product details">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
@@ -1140,7 +1129,7 @@
 </svg>
                             Product Details
                         </a>
-<a class="btn btn-primary" href="https://payhip.com/b/6eOqg" rel="noopener" target="_blank">
+<a class="btn btn-primary" href="https://payhip.com/b/6eOqg" rel="noopener" target="_blank" aria-label="View AutoMosaic Video R18 on Payhip">
                             Payhip
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M7 17L17 7M17 7H7M17 7V17"></path>
@@ -1153,7 +1142,7 @@
 <article class="product-card">
 <div class="card-header">
 <a class="product-icon-link" href="automosaic-video.html">
-<img alt="AutoMosaic Video (General)" class="product-icon" height="64" src="assets/icons/app_video_general.jpg" width="64"/>
+<img alt="AutoMosaic Video (General)" class="product-icon" height="64" src="assets/icons/optimized/app_video_general_128.webp" srcset="assets/icons/optimized/app_video_general_128.webp 128w, assets/icons/optimized/app_video_general_256.webp 256w" sizes="64px" width="64" loading="lazy" decoding="async"/>
 </a>
 <div class="card-title-area">
 <a class="product-name-link" href="automosaic-video.html">
@@ -1179,7 +1168,7 @@
 <div class="card-footer">
 <span class="price-badge paid">$30</span>
 <div class="button-group">
-<a class="btn btn-secondary" href="automosaic-video.html">
+<a class="btn btn-secondary" href="automosaic-video.html" aria-label="View AutoMosaic Video General product details">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
@@ -1188,7 +1177,7 @@
 </svg>
                             Product Details
                         </a>
-<a class="btn btn-primary" href="https://payhip.com/b/6H1fN" rel="noopener" target="_blank">
+<a class="btn btn-primary" href="https://payhip.com/b/6H1fN" rel="noopener" target="_blank" aria-label="View AutoMosaic Video General on Payhip">
                             Payhip
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M7 17L17 7M17 7H7M17 7V17"></path>
@@ -1201,7 +1190,7 @@
 <article class="product-card">
 <div class="card-header">
 <a class="product-icon-link" href="ai-paint-cleaner.html">
-<img alt="AI Paint Cleaner" class="product-icon" height="64" src="assets/icons/app2.png" width="64"/>
+<img alt="AI Paint Cleaner" class="product-icon" height="64" src="assets/icons/optimized/app2_128.webp" srcset="assets/icons/optimized/app2_128.webp 128w, assets/icons/optimized/app2_256.webp 256w" sizes="64px" width="64" loading="lazy" decoding="async"/>
 </a>
 <div class="card-title-area">
 <a class="product-name-link" href="ai-paint-cleaner.html">
@@ -1228,7 +1217,7 @@
 <div class="card-footer">
 <span class="price-badge paid">$20</span>
 <div class="button-group">
-<a class="btn btn-secondary" href="ai-paint-cleaner.html">
+<a class="btn btn-secondary" href="ai-paint-cleaner.html" aria-label="View AI Paint Cleaner product details">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
@@ -1237,7 +1226,7 @@
 </svg>
                             Product Details
                         </a>
-<a class="btn btn-primary" href="https://payhip.com/b/KVIw4" rel="noopener" target="_blank">
+<a class="btn btn-primary" href="https://payhip.com/b/KVIw4" rel="noopener" target="_blank" aria-label="View AI Paint Cleaner on Payhip">
                             Payhip
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M7 17L17 7M17 7H7M17 7V17"></path>
@@ -1250,7 +1239,7 @@
 <article class="product-card">
 <div class="card-header">
 <a class="product-icon-link" href="nai-smart-studio.html">
-<img alt="NAI Smart Studio" class="product-icon" height="64" src="assets/icons/app_nai.png" width="64"/>
+<img alt="NAI Smart Studio" class="product-icon" height="64" src="assets/icons/optimized/app_nai_128.webp" srcset="assets/icons/optimized/app_nai_128.webp 128w, assets/icons/optimized/app_nai_256.webp 256w" sizes="64px" width="64" loading="lazy" decoding="async"/>
 </a>
 <div class="card-title-area">
 <a class="product-name-link" href="nai-smart-studio.html">
@@ -1277,7 +1266,7 @@
 <div class="card-footer">
 <span class="price-badge paid">$20</span>
 <div class="button-group">
-<a class="btn btn-secondary" href="nai-smart-studio.html">
+<a class="btn btn-secondary" href="nai-smart-studio.html" aria-label="View NAI Smart Studio product details">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
@@ -1286,7 +1275,7 @@
 </svg>
                             Product Details
                         </a>
-<a class="btn btn-primary" href="https://payhip.com/b/5mMZp" rel="noopener" target="_blank">
+<a class="btn btn-primary" href="https://payhip.com/b/5mMZp" rel="noopener" target="_blank" aria-label="View NAI Smart Studio on Payhip">
                             Payhip
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M7 17L17 7M17 7H7M17 7V17"></path>
@@ -1299,7 +1288,7 @@
 <article class="product-card">
 <div class="card-header">
 <a class="product-icon-link" href="ai-meta-cleaner.html">
-<img alt="AI Meta Cleaner" class="product-icon" height="64" src="assets/icons/app3.png" width="64"/>
+<img alt="AI Meta Cleaner" class="product-icon" height="64" src="assets/icons/optimized/app3_128.webp" srcset="assets/icons/optimized/app3_128.webp 128w, assets/icons/optimized/app3_256.webp 256w" sizes="64px" width="64" loading="lazy" decoding="async"/>
 </a>
 <div class="card-title-area">
 <a class="product-name-link" href="ai-meta-cleaner.html">
@@ -1323,7 +1312,7 @@
 <div class="card-footer">
 <span class="price-badge free">Free</span>
 <div class="button-group">
-<a class="btn btn-secondary" href="ai-meta-cleaner.html">
+<a class="btn btn-secondary" href="ai-meta-cleaner.html" aria-label="View AI Meta Cleaner product details">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
@@ -1332,7 +1321,7 @@
 </svg>
                             Product Details
                         </a>
-<a class="btn btn-primary" href="https://payhip.com/b/LdoFB" rel="noopener" target="_blank">
+<a class="btn btn-primary" href="https://payhip.com/b/LdoFB" rel="noopener" target="_blank" aria-label="View AI Meta Cleaner on Payhip">
                             Payhip
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M7 17L17 7M17 7H7M17 7V17"></path>
@@ -1345,7 +1334,7 @@
 <article class="product-card">
 <div class="card-header">
 <a class="product-icon-link" href="frame-craft.html">
-<img alt="Frame Craft" class="product-icon" height="64" src="assets/icons/app5.png" width="64"/>
+<img alt="Frame Craft" class="product-icon" height="64" src="assets/icons/optimized/app5_128.webp" srcset="assets/icons/optimized/app5_128.webp 128w, assets/icons/optimized/app5_256.webp 256w" sizes="64px" width="64" loading="lazy" decoding="async"/>
 </a>
 <div class="card-title-area">
 <a class="product-name-link" href="frame-craft.html">
@@ -1372,7 +1361,7 @@
 <div class="card-footer">
 <span class="price-badge paid">$5</span>
 <div class="button-group">
-<a class="btn btn-secondary" href="frame-craft.html">
+<a class="btn btn-secondary" href="frame-craft.html" aria-label="View Frame Craft product details">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
@@ -1381,7 +1370,7 @@
 </svg>
                             Product Details
                         </a>
-<a class="btn btn-primary" href="https://payhip.com/b/D0wG5" rel="noopener" target="_blank">
+<a class="btn btn-primary" href="https://payhip.com/b/D0wG5" rel="noopener" target="_blank" aria-label="View Frame Craft on Payhip">
                             Payhip
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M7 17L17 7M17 7H7M17 7V17"></path>
@@ -1394,7 +1383,7 @@
 <article class="product-card">
 <div class="card-header">
 <a class="product-icon-link" href="meta-converter.html">
-<img alt="Meta Converter" class="product-icon" height="64" src="assets/icons/app4.png" width="64"/>
+<img alt="Meta Converter" class="product-icon" height="64" src="assets/icons/optimized/app4_128.webp" srcset="assets/icons/optimized/app4_128.webp 128w, assets/icons/optimized/app4_256.webp 256w" sizes="64px" width="64" loading="lazy" decoding="async"/>
 </a>
 <div class="card-title-area">
 <a class="product-name-link" href="meta-converter.html">
@@ -1421,7 +1410,7 @@
 <div class="card-footer">
 <span class="price-badge paid">$4</span>
 <div class="button-group">
-<a class="btn btn-secondary" href="meta-converter.html">
+<a class="btn btn-secondary" href="meta-converter.html" aria-label="View Meta Converter product details">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
@@ -1430,7 +1419,7 @@
 </svg>
                             Product Details
                         </a>
-<a class="btn btn-primary" href="https://payhip.com/b/4Gwc2" rel="noopener" target="_blank">
+<a class="btn btn-primary" href="https://payhip.com/b/4Gwc2" rel="noopener" target="_blank" aria-label="View Meta Converter on Payhip">
                             Payhip
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M7 17L17 7M17 7H7M17 7V17"></path>
@@ -1439,57 +1428,37 @@
 </div>
 </div>
 </article>
-<!-- Coming Soon Placeholder -->
-<article class="product-card placeholder-card">
-<div class="placeholder-content">
-<div class="placeholder-icon">＋</div>
-<p class="placeholder-text">New tools in development</p>
-<p class="placeholder-subtext">Coming Soon</p>
 </div>
-</article>
-</div>
+<aside class="coming-soon-banner" aria-label="Future product plans">
+<span class="coming-soon-icon" aria-hidden="true">＋</span>
+<span class="coming-soon-text">More tools are in development</span>
+<span class="coming-soon-label">Coming Soon</span>
+</aside>
 <!-- Workflow Section -->
 <section class="workflow-section">
-<h3 class="workflow-title">Suggested workflows (Sensitive edition)</h3>
-<div class="workflow-pattern">
-<p class="workflow-label">Pattern 1: Paid, all-in-one</p>
+<h2 class="workflow-title">Suggested workflow</h2>
 <div class="workflow-content">
-<div class="workflow-step">
-<a href="automosaic-r18.html" style="display: block; text-decoration: none; color: inherit;">
-<img alt="AutoMosaic R18" class="workflow-icon" src="assets/icons/app_R18.png" width="500" height="475"/>
-<p class="workflow-step-name">AutoMosaic (R18)</p>
+<div class="workflow-step edition-choice">
+<div class="workflow-editions">
+<a class="workflow-edition-link" href="automosaic.html">
+<img alt="AutoMosaic General" class="workflow-icon" src="assets/icons/optimized/app_general_128.webp" srcset="assets/icons/optimized/app_general_128.webp 128w, assets/icons/optimized/app_general_256.webp 256w" sizes="48px" width="48" height="48" loading="lazy" decoding="async"/>
+<span class="workflow-edition-name">General</span>
 </a>
-<p class="workflow-step-desc">Automatic mosaic</p>
+<a class="workflow-edition-link" href="automosaic-r18.html">
+<img alt="AutoMosaic R18" class="workflow-icon" src="assets/icons/optimized/app_R18_128.webp" srcset="assets/icons/optimized/app_R18_128.webp 128w, assets/icons/optimized/app_R18_256.webp 256w" sizes="48px" width="48" height="48" loading="lazy" decoding="async"/>
+<span class="workflow-edition-name">R18</span>
+</a>
+</div>
+<p class="workflow-step-name">AutoMosaic</p>
+<p class="workflow-step-desc">Automatic image mosaic</p>
 </div>
 <span class="workflow-arrow">→</span>
 <div class="workflow-step highlight">
 <a href="ai-paint-cleaner.html" style="display: block; text-decoration: none; color: inherit;">
-<img alt="AI Paint Cleaner" class="workflow-icon" src="assets/icons/app2.png" width="500" height="513"/>
+<img alt="AI Paint Cleaner" class="workflow-icon" src="assets/icons/optimized/app2_128.webp" srcset="assets/icons/optimized/app2_128.webp 128w, assets/icons/optimized/app2_256.webp 256w" sizes="48px" width="48" height="48" loading="lazy" decoding="async"/>
 <p class="workflow-step-name">AI Paint Cleaner</p>
 </a>
 <p class="workflow-step-desc">Fine adjustments / editing<br/><small>*Includes AI correction, tags, and CLI processing</small></p>
-</div>
-</div>
-</div>
-<div class="workflow-divider">or</div>
-<div class="workflow-pattern">
-<p class="workflow-label">Pattern 2: Use free tools</p>
-<div class="workflow-content">
-<div class="workflow-step">
-<a href="automosaic-r18.html" style="display: block; text-decoration: none; color: inherit;">
-<img alt="AutoMosaic R18" class="workflow-icon" src="assets/icons/app_R18.png" width="500" height="475"/>
-<p class="workflow-step-name">AutoMosaic R18</p>
-</a>
-<p class="workflow-step-desc">Automatic mosaic<br/><small>*Paid software</small></p>
-</div>
-<span class="workflow-arrow">→</span>
-<div class="workflow-step free">
-<a href="ai-meta-cleaner.html" style="display: block; text-decoration: none; color: inherit;">
-<img alt="AI Meta Cleaner" class="workflow-icon" src="assets/icons/app3.png" width="500" height="486"/>
-<p class="workflow-step-name">AI Meta Cleaner</p>
-</a>
-<p class="workflow-step-desc">Metadata cleaning<br/><small>*Free tool</small></p>
-</div>
 </div>
 </div>
 </section>
@@ -1499,7 +1468,7 @@
             Contact:
             <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank">Twitter/X</a>
             ·
-            <a href="https://payhip.com/nekzuk/contact" rel="noopener" target="_blank">Payhip</a>
+            <a href="https://payhip.com/nekzuk/contact" rel="noopener" target="_blank" aria-label="Contact nekzuk Software via Payhip">Payhip</a>
             ·
             <a class="protected-email" data-email-user="nekzuk.software" data-email-domain="gmail.com">nekzuk.software [at] gmail [dot] com</a>
         </p>
@@ -1516,6 +1485,12 @@
     function setSiteLang(lang) {
         try { localStorage.setItem('site_lang', lang); } catch (e) {}
     }
+
+    document.querySelectorAll('[data-site-lang]').forEach(function (link) {
+        link.addEventListener('click', function () {
+            setSiteLang(link.dataset.siteLang);
+        });
+    });
     </script>
   <script src="assets/js/email-protect.js" defer></script>
 </body>

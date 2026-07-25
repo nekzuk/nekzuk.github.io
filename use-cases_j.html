@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="AI画像生成・編集・投稿準備でどのnekzuk Software製品を選ぶか迷った方向けの購入ガイド。AutoMosaic、AI Paint Cleaner、NAI Smart Studio、AI Meta Cleaner、Meta Converter、Frame Craftを用途別に整理。"
+      content="AI画像・動画の生成、編集、モザイク処理、投稿準備でどのnekzuk Software製品を選ぶか迷った方向けの購入ガイド。AutoMosaic Video、AutoMosaic、AI Paint Cleanerなどを用途別に整理。"
     />
     <meta name="author" content="nekzuk Software" />
     <meta property="og:type" content="website" />
@@ -13,7 +13,7 @@
     <meta property="og:title" content="どのツールを選ぶ？用途別購入ガイド | nekzuk Software" />
     <meta
       property="og:description"
-      content="R18モザイク、一般画像の匿名化、AI画像の修正、NovelAI生成、メタデータ削除、画像変換、動画フレーム抽出など、目的別におすすめ製品を整理。"
+      content="R18・一般向けの画像／動画モザイク、AI画像の修正、NovelAI生成、メタデータ削除、画像変換、動画フレーム抽出など、目的別におすすめ製品を整理。"
     />
     <meta property="og:image" content="https://nekzuk.com/assets/favicons/og-image.png?v=3" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -21,9 +21,17 @@
     <meta name="twitter:title" content="どのツールを選ぶ？用途別購入ガイド | nekzuk Software" />
     <meta
       name="twitter:description"
-      content="AI画像制作・編集・投稿準備に必要なツールを、目的別に選べる購入ガイド。"
+      content="AI画像・動画の制作、編集、モザイク処理、投稿準備に必要なツールを目的別に選べる購入ガイド。"
     />
     <meta name="twitter:image" content="https://nekzuk.com/assets/favicons/og-image.png?v=3" />
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-040P2W2ZZK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-040P2W2ZZK');
+    </script>
     <link rel="canonical" href="https://nekzuk.com/use-cases_j.html" />
     <link rel="alternate" hreflang="ja" href="https://nekzuk.com/use-cases_j.html" />
     <link rel="alternate" hreflang="en" href="https://nekzuk.com/use-cases.html" />
@@ -43,7 +51,7 @@
         --bg-card-soft: #24304a;
         --text-primary: #f1f5f9;
         --text-secondary: #a7b4c8;
-        --text-muted: #718096;
+        --text-muted: #94a3b8;
         --border: #334155;
         --success: #4ade80;
         --warning: #fbbf24;
@@ -79,6 +87,7 @@
       @keyframes float { 0%,100% { transform: translate(0,0) rotate(0); } 50% { transform: translate(-1.5%,2%) rotate(1deg); } }
       @media (prefers-reduced-motion: reduce) { .bg-effect::before { animation: none; } html { scroll-behavior: auto; } }
       a { color: inherit; }
+      a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: .35rem; }
       .page {
         position: relative;
         z-index: 1;
@@ -377,6 +386,14 @@
           },
           {
             "@type": "Question",
+            "name": "静止画と動画のモザイク処理ではどの製品を選べばよいですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "静止画をまとめて処理する場合はAutoMosaic、動画内の対象を検出・追跡して処理する場合はAutoMosaic Videoを選びます。どちらもR18版はセンシティブ部位、通常版は人物・顔・文字・ナンバープレートなどの匿名化向けです。"
+            }
+          },
+          {
+            "@type": "Question",
             "name": "NovelAI向けにはどの製品を選べばよいですか？",
             "acceptedAnswer": {
               "@type": "Answer",
@@ -394,8 +411,8 @@
         <div class="container">
           <nav class="top-nav" aria-label="ページナビゲーション">
             <div class="lang-switch" aria-label="Language switch">
-              <a class="pill-link" href="use-cases.html">English</a>
-              <a class="pill-link active" href="use-cases_j.html">日本語</a>
+              <a class="pill-link" data-site-lang="en" href="use-cases.html">English</a>
+              <a class="pill-link active" data-site-lang="ja" href="use-cases_j.html" aria-current="page">日本語</a>
             </div>
             <div class="nav-links">
               <a class="pill-link" href="index_j.html">製品一覧へ</a>
@@ -405,7 +422,7 @@
             <span class="eyebrow">Buying Guide</span>
             <h1>どれを買えばよいか迷ったら</h1>
             <p>
-              AI画像の生成・編集・投稿準備で「何を楽にしたいか」から選ぶための購入ガイドです。
+              画像・動画の生成、編集、モザイク処理、投稿準備で「何を楽にしたいか」から選ぶための購入ガイドです。
               目的に合う主製品と、必要な場合だけ追加すると便利な製品を整理しました。
             </p>
             <div class="hero-actions">
@@ -430,8 +447,8 @@
                 <div class="tags"><span class="tag primary">R18</span><span class="tag paid">主力</span></div>
                 <div class="card-title-row">
                   <div class="icons">
-                    <img class="app-icon" src="assets/icons/app_R18.png" alt="AutoMosaic R18 icon" width="500" height="475"/>
-                    <img class="app-icon" src="assets/icons/app2.png" alt="AI Paint Cleaner icon" width="500" height="513"/>
+                    <img class="app-icon" src="assets/icons/optimized/app_R18_128.webp" srcset="assets/icons/optimized/app_R18_128.webp 128w, assets/icons/optimized/app_R18_256.webp 256w" sizes="56px" alt="AutoMosaic R18 icon" width="128" height="128" loading="lazy" decoding="async"/>
+                    <img class="app-icon" src="assets/icons/optimized/app2_128.webp" srcset="assets/icons/optimized/app2_128.webp 128w, assets/icons/optimized/app2_256.webp 256w" sizes="56px" alt="AI Paint Cleaner icon" width="128" height="128" loading="lazy" decoding="async"/>
                   </div>
                   <div>
                     <h3>成人向け画像のモザイク作業を一括で進めたい</h3>
@@ -449,7 +466,7 @@
               </div>
               <div class="card-footer">
                 <span class="price">¥3,000〜¥5,500</span>
-                <div class="mini-actions"><a class="mini-btn" href="automosaic-r18_j.html">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/6510317?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank">BOOTH</a></div>
+                <div class="mini-actions"><a class="mini-btn" href="automosaic-r18_j.html" aria-label="AutoMosaic R18版の詳細を見る">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/6510317?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank" aria-label="AutoMosaic R18版をBOOTHで見る">BOOTH</a></div>
               </div>
             </article>
 
@@ -458,8 +475,8 @@
                 <div class="tags"><span class="tag utility">一般画像</span><span class="tag paid">匿名化</span></div>
                 <div class="card-title-row">
                   <div class="icons">
-                    <img class="app-icon" src="assets/icons/app_general.png" alt="AutoMosaic General icon" width="500" height="475"/>
-                    <img class="app-icon" src="assets/icons/app2.png" alt="AI Paint Cleaner icon" width="500" height="513"/>
+                    <img class="app-icon" src="assets/icons/optimized/app_general_128.webp" srcset="assets/icons/optimized/app_general_128.webp 128w, assets/icons/optimized/app_general_256.webp 256w" sizes="56px" alt="AutoMosaic General icon" width="128" height="128" loading="lazy" decoding="async"/>
+                    <img class="app-icon" src="assets/icons/optimized/app2_128.webp" srcset="assets/icons/optimized/app2_128.webp 128w, assets/icons/optimized/app2_256.webp 256w" sizes="56px" alt="AI Paint Cleaner icon" width="128" height="128" loading="lazy" decoding="async"/>
                   </div>
                   <div>
                     <h3>顔・文字・ナンバーなどを隠したい</h3>
@@ -477,7 +494,57 @@
               </div>
               <div class="card-footer">
                 <span class="price">¥3,000〜¥5,500</span>
-                <div class="mini-actions"><a class="mini-btn" href="automosaic_j.html">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/7075141?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank">BOOTH</a></div>
+                <div class="mini-actions"><a class="mini-btn" href="automosaic_j.html" aria-label="AutoMosaic 通常版の詳細を見る">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/7075141?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank" aria-label="AutoMosaic 通常版をBOOTHで見る">BOOTH</a></div>
+              </div>
+            </article>
+
+            <article class="usecase-card">
+              <div class="usecase-main">
+                <div class="tags"><span class="tag primary">R18動画</span><span class="tag paid">動画処理</span></div>
+                <div class="card-title-row">
+                  <div class="icons">
+                    <img class="app-icon" src="assets/icons/optimized/app_video_R18_128.webp" srcset="assets/icons/optimized/app_video_R18_128.webp 128w, assets/icons/optimized/app_video_R18_256.webp 256w" sizes="56px" alt="AutoMosaic Video R18 icon" width="128" height="128" loading="lazy" decoding="async"/>
+                  </div>
+                  <div>
+                    <h3>成人向け動画のモザイク処理を自動化したい</h3>
+                    <p>動画内のセンシティブ部位を自動検出・追跡し、複数の動画をまとめてモザイク・ぼかし・塗りつぶし処理するならAutoMosaic Video R18版です。</p>
+                  </div>
+                </div>
+                <div class="product-chip-row"><span class="product-chip">AutoMosaic Video R18版</span></div>
+                <ul class="check-list">
+                  <li>動画内の対象をフレームごとに追跡しながら処理します。</li>
+                  <li>複数動画の連続処理に対応しています。</li>
+                  <li>静止画像をまとめて処理する場合はAutoMosaic R18版を選びます。</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <span class="price">¥3,500</span>
+                <div class="mini-actions"><a class="mini-btn" href="automosaic-video-r18_j.html" aria-label="AutoMosaic Video R18版の詳細を見る">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/8632201?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank" aria-label="AutoMosaic Video R18版をBOOTHで見る">BOOTH</a></div>
+              </div>
+            </article>
+
+            <article class="usecase-card">
+              <div class="usecase-main">
+                <div class="tags"><span class="tag utility">一般動画</span><span class="tag paid">匿名化</span></div>
+                <div class="card-title-row">
+                  <div class="icons">
+                    <img class="app-icon" src="assets/icons/optimized/app_video_general_128.webp" srcset="assets/icons/optimized/app_video_general_128.webp 128w, assets/icons/optimized/app_video_general_256.webp 256w" sizes="56px" alt="AutoMosaic Video General icon" width="128" height="128" loading="lazy" decoding="async"/>
+                  </div>
+                  <div>
+                    <h3>動画内の人物・顔・文字・ナンバーなどを隠したい</h3>
+                    <p>動画内の人物、顔、目、文字、ナンバープレートなどを自動検出・追跡して匿名化するならAutoMosaic Video 通常版です。</p>
+                  </div>
+                </div>
+                <div class="product-chip-row"><span class="product-chip">AutoMosaic Video 通常版</span></div>
+                <ul class="check-list">
+                  <li>センシティブ部位ではなく、一般動画の匿名化向けです。</li>
+                  <li>モザイク・ぼかし・塗りつぶしを対象の動きに合わせて適用します。</li>
+                  <li>静止画像をまとめて処理する場合はAutoMosaic 通常版を選びます。</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <span class="price">¥3,500</span>
+                <div class="mini-actions"><a class="mini-btn" href="automosaic-video_j.html" aria-label="AutoMosaic Video 通常版の詳細を見る">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/8632214?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank" aria-label="AutoMosaic Video 通常版をBOOTHで見る">BOOTH</a></div>
               </div>
             </article>
 
@@ -486,7 +553,7 @@
                 <div class="tags"><span class="tag primary">AI編集</span><span class="tag paid">仕上げ</span></div>
                 <div class="card-title-row">
                   <div class="icons">
-                    <img class="app-icon" src="assets/icons/app2.png" alt="AI Paint Cleaner icon" width="500" height="513"/>
+                    <img class="app-icon" src="assets/icons/optimized/app2_128.webp" srcset="assets/icons/optimized/app2_128.webp 128w, assets/icons/optimized/app2_256.webp 256w" sizes="56px" alt="AI Paint Cleaner icon" width="128" height="128" loading="lazy" decoding="async"/>
                   </div>
                   <div>
                     <h3>AI画像の修正・補正・タグ整理をまとめたい</h3>
@@ -502,7 +569,7 @@
               </div>
               <div class="card-footer">
                 <span class="price">¥2,500</span>
-                <div class="mini-actions"><a class="mini-btn" href="ai-paint-cleaner_j.html">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/6649634?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank">BOOTH</a></div>
+                <div class="mini-actions"><a class="mini-btn" href="ai-paint-cleaner_j.html" aria-label="AI Paint Cleanerの詳細を見る">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/6649634?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank" aria-label="AI Paint CleanerをBOOTHで見る">BOOTH</a></div>
               </div>
             </article>
 
@@ -511,7 +578,7 @@
                 <div class="tags"><span class="tag nai">NovelAI</span><span class="tag paid">生成支援</span></div>
                 <div class="card-title-row">
                   <div class="icons">
-                    <img class="app-icon" src="assets/icons/app_nai.png" alt="NAI Smart Studio icon" width="1024" height="1024"/>
+                    <img class="app-icon" src="assets/icons/optimized/app_nai_128.webp" srcset="assets/icons/optimized/app_nai_128.webp 128w, assets/icons/optimized/app_nai_256.webp 256w" sizes="56px" alt="NAI Smart Studio icon" width="128" height="128" loading="lazy" decoding="async"/>
                   </div>
                   <div>
                     <h3>NovelAIの生成作業を効率化したい</h3>
@@ -527,7 +594,7 @@
               </div>
               <div class="card-footer">
                 <span class="price">¥2,500</span>
-                <div class="mini-actions"><a class="mini-btn" href="nai-smart-studio_j.html">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/7969637?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank">BOOTH</a></div>
+                <div class="mini-actions"><a class="mini-btn" href="nai-smart-studio_j.html" aria-label="NAI Smart Studioの詳細を見る">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/7969637?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank" aria-label="NAI Smart StudioをBOOTHで見る">BOOTH</a></div>
               </div>
             </article>
 
@@ -536,7 +603,7 @@
                 <div class="tags"><span class="tag free">無料</span><span class="tag utility">投稿前</span></div>
                 <div class="card-title-row">
                   <div class="icons">
-                    <img class="app-icon" src="assets/icons/app3.png" alt="AI Meta Cleaner icon" width="500" height="486"/>
+                    <img class="app-icon" src="assets/icons/optimized/app3_128.webp" srcset="assets/icons/optimized/app3_128.webp 128w, assets/icons/optimized/app3_256.webp 256w" sizes="56px" alt="AI Meta Cleaner icon" width="128" height="128" loading="lazy" decoding="async"/>
                   </div>
                   <div>
                     <h3>投稿前にメタデータだけ削除したい</h3>
@@ -552,7 +619,7 @@
               </div>
               <div class="card-footer">
                 <span class="price free">無料</span>
-                <div class="mini-actions"><a class="mini-btn" href="ai-meta-cleaner_j.html">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/7626627?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank">BOOTH</a></div>
+                <div class="mini-actions"><a class="mini-btn" href="ai-meta-cleaner_j.html" aria-label="AI Meta Cleanerの詳細を見る">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/7626627?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank" aria-label="AI Meta CleanerをBOOTHで見る">BOOTH</a></div>
               </div>
             </article>
 
@@ -561,7 +628,7 @@
                 <div class="tags"><span class="tag utility">画像変換</span><span class="tag paid">低価格</span></div>
                 <div class="card-title-row">
                   <div class="icons">
-                    <img class="app-icon" src="assets/icons/app4.png" alt="Meta Converter icon" width="500" height="499"/>
+                    <img class="app-icon" src="assets/icons/optimized/app4_128.webp" srcset="assets/icons/optimized/app4_128.webp 128w, assets/icons/optimized/app4_256.webp 256w" sizes="56px" alt="Meta Converter icon" width="128" height="128" loading="lazy" decoding="async"/>
                   </div>
                   <div>
                     <h3>AI画像を軽量化・形式変換したい</h3>
@@ -577,7 +644,7 @@
               </div>
               <div class="card-footer">
                 <span class="price">¥380</span>
-                <div class="mini-actions"><a class="mini-btn" href="meta-converter_j.html">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/6911255?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank">BOOTH</a></div>
+                <div class="mini-actions"><a class="mini-btn" href="meta-converter_j.html" aria-label="Meta Converterの詳細を見る">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/6911255?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank" aria-label="Meta ConverterをBOOTHで見る">BOOTH</a></div>
               </div>
             </article>
 
@@ -586,7 +653,7 @@
                 <div class="tags"><span class="tag utility">動画</span><span class="tag paid">うごイラ</span></div>
                 <div class="card-title-row">
                   <div class="icons">
-                    <img class="app-icon" src="assets/icons/app5.png" alt="Frame Craft icon" width="504" height="500"/>
+                    <img class="app-icon" src="assets/icons/optimized/app5_128.webp" srcset="assets/icons/optimized/app5_128.webp 128w, assets/icons/optimized/app5_256.webp 256w" sizes="56px" alt="Frame Craft icon" width="128" height="128" loading="lazy" decoding="async"/>
                   </div>
                   <div>
                     <h3>動画からフレーム抽出・GIF/WEBPアニメを作りたい</h3>
@@ -602,7 +669,7 @@
               </div>
               <div class="card-footer">
                 <span class="price">¥500</span>
-                <div class="mini-actions"><a class="mini-btn" href="frame-craft_j.html">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/7295171?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank">BOOTH</a></div>
+                <div class="mini-actions"><a class="mini-btn" href="frame-craft_j.html" aria-label="Frame Craftの詳細を見る">詳細</a><a class="mini-btn buy" href="https://synekzuk.booth.pm/items/7295171?utm_source=nekzuk.com&utm_medium=usecase_guide&utm_campaign=jp_usecase" rel="noopener" target="_blank" aria-label="Frame CraftをBOOTHで見る">BOOTH</a></div>
               </div>
             </article>
           </div>
@@ -615,6 +682,10 @@
             <p>名前や用途が近い製品の違いだけをまとめました。</p>
           </div>
           <div class="compare-grid">
+            <article class="compare-card">
+              <h3>AutoMosaic / AutoMosaic Video</h3>
+              <p><strong>AutoMosaic</strong>は複数の静止画像をまとめて処理するツールです。<strong>AutoMosaic Video</strong>は動画内の対象を自動検出・追跡しながら処理するツールです。</p>
+            </article>
             <article class="compare-card">
               <h3>AutoMosaic R18版 / 通常版</h3>
               <p><strong>R18版</strong>は成人向けコンテンツのセンシティブ部位検出向けです。<strong>通常版</strong>は顔・人物・文字・ナンバープレートなど、一般画像の匿名化向けです。</p>
@@ -651,6 +722,15 @@
         </div>
       </footer>
     </div>
+    <script>
+      document.querySelectorAll("[data-site-lang]").forEach(function (link) {
+        link.addEventListener("click", function () {
+          try {
+            localStorage.setItem("site_lang", link.dataset.siteLang);
+          } catch (e) {}
+        });
+      });
+    </script>
   <script src="assets/js/email-protect.js" defer></script>
   </body>
 </html>
