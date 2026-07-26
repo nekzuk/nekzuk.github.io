@@ -1,0 +1,124 @@
+.section-review {
+  order: 1;
+}
+
+.section-history {
+  order: 2;
+}
+
+.history-table {
+  margin-top: 0.35rem;
+}
+
+.history-head,
+.history-row {
+  display: grid;
+  grid-template-columns:
+    minmax(7.2rem, 0.9fr)
+    minmax(7.2rem, 1fr)
+    minmax(6.5rem, 1fr);
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.history-head.lang-ja,
+.history-head.lang-en {
+  display: grid;
+}
+
+.history-head {
+  padding: 0 0.4rem 0.45rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted2);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.history-head span:last-child {
+  text-align: right;
+}
+
+.history-list {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.history-list li {
+  margin: 0 !important;
+}
+
+.history-row {
+  min-height: 2.75rem;
+  padding: 0.5rem 0.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.history-list li:last-child .history-row {
+  border-bottom: 0;
+}
+
+.history-version {
+  color: var(--text);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.history-date {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.history-link {
+  justify-self: end;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.history-empty {
+  justify-self: end;
+  color: var(--muted2);
+}
+
+.review-excerpts {
+  margin: 0.45rem 0 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.review-excerpts li {
+  margin: 0.55rem 0 !important;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-left: 3px solid var(--accent);
+  border-radius: 0.7rem;
+  background: var(--card2);
+  color: var(--muted);
+}
+
+.review-cta {
+  margin-top: 1rem;
+}
+
+@media (max-width: 560px) {
+  .history-head.lang-ja,
+  .history-head.lang-en {
+    display: none;
+  }
+
+  .history-row {
+    grid-template-columns: minmax(7.2rem, auto) minmax(7rem, 1fr);
+    gap: 0.25rem 0.7rem;
+    padding: 0.65rem 0.2rem;
+  }
+
+  .history-link {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .history-empty {
+    display: none;
+  }
+}
