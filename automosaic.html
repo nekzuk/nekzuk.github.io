@@ -166,6 +166,12 @@
         font-size: 0.9rem;
         color: var(--muted);
       }
+      .pills {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+      }
       .pill {
         display: inline-flex;
         gap: 0.5rem;
@@ -592,7 +598,6 @@
         display: flex;
         align-items: flex-start;
         gap: 18px;
-        padding: 22px 22px 12px;
       }
       .heroTitle .title {
         margin: 0;
@@ -721,7 +726,124 @@
         flex-direction: column;
         gap: 1rem;
       }
-    </style>
+
+      /* Edition switcher (image/video x general/R18) */
+      .buyRow {
+        display: flex;
+        align-items: flex-end;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+      }
+      .buyMain {
+        min-width: 0;
+      }
+      /* reserve two lines in every spec box so the hero keeps the same
+         height across the four editions */
+      .heroFacts .box .value {
+        min-height: 2.5em;
+      }
+      .editionSwitch {
+        margin-left: auto;
+      }
+      /* let the hero text column fill the row, so the switcher lands in the
+         same place regardless of how long the product description is */
+      .heroTitle {
+        flex: 1 1 auto;
+      }
+      .heroTitle > div {
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+      .editionSwitch .esGrid {
+        display: grid;
+        grid-template-columns: auto repeat(2, 1fr);
+        grid-template-rows: auto auto;
+        align-items: center;
+        column-gap: 0.4rem;
+        row-gap: 0.4rem;
+      }
+      .editionSwitch .esLabel {
+        grid-column: 1;
+        grid-row: 1 / -1;
+        font-size: 0.75rem;
+        letter-spacing: 0.04em;
+        color: var(--muted);
+        padding-right: 0.2rem;
+      }
+      .editionSwitch .esItem {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.22rem 0.65rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--muted);
+        font-size: 0.78rem;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      a.esItem:hover,
+      a.esItem:focus-visible {
+        border-color: var(--accent);
+        color: var(--text);
+      }
+      /* square corners mark the R18 row: a shape cue reads at a glance and
+         does not depend on colour perception */
+      .editionSwitch .esItem.esR18 {
+        border-radius: 0;
+      }
+      .editionSwitch .esItem[aria-current="page"] {
+        border-color: var(--accent);
+        background: rgba(34, 211, 238, 0.12);
+        color: var(--accent);
+      }
+      @media (max-width: 700px) {
+        .heroTitle {
+          padding: 16px 12px 10px;
+          gap: 12px;
+        }
+        .appIcon {
+          width: 72px;
+          height: 72px;
+          border-radius: 16px;
+        }
+        .editionSwitch {
+          margin-left: 0;
+          margin-top: 0.9rem;
+          width: 100%;
+        }
+        .editionSwitch .esGrid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .editionSwitch .esLabel {
+          grid-column: 1 / -1;
+          grid-row: auto;
+          padding-right: 0;
+          margin-bottom: 0.1rem;
+        }
+        .editionSwitch .esItem {
+          padding: 0.22rem 0.4rem;
+          font-size: 0.74rem;
+        }
+      }
+          /* below ~400px the icon and the buy buttons no longer fit side by side */
+      @media (max-width: 400px) {
+        .heroTitle {
+          flex-wrap: wrap;
+        }
+      }
+      /* grid items default to min-width: auto, which stops the body sections
+         shrinking and pushes them out of the container on narrow screens */
+      .grid > * {
+        min-width: 0;
+      }
+      /* p.lang-en is display:inline, which makes two adjacent notes
+         run together on one line */
+      p.note.lang-en {
+        display: block;
+      }
+</style>
     <!-- 構造化データ：SoftwareApplication (Enhanced) -->
     <script type="application/ld+json">
       {
@@ -836,27 +958,37 @@
                 </h1>
                 <p class="subtitle">
                   <span class="lang-en"
-                    >A desktop tool that automatically detects targets in images
-                    and applies mosaic / blur / fill in batch. Great for
-                    anonymization and comic/illustration editing
-                    workflows.</span
+                    >Automatically detects people, faces, eyes, text, and license plates across multiple images, then applies mosaic, blur, or fill.</span
                   >
                 </p>
               </div>
-              <div class="price">
-                <span class="lang-en">$20</span>
-              </div>
-              <div class="btns">
-                <a
-                  class="btn primary lang-en"
-                  href="https://payhip.com/b/mit2r"
-                  rel="noopener"
-                  target="_blank"
-                  >Payhip</a
-                >
-                <a class="btn sub" href="#trial"
-                  ><span class="lang-en">Trial Version</span></a
-                >
+              <div class="buyRow">
+                <div class="buyMain">
+                <div class="price">
+                  <span class="lang-en">$20</span>
+                </div>
+                <div class="btns">
+                  <a
+                    class="btn primary lang-en"
+                    href="https://payhip.com/b/mit2r"
+                    rel="noopener"
+                    target="_blank"
+                    >Payhip</a
+                  >
+                  <a class="btn sub" href="#trial"
+                    ><span class="lang-en">Trial Version</span></a
+                  >
+                </div>
+                </div>
+              <nav class="editionSwitch" aria-label="Edition switcher">
+                <div class="esGrid">
+                  <div class="esLabel"><span class="lang-en">Edition</span></div>
+                  <span class="esItem" aria-current="page"><span class="lang-en">Image / General</span></span>
+                  <a class="esItem" href="automosaic-video.html"><span class="lang-en">Video / General</span></a>
+                  <a class="esItem esR18" href="automosaic-r18.html"><span class="lang-en">Image / R18</span></a>
+                  <a class="esItem esR18" href="automosaic-video-r18.html"><span class="lang-en">Video / R18</span></a>
+                </div>
+              </nav>
               </div>
             </div>
           </div>
@@ -947,6 +1079,10 @@
           <p class="note lang-en" style="margin-top: 1rem; font-size: 0.85rem">
             * Sensitive-part detection is available in the
             <a href="automosaic-r18.html">R18 version</a>.
+          </p>
+          <p class="note lang-en" style="margin-top: 1rem; font-size: 0.85rem">
+            💡 <b>Tip:</b> Add ADetailer / YOLO format models to the Models folder to
+            extend the detection targets.
           </p>
         </section>
         <section class="section">

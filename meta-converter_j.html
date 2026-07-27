@@ -67,7 +67,13 @@
     .container{max-width:980px;margin:0 auto}
     .top{display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:1.25rem}
     .small{font-size:.9rem;color:var(--muted)}
-    .pill{display:inline-flex;gap:.5rem;align-items:center;padding:.25rem .7rem;border-radius:999px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.05);color:var(--muted);font-size:.85rem}
+          .pills {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+      }
+.pill{display:inline-flex;gap:.5rem;align-items:center;padding:.25rem .7rem;border-radius:999px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.05);color:var(--muted);font-size:.85rem}
 
     .hero{background:var(--card);border:1px solid var(--border);border-radius:1.1rem;padding:1.6rem}
     .heroTop{display:flex;gap:1rem;align-items:flex-start}
@@ -179,7 +185,6 @@ ul.lang-ja, ol.lang-ja {display:block}
   display:flex;
   align-items:flex-start;
   gap:18px;
-  padding:22px 22px 12px;
 }
 .heroTitle .title{ margin:0; }
 .heroTitle .subtitle{ margin:0; color:var(--muted); line-height:1.35; max-width:640px; }
@@ -255,6 +260,33 @@ ul.lang-ja, ol.lang-ja {display:block}
   gap:1rem;
 }
 
+      @media (max-width: 700px) {
+        .heroTitle {
+          padding: 16px 12px 10px;
+          gap: 12px;
+        }
+        .appIcon {
+          width: 72px;
+          height: 72px;
+          border-radius: 16px;
+        }
+      }
+      /* below ~400px the icon and the buy buttons no longer fit side by side */
+      @media (max-width: 400px) {
+        .heroTitle {
+          flex-wrap: wrap;
+        }
+      }
+      /* grid items default to min-width: auto, which stops the body sections
+         shrinking and pushes them out of the container on narrow screens */
+      .grid > * {
+        min-width: 0;
+      }
+      /* p.lang-ja is display:inline, which makes two adjacent notes
+         run together on one line */
+      p.note.lang-ja {
+        display: block;
+      }
 </style>
 <!-- 構造化データ：SoftwareApplication (Enhanced) -->
 <script type="application/ld+json">

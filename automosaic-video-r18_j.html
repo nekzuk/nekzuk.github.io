@@ -746,7 +746,124 @@
         font-size: 2rem;
         opacity: 0.3;
       }
-    </style>
+
+      /* Edition switcher (image/video x general/R18) */
+      .buyRow {
+        display: flex;
+        align-items: flex-end;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+      }
+      .buyMain {
+        min-width: 0;
+      }
+      /* reserve two lines in every spec box so the hero keeps the same
+         height across the four editions */
+      .heroFacts .box .value {
+        min-height: 2.5em;
+      }
+      .editionSwitch {
+        margin-left: auto;
+      }
+      /* let the hero text column fill the row, so the switcher lands in the
+         same place regardless of how long the product description is */
+      .heroTitle {
+        flex: 1 1 auto;
+      }
+      .heroTitle > div {
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+      .editionSwitch .esGrid {
+        display: grid;
+        grid-template-columns: auto repeat(2, 1fr);
+        grid-template-rows: auto auto;
+        align-items: center;
+        column-gap: 0.4rem;
+        row-gap: 0.4rem;
+      }
+      .editionSwitch .esLabel {
+        grid-column: 1;
+        grid-row: 1 / -1;
+        font-size: 0.75rem;
+        letter-spacing: 0.04em;
+        color: var(--muted);
+        padding-right: 0.2rem;
+      }
+      .editionSwitch .esItem {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.22rem 0.65rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--muted);
+        font-size: 0.78rem;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      a.esItem:hover,
+      a.esItem:focus-visible {
+        border-color: var(--accent);
+        color: var(--text);
+      }
+      /* square corners mark the R18 row: a shape cue reads at a glance and
+         does not depend on colour perception */
+      .editionSwitch .esItem.esR18 {
+        border-radius: 0;
+      }
+      .editionSwitch .esItem[aria-current="page"] {
+        border-color: var(--accent);
+        background: rgba(34, 211, 238, 0.12);
+        color: var(--accent);
+      }
+      @media (max-width: 700px) {
+        .heroTitle {
+          padding: 16px 12px 10px;
+          gap: 12px;
+        }
+        .appIcon {
+          width: 72px;
+          height: 72px;
+          border-radius: 16px;
+        }
+        .editionSwitch {
+          margin-left: 0;
+          margin-top: 0.9rem;
+          width: 100%;
+        }
+        .editionSwitch .esGrid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .editionSwitch .esLabel {
+          grid-column: 1 / -1;
+          grid-row: auto;
+          padding-right: 0;
+          margin-bottom: 0.1rem;
+        }
+        .editionSwitch .esItem {
+          padding: 0.22rem 0.4rem;
+          font-size: 0.74rem;
+        }
+      }
+          /* below ~400px the icon and the buy buttons no longer fit side by side */
+      @media (max-width: 400px) {
+        .heroTitle {
+          flex-wrap: wrap;
+        }
+      }
+      /* grid items default to min-width: auto, which stops the body sections
+         shrinking and pushes them out of the container on narrow screens */
+      .grid > * {
+        min-width: 0;
+      }
+      /* p.lang-ja is display:inline, which makes two adjacent notes
+         run together on one line */
+      p.note.lang-ja {
+        display: block;
+      }
+</style>
     <!-- 構造化データ：SoftwareApplication -->
     <script type="application/ld+json">
       {
@@ -865,24 +982,37 @@
                 </h1>
                 <p class="subtitle">
                   <span class="lang-ja"
-                    >動画内の性器・肛門を自動検出・追跡し、モザイク、ぼかし、または塗りつぶしを適用します。</span
+                    >動画内の性器・肛門を自動検出・追跡し、モザイク/ぼかし/塗りつぶしを適用するツールです。処理はPC内で完結します。</span
                   >
                 </p>
               </div>
-              <div class="price">
-                <span class="lang-ja">¥3,500</span>
-              </div>
-              <div class="btns">
-                <a
-                  class="btn primary lang-ja"
-                  href="https://synekzuk.booth.pm/items/8632201"
-                  rel="noopener"
-                  target="_blank"
-                  >BOOTH</a
-                >
-                <a class="btn sub" href="#trial"
-                  ><span class="lang-ja">体験版</span></a
-                >
+              <div class="buyRow">
+                <div class="buyMain">
+                <div class="price">
+                  <span class="lang-ja">¥3,500</span>
+                </div>
+                <div class="btns">
+                  <a
+                    class="btn primary lang-ja"
+                    href="https://synekzuk.booth.pm/items/8632201"
+                    rel="noopener"
+                    target="_blank"
+                    >BOOTH</a
+                  >
+                  <a class="btn sub" href="#trial"
+                    ><span class="lang-ja">体験版</span></a
+                  >
+                </div>
+                </div>
+              <nav class="editionSwitch" aria-label="エディション切替">
+                <div class="esGrid">
+                  <div class="esLabel"><span class="lang-ja">エディション</span></div>
+                  <a class="esItem" href="automosaic_j.html"><span class="lang-ja">画像 / 通常版</span></a>
+                  <a class="esItem" href="automosaic-video_j.html"><span class="lang-ja">動画 / 通常版</span></a>
+                  <a class="esItem esR18" href="automosaic-r18_j.html"><span class="lang-ja">画像 / R18版</span></a>
+                  <span class="esItem esR18" aria-current="page"><span class="lang-ja">動画 / R18版</span></span>
+                </div>
+              </nav>
               </div>
             </div>
           </div>
@@ -964,6 +1094,10 @@
               </ul>
             </div>
           </div>
+          <p class="note lang-ja" style="margin-top: 1rem; font-size: 0.85rem">
+            💡 <b>Tip:</b> ADetailer / YOLO 形式のモデルを Models
+            フォルダに追加することで、検出対象を増やすことができます。
+          </p>
         </section>
         <section class="section">
           <h2>

@@ -458,7 +458,34 @@
       .section li {
         margin: 0.35rem 0;
       }
-    </style>
+          @media (max-width: 700px) {
+        .heroTitle {
+          padding: 16px 12px 10px;
+          gap: 12px;
+        }
+        .appIcon {
+          width: 72px;
+          height: 72px;
+          border-radius: 16px;
+        }
+      }
+      /* below ~400px the icon and the buy buttons no longer fit side by side */
+      @media (max-width: 400px) {
+        .heroTitle {
+          flex-wrap: wrap;
+        }
+      }
+      /* grid items default to min-width: auto, which stops the body sections
+         shrinking and pushes them out of the container on narrow screens */
+      .grid > * {
+        min-width: 0;
+      }
+      /* p.lang-ja is display:inline, which makes two adjacent notes
+         run together on one line */
+      p.note.lang-ja {
+        display: block;
+      }
+</style>
     <!-- 構造化データ：SoftwareApplication (Enhanced) -->
     <script type="application/ld+json">
       {
