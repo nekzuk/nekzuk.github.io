@@ -1,3 +1,54 @@
+.benchmark-summary.lang-ja,
+.benchmark-summary.lang-en {
+  display: block;
+}
+
+.companion-content {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.companion-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 1rem;
+}
+
+.companion-copy {
+  min-width: 0;
+}
+
+.section .companion-product-name {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+}
+
+.companion-description {
+  color: var(--muted);
+}
+
+.companion-features {
+  margin: 0.75rem 0 0.1rem 1.1rem;
+}
+
+.companion-actions {
+  margin-top: 0.85rem;
+}
+
+@media (max-width: 560px) {
+  .companion-content {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .companion-icon {
+    width: 64px;
+    height: 64px;
+  }
+}
+
 .section-review {
   order: 1;
 }
@@ -91,7 +142,6 @@
   margin: 0.55rem 0 !important;
   padding: 0.7rem 0.8rem;
   border: 1px solid rgba(255, 255, 255, 0.07);
-  border-left: 3px solid var(--accent);
   border-radius: 0.7rem;
   background: var(--card2);
   color: var(--muted);

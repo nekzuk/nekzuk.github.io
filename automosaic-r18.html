@@ -1101,8 +1101,7 @@
             <li>Adjust settings (e.g., mosaic size)</li>
             <li>Click <b>Run</b> to start processing</li>
           </ol>
-        </section>
-        <section class="section">
+          <div class="hr"></div>
           <h2><span class="lang-en">System Requirements</span></h2>
           <ul>
             <li><span class="lang-en">OS: Windows 10/11 (64-bit)</span></li>
@@ -1124,17 +1123,47 @@
             </li>
           </ul>
         </section>
+        <section class="section companion-section">
+          <h2><span class="lang-en">Post-processing Tool for AutoMosaic</span></h2>
+          <div class="companion-content">
+            <img
+              class="companion-icon"
+              src="assets/icons/optimized/app2_128.webp"
+              alt="AI Paint Cleaner icon"
+              width="80"
+              height="80"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="companion-copy">
+              <h3 class="companion-product-name">
+                <span class="lang-en">AI Paint Cleaner</span>
+              </h3>
+              <p class="companion-description">
+                <span class="lang-en"
+                  >Fine-tune images processed with AutoMosaic when additional cleanup is needed.</span
+                >
+              </p>
+              <ul class="companion-features">
+                <li><span class="lang-en">Remove extra mosaics</span></li>
+                <li><span class="lang-en">Add mosaics where required</span></li>
+                <li><span class="lang-en">Make detailed corrections with inpainting</span></li>
+              </ul>
+              <p class="companion-actions">
+                <a class="btn" href="ai-paint-cleaner.html">
+                  <span class="lang-en">View AI Paint Cleaner details →</span>
+                </a>
+              </p>
+            </div>
+          </div>
+        </section>
         <section class="section">
           <h2>
             <span class="lang-en">Before / After &amp; Detection Accuracy</span>
           </h2>
           <h3>
-            <span class="lang-en">Sample Images</span>
+            <span class="lang-en">Processing Samples</span>
           </h3>
-          <p class="lang-en">
-            Due to content sensitivity, sample images are available at the
-            following link:
-          </p>
           <p style="margin-top: 0.5rem">
             <a
               class="btn"
@@ -1149,9 +1178,9 @@
           <h3>
             <span class="lang-en">Detection Accuracy Data</span>
           </h3>
-          <p class="lang-en">
-            v3.50 benchmark (normal settings): 470 sample images
-            processed
+          <p class="benchmark-summary lang-en">
+            <b>Anime-style images (1K)</b><br />
+            v3.50 / Normal detection settings / 470 samples
           </p>
           <div
             class="kpi"
@@ -1164,7 +1193,7 @@
               <div class="kv">
                 <div class="label lang-en">Processing Time</div>
                 <div class="value">
-                  800<span
+                  449<span
                     style="
                       font-size: 0.8rem;
                       font-weight: 400;
@@ -1179,13 +1208,13 @@
             <div class="box">
               <div class="kv">
                 <div class="label lang-en">Detection Rate</div>
-                <div class="value">450/470 (96%)</div>
+                <div class="value">460/470 (98%)</div>
               </div>
             </div>
             <div class="box">
               <div class="kv">
                 <div class="label lang-en">One-shot OK</div>
-                <div class="value">428 (91%)</div>
+                <div class="value">448 (95%)</div>
               </div>
             </div>
           </div>
@@ -1199,30 +1228,22 @@
             <div class="box">
               <div class="kv">
                 <div class="label lang-en">Mosaic Leakage</div>
-                <div class="value">15 (3%)</div>
+                <div class="value">6 (1%)</div>
               </div>
             </div>
             <div class="box">
               <div class="kv">
                 <div class="label lang-en">False Detection</div>
-                <div class="value">7 (1%)</div>
+                <div class="value">6 (1%)</div>
               </div>
             </div>
             <div class="box">
               <div class="kv">
                 <div class="label lang-en">Not Detected</div>
-                <div class="value">20 (4%)</div>
+                <div class="value">10 (2%)</div>
               </div>
             </div>
           </div>
-          <p class="note" style="margin-top: 1.5rem">
-            <span class="lang-en"
-              >💡 <b>Tip:</b> After automatic processing, you can use
-              <a href="ai-paint-cleaner.html">AI Paint Cleaner</a> for fine
-              adjustments (remove extra mosaic, add missing mosaic, inpaint,
-              etc.).</span
-            >
-          </p>
         </section>
         <section class="section" id="ui">
           <h2><span class="lang-en">UI screenshot</span></h2>
@@ -1389,6 +1410,7 @@
           <h3><span class="lang-en">Review highlights (summarized)</span></h3>
           <ul class="review-excerpts lang-en">
             <li>The trial demonstrated strong detection accuracy and led to a full-version purchase</li>
+            <li>Users who compared similar tools particularly praised AutoMosaic's detection accuracy</li>
             <li>Automated mosaic processing substantially reduced manual work and production time</li>
             <li>Large image batches are easier to process with consistent quality</li>
             <li>Detecting light mosaics and replacing them with stronger processing is especially useful</li>

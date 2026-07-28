@@ -1102,8 +1102,7 @@
             <li>モザイクサイズなどの設定を調整</li>
             <li>「処理実行」ボタンをクリック</li>
           </ol>
-        </section>
-        <section class="section">
+          <div class="hr"></div>
           <h2><span class="lang-ja">動作環境</span></h2>
           <ul>
             <li><span class="lang-ja">OS: Windows 10/11(64bit)</span></li>
@@ -1121,14 +1120,45 @@
             </li>
           </ul>
         </section>
+        <section class="section companion-section">
+          <h2><span class="lang-ja">AutoMosaicの仕上げ・修正ツール</span></h2>
+          <div class="companion-content">
+            <img
+              class="companion-icon"
+              src="assets/icons/optimized/app2_128.webp"
+              alt="AI Paint Cleaner icon"
+              width="80"
+              height="80"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="companion-copy">
+              <h3 class="companion-product-name">
+                <span class="lang-ja">AI Paint Cleaner</span>
+              </h3>
+              <p class="companion-description">
+                <span class="lang-ja"
+                  >AutoMosaicで処理した画像を、必要に応じて細かく手直しできます。</span
+                >
+              </p>
+              <ul class="companion-features">
+                <li><span class="lang-ja">余計なモザイクの除去</span></li>
+                <li><span class="lang-ja">必要箇所へのモザイク追加</span></li>
+                <li><span class="lang-ja">インペイントによる細部修正</span></li>
+              </ul>
+              <p class="companion-actions">
+                <a class="btn" href="ai-paint-cleaner_j.html">
+                  <span class="lang-ja">AI Paint Cleanerの詳細を見る →</span>
+                </a>
+              </p>
+            </div>
+          </div>
+        </section>
         <section class="section">
           <h2><span class="lang-ja">処理例(Before / After)と検出精度</span></h2>
           <h3>
-            <span class="lang-ja">サンプル画像</span>
+            <span class="lang-ja">処理サンプル</span>
           </h3>
-          <p class="lang-ja">
-            サンプル画像の特性上、下記リンク先を参照ください：
-          </p>
           <p style="margin-top: 0.5rem">
             <a
               class="btn"
@@ -1143,8 +1173,9 @@
           <h3>
             <span class="lang-ja">検出精度データ</span>
           </h3>
-          <p class="lang-ja">
-            v3.50（通常検出設定）ベンチマーク：470枚のサンプル処理結果
+          <p class="benchmark-summary lang-ja">
+            <b>アニメ調画像（1K）</b><br />
+            v3.50／通常検出設定／サンプル数470枚
           </p>
           <div
             class="kpi"
@@ -1157,7 +1188,7 @@
               <div class="kv">
                 <div class="label lang-ja">処理時間</div>
                 <div class="value">
-                  800<span
+                  449<span
                     style="
                       font-size: 0.8rem;
                       font-weight: 400;
@@ -1172,13 +1203,13 @@
             <div class="box">
               <div class="kv">
                 <div class="label lang-ja">検出率</div>
-                <div class="value">450/470 (96%)</div>
+                <div class="value">460/470 (98%)</div>
               </div>
             </div>
             <div class="box">
               <div class="kv">
                 <div class="label lang-ja">一発OK</div>
-                <div class="value">428 (91%)</div>
+                <div class="value">448 (95%)</div>
               </div>
             </div>
           </div>
@@ -1192,29 +1223,22 @@
             <div class="box">
               <div class="kv">
                 <div class="label lang-ja">モザイク漏れ</div>
-                <div class="value">15 (3%)</div>
+                <div class="value">6 (1%)</div>
               </div>
             </div>
             <div class="box">
               <div class="kv">
                 <div class="label lang-ja">誤検出</div>
-                <div class="value">7 (1%)</div>
+                <div class="value">6 (1%)</div>
               </div>
             </div>
             <div class="box">
               <div class="kv">
                 <div class="label lang-ja">未検出</div>
-                <div class="value">20 (4%)</div>
+                <div class="value">10 (2%)</div>
               </div>
             </div>
           </div>
-          <p class="note" style="margin-top: 1.5rem">
-            <span class="lang-ja"
-              >💡 <b>Tip:</b> 自動処理後、<a href="ai-paint-cleaner_j.html"
-                >AI Paint Cleaner</a
-              >で微調整(余計なモザイクの除去、モザイク追加、インペイント等)が可能です。</span
-            >
-          </p>
         </section>
         <section class="section" id="ui">
           <h2><span class="lang-ja">UIスクリーンショット</span></h2>
@@ -1370,6 +1394,7 @@
           <h3><span class="lang-ja">レビュー抜粋（要約）</span></h3>
           <ul class="review-excerpts lang-ja">
             <li>体験版で検出精度の高さを実感し、製品版を導入した</li>
+            <li>類似ツールとの比較を通じて、検出精度の高さを評価する声が複数寄せられている</li>
             <li>手作業のモザイク処理が大幅に減り、作業時間を短縮できた</li>
             <li>大量画像でも自動処理で品質を一定に保ちやすい</li>
             <li>薄いモザイクを検出して、より強く掛け直せる点が便利</li>
