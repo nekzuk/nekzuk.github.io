@@ -287,6 +287,14 @@ ul.lang-ja, ol.lang-ja {display:block}
       p.note.lang-ja {
         display: block;
       }
+    .purchaseRow{display:flex;align-items:flex-start;gap:.75rem;flex-wrap:wrap;margin-top:1rem}
+    .purchaseMethods{display:flex;gap:.75rem;flex-wrap:wrap}
+    .purchaseOption{display:flex;flex-direction:column;gap:.25rem;min-width:9rem}
+    .purchaseOption .btn{justify-content:center}
+    .purchaseNote{color:var(--muted);font-size:.74rem;line-height:1.25;text-align:center}
+    .purchaseExtras{display:flex;gap:.75rem;flex-wrap:wrap;padding-left:.75rem;border-left:1px solid var(--border)}
+    @media(max-width:640px){.purchaseRow{display:block}.purchaseMethods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.purchaseOption{min-width:0}.purchaseOption .btn{width:100%}.purchaseExtras{margin-top:.75rem;padding-top:.75rem;padding-left:0;border-top:1px solid var(--border);border-left:0}}
+    @media(max-width:400px){.purchaseMethods{grid-template-columns:1fr}}
 </style>
 <!-- 構造化データ：SoftwareApplication (Enhanced) -->
 <script type="application/ld+json">
@@ -308,17 +316,32 @@ ul.lang-ja, ol.lang-ja {display:block}
     "完全無料で利用可能"
   ],
   "softwareVersion": "1.20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "JPY",
-    "availability": "https://schema.org/InStock",
-    "url": "https://payhip.com/b/LdoFB",
-    "seller": {
-      "@type": "Organization",
-      "name": "nekzuk Software"
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "BOOTH",
+      "price": "0",
+      "priceCurrency": "JPY",
+      "availability": "https://schema.org/InStock",
+      "url": "https://synekzuk.booth.pm/items/7626627",
+      "seller": {
+        "@type": "Organization",
+        "name": "nekzuk Software"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Payhip",
+      "price": "0",
+      "priceCurrency": "JPY",
+      "availability": "https://schema.org/InStock",
+      "url": "https://payhip.com/buy?link=E9mhx",
+      "seller": {
+        "@type": "Organization",
+        "name": "nekzuk Software"
+      }
     }
-  },
+  ],
   "author": {
     "@type": "Organization",
     "name": "nekzuk Software",
@@ -372,8 +395,17 @@ ul.lang-ja, ol.lang-ja {display:block}
 <div class="price">
 <span class="lang-ja">無料</span>
 </div>
-<div class="btns">
-<a class="btn primary lang-ja" href="https://synekzuk.booth.pm/items/7626627" rel="noopener" target="_blank">BOOTH</a>
+<div class="purchaseRow">
+<div class="purchaseMethods">
+<div class="purchaseOption">
+<a class="btn primary lang-ja" href="https://synekzuk.booth.pm/items/7626627" rel="noopener" target="_blank">BOOTHで入手</a>
+<span class="purchaseNote lang-ja">ログインが必要</span>
+</div>
+<div class="purchaseOption">
+<a class="btn lang-ja" href="https://payhip.com/buy?link=E9mhx" rel="noopener" target="_blank">直接入手</a>
+<span class="purchaseNote lang-ja">Payhip</span>
+</div>
+</div>
 </div>
 </div>
 </div>

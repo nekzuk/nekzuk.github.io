@@ -287,6 +287,14 @@ ul.lang-ja, ol.lang-ja {display:block}
       p.note.lang-ja {
         display: block;
       }
+    .purchaseRow{display:flex;align-items:flex-start;gap:.75rem;flex-wrap:wrap;margin-top:1rem}
+    .purchaseMethods{display:flex;gap:.75rem;flex-wrap:wrap}
+    .purchaseOption{display:flex;flex-direction:column;gap:.25rem;min-width:9rem}
+    .purchaseOption .btn{justify-content:center}
+    .purchaseNote{color:var(--muted);font-size:.74rem;line-height:1.25;text-align:center}
+    .purchaseExtras{display:flex;gap:.75rem;flex-wrap:wrap;padding-left:.75rem;border-left:1px solid var(--border)}
+    @media(max-width:640px){.purchaseRow{display:block}.purchaseMethods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.purchaseOption{min-width:0}.purchaseOption .btn{width:100%}.purchaseExtras{margin-top:.75rem;padding-top:.75rem;padding-left:0;border-top:1px solid var(--border);border-left:0}}
+    @media(max-width:400px){.purchaseMethods{grid-template-columns:1fr}}
 </style>
 <!-- 構造化データ：SoftwareApplication (Enhanced) -->
 <script type="application/ld+json">
@@ -324,9 +332,9 @@ ul.lang-ja, ol.lang-ja {display:block}
     {
       "@type": "Offer",
       "name": "Payhip",
-      "price": "3",
-      "priceCurrency": "USD",
-      "url": "https://payhip.com/b/4Gwc2",
+      "price": "380",
+      "priceCurrency": "JPY",
+      "url": "https://payhip.com/buy?link=BmMpD",
       "availability": "https://schema.org/InStock",
       "seller": {
         "@type": "Organization",
@@ -387,9 +395,20 @@ ul.lang-ja, ol.lang-ja {display:block}
 <div class="price">
 <span class="lang-ja">¥380</span>
 </div>
-<div class="btns">
-<a class="btn primary lang-ja" href="https://synekzuk.booth.pm/items/6911255" rel="noopener" target="_blank">BOOTH</a>
+<div class="purchaseRow">
+<div class="purchaseMethods">
+<div class="purchaseOption">
+<a class="btn primary lang-ja" href="https://synekzuk.booth.pm/items/6911255" rel="noopener" target="_blank">BOOTHで購入</a>
+<span class="purchaseNote lang-ja">ログインが必要</span>
+</div>
+<div class="purchaseOption">
+<a class="btn lang-ja" href="https://payhip.com/buy?link=BmMpD" rel="noopener" target="_blank">直接購入</a>
+<span class="purchaseNote lang-ja">カード・PayPal（Payhip）</span>
+</div>
+</div>
+<div class="purchaseExtras">
 <a class="btn sub" href="#trial"><span class="lang-ja">体験版</span></a>
+</div>
 </div>
 </div>
 </div>
