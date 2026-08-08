@@ -67,7 +67,7 @@
             <span aria-hidden="true">&#9776;</span>
             <span>目次</span>
           </button>
-          <span class="doc-version">v1.2 ドキュメント</span>
+          <span class="doc-version">V1.3ドキュメント</span>
           <div class="language-switch">
             <a href="nai-smart-studio_online_manual.html">English</a>
             <span class="divider">/</span>
@@ -166,9 +166,6 @@
               alt="API Key Registration"
               class="screenshot"
             />
-            <div class="note">
-              設定画面では API キーの接続確認、出力形式の選択、起動時の更新確認なども行えます。
-            </div>
           </section>
 
           <section id="basic">
@@ -242,9 +239,6 @@
                 <strong>メタデータをインポート</strong>: Prompt、Negative、キャラクター、生成設定、Seed、ポーション情報などを今の画面に反映できます。
               </li>
             </ul>
-            <div class="note">
-              画像に入っている生成情報を確認したいだけの場合は、中央タブの <strong>NAI-info</strong> に画像をドロップするのが便利です。
-            </div>
 
             <h3>複数画像をまとめて取り込む</h3>
             <p>
@@ -260,47 +254,37 @@
           <section id="i2i">
             <h1>Image-to-Image / Inpaint</h1>
             <p>
-              既存画像をベースに変化を付けたり、一部だけ描き直したいときに使います。キャンバスに画像を読み込むと、このモード向けの操作が使えるようになります。
+              画像をキャンバスへ読み込み、下部の「i2iモード」から開始します。
             </p>
             <img src="images/002.png" alt="Mask Tools" class="screenshot" />
 
             <h3>基本の流れ</h3>
-            <ol>
-              <li>画像をキャンバスに読み込みます。</li>
-              <li>そのまま生成すると Image-to-Image として動作します。</li>
-              <li>マスクを描いた状態で生成すると Inpaint になります。</li>
-            </ol>
+            <p>
+              マスクなしではImage-to-Image、マスクまたはフォーカス範囲がある場合はInpaintになります。Strengthなどを調整して生成します。
+            </p>
 
-            <h3>マスク操作</h3>
+            <h3>I2Iツール</h3>
             <ul>
-              <li><strong>ブラシ</strong>: フリーハンドで塗れます。</li>
-              <li><strong>長方形</strong>: 四角い範囲を一度に指定できます。</li>
-              <li><strong>折れ線</strong>: 多角形の範囲を指定できます。</li>
+              <li><strong>マスク</strong>: ブラシ、長方形、折れ線で変更範囲を指定します。</li>
+              <li><strong>フォーカス</strong>: 選択範囲だけを一時的に拡大してInpaintします。通常は参照余白を除く内側が変更対象になります。選択は枠内の「×」をクリックするか、キャンバスを右クリックして解除できます（上限589,824画素）。参照余白は32～96pxから8px刻みで指定でき、完成画像は元画像と同じサイズです。</li>
               <li><strong>ペイント</strong>: 画像へ直接色を塗れます。右クリックでスポイト取得もできます。</li>
-              <li><strong>切り取り</strong>: 範囲を囲んでから移動、拡大縮小、回転して配置できます。</li>
-              <li><strong>キャンバスサイズ変更</strong>: 画像の上下左右を 64px 単位で広げたり縮めたりできます。</li>
-              <li><strong>変形</strong>: 読み込んだ画像を移動、拡大縮小、回転してから確定できます。</li>
-              <li><strong>右ドラッグ</strong>: マスク描画中は塗ったマスクを消せます。</li>
+              <li><strong>編集</strong>: 切り取り、キャンバスサイズ変更、移動・拡大縮小・回転ができます。</li>
             </ul>
             <div class="screenshot-placeholder" data-src="images/I2I_EDIT_TOOLS_001.png" data-alt="i2i / Inpaint 編集ツール">
-              <strong>スクリーンショット枠</strong><br />
-              配置予定: images/I2I_EDIT_TOOLS_001.png<br />
-              i2i / Inpaint のペイント、切り取り、キャンバスサイズ変更、変形ツールが見える画面
+              画像準備中: images/I2I_EDIT_TOOLS_001.png
             </div>
 
-            <h3>よく使う調整項目</h3>
-            <ul>
-              <li><strong>Strength</strong>: 元画像からどれだけ離れるかを調整します。マスクの有無に応じて i2i / Inpaint 用の値が使われます。</li>
-              <li><strong>Brush Size</strong>: マスク描画の太さを変えられます。</li>
-            </ul>
-            <div class="note">
-              入力画像や生成サイズが上限を超える場合は、生成前に調整確認が表示されます。
-            </div>
-
-            <h3>Undo / Redo</h3>
+            <h3>ディレクターツール</h3>
             <p>
-              マスクのやり直しは <span class="kbd">Ctrl + Z</span> / <span class="kbd">Ctrl + Y</span>、キャンバス画像の戻し・やり直しは <span class="kbd">←</span> / <span class="kbd">→</span> です。
+              キャンバスの画像に、不要物や背景の除去、線画・スケッチ化、カラー化、表情変更などの変換を適用します。変換前の画像には、画像履歴のUndoで戻せます。
             </p>
+            <div class="screenshot-placeholder" data-src="images/I2I_DIRECTOR_TOOLS_001.png" data-alt="ディレクターツール">
+              画像準備中: images/I2I_DIRECTOR_TOOLS_001.png
+            </div>
+
+            <div class="note">
+              通常のImage-to-Image / Inpaintでは、画像読込後に変更した幅・高さが出力解像度になります。マスクのUndo / Redoは <span class="kbd">Ctrl + Z</span> / <span class="kbd">Ctrl + Y</span>、画像履歴は <span class="kbd">←</span> / <span class="kbd">→</span> です。
+            </div>
           </section>
 
           <section id="upscale">
@@ -342,21 +326,6 @@
               連続生成では、指定枚数や指定時間に合わせて自動で生成を続けられます。Prompt Search のキューを消化したいときにも便利です。
             </p>
             <img src="images/005.png" alt="Batch Settings" class="screenshot" />
-
-            <h3>生成モード</h3>
-            <ul>
-              <li><strong>1回だけ</strong>: その場で 1 回だけ生成します。</li>
-              <li><strong>枚数指定</strong>: 指定枚数に達するまで生成します。</li>
-              <li><strong>時間指定</strong>: 指定時間が終わるまで生成します。</li>
-              <li><strong>中断するまで</strong>: 停止するまで生成し続けます。</li>
-            </ul>
-
-            <h3>補助設定</h3>
-            <ul>
-              <li><strong>遅延時間</strong>: 1 枚ごとの待機時間です。</li>
-              <li><strong>ランダム遅延</strong>: 毎回少しずつ待機時間をずらせます。</li>
-              <li><strong>エラー時の動作</strong>: 停止するか、待機して再開するかを選べます。</li>
-            </ul>
 
             <div class="note">
               短い間隔で大量生成を続けると、アカウント制限のリスクがあります。十分な待機時間を設けてご利用ください。
@@ -661,12 +630,10 @@
           <section id="tools">
             <h1>Tools</h1>
             <p>
-              Tools タブでは、補助機能の状態をまとめて確認できます。セットアップが必要な機能、無効になっている機能、すぐ使える機能が一覧で表示されます。
+              「有効」/「無効」は中央タブの表示切り替えです。非表示にしても設定・入力内容・セットアップ済みデータは保持され、CanvasとToolsは常に表示されます。
             </p>
             <div class="screenshot-placeholder" data-src="images/TOOLS_001.png" data-alt="Tools タブ">
-              <strong>新規スクリーンショット枠</strong><br />
-              配置予定: images/TOOLS_001.png<br />
-              Tools タブで各機能の状態カードが並んでいる画面
+              画像準備中: images/TOOLS_001.png
             </div>
           </section>
 
@@ -675,24 +642,21 @@
 
             <h3>入力補助</h3>
             <p>
-              タグ補完、強調表示、日本語補完、入力後のカンマ補助などを利用できます。
+              タグ補完、強調表示、日本語補完、入力後のカンマ補助などを設定できます。
             </p>
-            <img
-              src="images/010.png"
-              alt="Input Assistance"
-              class="screenshot"
-            />
+
+            <h3>関連タグ提案</h3>
+            <p>
+              Prompt編集中に関連候補を表示します。クリックでPromptへ挿入し、右クリックからNegativeへの追加やセッション中の非表示を選べます。<span class="kbd">Ctrl + Space</span>で最初の候補へキーボードフォーカスを移動できます。「設定」→「入力補助」で有効・無効、対象カテゴリ、表示数（5～100件、初期値10件）を変更できます。
+            </p>
+            <div class="screenshot-placeholder" data-src="images/RELATED_TAG_SUGGEST_001.png" data-alt="関連タグ提案">
+              画像準備中: images/RELATED_TAG_SUGGEST_001.png
+            </div>
 
             <h3>Eagle 連携</h3>
             <p>
               Eagle を使っている場合は、生成画像を自動または手動で送れます。保存先フォルダを選び、Prompt やメタデータをタグ化して一緒に送ることもできます。
             </p>
-            <img
-              src="images/011.png"
-              alt="Eagle Integration"
-              class="screenshot"
-            />
-
             <h3>履歴・画像操作</h3>
             <ul>
               <li><strong>通常クリック</strong>: 履歴画像をキャンバスに読み込みます。</li>
@@ -719,7 +683,7 @@
               <div>
                 <h4>一般 2</h4>
                 <div class="screenshot-placeholder" data-src="images/SETTINGS_GENERAL2_001.png" data-alt="一般 2 設定">
-                  配置予定: images/SETTINGS_GENERAL2_001.png
+                  画像準備中: images/SETTINGS_GENERAL2_001.png
                 </div>
               </div>
               <div>

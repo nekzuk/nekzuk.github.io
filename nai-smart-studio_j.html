@@ -346,6 +346,7 @@ ul.lang-ja, ol.lang-ja {display:block}
     "NovelAIの画像生成機能をほぼすべて利用可能",
     "Text-to-Image、Image-to-Image、インペイント",
     "NovelAIポーション、精密参照機能",
+    "ディレクターツール（不要物・背景除去、線画・スケッチ化、カラー化、表情変更）",
     "プロンプトチャンク対応",
     "連続生成機能（複数バッチの自動生成）",
     "プロンプトのバリエーション生成用ワイルドカード対応",
@@ -356,7 +357,7 @@ ul.lang-ja, ol.lang-ja {display:block}
     "多言語UI（日本語 / 英語 / 中国語（簡体字 / 繁体字） / 韓国語）",
     "設定・履歴・生成画像はローカル保存し、生成に必要なデータのみNovelAI APIへ送信"
   ],
-  "softwareVersion": "1.22",
+  "softwareVersion": "1.30",
   "offers": [
     {
       "@type": "Offer",
@@ -436,7 +437,7 @@ ul.lang-ja, ol.lang-ja {display:block}
 <div>
 <div class="titleRow">
 <h1 class="title"><span class="lang-ja">NAI Smart Studio</span></h1>
-<p class="subtitle"><span class="lang-ja">NovelAI画像生成を強化するWindows向けデスクトップアプリケーション。多言語UI、プロンプトチャンク、Tagger、連続生成、プロンプト検索など便利な機能を搭載。</span></p>
+<p class="subtitle"><span class="lang-ja">NovelAI画像生成を強化するWindows向けデスクトップアプリケーション。多言語UI、ディレクターツール、プロンプトチャンク、Tagger、連続生成、プロンプト検索など便利な機能を搭載。</span></p>
 </div>
 <div class="price">
 <span class="lang-ja">¥2,500</span>
@@ -492,7 +493,7 @@ ul.lang-ja, ol.lang-ja {display:block}
 <span class="lang-ja">NAI Smart Studioについて</span>
 </h2>
 <p class="lang-ja">
-          NAI Smart Studioは、NovelAI（ノベルエーアイ）というAI画像生成サービスをより使いやすくするWindows向けスタンドアローンソフトウェアです。公式WebUIにはない様々な制作支援機能に加え、多言語UI、プロンプトチャンク、Tagger、プロンプト検索などを統合し、快適な画像生成ワークフローを実現します。
+          NAI Smart Studioは、NovelAI（ノベルエーアイ）というAI画像生成サービスをより使いやすくするWindows向けスタンドアローンソフトウェアです。公式WebUIにはない様々な制作支援機能に加え、多言語UI、ディレクターツール、プロンプトチャンク、Tagger、プロンプト検索などを統合し、快適な画像生成ワークフローを実現します。
         </p>
 <div class="hr"></div>
 <p class="lang-ja" style="margin-top:1.2rem;">
@@ -526,6 +527,7 @@ UIは日本語 / 英語 / 中国語（簡体字 / 繁体字） / 韓国語に対
 <li>画像生成の基本機能をほぼすべて利用可能</li>
 <li>Text-to-Image、Image-to-Image、インペイント</li>
 <li>NovelAIポーション、精密参照機能</li>
+<li>ディレクターツール（不要物・背景除去、線画・スケッチ化、カラー化、表情変更）</li>
 <li>プロンプトチャンク対応</li>
 </ul>
 <div class="hr"></div>
@@ -589,7 +591,7 @@ UIは日本語 / 英語 / 中国語（簡体字 / 繁体字） / 韓国語に対
 <h2><span class="lang-ja">体験版</span></h2>
 <div class="trial-box">
 <p class="trial-platform"><span class="lang-ja">Windows</span></p>
-<a class="btn download" href="https://downloads.nekzuk.com/naiss/NAI%20Smart%20Studio%20V1.22%20Trial.zip" rel="noopener" target="_blank">ダウンロード</a>
+<a class="btn download" href="https://downloads.nekzuk.com/naiss/NAI%20Smart%20Studio%20V1.30%20Trial.zip" rel="noopener" target="_blank">ダウンロード</a>
 <div class="trial-divider"></div>
 <p class="trial-note-title"><span class="lang-ja">体験版の制限内容</span></p>
 <ul class="trial-list lang-ja">
@@ -603,13 +605,13 @@ UIは日本語 / 英語 / 中国語（簡体字 / 繁体字） / 韓国語に対
 <div class="box">
 <div class="kv">
 <div class="label lang-ja">最新バージョン</div>
-<div class="value">v1.22</div>
+<div class="value">v1.30</div>
 </div>
 </div>
 <div class="box">
 <div class="kv">
 <div class="label lang-ja">更新日</div>
-<div class="value">2026-07-05</div>
+<div class="value">2026-08-08</div>
 </div>
 </div>
 </div>
@@ -618,11 +620,12 @@ UIは日本語 / 英語 / 中国語（簡体字 / 繁体字） / 韓国語に対
 <span class="lang-ja">更新内容</span>
 </h3>
 <ul class="lang-ja">
-<li>自動アップデート機能</li>
-<li>API変更による不具合修正</li>
+<li>Prompt Helper、NAI-info、テンプレート、CLI生成機能を追加</li>
+<li>プロンプト編集、I2I、Tagger、ワイルドカードなどを強化</li>
+<li>操作性の改善と複数の不具合修正</li>
 </ul>
 <p style="margin-top:1rem">
-<a href="https://note.com/nekzuk/n/n046f7e661f94" rel="noopener" target="_blank">
+<a href="https://note.com/nekzuk/n/n126fe12f8f2f" rel="noopener" target="_blank">
 <span class="lang-ja">→ 詳細な更新内容を読む</span>
 </a>
 </p>
@@ -654,6 +657,7 @@ UIは日本語 / 英語 / 中国語（簡体字 / 繁体字） / 韓国語に対
 <div class="history-table">
 <div class="history-head lang-ja"><span>バージョン</span><span>リリース日</span><span>更新内容</span></div>
 <ul class="history-list lang-ja">
+<li><div class="history-row"><span class="history-version">v1.30</span><time class="history-date" datetime="2026-08-08">2026/08/08</time><a class="history-link" href="https://note.com/nekzuk/n/n126fe12f8f2f" rel="noopener" target="_blank">詳細を見る →</a></div></li>
 <li><div class="history-row"><span class="history-version">v1.20 – v1.22</span><time class="history-date" datetime="2026-06-06">2026/06/06</time><a class="history-link" href="https://note.com/nekzuk/n/n046f7e661f94" rel="noopener" target="_blank">詳細を見る →</a></div></li>
 <li><div class="history-row"><span class="history-version">v1.11</span><time class="history-date" datetime="2026-04-06">2026/04/06</time><a class="history-link" href="https://note.com/nekzuk/n/n889468713424" rel="noopener" target="_blank">詳細を見る →</a></div></li>
 <li><div class="history-row"><span class="history-version">v1.02</span><time class="history-date" datetime="2026-03-04">2026/03/04</time><a class="history-link" href="https://note.com/nekzuk/n/ne1608ed84ebb" rel="noopener" target="_blank">詳細を見る →</a></div></li>

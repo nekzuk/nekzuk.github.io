@@ -67,7 +67,7 @@
             <span aria-hidden="true">&#9776;</span>
             <span>Contents</span>
           </button>
-          <span class="doc-version">v1.2 Documentation</span>
+          <span class="doc-version">V1.3 Documentation</span>
           <div class="language-switch">
             <a href="nai-smart-studio_online_manual.html" class="current"
               >English</a
@@ -163,9 +163,6 @@
               alt="API Key Registration"
               class="screenshot"
             />
-            <div class="note">
-              The settings screen also includes connection tests, output format options, and startup update checks.
-            </div>
           </section>
 
           <section id="basic">
@@ -239,9 +236,6 @@
                 <strong>Import metadata</strong>: Reapply Prompt, Negative, character data, settings, Seed, potion data, and more to the current screen.
               </li>
             </ul>
-            <div class="note">
-              If you only want to inspect generation information embedded in an image, drop it into the <strong>NAI-info</strong> tab.
-            </div>
 
             <h3>Importing multiple images</h3>
             <p>
@@ -257,47 +251,37 @@
           <section id="i2i">
             <h1>Image-to-Image / Inpaint</h1>
             <p>
-              Use this mode when you want to change an existing image or redraw only a selected area. Once an image is loaded into the canvas, the relevant controls become available.
+              Load an image into the canvas, then click “i2i Mode” below it.
             </p>
             <img src="images/002_EN.png" alt="Mask Tools" class="screenshot" />
 
             <h3>Basic flow</h3>
-            <ol>
-              <li>Load an image into the canvas.</li>
-              <li>Generate without a mask to run Image-to-Image.</li>
-              <li>Generate with a mask to run Inpaint.</li>
-            </ol>
+            <p>
+              Generation without a mask runs Image-to-Image. A mask or Focus selection switches the operation to Inpaint. Adjust Strength and other settings before generating.
+            </p>
 
-            <h3>Mask tools</h3>
+            <h3>I2I tools</h3>
             <ul>
-              <li><strong>Brush</strong>: Draw freehand.</li>
-              <li><strong>Rectangle</strong>: Mask a rectangular region.</li>
-              <li><strong>Polyline</strong>: Mask a polygonal area.</li>
+              <li><strong>Mask</strong>: Mark the area to change with the Brush, Rectangle, or Polyline tool.</li>
+              <li><strong>Focus</strong>: Temporarily enlarges only the selected area for Inpaint. Normally, the inner area, excluding the reference margin, is changed. Clear the selection by clicking the “×” inside the frame or right-clicking the canvas (maximum 589,824 pixels). The reference margin can be set from 32 to 96px in 8px steps, and the finished image keeps the original dimensions.</li>
               <li><strong>Paint</strong>: Paint directly on the image. Right-click can pick a color from the canvas.</li>
-              <li><strong>Cutout</strong>: Select an area, then move, scale, and rotate it before applying.</li>
-              <li><strong>Canvas resize</strong>: Expand or shrink the canvas in 64px steps.</li>
-              <li><strong>Transform</strong>: Move, scale, or rotate the loaded image before confirming the edit.</li>
-              <li><strong>Right-drag</strong>: Erase the mask while drawing masks.</li>
+              <li><strong>Edit</strong>: Cut out, resize the canvas, move, scale, or rotate the image.</li>
             </ul>
             <div class="screenshot-placeholder" data-src="images/I2I_EDIT_TOOLS_001_EN.png" data-alt="i2i / Inpaint edit tools">
-              <strong>Screenshot slot</strong><br />
-              Planned file: images/I2I_EDIT_TOOLS_001_EN.png<br />
-              Show the current i2i / Inpaint paint, cutout, canvas resize, and transform tools.
+              Image pending: images/I2I_EDIT_TOOLS_001_EN.png
             </div>
 
-            <h3>Common controls</h3>
-            <ul>
-              <li><strong>Strength</strong>: How far the result moves away from the source image. The app uses the i2i or Inpaint value depending on whether a mask exists.</li>
-              <li><strong>Brush Size</strong>: The size of the mask brush.</li>
-            </ul>
-            <div class="note">
-              If the source image or generation size exceeds the supported limit, the app asks before adjusting the size.
-            </div>
-
-            <h3>Undo / Redo</h3>
+            <h3>Director Tools</h3>
             <p>
-              Use <span class="kbd">Ctrl + Z</span> / <span class="kbd">Ctrl + Y</span> for mask undo/redo, and <span class="kbd">←</span> / <span class="kbd">→</span> for canvas image undo/redo.
+              Apply transformations such as removing clutter or backgrounds, converting an image to line art or a sketch, colorizing it, or changing an expression. Use image-history Undo to return to the image before the transformation.
             </p>
+            <div class="screenshot-placeholder" data-src="images/I2I_DIRECTOR_TOOLS_001_EN.png" data-alt="Director Tools">
+              Image pending: images/I2I_DIRECTOR_TOOLS_001_EN.png
+            </div>
+
+            <div class="note">
+              For ordinary Image-to-Image / Inpaint, width and height changes made after loading the image become the output resolution. Use <span class="kbd">Ctrl + Z</span> / <span class="kbd">Ctrl + Y</span> for mask undo/redo, and <span class="kbd">←</span> / <span class="kbd">→</span> for image history.
+            </div>
           </section>
 
           <section id="upscale">
@@ -337,21 +321,6 @@
               Continuous generation lets you run repeated jobs based on a count or time limit. It is also useful when processing queues created from Prompt Search.
             </p>
             <img src="images/005_EN.png" alt="Batch Settings" class="screenshot" />
-
-            <h3>Generation modes</h3>
-            <ul>
-              <li><strong>One-time</strong>: Run only once.</li>
-              <li><strong>Count</strong>: Stop after the specified number of images.</li>
-              <li><strong>Time</strong>: Continue until the selected time expires.</li>
-              <li><strong>Until stopped</strong>: Keep going until you stop it manually.</li>
-            </ul>
-
-            <h3>Helper options</h3>
-            <ul>
-              <li><strong>Delay</strong>: Wait time between jobs.</li>
-              <li><strong>Random delay</strong>: Vary the delay slightly each run.</li>
-              <li><strong>Error behavior</strong>: Stop immediately or wait and retry later.</li>
-            </ul>
 
             <div class="note">
               Running large batches at very short intervals can increase account risk. Use reasonable delays.
@@ -655,12 +624,10 @@
           <section id="tools">
             <h1>Tools</h1>
             <p>
-              The Tools tab gives you a quick overview of optional helper features. It shows which tools are ready to use, disabled, missing data, or require setup.
+              “Enabled” / “Disabled” controls whether the corresponding center tab is shown. Hiding a tab keeps its settings, input, and installed data. Canvas and Tools are always shown.
             </p>
             <div class="screenshot-placeholder" data-src="images/TOOLS_001_EN.png" data-alt="Tools tab">
-              <strong>New screenshot slot</strong><br />
-              Planned file: images/TOOLS_001_EN.png<br />
-              Show the Tools tab with feature status cards.
+              Image pending: images/TOOLS_001_EN.png
             </div>
           </section>
 
@@ -669,24 +636,21 @@
 
             <h3>Input assistance</h3>
             <p>
-              Use tag completion, emphasis highlighting, Japanese completion, auto-comma behavior, and related prompt input helpers.
+              Configure tag completion, emphasis highlighting, Japanese completion, auto-comma behavior, and other prompt input helpers.
             </p>
-            <img
-              src="images/010_EN.png"
-              alt="Input Assistance"
-              class="screenshot"
-            />
+
+            <h3>Related Tag Suggestions</h3>
+            <p>
+              Related candidates appear while editing the Prompt. Click a candidate to insert it into the Prompt, or right-click to add it to the Negative Prompt or hide it for the current session. Press <span class="kbd">Ctrl + Space</span> to move keyboard focus to the first candidate. Use Settings → Assistance to enable or disable the feature, choose target categories, and set the number shown (5–100; default 10).
+            </p>
+            <div class="screenshot-placeholder" data-src="images/RELATED_TAG_SUGGEST_001_EN.png" data-alt="Related Tag Suggestions">
+              Image pending: images/RELATED_TAG_SUGGEST_001_EN.png
+            </div>
 
             <h3>Eagle integration</h3>
             <p>
               If you use Eagle, you can send generated images manually or automatically. You can choose the destination folder and convert Prompt and metadata into Eagle tags.
             </p>
-            <img
-              src="images/011_EN.png"
-              alt="Eagle Integration"
-              class="screenshot"
-            />
-
             <h3>History & image actions</h3>
             <ul>
               <li><strong>Normal click</strong>: Load the history image into the canvas.</li>
@@ -713,7 +677,7 @@
               <div>
                 <h4>General 2</h4>
                 <div class="screenshot-placeholder" data-src="images/SETTINGS_GENERAL2_001_EN.png" data-alt="General 2 settings">
-                  Planned file: images/SETTINGS_GENERAL2_001_EN.png
+                  Image pending: images/SETTINGS_GENERAL2_001_EN.png
                 </div>
               </div>
               <div>
