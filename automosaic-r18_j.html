@@ -374,6 +374,104 @@
         margin-top: 0.2rem;
         min-height: 24px;
       }
+      .benchmark-block {
+        margin-top: 1rem;
+        padding: 0.85rem;
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+      }
+      .benchmark-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      .benchmark-title {
+        margin: 0;
+        font-size: 1.05rem;
+      }
+      .benchmark-meta {
+        margin-top: 0.1rem;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+      .benchmark-time {
+        flex: 0 0 auto;
+        color: var(--muted);
+        font-size: 0.78rem;
+      }
+      .benchmark-time strong {
+        margin-left: 0.35rem;
+        color: var(--text);
+        font-size: 0.98rem;
+      }
+      .benchmark-results {
+        margin-top: 0.65rem;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+      .benchmark-row {
+        display: grid;
+      }
+      .benchmark-main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .benchmark-detail {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .benchmark-breakdown {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        padding: 0.28rem 0.65rem 0;
+        color: #34d399;
+        font-size: 0.72rem;
+        font-weight: 650;
+        white-space: nowrap;
+      }
+      .benchmark-breakdown::before,
+      .benchmark-breakdown::after {
+        content: "";
+        flex: 1 1 auto;
+        height: 1px;
+        background: rgba(52, 211, 153, 0.35);
+      }
+      .benchmark-stat {
+        min-width: 0;
+        padding: 0.55rem 0.65rem;
+      }
+      .benchmark-stat + .benchmark-stat {
+        border-left: 1px solid var(--border);
+      }
+      .benchmark-label {
+        color: var(--muted2);
+        font-size: 0.88rem;
+        font-weight: 650;
+      }
+      .benchmark-value {
+        margin-top: 0.08rem;
+        font-weight: 700;
+      }
+      .benchmark-stat.is-success .benchmark-label {
+        color: #34d399;
+      }
+      .benchmark-stat.is-warning .benchmark-label {
+        color: #fbbf24;
+      }
+      .benchmark-stat.is-danger .benchmark-label {
+        color: #fb7185;
+      }
+      @media (max-width: 520px) {
+        .benchmark-block {
+          padding: 0.75rem;
+        }
+        .benchmark-stat {
+          padding: 0.5rem 0.4rem;
+        }
+        .benchmark-value {
+          font-size: 0.9rem;
+        }
+      }
 
       /* YouTube thumbnail link */
       .yt {
@@ -943,8 +1041,8 @@
           "複数画像の一括処理",
           "画像はアップロードせずローカル処理（更新確認・初回モデル取得時は通信）"
         ],
-        "softwareVersion": "3.50",
-        "releaseNotes": "https://note.com/nekzuk/n/n7997df7b4560",
+        "softwareVersion": "3.60",
+        "releaseNotes": "https://note.com/nekzuk/n/n187d0cc4a0ec",
         "video": {
           "@type": "VideoObject",
           "name": "AutoMosaic (R18版) デモ",
@@ -1262,69 +1360,75 @@
           <h3>
             <span class="lang-ja">検出精度データ</span>
           </h3>
-          <p class="benchmark-summary lang-ja">
-            <b>アニメ調画像（1K）</b><br />
-            v3.50／通常検出設定／サンプル数470枚
-          </p>
-          <div
-            class="kpi"
-            style="
-              grid-template-columns: repeat(3, minmax(0, 1fr));
-              margin-top: 1rem;
-            "
-          >
-            <div class="box">
-              <div class="kv">
-                <div class="label lang-ja">処理時間</div>
-                <div class="value">
-                  449<span
-                    style="
-                      font-size: 0.8rem;
-                      font-weight: 400;
-                      opacity: 0.7;
-                      margin-left: 0.25rem;
-                    "
-                    >sec</span
-                  >
+          <div class="benchmark-block lang-ja">
+            <div class="benchmark-head">
+              <div>
+                <h4 class="benchmark-title">アニメ調画像（1K）</h4>
+                <p class="benchmark-meta">v3.60／サンプル数470枚</p>
+              </div>
+              <div class="benchmark-time">処理時間 <strong>213秒</strong></div>
+            </div>
+            <div class="benchmark-results">
+              <div class="benchmark-row benchmark-main">
+                <div class="benchmark-stat is-success">
+                  <div class="benchmark-label">検出</div>
+                  <div class="benchmark-value">466 / 470枚（99%）</div>
+                </div>
+                <div class="benchmark-stat is-danger">
+                  <div class="benchmark-label">完全未検出</div>
+                  <div class="benchmark-value">4 / 470枚（1%）</div>
+                </div>
+              </div>
+              <div class="benchmark-breakdown">検出466枚の内訳</div>
+              <div class="benchmark-row benchmark-detail">
+                <div class="benchmark-stat is-success">
+                  <div class="benchmark-label">一発OK</div>
+                  <div class="benchmark-value">453枚（96%）</div>
+                </div>
+                <div class="benchmark-stat is-warning">
+                  <div class="benchmark-label">モザイク漏れ</div>
+                  <div class="benchmark-value">3枚（1%）</div>
+                </div>
+                <div class="benchmark-stat is-warning">
+                  <div class="benchmark-label">誤検出</div>
+                  <div class="benchmark-value">10枚（2%）</div>
                 </div>
               </div>
             </div>
-            <div class="box">
-              <div class="kv">
-                <div class="label lang-ja">検出率</div>
-                <div class="value">460/470 (98%)</div>
-              </div>
-            </div>
-            <div class="box">
-              <div class="kv">
-                <div class="label lang-ja">一発OK</div>
-                <div class="value">448 (95%)</div>
-              </div>
-            </div>
           </div>
-          <div
-            class="kpi"
-            style="
-              grid-template-columns: repeat(3, minmax(0, 1fr));
-              margin-top: 0.75rem;
-            "
-          >
-            <div class="box">
-              <div class="kv">
-                <div class="label lang-ja">モザイク漏れ</div>
-                <div class="value">6 (1%)</div>
+          <div class="benchmark-block lang-ja">
+            <div class="benchmark-head">
+              <div>
+                <h4 class="benchmark-title">実写画像（2K）</h4>
+                <p class="benchmark-meta">v3.60／サンプル数306枚</p>
               </div>
+              <div class="benchmark-time">処理時間 <strong>293秒</strong></div>
             </div>
-            <div class="box">
-              <div class="kv">
-                <div class="label lang-ja">誤検出</div>
-                <div class="value">6 (1%)</div>
+            <div class="benchmark-results">
+              <div class="benchmark-row benchmark-main">
+                <div class="benchmark-stat is-success">
+                  <div class="benchmark-label">検出</div>
+                  <div class="benchmark-value">289 / 306枚（94%）</div>
+                </div>
+                <div class="benchmark-stat is-danger">
+                  <div class="benchmark-label">完全未検出</div>
+                  <div class="benchmark-value">17 / 306枚（6%）</div>
+                </div>
               </div>
-            </div>
-            <div class="box">
-              <div class="kv">
-                <div class="label lang-ja">未検出</div>
-                <div class="value">10 (2%)</div>
+              <div class="benchmark-breakdown">検出289枚の内訳</div>
+              <div class="benchmark-row benchmark-detail">
+                <div class="benchmark-stat is-success">
+                  <div class="benchmark-label">一発OK</div>
+                  <div class="benchmark-value">254枚（82%）</div>
+                </div>
+                <div class="benchmark-stat is-warning">
+                  <div class="benchmark-label">モザイク漏れ</div>
+                  <div class="benchmark-value">17枚（6%）</div>
+                </div>
+                <div class="benchmark-stat is-warning">
+                  <div class="benchmark-label">誤検出</div>
+                  <div class="benchmark-value">18枚（6%）</div>
+                </div>
               </div>
             </div>
           </div>
@@ -1377,7 +1481,7 @@
           <p class="lang-ja">
             <a
               class="btn download"
-              href="https://downloads.nekzuk.com/automosaic-r18/AutoMosaic_R18_Trial_350.zip"
+              href="https://downloads.nekzuk.com/automosaic-r18/AM_R18_360_Trial.zip"
               rel="noopener"
               target="_blank"
               >Download</a
@@ -1404,13 +1508,13 @@
             <div class="box">
               <div class="kv">
                 <div class="label lang-ja">最新バージョン</div>
-                <div class="value">v3.50</div>
+                <div class="value">v3.60</div>
               </div>
             </div>
             <div class="box">
               <div class="kv">
                 <div class="label lang-ja">リリース日</div>
-                <div class="value">2026-07-11</div>
+                <div class="value">2026-08-12</div>
               </div>
             </div>
           </div>
@@ -1419,13 +1523,13 @@
             <span class="lang-ja">最新の更新内容</span>
           </h3>
           <ul class="lang-ja">
-            <li>自動アップデート機能追加</li>
-            <li>速度＆精度改善</li>
-            <li>要望対応</li>
+            <li>速度改善</li>
+            <li>精度改善</li>
+            <li>各種要望対応</li>
           </ul>
           <p style="margin-top: 1rem">
             <a
-              href="https://note.com/nekzuk/n/n7997df7b4560"
+              href="https://note.com/nekzuk/n/n187d0cc4a0ec"
               rel="noopener"
               target="_blank"
             >
@@ -1461,6 +1565,7 @@
           <div class="history-table">
             <div class="history-head lang-ja"><span>バージョン</span><span>リリース日</span><span>更新内容</span></div>
             <ul class="history-list lang-ja">
+              <li><div class="history-row"><span class="history-version">v3.60</span><time class="history-date" datetime="2026-08-12">2026/08/12</time><a class="history-link" href="https://note.com/nekzuk/n/n187d0cc4a0ec" rel="noopener" target="_blank">詳細を見る →</a></div></li>
               <li><div class="history-row"><span class="history-version">v3.50</span><time class="history-date" datetime="2026-07-11">2026/07/11</time><a class="history-link" href="https://note.com/nekzuk/n/n7997df7b4560" rel="noopener" target="_blank">詳細を見る →</a></div></li>
               <li><div class="history-row"><span class="history-version">v3.40</span><time class="history-date" datetime="2026-05-31">2026/05/31</time><a class="history-link" href="https://note.com/nekzuk/n/ndd4e4e44cdb9" rel="noopener" target="_blank">詳細を見る →</a></div></li>
               <li><div class="history-row"><span class="history-version">v3.30</span><time class="history-date" datetime="2026-04-14">2026/04/14</time><a class="history-link" href="https://note.com/nekzuk/n/n730497e72304" rel="noopener" target="_blank">詳細を見る →</a></div></li>

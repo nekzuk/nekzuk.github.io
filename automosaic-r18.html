@@ -373,6 +373,104 @@
         margin-top: 0.2rem;
         min-height: 24px;
       }
+      .benchmark-block {
+        margin-top: 1rem;
+        padding: 0.85rem;
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+      }
+      .benchmark-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      .benchmark-title {
+        margin: 0;
+        font-size: 1.05rem;
+      }
+      .benchmark-meta {
+        margin-top: 0.1rem;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+      .benchmark-time {
+        flex: 0 0 auto;
+        color: var(--muted);
+        font-size: 0.78rem;
+      }
+      .benchmark-time strong {
+        margin-left: 0.35rem;
+        color: var(--text);
+        font-size: 0.98rem;
+      }
+      .benchmark-results {
+        margin-top: 0.65rem;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+      .benchmark-row {
+        display: grid;
+      }
+      .benchmark-main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .benchmark-detail {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .benchmark-breakdown {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        padding: 0.28rem 0.65rem 0;
+        color: #34d399;
+        font-size: 0.72rem;
+        font-weight: 650;
+        white-space: nowrap;
+      }
+      .benchmark-breakdown::before,
+      .benchmark-breakdown::after {
+        content: "";
+        flex: 1 1 auto;
+        height: 1px;
+        background: rgba(52, 211, 153, 0.35);
+      }
+      .benchmark-stat {
+        min-width: 0;
+        padding: 0.55rem 0.65rem;
+      }
+      .benchmark-stat + .benchmark-stat {
+        border-left: 1px solid var(--border);
+      }
+      .benchmark-label {
+        color: var(--muted2);
+        font-size: 0.88rem;
+        font-weight: 650;
+      }
+      .benchmark-value {
+        margin-top: 0.08rem;
+        font-weight: 700;
+      }
+      .benchmark-stat.is-success .benchmark-label {
+        color: #34d399;
+      }
+      .benchmark-stat.is-warning .benchmark-label {
+        color: #fbbf24;
+      }
+      .benchmark-stat.is-danger .benchmark-label {
+        color: #fb7185;
+      }
+      @media (max-width: 520px) {
+        .benchmark-block {
+          padding: 0.75rem;
+        }
+        .benchmark-stat {
+          padding: 0.5rem 0.4rem;
+        }
+        .benchmark-value {
+          font-size: 0.9rem;
+        }
+      }
 
       /* YouTube thumbnail link */
       .yt {
@@ -880,8 +978,8 @@
           "Batch processing for multiple images",
           "Local image processing with no uploads; internet used for update checks and initial model retrieval"
         ],
-        "softwareVersion": "3.50",
-        "releaseNotes": "https://note.com/nekzuk/n/n7997df7b4560",
+        "softwareVersion": "3.60",
+        "releaseNotes": "https://note.com/nekzuk/n/n187d0cc4a0ec",
         "video": {
           "@type": "VideoObject",
           "name": "AutoMosaic R18 Demo (English)",
@@ -1199,69 +1297,75 @@
           <h3>
             <span class="lang-en">Detection Accuracy Data</span>
           </h3>
-          <p class="benchmark-summary lang-en">
-            <b>Anime-style images (1K)</b><br />
-            v3.50 / Normal detection settings / 470 samples
-          </p>
-          <div
-            class="kpi"
-            style="
-              grid-template-columns: repeat(3, minmax(0, 1fr));
-              margin-top: 1rem;
-            "
-          >
-            <div class="box">
-              <div class="kv">
-                <div class="label lang-en">Processing Time</div>
-                <div class="value">
-                  449<span
-                    style="
-                      font-size: 0.8rem;
-                      font-weight: 400;
-                      opacity: 0.7;
-                      margin-left: 0.25rem;
-                    "
-                    >sec</span
-                  >
+          <div class="benchmark-block lang-en">
+            <div class="benchmark-head">
+              <div>
+                <h4 class="benchmark-title">Anime-style images (1K)</h4>
+                <p class="benchmark-meta">v3.60 / 470 samples</p>
+              </div>
+              <div class="benchmark-time">Processing time <strong>213 sec</strong></div>
+            </div>
+            <div class="benchmark-results">
+              <div class="benchmark-row benchmark-main">
+                <div class="benchmark-stat is-success">
+                  <div class="benchmark-label">Detected</div>
+                  <div class="benchmark-value">466 / 470 images (99%)</div>
+                </div>
+                <div class="benchmark-stat is-danger">
+                  <div class="benchmark-label">Completely missed</div>
+                  <div class="benchmark-value">4 / 470 images (1%)</div>
+                </div>
+              </div>
+              <div class="benchmark-breakdown">Breakdown of 466 detected images</div>
+              <div class="benchmark-row benchmark-detail">
+                <div class="benchmark-stat is-success">
+                  <div class="benchmark-label">One-shot OK</div>
+                  <div class="benchmark-value">453 images (96%)</div>
+                </div>
+                <div class="benchmark-stat is-warning">
+                  <div class="benchmark-label">Mosaic leakage</div>
+                  <div class="benchmark-value">3 images (1%)</div>
+                </div>
+                <div class="benchmark-stat is-warning">
+                  <div class="benchmark-label">False detection</div>
+                  <div class="benchmark-value">10 images (2%)</div>
                 </div>
               </div>
             </div>
-            <div class="box">
-              <div class="kv">
-                <div class="label lang-en">Detection Rate</div>
-                <div class="value">460/470 (98%)</div>
-              </div>
-            </div>
-            <div class="box">
-              <div class="kv">
-                <div class="label lang-en">One-shot OK</div>
-                <div class="value">448 (95%)</div>
-              </div>
-            </div>
           </div>
-          <div
-            class="kpi"
-            style="
-              grid-template-columns: repeat(3, minmax(0, 1fr));
-              margin-top: 0.75rem;
-            "
-          >
-            <div class="box">
-              <div class="kv">
-                <div class="label lang-en">Mosaic Leakage</div>
-                <div class="value">6 (1%)</div>
+          <div class="benchmark-block lang-en">
+            <div class="benchmark-head">
+              <div>
+                <h4 class="benchmark-title">Real-world images (2K)</h4>
+                <p class="benchmark-meta">v3.60 / 306 samples</p>
               </div>
+              <div class="benchmark-time">Processing time <strong>293 sec</strong></div>
             </div>
-            <div class="box">
-              <div class="kv">
-                <div class="label lang-en">False Detection</div>
-                <div class="value">6 (1%)</div>
+            <div class="benchmark-results">
+              <div class="benchmark-row benchmark-main">
+                <div class="benchmark-stat is-success">
+                  <div class="benchmark-label">Detected</div>
+                  <div class="benchmark-value">289 / 306 images (94%)</div>
+                </div>
+                <div class="benchmark-stat is-danger">
+                  <div class="benchmark-label">Completely missed</div>
+                  <div class="benchmark-value">17 / 306 images (6%)</div>
+                </div>
               </div>
-            </div>
-            <div class="box">
-              <div class="kv">
-                <div class="label lang-en">Not Detected</div>
-                <div class="value">10 (2%)</div>
+              <div class="benchmark-breakdown">Breakdown of 289 detected images</div>
+              <div class="benchmark-row benchmark-detail">
+                <div class="benchmark-stat is-success">
+                  <div class="benchmark-label">One-shot OK</div>
+                  <div class="benchmark-value">254 images (82%)</div>
+                </div>
+                <div class="benchmark-stat is-warning">
+                  <div class="benchmark-label">Mosaic leakage</div>
+                  <div class="benchmark-value">17 images (6%)</div>
+                </div>
+                <div class="benchmark-stat is-warning">
+                  <div class="benchmark-label">False detection</div>
+                  <div class="benchmark-value">18 images (6%)</div>
+                </div>
               </div>
             </div>
           </div>
@@ -1315,7 +1419,7 @@
           <p class="lang-en">
             <a
               class="btn download"
-              href="https://downloads.nekzuk.com/automosaic-r18/AutoMosaic_R18_Trial_350.zip"
+              href="https://downloads.nekzuk.com/automosaic-r18/AM_R18_360_Trial.zip"
               rel="noopener"
               target="_blank"
               >Download</a
@@ -1342,13 +1446,13 @@
             <div class="box">
               <div class="kv">
                 <div class="label lang-en">Current Version</div>
-                <div class="value">v3.50</div>
+                <div class="value">v3.60</div>
               </div>
             </div>
             <div class="box">
               <div class="kv">
                 <div class="label lang-en">Release Date</div>
-                <div class="value">2026-07-11</div>
+                <div class="value">2026-08-12</div>
               </div>
             </div>
           </div>
@@ -1357,13 +1461,13 @@
             <span class="lang-en">Latest Updates</span>
           </h3>
           <ul class="lang-en">
-            <li>Added automatic update feature</li>
-            <li>Improved speed and accuracy</li>
-            <li>Implemented user requests</li>
+            <li>Speed improvements</li>
+            <li>Detection accuracy improvements</li>
+            <li>Various user-requested enhancements</li>
           </ul>
           <p style="margin-top: 1rem">
             <a
-              href="https://note.com/nekzuk/n/n7997df7b4560?hl=en"
+              href="https://note.com/nekzuk/n/n187d0cc4a0ec?hl=en"
               rel="noopener"
               target="_blank"
             >
@@ -1409,6 +1513,7 @@
           <div class="history-table">
             <div class="history-head lang-en"><span>Version</span><span>Release date</span><span>Release notes</span></div>
             <ul class="history-list lang-en">
+              <li><div class="history-row"><span class="history-version">v3.60</span><time class="history-date" datetime="2026-08-12">2026-08-12</time><a class="history-link" href="https://note.com/nekzuk/n/n187d0cc4a0ec?hl=en" rel="noopener" target="_blank">Details →</a></div></li>
               <li><div class="history-row"><span class="history-version">v3.50</span><time class="history-date" datetime="2026-07-11">2026-07-11</time><a class="history-link" href="https://note.com/nekzuk/n/n7997df7b4560?hl=en" rel="noopener" target="_blank">Details →</a></div></li>
               <li><div class="history-row"><span class="history-version">v3.40</span><time class="history-date" datetime="2026-05-31">2026-05-31</time><a class="history-link" href="https://note.com/nekzuk/n/ndd4e4e44cdb9?hl=en" rel="noopener" target="_blank">Details →</a></div></li>
               <li><div class="history-row"><span class="history-version">v3.30</span><time class="history-date" datetime="2026-04-14">2026-04-14</time><a class="history-link" href="https://note.com/nekzuk/n/n730497e72304?hl=en" rel="noopener" target="_blank">Details →</a></div></li>
