@@ -885,16 +885,21 @@
         "screenshot": "https://nekzuk.com/assets/automosaic-video/ui_en_r18.png",
         "featureList": [
           "AI-powered detection and tracking in video",
+          "R18 detection presets including realistic-video presets",
           "Mosaic, blur, and solid-fill effects",
           "MP4 / MKV output with H.264 / H.265",
+          "Animated GIF and lossless animated WebP same-format output",
+          "Built-in fine-tuning and manual editing",
           "Post-edit layer video and grayscale mask video",
-          "English and Japanese UI",
+          "Quality, video bitrate, and approximate target-size controls",
+          "English, Japanese, Simplified Chinese, Traditional Chinese, and Korean UI",
           "GUI and CLI workflows",
+          "Full-version in-app automatic updates",
           "Fast processing with NVIDIA GPUs",
           "Local video processing on your PC"
         ],
-        "softwareVersion": "1.00",
-        "releaseNotes": "https://note.com/nekzuk/n/n98adb39afcc7",
+        "softwareVersion": "1.10",
+        "releaseNotes": "https://note.com/nekzuk/n/n2082af286ffd",
         "video": {
           "@type": "VideoObject",
           "name": "AutoMosaic Video R18 Demo (English)",
@@ -1010,7 +1015,7 @@
                   >
                 </div>
                 <p class="note paymentNote lang-en">
-                  Card / PayPal (Payhip)
+                  　Card / PayPal
                 </p>
                 <p class="note lang-en">
                   <a
@@ -1056,7 +1061,7 @@
           <div class="box">
             <div class="kv">
               <div class="label lang-en">UI Languages</div>
-              <div class="value">EN / JP</div>
+              <div class="value">EN / JP / ZH / KR</div>
             </div>
           </div>
         </div>
@@ -1075,10 +1080,13 @@
           <div class="hr"></div>
           <ul class="lang-en">
             <li><b>Detection and tracking</b>: follows targets across frames</li>
+            <li><b>Manual editing</b>: define processing regions in videos and animations without automatic processing</li>
+            <li><b>Animated GIF / Animated WebP support</b>: save files in the same format as the input</li>
+            <li><b>Long and high-resolution video support</b>: process videos over one hour and 2K / 4K video</li>
             <li><b>Offline processing</b>: no uploads or cloud processing</li>
             <li><b>Fast GPU acceleration</b>: faster inference on NVIDIA GPUs</li>
-            <li><b>GUI / CLI</b>: graphical and command-line workflows</li>
-            <li><b>Preflight</b>: reports blocking issues and conversion warnings before processing</li>
+            <li><b>CLI support</b>: run from either the GUI or command line</li>
+            <li><b>Five UI languages</b>: English, Japanese, Simplified Chinese, Traditional Chinese, and Korean</li>
           </ul>
         </section>
         <section class="section">
@@ -1106,9 +1114,11 @@
               </ul>
               <div class="hr"></div>
               <h3>
-                <span class="lang-en">Post-edit Materials (Full Version)</span>
+                <span class="lang-en">Editing and Post-edit Materials</span>
               </h3>
               <ul class="lang-en">
+                <li>Fine-tuning of automatic results</li>
+                <li>Manual editing without automatic processing</li>
                 <li>Video containing only processed regions</li>
                 <li>Grayscale mask video</li>
               </ul>
@@ -1124,12 +1134,12 @@
             <span class="lang-en">How to use</span>
           </h2>
           <ol class="lang-en">
-            <li>Add videos with <b>Add Files</b> or <b>Add Folder</b></li>
+            <li>Add videos or animated images with <b>Add Files</b> or <b>Add Folder</b></li>
             <li>Select a Detection Preset and Processing Mode</li>
-            <li>Select Mosaic, Blur, or Solid Fill and adjust its settings</li>
-            <li>Confirm the output container, codec, quality, and destination</li>
+            <li>Select Mosaic, Blur, or Solid Fill and adjust boundary correction and feathering as needed</li>
+            <li>Choose quality, video bitrate, or approximate target size, then confirm the destination</li>
             <li>Start processing and review any preflight warnings</li>
-            <li>Review the complete output after processing</li>
+            <li>Review the result and use Fine-tune or Manual Edit when needed</li>
           </ol>
         </section>
         <section class="section">
@@ -1151,29 +1161,23 @@
           </ul>
         </section>
         <section class="section">
-          <h2><span class="lang-en">Supported Formats &amp; Video Notes</span></h2>
-          <h3><span class="lang-en">Input</span></h3>
-          <p class="lang-en">
-            MP4 / MOV / AVI / MKV / WebM / M4V / WMV / TS / MTS / M2TS
-          </p>
-          <div class="hr"></div>
-          <h3><span class="lang-en">Main Output</span></h3>
-          <ul class="lang-en">
-            <li>MP4 / MKV</li>
-            <li>H.264 / H.265</li>
-            <li>Compact / Standard / High Quality</li>
-            <li>Preservation of the first audio stream</li>
-          </ul>
-          <div class="hr"></div>
-          <h3><span class="lang-en">Please Note</span></h3>
-          <ul class="lang-en">
-            <li>Some videos may differ from the original in motion or color</li>
-            <li>Additional audio, subtitles, and similar content are not preserved</li>
-            <li>A confirmation message appears before processing long videos</li>
-          </ul>
-          <p class="note lang-en" style="margin-top: 1rem">
-            The R18 Edition uses an internet connection for initial data download and update checks.
-          </p>
+          <h2><span class="lang-en">Supported Formats</span></h2>
+          <div class="twoCol">
+            <div>
+              <h3><span class="lang-en">Input</span></h3>
+              <p class="lang-en">
+                MP4 / MOV / AVI / MKV / WebM / M4V / WMV / TS / MTS / M2TS / Animated GIF / Animated WebP
+              </p>
+            </div>
+            <div>
+              <h3><span class="lang-en">Output</span></h3>
+              <ul class="lang-en">
+                <li>MP4 / MKV (H.264 / H.265)</li>
+                <li>Animated GIF / Animated WebP (saved in the same format as the input)</li>
+                <li>Preserves the first audio stream</li>
+              </ul>
+            </div>
+          </div>
         </section>
         <section class="section" id="ui">
           <h2><span class="lang-en">UI screenshot</span></h2>
@@ -1186,7 +1190,7 @@
             <img
               loading="lazy"
               alt="AutoMosaic Video (R18) UI (English)"
-              src="assets/automosaic-video/ui_en_r18.png" width="1084" height="727"/>
+              src="assets/automosaic-video/ui_en_r18.png" width="1164" height="812"/>
             <div class="cap">AutoMosaic Video (R18) UI (English)</div>
           </a>
         </section>
@@ -1219,7 +1223,7 @@
           <p class="lang-en">
             <a
               class="btn download"
-              href="https://downloads.nekzuk.com/automosaic-video-r18/AutoMosaicVideo_R18_Trial_100.zip"
+              href="https://downloads.nekzuk.com/automosaic-video-r18/AutoMosaicVideo_R18_Trial_110.zip"
               rel="noopener"
               target="_blank"
               >Download</a
@@ -1230,10 +1234,10 @@
             <span class="lang-en">What's included</span>
           </h3>
           <ul class="lang-en">
-            <li>✓ One video per run</li>
-            <li>✓ Up to 60 seconds per video</li>
-            <li>✗ Trial watermark on every output frame</li>
-            <li>✗ Post-edit materials are unavailable</li>
+            <li>✓ One video or animation per run</li>
+            <li>✓ Up to 60 seconds per file</li>
+            <li>✗ Trial watermark on every frame</li>
+            <li>✗ Fine-tuning automatic results and post-edit materials are unavailable</li>
           </ul>
         </section>
         <section class="section">
@@ -1248,24 +1252,31 @@
             <div class="box">
               <div class="kv">
                 <div class="label lang-en">Current Version</div>
-                <div class="value">v1.00</div>
+                <div class="value">v1.10</div>
               </div>
             </div>
             <div class="box">
               <div class="kv">
                 <div class="label lang-en">Release Date</div>
-                <div class="value">2026-07-20</div>
+                <div class="value">2026-08-20</div>
               </div>
             </div>
           </div>
           <div class="hr"></div>
+          <h3><span class="lang-en">Latest Updates</span></h3>
+          <ul class="lang-en">
+            <li>Added animated GIF / animated WebP processing, fine-tuning, and manual editing</li>
+            <li>Added realistic-video presets, boundary correction, mosaic-edge feathering, video bitrate, and target-size controls</li>
+            <li>Improved performance and stability for long and high-resolution videos</li>
+            <li>Added five-language UI and in-app automatic updates</li>
+          </ul>
           <p style="margin-top: 1rem">
             <a
-              href="https://note.com/nekzuk/n/n98adb39afcc7?hl=en"
+              href="https://note.com/nekzuk/n/n2082af286ffd"
               rel="noopener"
               target="_blank"
             >
-              <span class="lang-en">→ Read the v1.00 release notes</span>
+              <span class="lang-en">→ Read detailed release notes</span>
             </a>
           </p>
         </section>
@@ -1285,10 +1296,10 @@
             <span class="lang-en">Important Notes</span>
           </h3>
           <ul class="lang-en">
-            <li>Processing may take time depending on your PC/GPU specifications</li>
-            <li>
-              Processing time varies with resolution, video length, processing mode, detection settings, and PC performance
-            </li>
+            <li>Processing time varies with video resolution, length, settings, and PC/GPU performance</li>
+            <li>Motion or color may differ from the original in some videos</li>
+            <li>Additional audio streams, subtitles, and similar content are not preserved</li>
+            <li>Updates require an internet connection</li>
           </ul>
         </section>
         <section class="section section-history">
@@ -1296,6 +1307,7 @@
           <div class="history-table">
             <div class="history-head lang-en"><span>Version</span><span>Release date</span><span>Release notes</span></div>
             <ul class="history-list lang-en">
+              <li><div class="history-row"><span class="history-version">v1.10</span><time class="history-date" datetime="2026-08-20">2026-08-20</time><a class="history-link" href="https://note.com/nekzuk/n/n2082af286ffd" rel="noopener" target="_blank">Details →</a></div></li>
               <li><div class="history-row"><span class="history-version">v1.00</span><time class="history-date" datetime="2026-07-20">2026-07-20</time><a class="history-link" href="https://note.com/nekzuk/n/n98adb39afcc7?hl=en" rel="noopener" target="_blank">Details →</a></div></li>
             </ul>
           </div>

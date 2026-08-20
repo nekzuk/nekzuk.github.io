@@ -948,16 +948,21 @@
         "screenshot": "https://nekzuk.com/assets/automosaic-video/ui_ja_r18.png",
         "featureList": [
           "AIによる動画内対象の自動検出・追跡",
+          "実写向けを含むR18用検出プリセット",
           "モザイク、ぼかし、塗りつぶし",
           "MP4 / MKV と H.264 / H.265 の主出力",
+          "アニメーションGIF / アニメーションWebPの同形式出力",
+          "自動処理結果の微調整と手動編集",
           "後編集用のレイヤー動画・白黒マスク動画",
-          "日本語・英語UI",
+          "品質・映像ビットレート・目標容量による映像設定",
+          "日本語・英語・簡体字中国語・繁体字中国語・韓国語UI",
           "GUI・CLI対応",
+          "製品版のアプリ内自動更新",
           "NVIDIA GPUによる高速処理",
           "動画はPC上でローカル処理"
         ],
-        "softwareVersion": "1.00",
-        "releaseNotes": "https://note.com/nekzuk/n/n98adb39afcc7",
+        "softwareVersion": "1.10",
+        "releaseNotes": "https://note.com/nekzuk/n/n2082af286ffd",
         "video": {
           "@type": "VideoObject",
           "name": "AutoMosaic Video (R18版) 紹介動画",
@@ -1082,7 +1087,7 @@
                         target="_blank"
                         >直接購入</a
                       >
-                      <span class="purchaseNote lang-ja">カード・PayPal（Payhip）</span>
+                      <span class="purchaseNote lang-ja">カード・PayPal</span>
                     </div>
                   </div>
                   <div class="purchaseExtras">
@@ -1127,7 +1132,7 @@
           <div class="box">
             <div class="kv">
               <div class="label lang-ja">UI言語</div>
-              <div class="value">日 / 英</div>
+              <div class="value">日 / 英 / 中 / 韓</div>
             </div>
           </div>
         </div>
@@ -1143,10 +1148,13 @@
           <div class="hr"></div>
           <ul class="lang-ja">
             <li><b>自動検出・追跡</b>: 動画内の対象を継続して追跡</li>
+            <li><b>手動編集</b>: 自動処理を使わず、動画・アニメーションの処理範囲を手動で指定可能</li>
+            <li><b>アニメーションGIF / アニメーションWebP対応</b>: 入力と同じ形式で出力</li>
+            <li><b>長尺・高解像度対応</b>: 1時間を超える動画や2K・4K動画の処理に対応</li>
             <li><b>オフライン処理</b>: 動画のアップロード不要、クラウド処理なし</li>
             <li><b>高速GPU処理</b>: NVIDIA GPUによる高速処理に対応</li>
-            <li><b>GUI / CLI</b>: 画面操作とコマンドラインの両方に対応</li>
-            <li><b>preflight</b>: 開始できない理由や変換上の注意を処理前に表示</li>
+            <li><b>CLI対応</b>: GUIに加えてコマンドラインからも実行可能</li>
+            <li><b>5言語UI</b>: 日本語・英語・簡体字・繁体字・韓国語に対応</li>
           </ul>
         </section>
         <section class="section">
@@ -1174,9 +1182,11 @@
               </ul>
               <div class="hr"></div>
               <h3>
-                <span class="lang-ja">後編集用素材（製品版）</span>
+                <span class="lang-ja">編集・後編集</span>
               </h3>
               <ul class="lang-ja">
+                <li>自動処理結果の微調整</li>
+                <li>自動処理を使わない手動編集</li>
                 <li>処理部分のみの動画</li>
                 <li>白黒マスク動画</li>
               </ul>
@@ -1192,12 +1202,12 @@
             <span class="lang-ja">基本的な使い方</span>
           </h2>
           <ol class="lang-ja">
-            <li>「ファイル追加」または「フォルダ追加」で入力動画を選択</li>
+            <li>「ファイルを追加」または「フォルダを追加」で入力動画・アニメーションを選択</li>
             <li>検出設定と処理モードを選択</li>
-            <li>モザイク・ぼかし・塗りつぶしと関連設定を調整</li>
-            <li>主出力の形式・codec・品質と出力先を確認</li>
+            <li>モザイク・ぼかし・塗りつぶしと境界設定を調整</li>
+            <li>主出力の形式・codecと、品質・ビットレート・目標容量のいずれかを選択</li>
             <li>処理を開始し、preflightの警告内容を確認</li>
-            <li>完了後に出力動画全体を確認</li>
+            <li>完了後に出力全体を確認し、必要に応じて処理範囲を微調整</li>
           </ol>
         </section>
         <section class="section">
@@ -1217,29 +1227,23 @@
           </ul>
         </section>
         <section class="section">
-          <h2><span class="lang-ja">対応形式・動画処理上の注意</span></h2>
-          <h3><span class="lang-ja">入力</span></h3>
-          <p class="lang-ja">
-            MP4 / MOV / AVI / MKV / WebM / M4V / WMV / TS / MTS / M2TS
-          </p>
-          <div class="hr"></div>
-          <h3><span class="lang-ja">主出力</span></h3>
-          <ul class="lang-ja">
-            <li>MP4 / MKV</li>
-            <li>H.264 / H.265</li>
-            <li>容量優先 / 標準 / 高品質</li>
-            <li>先頭音声ストリームの保持に対応</li>
-          </ul>
-          <div class="hr"></div>
-          <h3><span class="lang-ja">ご確認ください</span></h3>
-          <ul class="lang-ja">
-            <li>動画によっては、動きや色合いが元動画と異なる場合があります</li>
-            <li>追加の音声や字幕などは保持されません</li>
-            <li>長い動画では、処理前に確認メッセージを表示します</li>
-          </ul>
-          <p class="note lang-ja" style="margin-top: 1rem">
-            R18版は、初回起動時のデータ取得と更新確認にインターネット接続を使用します。
-          </p>
+          <h2><span class="lang-ja">対応形式</span></h2>
+          <div class="twoCol">
+            <div>
+              <h3><span class="lang-ja">入力</span></h3>
+              <p class="lang-ja">
+                MP4 / MOV / AVI / MKV / WebM / M4V / WMV / TS / MTS / M2TS / アニメーションGIF / アニメーションWebP
+              </p>
+            </div>
+            <div>
+              <h3><span class="lang-ja">出力</span></h3>
+              <ul class="lang-ja">
+                <li>MP4 / MKV（H.264 / H.265）</li>
+                <li>アニメーションGIF / アニメーションWebP（入力と同じ形式で出力）</li>
+                <li>先頭音声ストリームの保持に対応</li>
+              </ul>
+            </div>
+          </div>
         </section>
         <section class="section" id="ui">
           <h2><span class="lang-ja">UIスクリーンショット</span></h2>
@@ -1252,7 +1256,7 @@
             <img
               loading="lazy"
               alt="AutoMosaic Video (R18版) UI (Japanese)"
-              src="assets/automosaic-video/ui_ja_r18.png" width="1084" height="727"/>
+              src="assets/automosaic-video/ui_ja_r18.png" width="1164" height="812"/>
             <div class="cap">AutoMosaic Video (R18版) UI（日本語）</div>
           </a>
         </section>
@@ -1284,7 +1288,7 @@
           <p class="lang-ja">
             <a
               class="btn download"
-              href="https://downloads.nekzuk.com/automosaic-video-r18/AutoMosaicVideo_R18_Trial_100.zip"
+              href="https://downloads.nekzuk.com/automosaic-video-r18/AutoMosaicVideo_R18_Trial_110.zip"
               rel="noopener"
               target="_blank"
               >Download</a
@@ -1295,10 +1299,10 @@
             <span class="lang-ja">体験版の内容</span>
           </h3>
           <ul class="lang-ja">
-            <li>✓ 1回につき動画1本まで</li>
-            <li>✓ 動画1本につき60秒まで</li>
+            <li>✓ 1回につき動画またはアニメーション1本まで</li>
+            <li>✓ 1ファイルにつき60秒まで</li>
             <li>✗ 全フレームへ体験版の透かしを追加</li>
-            <li>✗ 後編集用素材は出力不可</li>
+            <li>✗ 自動処理結果の微調整や後編集用素材は利用不可</li>
           </ul>
         </section>
         <section class="section">
@@ -1313,24 +1317,31 @@
             <div class="box">
               <div class="kv">
                 <div class="label lang-ja">最新バージョン</div>
-                <div class="value">v1.00</div>
+                <div class="value">v1.10</div>
               </div>
             </div>
             <div class="box">
               <div class="kv">
                 <div class="label lang-ja">リリース日</div>
-                <div class="value">2026-07-20</div>
+                <div class="value">2026-08-20</div>
               </div>
             </div>
           </div>
           <div class="hr"></div>
+          <h3><span class="lang-ja">最新の更新内容</span></h3>
+          <ul class="lang-ja">
+            <li>アニメーションGIF / アニメーションWebP、処理結果の微調整、手動編集に対応</li>
+            <li>実写向け検出プリセット、境界補正、モザイク境界ぼかし、ビットレート・目標容量指定を追加</li>
+            <li>長尺・高解像度動画の処理性能・安定性を改善</li>
+            <li>5言語UIとアプリ内自動更新に対応</li>
+          </ul>
           <p style="margin-top: 1rem">
             <a
-              href="https://note.com/nekzuk/n/n98adb39afcc7"
+              href="https://note.com/nekzuk/n/n2082af286ffd"
               rel="noopener"
               target="_blank"
             >
-              <span class="lang-ja">→ v1.00 リリースNoteを読む</span>
+              <span class="lang-ja">→ 詳細な更新内容を読む</span>
             </a>
           </p>
         </section>
@@ -1350,10 +1361,10 @@
             <span class="lang-ja">重要な注意事項</span>
           </h3>
           <ul class="lang-ja">
-            <li>処理にはお使いのPC/GPUの性能に応じて時間がかかる場合があります</li>
-            <li>
-              処理時間は解像度、動画時間、処理モード、検出設定、PC性能により変わります
-            </li>
+            <li>処理時間は、動画の解像度・長さ・処理設定・PC/GPU性能により変わります</li>
+            <li>動画によっては、動きや色合いが元動画と異なる場合があります</li>
+            <li>追加の音声や字幕などは保持されません</li>
+            <li>更新機能にはインターネット接続が必要です</li>
           </ul>
         </section>
         <section class="section section-history">
@@ -1361,6 +1372,7 @@
           <div class="history-table">
             <div class="history-head lang-ja"><span>バージョン</span><span>リリース日</span><span>更新内容</span></div>
             <ul class="history-list lang-ja">
+              <li><div class="history-row"><span class="history-version">v1.10</span><time class="history-date" datetime="2026-08-20">2026/08/20</time><a class="history-link" href="https://note.com/nekzuk/n/n2082af286ffd" rel="noopener" target="_blank">詳細を見る →</a></div></li>
               <li><div class="history-row"><span class="history-version">v1.00</span><time class="history-date" datetime="2026-07-20">2026/07/20</time><a class="history-link" href="https://note.com/nekzuk/n/n98adb39afcc7" rel="noopener" target="_blank">詳細を見る →</a></div></li>
             </ul>
           </div>
