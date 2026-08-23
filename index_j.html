@@ -451,6 +451,8 @@
       .card-body {
         padding: 0 1.5rem 1.25rem;
         flex: 1;
+        display: flex;
+        flex-direction: column;
       }
 
       .product-description {
@@ -464,6 +466,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 0.5rem;
+        margin-bottom: 1rem;
       }
 
       .features-list li {
@@ -475,10 +478,52 @@
         border: 1px solid rgba(255, 255, 255, 0.08);
       }
 
-      .features-list li.lang {
-        background: rgba(34, 211, 238, 0.1);
-        border-color: rgba(34, 211, 238, 0.2);
-        color: var(--accent);
+      .product-specs {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.45rem 0.75rem;
+        margin-top: auto;
+        padding-top: 0.85rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .product-specs li {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        color: var(--text-muted);
+        font-size: 0.74rem;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .product-specs li::before {
+        content: "";
+        width: 0.38rem;
+        height: 0.38rem;
+        border-radius: 999px;
+        background: #94a3b8;
+      }
+
+      .product-specs li.cli::before {
+        background: #60a5fa;
+      }
+
+      .product-specs li.update::before {
+        background: #a78bfa;
+      }
+
+      .product-specs li.trial::before {
+        background: #4ade80;
+      }
+
+      .product-specs li.free::before {
+        background: #4ade80;
+      }
+
+      .product-specs li.lang::before {
+        background: #22d3ee;
       }
 
       .card-footer {
@@ -506,18 +551,6 @@
       .price-badge.paid {
         background: rgba(251, 191, 36, 0.15);
         color: #fbbf24;
-      }
-
-      .features-list li.trial {
-        background: rgba(34, 197, 94, 0.1);
-        border-color: rgba(34, 197, 94, 0.2);
-        color: #4ade80;
-      }
-
-      .features-list li.update {
-        background: rgba(139, 92, 246, 0.12);
-        border-color: rgba(139, 92, 246, 0.24);
-        color: #c4b5fd;
       }
 
       .button-group {
@@ -767,6 +800,12 @@
 
         .workflow-arrow {
           transform: rotate(90deg);
+        }
+      }
+
+      @media (max-width: 350px) {
+        .product-specs {
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -1098,10 +1137,12 @@
               <li>AI自動検出</li>
               <li>高速GPU処理</li>
               <li>モザイク・ぼかし・塗りつぶし・海苔</li>
-              <li>コマンドライン対応</li>
+            </ul>
+            <ul class="product-specs" aria-label="製品仕様">
+              <li class="cli">コマンドライン対応</li>
               <li class="update">アプリ内更新</li>
               <li class="trial">体験版あり</li>
-              <li class="lang">日 / 英 / 中 / 韓</li>
+              <li class="lang">日・英・中・韓</li>
             </ul>
           </div>
           <div class="card-footer">
@@ -1177,10 +1218,12 @@
               <li>AI自動検出</li>
               <li>高速GPU処理</li>
               <li>モザイク・ぼかし・塗りつぶし</li>
-              <li>コマンドライン対応</li>
+            </ul>
+            <ul class="product-specs" aria-label="製品仕様">
+              <li class="cli">コマンドライン対応</li>
               <li class="update">アプリ内更新</li>
               <li class="trial">体験版あり</li>
-              <li class="lang">日 / 英 / 中 / 韓</li>
+              <li class="lang">日・英・中・韓</li>
             </ul>
           </div>
           <div class="card-footer">
@@ -1254,13 +1297,14 @@
             </p>
             <ul class="features-list">
               <li>AI自動検出・追跡</li>
-              <li>高速GPU処理</li>
               <li>自動結果の微調整・手動編集</li>
               <li>動画 / GIF / WebP</li>
-              <li>コマンドライン対応</li>
+            </ul>
+            <ul class="product-specs" aria-label="製品仕様">
+              <li class="cli">コマンドライン対応</li>
               <li class="update">アプリ内更新</li>
               <li class="trial">体験版あり</li>
-              <li class="lang">日 / 英 / 中 / 韓</li>
+              <li class="lang">日・英・中・韓</li>
             </ul>
           </div>
           <div class="card-footer">
@@ -1332,13 +1376,14 @@
             </p>
             <ul class="features-list">
               <li>AI自動検出・追跡</li>
-              <li>高速GPU処理</li>
               <li>自動結果の微調整・手動編集</li>
               <li>動画 / GIF / WebP</li>
-              <li>コマンドライン対応</li>
+            </ul>
+            <ul class="product-specs" aria-label="製品仕様">
+              <li class="cli">コマンドライン対応</li>
               <li class="update">アプリ内更新</li>
               <li class="trial">体験版あり</li>
-              <li class="lang">日 / 英 / 中 / 韓</li>
+              <li class="lang">日・英・中・韓</li>
             </ul>
           </div>
           <div class="card-footer">
@@ -1410,14 +1455,14 @@
             </p>
             <ul class="features-list">
               <li>AutoMosaic連携</li>
-              <li>AIインペイント</li>
-              <li>外部AI画像編集</li>
+              <li>インペイント・外部AI編集</li>
               <li>AI補正・背景除去</li>
-              <li>タグ生成</li>
-              <li>コマンドライン対応</li>
+            </ul>
+            <ul class="product-specs" aria-label="製品仕様">
+              <li class="cli">コマンドライン対応</li>
               <li class="update">アプリ内更新</li>
               <li class="trial">体験版あり</li>
-              <li class="lang">日 / 英 / 中 / 韓</li>
+              <li class="lang">日・英・中・韓</li>
             </ul>
           </div>
           <div class="card-footer">
@@ -1493,11 +1538,12 @@
               <li>連続生成・ワイルドカード</li>
               <li>プロンプト検索・履歴</li>
               <li>タグ補完・プリセット</li>
-              <li>ローカル保存</li>
-              <li>コマンドライン対応</li>
+            </ul>
+            <ul class="product-specs" aria-label="製品仕様">
+              <li class="cli">コマンドライン対応</li>
               <li class="update">アプリ内更新</li>
               <li class="trial">体験版あり</li>
-              <li class="lang">日 / 英 / 中 / 韓</li>
+              <li class="lang">日・英・中・韓</li>
             </ul>
           </div>
           <div class="card-footer">
@@ -1570,12 +1616,15 @@
               Stable DiffusionやNovelAIの生成情報も自動検出・削除します。
             </p>
             <ul class="features-list">
-              <li>PNG / JPG / WEBP / GIF / TIFF</li>
+              <li>生成AI情報削除</li>
               <li>EXIF・XMP削除</li>
-              <li>SD/NovelAI情報削除</li>
-              <li>コマンドライン対応</li>
+              <li>主要5形式</li>
+            </ul>
+            <ul class="product-specs" aria-label="製品仕様">
+              <li class="cli">コマンドライン対応</li>
               <li class="update">アプリ内更新</li>
-              <li class="lang">日 / 英</li>
+              <li class="free">無料で利用可</li>
+              <li class="lang">日・英</li>
             </ul>
           </div>
           <div class="card-footer">
@@ -1651,14 +1700,14 @@
             </p>
             <ul class="features-list">
               <li>高精度フレーム抽出</li>
-              <li>重複画像自動削除</li>
-              <li>黒帯自動削除</li>
-              <li>Pixivうごイラ対応</li>
-              <li>バッチ処理</li>
-              <li>コマンドライン対応</li>
+              <li>GIF・WebP変換</li>
+              <li>重複・黒帯自動処理</li>
+            </ul>
+            <ul class="product-specs" aria-label="製品仕様">
+              <li class="cli">コマンドライン対応</li>
               <li class="update">アプリ内更新</li>
               <li class="trial">体験版あり</li>
-              <li class="lang">日 / 英</li>
+              <li class="lang">日・英</li>
             </ul>
           </div>
           <div class="card-footer">
@@ -1734,10 +1783,12 @@
               <li>メタデータ維持変換</li>
               <li>品質・サイズ調整</li>
               <li>Eagleライブラリ対応</li>
-              <li>コマンドライン対応</li>
+            </ul>
+            <ul class="product-specs" aria-label="製品仕様">
+              <li class="cli">コマンドライン対応</li>
               <li class="update">アプリ内更新</li>
               <li class="trial">体験版あり</li>
-              <li class="lang">日 / 英</li>
+              <li class="lang">日・英</li>
             </ul>
           </div>
           <div class="card-footer">
