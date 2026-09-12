@@ -461,6 +461,15 @@
             background: #4ade80;
         }
 
+        .product-specs .trial a {
+          display: inline-flex;
+          align-items: center;
+          min-height: 24px;
+          color: var(--accent);
+          text-decoration: underline;
+          text-underline-offset: 0.2em;
+        }
+
         .product-specs li.free::before {
             background: #4ade80;
         }
@@ -520,7 +529,7 @@
         }
 
         .btn-primary {
-            background: var(--gradient-1);
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
             color: white;
         }
 
@@ -726,9 +735,13 @@
 
         /* Responsive */
         @media (max-width: 600px) {
-            header {
-                padding: 3rem 1.5rem 2rem;
-            }
+          header { padding: 1.5rem 1.25rem 1.25rem; }
+          .lang-switch { margin-top: 0; }
+          .header-eyebrow { margin-top: 0.75rem; }
+          h1 { line-height: 1.35; margin-bottom: 0.75rem; }
+          .hero-cta { margin-top: 1rem; }
+          main { padding-top: 1.5rem; }
+          .news-section { padding: 1rem; margin-bottom: 1.5rem; }
 
             .products-grid {
                 grid-template-columns: 1fr;
@@ -1075,7 +1088,7 @@
 <ul class="product-specs" aria-label="Product specifications">
 <li class="cli">CLI support</li>
 <li class="update">In-app updates</li>
-<li class="trial">Trial available</li>
+<li class="trial"><a href="automosaic-r18.html#trial" aria-label="View the AutoMosaic R18 trial">Trial available</a></li>
 <li class="lang">EN · JP · ZH · KR</li>
 </ul>
 </div>
@@ -1126,7 +1139,7 @@
 <ul class="product-specs" aria-label="Product specifications">
 <li class="cli">CLI support</li>
 <li class="update">In-app updates</li>
-<li class="trial">Trial available</li>
+<li class="trial"><a href="automosaic.html#trial" aria-label="View the AutoMosaic General trial">Trial available</a></li>
 <li class="lang">EN · JP · ZH · KR</li>
 </ul>
 </div>
@@ -1177,7 +1190,7 @@
 <ul class="product-specs" aria-label="Product specifications">
 <li class="cli">CLI support</li>
 <li class="update">In-app updates</li>
-<li class="trial">Trial available</li>
+<li class="trial"><a href="automosaic-video-r18.html#trial" aria-label="View the AutoMosaic Video R18 trial">Trial available</a></li>
 <li class="lang">EN · JP · ZH · KR</li>
 </ul>
 </div>
@@ -1228,7 +1241,7 @@
 <ul class="product-specs" aria-label="Product specifications">
 <li class="cli">CLI support</li>
 <li class="update">In-app updates</li>
-<li class="trial">Trial available</li>
+<li class="trial"><a href="automosaic-video.html#trial" aria-label="View the AutoMosaic Video General trial">Trial available</a></li>
 <li class="lang">EN · JP · ZH · KR</li>
 </ul>
 </div>
@@ -1278,7 +1291,7 @@
 <ul class="product-specs" aria-label="Product specifications">
 <li class="cli">CLI support</li>
 <li class="update">In-app updates</li>
-<li class="trial">Trial available</li>
+<li class="trial"><a href="ai-paint-cleaner.html#trial" aria-label="View the AI Paint Cleaner trial">Trial available</a></li>
 <li class="lang">EN · JP · ZH · KR</li>
 </ul>
 </div>
@@ -1329,7 +1342,7 @@
 <ul class="product-specs" aria-label="Product specifications">
 <li class="cli">CLI support</li>
 <li class="update">In-app updates</li>
-<li class="trial">Trial available</li>
+<li class="trial"><a href="nai-smart-studio.html#trial" aria-label="View the NAI Smart Studio trial">Trial available</a></li>
 <li class="lang">EN · JP · ZH · KR</li>
 </ul>
 </div>
@@ -1431,7 +1444,7 @@
 <ul class="product-specs" aria-label="Product specifications">
 <li class="cli">CLI support</li>
 <li class="update">In-app updates</li>
-<li class="trial">Trial available</li>
+<li class="trial"><a href="frame-craft.html#trial" aria-label="View the Frame Craft trial">Trial available</a></li>
 <li class="lang">EN · JP</li>
 </ul>
 </div>
@@ -1482,7 +1495,7 @@
 <ul class="product-specs" aria-label="Product specifications">
 <li class="cli">CLI support</li>
 <li class="update">In-app updates</li>
-<li class="trial">Trial available</li>
+<li class="trial"><a href="meta-converter.html#trial" aria-label="View the Meta Converter trial">Trial available</a></li>
 <li class="lang">EN · JP</li>
 </ul>
 </div>
