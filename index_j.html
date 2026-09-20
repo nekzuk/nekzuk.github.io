@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="ja">
+<html data-site-page="home" data-product="index" lang="ja">
   <head>
     <script>
       if (!["nekzuk.com", "www.nekzuk.com"].includes(window.location.hostname.toLowerCase())) {
@@ -8,6 +8,7 @@
       }
     </script>
     <meta charset="utf-8" />
+    <meta name="color-scheme" content="dark light" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <!-- SEO Meta Tags -->
     <meta
@@ -384,15 +385,8 @@
         border-radius: 1rem;
         border: 1px solid var(--border);
         overflow: hidden;
-        transition: all 0.3s ease;
         display: flex;
         flex-direction: column;
-      }
-
-      .product-card:hover {
-        transform: translateY(-4px);
-        border-color: rgba(99, 102, 241, 0.4);
-        box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
       }
 
       .card-header {
@@ -516,19 +510,6 @@
 
       .product-specs li.update::before {
         background: #a78bfa;
-      }
-
-      .product-specs li.trial::before {
-        background: #4ade80;
-      }
-
-      .product-specs .trial a {
-        display: inline-flex;
-        align-items: center;
-        min-height: 24px;
-        color: var(--accent);
-        text-decoration: underline;
-        text-underline-offset: 0.2em;
       }
 
       .product-specs li.free::before {
@@ -1070,6 +1051,8 @@
       }
     </script>
     <meta content="ja_JP" property="og:locale" />
+    <link rel="stylesheet" href="assets/site-theme.css" />
+    <link rel="stylesheet" href="assets/home-light.css" media="(prefers-color-scheme: light)" />
   </head>
   <body>
     <div class="bg-effect"></div>
@@ -1149,14 +1132,13 @@
             <ul class="product-specs" aria-label="製品仕様">
               <li class="cli">コマンドライン対応</li>
               <li class="update">アプリ内更新</li>
-              <li class="trial"><a href="automosaic-r18_j.html#trial" aria-label="AutoMosaic R18版の体験版を見る">体験版あり</a></li>
               <li class="lang">日・英・中・韓</li>
             </ul>
           </div>
           <div class="card-footer">
             <span class="price-badge paid">¥3,000</span>
             <div class="button-group">
-              <a class="btn btn-secondary" href="automosaic-r18_j.html" aria-label="AutoMosaic R18版の製品詳細を見る">
+              <a class="btn btn-primary" href="automosaic-r18_j.html" aria-label="AutoMosaic R18版の製品詳細を見る">
                 <svg
                   fill="none"
                   stroke="currentColor"
@@ -1173,24 +1155,7 @@
                 </svg>
                 製品詳細
               </a>
-              <a
-                class="btn btn-primary"
-                aria-label="AutoMosaic R18版をPayhipで直接購入する"
-                href="https://payhip.com/buy?link=3RrzA"
-                rel="noopener"
-                target="_blank"
-              >
-                購入
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewbox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M7 17L17 7M17 7H7M17 7V17"></path>
-                </svg>
-              </a>
+              <a class="btn btn-secondary" href="https://downloads.nekzuk.com/automosaic-r18/AM_R18_360_Trial.zip" aria-label="AutoMosaic R18版の体験版をダウンロード" rel="noopener" target="_blank">体験版DL</a>
             </div>
           </div>
         </article>
@@ -1230,14 +1195,13 @@
             <ul class="product-specs" aria-label="製品仕様">
               <li class="cli">コマンドライン対応</li>
               <li class="update">アプリ内更新</li>
-              <li class="trial"><a href="automosaic_j.html#trial" aria-label="AutoMosaic 通常版の体験版を見る">体験版あり</a></li>
               <li class="lang">日・英・中・韓</li>
             </ul>
           </div>
           <div class="card-footer">
             <span class="price-badge paid">¥3,000</span>
             <div class="button-group">
-              <a class="btn btn-secondary" href="automosaic_j.html" aria-label="AutoMosaic 通常版の製品詳細を見る">
+              <a class="btn btn-primary" href="automosaic_j.html" aria-label="AutoMosaic 通常版の製品詳細を見る">
                 <svg
                   fill="none"
                   stroke="currentColor"
@@ -1254,24 +1218,7 @@
                 </svg>
                 製品詳細
               </a>
-              <a
-                class="btn btn-primary"
-                aria-label="AutoMosaic 通常版をPayhipで直接購入する"
-                href="https://payhip.com/buy?link=XHQ8Y"
-                rel="noopener"
-                target="_blank"
-              >
-                購入
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewbox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M7 17L17 7M17 7H7M17 7V17"></path>
-                </svg>
-              </a>
+              <a class="btn btn-secondary" href="https://downloads.nekzuk.com/automosaic/AM_Gen_360_Trial.zip" aria-label="AutoMosaic 通常版の体験版をダウンロード" rel="noopener" target="_blank">体験版DL</a>
             </div>
           </div>
         </article>
@@ -1311,14 +1258,13 @@
             <ul class="product-specs" aria-label="製品仕様">
               <li class="cli">コマンドライン対応</li>
               <li class="update">アプリ内更新</li>
-              <li class="trial"><a href="automosaic-video-r18_j.html#trial" aria-label="AutoMosaic Video R18版の体験版を見る">体験版あり</a></li>
               <li class="lang">日・英・中・韓</li>
             </ul>
           </div>
           <div class="card-footer">
             <span class="price-badge paid">¥3,500</span>
             <div class="button-group">
-              <a class="btn btn-secondary" href="automosaic-video-r18_j.html" aria-label="AutoMosaic Video R18版の製品詳細を見る">
+              <a class="btn btn-primary" href="automosaic-video-r18_j.html" aria-label="AutoMosaic Video R18版の製品詳細を見る">
                 <svg
                   fill="none"
                   stroke="currentColor"
@@ -1333,24 +1279,7 @@
                 </svg>
                 製品詳細
               </a>
-              <a
-                class="btn btn-primary"
-                aria-label="AutoMosaic Video R18版をPayhipで直接購入する"
-                href="https://payhip.com/buy?link=vSXz1"
-                rel="noopener"
-                target="_blank"
-              >
-                購入
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewbox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M7 17L17 7M17 7H7M17 7V17"></path>
-                </svg>
-              </a>
+              <a class="btn btn-secondary" href="https://downloads.nekzuk.com/automosaic-video-r18/AutoMosaicVideo_R18_Trial_110.zip" aria-label="AutoMosaic Video R18版の体験版をダウンロード" rel="noopener" target="_blank">体験版DL</a>
             </div>
           </div>
         </article>
@@ -1390,14 +1319,13 @@
             <ul class="product-specs" aria-label="製品仕様">
               <li class="cli">コマンドライン対応</li>
               <li class="update">アプリ内更新</li>
-              <li class="trial"><a href="automosaic-video_j.html#trial" aria-label="AutoMosaic Video 通常版の体験版を見る">体験版あり</a></li>
               <li class="lang">日・英・中・韓</li>
             </ul>
           </div>
           <div class="card-footer">
             <span class="price-badge paid">¥3,500</span>
             <div class="button-group">
-              <a class="btn btn-secondary" href="automosaic-video_j.html" aria-label="AutoMosaic Video 通常版の製品詳細を見る">
+              <a class="btn btn-primary" href="automosaic-video_j.html" aria-label="AutoMosaic Video 通常版の製品詳細を見る">
                 <svg
                   fill="none"
                   stroke="currentColor"
@@ -1412,24 +1340,7 @@
                 </svg>
                 製品詳細
               </a>
-              <a
-                class="btn btn-primary"
-                aria-label="AutoMosaic Video 通常版をPayhipで直接購入する"
-                href="https://payhip.com/buy?link=5KVbB"
-                rel="noopener"
-                target="_blank"
-              >
-                購入
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewbox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M7 17L17 7M17 7H7M17 7V17"></path>
-                </svg>
-              </a>
+              <a class="btn btn-secondary" href="https://downloads.nekzuk.com/automosaic-video/AutoMosaicVideo_General_Trial_110.zip" aria-label="AutoMosaic Video 通常版の体験版をダウンロード" rel="noopener" target="_blank">体験版DL</a>
             </div>
           </div>
         </article>
@@ -1469,14 +1380,13 @@
             <ul class="product-specs" aria-label="製品仕様">
               <li class="cli">コマンドライン対応</li>
               <li class="update">アプリ内更新</li>
-              <li class="trial"><a href="ai-paint-cleaner_j.html#trial" aria-label="AI Paint Cleanerの体験版を見る">体験版あり</a></li>
               <li class="lang">日・英・中・韓</li>
             </ul>
           </div>
           <div class="card-footer">
             <span class="price-badge paid">¥2,500</span>
             <div class="button-group">
-              <a class="btn btn-secondary" href="ai-paint-cleaner_j.html" aria-label="AI Paint Cleanerの製品詳細を見る">
+              <a class="btn btn-primary" href="ai-paint-cleaner_j.html" aria-label="AI Paint Cleanerの製品詳細を見る">
                 <svg
                   fill="none"
                   stroke="currentColor"
@@ -1493,24 +1403,7 @@
                 </svg>
                 製品詳細
               </a>
-              <a
-                class="btn btn-primary"
-                aria-label="AI Paint CleanerをPayhipで直接購入する"
-                href="https://payhip.com/buy?link=xJhgW"
-                rel="noopener"
-                target="_blank"
-              >
-                購入
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewbox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M7 17L17 7M17 7H7M17 7V17"></path>
-                </svg>
-              </a>
+              <a class="btn btn-secondary" href="https://downloads.nekzuk.com/aipaintcleaner/AIPaintCleaner_trial_330.zip" aria-label="AI Paint Cleanerの体験版をダウンロード" rel="noopener" target="_blank">体験版DL</a>
             </div>
           </div>
         </article>
@@ -1550,14 +1443,13 @@
             <ul class="product-specs" aria-label="製品仕様">
               <li class="cli">コマンドライン対応</li>
               <li class="update">アプリ内更新</li>
-              <li class="trial"><a href="nai-smart-studio_j.html#trial" aria-label="NAI Smart Studioの体験版を見る">体験版あり</a></li>
               <li class="lang">日・英・中・韓</li>
             </ul>
           </div>
           <div class="card-footer">
             <span class="price-badge paid">¥2,500</span>
             <div class="button-group">
-              <a class="btn btn-secondary" href="nai-smart-studio_j.html" aria-label="NAI Smart Studioの製品詳細を見る">
+              <a class="btn btn-primary" href="nai-smart-studio_j.html" aria-label="NAI Smart Studioの製品詳細を見る">
                 <svg
                   fill="none"
                   stroke="currentColor"
@@ -1574,24 +1466,7 @@
                 </svg>
                 製品詳細
               </a>
-              <a
-                class="btn btn-primary"
-                aria-label="NAI Smart StudioをPayhipで直接購入する"
-                href="https://payhip.com/buy?link=9BmLJ"
-                rel="noopener"
-                target="_blank"
-              >
-                購入
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewbox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M7 17L17 7M17 7H7M17 7V17"></path>
-                </svg>
-              </a>
+              <a class="btn btn-secondary" href="https://downloads.nekzuk.com/naiss/NAI%20Smart%20Studio%20V1.41%20Trial.zip" aria-label="NAI Smart Studioの体験版をダウンロード" rel="noopener" target="_blank">体験版DL</a>
             </div>
           </div>
         </article>
@@ -1638,7 +1513,7 @@
           <div class="card-footer">
             <span class="price-badge free">無料</span>
             <div class="button-group">
-              <a class="btn btn-secondary" href="ai-meta-cleaner_j.html" aria-label="AI Meta Cleanerの製品詳細を見る">
+              <a class="btn btn-primary" href="ai-meta-cleaner_j.html" aria-label="AI Meta Cleanerの製品詳細を見る">
                 <svg
                   fill="none"
                   stroke="currentColor"
@@ -1655,24 +1530,8 @@
                 </svg>
                 製品詳細
               </a>
-              <a
-                class="btn btn-primary"
-                aria-label="AI Meta CleanerをPayhipで直接入手する"
-                href="https://payhip.com/buy?link=E9mhx"
-                rel="noopener"
-                target="_blank"
-              >
-                入手
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewbox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M7 17L17 7M17 7H7M17 7V17"></path>
-                </svg>
-              </a>
+              <a class="btn btn-secondary" href="https://payhip.com/buy?link=E9mhx" aria-label="AI Meta Cleanerの製品版を無料で入手する" rel="noopener" target="_blank">製品版DL</a>
+
             </div>
           </div>
         </article>
@@ -1714,14 +1573,13 @@
             <ul class="product-specs" aria-label="製品仕様">
               <li class="cli">コマンドライン対応</li>
               <li class="update">アプリ内更新</li>
-              <li class="trial"><a href="frame-craft_j.html#trial" aria-label="Frame Craftの体験版を見る">体験版あり</a></li>
               <li class="lang">日・英</li>
             </ul>
           </div>
           <div class="card-footer">
             <span class="price-badge paid">¥500</span>
             <div class="button-group">
-              <a class="btn btn-secondary" href="frame-craft_j.html" aria-label="Frame Craftの製品詳細を見る">
+              <a class="btn btn-primary" href="frame-craft_j.html" aria-label="Frame Craftの製品詳細を見る">
                 <svg
                   fill="none"
                   stroke="currentColor"
@@ -1738,24 +1596,7 @@
                 </svg>
                 製品詳細
               </a>
-              <a
-                class="btn btn-primary"
-                aria-label="Frame CraftをPayhipで直接購入する"
-                href="https://payhip.com/buy?link=OKynY"
-                rel="noopener"
-                target="_blank"
-              >
-                購入
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewbox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M7 17L17 7M17 7H7M17 7V17"></path>
-                </svg>
-              </a>
+              <a class="btn btn-secondary" href="https://downloads.nekzuk.com/framecraft/FrameCraft_v1.5_Trial.zip" aria-label="Frame Craftの体験版をダウンロード" rel="noopener" target="_blank">体験版DL</a>
             </div>
           </div>
         </article>
@@ -1795,14 +1636,13 @@
             <ul class="product-specs" aria-label="製品仕様">
               <li class="cli">コマンドライン対応</li>
               <li class="update">アプリ内更新</li>
-              <li class="trial"><a href="meta-converter_j.html#trial" aria-label="Meta Converterの体験版を見る">体験版あり</a></li>
               <li class="lang">日・英</li>
             </ul>
           </div>
           <div class="card-footer">
             <span class="price-badge paid">¥380</span>
             <div class="button-group">
-              <a class="btn btn-secondary" href="meta-converter_j.html" aria-label="Meta Converterの製品詳細を見る">
+              <a class="btn btn-primary" href="meta-converter_j.html" aria-label="Meta Converterの製品詳細を見る">
                 <svg
                   fill="none"
                   stroke="currentColor"
@@ -1819,24 +1659,7 @@
                 </svg>
                 製品詳細
               </a>
-              <a
-                class="btn btn-primary"
-                aria-label="Meta ConverterをPayhipで直接購入する"
-                href="https://payhip.com/buy?link=BmMpD"
-                rel="noopener"
-                target="_blank"
-              >
-                購入
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewbox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M7 17L17 7M17 7H7M17 7V17"></path>
-                </svg>
-              </a>
+              <a class="btn btn-secondary" href="https://downloads.nekzuk.com/metaconverter/Meta_Converter_Trial_410.zip" aria-label="Meta Converterの体験版をダウンロード" rel="noopener" target="_blank">体験版DL</a>
             </div>
           </div>
         </article>

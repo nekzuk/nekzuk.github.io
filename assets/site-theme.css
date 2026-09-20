@@ -1,0 +1,173 @@
+/* The original page styles remain the dark theme. */
+:root { color-scheme: dark light; }
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --bg: #eceeef;
+    --card: #fcfcfd;
+    --card2: #f3f4f6;
+    --text: #252b33;
+    --muted: #525861;
+    --muted2: #626a74;
+    --bg-dark: #eceeef;
+    --bg-card: #fcfcfd;
+    --bg-card-hover: #f1f3f5;
+    --bg-card-soft: #f3f4f6;
+    --text-primary: #252b33;
+    --text-secondary: #525861;
+    --text-muted: #626a74;
+    --border: #d7dce2;
+    --accent: #006d7d;
+    --primary: #6652c7;
+    --primary-dark: #51419f;
+    --success: #24663f;
+    --warning: #805300;
+    --theme-purple-bg: #efedf8;
+    --theme-purple-border: #dcd6ed;
+    --theme-teal-bg: #e1eff1;
+    --theme-teal-border: #a9ced3;
+    --theme-price-bg: #fff0c7;
+    --theme-green-bg: #eaf5ee;
+  }
+
+  .bg-effect { display: none; }
+  [data-site-page="legal"] h1,
+  [data-site-page="guide"] h1 {
+    color: var(--text-primary);
+    background: none;
+    -webkit-text-fill-color: currentColor;
+  }
+
+  /* Product pages: retain the purchase layout and the purple primary action. */
+  [data-site-page="product"] .pill,
+  [data-site-page="product"] .btn,
+  [data-site-page="product"] .editionSwitch .esItem {
+    background: var(--card2);
+    border-color: var(--border);
+    color: var(--text);
+  }
+  [data-site-page="product"] .btn.primary {
+    background: linear-gradient(135deg, #6652cf, #7355cb);
+    border-color: transparent;
+    color: #fff;
+  }
+  [data-site-page="product"] .btn.primary:hover {
+    background: linear-gradient(135deg, #5845bb, #6548b7);
+  }
+  [data-site-page="product"] .btn.sub,
+  [data-site-page="product"] .btn.download,
+  [data-site-page="product"] .editionSwitch .esItem[aria-current="page"] {
+    color: var(--accent);
+    background: var(--theme-teal-bg);
+    border-color: var(--theme-teal-border);
+  }
+  [data-site-page="product"] .btn.sub:hover,
+  [data-site-page="product"] .btn.download:hover { background: #d4e8eb; }
+  [data-site-page="product"] .btn.ghost { background: transparent; }
+  [data-site-page="product"] .btn.disabled,
+  [data-site-page="product"] .btn.disabled:hover {
+    color: var(--muted2);
+    background: var(--card2);
+    border-color: var(--border);
+  }
+  [data-site-page="product"] .price { color: var(--warning); }
+  [data-product="ai-meta-cleaner"] .price { color: var(--success); }
+  [data-site-page="product"] .heroIcon,
+  [data-site-page="product"] .appIcon { box-shadow: 0 6px 18px rgba(32,38,46,.12); }
+  [data-site-page="product"] .kpi .box,
+  [data-site-page="product"] .shot,
+  [data-site-page="product"] .yt,
+  [data-site-page="product"] code,
+  [data-site-page="product"] .placeholder-section,
+  [data-site-page="product"] .placeholder-box,
+  [data-site-page="product"] .history-row,
+  [data-site-page="product"] .review-excerpts li { border-color: var(--border); }
+  [data-site-page="product"] code { background: var(--card2); }
+  [data-site-page="product"] .hr { background: var(--border); }
+  [data-site-page="product"] .kv .label,
+  [data-site-page="product"] .heroFacts .box .label { opacity: 1; color: var(--muted2); }
+  .benchmark-breakdown,
+  .benchmark-stat.is-success .benchmark-label { color: #167047; }
+  .benchmark-breakdown::before,
+  .benchmark-breakdown::after { background: #a9cbb9; }
+  .benchmark-stat.is-warning .benchmark-label { color: #805300; }
+  .benchmark-stat.is-danger .benchmark-label { color: #b42343; }
+
+  /* Purpose guide and legal pages share the homepage's light palette. */
+  [data-site-page="guide"] .usecase-card,
+  [data-site-page="guide"] .compare-card,
+  [data-site-page="guide"] .notice-card { background: var(--bg-card); }
+  [data-site-page="guide"] .pill-link,
+  [data-site-page="guide"] .tag,
+  [data-site-page="guide"] .product-chip,
+  [data-site-page="guide"] .mini-btn,
+  [data-site-page="guide"] .btn-secondary,
+  [data-site-page="legal"] .lang-btn {
+    background: var(--bg-card-soft);
+    border-color: var(--border);
+    color: var(--text-primary);
+  }
+  [data-site-page="guide"] .pill-link:hover,
+  [data-site-page="guide"] .mini-btn:hover,
+  [data-site-page="guide"] .btn-secondary:hover,
+  [data-site-page="legal"] .lang-btn:hover { background: #e8ebef; }
+  [data-site-page="guide"] .pill-link.active,
+  [data-site-page="guide"] .tag.primary,
+  [data-site-page="legal"] .lang-btn.active {
+    background: var(--theme-purple-bg);
+    border-color: var(--theme-purple-border);
+    color: var(--primary-dark);
+  }
+  [data-site-page="guide"] .tag.paid {
+    color: var(--warning); background: var(--theme-price-bg); border-color: #e8d395;
+  }
+  [data-site-page="guide"] .tag.free {
+    color: var(--success); background: var(--theme-green-bg); border-color: #b7d6c3;
+  }
+  [data-site-page="guide"] .tag.nai {
+    color: #245eac; background: #e6eefb; border-color: #b7cae5;
+  }
+  [data-site-page="guide"] .tag.utility {
+    color: var(--accent); background: var(--theme-teal-bg); border-color: var(--theme-teal-border);
+  }
+  [data-site-page="guide"] .mini-btn.buy,
+  [data-site-page="guide"] .mini-btn.buy:hover {
+    background: linear-gradient(135deg, #6652cf, #7355cb);
+    color: #fff;
+  }
+  [data-site-page="guide"] .final-cta {
+    background: linear-gradient(135deg, #efedf8, #e1eff1);
+    border-color: var(--theme-purple-border);
+  }
+
+  /* The manual has a separate layout and its own color variable names. */
+  [data-site-page="manual"] {
+    --bg-color: #fcfcfd;
+    --text-color: #454d57;
+    --sidebar-bg: #eceeef;
+    --accent-color: #245eac;
+    --border-color: #d7dce2;
+    --panel-bg: #eff1f4;
+    --muted-color: #626a74;
+  }
+  [data-site-page="manual"] h1,
+  [data-site-page="manual"] strong,
+  [data-site-page="manual"] .doc-version,
+  [data-site-page="manual"] .language-switch a.current,
+  [data-site-page="manual"] .sidebar-toggle,
+  [data-site-page="manual"] .sidebar-close { color: #252b33; }
+  [data-site-page="manual"] h2 { color: #245eac; }
+  [data-site-page="manual"] h3 { color: #6250a8; }
+  [data-site-page="manual"] h4 { color: #006d7d; }
+  [data-site-page="manual"] code { color: #805300; }
+  [data-site-page="manual"] .note { background: #e6eefb; }
+  [data-site-page="manual"] .kbd {
+    background: #e7e9ed; color: #454d57; border-bottom-color: #bbc1c9;
+  }
+  [data-site-page="manual"] .screenshot-placeholder {
+    color: #626a74; border-color: #bbc1c9; background: #f3f4f6;
+  }
+  [data-site-page="manual"] ::-webkit-scrollbar-thumb { background: #b7bec8; }
+  [data-site-page="manual"] ::-webkit-scrollbar-thumb:hover { background: #929da9; }
+}

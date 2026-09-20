@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html data-site-page="home" data-product="index" lang="en">
 <head>
   <script>
     if (!["nekzuk.com", "www.nekzuk.com"].includes(window.location.hostname.toLowerCase())) {
@@ -8,6 +8,7 @@
     }
   </script>
 <meta charset="utf-8"/>
+<meta name="color-scheme" content="dark light" />
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- SEO Meta Tags -->
 <meta content="Windows desktop tools for AI image and video creation, editing, and automatic mosaic processing: AutoMosaic Video, AutoMosaic, AI Paint Cleaner, NAI Smart Studio, and more." name="description"/>
@@ -323,15 +324,8 @@
             border-radius: 1rem;
             border: 1px solid var(--border);
             overflow: hidden;
-            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
-        }
-
-        .product-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(99, 102, 241, 0.4);
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
         }
 
         .card-header {
@@ -455,19 +449,6 @@
 
         .product-specs li.update::before {
             background: #a78bfa;
-        }
-
-        .product-specs li.trial::before {
-            background: #4ade80;
-        }
-
-        .product-specs .trial a {
-          display: inline-flex;
-          align-items: center;
-          min-height: 24px;
-          color: var(--accent);
-          text-decoration: underline;
-          text-underline-offset: 0.2em;
         }
 
         .product-specs li.free::before {
@@ -1019,7 +1000,10 @@
   "inLanguage": "en"
 }
 </script>
-<meta content="en_US" property="og:locale"/></head>
+<meta content="en_US" property="og:locale"/>
+    <link rel="stylesheet" href="assets/site-theme.css" />
+    <link rel="stylesheet" href="assets/home-light.css" media="(prefers-color-scheme: light)" />
+</head>
 <body>
 <div class="bg-effect"></div>
 <header>
@@ -1088,14 +1072,13 @@
 <ul class="product-specs" aria-label="Product specifications">
 <li class="cli">CLI support</li>
 <li class="update">In-app updates</li>
-<li class="trial"><a href="automosaic-r18.html#trial" aria-label="View the AutoMosaic R18 trial">Trial available</a></li>
 <li class="lang">EN · JP · ZH · KR</li>
 </ul>
 </div>
 <div class="card-footer">
 <span class="price-badge paid">$20</span>
 <div class="button-group">
-<a class="btn btn-secondary" href="automosaic-r18.html" aria-label="View AutoMosaic R18 product details">
+<a class="btn btn-primary" href="automosaic-r18.html" aria-label="View AutoMosaic R18 product details">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
@@ -1104,12 +1087,7 @@
 </svg>
                             Product Details
                         </a>
-<a class="btn btn-primary" href="https://payhip.com/buy?link=BO3TR" rel="noopener" target="_blank" aria-label="Buy AutoMosaic R18 via Payhip checkout">
-                            Buy Now
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M7 17L17 7M17 7H7M17 7V17"></path>
-</svg>
-</a>
+<a class="btn btn-secondary" href="https://downloads.nekzuk.com/automosaic-r18/AM_R18_360_Trial.zip" aria-label="Download the AutoMosaic R18 trial" rel="noopener" target="_blank">Download Trial</a>
 </div>
 </div>
 </article>
@@ -1139,14 +1117,13 @@
 <ul class="product-specs" aria-label="Product specifications">
 <li class="cli">CLI support</li>
 <li class="update">In-app updates</li>
-<li class="trial"><a href="automosaic.html#trial" aria-label="View the AutoMosaic General trial">Trial available</a></li>
 <li class="lang">EN · JP · ZH · KR</li>
 </ul>
 </div>
 <div class="card-footer">
 <span class="price-badge paid">$20</span>
 <div class="button-group">
-<a class="btn btn-secondary" href="automosaic.html" aria-label="View AutoMosaic General product details">
+<a class="btn btn-primary" href="automosaic.html" aria-label="View AutoMosaic General product details">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
@@ -1155,12 +1132,7 @@
 </svg>
                             Product Details
                         </a>
-<a class="btn btn-primary" href="https://payhip.com/buy?link=mit2r" rel="noopener" target="_blank" aria-label="Buy AutoMosaic General via Payhip checkout">
-                            Buy Now
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M7 17L17 7M17 7H7M17 7V17"></path>
-</svg>
-</a>
+<a class="btn btn-secondary" href="https://downloads.nekzuk.com/automosaic/AM_Gen_360_Trial.zip" aria-label="Download the AutoMosaic General trial" rel="noopener" target="_blank">Download Trial</a>
 </div>
 </div>
 </article>
@@ -1190,14 +1162,13 @@
 <ul class="product-specs" aria-label="Product specifications">
 <li class="cli">CLI support</li>
 <li class="update">In-app updates</li>
-<li class="trial"><a href="automosaic-video-r18.html#trial" aria-label="View the AutoMosaic Video R18 trial">Trial available</a></li>
 <li class="lang">EN · JP · ZH · KR</li>
 </ul>
 </div>
 <div class="card-footer">
 <span class="price-badge paid">$25</span>
 <div class="button-group">
-<a class="btn btn-secondary" href="automosaic-video-r18.html" aria-label="View AutoMosaic Video R18 product details">
+<a class="btn btn-primary" href="automosaic-video-r18.html" aria-label="View AutoMosaic Video R18 product details">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
@@ -1206,12 +1177,7 @@
 </svg>
                             Product Details
                         </a>
-<a class="btn btn-primary" href="https://payhip.com/buy?link=6eOqg" rel="noopener" target="_blank" aria-label="Buy AutoMosaic Video R18 via Payhip checkout">
-                            Buy Now
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M7 17L17 7M17 7H7M17 7V17"></path>
-</svg>
-</a>
+<a class="btn btn-secondary" href="https://downloads.nekzuk.com/automosaic-video-r18/AutoMosaicVideo_R18_Trial_110.zip" aria-label="Download the AutoMosaic Video R18 trial" rel="noopener" target="_blank">Download Trial</a>
 </div>
 </div>
 </article>
@@ -1241,14 +1207,13 @@
 <ul class="product-specs" aria-label="Product specifications">
 <li class="cli">CLI support</li>
 <li class="update">In-app updates</li>
-<li class="trial"><a href="automosaic-video.html#trial" aria-label="View the AutoMosaic Video General trial">Trial available</a></li>
 <li class="lang">EN · JP · ZH · KR</li>
 </ul>
 </div>
 <div class="card-footer">
 <span class="price-badge paid">$25</span>
 <div class="button-group">
-<a class="btn btn-secondary" href="automosaic-video.html" aria-label="View AutoMosaic Video General product details">
+<a class="btn btn-primary" href="automosaic-video.html" aria-label="View AutoMosaic Video General product details">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
@@ -1257,12 +1222,7 @@
 </svg>
                             Product Details
                         </a>
-<a class="btn btn-primary" href="https://payhip.com/buy?link=6H1fN" rel="noopener" target="_blank" aria-label="Buy AutoMosaic Video General via Payhip checkout">
-                            Buy Now
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M7 17L17 7M17 7H7M17 7V17"></path>
-</svg>
-</a>
+<a class="btn btn-secondary" href="https://downloads.nekzuk.com/automosaic-video/AutoMosaicVideo_General_Trial_110.zip" aria-label="Download the AutoMosaic Video General trial" rel="noopener" target="_blank">Download Trial</a>
 </div>
 </div>
 </article>
@@ -1291,14 +1251,13 @@
 <ul class="product-specs" aria-label="Product specifications">
 <li class="cli">CLI support</li>
 <li class="update">In-app updates</li>
-<li class="trial"><a href="ai-paint-cleaner.html#trial" aria-label="View the AI Paint Cleaner trial">Trial available</a></li>
 <li class="lang">EN · JP · ZH · KR</li>
 </ul>
 </div>
 <div class="card-footer">
 <span class="price-badge paid">$18</span>
 <div class="button-group">
-<a class="btn btn-secondary" href="ai-paint-cleaner.html" aria-label="View AI Paint Cleaner product details">
+<a class="btn btn-primary" href="ai-paint-cleaner.html" aria-label="View AI Paint Cleaner product details">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
@@ -1307,12 +1266,7 @@
 </svg>
                             Product Details
                         </a>
-<a class="btn btn-primary" href="https://payhip.com/buy?link=KVIw4" rel="noopener" target="_blank" aria-label="Buy AI Paint Cleaner via Payhip checkout">
-                            Buy Now
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M7 17L17 7M17 7H7M17 7V17"></path>
-</svg>
-</a>
+<a class="btn btn-secondary" href="https://downloads.nekzuk.com/aipaintcleaner/AIPaintCleaner_trial_330.zip" aria-label="Download the AI Paint Cleaner trial" rel="noopener" target="_blank">Download Trial</a>
 </div>
 </div>
 </article>
@@ -1342,14 +1296,13 @@
 <ul class="product-specs" aria-label="Product specifications">
 <li class="cli">CLI support</li>
 <li class="update">In-app updates</li>
-<li class="trial"><a href="nai-smart-studio.html#trial" aria-label="View the NAI Smart Studio trial">Trial available</a></li>
 <li class="lang">EN · JP · ZH · KR</li>
 </ul>
 </div>
 <div class="card-footer">
 <span class="price-badge paid">$18</span>
 <div class="button-group">
-<a class="btn btn-secondary" href="nai-smart-studio.html" aria-label="View NAI Smart Studio product details">
+<a class="btn btn-primary" href="nai-smart-studio.html" aria-label="View NAI Smart Studio product details">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
@@ -1358,12 +1311,7 @@
 </svg>
                             Product Details
                         </a>
-<a class="btn btn-primary" href="https://payhip.com/buy?link=5mMZp" rel="noopener" target="_blank" aria-label="Buy NAI Smart Studio via Payhip checkout">
-                            Buy Now
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M7 17L17 7M17 7H7M17 7V17"></path>
-</svg>
-</a>
+<a class="btn btn-secondary" href="https://downloads.nekzuk.com/naiss/NAI%20Smart%20Studio%20V1.41%20Trial.zip" aria-label="Download the NAI Smart Studio trial" rel="noopener" target="_blank">Download Trial</a>
 </div>
 </div>
 </article>
@@ -1400,7 +1348,7 @@
 <div class="card-footer">
 <span class="price-badge free">Free</span>
 <div class="button-group">
-<a class="btn btn-secondary" href="ai-meta-cleaner.html" aria-label="View AI Meta Cleaner product details">
+<a class="btn btn-primary" href="ai-meta-cleaner.html" aria-label="View AI Meta Cleaner product details">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
@@ -1409,12 +1357,8 @@
 </svg>
                             Product Details
                         </a>
-<a class="btn btn-primary" href="https://payhip.com/buy?link=LdoFB" rel="noopener" target="_blank" aria-label="Get AI Meta Cleaner for free on Payhip">
-                            Get
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M7 17L17 7M17 7H7M17 7V17"></path>
-</svg>
-</a>
+<a class="btn btn-secondary" href="https://payhip.com/buy?link=LdoFB" aria-label="Get the full version of AI Meta Cleaner for free" rel="noopener" target="_blank">Get Full Version</a>
+
 </div>
 </div>
 </article>
@@ -1444,14 +1388,13 @@
 <ul class="product-specs" aria-label="Product specifications">
 <li class="cli">CLI support</li>
 <li class="update">In-app updates</li>
-<li class="trial"><a href="frame-craft.html#trial" aria-label="View the Frame Craft trial">Trial available</a></li>
 <li class="lang">EN · JP</li>
 </ul>
 </div>
 <div class="card-footer">
 <span class="price-badge paid">$4</span>
 <div class="button-group">
-<a class="btn btn-secondary" href="frame-craft.html" aria-label="View Frame Craft product details">
+<a class="btn btn-primary" href="frame-craft.html" aria-label="View Frame Craft product details">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
@@ -1460,12 +1403,7 @@
 </svg>
                             Product Details
                         </a>
-<a class="btn btn-primary" href="https://payhip.com/buy?link=D0wG5" rel="noopener" target="_blank" aria-label="Buy Frame Craft via Payhip checkout">
-                            Buy Now
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M7 17L17 7M17 7H7M17 7V17"></path>
-</svg>
-</a>
+<a class="btn btn-secondary" href="https://downloads.nekzuk.com/framecraft/FrameCraft_v1.5_Trial.zip" aria-label="Download the Frame Craft trial" rel="noopener" target="_blank">Download Trial</a>
 </div>
 </div>
 </article>
@@ -1495,14 +1433,13 @@
 <ul class="product-specs" aria-label="Product specifications">
 <li class="cli">CLI support</li>
 <li class="update">In-app updates</li>
-<li class="trial"><a href="meta-converter.html#trial" aria-label="View the Meta Converter trial">Trial available</a></li>
 <li class="lang">EN · JP</li>
 </ul>
 </div>
 <div class="card-footer">
 <span class="price-badge paid">$3</span>
 <div class="button-group">
-<a class="btn btn-secondary" href="meta-converter.html" aria-label="View Meta Converter product details">
+<a class="btn btn-primary" href="meta-converter.html" aria-label="View Meta Converter product details">
 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 <polyline points="14 2 14 8 20 8"></polyline>
@@ -1511,12 +1448,7 @@
 </svg>
                             Product Details
                         </a>
-<a class="btn btn-primary" href="https://payhip.com/buy?link=4Gwc2" rel="noopener" target="_blank" aria-label="Buy Meta Converter via Payhip checkout">
-                            Buy Now
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M7 17L17 7M17 7H7M17 7V17"></path>
-</svg>
-</a>
+<a class="btn btn-secondary" href="https://downloads.nekzuk.com/metaconverter/Meta_Converter_Trial_410.zip" aria-label="Download the Meta Converter trial" rel="noopener" target="_blank">Download Trial</a>
 </div>
 </div>
 </article>

@@ -1,0 +1,67 @@
+/* Homepage light palette. Layout, typography and interactions use the original
+   page styles in both themes, including all responsive breakpoints. */
+:root {
+  color-scheme: light;
+  --primary: #6652c7;
+  --primary-dark: #51419f;
+  --accent: #006d7d;
+  --bg-dark: #eceeef;
+  --bg-card: #fcfcfd;
+  --bg-card-hover: #f1f3f5;
+  --text-primary: #252b33;
+  --text-secondary: #525861;
+  --text-muted: #626a74;
+  --border: #d7dce2;
+  --soft-bg: #f3f4f6;
+  --soft-purple: #efedf8;
+  --footer-bg: #f7f8fa;
+  --hero-top: #eceef1;
+  --hero-bottom: #f5f6f8;
+  --button-bg: linear-gradient(135deg, #6652cf, #7355cb);
+  --button-hover: linear-gradient(135deg, #5845bb, #6548b7);
+  --button-text: #ffffff;
+  --free-bg: #eaf5ee;
+  --free-text: #24663f;
+  --price-bg: #fff0c7;
+  --price-text: #805300;
+  --shadow: 0 3px 14px rgba(32,38,46,.035);
+}
+body { background: var(--bg-dark); color: var(--text-primary); }
+.bg-effect { display: none; }
+header {
+  background: linear-gradient(180deg, var(--hero-top), var(--hero-bottom));
+  border-bottom-color: var(--border);
+}
+.header-eyebrow {
+  color: var(--text-secondary);
+}
+h1 {
+  color: var(--text-primary);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+.lang-btn { background: var(--bg-card); border-color: var(--border); color: var(--text-secondary); }
+.lang-btn:hover { background: var(--soft-bg); color: var(--text-primary); }
+.lang-btn.active { background: var(--soft-purple); color: var(--primary-dark); border-color: #dcd6ed; }
+.news-section, .product-card, .workflow-section { box-shadow: var(--shadow); }
+.news-tag { background: var(--soft-purple); color: var(--primary-dark); border-color: transparent; }
+.features-list li { background: var(--soft-bg); border-color: var(--border); color: var(--text-secondary); }
+.product-specs { border-top-color: var(--border); }
+.product-specs li::before { background: var(--text-muted); }
+.product-specs li.cli::before { background: #3974cf; }
+.product-specs li.update::before { background: #8661d1; }
+.product-specs li.lang::before { background: #168996; }
+.product-specs li.free::before { background: #268153; }
+.card-footer { background: var(--footer-bg); border-top-color: var(--border); }
+.price-badge.paid { background: var(--price-bg); color: var(--price-text); }
+.price-badge.free { background: var(--free-bg); color: var(--free-text); }
+.btn-primary { background: var(--button-bg); color: var(--button-text); }
+.btn-primary:hover { background: var(--button-hover); }
+.btn-secondary { background: var(--bg-card); color: var(--text-primary); border-color: var(--border); }
+.btn-secondary:hover { background: var(--soft-bg); color: var(--text-primary); border-color: var(--accent); }
+.coming-soon-banner { background: transparent; border-color: var(--border); }
+.coming-soon-icon, .coming-soon-label { color: var(--text-muted); }
+.workflow-step { background: var(--soft-bg); }
+.workflow-step.highlight { background: var(--soft-purple); border-color: #dcd6ed; }
+.workflow-step.highlight .workflow-step-name { color: var(--primary-dark); }
+footer { background: var(--bg-card); }
