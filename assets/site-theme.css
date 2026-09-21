@@ -1,3 +1,15 @@
+/* Shared font stacks follow each language's homepage. Manuals keep their own fonts. */
+html[lang="ja"]:not([data-site-page="manual"]) body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP",
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic,
+    Meiryo, sans-serif;
+}
+
+html[lang="en"]:not([data-site-page="manual"]) body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
 /* The original page styles remain the dark theme. */
 :root { color-scheme: dark light; }
 
