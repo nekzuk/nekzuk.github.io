@@ -100,11 +100,11 @@ html[lang="en"]:not([data-site-page="manual"]) body {
   [data-site-page="product"] .kv .label,
   [data-site-page="product"] .heroFacts .box .label { opacity: 1; color: var(--muted2); }
   .benchmark-breakdown,
-  .benchmark-stat.is-success .benchmark-label { color: #167047; }
+  .benchmark-stat.is-success .benchmark-label { color: #0072b2; }
   .benchmark-breakdown::before,
-  .benchmark-breakdown::after { background: #a9cbb9; }
-  .benchmark-stat.is-warning .benchmark-label { color: #805300; }
-  .benchmark-stat.is-danger .benchmark-label { color: #b42343; }
+  .benchmark-breakdown::after { background: #a3cce3; }
+  .benchmark-stat.is-warning .benchmark-label { color: #9b5c00; }
+  .benchmark-stat.is-danger .benchmark-label { color: #9b3b76; }
 
   /* Purpose guide and legal pages share the homepage's light palette. */
   [data-site-page="guide"] .usecase-card,
