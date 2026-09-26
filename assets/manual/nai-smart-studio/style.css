@@ -1,4 +1,5 @@
 :root {
+  color-scheme: dark light;
   --bg-color: #1a1b26;
   --text-color: #a9b1d6;
   --sidebar-bg: #16161e;
@@ -468,4 +469,42 @@ img.screenshot {
     width: 100%;
     justify-content: flex-end;
   }
+}
+
+/* Manual palette from assets/site-theme.css; keep this source self-contained. */
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --bg-color: #fcfcfd;
+    --text-color: #454d57;
+    --sidebar-bg: #eceeef;
+    --accent-color: #245eac;
+    --border-color: #d7dce2;
+    --panel-bg: #eff1f4;
+    --muted-color: #626a74;
+  }
+
+  h1,
+  strong,
+  .doc-version,
+  .language-switch a.current,
+  .sidebar-toggle,
+  .sidebar-close { color: #252b33; }
+  h2 { color: #245eac; }
+  h3 { color: #6250a8; }
+  h4 { color: #006d7d; }
+  code { color: #805300; }
+  .note { background: #e6eefb; }
+  .kbd {
+    background: #e7e9ed;
+    color: #454d57;
+    border-bottom-color: #bbc1c9;
+  }
+  .screenshot-placeholder {
+    color: #626a74;
+    border-color: #bbc1c9;
+    background: #f3f4f6;
+  }
+  ::-webkit-scrollbar-thumb { background: #b7bec8; }
+  ::-webkit-scrollbar-thumb:hover { background: #929da9; }
 }
