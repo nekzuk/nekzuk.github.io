@@ -383,6 +383,17 @@
         min-height: 24px;
       }
 
+      .benchmark-block {
+        margin-top: 1rem;
+        padding: 0.85rem;
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+      }
+      .benchmark-pending {
+        margin: 0;
+        color: var(--muted);
+      }
+
       /* YouTube thumbnail link */
       .yt {
         position: relative;
@@ -1204,15 +1215,12 @@
             <span class="lang-ja">基本的な使い方</span>
           </h2>
           <ol class="lang-ja">
-            <li>「ファイルを追加」または「フォルダを追加」で入力動画・アニメーションを選択</li>
-            <li>検出設定と処理モードを選択</li>
-            <li>モザイク・ぼかし・塗りつぶしと境界設定を調整</li>
-            <li>主出力の形式・codecと、品質・ビットレート・目標容量のいずれかを選択</li>
-            <li>処理を開始し、preflightの警告内容を確認</li>
-            <li>完了後に出力全体を確認し、必要に応じて処理範囲を微調整</li>
+            <li>入力動画・アニメーションを追加</li>
+            <li>検出設定・処理モード・出力設定を選択</li>
+            <li>処理を開始し、表示される警告を確認</li>
+            <li>出力全体を確認し、必要に応じて微調整</li>
           </ol>
-        </section>
-        <section class="section">
+          <div class="hr"></div>
           <h2><span class="lang-ja">動作環境</span></h2>
           <ul>
             <li><span class="lang-ja">OS: Windows 10/11(64bit)</span></li>
@@ -1245,6 +1253,25 @@
                 <li>先頭音声ストリームの保持に対応</li>
               </ul>
             </div>
+          </div>
+        </section>
+        <section class="section" id="examples">
+          <h2><span class="lang-ja">処理例(Before / After)と検出精度</span></h2>
+          <h3><span class="lang-ja">処理サンプル</span></h3>
+          <p style="margin-top: 0.5rem">
+            <a
+              class="btn"
+              href="https://booth.pximg.net/ee36a4ce-6d69-430c-bb8c-fd52cad286b6/i/8632214/b21fa420-2fc0-485d-806f-9db79bb951de.jpg"
+              rel="noopener"
+              target="_blank"
+            >
+              <span class="lang-ja">→ 処理サンプルを見る</span>
+            </a>
+          </p>
+          <div class="hr"></div>
+          <h3><span class="lang-ja">検出精度データ</span></h3>
+          <div class="benchmark-block lang-ja">
+            <p class="benchmark-pending">測定結果は準備中です。</p>
           </div>
         </section>
         <section class="section" id="ui">

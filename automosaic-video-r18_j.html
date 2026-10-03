@@ -383,6 +383,55 @@
         min-height: 24px;
       }
 
+      .benchmark-block {
+        margin-top: 1rem;
+        padding: 0.85rem;
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+      }
+      .benchmark-title {
+        margin: 0 0 0.2rem;
+        font-size: 1.05rem;
+      }
+      .benchmark-meta {
+        font-size: 0.83rem;
+        line-height: 1.65;
+        color: var(--muted);
+        margin: 0 0 0.65rem;
+      }
+      .video-stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        border-top: 1px solid var(--border);
+      }
+      .video-stat { display: flex; flex-direction: column; min-width: 0; padding: 0.6rem 0.45rem 0; }
+      .video-stat + .video-stat { border-left: 1px solid var(--border); }
+      .video-stat-label { font-size: 0.86rem; font-weight: 700; overflow-wrap: anywhere; }
+      .video-stat-value { white-space: nowrap; margin-top: auto; padding-top: 0.2rem; line-height: 1.5; color: var(--text); }
+      .video-stat-value strong { font-size: 1.1rem; }
+      .video-stat-value span { font-size: 0.9rem; font-weight: 650; }
+      .stat-ok { color: #56b4e9; }
+      .stat-missed { color: #e69f00; }
+      .stat-extra { color: #cc79a7; }
+      @media (prefers-color-scheme: light) {
+        .stat-ok { color: #0072b2; }
+        .stat-missed { color: #9b5c00; }
+        .stat-extra { color: #9b3b76; }
+      }
+      @media (max-width: 560px) {
+        .video-stats { grid-template-columns: 1fr; }
+        .video-stat {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) auto;
+          align-items: center;
+          gap: 0.25rem;
+          padding: 0.5rem 0.1rem;
+        }
+        .video-stat + .video-stat { border-left: 0; border-top: 1px solid var(--border); }
+        .video-stat-value { margin: 0; padding-top: 0; }
+        .video-stat:last-child { padding-bottom: 0; }
+      }
+
       /* YouTube thumbnail link */
       .yt {
         position: relative;
@@ -1202,15 +1251,12 @@
             <span class="lang-ja">基本的な使い方</span>
           </h2>
           <ol class="lang-ja">
-            <li>「ファイルを追加」または「フォルダを追加」で入力動画・アニメーションを選択</li>
-            <li>検出設定と処理モードを選択</li>
-            <li>モザイク・ぼかし・塗りつぶしと境界設定を調整</li>
-            <li>主出力の形式・codecと、品質・ビットレート・目標容量のいずれかを選択</li>
-            <li>処理を開始し、preflightの警告内容を確認</li>
-            <li>完了後に出力全体を確認し、必要に応じて処理範囲を微調整</li>
+            <li>入力動画・アニメーションを追加</li>
+            <li>検出設定・処理モード・出力設定を選択</li>
+            <li>処理を開始し、表示される警告を確認</li>
+            <li>出力全体を確認し、必要に応じて微調整</li>
           </ol>
-        </section>
-        <section class="section">
+          <div class="hr"></div>
           <h2><span class="lang-ja">動作環境</span></h2>
           <ul>
             <li><span class="lang-ja">OS: Windows 10/11(64bit)</span></li>
@@ -1242,6 +1288,40 @@
                 <li>アニメーションGIF / アニメーションWebP（入力と同じ形式で出力）</li>
                 <li>先頭音声ストリームの保持に対応</li>
               </ul>
+            </div>
+          </div>
+        </section>
+        <section class="section" id="examples">
+          <h2><span class="lang-ja">処理例(Before / After)と検出精度</span></h2>
+          <h3><span class="lang-ja">処理サンプル</span></h3>
+          <p style="margin-top: 0.5rem">
+            <a
+              class="btn"
+              href="https://booth.pximg.net/ee36a4ce-6d69-430c-bb8c-fd52cad286b6/i/8632201/98897686-28ca-4a0f-89ca-03948773c153.jpg"
+              rel="noopener"
+              target="_blank"
+            >
+              <span class="lang-ja">→ 処理サンプルを見る</span>
+            </a>
+          </p>
+          <div class="hr"></div>
+          <h3><span class="lang-ja">検出精度データ</span></h3>
+          <div class="benchmark-block lang-ja">
+            <h4 class="benchmark-title">アニメ調動画（1動画：30秒未満）</h4>
+            <p class="benchmark-meta">サンプル数 22本 / 合計動画時間 357秒 / ③高精度検出（性器のみ）</p>
+            <div class="video-stats">
+              <div class="video-stat stat-ok">
+                <div class="video-stat-label">手直し不要</div>
+                <div class="video-stat-value"><strong>18本</strong><span>（81.8%）</span></div>
+              </div>
+              <div class="video-stat stat-missed">
+                <div class="video-stat-label">処理漏れあり</div>
+                <div class="video-stat-value"><strong>1本</strong><span>（4.5%）</span></div>
+              </div>
+              <div class="video-stat stat-extra">
+                <div class="video-stat-label">不要な処理あり</div>
+                <div class="video-stat-value"><strong>3本</strong><span>（13.6%）</span></div>
+              </div>
             </div>
           </div>
         </section>

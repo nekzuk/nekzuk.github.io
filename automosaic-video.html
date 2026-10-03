@@ -383,6 +383,17 @@
         min-height: 24px;
       }
 
+      .benchmark-block {
+        margin-top: 1rem;
+        padding: 0.85rem;
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+      }
+      .benchmark-pending {
+        margin: 0;
+        color: var(--muted);
+      }
+
       /* YouTube thumbnail link */
       .yt {
         position: relative;
@@ -1137,15 +1148,12 @@
             <span class="lang-en">How to use</span>
           </h2>
           <ol class="lang-en">
-            <li>Add videos or animated images with <b>Add Files</b> or <b>Add Folder</b></li>
-            <li>Select a Detection Preset and Processing Mode</li>
-            <li>Select Mosaic, Blur, or Solid Fill and adjust boundary correction and feathering as needed</li>
-            <li>Choose quality, video bitrate, or approximate target size, then confirm the destination</li>
-            <li>Start processing and review any preflight warnings</li>
-            <li>Review the result and use Fine-tune or Manual Edit when needed</li>
+            <li>Add videos or animated images</li>
+            <li>Choose detection, processing, and output settings</li>
+            <li>Start processing and review any warnings</li>
+            <li>Review the entire result and fine-tune as needed</li>
           </ol>
-        </section>
-        <section class="section">
+          <div class="hr"></div>
           <h2><span class="lang-en">System Requirements</span></h2>
           <ul>
             <li><span class="lang-en">OS: Windows 10/11 (64-bit)</span></li>
@@ -1180,6 +1188,25 @@
                 <li>Preserves the first audio stream</li>
               </ul>
             </div>
+          </div>
+        </section>
+        <section class="section" id="examples">
+          <h2><span class="lang-en">Before / After &amp; Detection Accuracy</span></h2>
+          <h3><span class="lang-en">Processing Sample</span></h3>
+          <p style="margin-top: 0.5rem">
+            <a
+              class="btn"
+              href="https://booth.pximg.net/ee36a4ce-6d69-430c-bb8c-fd52cad286b6/i/8632214/b21fa420-2fc0-485d-806f-9db79bb951de.jpg"
+              rel="noopener"
+              target="_blank"
+            >
+              <span class="lang-en">→ View processing sample</span>
+            </a>
+          </p>
+          <div class="hr"></div>
+          <h3><span class="lang-en">Detection Accuracy Data</span></h3>
+          <div class="benchmark-block lang-en">
+            <p class="benchmark-pending">Benchmark results are not yet available.</p>
           </div>
         </section>
         <section class="section" id="ui">

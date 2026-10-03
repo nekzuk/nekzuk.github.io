@@ -382,6 +382,55 @@
         min-height: 24px;
       }
 
+      .benchmark-block {
+        margin-top: 1rem;
+        padding: 0.85rem;
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+      }
+      .benchmark-title {
+        margin: 0 0 0.2rem;
+        font-size: 1.05rem;
+      }
+      .benchmark-meta {
+        font-size: 0.83rem;
+        line-height: 1.65;
+        color: var(--muted);
+        margin: 0 0 0.65rem;
+      }
+      .video-stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        border-top: 1px solid var(--border);
+      }
+      .video-stat { display: flex; flex-direction: column; min-width: 0; padding: 0.6rem 0.45rem 0; }
+      .video-stat + .video-stat { border-left: 1px solid var(--border); }
+      .video-stat-label { font-size: 0.86rem; font-weight: 700; overflow-wrap: anywhere; }
+      .video-stat-value { white-space: nowrap; margin-top: auto; padding-top: 0.2rem; line-height: 1.5; color: var(--text); }
+      .video-stat-value strong { font-size: 1.1rem; }
+      .video-stat-value span { font-size: 0.9rem; font-weight: 650; }
+      .stat-ok { color: #56b4e9; }
+      .stat-missed { color: #e69f00; }
+      .stat-extra { color: #cc79a7; }
+      @media (prefers-color-scheme: light) {
+        .stat-ok { color: #0072b2; }
+        .stat-missed { color: #9b5c00; }
+        .stat-extra { color: #9b3b76; }
+      }
+      @media (max-width: 560px) {
+        .video-stats { grid-template-columns: 1fr; }
+        .video-stat {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) auto;
+          align-items: center;
+          gap: 0.25rem;
+          padding: 0.5rem 0.1rem;
+        }
+        .video-stat + .video-stat { border-left: 0; border-top: 1px solid var(--border); }
+        .video-stat-value { margin: 0; padding-top: 0; }
+        .video-stat:last-child { padding-bottom: 0; }
+      }
+
       /* YouTube thumbnail link */
       .yt {
         position: relative;
@@ -1134,15 +1183,12 @@
             <span class="lang-en">How to use</span>
           </h2>
           <ol class="lang-en">
-            <li>Add videos or animated images with <b>Add Files</b> or <b>Add Folder</b></li>
-            <li>Select a Detection Preset and Processing Mode</li>
-            <li>Select Mosaic, Blur, or Solid Fill and adjust boundary correction and feathering as needed</li>
-            <li>Choose quality, video bitrate, or approximate target size, then confirm the destination</li>
-            <li>Start processing and review any preflight warnings</li>
-            <li>Review the result and use Fine-tune or Manual Edit when needed</li>
+            <li>Add videos or animated images</li>
+            <li>Choose detection, processing, and output settings</li>
+            <li>Start processing and review any warnings</li>
+            <li>Review the entire result and fine-tune as needed</li>
           </ol>
-        </section>
-        <section class="section">
+          <div class="hr"></div>
           <h2><span class="lang-en">System Requirements</span></h2>
           <ul>
             <li><span class="lang-en">OS: Windows 10/11 (64-bit)</span></li>
@@ -1176,6 +1222,40 @@
                 <li>Animated GIF / Animated WebP (saved in the same format as the input)</li>
                 <li>Preserves the first audio stream</li>
               </ul>
+            </div>
+          </div>
+        </section>
+        <section class="section" id="examples">
+          <h2><span class="lang-en">Before / After &amp; Detection Accuracy</span></h2>
+          <h3><span class="lang-en">Processing Sample</span></h3>
+          <p style="margin-top: 0.5rem">
+            <a
+              class="btn"
+              href="https://booth.pximg.net/ee36a4ce-6d69-430c-bb8c-fd52cad286b6/i/8632201/98897686-28ca-4a0f-89ca-03948773c153.jpg"
+              rel="noopener"
+              target="_blank"
+            >
+              <span class="lang-en">→ View processing sample</span>
+            </a>
+          </p>
+          <div class="hr"></div>
+          <h3><span class="lang-en">Detection Accuracy Data</span></h3>
+          <div class="benchmark-block lang-en">
+            <h4 class="benchmark-title">Anime-style videos (under 30 seconds each)</h4>
+            <p class="benchmark-meta">22 sample videos / Total duration: 357 sec / ③ High-accuracy detection (genitals only)</p>
+            <div class="video-stats">
+              <div class="video-stat stat-ok">
+                <div class="video-stat-label">No touch-ups</div>
+                <div class="video-stat-value"><strong>18</strong><span> (81.8%)</span></div>
+              </div>
+              <div class="video-stat stat-missed">
+                <div class="video-stat-label">Missed masking</div>
+                <div class="video-stat-value"><strong>1</strong><span> (4.5%)</span></div>
+              </div>
+              <div class="video-stat stat-extra">
+                <div class="video-stat-label">Extra masking</div>
+                <div class="video-stat-value"><strong>3</strong><span> (13.6%)</span></div>
+              </div>
             </div>
           </div>
         </section>
