@@ -13,9 +13,12 @@
       }
 
       var address = user + "@" + domain;
-      link.href = "mailto:" + address;
-      link.textContent = address;
-      link.setAttribute("aria-label", address);
+      var label = link.getAttribute("data-email-label") || address;
+      var subject = link.getAttribute("data-email-subject");
+      link.href = "mailto:" + address +
+        (subject ? "?subject=" + encodeURIComponent(subject) : "");
+      link.textContent = label;
+      link.setAttribute("aria-label", label === address ? address : label + " (" + address + ")");
     });
   }
 
