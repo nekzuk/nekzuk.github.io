@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: .4rem .6rem;
-  margin-bottom: .75rem;
+  margin-top: .75rem;
   color: var(--muted);
   font-size: .9rem;
 }
