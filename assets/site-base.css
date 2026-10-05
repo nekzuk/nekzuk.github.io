@@ -1,0 +1,81 @@
+/* Shared font stacks follow each language's homepage. Manuals keep their own fonts. */
+html[lang="ja"]:not([data-site-page="manual"]) body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP",
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic,
+    Meiryo, sans-serif;
+}
+
+html[lang="en"]:not([data-site-page="manual"]) body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* The original page styles remain the dark theme. */
+:root { color-scheme: dark light; }
+
+/* Language and appearance controls share the upper-right utility row. */
+.site-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: .75rem;
+  margin-left: auto;
+}
+.site-controls .lang-switch {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  gap: .5rem;
+  width: auto;
+  margin: 0;
+}
+.site-controls .small { white-space: nowrap; }
+.site-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text, var(--text-primary));
+  cursor: pointer;
+}
+.site-theme-toggle:hover {
+  background: var(--card2, var(--bg-card));
+  border-color: var(--accent);
+}
+.site-theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.site-theme-toggle[hidden] { display: none; }
+.site-theme-toggle svg { width: 20px; height: 20px; }
+/* The icon represents the current appearance; the label also explains the action. */
+.site-theme-toggle .site-theme-sun,
+[data-site-theme="light"] .site-theme-toggle .site-theme-moon { display: none; }
+[data-site-theme="light"] .site-theme-toggle .site-theme-sun { display: block; }
+[data-site-page="home"] header,
+[data-site-page="legal"] header { padding-top: 1.25rem; }
+[data-site-page="home"] header > .site-controls {
+  max-width: 1152px;
+  margin: 0 auto 1.5rem;
+}
+[data-site-page="legal"] header > .site-controls {
+  max-width: 980px;
+  margin: 0 auto 1.5rem;
+}
+[data-site-page="guide"] .top-nav { justify-content: space-between; flex-wrap: wrap; }
+[data-site-page="guide"] .top-nav > .nav-links {
+  justify-content: flex-start;
+  width: auto;
+}
+@media (max-width: 640px) {
+  [data-site-page="home"] header > .site-controls,
+  [data-site-page="legal"] header > .site-controls { margin-bottom: 1rem; }
+  .site-controls { gap: .5rem; }
+}

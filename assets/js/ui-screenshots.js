@@ -1,8 +1,10 @@
 (() => {
   'use strict';
 
-  // Match site-theme.css. A manual choice lasts only for this page visit.
+  // Follow the page theme until the visitor explicitly selects a screenshot.
   const lightScheme = window.matchMedia('(prefers-color-scheme: light)');
+
+  const pageTheme = () => document.documentElement.dataset.siteTheme || (lightScheme.matches ? 'light' : 'dark');
 
   document.querySelectorAll('.ui-preview').forEach((preview) => {
     const controls = preview.querySelector('.ui-theme-controls');
@@ -24,10 +26,14 @@
     });
 
     lightScheme.addEventListener('change', () => {
-      if (!manuallySelected) showTheme(lightScheme.matches ? 'light' : 'dark');
+      if (!manuallySelected) showTheme(pageTheme());
     });
 
-    showTheme(lightScheme.matches ? 'light' : 'dark');
+    window.addEventListener('site-theme-change', () => {
+      if (!manuallySelected) showTheme(pageTheme());
+    });
+
+    showTheme(pageTheme());
     controls.hidden = false;
   });
 })();

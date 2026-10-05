@@ -237,14 +237,22 @@
 <link href="https://nekzuk.com/privacy.html" hreflang="en" rel="alternate"/>
 <link href="https://nekzuk.com/privacy_j.html" hreflang="ja" rel="alternate"/>
 <link href="https://nekzuk.com/privacy.html" hreflang="x-default" rel="alternate"/>
-    <link rel="stylesheet" href="assets/site-theme.css" />
+    <link rel="stylesheet" href="assets/site-base.css" />
+    <link rel="stylesheet" href="assets/site-light.css" media="(prefers-color-scheme: light)" data-site-light />
+  <script src="assets/js/site-theme.js"></script>
 </head>
 <body>
 <div class="bg-effect"></div>
 <header>
-<div class="lang-switch">
-<a class="lang-btn" href="privacy.html">English</a>
-<a class="lang-btn active" href="privacy_j.html">日本語</a>
+<div class="site-controls">
+  <div class="lang-switch" aria-label="言語切り替え">
+    <a class="lang-btn" href="privacy.html">English</a>
+    <a class="lang-btn active" href="privacy_j.html" aria-current="page">日本語</a>
+  </div>
+  <button class="site-theme-toggle" type="button" aria-label="配色を切り替える" title="配色を切り替える" hidden>
+    <svg class="site-theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
+    <svg class="site-theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+  </button>
 </div>
 <h1>プライバシーポリシー</h1>
 <p class="last-updated">最終更新日: 2026年9月6日</p>
