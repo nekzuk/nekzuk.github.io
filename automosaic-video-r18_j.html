@@ -1074,6 +1074,7 @@
       }
     </script>
     <link rel="stylesheet" href="assets/site-theme.css" />
+    <link rel="stylesheet" href="assets/ui-screenshots.css" />
   </head>
   <body>
     <div class="container">
@@ -1093,6 +1094,7 @@
           <span class="pill">コード署名済み</span>
           <span class="pill">一括処理</span>
           <span class="pill">オフライン処理</span>
+          <span class="pill">ダークモード対応</span>
         </div>
         <div class="heroTop">
           <div class="heroTitle">
@@ -1325,19 +1327,26 @@
             </div>
           </div>
         </section>
-        <section class="section" id="ui">
+        <section class="section ui-preview" id="ui" style="--ui-shot-ratio: 1164 / 812">
           <h2><span class="lang-ja">UIスクリーンショット</span></h2>
-          <a
-            class="shot lang-ja"
-            href="assets/automosaic-video/ui_ja_r18.png"
-            rel="noopener"
-            target="_blank"
-          >
-            <img
-              loading="lazy"
-              alt="AutoMosaic Video (R18版) UI (Japanese)"
-              src="assets/automosaic-video/ui_ja_r18.png" width="1164" height="812"/>
-            <div class="cap">AutoMosaic Video (R18版) UI（日本語）</div>
+          <div class="ui-theme-controls" hidden>
+            <span id="ui-theme-label">表示テーマ：</span>
+            <div class="ui-theme-options" role="group" aria-labelledby="ui-theme-label">
+              <button type="button" data-ui-theme-choice="light" aria-pressed="false" aria-controls="ui-light-preview">ライト</button>
+              <button type="button" data-ui-theme-choice="dark" aria-pressed="false" aria-controls="ui-dark-preview">ダーク</button>
+            </div>
+          </div>
+          <a class="shot ui-shot lang-ja" id="ui-light-preview" data-ui-shot="light" href="assets/automosaic-video/ui_ja_r18.png" rel="noopener" target="_blank">
+            <div class="ui-shot-frame">
+              <img loading="lazy" decoding="async" alt="AutoMosaic Video (R18版) UI (Japanese) — ライト" src="assets/automosaic-video/ui_ja_r18.png" width="1164" height="812" />
+            </div>
+            <div class="cap">UI（日本語・ライト）</div>
+          </a>
+          <a class="shot ui-shot lang-ja" id="ui-dark-preview" data-ui-shot="dark" href="assets/automosaic-video/ui_ja_r18_dark.png" rel="noopener" target="_blank">
+            <div class="ui-shot-frame">
+              <img loading="lazy" decoding="async" alt="AutoMosaic Video (R18版) UI (Japanese) — ダーク" src="assets/automosaic-video/ui_ja_r18_dark.png" width="1154" height="802" />
+            </div>
+            <div class="cap">UI（日本語・ダーク）</div>
           </a>
         </section>
         <section class="section" id="video">
@@ -1484,6 +1493,7 @@
         © nekzuk Software
       </div>
     </div>
+  <script src="assets/js/ui-screenshots.js" defer></script>
   <script src="assets/js/site-analytics.js" defer></script>
   <script src="assets/js/email-protect.js?v=20261005" defer></script>
   </body>

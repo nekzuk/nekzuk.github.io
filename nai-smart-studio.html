@@ -338,7 +338,7 @@ ul.lang-ja, ol.lang-ja {display:none}
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "Windows 10, Windows 11",
   "description": "Desktop application that enhances NovelAI image generation with multilingual UI, prompt chunks, Tagger, batch generation, prompt search, and more production support features.",
-  "screenshot": "https://nekzuk.com/assets/nai/001.png",
+  "screenshot": "https://nekzuk.com/assets/nai/ui_en.png",
   "featureList": [
     "Access to nearly all NovelAI image generation features",
     "Text-to-Image, Image-to-Image, and Inpainting",
@@ -401,6 +401,7 @@ ul.lang-ja, ol.lang-ja {display:none}
 }
 </script>
     <link rel="stylesheet" href="assets/site-theme.css" />
+    <link rel="stylesheet" href="assets/ui-screenshots.css" />
 </head>
 <body>
 <div class="container">
@@ -420,6 +421,7 @@ ul.lang-ja, ol.lang-ja {display:none}
 <span class="pill">Multilingual UI</span>
 <span class="pill">Prompt Chunk</span>
 <span class="pill">Tagger</span>
+<span class="pill">Dark mode supported</span>
 </div>
 <div class="heroTop">
 <div class="heroTitle">
@@ -552,12 +554,27 @@ The UI supports English, Japanese, Chinese (Simplified / Traditional), and Korea
 </ul>
 </section>
 
-<section class="section" id="ui">
-<h2><span class="lang-en">UI screenshot</span></h2>
-<a class="shot lang-en" href="assets/nai/001.png" rel="noopener" target="_blank">
-<img loading="lazy" alt="NAI Smart Studio UI" src="assets/nai/001.png" width="1635" height="873"/>
-<div class="cap">Main UI</div>
-</a>
+<section class="section ui-preview" id="ui" style="--ui-shot-ratio: 2560 / 1528">
+  <h2><span class="lang-en">UI screenshot</span></h2>
+  <div class="ui-theme-controls" hidden>
+    <span id="ui-theme-label">Preview theme:</span>
+    <div class="ui-theme-options" role="group" aria-labelledby="ui-theme-label">
+      <button type="button" data-ui-theme-choice="light" aria-pressed="false" aria-controls="ui-light-preview">Light</button>
+      <button type="button" data-ui-theme-choice="dark" aria-pressed="false" aria-controls="ui-dark-preview">Dark</button>
+    </div>
+  </div>
+  <a class="shot ui-shot lang-en" id="ui-light-preview" data-ui-shot="light" href="assets/nai/ui_en.png" rel="noopener" target="_blank">
+    <div class="ui-shot-frame">
+      <img loading="lazy" decoding="async" alt="NAI Smart Studio UI (English) — Light" src="assets/nai/ui_en.png" width="2560" height="1528" />
+    </div>
+    <div class="cap">UI (English, light)</div>
+  </a>
+  <a class="shot ui-shot lang-en" id="ui-dark-preview" data-ui-shot="dark" href="assets/nai/ui_en_dark.png" rel="noopener" target="_blank">
+    <div class="ui-shot-frame">
+      <img loading="lazy" decoding="async" alt="NAI Smart Studio UI (English) — Dark" src="assets/nai/ui_en_dark.png" width="2560" height="1528" />
+    </div>
+    <div class="cap">UI (English, dark)</div>
+  </a>
 </section>
 <section class="section" id="video">
 <h2><span class="lang-en">Video demo</span></h2>
@@ -676,6 +693,7 @@ The UI supports English, Japanese, Chinese (Simplified / Traditional), and Korea
       © nekzuk Software
     </div>
 </div>
+  <script src="assets/js/ui-screenshots.js" defer></script>
   <script src="assets/js/site-analytics.js" defer></script>
   <script src="assets/js/email-protect.js?v=20261005" defer></script>
 </body>

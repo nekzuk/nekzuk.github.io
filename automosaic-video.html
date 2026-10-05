@@ -973,6 +973,7 @@
       }
     </script>
     <link rel="stylesheet" href="assets/site-theme.css" />
+    <link rel="stylesheet" href="assets/ui-screenshots.css" />
   </head>
   <body>
     <div class="container">
@@ -990,6 +991,7 @@
           <span class="pill">Code-signed</span>
           <span class="pill">Batch Processing</span>
           <span class="pill">Offline Processing</span>
+          <span class="pill">Dark mode supported</span>
         </div>
         <div class="heroTop">
           <div class="heroTitle">
@@ -1209,19 +1211,26 @@
             <p class="benchmark-pending">Benchmark results are not yet available.</p>
           </div>
         </section>
-        <section class="section" id="ui">
+        <section class="section ui-preview" id="ui" style="--ui-shot-ratio: 1164 / 812">
           <h2><span class="lang-en">UI screenshot</span></h2>
-          <a
-            class="shot lang-en"
-            href="assets/automosaic-video/ui_en.png"
-            rel="noopener"
-            target="_blank"
-          >
-            <img
-              loading="lazy"
-              alt="AutoMosaic Video (General) UI (English)"
-              src="assets/automosaic-video/ui_en.png" width="1164" height="812"/>
-            <div class="cap">AutoMosaic Video (General) UI (English)</div>
+          <div class="ui-theme-controls" hidden>
+            <span id="ui-theme-label">Preview theme:</span>
+            <div class="ui-theme-options" role="group" aria-labelledby="ui-theme-label">
+              <button type="button" data-ui-theme-choice="light" aria-pressed="false" aria-controls="ui-light-preview">Light</button>
+              <button type="button" data-ui-theme-choice="dark" aria-pressed="false" aria-controls="ui-dark-preview">Dark</button>
+            </div>
+          </div>
+          <a class="shot ui-shot lang-en" id="ui-light-preview" data-ui-shot="light" href="assets/automosaic-video/ui_en.png" rel="noopener" target="_blank">
+            <div class="ui-shot-frame">
+              <img loading="lazy" decoding="async" alt="AutoMosaic Video (General) UI (English) — Light" src="assets/automosaic-video/ui_en.png" width="1164" height="812" />
+            </div>
+            <div class="cap">UI (English, light)</div>
+          </a>
+          <a class="shot ui-shot lang-en" id="ui-dark-preview" data-ui-shot="dark" href="assets/automosaic-video/ui_en_dark.png" rel="noopener" target="_blank">
+            <div class="ui-shot-frame">
+              <img loading="lazy" decoding="async" alt="AutoMosaic Video (General) UI (English) — Dark" src="assets/automosaic-video/ui_en_dark.png" width="1154" height="802" />
+            </div>
+            <div class="cap">UI (English, dark)</div>
           </a>
         </section>
         <section class="section" id="video">
@@ -1371,6 +1380,7 @@
         © nekzuk Software
       </div>
     </div>
+  <script src="assets/js/ui-screenshots.js" defer></script>
   <script src="assets/js/site-analytics.js" defer></script>
   <script src="assets/js/email-protect.js?v=20261005" defer></script>
   </body>

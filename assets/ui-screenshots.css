@@ -1,0 +1,74 @@
+/* Screenshot previews have their own theme; the page palette stays unchanged. */
+.ui-preview .ui-theme-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .4rem .6rem;
+  margin-bottom: .75rem;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.ui-preview .ui-theme-controls[hidden] { display: none; }
+
+.ui-preview .ui-theme-options {
+  display: inline-flex;
+  gap: .125rem;
+  padding: .125rem;
+  border: 1px solid var(--border);
+  border-radius: .55rem;
+  background: var(--card2);
+}
+
+.ui-preview .ui-theme-options button {
+  min-width: 3.75rem;
+  min-height: 32px;
+  padding: .25rem .6rem;
+  border: 1px solid transparent;
+  border-radius: .4rem;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: .85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ui-preview .ui-theme-options button:hover { border-color: var(--accent); }
+.ui-preview .ui-theme-options button[aria-pressed="true"] {
+  background: #6652c7;
+  color: #fff;
+}
+.ui-preview .ui-theme-options button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.ui-preview .ui-shot { display: none; }
+.ui-preview:not([data-ui-theme]) .ui-shot[data-ui-shot="dark"],
+.ui-preview[data-ui-theme="dark"] .ui-shot[data-ui-shot="dark"],
+.ui-preview[data-ui-theme="light"] .ui-shot[data-ui-shot="light"] { display: block; }
+
+/* Use the site's existing media query even when JavaScript is unavailable. */
+@media (prefers-color-scheme: light) {
+  .ui-preview:not([data-ui-theme]) .ui-shot[data-ui-shot="dark"] { display: none; }
+  .ui-preview:not([data-ui-theme]) .ui-shot[data-ui-shot="light"] { display: block; }
+}
+
+/* A common frame prevents layout movement when source dimensions differ. */
+.ui-preview .ui-shot-frame {
+  position: relative;
+  aspect-ratio: var(--ui-shot-ratio);
+  max-height: 760px;
+  background: var(--card2);
+}
+
+#ui.ui-preview .ui-shot-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: contain;
+  background: transparent;
+}

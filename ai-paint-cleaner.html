@@ -288,6 +288,16 @@ ul.lang-ja, ol.lang-ja {display:none}
       p.note.lang-en {
         display: block;
       }
+
+    /* Temporary grouping for the existing samples; images can be replaced independently. */
+    .processing-samples {
+      display: grid;
+      gap: .85rem;
+    }
+    .processing-samples .shot img {
+      max-height: 220px;
+      background: var(--card2);
+    }
 </style>
 <!-- 構造化データ：SoftwareApplication (Enhanced) -->
 <script type="application/ld+json">
@@ -298,7 +308,7 @@ ul.lang-ja, ol.lang-ja {display:none}
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "Windows 10, Windows 11",
   "description": "Windows AI image editor for AutoMosaic follow-up cleanup, AI inpainting, cloud AI editing, AI correction, tags, metadata utilities, and CLI support.",
-  "screenshot": "https://nekzuk.com/assets/aipaintcleaner/AIPaintCleaner_1_en.jpg",
+  "screenshot": "https://nekzuk.com/assets/aipaintcleaner/ui_en.png",
   "featureList": [
     "Local AI inpainting for object removal and touch-ups",
     "AutoMosaic follow-up cleanup and pinpoint mosaic adjustment",
@@ -376,6 +386,7 @@ ul.lang-ja, ol.lang-ja {display:none}
 }
 </script>
     <link rel="stylesheet" href="assets/site-theme.css" />
+    <link rel="stylesheet" href="assets/ui-screenshots.css" />
 </head>
 <body>
 <div class="container">
@@ -394,6 +405,7 @@ ul.lang-ja, ol.lang-ja {display:none}
 <span class="pill">Batch Processing</span>
 <span class="pill">Local-first</span>
 <span class="pill">Cloud AI optional</span>
+<span class="pill">Dark mode supported</span>
 </div>
 <div class="heroTop">
 <div class="heroTitle">
@@ -507,21 +519,43 @@ ul.lang-ja, ol.lang-ja {display:none}
 </ul>
 </section>
 </div>
-<div class="grid">
-<section class="section">
-<h2><span class="lang-en">Processing Sample 1</span></h2>
-<a class="shot lang-en" href="assets/aipaintcleaner/AIPaintCleaner_1_en.jpg" rel="noopener" target="_blank">
-<img loading="lazy" alt="AI object removal and inpainting example" src="assets/aipaintcleaner/AIPaintCleaner_1_en.webp" width="1015" height="1008" decoding="async"/>
-<div class="cap">AI object removal and detailed inpainting</div>
-</a>
-</section>
-<section class="section">
-<h2><span class="lang-en">Processing Sample 2</span></h2>
-<a class="shot lang-en" href="assets/aipaintcleaner/AIPaintCleaner_2_en.jpg" rel="noopener" target="_blank">
-<img loading="lazy" alt="AI color correction and background removal example" src="assets/aipaintcleaner/AIPaintCleaner_2_en.webp" width="1004" height="663" decoding="async"/>
-<div class="cap">AI automatic color correction and background removal</div>
-</a>
-</section>
+<div class="grid" id="product-media">
+  <section class="section ui-preview" id="ui" style="--ui-shot-ratio: 2295 / 1424">
+    <h2><span class="lang-en">UI screenshot</span></h2>
+    <div class="ui-theme-controls" hidden>
+      <span id="ui-theme-label">Preview theme:</span>
+      <div class="ui-theme-options" role="group" aria-labelledby="ui-theme-label">
+        <button type="button" data-ui-theme-choice="light" aria-pressed="false" aria-controls="ui-light-preview">Light</button>
+        <button type="button" data-ui-theme-choice="dark" aria-pressed="false" aria-controls="ui-dark-preview">Dark</button>
+      </div>
+    </div>
+    <a class="shot ui-shot lang-en" id="ui-light-preview" data-ui-shot="light" href="assets/aipaintcleaner/ui_en.png" rel="noopener" target="_blank">
+      <div class="ui-shot-frame">
+        <img loading="lazy" decoding="async" alt="AI Paint Cleaner UI (English) — Light" src="assets/aipaintcleaner/ui_en.png" width="2295" height="1424" />
+      </div>
+      <div class="cap">UI (English, light)</div>
+    </a>
+    <a class="shot ui-shot lang-en" id="ui-dark-preview" data-ui-shot="dark" href="assets/aipaintcleaner/ui_en_dark.png" rel="noopener" target="_blank">
+      <div class="ui-shot-frame">
+        <img loading="lazy" decoding="async" alt="AI Paint Cleaner UI (English) — Dark" src="assets/aipaintcleaner/ui_en_dark.png" width="2560" height="1528" />
+      </div>
+      <div class="cap">UI (English, dark)</div>
+    </a>
+  </section>
+  <section class="section" id="samples">
+    <h2><span class="lang-en">Processing samples</span></h2>
+    <!-- Existing samples are provisional pending the next content review. -->
+    <div class="processing-samples">
+      <a class="shot lang-en" href="assets/aipaintcleaner/AIPaintCleaner_1_en.jpg" rel="noopener" target="_blank">
+      <img loading="lazy" alt="AI object removal and inpainting example" src="assets/aipaintcleaner/AIPaintCleaner_1_en.webp" width="1015" height="1008" decoding="async"/>
+      <div class="cap">AI object removal and detailed inpainting</div>
+      </a>
+      <a class="shot lang-en" href="assets/aipaintcleaner/AIPaintCleaner_2_en.jpg" rel="noopener" target="_blank">
+      <img loading="lazy" alt="AI color correction and background removal example" src="assets/aipaintcleaner/AIPaintCleaner_2_en.webp" width="1004" height="663" decoding="async"/>
+      <div class="cap">AI automatic color correction and background removal</div>
+      </a>
+    </div>
+  </section>
 </div>
 <div class="grid">
 <section class="section" id="video">
@@ -652,6 +686,7 @@ ul.lang-ja, ol.lang-ja {display:none}
 
       © nekzuk Software
     </div>
+  <script src="assets/js/ui-screenshots.js" defer></script>
   <script src="assets/js/site-analytics.js" defer></script>
   <script src="assets/js/email-protect.js?v=20261005" defer></script>
 </body>
