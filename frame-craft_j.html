@@ -119,6 +119,7 @@
       gtag("config", "G-040P2W2ZZK");
     </script>
 
+    <link rel="stylesheet" href="assets/product-info-sections.css">
     <style>
       :root {
         --bg: #0f172a;
@@ -386,8 +387,18 @@
       .kpi .kv .label {
         margin: 0;
       }
+      .section .kpi .kv .label {
+        font-size: 0.75rem;
+        opacity: 0.72;
+        line-height: 1.15;
+      }
       .kpi .kv .value {
         margin: 0;
+      }
+      .section .kpi .kv .value {
+        font-size: 0.98rem;
+        font-weight: 700;
+        line-height: 1.25;
       }
 
       /* Images */
@@ -851,9 +862,8 @@
           <p class="note lang-ja">
             GPU不要。CPUで動作し、幅広い環境で使用可能です。
           </p>
-        </section>
-        <section class="section" id="trial">
-          <h2><span class="lang-ja">体験版</span></h2>
+          <div class="hr"></div>
+          <h2 id="trial"><span class="lang-ja">体験版</span></h2>
           <p class="lang-ja"><b>Windows 10/11</b></p>
           <p>
             <a
@@ -864,7 +874,6 @@
               >Download</a
             >
           </p>
-          <div class="hr"></div>
           <h3><span class="lang-ja">体験版の制限事項</span></h3>
           <ul class="lang-ja">
             <li>1動画あたり最大400画像/フレームまで</li>
@@ -873,7 +882,26 @@
           </ul>
         </section>
         <section class="section">
-          <h2><span class="lang-ja">更新情報・変更履歴</span></h2>
+          <h2>
+            <span class="lang-ja">ライセンス・ご利用上の注意</span>
+          </h2>
+          <h3><span class="lang-ja">ライセンス</span></h3>
+          <ul class="lang-ja">
+            <li><b>個人での商用利用</b>: 本製品の購入で利用可能</li>
+            <li><b>企業での商用利用</b>: <a class="protected-email" href="terms_j.html" data-email-user="nekzuk.software" data-email-domain="gmail.com" data-email-label="メールでご相談ください" data-email-subject="Frame Craft：企業利用のご相談">メールでご相談ください</a></li>
+          </ul>
+          <div class="hr"></div>
+          <h3><span class="lang-ja">重要な注意事項</span></h3>
+          <ul class="lang-ja">
+            <li>処理時間は動画の長さやPCの性能により変動します</li>
+            <li>処理結果は必ずご確認ください</li>
+            <li>
+              フレーム抽出精度は動画の品質やエンコードにより変動する場合があります
+            </li>
+          </ul>
+        </section>
+        <section class="section">
+          <h2><span class="lang-ja">更新情報</span></h2>
           <div
             class="kpi"
             style="
@@ -910,24 +938,19 @@
             </a>
           </p>
         </section>
-        <section class="section">
-          <h2>
-            <span class="lang-ja">ライセンス・ご利用上の注意</span>
-          </h2>
-          <h3><span class="lang-ja">ライセンス</span></h3>
-          <ul class="lang-ja">
-            <li><b>個人での商用利用</b>: 本製品の購入で利用可能</li>
-            <li><b>企業での商用利用</b>: <a class="protected-email" href="terms_j.html" data-email-user="nekzuk.software" data-email-domain="gmail.com" data-email-label="メールでご相談ください" data-email-subject="Frame Craft：企業利用のご相談">メールでご相談ください</a></li>
+        <section class="section section-history">
+          <h2><span class="lang-ja">変更履歴</span></h2>
+          <div class="history-table">
+          <div class="history-head lang-ja"><span>バージョン</span><span>リリース日</span><span>更新内容</span></div>
+          <ul class="history-list lang-ja">
+          <li><div class="history-row"><span class="history-version">v1.50</span><time class="history-date" datetime="2026-06-21">2026/06/21</time><a class="history-link" href="https://note.com/nekzuk/n/n887e34a38c4c" rel="noopener" target="_blank">詳細を見る →</a></div></li>
+          <li><div class="history-row"><span class="history-version">v1.40</span><time class="history-date" datetime="2026-05-04">2026/05/04</time><a class="history-link" href="https://note.com/nekzuk/n/n6e02be9105af" rel="noopener" target="_blank">詳細を見る →</a></div></li>
+          <li><div class="history-row"><span class="history-version">v1.30</span><time class="history-date" datetime="2026-03-22">2026/03/22</time><a class="history-link" href="https://note.com/nekzuk/n/n06bae326716f" rel="noopener" target="_blank">詳細を見る →</a></div></li>
+          <li><div class="history-row"><span class="history-version">v1.20</span><time class="history-date" datetime="2025-11-01">2025/11/01</time><a class="history-link" href="https://note.com/nekzuk/n/n079326e4a2e7" rel="noopener" target="_blank">詳細を見る →</a></div></li>
+          <li><div class="history-row"><span class="history-version">v1.10</span><time class="history-date" datetime="2025-10-13">2025/10/13</time><a class="history-link" href="https://note.com/nekzuk/n/nd2f89b3cf901" rel="noopener" target="_blank">詳細を見る →</a></div></li>
+          <li><div class="history-row"><span class="history-version">v1.00</span><time class="history-date" datetime="2025-08-13">2025/08/13</time><a class="history-link" href="https://note.com/nekzuk/n/n3742b9c2905c" rel="noopener" target="_blank">詳細を見る →</a></div></li>
           </ul>
-          <div class="hr"></div>
-          <h3><span class="lang-ja">重要な注意事項</span></h3>
-          <ul class="lang-ja">
-            <li>処理時間は動画の長さやPCの性能により変動します</li>
-            <li>処理結果は必ずご確認ください</li>
-            <li>
-              フレーム抽出精度は動画の品質やエンコードにより変動する場合があります
-            </li>
-          </ul>
+          </div>
         </section>
       </div>
       <div class="footer">
