@@ -1,759 +1,72 @@
 <!DOCTYPE html>
-
-<html data-site-page="home" data-product="index" lang="en">
-<head>
+<html data-product="index" data-site-page="home" lang="en">
+ <head>
   <script>
-    if (!["nekzuk.com", "www.nekzuk.com"].includes(window.location.hostname.toLowerCase())) {
+   if (!["nekzuk.com", "www.nekzuk.com"].includes(window.location.hostname.toLowerCase())) {
       window["ga-disable-G-040P2W2ZZK"] = true;
     }
   </script>
-<meta charset="utf-8"/>
-<meta name="color-scheme" content="dark light" />
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<!-- SEO Meta Tags -->
-<meta content="Windows desktop tools for AI image and video creation, editing, and automatic mosaic processing: AutoMosaic Video, AutoMosaic, AI Paint Cleaner, NAI Smart Studio, and more." name="description"/>
-
-<meta content="nekzuk Software" name="author"/>
-<!-- Open Graph / Facebook -->
-<meta content="website" property="og:type"/>
-<meta content="https://nekzuk.com/" property="og:url"/>
-<meta content="AI Image &amp; Video Tools for Creators | nekzuk Software" property="og:title"/>
-<meta content="Windows desktop tools for AI image and video creation, editing, and automatic mosaic processing: AutoMosaic Video, AutoMosaic, AI Paint Cleaner, NAI Smart Studio, and more." property="og:description"/>
-<meta content="https://nekzuk.com/assets/favicons/og-image.png?v=3" property="og:image"/>
-<meta content="1200" property="og:image:width"/>
-<meta content="630" property="og:image:height"/>
-<meta content="image/png" property="og:image:type"/>
-<meta content="nekzuk Software – AI Image &amp; Video Tools" property="og:image:alt"/>
-<!-- Twitter -->
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="https://nekzuk.com/" name="twitter:url"/>
-<meta content="AI Image &amp; Video Tools for Creators | nekzuk Software" name="twitter:title"/>
-<meta content="Windows desktop tools for AI image and video creation, editing, and automatic mosaic processing: AutoMosaic Video, AutoMosaic, AI Paint Cleaner, NAI Smart Studio, and more." name="twitter:description"/>
-<meta content="https://nekzuk.com/assets/favicons/og-image.png?v=3" name="twitter:image"/>
-<meta content="@Synekzuk_AI" name="twitter:site"/>
-<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin/>
-<link rel="preconnect" href="https://www.google-analytics.com" crossorigin/>
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-040P2W2ZZK"></script>
-<script>
-        window.dataLayer = window.dataLayer || [];
+  <meta charset="utf-8"/>
+  <meta content="dark light" name="color-scheme"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <!-- SEO Meta Tags -->
+  <meta content="Desktop tools for automatic mosaic, image generation and editing, file conversion, and metadata management. Explore AutoMosaic, AutoMosaic Video, NAI Smart Studio, and more for Windows." name="description"/>
+  <meta content="nekzuk Software" name="author"/>
+  <!-- Open Graph / Facebook -->
+  <meta content="website" property="og:type"/>
+  <meta content="https://nekzuk.com/" property="og:url"/>
+  <meta content="Smoother image &amp; video workflows | nekzuk Software" property="og:title"/>
+  <meta content="Desktop tools for automatic mosaic, image generation and editing, file conversion, and metadata management. Explore AutoMosaic, AutoMosaic Video, NAI Smart Studio, and more for Windows." property="og:description"/>
+  <meta content="https://nekzuk.com/assets/favicons/og-image.png?v=3" property="og:image"/>
+  <meta content="1200" property="og:image:width"/>
+  <meta content="630" property="og:image:height"/>
+  <meta content="image/png" property="og:image:type"/>
+  <meta content="nekzuk Software – AI Image &amp; Video Tools" property="og:image:alt"/>
+  <!-- Twitter -->
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="https://nekzuk.com/" name="twitter:url"/>
+  <meta content="Smoother image &amp; video workflows | nekzuk Software" name="twitter:title"/>
+  <meta content="Desktop tools for automatic mosaic, image generation and editing, file conversion, and metadata management. Explore AutoMosaic, AutoMosaic Video, NAI Smart Studio, and more for Windows." name="twitter:description"/>
+  <meta content="https://nekzuk.com/assets/favicons/og-image.png?v=3" name="twitter:image"/>
+  <meta content="@Synekzuk_AI" name="twitter:site"/>
+  <link crossorigin="" href="https://www.googletagmanager.com" rel="preconnect"/>
+  <link crossorigin="" href="https://www.google-analytics.com" rel="preconnect"/>
+  <!-- Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-040P2W2ZZK">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-040P2W2ZZK');
-    </script>
-<!-- Language SEO -->
-<link rel="canonical" href="https://nekzuk.com/" />
-<link rel="alternate" hreflang="en" href="https://nekzuk.com/" />
-<link rel="alternate" hreflang="ja" href="https://nekzuk.com/index_j.html" />
-<link rel="alternate" hreflang="x-default" href="https://nekzuk.com/" />
-<!-- Remember the visitor's explicit language choice on the default entry page -->
-<script>
-    (function () {
+  </script>
+  <!-- Language SEO -->
+  <link href="https://nekzuk.com/" rel="canonical"/>
+  <link href="https://nekzuk.com/" hreflang="en" rel="alternate"/>
+  <link href="https://nekzuk.com/index_j.html" hreflang="ja" rel="alternate"/>
+  <link href="https://nekzuk.com/" hreflang="x-default" rel="alternate"/>
+  <!-- Remember the visitor's explicit language choice on the default entry page -->
+  <script>
+   (function () {
         try {
             if (localStorage.getItem('site_lang') === 'ja') {
                 location.replace('index_j.html' + location.search + location.hash);
             }
         } catch (e) {}
     })();
-</script>
-<!-- Favicon & Icons -->
-<link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32"/>
-<link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml"/>
-<link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon"/>
-<link href="/assets/favicons/icon-192.png" rel="icon" sizes="192x192" type="image/png"/>
-<link href="/assets/favicons/icon-512.png" rel="icon" sizes="512x512" type="image/png"/>
-<meta content="#6366f1" name="theme-color"/>
-<title>AI Image &amp; Video Tools for Creators | nekzuk Software</title>
-<style>
-        :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --accent: #22d3ee;
-            --bg-dark: #0f172a;
-            --bg-card: #1e293b;
-            --bg-card-hover: #334155;
-            --text-primary: #f1f5f9;
-            --text-secondary: #94a3b8;
-            --text-muted: #94a3b8;
-            --border: #334155;
-            --gradient-1: linear-gradient(135deg, #6366f1, #8b5cf6);
-            --gradient-2: linear-gradient(135deg, #06b6d4, #22d3ee);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: var(--bg-dark);
-            color: var(--text-primary);
-            line-height: 1.7;
-            min-height: 100vh;
-        }
-
-        a:focus-visible {
-            outline: 3px solid var(--accent);
-            outline-offset: 3px;
-            border-radius: 0.35rem;
-        }
-
-        /* Background Effect */
-        .bg-effect {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-
-        .bg-effect::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(ellipse at 30% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
-                        radial-gradient(ellipse at 70% 80%, rgba(34, 211, 238, 0.06) 0%, transparent 50%);
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-2%, 2%) rotate(1deg); }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .bg-effect::before {
-                animation: none;
-            }
-        }
-
-        /* Header */
-        header {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            padding: 4rem 2rem 3rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .header-badge {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            background: rgba(99, 102, 241, 0.15);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            border-radius: 2rem;
-            font-size: 0.85rem;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.05em;
-        }
-
-        h1 {
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .header-description {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            max-width: 60rem;
-            margin: 0 auto;
-        }
-
-        .header-guide-link {
-            margin-top: 1.25rem;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* Hero Eyebrow (small line above H1) */
-        .header-eyebrow {
-            margin-top: 1rem;
-            margin-bottom: 0.5rem;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            letter-spacing: 0.05em;
-        }
-
-        /* Hero CTA */
-        .hero-cta {
-            margin-top: 1.5rem;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .hero-cta .btn {
-            padding: 0.65rem 1.4rem;
-            font-size: 0.95rem;
-        }
-
-        /* News Section (What's New) */
-        .news-section {
-            margin-bottom: 2.5rem;
-            padding: 1.25rem 1.5rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 1rem;
-        }
-
-        .news-title {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .news-title::before {
-            content: "📢";
-        }
-
-        .news-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .news-list li {
-            display: flex;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 0.35rem 0.75rem;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .news-list time {
-            flex-shrink: 0;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-variant-numeric: tabular-nums;
-        }
-
-        .news-tag {
-            flex-shrink: 0;
-            font-size: 0.7rem;
-            padding: 0.1rem 0.5rem;
-            border-radius: 0.3rem;
-            background: rgba(99, 102, 241, 0.15);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            color: #a5b4fc;
-        }
-
-        .news-list a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .news-list a:hover {
-            text-decoration: underline;
-        }
-
-
-        /* Language Switch */
-        .lang-switch{
-            margin-top: 1rem;
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-        .lang-btn{
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.35rem 0.85rem;
-            border-radius: 999px;
-            font-size: 0.85rem;
-            text-decoration: none;
-            color: var(--text-secondary);
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid var(--border);
-            transition: all 0.2s ease;
-        }
-        .lang-btn:hover{
-            background: rgba(255, 255, 255, 0.10);
-            color: var(--text-primary);
-        }
-        .lang-btn.active{
-            color: white;
-            background: rgba(99, 102, 241, 0.35);
-            border-color: rgba(99, 102, 241, 0.6);
-        }
-
-        /* Main Content */
-        main {
-            position: relative;
-            z-index: 1;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem 4rem;
-        }
-
-        /* Products Grid */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 1.5rem;
-        }
-
-        /* Product Card */
-        .product-card {
-            background: var(--bg-card);
-            border-radius: 1rem;
-            border: 1px solid var(--border);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card-header {
-            padding: 1.5rem 1.5rem 1rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .product-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 0.75rem;
-            flex-shrink: 0;
-            object-fit: cover;
-            background: var(--bg-dark);
-        }
-
-        .product-icon-link {
-            display: block;
-            transition: transform 0.2s ease;
-        }
-
-        .product-icon-link:hover {
-            transform: scale(1.05);
-        }
-
-        .card-title-area {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .product-name-link {
-            text-decoration: none;
-            color: inherit;
-            transition: color 0.2s ease;
-        }
-
-        .product-name-link:hover .product-name {
-            color: var(--accent);
-        }
-
-        .product-name {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-            color: var(--text-primary);
-            transition: color 0.2s ease;
-        }
-
-        .product-subtitle {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .card-body {
-            padding: 0 1.5rem 1.25rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-description {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .features-list {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .features-list li {
-            font-size: 0.8rem;
-            padding: 0.3rem 0.7rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 0.4rem;
-            color: var(--text-secondary);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .features-list.video-features li {
-            padding-inline: 0.5rem;
-        }
-
-        .product-specs {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 0.45rem 0.75rem;
-            margin-top: auto;
-            padding-top: 0.85rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .product-specs li {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            color: var(--text-muted);
-            font-size: 0.74rem;
-            font-weight: 500;
-            white-space: nowrap;
-        }
-
-        .product-specs li::before {
-            content: "";
-            width: 0.38rem;
-            height: 0.38rem;
-            border-radius: 999px;
-            background: #94a3b8;
-        }
-
-        .product-specs li.cli::before {
-            background: #60a5fa;
-        }
-
-        .product-specs li.update::before {
-            background: #a78bfa;
-        }
-
-        .product-specs li.free::before {
-            background: #4ade80;
-        }
-
-        .product-specs li.lang::before {
-            background: #22d3ee;
-        }
-
-        .card-footer {
-            padding: 1rem 1.5rem;
-            border-top: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .price-badge {
-            font-size: 0.85rem;
-            padding: 0.3rem 0.8rem;
-            border-radius: 0.4rem;
-            font-weight: 500;
-        }
-
-        .price-badge.free {
-            background: rgba(34, 197, 94, 0.15);
-            color: #4ade80;
-        }
-
-        .price-badge.paid {
-            background: rgba(251, 191, 36, 0.15);
-            color: #fbbf24;
-        }
-
-        .button-group {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.5rem 0.9rem;
-            text-decoration: none;
-            border-radius: 0.5rem;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-
-        .btn svg {
-            width: 14px;
-            height: 14px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #4f46e5, #7c3aed);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateX(2px);
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
-        }
-
-        .btn.disabled {
-            background: rgba(148, 163, 184, 0.16);
-            color: var(--text-muted);
-            border: 1px solid rgba(148, 163, 184, 0.28);
-            opacity: 1;
-            cursor: not-allowed;
-            pointer-events: none;
-            box-shadow: none;
-            transform: none;
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.10);
-            color: var(--text-primary);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            border-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-1px);
-        }
-
-        .btn-disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
-
-        /* Coming Soon Banner */
-        .coming-soon-banner {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.85rem;
-            margin-top: 1.5rem;
-            padding: 1rem 1.25rem;
-            border: 1px dashed var(--border);
-            border-radius: 0.8rem;
-            background: rgba(30, 41, 59, 0.5);
-            text-align: center;
-        }
-
-        .coming-soon-icon {
-            color: var(--accent);
-            font-size: 1.35rem;
-            line-height: 1;
-        }
-
-        .coming-soon-text {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .coming-soon-label {
-            color: var(--accent);
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        /* Workflow Section */
-        .workflow-section {
-            margin-top: 3rem;
-            padding: 2rem;
-            background: var(--bg-card);
-            border-radius: 1rem;
-            border: 1px solid var(--border);
-        }
-
-        .workflow-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .workflow-title::before {
-            content: '💡';
-        }
-
-        .workflow-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .workflow-step {
-            text-align: center;
-            padding: 1rem 1.5rem;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 0.75rem;
-            border: 1px solid var(--border);
-        }
-
-        .workflow-step.edition-choice {
-            min-width: 250px;
-        }
-
-        .workflow-editions {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .workflow-edition-link {
-            min-width: 4.5rem;
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .workflow-edition-link .workflow-icon {
-            margin-bottom: 0.35rem;
-        }
-
-        .workflow-edition-name {
-            display: block;
-            color: var(--accent);
-            font-size: 0.78rem;
-            font-weight: 600;
-        }
-
-        .workflow-edition-link:hover .workflow-edition-name {
-            text-decoration: underline;
-        }
-
-        .workflow-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 0.5rem;
-            margin: 0 auto 0.75rem;
-            display: block;
-            object-fit: cover;
-        }
-
-        .workflow-step-name {
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-            color: var(--accent);
-        }
-
-        .workflow-step-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .workflow-arrow {
-            font-size: 1.5rem;
-            color: var(--text-muted);
-        }
-
-        .workflow-step.highlight {
-            border-color: rgba(99, 102, 241, 0.5);
-            background: rgba(99, 102, 241, 0.1);
-        }
-
-        .workflow-step.highlight .workflow-step-name {
-            color: #a5b4fc;
-        }
-
-        .workflow-step small {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            display: block;
-            margin-top: 0.25rem;
-        }
-
-        /* Footer */
-        footer {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-          header { padding: 1.5rem 1.25rem 1.25rem; }
-          .lang-switch { margin-top: 0; }
-          .header-eyebrow { margin-top: 0.75rem; }
-          h1 { line-height: 1.35; margin-bottom: 0.75rem; }
-          .hero-cta { margin-top: 1rem; }
-          main { padding-top: 1.5rem; }
-          .news-section { padding: 1rem; margin-bottom: 1.5rem; }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .card-footer {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .button-group {
-                justify-content: center;
-            }
-
-            .workflow-content {
-                flex-direction: column;
-            }
-
-            .workflow-arrow {
-                transform: rotate(90deg);
-            }
-        }
-
-        @media (max-width: 350px) {
-            .product-specs {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-<!-- 構造化データ：Organization -->
-<script type="application/ld+json">
-{
+  </script>
+  <!-- Favicon & Icons -->
+  <link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32"/>
+  <link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon"/>
+  <link href="/assets/favicons/icon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+  <link href="/assets/favicons/icon-512.png" rel="icon" sizes="512x512" type="image/png"/>
+  <meta content="#6150a5" name="theme-color"/>
+  <title>
+   Smoother image &amp; video workflows | nekzuk Software
+  </title>
+  <script type="application/ld+json">
+   {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "nekzuk Software",
@@ -794,16 +107,15 @@
   },
   "inLanguage": "en"
 }
-</script>
-<!-- 構造化データ：WebSite -->
-<script type="application/ld+json">
-{
+  </script>
+  <script type="application/ld+json">
+   {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "nekzuk Software",
   "alternateName": "nekzuk",
   "url": "https://nekzuk.com/",
-  "description": "AI image and video processing tools for content creators, including automatic mosaic, AI inpainting, and metadata management in Windows desktop applications.",
+  "description": "Desktop tools for automatic mosaic, image generation and editing, file conversion, and metadata management. Explore AutoMosaic, AutoMosaic Video, NAI Smart Studio, and more for Windows.",
   "inLanguage": "en",
   "publisher": {
     "@type": "Organization",
@@ -814,9 +126,8 @@
     }
   }
 }
-</script>
-<!-- 構造化データ：ItemList (Product Catalog) -->
-<script type="application/ld+json">
+  </script>
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -827,24 +138,6 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "item": {
-        "@type": "SoftwareApplication",
-        "name": "AutoMosaic (R18)",
-        "url": "https://nekzuk.com/automosaic-r18.html",
-        "image": "https://nekzuk.com/assets/icons/app_R18.png",
-        "description": "GPU-accelerated batch mosaic tool for sensitive images. Images are processed locally without uploads; update checks and initial model retrieval use the internet",
-        "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "Windows 10, Windows 11",
-        "offers": {
-          "@type": "Offer",
-          "price": "20",
-          "priceCurrency": "USD"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
       "item": {
         "@type": "SoftwareApplication",
         "name": "AutoMosaic (General)",
@@ -862,29 +155,25 @@
     },
     {
       "@type": "ListItem",
-      "position": 3,
+      "position": 2,
       "item": {
         "@type": "SoftwareApplication",
-        "name": "AutoMosaic Video (R18)",
-        "url": "https://nekzuk.com/automosaic-video-r18.html",
-        "image": "https://nekzuk.com/assets/icons/app_video_R18.jpg",
-        "description": "Batch video mosaic tool for Windows that automatically detects and tracks sensitive regions, then applies mosaic, blur, or fill",
+        "name": "AutoMosaic (R18)",
+        "url": "https://nekzuk.com/automosaic-r18.html",
+        "image": "https://nekzuk.com/assets/icons/app_R18.png",
+        "description": "GPU-accelerated batch mosaic tool for sensitive images. Images are processed locally without uploads; update checks and initial model retrieval use the internet",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Windows 10, Windows 11",
-        "softwareVersion": "1.10",
-        "releaseNotes": "https://note.com/nekzuk/n/n2082af286ffd",
         "offers": {
           "@type": "Offer",
-          "price": "25",
-          "priceCurrency": "USD",
-          "url": "https://payhip.com/b/6eOqg",
-          "availability": "https://schema.org/InStock"
+          "price": "20",
+          "priceCurrency": "USD"
         }
       }
     },
     {
       "@type": "ListItem",
-      "position": 4,
+      "position": 3,
       "item": {
         "@type": "SoftwareApplication",
         "name": "AutoMosaic Video (General)",
@@ -906,25 +195,29 @@
     },
     {
       "@type": "ListItem",
-      "position": 5,
+      "position": 4,
       "item": {
         "@type": "SoftwareApplication",
-        "name": "AI Paint Cleaner",
-        "url": "https://nekzuk.com/ai-paint-cleaner.html",
-        "image": "https://nekzuk.com/assets/icons/app2.png",
-        "description": "An all-in-one editor for AutoMosaic cleanup and AI image finishing. It supports inpainting, cloud AI editing, AI correction, background removal, format conversion, upscaling, and tag/caption generation.",
+        "name": "AutoMosaic Video (R18)",
+        "url": "https://nekzuk.com/automosaic-video-r18.html",
+        "image": "https://nekzuk.com/assets/icons/app_video_R18.jpg",
+        "description": "Batch video mosaic tool for Windows that automatically detects and tracks sensitive regions, then applies mosaic, blur, or fill",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Windows 10, Windows 11",
+        "softwareVersion": "1.10",
+        "releaseNotes": "https://note.com/nekzuk/n/n2082af286ffd",
         "offers": {
           "@type": "Offer",
-          "price": "18",
-          "priceCurrency": "USD"
+          "price": "25",
+          "priceCurrency": "USD",
+          "url": "https://payhip.com/b/6eOqg",
+          "availability": "https://schema.org/InStock"
         }
       }
     },
     {
       "@type": "ListItem",
-      "position": 6,
+      "position": 5,
       "item": {
         "@type": "SoftwareApplication",
         "name": "NAI Smart Studio",
@@ -938,6 +231,24 @@
           "price": "18",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AI Paint Cleaner",
+        "url": "https://nekzuk.com/ai-paint-cleaner.html",
+        "image": "https://nekzuk.com/assets/icons/app2.png",
+        "description": "An all-in-one editor for AutoMosaic cleanup and AI image finishing. It supports inpainting, cloud AI editing, AI correction, background removal, format conversion, upscaling, and tag/caption generation.",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Windows 10, Windows 11",
+        "offers": {
+          "@type": "Offer",
+          "price": "18",
+          "priceCurrency": "USD"
         }
       }
     },
@@ -964,24 +275,6 @@
       "position": 8,
       "item": {
         "@type": "SoftwareApplication",
-        "name": "Frame Craft",
-        "url": "https://nekzuk.com/frame-craft.html",
-        "image": "https://nekzuk.com/assets/icons/app5.png",
-        "description": "Video frame extractor and animation converter",
-        "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "Windows 10, Windows 11",
-        "offers": {
-          "@type": "Offer",
-          "price": "4",
-          "priceCurrency": "USD"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 9,
-      "item": {
-        "@type": "SoftwareApplication",
         "name": "Meta Converter",
         "url": "https://nekzuk.com/meta-converter.html",
         "image": "https://nekzuk.com/assets/icons/app4.png",
@@ -994,536 +287,742 @@
           "priceCurrency": "USD"
         }
       }
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Frame Craft",
+        "url": "https://nekzuk.com/frame-craft.html",
+        "image": "https://nekzuk.com/assets/icons/app5.png",
+        "description": "Video frame extractor and animation converter",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Windows 10, Windows 11",
+        "offers": {
+          "@type": "Offer",
+          "price": "4",
+          "priceCurrency": "USD"
+        }
+      }
     }
   ],
   "inLanguage": "en"
 }
-</script>
-<meta content="en_US" property="og:locale"/>
-    <link rel="stylesheet" href="assets/site-base.css" />
-    <link rel="stylesheet" href="assets/site-light.css" media="(prefers-color-scheme: light)" data-site-light />
-    <link rel="stylesheet" href="assets/home-light.css" data-site-light media="(prefers-color-scheme: light)" />
-  <script src="assets/js/site-theme.js"></script>
-</head>
-<body>
-<div class="bg-effect"></div>
-<header>
-<div class="site-controls">
-  <div class="lang-switch" aria-label="Language switch">
-    <a class="lang-btn active" data-site-lang="en" href="index.html" aria-current="page">English</a>
-    <a class="lang-btn" data-site-lang="ja" href="index_j.html">日本語</a>
-  </div>
-  <button class="site-theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme" hidden>
-    <svg class="site-theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
-    <svg class="site-theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
-  </button>
-</div>
-<p class="header-eyebrow">nekzuk Software – AI Image &amp; Video Tools for Windows</p>
-<h1>Let AI handle the tedious image and video work.</h1>
-<p class="header-description">
-            Tools that streamline your image and video workflow — automatic mosaic, AI retouching, metadata management, and more.
-        </p>
-<div class="hero-cta">
-<a class="btn btn-primary" href="#products">Browse Products</a>
-<a class="btn btn-secondary" href="use-cases.html">
-            Not sure which tool to choose? View the use-case guide
+  </script>
+  <meta content="en_US" property="og:locale"/>
+  <link href="assets/site-base.css" rel="stylesheet"/>
+  <link href="assets/home.css" rel="stylesheet"/>
+  <script src="assets/js/site-theme.js">
+  </script>
+ </head>
+ <body>
+  <a class="skip" href="#products">
+   Skip to products
+  </a>
+  <header class="site-header">
+   <div class="wrap header-inner">
+    <a aria-label="nekzuk Software home" class="brand" href="#top">
+     <img alt="" decoding="async" height="29" src="assets/favicons/icon.svg" width="29"/>
+     nekzuk
+     <span>
+      Software
+     </span>
+    </a>
+    <nav aria-label="Main navigation" class="main-nav">
+     <a href="#products">
+      Products
+     </a>
+     <a href="#support">
+      Support
+     </a>
+    </nav>
+    <div class="utilities">
+     <nav aria-label="Language" class="locale-switch">
+      <a aria-label="日本語に切り替える" data-site-lang="ja" href="index_j.html" lang="ja">日本語</a>
+      <span aria-hidden="true" class="locale-divider">/</span>
+      <span aria-current="true" lang="en">English</span>
+     </nav>
+     <button aria-label="Switch color theme" class="site-theme-toggle theme-button" hidden="" title="Switch color theme" type="button">
+      <svg aria-hidden="true" class="site-theme-moon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24">
+       <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z">
+       </path>
+      </svg>
+      <svg aria-hidden="true" class="site-theme-sun" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-width="1.7" viewbox="0 0 24 24">
+       <circle cx="12" cy="12" r="4">
+       </circle>
+       <path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42">
+       </path>
+      </svg>
+     </button>
+    </div>
+   </div>
+  </header>
+  <main class="wrap" id="top">
+   <section aria-labelledby="hero-title" class="hero">
+    <div>
+     <h1 id="hero-title">
+      Image &amp; video work.
+      <br/>
+      <span>
+       Made smoother.
+      </span>
+     </h1>
+     <p class="hero-copy">
+      From automatic mosaic to image creation, editing, and file management. Desktop tools that cut down the repetitive work.
+     </p>
+     <div class="hero-actions">
+      <a class="solid-button" href="#products">
+       Find your tool
+       <span aria-hidden="true" class="arrow">
+        ↓
+       </span>
+      </a>
+     </div>
+    </div>
+    <nav aria-label="Choose tools by task">
+     <div class="purpose-list">
+      <a class="purpose" href="#mosaic">
+       <div>
+        <strong>
+         Apply mosaic &amp; blur
+        </strong>
+        <small>
+         Automatic detection for images and videos
+        </small>
+       </div>
+       <span aria-hidden="true" class="arrow">
+        ↗
+       </span>
+      </a>
+      <a class="purpose" href="#create">
+       <div>
+        <strong>
+         Create &amp; refine images
+        </strong>
+        <small>
+         NovelAI workflow tools and AI image editing
+        </small>
+       </div>
+       <span aria-hidden="true" class="arrow">
+        ↗
+       </span>
+      </a>
+      <a class="purpose" href="#organize">
+       <div>
+        <strong>
+         Convert &amp; organize files
+        </strong>
+        <small>
+         Metadata tools and video frame extraction
+        </small>
+       </div>
+       <span aria-hidden="true" class="arrow">
+        ↗
+       </span>
+      </a>
+     </div>
+    </nav>
+   </section>
+   <div class="intro-foot">
+    <div class="intro-facts">
+     <span>
+      Windows
+     </span>
+     <span>
+      Free trials
+     </span>
+     <span>
+      Multilingual UI
+     </span>
+     <span>
+      Code-signed
+     </span>
+     <span>
+      GUI &amp; CLI
+     </span>
+    </div>
+    <a href="#news">
+     Latest news
+     <span aria-hidden="true" class="arrow">
+      ↓
+     </span>
+    </a>
+   </div>
+   <div class="catalog" id="products">
+    <section aria-labelledby="mosaic-title" class="product-group" id="mosaic">
+     <div class="group-heading">
+      <h2 id="mosaic-title">
+       <span aria-hidden="true" class="num">
+        01
+       </span>
+       Mosaic &amp; blur
+      </h2>
+      <p>
+       Process images and videos in batches.
+      </p>
+     </div>
+     <div class="pair">
+      <article aria-labelledby="automosaic-name" class="product product-card family">
+       <div class="family-name">
+        <div class="product-head">
+         <img alt="" decoding="async" height="60" loading="lazy" src="assets/icons/automosaic-family.webp" width="60"/>
+         <div>
+          <h3 id="automosaic-name">
+           AutoMosaic
+          </h3>
+          <p class="product-label">
+           Automatic image mosaicing
+          </p>
+         </div>
+        </div>
+        <div class="family-price">
+         $20
+         <small>
+          each
+         </small>
+        </div>
+       </div>
+       <p class="product-copy">
+        <strong>
+         Automatically apply mosaic to image batches.
+        </strong>
+        Use AI to automatically detect targets and apply mosaic or blur across multiple images.
+       </p>
+       <p class="feature-line">
+        <span>
+         Batch processing
+        </span>
+        <span>
+         GPU acceleration
+        </span>
+       </p>
+       <div class="edition-list">
+        <div class="edition mini-actions">
+         <div class="edition-name">
+          <a aria-label="View AutoMosaic (General) details" href="automosaic.html">General</a>
+          <small>
+           People, faces, text &amp; more
+          </small>
+         </div>
+         <div class="edition-actions">
+          <a aria-label="View AutoMosaic (General) details" class="detail-button" href="automosaic.html">
+           View details
+           <span aria-hidden="true" class="arrow">
+            →
+           </span>
+          </a>
+          <a aria-label="Download the AutoMosaic (General) trial" class="download-link" href="https://downloads.nekzuk.com/automosaic/AM_Gen_360_Trial.zip" rel="noopener" target="_blank">
+           Free trial
+           <span aria-hidden="true" class="arrow">
+            ↓
+           </span>
+          </a>
+         </div>
+        </div>
+        <div class="edition mini-actions">
+         <div class="edition-name">
+          <a aria-label="View AutoMosaic (R18) details" href="automosaic-r18.html">R18</a>
+          <small>
+           Sensitive regions
+          </small>
+         </div>
+         <div class="edition-actions">
+          <a aria-label="View AutoMosaic (R18) details" class="detail-button" href="automosaic-r18.html">
+           View details
+           <span aria-hidden="true" class="arrow">
+            →
+           </span>
+          </a>
+          <a aria-label="Download the AutoMosaic (R18) trial" class="download-link" href="https://downloads.nekzuk.com/automosaic-r18/AM_R18_360_Trial.zip" rel="noopener" target="_blank">
+           Free trial
+           <span aria-hidden="true" class="arrow">
+            ↓
+           </span>
+          </a>
+         </div>
+        </div>
+       </div>
+      </article>
+      <article aria-labelledby="automosaic-video-name" class="product product-card family">
+       <div class="family-name">
+        <div class="product-head">
+         <img alt="" decoding="async" height="60" loading="lazy" src="assets/icons/automosaic-video-family.webp" width="60"/>
+         <div>
+          <h3 id="automosaic-video-name">
+           AutoMosaic Video
+          </h3>
+          <p class="product-label">
+           Automatic video mosaicing
+          </p>
+         </div>
+        </div>
+        <div class="family-price">
+         $25
+         <small>
+          each
+         </small>
+        </div>
+       </div>
+       <p class="product-copy">
+        <strong>
+         Follow moving subjects. Apply mosaic automatically.
+        </strong>
+        Use AI to automatically detect and track targets and apply mosaic or blur across multiple videos. You can also adjust detection results manually.
+       </p>
+       <p class="feature-line">
+        <span>
+         Batch processing
+        </span>
+        <span>
+         GPU acceleration
+        </span>
+       </p>
+       <div class="edition-list">
+        <div class="edition mini-actions">
+         <div class="edition-name">
+          <a aria-label="View AutoMosaic Video (General) details" href="automosaic-video.html">General</a>
+          <small>
+           People, faces, text &amp; more
+          </small>
+         </div>
+         <div class="edition-actions">
+          <a aria-label="View AutoMosaic Video (General) details" class="detail-button" href="automosaic-video.html">
+           View details
+           <span aria-hidden="true" class="arrow">
+            →
+           </span>
+          </a>
+          <a aria-label="Download the AutoMosaic Video (General) trial" class="download-link" href="https://downloads.nekzuk.com/automosaic-video/AutoMosaicVideo_General_Trial_110.zip" rel="noopener" target="_blank">
+           Free trial
+           <span aria-hidden="true" class="arrow">
+            ↓
+           </span>
+          </a>
+         </div>
+        </div>
+        <div class="edition mini-actions">
+         <div class="edition-name">
+          <a aria-label="View AutoMosaic Video (R18) details" href="automosaic-video-r18.html">R18</a>
+          <small>
+           Sensitive regions
+          </small>
+         </div>
+         <div class="edition-actions">
+          <a aria-label="View AutoMosaic Video (R18) details" class="detail-button" href="automosaic-video-r18.html">
+           View details
+           <span aria-hidden="true" class="arrow">
+            →
+           </span>
+          </a>
+          <a aria-label="Download the AutoMosaic Video (R18) trial" class="download-link" href="https://downloads.nekzuk.com/automosaic-video-r18/AutoMosaicVideo_R18_Trial_110.zip" rel="noopener" target="_blank">
+           Free trial
+           <span aria-hidden="true" class="arrow">
+            ↓
+           </span>
+          </a>
+         </div>
+        </div>
+       </div>
+      </article>
+     </div>
+    </section>
+    <section aria-labelledby="create-title" class="product-group" id="create">
+     <div class="group-heading">
+      <h2 id="create-title">
+       <span aria-hidden="true" class="num">
+        02
+       </span>
+       Image creation &amp; editing
+      </h2>
+      <p>
+       From the first idea to the finishing touches.
+      </p>
+     </div>
+     <div class="pair">
+      <article aria-labelledby="nai-smart-studio-name" class="product product-card">
+       <div class="product-main">
+        <a aria-label="View NAI Smart Studio details" class="product-head product-heading-link" href="nai-smart-studio.html">
+         <img alt="" decoding="async" height="60" loading="lazy" src="assets/icons/optimized/app_nai_128.webp" width="60"/>
+         <div>
+          <h3 id="nai-smart-studio-name">
+           NAI Smart Studio
+          </h3>
+          <p class="product-label">
+           NovelAI workflow tools
+          </p>
+         </div>
         </a>
-</div>
-</header>
-<main>
-<!-- News Section (What's New) -->
-<section class="news-section" aria-label="What's New">
-<h2 class="news-title">What's New</h2>
-<ul class="news-list">
-<li>
-<time datetime="2026-10-10">2026-10-10</time>
-<span class="news-tag">Update</span>
-<span><a href="nai-smart-studio.html">NAI Smart Studio</a> v1.51 released</span>
-</li>
-<li>
-<time datetime="2026-09-13">2026-09-13</time>
-<span class="news-tag">Update</span>
-<span><a href="meta-converter.html">Meta Converter</a> v4.10 released</span>
-</li>
-<li>
-<time datetime="2026-09-02">2026-09-02</time>
-<span class="news-tag">Update</span>
-<span><a href="ai-paint-cleaner.html">AI Paint Cleaner</a> v3.30 released</span>
-</li>
-</ul>
-</section>
-<div class="products-grid" id="products">
-<!-- AutoMosaic R18 -->
-<article class="product-card">
-<div class="card-header">
-<a class="product-icon-link" href="automosaic-r18.html">
-<img alt="AutoMosaic R18" class="product-icon" height="64" src="assets/icons/optimized/app_R18_128.webp" srcset="assets/icons/optimized/app_R18_128.webp 128w, assets/icons/optimized/app_R18_256.webp 256w" sizes="64px" width="64" loading="lazy" decoding="async"/>
-</a>
-<div class="card-title-area">
-<a class="product-name-link" href="automosaic-r18.html">
-<h2 class="product-name">AutoMosaic (R18)</h2>
-</a>
-<p class="product-subtitle">Batch auto mosaic tool for images</p>
-</div>
-</div>
-<div class="card-body">
-<p class="product-description">
-                        Automatically detects sensitive regions and applies mosaic/blur/fill to many images in batch.
-                        Images stay on your PC with no uploads.  Internet is used for update checks. GPU-accelerated (~1 second per image).
-                    </p>
-<ul class="features-list">
-<li>AI auto detection</li>
-<li>Fast GPU acceleration</li>
-<li>Mosaic / blur / fill / black bar</li>
-</ul>
-<ul class="product-specs" aria-label="Product specifications">
-<li class="cli">CLI support</li>
-<li class="update">In-app updates</li>
-<li class="lang">EN · JP · ZH · KR</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="price-badge paid">$20</span>
-<div class="button-group">
-<a class="btn btn-primary" href="automosaic-r18.html" aria-label="View AutoMosaic R18 product details">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-<polyline points="14 2 14 8 20 8"></polyline>
-<line x1="16" x2="8" y1="13" y2="13"></line>
-<line x1="16" x2="8" y1="17" y2="17"></line>
-</svg>
-                            Details
-                        </a>
-<a class="btn btn-secondary" href="https://downloads.nekzuk.com/automosaic-r18/AM_R18_360_Trial.zip" aria-label="Download the AutoMosaic R18 trial" rel="noopener" target="_blank">Download Trial</a>
-</div>
-</div>
-</article>
-<!-- AutoMosaic (General) -->
-<article class="product-card">
-<div class="card-header">
-<a class="product-icon-link" href="automosaic.html">
-<img alt="AutoMosaic (General)" class="product-icon" height="64" src="assets/icons/optimized/app_general_128.webp" srcset="assets/icons/optimized/app_general_128.webp 128w, assets/icons/optimized/app_general_256.webp 256w" sizes="64px" width="64" loading="lazy" decoding="async"/>
-</a>
-<div class="card-title-area">
-<a class="product-name-link" href="automosaic.html">
-<h2 class="product-name">AutoMosaic (General)</h2>
-</a>
-<p class="product-subtitle">Batch auto mosaic tool for images</p>
-</div>
-</div>
-<div class="card-body">
-<p class="product-description">
-                        Automatically detects people, faces/eyes, text, license plates, and comic elements, then applies mosaic/blur/fill in batch.
-                        Images stay on your PC with no uploads. Internet is used for update checks. GPU-accelerated (~1 second per image).
-                    </p>
-<ul class="features-list">
-<li>AI auto detection</li>
-<li>Fast GPU acceleration</li>
-<li>Mosaic / blur / fill</li>
-</ul>
-<ul class="product-specs" aria-label="Product specifications">
-<li class="cli">CLI support</li>
-<li class="update">In-app updates</li>
-<li class="lang">EN · JP · ZH · KR</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="price-badge paid">$20</span>
-<div class="button-group">
-<a class="btn btn-primary" href="automosaic.html" aria-label="View AutoMosaic General product details">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-<polyline points="14 2 14 8 20 8"></polyline>
-<line x1="16" x2="8" y1="13" y2="13"></line>
-<line x1="16" x2="8" y1="17" y2="17"></line>
-</svg>
-                            Details
-                        </a>
-<a class="btn btn-secondary" href="https://downloads.nekzuk.com/automosaic/AM_Gen_360_Trial.zip" aria-label="Download the AutoMosaic General trial" rel="noopener" target="_blank">Download Trial</a>
-</div>
-</div>
-</article>
-<!-- AutoMosaic Video (R18) -->
-<article class="product-card">
-<div class="card-header">
-<a class="product-icon-link" href="automosaic-video-r18.html">
-<img alt="AutoMosaic Video (R18)" class="product-icon" height="64" src="assets/icons/optimized/app_video_R18_128.webp" srcset="assets/icons/optimized/app_video_R18_128.webp 128w, assets/icons/optimized/app_video_R18_256.webp 256w" sizes="64px" width="64" loading="lazy" decoding="async"/>
-</a>
-<div class="card-title-area">
-<a class="product-name-link" href="automosaic-video-r18.html">
-<h2 class="product-name">AutoMosaic Video (R18)</h2>
-</a>
-<p class="product-subtitle">Batch auto mosaic tool for videos</p>
-</div>
-</div>
-<div class="card-body">
-<p class="product-description">
-                        Automatically detects and tracks sensitive regions in videos, then applies mosaic/blur/fill in batch.
-                        Video is processed locally with fast GPU acceleration.
-                    </p>
-<ul class="features-list video-features">
-<li>AI auto detection &amp; tracking</li>
-<li>Video / GIF / WebP</li>
-<li>Fine-tuning &amp; manual editing</li>
-</ul>
-<ul class="product-specs" aria-label="Product specifications">
-<li class="cli">CLI support</li>
-<li class="update">In-app updates</li>
-<li class="lang">EN · JP · ZH · KR</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="price-badge paid">$25</span>
-<div class="button-group">
-<a class="btn btn-primary" href="automosaic-video-r18.html" aria-label="View AutoMosaic Video R18 product details">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-<polyline points="14 2 14 8 20 8"></polyline>
-<line x1="16" x2="8" y1="13" y2="13"></line>
-<line x1="16" x2="8" y1="17" y2="17"></line>
-</svg>
-                            Details
-                        </a>
-<a class="btn btn-secondary" href="https://downloads.nekzuk.com/automosaic-video-r18/AutoMosaicVideo_R18_Trial_110.zip" aria-label="Download the AutoMosaic Video R18 trial" rel="noopener" target="_blank">Download Trial</a>
-</div>
-</div>
-</article>
-<!-- AutoMosaic Video (General) -->
-<article class="product-card">
-<div class="card-header">
-<a class="product-icon-link" href="automosaic-video.html">
-<img alt="AutoMosaic Video (General)" class="product-icon" height="64" src="assets/icons/optimized/app_video_general_128.webp" srcset="assets/icons/optimized/app_video_general_128.webp 128w, assets/icons/optimized/app_video_general_256.webp 256w" sizes="64px" width="64" loading="lazy" decoding="async"/>
-</a>
-<div class="card-title-area">
-<a class="product-name-link" href="automosaic-video.html">
-<h2 class="product-name">AutoMosaic Video (General)</h2>
-</a>
-<p class="product-subtitle">Batch auto mosaic tool for videos</p>
-</div>
-</div>
-<div class="card-body">
-<p class="product-description">
-                        Automatically detects and tracks people, faces/eyes, text, and license plates in videos, then applies mosaic/blur/fill in batch.
-                        Video is processed locally with fast GPU acceleration.
-                    </p>
-<ul class="features-list video-features">
-<li>AI auto detection &amp; tracking</li>
-<li>Video / GIF / WebP</li>
-<li>Fine-tuning &amp; manual editing</li>
-</ul>
-<ul class="product-specs" aria-label="Product specifications">
-<li class="cli">CLI support</li>
-<li class="update">In-app updates</li>
-<li class="lang">EN · JP · ZH · KR</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="price-badge paid">$25</span>
-<div class="button-group">
-<a class="btn btn-primary" href="automosaic-video.html" aria-label="View AutoMosaic Video General product details">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-<polyline points="14 2 14 8 20 8"></polyline>
-<line x1="16" x2="8" y1="13" y2="13"></line>
-<line x1="16" x2="8" y1="17" y2="17"></line>
-</svg>
-                            Details
-                        </a>
-<a class="btn btn-secondary" href="https://downloads.nekzuk.com/automosaic-video/AutoMosaicVideo_General_Trial_110.zip" aria-label="Download the AutoMosaic Video General trial" rel="noopener" target="_blank">Download Trial</a>
-</div>
-</div>
-</article>
-<!-- AI Paint Cleaner -->
-<article class="product-card">
-<div class="card-header">
-<a class="product-icon-link" href="ai-paint-cleaner.html">
-<img alt="AI Paint Cleaner" class="product-icon" height="64" src="assets/icons/optimized/app2_128.webp" srcset="assets/icons/optimized/app2_128.webp 128w, assets/icons/optimized/app2_256.webp 256w" sizes="64px" width="64" loading="lazy" decoding="async"/>
-</a>
-<div class="card-title-area">
-<a class="product-name-link" href="ai-paint-cleaner.html">
-<h2 class="product-name">AI Paint Cleaner</h2>
-</a>
-<p class="product-subtitle">AutoMosaic companion editor</p>
-</div>
-</div>
-<div class="card-body">
-<p class="product-description">
-                        An all-in-one editor for AutoMosaic cleanup and AI image finishing. It supports inpainting, cloud AI editing, AI correction, background removal, format conversion, upscaling, and tag/caption generation.
-                    </p>
-<ul class="features-list">
-<li>AutoMosaic cleanup</li>
-<li>Inpainting &amp; cloud AI</li>
-<li>AI correction / BG removal</li>
-</ul>
-<ul class="product-specs" aria-label="Product specifications">
-<li class="cli">CLI support</li>
-<li class="update">In-app updates</li>
-<li class="lang">EN · JP · ZH · KR</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="price-badge paid">$18</span>
-<div class="button-group">
-<a class="btn btn-primary" href="ai-paint-cleaner.html" aria-label="View AI Paint Cleaner product details">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-<polyline points="14 2 14 8 20 8"></polyline>
-<line x1="16" x2="8" y1="13" y2="13"></line>
-<line x1="16" x2="8" y1="17" y2="17"></line>
-</svg>
-                            Details
-                        </a>
-<a class="btn btn-secondary" href="https://downloads.nekzuk.com/aipaintcleaner/AIPaintCleaner_trial_330.zip" aria-label="Download the AI Paint Cleaner trial" rel="noopener" target="_blank">Download Trial</a>
-</div>
-</div>
-</article>
-<!-- NAI Smart Studio -->
-<article class="product-card">
-<div class="card-header">
-<a class="product-icon-link" href="nai-smart-studio.html">
-<img alt="NAI Smart Studio" class="product-icon" height="64" src="assets/icons/optimized/app_nai_128.webp" srcset="assets/icons/optimized/app_nai_128.webp 128w, assets/icons/optimized/app_nai_256.webp 256w" sizes="64px" width="64" loading="lazy" decoding="async"/>
-</a>
-<div class="card-title-area">
-<a class="product-name-link" href="nai-smart-studio.html">
-<h2 class="product-name">NAI Smart Studio</h2>
-</a>
-<p class="product-subtitle">NovelAI image generation enhancement tool</p>
-</div>
-</div>
-<div class="card-body">
-<p class="product-description">
-                        A Windows app that brings NovelAI image generation and workflow tools together.
-                        It supports Image-to-Image, inpainting, Director Tools, batch generation, tag generation (Tagger), and prompt search and management.
-                    </p>
-<ul class="features-list">
-<li>Batch generation &amp; wildcards</li>
-<li>Prompt search &amp; history</li>
-<li>Tags &amp; presets</li>
-</ul>
-<ul class="product-specs" aria-label="Product specifications">
-<li class="cli">CLI support</li>
-<li class="update">In-app updates</li>
-<li class="lang">EN · JP · ZH · KR</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="price-badge paid">$18</span>
-<div class="button-group">
-<a class="btn btn-primary" href="nai-smart-studio.html" aria-label="View NAI Smart Studio product details">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-<polyline points="14 2 14 8 20 8"></polyline>
-<line x1="16" x2="8" y1="13" y2="13"></line>
-<line x1="16" x2="8" y1="17" y2="17"></line>
-</svg>
-                            Details
-                        </a>
-<a class="btn btn-secondary" href="https://downloads.nekzuk.com/naiss/NAI_Smart_Studio_V1.51_Trial.zip" aria-label="Download the NAI Smart Studio trial" rel="noopener" target="_blank">Download Trial</a>
-</div>
-</div>
-</article>
-<!-- AI Meta Cleaner -->
-<article class="product-card">
-<div class="card-header">
-<a class="product-icon-link" href="ai-meta-cleaner.html">
-<img alt="AI Meta Cleaner" class="product-icon" height="64" src="assets/icons/optimized/app3_128.webp" srcset="assets/icons/optimized/app3_128.webp 128w, assets/icons/optimized/app3_256.webp 256w" sizes="64px" width="64" loading="lazy" decoding="async"/>
-</a>
-<div class="card-title-area">
-<a class="product-name-link" href="ai-meta-cleaner.html">
-<h2 class="product-name">AI Meta Cleaner</h2>
-</a>
-<p class="product-subtitle">Metadata cleaner for AI-generated images</p>
-</div>
-</div>
-<div class="card-body">
-<p class="product-description">
-                        Bulk-remove metadata and embedded AI generation info from images.
-                        Automatically detects and removes Stable Diffusion / NovelAI metadata.
-                    </p>
-<ul class="features-list">
-<li>AI metadata removal</li>
-<li>EXIF / XMP removal</li>
-<li>5 major formats</li>
-</ul>
-<ul class="product-specs" aria-label="Product specifications">
-<li class="cli">CLI support</li>
-<li class="update">In-app updates</li>
-<li class="free">Free to use</li>
-<li class="lang">EN · JP</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="price-badge free">Free</span>
-<div class="button-group">
-<a class="btn btn-primary" href="ai-meta-cleaner.html" aria-label="View AI Meta Cleaner product details">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-<polyline points="14 2 14 8 20 8"></polyline>
-<line x1="16" x2="8" y1="13" y2="13"></line>
-<line x1="16" x2="8" y1="17" y2="17"></line>
-</svg>
-                            Details
-                        </a>
-<a class="btn btn-secondary" href="https://payhip.com/buy?link=LdoFB" aria-label="Get the full version of AI Meta Cleaner for free" rel="noopener" target="_blank">Get Full Version</a>
-
-</div>
-</div>
-</article>
-<!-- Frame Craft -->
-<article class="product-card">
-<div class="card-header">
-<a class="product-icon-link" href="frame-craft.html">
-<img alt="Frame Craft" class="product-icon" height="64" src="assets/icons/optimized/app5_128.webp" srcset="assets/icons/optimized/app5_128.webp 128w, assets/icons/optimized/app5_256.webp 256w" sizes="64px" width="64" loading="lazy" decoding="async"/>
-</a>
-<div class="card-title-area">
-<a class="product-name-link" href="frame-craft.html">
-<h2 class="product-name">Frame Craft</h2>
-</a>
-<p class="product-subtitle">Video frame extractor &amp; animation converter</p>
-</div>
-</div>
-<div class="card-body">
-<p class="product-description">
-                        Extract frames from video files by frame index or time interval,
-                        and convert to GIF/WEBP animations.
-                    </p>
-<ul class="features-list">
-<li>Precise extraction</li>
-<li>GIF / WebP conversion</li>
-<li>Auto duplicate / black-bar cleanup</li>
-</ul>
-<ul class="product-specs" aria-label="Product specifications">
-<li class="cli">CLI support</li>
-<li class="update">In-app updates</li>
-<li class="lang">EN · JP</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="price-badge paid">$4</span>
-<div class="button-group">
-<a class="btn btn-primary" href="frame-craft.html" aria-label="View Frame Craft product details">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-<polyline points="14 2 14 8 20 8"></polyline>
-<line x1="16" x2="8" y1="13" y2="13"></line>
-<line x1="16" x2="8" y1="17" y2="17"></line>
-</svg>
-                            Details
-                        </a>
-<a class="btn btn-secondary" href="https://downloads.nekzuk.com/framecraft/FrameCraft_v1.5_Trial.zip" aria-label="Download the Frame Craft trial" rel="noopener" target="_blank">Download Trial</a>
-</div>
-</div>
-</article>
-<!-- Meta Converter -->
-<article class="product-card">
-<div class="card-header">
-<a class="product-icon-link" href="meta-converter.html">
-<img alt="Meta Converter" class="product-icon" height="64" src="assets/icons/optimized/app4_128.webp" srcset="assets/icons/optimized/app4_128.webp 128w, assets/icons/optimized/app4_256.webp 256w" sizes="64px" width="64" loading="lazy" decoding="async"/>
-</a>
-<div class="card-title-area">
-<a class="product-name-link" href="meta-converter.html">
-<h2 class="product-name">Meta Converter</h2>
-</a>
-<p class="product-subtitle">Image converter that preserves metadata</p>
-</div>
-</div>
-<div class="card-body">
-<p class="product-description">
-                        Batch-convert images to PNG/JPEG/WEBP while preserving metadata where possible.
-                        Useful for organizing and optimizing AI-generated images.
-                    </p>
-<ul class="features-list">
-<li>Convert while preserving metadata</li>
-<li>Quality / size tuning</li>
-<li>Eagle library support</li>
-</ul>
-<ul class="product-specs" aria-label="Product specifications">
-<li class="cli">CLI support</li>
-<li class="update">In-app updates</li>
-<li class="lang">EN · JP</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="price-badge paid">$3</span>
-<div class="button-group">
-<a class="btn btn-primary" href="meta-converter.html" aria-label="View Meta Converter product details">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true">
-<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-<polyline points="14 2 14 8 20 8"></polyline>
-<line x1="16" x2="8" y1="13" y2="13"></line>
-<line x1="16" x2="8" y1="17" y2="17"></line>
-</svg>
-                            Details
-                        </a>
-<a class="btn btn-secondary" href="https://downloads.nekzuk.com/metaconverter/Meta_Converter_Trial_410.zip" aria-label="Download the Meta Converter trial" rel="noopener" target="_blank">Download Trial</a>
-</div>
-</div>
-</article>
-</div>
-<aside class="coming-soon-banner" aria-label="Future product plans">
-<span class="coming-soon-icon" aria-hidden="true">＋</span>
-<span class="coming-soon-text">More tools are in development</span>
-<span class="coming-soon-label">Coming Soon</span>
-</aside>
-<!-- Workflow Section -->
-<section class="workflow-section">
-<h2 class="workflow-title">Suggested workflow</h2>
-<div class="workflow-content">
-<div class="workflow-step edition-choice">
-<div class="workflow-editions">
-<a class="workflow-edition-link" href="automosaic.html">
-<img alt="AutoMosaic General" class="workflow-icon" src="assets/icons/optimized/app_general_128.webp" srcset="assets/icons/optimized/app_general_128.webp 128w, assets/icons/optimized/app_general_256.webp 256w" sizes="48px" width="48" height="48" loading="lazy" decoding="async"/>
-<span class="workflow-edition-name">General</span>
-</a>
-<a class="workflow-edition-link" href="automosaic-r18.html">
-<img alt="AutoMosaic R18" class="workflow-icon" src="assets/icons/optimized/app_R18_128.webp" srcset="assets/icons/optimized/app_R18_128.webp 128w, assets/icons/optimized/app_R18_256.webp 256w" sizes="48px" width="48" height="48" loading="lazy" decoding="async"/>
-<span class="workflow-edition-name">R18</span>
-</a>
-</div>
-<p class="workflow-step-name">AutoMosaic</p>
-<p class="workflow-step-desc">Automatic image mosaic</p>
-</div>
-<span class="workflow-arrow">→</span>
-<div class="workflow-step highlight">
-<a href="ai-paint-cleaner.html" style="display: block; text-decoration: none; color: inherit;">
-<img alt="AI Paint Cleaner" class="workflow-icon" src="assets/icons/optimized/app2_128.webp" srcset="assets/icons/optimized/app2_128.webp 128w, assets/icons/optimized/app2_256.webp 256w" sizes="48px" width="48" height="48" loading="lazy" decoding="async"/>
-<p class="workflow-step-name">AI Paint Cleaner</p>
-</a>
-<p class="workflow-step-desc">Fine adjustments / editing<br/><small>*Includes AI correction, tags, and CLI processing</small></p>
-</div>
-</div>
-</section>
-</main>
-<footer>
-<p>
-            Contact:
-            <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank">Twitter/X</a>
-            ·
-            <a href="https://payhip.com/nekzuk/contact" rel="noopener" target="_blank" aria-label="Contact nekzuk Software via Payhip">Payhip</a>
-            ·
-            <a class="protected-email" data-email-user="nekzuk.software" data-email-domain="gmail.com">nekzuk.software [at] gmail [dot] com</a>
+        <p class="product-copy">
+         <strong>
+          Generate images. Keep prompts organized.
+         </strong>
+         Batch generation, tag completion, and prompt search and history. Keep your daily NovelAI workflow in one place.
         </p>
-<p style="margin-top: 1rem; font-size: 0.85rem;">
-            <a href="privacy.html">Privacy Policy</a>
-            ·
-            <a href="terms.html">Terms of Service</a>
+        <p class="feature-line">
+         <span>
+          Batch generation
+         </span>
+         <span>
+          Prompt management
+         </span>
+         <span>
+          Tagger
+         </span>
         </p>
-<p style="margin-top: 0.5rem; font-size: 0.85rem;">
-            © 2024-2026 nekzuk Software. All rights reserved.
+        <p class="product-note">
+         A separate NovelAI subscription is required.
         </p>
-</footer>
-<script>
-    function setSiteLang(lang) {
-        try { localStorage.setItem('site_lang', lang); } catch (e) {}
-    }
-
-    document.querySelectorAll('[data-site-lang]').forEach(function (link) {
-        link.addEventListener('click', function () {
-            setSiteLang(link.dataset.siteLang);
-        });
-    });
-    </script>
-  <script src="assets/js/site-analytics.js" defer></script>
-  <script src="assets/js/email-protect.js" defer></script>
-</body>
+       </div>
+       <div class="product-bottom">
+        <span class="price">
+         $18
+        </span>
+        <div class="links">
+         <a aria-label="View NAI Smart Studio details" class="detail-button" href="nai-smart-studio.html">
+          View details
+          <span aria-hidden="true" class="arrow">
+           →
+          </span>
+         </a>
+         <a aria-label="Download the NAI Smart Studio trial" class="download-link" href="https://downloads.nekzuk.com/naiss/NAI_Smart_Studio_V1.51_Trial.zip" rel="noopener" target="_blank">
+          Free trial
+          <span aria-hidden="true" class="arrow">
+           ↓
+          </span>
+         </a>
+        </div>
+       </div>
+      </article>
+      <article aria-labelledby="ai-paint-cleaner-name" class="product product-card">
+       <div class="product-main">
+        <a aria-label="View AI Paint Cleaner details" class="product-head product-heading-link" href="ai-paint-cleaner.html">
+         <img alt="" decoding="async" height="60" loading="lazy" src="assets/icons/optimized/app2_128.webp" width="60"/>
+         <div>
+          <h3 id="ai-paint-cleaner-name">
+           AI Paint Cleaner
+          </h3>
+          <p class="product-label">
+           AI image editing &amp; finishing
+          </p>
+         </div>
+        </a>
+        <p class="product-copy">
+         <strong>
+          Refine the details of your images.
+         </strong>
+         From touching up AutoMosaic results to inpainting, background removal, and upscaling.
+        </p>
+        <p class="feature-line">
+         <span>
+          AI correction
+         </span>
+         <span>
+          Background removal
+         </span>
+         <span>
+          Metadata removal
+         </span>
+        </p>
+       </div>
+       <div class="product-bottom">
+        <span class="price">
+         $18
+        </span>
+        <div class="links">
+         <a aria-label="View AI Paint Cleaner details" class="detail-button" href="ai-paint-cleaner.html">
+          View details
+          <span aria-hidden="true" class="arrow">
+           →
+          </span>
+         </a>
+         <a aria-label="Download the AI Paint Cleaner trial" class="download-link" href="https://downloads.nekzuk.com/aipaintcleaner/AIPaintCleaner_trial_330.zip" rel="noopener" target="_blank">
+          Free trial
+          <span aria-hidden="true" class="arrow">
+           ↓
+          </span>
+         </a>
+        </div>
+       </div>
+      </article>
+     </div>
+    </section>
+    <section aria-labelledby="organize-title" class="product-group" id="organize">
+     <div class="group-heading">
+      <h2 id="organize-title">
+       <span aria-hidden="true" class="num">
+        03
+       </span>
+       Conversion &amp; organization
+      </h2>
+      <p>
+       Before you save or share.
+      </p>
+     </div>
+     <div class="small-tools">
+      <article aria-labelledby="ai-meta-cleaner-name" class="product product-card">
+       <div class="product-main">
+        <a aria-label="View AI Meta Cleaner details" class="product-head product-heading-link" href="ai-meta-cleaner.html">
+         <img alt="" decoding="async" height="60" loading="lazy" src="assets/icons/optimized/app3_128.webp" width="60"/>
+         <div>
+          <h3 id="ai-meta-cleaner-name">
+           AI Meta Cleaner
+          </h3>
+          <p class="product-label">
+           Image metadata removal
+          </p>
+         </div>
+        </a>
+        <p class="product-copy">
+         <strong>
+          Clear embedded data before sharing.
+         </strong>
+         Remove metadata and AI generation info in batches. A focused tool when you need cleanup without image editing.
+        </p>
+       </div>
+       <div class="product-bottom">
+        <span class="price">
+         Free
+        </span>
+        <div class="links">
+         <a aria-label="View AI Meta Cleaner details" class="detail-button" href="ai-meta-cleaner.html">
+          View details
+          <span aria-hidden="true" class="arrow">
+           →
+          </span>
+         </a>
+         <a aria-label="Get AI Meta Cleaner for free" class="download-link" href="https://payhip.com/buy?link=LdoFB" rel="noopener" target="_blank">
+          Get it free
+          <span aria-hidden="true" class="arrow">
+           ↓
+          </span>
+         </a>
+        </div>
+       </div>
+      </article>
+      <article aria-labelledby="meta-converter-name" class="product product-card">
+       <div class="product-main">
+        <a aria-label="View Meta Converter details" class="product-head product-heading-link" href="meta-converter.html">
+         <img alt="" decoding="async" height="60" loading="lazy" src="assets/icons/optimized/app4_128.webp" width="60"/>
+         <div>
+          <h3 id="meta-converter-name">
+           Meta Converter
+          </h3>
+          <p class="product-label">
+           Metadata-preserving image conversion
+          </p>
+         </div>
+        </a>
+        <p class="product-copy">
+         <strong>
+          Smaller files. Keep generation info.
+         </strong>
+         Batch-convert images to PNG, JPEG, or WebP while preserving supported generation metadata. Works with Eagle.
+        </p>
+       </div>
+       <div class="product-bottom">
+        <span class="price">
+         $3
+        </span>
+        <div class="links">
+         <a aria-label="View Meta Converter details" class="detail-button" href="meta-converter.html">
+          View details
+          <span aria-hidden="true" class="arrow">
+           →
+          </span>
+         </a>
+         <a aria-label="Download the Meta Converter trial" class="download-link" href="https://downloads.nekzuk.com/metaconverter/Meta_Converter_Trial_410.zip" rel="noopener" target="_blank">
+          Free trial
+          <span aria-hidden="true" class="arrow">
+           ↓
+          </span>
+         </a>
+        </div>
+       </div>
+      </article>
+      <article aria-labelledby="frame-craft-name" class="product product-card">
+       <div class="product-main">
+        <a aria-label="View Frame Craft details" class="product-head product-heading-link" href="frame-craft.html">
+         <img alt="" decoding="async" height="60" loading="lazy" src="assets/icons/optimized/app5_128.webp" width="60"/>
+         <div>
+          <h3 id="frame-craft-name">
+           Frame Craft
+          </h3>
+          <p class="product-label">
+           Video frame extraction &amp; conversion
+          </p>
+         </div>
+        </a>
+        <p class="product-copy">
+         <strong>
+          Get the frames you need.
+         </strong>
+         Extract images at frame or time intervals. Convert video into GIF or WebP animations, too.
+        </p>
+       </div>
+       <div class="product-bottom">
+        <span class="price">
+         $4
+        </span>
+        <div class="links">
+         <a aria-label="View Frame Craft details" class="detail-button" href="frame-craft.html">
+          View details
+          <span aria-hidden="true" class="arrow">
+           →
+          </span>
+         </a>
+         <a aria-label="Download the Frame Craft trial" class="download-link" href="https://downloads.nekzuk.com/framecraft/FrameCraft_v1.5_Trial.zip" rel="noopener" target="_blank">
+          Free trial
+          <span aria-hidden="true" class="arrow">
+           ↓
+          </span>
+         </a>
+        </div>
+       </div>
+      </article>
+     </div>
+    </section>
+   </div>
+   <section aria-labelledby="workflow-title" class="workflow" id="workflow">
+    <div>
+     <span class="section-kicker">
+      BETTER TOGETHER
+     </span>
+     <h2 id="workflow-title">
+      Automate the batch.
+      <br/>
+      Refine the details.
+     </h2>
+     <p>
+      Apply mosaic to images with AutoMosaic,
+      <br/>
+      then touch up the results in AI Paint Cleaner.
+     </p>
+    </div>
+    <div class="workflow-chain">
+     <div class="workflow-app">
+      <img alt="" decoding="async" height="42" loading="lazy" src="assets/icons/automosaic-family.webp" width="42"/>
+      AutoMosaic
+      <small>
+       Automatic image mosaic
+      </small>
+      <div class="workflow-versions">
+       <a href="automosaic.html">
+        General →
+       </a>
+       <a href="automosaic-r18.html">
+        R18 →
+       </a>
+      </div>
+     </div>
+     <span aria-hidden="true" class="workflow-arrow">
+      →
+     </span>
+     <a class="workflow-app" href="ai-paint-cleaner.html">
+      <img alt="" decoding="async" height="42" loading="lazy" src="assets/icons/optimized/app2_128.webp" width="42"/>
+      AI Paint Cleaner
+      <span aria-hidden="true" class="arrow">
+       →
+      </span>
+      <small>
+       Touch-ups &amp; image editing
+      </small>
+     </a>
+    </div>
+   </section>
+   <section aria-labelledby="news-title" class="news" id="news">
+    <h2 id="news-title">
+     Latest news
+    </h2>
+    <ul>
+     <li>
+      <time datetime="2026-10-10">
+       2026.10.10
+      </time>
+      <a href="nai-smart-studio.html">
+       <span>
+        NAI Smart Studio v1.51 is now available
+       </span>
+       <span aria-hidden="true" class="arrow">
+        →
+       </span>
+      </a>
+     </li>
+     <li>
+      <time datetime="2026-09-13">
+       2026.09.13
+      </time>
+      <a href="meta-converter.html">
+       <span>
+        Meta Converter v4.10 is now available
+       </span>
+       <span aria-hidden="true" class="arrow">
+        →
+       </span>
+      </a>
+     </li>
+     <li>
+      <time datetime="2026-09-02">
+       2026.09.02
+      </time>
+      <a href="ai-paint-cleaner.html">
+       <span>
+        AI Paint Cleaner v3.30 is now available
+       </span>
+       <span aria-hidden="true" class="arrow">
+        →
+       </span>
+      </a>
+     </li>
+    </ul>
+   </section>
+  </main>
+  <footer class="site-footer" id="support">
+   <div class="wrap">
+    <div class="footer-top">
+     <div>
+      <a class="brand" href="#top">
+       nekzuk
+       <span>
+        Software
+       </span>
+      </a>
+      <p>
+       Desktop software for image and video workflows.
+      </p>
+     </div>
+     <nav aria-label="Contact and support" class="support-links">
+      <a class="protected-email" data-email-domain="gmail.com" data-email-label="Email ↗" data-email-user="nekzuk.software">
+       Email · nekzuk.software [at] gmail [dot] com
+      </a>
+      <a href="https://payhip.com/nekzuk/contact" rel="noopener" target="_blank">
+       Payhip ↗
+      </a>
+      <a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank">
+       X ↗
+      </a>
+     </nav>
+    </div>
+    <div class="footer-bottom">
+     <span>
+      © 2024–2026 nekzuk Software
+     </span>
+     <nav aria-label="Site policies" class="legal">
+      <a href="privacy.html">
+       Privacy policy
+      </a>
+      <a href="terms.html">
+       Terms of use
+      </a>
+     </nav>
+    </div>
+   </div>
+  </footer>
+  <script defer="" src="assets/js/home.js">
+  </script>
+  <script defer="" src="assets/js/site-analytics.js">
+  </script>
+  <script defer="" src="assets/js/email-protect.js">
+  </script>
+ </body>
 </html>
