@@ -84,12 +84,15 @@
 [data-site-page="product"] .hr { background: var(--border); }
 [data-site-page="product"] .kv .label,
 [data-site-page="product"] .heroFacts .box .label { opacity: 1; color: var(--muted2); }
-.benchmark-breakdown,
-.benchmark-stat.is-success .benchmark-label { color: #0072b2; }
+.benchmark-breakdown { color: #0072b2; }
 .benchmark-breakdown::before,
 .benchmark-breakdown::after { background: #a3cce3; }
-.benchmark-stat.is-warning .benchmark-label { color: #9b5c00; }
-.benchmark-stat.is-danger .benchmark-label { color: #9b3b76; }
+[data-product="automosaic-r18"],
+[data-product="automosaic-video-r18"] {
+  --benchmark-marker-blue: #d9effa;
+  --benchmark-marker-amber: #ffebbb;
+  --benchmark-marker-purple: #f4deec;
+}
 
 /* Purpose guide and legal pages share the homepage's light palette. */
 [data-site-page="guide"] .usecase-card,

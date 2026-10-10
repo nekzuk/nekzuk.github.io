@@ -13,6 +13,111 @@ html[lang="en"]:not([data-site-page="manual"]) body {
 /* The original page styles remain the dark theme. */
 :root { color-scheme: dark light; }
 
+/* Accuracy labels share compact markers across both R18 products and languages. */
+[data-product="automosaic-r18"],
+[data-product="automosaic-video-r18"] {
+  --benchmark-marker-blue: rgba(86, 180, 233, .43);
+  --benchmark-marker-amber: rgba(230, 159, 0, .53);
+  --benchmark-marker-purple: rgba(204, 121, 167, .38);
+}
+[data-product="automosaic-r18"] .benchmark-stat .benchmark-label,
+[data-product="automosaic-video-r18"] .video-stat .video-stat-label {
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  padding: .12rem .4rem;
+  border-radius: .2rem;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--benchmark-marker-bg);
+}
+/* Preserve label text width and alignment while separating adjacent markers. */
+[data-product="automosaic-r18"] .benchmark-stat .benchmark-label {
+  max-width: calc(100% + .4rem);
+  margin-inline: -.2rem;
+  padding-inline: .2rem;
+}
+[data-product="automosaic-r18"] .benchmark-stat.is-success,
+[data-product="automosaic-video-r18"] .video-stat.stat-ok {
+  --benchmark-marker-bg: var(--benchmark-marker-blue);
+}
+[data-product="automosaic-r18"] .benchmark-stat.is-warning,
+[data-product="automosaic-video-r18"] .video-stat.stat-missed {
+  --benchmark-marker-bg: var(--benchmark-marker-amber);
+}
+[data-product="automosaic-r18"] .benchmark-stat.is-danger,
+[data-product="automosaic-video-r18"] .video-stat.stat-extra {
+  --benchmark-marker-bg: var(--benchmark-marker-purple);
+}
+
+/* Keep percentages prominent and counts alongside them when space allows. */
+:is([data-product="automosaic-r18"], [data-product="automosaic-video-r18"]) :is(.benchmark-value, .video-stat-value) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  min-width: 0;
+  gap: .1rem .35rem;
+  margin-top: .2rem;
+  padding-top: 0;
+  line-height: 1.4;
+  white-space: normal;
+}
+:is([data-product="automosaic-r18"], [data-product="automosaic-video-r18"]) .benchmark-percent {
+  font-size: 1.4rem;
+  font-weight: 750;
+  line-height: 1.2;
+  color: var(--text);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+:is([data-product="automosaic-r18"], [data-product="automosaic-video-r18"]) .benchmark-percent-unit {
+  font-size: .65em;
+  font-weight: 650;
+}
+:is([data-product="automosaic-r18"], [data-product="automosaic-video-r18"]) .benchmark-count {
+  font-size: .75rem;
+  font-weight: 400;
+  color: var(--muted);
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+:is([data-product="automosaic-r18"], [data-product="automosaic-video-r18"]) .benchmark-note {
+  margin-top: .75rem;
+  font-size: .75rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+/* Modest cell padding leaves room for the percentage and count on one line. */
+[data-product="automosaic-r18"] .benchmark-stat {
+  padding: .45rem .35rem;
+}
+@media (max-width: 520px) {
+  :is([data-product="automosaic-r18"], [data-product="automosaic-video-r18"]) .benchmark-percent {
+    font-size: 1.25rem;
+  }
+}
+/* Share label-row height so percentages line up even when a label wraps. */
+@supports (grid-template-rows: subgrid) {
+  [data-product="automosaic-r18"] .benchmark-stat {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 2;
+  }
+  [data-product="automosaic-r18"] .benchmark-stat .benchmark-label {
+    align-self: start;
+  }
+  [data-product="automosaic-r18"] .benchmark-value { align-self: start; }
+  @media (min-width: 561px) {
+    [data-product="automosaic-video-r18"] .video-stat {
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: span 2;
+    }
+    [data-product="automosaic-video-r18"] .video-stat-label { align-self: start; }
+    [data-product="automosaic-video-r18"] .video-stat-value { align-self: start; }
+  }
+}
+
 /* Language and appearance controls share the upper-right utility row. */
 .site-controls {
   display: flex;
