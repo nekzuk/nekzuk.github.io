@@ -184,3 +184,61 @@ html[lang="en"]:not([data-site-page="manual"]) body {
   [data-site-page="legal"] header > .site-controls { margin-bottom: 1rem; }
   .site-controls { gap: .5rem; }
 }
+
+/* Shared text roles across home, product, legal, and manual pages.
+   Keep page-specific backgrounds, borders, and accent colors unchanged. */
+:root[data-site-page][lang] {
+  --site-text: #f1f5f9;
+  --site-text-secondary: #cbd5e1;
+  --text: var(--site-text);
+  --text-primary: var(--site-text);
+  --ink: var(--site-text);
+  --text-color: var(--site-text);
+  --text-secondary: var(--site-text-secondary);
+  --text-muted: var(--site-text-secondary);
+  --muted-color: var(--site-text-secondary);
+}
+/* Match the existing no-script theme fallback before manual theme selection. */
+@media (prefers-color-scheme: light) {
+  :root[data-site-page][lang]:not([data-site-theme="dark"]) {
+    --site-text: #252b33;
+    --site-text-secondary: #475569;
+  }
+}
+:root[data-site-page][lang][data-site-theme="light"],
+:root[data-site-page="home"][lang]:not([data-site-theme]) {
+  --site-text: #252b33;
+  --site-text-secondary: #475569;
+}
+/* Home also uses --muted for hover borders, so map its text separately. */
+:root[data-site-page][lang]:not([data-site-page="home"]) {
+  --muted: var(--site-text-secondary);
+  --muted2: var(--site-text-secondary);
+}
+
+/* Descriptions, feature lists, and FAQ answers are primary reading content. */
+[data-site-page="product"] :is(
+  .hero p, .heroTitle .subtitle, ul, .trial-list, .faq dd,
+  .companion-description, .review-excerpts li
+) {
+  color: var(--site-text);
+}
+[data-site-page="legal"] :is(p, ul) {
+  color: var(--site-text);
+}
+[data-site-page="home"] :is(
+  .hero-copy, .product-copy, .product-label, .feature-line,
+  .edition-name small, .purpose small, .group-heading p,
+  .intro-foot, .workflow p, .footer-top p
+) {
+  color: var(--site-text);
+}
+[data-site-page="home"] :is(
+  .family-note, .product-note, .workflow-app small,
+  .news time, .footer-bottom, .family-price small
+) {
+  color: var(--site-text-secondary);
+}
+[data-site-page="manual"] :is(h1, strong, .doc-version) {
+  color: var(--site-text);
+}
