@@ -400,13 +400,15 @@
       .benchmark-preset {
         display: inline-block;
       }
-      .benchmark-time {
+      .benchmark-summary {
         flex: 0 0 auto;
         margin-left: auto;
+        text-align: right;
+        white-space: nowrap;
         color: var(--muted);
         font-size: 0.78rem;
       }
-      .benchmark-time strong {
+      .benchmark-summary strong {
         margin-left: 0.35rem;
         color: var(--text);
         font-size: 0.98rem;
@@ -1385,9 +1387,12 @@
             <div class="benchmark-head">
               <div>
                 <h4 class="benchmark-title">アニメ調画像</h4>
-                <p class="benchmark-meta">v3.70／サンプル数470枚<span class="benchmark-preset">／②通常検出</span></p>
+                <p class="benchmark-meta">v3.70<span class="benchmark-preset">／②通常検出</span></p>
               </div>
-              <div class="benchmark-time">処理時間 <strong>213秒</strong></div>
+              <div class="benchmark-summary">
+                <div class="benchmark-samples">サンプル数 <strong>470枚</strong></div>
+                <div class="benchmark-time">処理時間 <strong>213秒</strong></div>
+              </div>
             </div>
             <div class="benchmark-results">
               <div class="benchmark-row benchmark-main">
@@ -1421,9 +1426,12 @@
             <div class="benchmark-head">
               <div>
                 <h4 class="benchmark-title">実写画像</h4>
-                <p class="benchmark-meta">v3.70／サンプル数306枚<span class="benchmark-preset">／④実写用検出</span></p>
+                <p class="benchmark-meta">v3.70<span class="benchmark-preset">／④実写用検出</span></p>
               </div>
-              <div class="benchmark-time">処理時間 <strong>160秒</strong></div>
+              <div class="benchmark-summary">
+                <div class="benchmark-samples">サンプル数 <strong>306枚</strong></div>
+                <div class="benchmark-time">処理時間 <strong>160秒</strong></div>
+              </div>
             </div>
             <div class="benchmark-results">
               <div class="benchmark-row benchmark-main">

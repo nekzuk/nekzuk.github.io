@@ -399,13 +399,15 @@
       .benchmark-preset {
         display: inline-block;
       }
-      .benchmark-time {
+      .benchmark-summary {
         flex: 0 0 auto;
         margin-left: auto;
+        text-align: right;
+        white-space: nowrap;
         color: var(--muted);
         font-size: 0.78rem;
       }
-      .benchmark-time strong {
+      .benchmark-summary strong {
         margin-left: 0.35rem;
         color: var(--text);
         font-size: 0.98rem;
@@ -1322,9 +1324,12 @@
             <div class="benchmark-head">
               <div>
                 <h4 class="benchmark-title">Anime-style images</h4>
-                <p class="benchmark-meta">v3.70 / 470 samples <span class="benchmark-preset">/ 2.Standard Detection</span></p>
+                <p class="benchmark-meta">v3.70 <span class="benchmark-preset">/ 2.Standard Detection</span></p>
               </div>
-              <div class="benchmark-time">Processing time <strong>213 sec</strong></div>
+              <div class="benchmark-summary">
+                <div class="benchmark-samples">Samples <strong>470</strong></div>
+                <div class="benchmark-time">Processing time <strong>213 sec</strong></div>
+              </div>
             </div>
             <div class="benchmark-results">
               <div class="benchmark-row benchmark-main">
@@ -1358,9 +1363,12 @@
             <div class="benchmark-head">
               <div>
                 <h4 class="benchmark-title">Real-world images</h4>
-                <p class="benchmark-meta">v3.70 / 306 samples <span class="benchmark-preset">/ 4.Realistic Detection</span></p>
+                <p class="benchmark-meta">v3.70 <span class="benchmark-preset">/ 4.Realistic Detection</span></p>
               </div>
-              <div class="benchmark-time">Processing time <strong>160 sec</strong></div>
+              <div class="benchmark-summary">
+                <div class="benchmark-samples">Samples <strong>306</strong></div>
+                <div class="benchmark-time">Processing time <strong>160 sec</strong></div>
+              </div>
             </div>
             <div class="benchmark-results">
               <div class="benchmark-row benchmark-main">
