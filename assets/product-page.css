@@ -1,0 +1,179 @@
+/* Shared additions for product pages other than AutoMosaic.
+   The approved base stylesheet is assets/automosaic-image.css; this file only adds
+   patterns those pages need (landscape UI screenshots, hero video, requirement note). */
+
+/* Hero video (same look as AutoMosaic Video; behavior from assets/js/automosaic-video.js). */
+.hero-video-heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px;font-size:12px;font-weight:650}
+.hero-video-heading span{color:var(--secondary);font-weight:400}
+.youtube-stage{position:relative;width:100%;aspect-ratio:16 / 9;min-height:202px;overflow:hidden;border:1px solid var(--line);border-radius:7px;background:#081529}
+.youtube-poster{display:block;position:absolute;inset:0;color:white}
+.youtube-poster>img{width:100%;height:100%;object-fit:cover}
+.youtube-poster::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 45%,#0008);pointer-events:none}
+.video-play{position:absolute;z-index:1;left:50%;top:46%;transform:translate(-50%,-50%);display:grid;place-items:center;width:64px;height:64px;background:#fff;color:#6150a5;border-radius:50%;box-shadow:0 3px 25px #0004;transition:transform .15s}
+.video-play svg{margin-left:4px}
+.youtube-poster:hover .video-play{transform:translate(-50%,-50%) scale(1.07)}
+.youtube-poster:focus-visible{outline-offset:-5px}
+.video-play-label{position:absolute;z-index:1;bottom:14px;left:0;right:0;text-align:center;font-size:13px;font-weight:650;color:#fff}
+.youtube-stage iframe{width:100%;height:100%;position:absolute;inset:0;border:0}
+.video-caption{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 12px;align-items:baseline;margin-top:13px;font-size:12px}
+.video-caption a{white-space:nowrap}
+
+/* A prerequisite that must be seen before buying (e.g. a third-party subscription). */
+.hero-requirement{display:flex;gap:10px;align-items:flex-start;margin-top:20px;padding:12px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:5px;background:var(--surface);font-size:13px;line-height:1.8}
+.hero-requirement svg{flex:none;width:18px;height:18px;margin-top:3px;color:var(--accent)}
+.hero-requirement strong{font-weight:700}
+.hero-requirement+.hero-price{margin-top:20px}
+
+/* Landscape processing samples in the hero. */
+.sample-image.landscape{padding:16px}
+
+/* Landscape application screenshots need a wider preview column. */
+.wide-preview .workflow-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:56px}
+.wide-preview .app-preview{max-width:640px}
+.workflow-links{display:flex;flex-direction:column;gap:14px}
+.workflow-links .text-link{font-size:12px}
+
+/* Full feature list inside a disclosure. */
+.feature-all{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 36px;padding-top:4px}
+.feature-all h4{margin:0 0 6px;font-size:12px;color:var(--ink)}
+.feature-all ul{margin:0}
+.capability-table dd ul{margin:0;padding-left:18px}
+.capability-table dd li+li{margin-top:2px}
+
+.release-items{margin:15px 0 18px;padding-left:18px;font-size:13px;line-height:1.9}
+.release-items li+li{margin-top:7px}
+.trial-limitation::before{content:'※'!important}
+
+@media (max-width:1100px){
+  .wide-preview .workflow-grid{gap:40px}
+}
+@media (max-width:800px){
+  .wide-preview .workflow-grid{grid-template-columns:1fr;gap:24px}
+  .wide-preview .app-preview{max-width:620px}
+  .feature-all{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .video-play{width:52px;height:52px}
+  .video-play-label{bottom:12px;font-size:12px}
+  .hero-requirement{font-size:12px;padding:11px 12px}
+  .wide-preview .app-preview{max-width:none}
+  .sample-image.landscape{aspect-ratio:1.4 / 1;padding:9px}
+  .release-items{font-size:12px}
+}
+
+.capability-table dd small{display:block;margin-top:3px;font-size:12px;color:var(--secondary)}
+/* Version ranges such as "v3.20 – v3.21" need a wider first column. */
+.history-row{grid-template-columns:104px 1fr auto}
+@media (max-width:600px){.history-row{grid-template-columns:92px 1fr auto}}
+.sample-toolbar>span,.sample-tabs button{white-space:nowrap}
+/* Wrap AI Paint Cleaner sample controls when the available width is too small. */
+html[data-product="ai-paint-cleaner"] .sample-toolbar{flex-wrap:wrap}
+html[data-product="ai-paint-cleaner"] .sample-tabs{flex-wrap:wrap}
+
+/* Feature groups list every function (no disclosure), so nothing is repeated below. */
+.feature-list{grid-column:1 / -1;list-style:none;margin:16px 0 0;padding:0;border-top:1px solid var(--line)}
+.feature-list li{padding:10px 0;border-bottom:1px solid var(--line);font-size:13px;line-height:1.7}
+.feature-list strong{display:block;font-weight:650}
+.feature-list span{display:block;margin-top:2px;font-size:12px;color:var(--secondary)}
+.official-features{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;align-items:start;margin-top:30px;padding:22px 26px;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+.official-features h3{font-size:15px;line-height:1.7}
+.official-features ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 30px;margin:0;padding-left:18px;font-size:13px;line-height:1.8}
+.features-section .official-features+.capability-table{margin-top:16px}
+.feature-note{margin-top:18px;font-size:12px;color:var(--secondary)}
+@media (max-width:800px){
+  .official-features{grid-template-columns:1fr;gap:12px}
+  .official-features h3 br{display:none}
+}
+@media (max-width:600px){
+  .official-features{padding:18px 18px}
+  .official-features ul{grid-template-columns:1fr;font-size:12px}
+  .feature-list li{font-size:13px}
+}
+
+/* Before/after gallery (AI Paint Cleaner correction examples). */
+.examples-section{border-top:1px solid var(--line)}
+.sample-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 24px}
+.sample-card{min-width:0}
+.sample-card>a{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:16 / 10;padding:10px;border:1px solid var(--line);border-radius:7px;background:var(--image-surface);overflow:hidden}
+.sample-card img{width:100%;height:100%;object-fit:contain}
+.sample-card .expand-icon{right:8px;bottom:8px;width:26px;height:26px}
+.sample-card figcaption{padding-top:10px;font-size:12px;line-height:1.7}
+.sample-card figcaption strong{display:block;font-size:14px;font-weight:650}
+.sample-card figcaption span{color:var(--secondary)}
+@media (max-width:800px){.sample-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 16px}}
+@media (max-width:600px){.sample-gallery{grid-template-columns:1fr}}
+
+/* Two kinds of inpainting, compared side by side. */
+.inpaint-modes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 24px;margin-top:34px}
+.inpaint-modes-head{grid-column:1 / -1}
+.inpaint-modes-head h3{font-size:19px}
+.inpaint-modes-head p{margin-top:6px;font-size:13px;color:var(--secondary)}
+.inpaint-mode{padding:22px 24px;border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:6px;background:var(--surface)}
+.inpaint-mode-kicker{font-size:12px;font-weight:650;color:var(--accent)}
+.inpaint-mode h4{margin:2px 0 12px;font-size:20px;line-height:1.5}
+.inpaint-mode dl{margin:0;border-top:1px solid var(--line)}
+.inpaint-mode dl>div{display:grid;grid-template-columns:104px minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px;line-height:1.7}
+.inpaint-mode dl>div:last-child{border-bottom:0;padding-bottom:0}
+.inpaint-mode dt{color:var(--secondary);font-size:12px}
+.inpaint-mode dd{margin:0}
+.inpaint-mode dd small{display:block;margin:2px 0 4px;font-size:12px;color:var(--secondary)}
+.inpaint-mode dd small:last-child{margin-bottom:0}
+.inpaint-modes+.capability-table{margin-top:24px}
+@media (max-width:800px){.inpaint-modes{grid-template-columns:1fr}}
+@media (max-width:600px){.inpaint-mode{padding:18px}.inpaint-mode dl>div{grid-template-columns:86px minmax(0,1fr)}.inpaint-modes-head h3{font-size:17px}}
+
+/* Small tools (Frame Craft / Meta Converter / AI Meta Cleaner):
+   the application screenshot is the hero visual, so "how to use" is a compact row of steps. */
+.hero-ui{min-width:0}
+.hero-ui .ui-image{display:flex;justify-content:center}
+.hero-ui .ui-image img{width:auto;max-width:100%;max-height:460px}
+.steps-section{background:var(--soft)}
+.steps-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px;margin:0;padding:0;list-style:none}
+.steps-row.steps-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.steps-row li{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps-row h3{font-size:16px}
+.steps-row p{margin-top:4px;font-size:12px;color:var(--secondary)}
+.steps-note{margin-top:16px;font-size:12px;color:var(--secondary)}
+
+/* Per-tool compatibility cards (e.g. how each generator's metadata is kept). */
+.support-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:34px}
+.support-cards-head{grid-column:1 / -1}
+.support-cards-head h3{font-size:19px}
+.support-cards-head p{margin-top:6px;font-size:13px;color:var(--secondary)}
+.support-card{padding:20px 22px;border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:6px;background:var(--surface)}
+.support-card h4{margin:0 0 10px;font-size:17px;line-height:1.5}
+.support-card dl{margin:0;border-top:1px solid var(--line)}
+.support-card dl>div{display:grid;grid-template-columns:92px minmax(0,1fr);gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px;line-height:1.7}
+.support-card dl>div:last-child{border-bottom:0;padding-bottom:0}
+.support-card dt{font-size:12px;color:var(--secondary)}
+.support-card dd{margin:0}
+.support-card dd small{display:block;margin-top:2px;font-size:12px;color:var(--secondary)}
+.support-cards+.capability-table{margin-top:24px}
+
+/* Free product: a download panel instead of trial + purchase. */
+.download-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px 40px;align-items:center;padding:28px 30px;background:var(--surface);border:1px solid var(--line);border-radius:7px;scroll-margin-top:90px}
+.download-panel h3{font-size:24px;letter-spacing:-.04em}
+.download-panel .product-price-line strong{margin-top:6px}
+.download-panel .purchase-options{margin-top:0}
+.download-panel .purchase-options .button{gap:16px}
+
+@media (max-width:1100px){
+  .download-panel .purchase-options{grid-template-columns:1fr 1fr}
+}
+@media (max-width:800px){
+  .hero-ui{max-width:620px;width:100%;margin-inline:auto}
+  .steps-row,.steps-row.steps-2{grid-template-columns:1fr;gap:0}
+  .steps-row li+li{border-top:0}
+  .support-cards{grid-template-columns:1fr}
+  .download-panel{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .hero-ui .ui-image img{max-height:380px}
+  .steps-row li{padding:12px 0}
+  .steps-row h3{font-size:15px}
+  .support-card{padding:18px}
+  .support-cards-head h3{font-size:17px}
+  .download-panel{padding:22px 20px}
+  .download-panel h3{font-size:22px}
+  .download-panel .purchase-options .button{padding-inline:10px;font-size:12px;gap:10px}
+}

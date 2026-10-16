@@ -1,0 +1,17 @@
+/* English text uses the same layout and visual hierarchy as Japanese. */
+html[lang="en"] h1{letter-spacing:-.04em;line-height:1.35}
+html[lang="en"] h2{letter-spacing:-.025em;line-height:1.4}
+html[lang="en"] .hero-description{line-height:1.8}
+html[lang="en"] .hero-price .currency,html[lang="en"] .product-price-line strong small{font-size:12px;font-weight:500;letter-spacing:0;color:var(--secondary)}
+html[lang="en"] .purchase-options{grid-template-columns:1fr}
+html[lang="en"] .store-link{display:inline-block;font-size:12px;margin-top:12px}
+html[lang="en"] .check-list li:last-child::before{content:"*"}
+html[lang="en"] .overview-stat h3{min-height:2.8em;line-height:1.4}
+html[lang="en"] .result-stat dt{line-height:1.5}
+html[lang="en"] .result-main .result-stat{display:grid;grid-template-rows:subgrid;grid-row:span 2}
+html[lang="en"] .benchmark-card-head h3{font-size:19px}
+html[lang="en"] .edition-switch-options>a,html[lang="en"] .edition-switch-options>span{white-space:normal}
+@media(max-width:1100px){html[lang="en"] .benchmark-card-head{flex-wrap:wrap}html[lang="en"] .benchmark-card-meta{margin-left:auto}html[lang="en"] .result-stat dt{font-size:12px}}
+@media(min-width:801px) and (max-width:950px){html[lang="en"] .overview-label{font-size:13px}}
+@media(max-width:600px){html[lang="en"] .hero-description{font-size:14px}html[lang="en"] .overview-stat h3{font-size:12px}html[lang="en"] .overview-label{font-size:13px}html[lang="en"] .benchmark-card-head h3{font-size:17px}html[lang="en"] .result-stat dd{display:block}html[lang="en"] .result-stat dd small{display:block;margin-top:3px}html[lang="en"] .result-detail .result-stat dt{min-height:3.2em}html[lang="en"] .specifications dl>div{grid-template-columns:90px 1fr}html[lang="en"] .specifications dd small{display:block;margin-left:0}}
+@media(max-width:360px){html[lang="en"] .result-stat dt{font-size:12px}html[lang="en"] .overview-label{font-size:12px}html[lang="en"] .overview-count{font-size:12px}html[lang="en"] .result-breakdown{font-size:12px;gap:5px}html[lang="en"] .overview-preset{font-size:12px}}

@@ -1,0 +1,549 @@
+<!doctype html>
+<html data-site-page="manual" data-product="nai-smart-studio_online_manual" lang="ja">
+  <head>
+    <script>
+      if (!["nekzuk.com", "www.nekzuk.com"].includes(window.location.hostname.toLowerCase())) {
+        window["ga-disable-G-040P2W2ZZK"] = true;
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ワイルドカード構文リファレンス - NAI Smart Studio</title>
+    <meta name="description" content="NAI Smart Studioのワイルドカード構文リファレンス。ランダム選択、重み、複数選択、TXT・YAML・JSON参照、SEQ、Negativeへの移動などを例付きで説明します。" />
+    <link rel="canonical" href="https://nekzuk.com/assets/manual/nai-smart-studio/wildcards_reference_j.html" />
+    <link rel="alternate" hreflang="en" href="https://nekzuk.com/assets/manual/nai-smart-studio/wildcards_reference.html" />
+    <link rel="alternate" hreflang="ja" href="https://nekzuk.com/assets/manual/nai-smart-studio/wildcards_reference_j.html" />
+    <link rel="alternate" hreflang="x-default" href="https://nekzuk.com/assets/manual/nai-smart-studio/wildcards_reference.html" />
+    <link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32" />
+    <link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml" />
+    <link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon" />
+    <meta name="theme-color" content="#6150a5" />
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-040P2W2ZZK"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-040P2W2ZZK");
+    </script>
+    <link rel="stylesheet" href="../../site-base.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="../../js/site-theme.js"></script>
+  </head>
+  <body>
+    <nav class="sidebar" id="manual-sidebar" aria-label="目次">
+      <button
+        type="button"
+        class="sidebar-close"
+        aria-label="目次を閉じる"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="sidebar-header">
+        NAI Smart Studio <br />
+        <span style="font-size: 0.8em; color: var(--muted-color)">Wildcard Reference</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#overview" class="active">早見表</a></li>
+        <li class="nav-group">基本</li>
+        <li><a href="#random">1つ選ぶ</a></li>
+        <li><a href="#weight">当たりやすさ（重み）</a></li>
+        <li><a href="#pick-multiple">複数選ぶ</a></li>
+        <li><a href="#joiner">つなぎ方（区切り文字）</a></li>
+        <li class="nav-group">ファイルから選ぶ</li>
+        <li><a href="#txt-file">TXTから選ぶ</a></li>
+        <li><a href="#glob">ファイル名検索</a></li>
+        <li><a href="#file-multiple">ファイルから複数選ぶ</a></li>
+        <li class="nav-group">YAML / JSON</li>
+        <li><a href="#yaml-key">YAMLのキー</a></li>
+        <li><a href="#json-key">JSONのキー</a></li>
+        <li><a href="#external">外部ファイルの明示参照</a></li>
+        <li><a href="#same-name">ファイル名＝先頭キー</a></li>
+        <li class="nav-group">応用</li>
+        <li><a href="#seq">SEQ（順番に使う）</a></li>
+        <li><a href="#negative">Negativeへ移動</a></li>
+        <li><a href="#emphasis">抽選と強調の区別</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <a href="nai-smart-studio_online_manual_j.html#wildcards" class="back-to-product">← マニュアルに戻る</a>
+      </div>
+    </nav>
+    <div class="sidebar-overlay" aria-hidden="true"></div>
+
+    <main class="main-content">
+      <header class="top-bar">
+        <div class="top-bar-inner">
+          <button
+            type="button"
+            class="sidebar-toggle"
+            aria-controls="manual-sidebar"
+            aria-expanded="false"
+            aria-label="目次を開く"
+            data-open-label="目次を開く"
+            data-close-label="目次を閉じる"
+          >
+            <span aria-hidden="true">&#9776;</span>
+            <span>目次</span>
+          </button>
+          <span class="doc-version">ワイルドカード構文リファレンス</span>
+          <div class="site-controls">
+            <div class="language-switch">
+              <a href="wildcards_reference.html">English</a>
+              <span class="divider">/</span>
+              <a href="wildcards_reference_j.html" class="current">日本語</a>
+            </div>
+            <button class="site-theme-toggle" type="button" aria-label="配色を切り替える" title="配色を切り替える" hidden>
+              <svg class="site-theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
+              <svg class="site-theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div class="content-scroll">
+        <div class="content-wrapper">
+<section id="overview">
+<h1>ワイルドカード構文リファレンス</h1>
+<p>Prompt・Negative・キャラクター欄で共通して使用できます。例中の <code>#</code> コメントと <code>→</code> の右側は説明用です（入力しません）。抽選結果は一例です。</p>
+<div class="note">ファイルの置き場所やWildcardsタブの使い方は、マニュアルの<a href="nai-smart-studio_online_manual_j.html#wildcards">Wildcards</a>を参照してください。</div>
+<h3>早見表</h3>
+<div class="table-scroll"><table class="ref-table">
+<thead><tr><th>書き方</th><th>できること</th><th></th></tr></thead>
+<tbody>
+<tr><td><code>{A|B|C}</code></td><td>候補から1つランダムに選ぶ</td><td><a href="#random">詳しく →</a></td></tr>
+<tr><td><code>{3%%A|1%%B}</code></td><td>当たりやすさ（重み）を変える</td><td><a href="#weight">詳しく →</a></td></tr>
+<tr><td><code>{2$$A|B|C} / {1-3$$A|B|C}</code></td><td>候補を複数選ぶ</td><td><a href="#pick-multiple">詳しく →</a></td></tr>
+<tr><td><code>{2$$ + $$A|B|C}</code></td><td>選んだ候補のつなぎ方を指定する</td><td><a href="#joiner">詳しく →</a></td></tr>
+<tr><td><code>__name__ / __folder/name__</code></td><td>TXTファイルから選ぶ</td><td><a href="#txt-file">詳しく →</a></td></tr>
+<tr><td><code>__folder/*__</code></td><td>ファイル名を検索して選ぶ</td><td><a href="#glob">詳しく →</a></td></tr>
+<tr><td><code>{2$$__name__}</code></td><td>ファイルから複数選ぶ</td><td><a href="#file-multiple">詳しく →</a></td></tr>
+<tr><td><code>__file/key/subkey__</code></td><td>YAML / JSONのキーから選ぶ</td><td><a href="#yaml-key">詳しく →</a></td></tr>
+<tr><td><code>CHAR:A1: …</code></td><td>YAMLからキャラクタープロンプトを追加する</td><td><a href="#yaml-char">詳しく →</a></td></tr>
+<tr><td><code>[SEQ:__name__] / [SEQ:__name__:2]</code></td><td>連続生成で候補を順番に使う</td><td><a href="#seq">詳しく →</a></td></tr>
+<tr><td><code>&lt;!…!&gt; / &lt;ppp:stn&gt;…&lt;ppp:/stn&gt;</code></td><td>Negativeへ移動する</td><td><a href="#negative">詳しく →</a></td></tr>
+<tr><td><code>[__name__]</code></td><td>抽選後も弱調として残す</td><td><a href="#emphasis">詳しく →</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="random">
+<h1>候補を1つランダムに選ぶ</h1>
+<pre><code><span class="c"># | で区切った候補から1つ選びます</span>
+{red|blue|green} hair          <span class="r">→ blue hair</span>
+
+<span class="c"># それぞれ独立に選びます</span>
+{shirt|jacket}, {skirt|pants}  <span class="r">→ jacket, skirt</span>
+
+<span class="c"># 候補を入れ子にします</span>
+{short|{long|very long}} hair <span class="r">→ very long hair</span></code></pre>
+</section>
+<section id="weight">
+<h1>当たりやすさを変える</h1>
+<pre><code><span class="c"># red と blue の当たりやすさを3対1にします</span>
+{3%%red|1%%blue} hair    <span class="r">→ red hair</span>
+
+<span class="c"># 小数でも指定できます</span>
+{0.5%%red|1.5%%blue}     <span class="r">→ blue</span>
+
+<span class="c"># 重みを省略すると1になります</span>
+{3%%red|blue}           <span class="r">→ red</span>
+
+<span class="c"># 0以下の重みは0として扱います。全候補が0なら均等に抽選します</span>
+{0%%red|1%%blue}         <span class="r">→ blue</span></code></pre>
+</section>
+<section id="pick-multiple">
+<h1>複数の候補を選ぶ</h1>
+<pre><code><span class="c"># 2個選びます。同じ候補を再選択せず、抽選順に並べます</span>
+{2$$red|blue|green}             <span class="r">→ green, red</span>
+
+<span class="c"># 1〜3個選びます</span>
+{1-3$$red|blue|green}           <span class="r">→ red, blue, green</span>
+
+<span class="c"># 下限を省略すると1個から選びます</span>
+{-2$$red|blue|green}            <span class="r">→ blue, red</span>
+
+<span class="c"># 上限を省略すると全候補まで選べます。個数は1〜候補数に収まります</span>
+{2-$$red|blue|green}            <span class="r">→ red, green</span>
+
+<span class="c"># 個数と当たりやすさを組み合わせます</span>
+{2$$3%%red|1%%blue|1%%green}    <span class="r">→ red, blue</span></code></pre>
+</section>
+<section id="joiner">
+<h1>選んだ候補のつなぎ方を変える</h1>
+<pre><code><span class="c"># 区切りを省略すると「, 」でつなぎます</span>
+{2$$red|blue|green}          <span class="r">→ red, blue</span>
+
+<span class="c"># {個数$$区切り文字$$候補|候補} で指定します</span>
+{2$$ + $$red|blue|green}     <span class="r">→ red + blue</span>
+{2$$ / $$red|blue|green}     <span class="r">→ red / blue</span>
+
+<span class="c"># 区切り文字を空にします</span>
+{2$$$$red|blue|green}        <span class="r">→ redblue</span></code></pre>
+</section>
+<section id="txt-file">
+<h1>TXTから候補を選ぶ</h1>
+<div class="file-label">wildcards/tag.txt</div>
+<pre><code><span class="c"># 色の候補です</span>
+red
+blue
+green</code></pre>
+<div class="file-label">wildcards/clothes/top.txt</div>
+<pre><code>shirt
+jacket
+coat</code></pre>
+<div class="file-label">wildcards/clothes/bottom.txt</div>
+<pre><code>skirt
+pants
+shorts</code></pre>
+<pre><code><span class="c"># 保存先は設定のワイルドカードフォルダーです（通常は wildcards）</span>
+<span class="c"># UTF-8・1行1候補で保存します。空行と行頭が # の行は除外します</span>
+<span class="c"># 設定フォルダーからの相対パスで、拡張子を省略します</span>
+<span class="c"># 設定が .../wildcards なら __tag__ と書きます。wildcards/ は付けません</span>
+<span class="c"># __wildcards/tag__ と書くと .../wildcards/wildcards/tag.txt を参照します</span>
+__tag__ hair                         <span class="r">→ blue hair</span>
+
+<span class="c"># サブフォルダーは / で区切ります</span>
+__clothes/top__                      <span class="r">→ jacket</span>
+__clothes/top__, __clothes/bottom__  <span class="r">→ shirt, skirt</span>
+
+<span class="c"># 出現箇所ごとに独立に抽選するため、同じ結果にもなります</span>
+__tag__, __tag__                     <span class="r">→ red, red</span></code></pre>
+</section>
+<section id="glob">
+<h1>ファイル名を検索して選ぶ</h1>
+<pre><code><span class="c"># 一致した全ファイルの候補をまとめて抽選します</span>
+<span class="c"># YAML内部のキーを検索する指定ではありません</span>
+__clothes/*__                        <span class="r">→ shorts</span>
+
+<span class="c"># 拡張子も指定できます</span>
+__clothes/*.txt__                    <span class="r">→ coat</span>
+
+<span class="c"># [tb] は t または b に一致します</span>
+__clothes/[tb]*__                    <span class="r">→ pants</span>
+
+<span class="c"># **/ は下位フォルダーも対象にします</span>
+__clothes/**/*__                     <span class="r">→ shirt</span></code></pre>
+</section>
+<section id="file-multiple">
+<h1>ファイルから複数選ぶ</h1>
+<pre><code><span class="c"># 参照先の候補一覧から2個選びます</span>
+<span class="c"># 一覧に同じ文字列が複数あれば、結果の文字列も重複する場合があります</span>
+{2$$__tag__}                       <span class="r">→ red, green</span>
+
+<span class="c"># 個数の範囲・区切り文字も指定できます</span>
+{1-3$$__tag__}                     <span class="r">→ blue</span>
+{2$$ + $$__tag__}                  <span class="r">→ blue + red</span>
+
+<span class="c"># 複数ファイルからまとめて選びます</span>
+{2$$__clothes/*__}                 <span class="r">→ shirt, pants</span>
+
+<span class="c"># ファイル参照と直接指定を候補にします</span>
+{__tag__|black} hair               <span class="r">→ green hair</span></code></pre>
+</section>
+<section id="yaml-key">
+<h1>YAMLのキーから選ぶ</h1>
+<div class="file-label">wildcards/pack.yaml</div>
+<pre><code>outfit:
+  color:
+    - white
+    - black
+  top:
+    - &quot;__color__ shirt&quot;
+  set:
+    - &quot;__top__, __clothes/bottom__&quot;
+color:
+  - red
+  - blue</code></pre>
+<pre><code><span class="c"># __ファイル名/キー/子キー__ で参照します（.yaml / .yml に対応しています）</span>
+__pack/outfit/color__      <span class="r">→ white</span>
+
+<span class="c"># __color__ は近い階層の white / black を使います</span>
+<span class="c"># ルートの red / blue より優先します</span>
+__pack/outfit/top__        <span class="r">→ black shirt</span>
+__pack/outfit/set__        <span class="r">→ white shirt, skirt</span>
+
+<span class="c"># キーの候補から複数選びます</span>
+{2$$__pack/outfit/color__} <span class="r">→ white, black</span>
+
+<span class="c"># ファイル名だけなら全キー配下から選びます</span>
+__pack__                  <span class="r">→ black shirt</span>
+
+<span class="c"># 従来のキーだけの参照も使えます。ファイルを特定する場合はファイル名から書きます</span>
+__outfit/top__             <span class="r">→ white shirt</span></code></pre>
+<h3 id="yaml-char">YAMLで複数のキャラクタープロンプトを追加する</h3>
+<div class="file-label">wildcards/characters.yaml</div>
+<pre><code><span class="c"># |- で改行を保持し、複数行を1つの候補として保存します</span>
+<span class="c"># CHAR: __clothes/top__ のように位置を省略することもできます</span>
+<span class="c"># 共通プロンプトを先に書き、CHAR: の行を末尾にまとめます</span>
+<span class="c"># CHAR: 以降は、次の CHAR: または末尾までがそのキャラクターの内容になります</span>
+scene:
+  - |-
+    landscape
+    CHAR:A1: __clothes/top__
+    CHAR:E5: {red|blue} hair</code></pre>
+<pre><code><span class="c"># プロンプト欄には次のワイルドカードを書きます</span>
+<span class="c"># CHAR: を含むワイルドカードは、プロンプト全体の末尾に置きます</span>
+<span class="c"># 共通タグを追加する場合は cinematic lighting, __characters/scene__ のように前へ書きます</span>
+<span class="c"># このワイルドカードの後に入力した通常のプロンプトは、最後のキャラクタープロンプトに吸収されます</span>
+<span class="c"># 改行してから入力しても同じです。共通プロンプトにしたい内容は、ワイルドカードの前に書きます</span>
+__characters/scene__</code></pre>
+<pre><code><span class="c"># 次のように展開され、CHAR: の内容を各キャラクタープロンプトへ振り分けます</span>
+<span class="c"># CHAR: は本アプリの記法です。API送信前に共通プロンプトと各キャラクターへ分離します</span>
+<span class="c"># メインは landscape、キャラクターは jacket / blue hair などになります</span>
+<span class="c"># 位置指定ON時、A1は左上、E5は右下です（横 A〜E・縦 1〜5）</span>
+landscape
+CHAR:A1: jacket
+CHAR:E5: blue hair
+
+<span class="c"># 構造化キャラクター非対応モデルでは本文へ結合します</span></code></pre>
+<pre><code><span class="c"># 後ろに追記すると、cinematic lighting は共通ではなく最後のキャラクターの内容になります</span>
+__characters/scene__, cinematic lighting
+
+<span class="c"># 改行して追記した場合も、cinematic lighting は最後のキャラクターの内容になります</span>
+__characters/scene__
+cinematic lighting
+
+<span class="c"># 共通プロンプトとして使う場合は、ワイルドカードの前に書きます</span>
+cinematic lighting, __characters/scene__</code></pre>
+</section>
+<section id="json-key">
+<h1>JSONのキーから選ぶ</h1>
+<div class="file-label">wildcards/weather.json</div>
+<pre><code>{&quot;sky&quot;: [&quot;sunny&quot;, &quot;cloudy&quot;, &quot;rainy&quot;]}</code></pre>
+<pre><code><span class="c"># YAMLと同じ書式で参照します</span>
+__weather/sky__ <span class="r">→ cloudy</span></code></pre>
+</section>
+<section id="external">
+<h1>外部ファイルを明示して参照する</h1>
+<div class="file-label">wildcards/external/color.txt</div>
+<pre><code>purple</code></pre>
+<pre><code><span class="c"># pack.yaml の outfit 内に追加する例です</span>
+external_top:
+  - &quot;__external/color__ shirt&quot;</code></pre>
+<pre><code><span class="c"># 存在する外部ファイルへのパスを明記すると、その指定先を優先します</span>
+<span class="c"># 短い内部参照は、同じ階層 → 親階層 → 同じYAML内の一意な末尾一致 → 外部の順に探します</span>
+<span class="c"># 内部候補が複数で曖昧な場合は、参照を残して警告します</span>
+__pack/outfit/external_top__ <span class="r">→ purple shirt</span></code></pre>
+</section>
+<section id="same-name">
+<h1>ファイル名と先頭キーが同じ場合に参照する</h1>
+<div class="file-label">wildcards/wardrobe.yaml</div>
+<pre><code>wardrobe:
+  top:
+    - shirt
+    - jacket</code></pre>
+<pre><code><span class="c"># ファイル名と先頭キーの両方を書きます</span>
+__wardrobe/wardrobe/top__ <span class="r">→ shirt</span>
+
+<span class="c"># 重なった名前を1つに省略する書式も使えます</span>
+__wardrobe/top__          <span class="r">→ jacket</span></code></pre>
+</section>
+<section id="seq">
+<h1>SEQで順番に選ぶ</h1>
+<pre><code><span class="c"># 順番選択には SEQ: を明記します</span>
+<span class="c"># tag.txt の red / blue / green を1回ずつ使います</span>
+<span class="c"># 最後まで進むと先頭へ戻ります</span>
+[SEQ:__tag__]         <span class="r">→ red → blue → green → red …</span>
+
+<span class="c"># :2 で各候補を2回ずつ使います。省略時は1回、0も1回として扱います</span>
+[SEQ:__tag__:2]       <span class="r">→ red → red → blue → blue → green → green …</span>
+
+<span class="c"># YAMLの候補を順番に使います</span>
+[SEQ:__pack/outfit/color__] <span class="r">→ white → black → white …</span>
+
+<span class="c"># 1候補だけのテンプレートに含まれる参照も順番に展開します</span>
+[SEQ:__pack/outfit/top__]   <span class="r">→ white shirt → black shirt → white shirt …</span>
+
+<span class="c"># GUI: 入力欄へ直接書くと、生成開始時に先頭へ戻して1周分をキューに用意します</span>
+<span class="c"># 複数のSEQは周回数の最小公倍数まで生成します。2,000件を超える場合は開始前に確認します</span>
+<span class="c"># CLI: --count で生成枚数を指定します</span>
+<span class="c"># 旧 [__tag__:2] はSEQとして扱いません。[SEQ:__tag__:2] に変更します</span></code></pre>
+</section>
+<section id="negative">
+<h1>ネガティブへ移動する</h1>
+<pre><code><span class="c"># 以下は Negative が lowres の場合です</span>
+<span class="c"># &lt;!…!&gt; は末尾へ移します</span>
+portrait &lt;!watermark!&gt;
+<span class="r">→ Prompt: portrait</span>
+<span class="r">→ Negative: lowres, watermark</span>
+
+<span class="c"># stn は先頭へ移します</span>
+portrait &lt;ppp:stn&gt;watermark&lt;ppp:/stn&gt;
+<span class="r">→ Prompt: portrait</span>
+<span class="r">→ Negative: watermark, lowres</span>
+
+<span class="c"># s は先頭を明示します</span>
+portrait &lt;ppp:stn s&gt;watermark&lt;ppp:/stn&gt;
+<span class="r">→ Prompt: portrait</span>
+<span class="r">→ Negative: watermark, lowres</span>
+
+<span class="c"># e は末尾を指定します</span>
+portrait &lt;ppp:stn e&gt;watermark&lt;ppp:/stn&gt;
+<span class="r">→ Prompt: portrait</span>
+<span class="r">→ Negative: lowres, watermark</span>
+
+<span class="c"># 選ばれた候補の内容だけ移します。ワイルドカードの候補内にも書けます</span>
+{red hair &lt;!blue hair!&gt;|blue hair &lt;!red hair!&gt;}
+<span class="r">→ Prompt: red hair</span>
+<span class="r">→ Negative: lowres, blue hair</span>
+
+<span class="c"># キャラクター内の指定は、そのキャラクターのNegativeへ移します</span>
+<span class="c"># Negative欄に書いた移動ブロックは、内容をその場に残します</span>
+<span class="c"># V5 Full Medium: 対象をPromptから除去し、内部のワイルドカード・SEQは展開しません</span>
+<span class="c"># モデル既定の固定Negativeと、エディタ・YAMLの原文は維持します</span>
+<span class="c"># pN・iN、閉じ忘れ、移動ブロックの入れ子は送信前にエラーになります</span></code></pre>
+</section>
+<section id="emphasis">
+<h1>抽選と強調を区別する</h1>
+<pre><code><span class="c"># [] はワイルドカード展開後も残し、NovelAIの弱調として送ります</span>
+<span class="c"># 候補は通常どおりランダムに選び、SEQは進めません</span>
+[__tag__]       <span class="r">→ [blue]</span>
+[[__tag__]]     <span class="r">→ [[red]]</span>
+
+<span class="c"># | や $$ のない波括弧と、NAIの数値強調はそのまま残ります</span>
+{red}           <span class="r">→ {red}</span>
+1.2::red::      <span class="r">→ 1.2::red::</span>
+
+<span class="c"># %% は当たりやすさです。TXTの行頭に単独で書いても抽選重みにはなりません</span>
+<span class="c"># {3%%red|blue} のように候補の中へ書きます</span>
+3%%red          <span class="r">→ 3%%red</span>
+
+<span class="c"># 空の候補は除外されます。空文字を選ぶことはありません</span>
+{red|}          <span class="r">→ red</span>
+
+<span class="c"># ? を含む参照名には未対応です。ファイル名検索は *・**・[ab] を使います</span>
+<span class="c"># 見つからない参照・循環参照は、未解決の参照を残してログへ警告します</span>
+<span class="c"># 固定Seedでもランダム抽選の結果は変わることがあります</span>
+<span class="c"># SEQの固定Seedは維持します。-1の場合だけ画像生成のSeedをランダムにします</span></code></pre>
+</section>
+<br /><br /><br />
+          <footer class="manual-footer">
+            &copy; 2026 NAI Smart Studio Project
+          </footer>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const sections = document.querySelectorAll("section");
+      const navLi = document.querySelectorAll(".nav-links li a");
+      const scrollContainer = document.querySelector(".content-scroll");
+      const sidebar = document.querySelector(".sidebar");
+      const sidebarToggle = document.querySelector(".sidebar-toggle");
+      const sidebarClose = document.querySelector(".sidebar-close");
+      const sidebarOverlay = document.querySelector(".sidebar-overlay");
+      const mobileSidebar = window.matchMedia("(max-width: 780px)");
+      const optionalScreenshots = document.querySelectorAll(
+        ".screenshot-placeholder[data-src]",
+      );
+
+      const setSidebarOpen = (open, restoreFocus = false) => {
+        const shouldOpen = mobileSidebar.matches && open;
+
+        sidebar.classList.toggle("is-open", shouldOpen);
+        sidebarOverlay.classList.toggle("is-open", shouldOpen);
+        document.body.classList.toggle("sidebar-open", shouldOpen);
+        sidebarToggle.setAttribute("aria-expanded", String(shouldOpen));
+        sidebarToggle.setAttribute(
+          "aria-label",
+          shouldOpen
+            ? sidebarToggle.dataset.closeLabel
+            : sidebarToggle.dataset.openLabel,
+        );
+        sidebar.setAttribute(
+          "aria-hidden",
+          String(mobileSidebar.matches && !shouldOpen),
+        );
+        sidebar.inert = mobileSidebar.matches && !shouldOpen;
+
+        if (shouldOpen) {
+          sidebarClose.focus();
+        } else if (restoreFocus && mobileSidebar.matches) {
+          sidebarToggle.focus();
+        }
+      };
+
+      sidebarToggle.addEventListener("click", () => {
+        const isOpen = sidebarToggle.getAttribute("aria-expanded") === "true";
+        setSidebarOpen(!isOpen);
+      });
+
+      sidebarClose.addEventListener("click", () => {
+        setSidebarOpen(false, true);
+      });
+
+      sidebarOverlay.addEventListener("click", () => {
+        setSidebarOpen(false, true);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (
+          event.key === "Escape" &&
+          sidebarToggle.getAttribute("aria-expanded") === "true"
+        ) {
+          setSidebarOpen(false, true);
+        }
+      });
+
+      navLi.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (mobileSidebar.matches) {
+            setSidebarOpen(false);
+          }
+        });
+      });
+
+      const syncSidebarForViewport = () => {
+        setSidebarOpen(false);
+      };
+
+      if (typeof mobileSidebar.addEventListener === "function") {
+        mobileSidebar.addEventListener("change", syncSidebarForViewport);
+      } else {
+        mobileSidebar.addListener(syncSidebarForViewport);
+      }
+
+      syncSidebarForViewport();
+
+      optionalScreenshots.forEach((placeholder) => {
+        const img = new Image();
+        img.className = "screenshot";
+        img.alt = placeholder.dataset.alt || "Screenshot";
+        img.onload = () => {
+          placeholder.parentNode.insertBefore(img, placeholder);
+          placeholder.hidden = true;
+        };
+        img.src = placeholder.dataset.src;
+      });
+
+      scrollContainer.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (scrollContainer.scrollTop >= sectionTop - 150) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        // The last sections can be too short to reach the threshold.
+        if (
+          scrollContainer.scrollTop + scrollContainer.clientHeight >=
+          scrollContainer.scrollHeight - 2
+        ) {
+          current = sections[sections.length - 1].getAttribute("id");
+        }
+
+        navLi.forEach((a) => {
+          a.classList.remove("active");
+          if (a.getAttribute("href") === "#" + current) {
+            a.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

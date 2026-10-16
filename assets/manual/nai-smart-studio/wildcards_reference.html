@@ -1,0 +1,549 @@
+<!doctype html>
+<html data-site-page="manual" data-product="nai-smart-studio_online_manual" lang="en">
+  <head>
+    <script>
+      if (!["nekzuk.com", "www.nekzuk.com"].includes(window.location.hostname.toLowerCase())) {
+        window["ga-disable-G-040P2W2ZZK"] = true;
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wildcard Syntax Reference - NAI Smart Studio</title>
+    <meta name="description" content="Wildcard syntax reference for NAI Smart Studio: random picks, weights, multiple picks, TXT / YAML / JSON references, SEQ, moving text to Negative, and more, with examples." />
+    <link rel="canonical" href="https://nekzuk.com/assets/manual/nai-smart-studio/wildcards_reference.html" />
+    <link rel="alternate" hreflang="en" href="https://nekzuk.com/assets/manual/nai-smart-studio/wildcards_reference.html" />
+    <link rel="alternate" hreflang="ja" href="https://nekzuk.com/assets/manual/nai-smart-studio/wildcards_reference_j.html" />
+    <link rel="alternate" hreflang="x-default" href="https://nekzuk.com/assets/manual/nai-smart-studio/wildcards_reference.html" />
+    <link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32" />
+    <link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml" />
+    <link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon" />
+    <meta name="theme-color" content="#6150a5" />
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-040P2W2ZZK"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-040P2W2ZZK");
+    </script>
+    <link rel="stylesheet" href="../../site-base.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="../../js/site-theme.js"></script>
+  </head>
+  <body>
+    <nav class="sidebar" id="manual-sidebar" aria-label="Contents">
+      <button
+        type="button"
+        class="sidebar-close"
+        aria-label="Close contents"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="sidebar-header">
+        NAI Smart Studio <br />
+        <span style="font-size: 0.8em; color: var(--muted-color)">Wildcard Reference</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#overview" class="active">Quick reference</a></li>
+        <li class="nav-group">Basics</li>
+        <li><a href="#random">Pick one</a></li>
+        <li><a href="#weight">Weights</a></li>
+        <li><a href="#pick-multiple">Pick multiple</a></li>
+        <li><a href="#joiner">Separators</a></li>
+        <li class="nav-group">From files</li>
+        <li><a href="#txt-file">TXT files</a></li>
+        <li><a href="#glob">File name search</a></li>
+        <li><a href="#file-multiple">Multiple from files</a></li>
+        <li class="nav-group">YAML / JSON</li>
+        <li><a href="#yaml-key">YAML keys</a></li>
+        <li><a href="#json-key">JSON keys</a></li>
+        <li><a href="#external">External files</a></li>
+        <li><a href="#same-name">File name = top key</a></li>
+        <li class="nav-group">Advanced</li>
+        <li><a href="#seq">SEQ (in order)</a></li>
+        <li><a href="#negative">Move to Negative</a></li>
+        <li><a href="#emphasis">Drawing vs. emphasis</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <a href="nai-smart-studio_online_manual.html#wildcards" class="back-to-product">← Back to Manual</a>
+      </div>
+    </nav>
+    <div class="sidebar-overlay" aria-hidden="true"></div>
+
+    <main class="main-content">
+      <header class="top-bar">
+        <div class="top-bar-inner">
+          <button
+            type="button"
+            class="sidebar-toggle"
+            aria-controls="manual-sidebar"
+            aria-expanded="false"
+            aria-label="Open contents"
+            data-open-label="Open contents"
+            data-close-label="Close contents"
+          >
+            <span aria-hidden="true">&#9776;</span>
+            <span>Contents</span>
+          </button>
+          <span class="doc-version">Wildcard Syntax Reference</span>
+          <div class="site-controls">
+            <div class="language-switch">
+              <a href="wildcards_reference.html" class="current">English</a>
+              <span class="divider">/</span>
+              <a href="wildcards_reference_j.html">日本語</a>
+            </div>
+            <button class="site-theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme" hidden>
+              <svg class="site-theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
+              <svg class="site-theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div class="content-scroll">
+        <div class="content-wrapper">
+<section id="overview">
+<h1>Wildcard Syntax Reference</h1>
+<p>Works in the Prompt, Negative, and character fields. In the examples, <code>#</code> comments and text to the right of <code>→</code> are explanations only (do not type them). Draw results are just examples.</p>
+<div class="note">For where to put files and how to use the Wildcards tab, see <a href="nai-smart-studio_online_manual.html#wildcards">Wildcards</a> in the manual.</div>
+<h3>Quick reference</h3>
+<div class="table-scroll"><table class="ref-table">
+<thead><tr><th>Syntax</th><th>What it does</th><th></th></tr></thead>
+<tbody>
+<tr><td><code>{A|B|C}</code></td><td>Pick one candidate at random</td><td><a href="#random">Details →</a></td></tr>
+<tr><td><code>{3%%A|1%%B}</code></td><td>Change how likely each candidate is</td><td><a href="#weight">Details →</a></td></tr>
+<tr><td><code>{2$$A|B|C} / {1-3$$A|B|C}</code></td><td>Pick multiple candidates</td><td><a href="#pick-multiple">Details →</a></td></tr>
+<tr><td><code>{2$$ + $$A|B|C}</code></td><td>Set how picked candidates are joined</td><td><a href="#joiner">Details →</a></td></tr>
+<tr><td><code>__name__ / __folder/name__</code></td><td>Pick from a TXT file</td><td><a href="#txt-file">Details →</a></td></tr>
+<tr><td><code>__folder/*__</code></td><td>Pick by searching file names</td><td><a href="#glob">Details →</a></td></tr>
+<tr><td><code>{2$$__name__}</code></td><td>Pick multiple from files</td><td><a href="#file-multiple">Details →</a></td></tr>
+<tr><td><code>__file/key/subkey__</code></td><td>Pick from a YAML / JSON key</td><td><a href="#yaml-key">Details →</a></td></tr>
+<tr><td><code>CHAR:A1: …</code></td><td>Add character prompts from YAML</td><td><a href="#yaml-char">Details →</a></td></tr>
+<tr><td><code>[SEQ:__name__] / [SEQ:__name__:2]</code></td><td>Use candidates in order during continuous generation</td><td><a href="#seq">Details →</a></td></tr>
+<tr><td><code>&lt;!…!&gt; / &lt;ppp:stn&gt;…&lt;ppp:/stn&gt;</code></td><td>Move text to Negative</td><td><a href="#negative">Details →</a></td></tr>
+<tr><td><code>[__name__]</code></td><td>Keep de-emphasis after drawing</td><td><a href="#emphasis">Details →</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="random">
+<h1>Pick one candidate at random</h1>
+<pre><code><span class="c"># Picks one of the candidates separated by |</span>
+{red|blue|green} hair          <span class="r">→ blue hair</span>
+
+<span class="c"># Each group is drawn independently</span>
+{shirt|jacket}, {skirt|pants}  <span class="r">→ jacket, skirt</span>
+
+<span class="c"># Candidates can be nested</span>
+{short|{long|very long}} hair <span class="r">→ very long hair</span></code></pre>
+</section>
+<section id="weight">
+<h1>Change how likely each candidate is</h1>
+<pre><code><span class="c"># Makes red three times as likely as blue</span>
+{3%%red|1%%blue} hair    <span class="r">→ red hair</span>
+
+<span class="c"># Decimals also work</span>
+{0.5%%red|1.5%%blue}     <span class="r">→ blue</span>
+
+<span class="c"># An omitted weight counts as 1</span>
+{3%%red|blue}           <span class="r">→ red</span>
+
+<span class="c"># Weights of 0 or less count as 0. If every weight is 0, all candidates are equally likely</span>
+{0%%red|1%%blue}         <span class="r">→ blue</span></code></pre>
+</section>
+<section id="pick-multiple">
+<h1>Pick multiple candidates</h1>
+<pre><code><span class="c"># Picks 2. A candidate is never picked twice; results appear in draw order</span>
+{2$$red|blue|green}             <span class="r">→ green, red</span>
+
+<span class="c"># Picks 1 to 3</span>
+{1-3$$red|blue|green}           <span class="r">→ red, blue, green</span>
+
+<span class="c"># Omitting the lower bound starts from 1</span>
+{-2$$red|blue|green}            <span class="r">→ blue, red</span>
+
+<span class="c"># Omitting the upper bound allows up to all candidates. The count stays between 1 and the number of candidates</span>
+{2-$$red|blue|green}            <span class="r">→ red, green</span>
+
+<span class="c"># Combine a count with weights</span>
+{2$$3%%red|1%%blue|1%%green}    <span class="r">→ red, blue</span></code></pre>
+</section>
+<section id="joiner">
+<h1>Change how picked candidates are joined</h1>
+<pre><code><span class="c"># Without a separator, results are joined with &quot;, &quot;</span>
+{2$$red|blue|green}          <span class="r">→ red, blue</span>
+
+<span class="c"># Use {count$$separator$$candidate|candidate}</span>
+{2$$ + $$red|blue|green}     <span class="r">→ red + blue</span>
+{2$$ / $$red|blue|green}     <span class="r">→ red / blue</span>
+
+<span class="c"># An empty separator joins with nothing</span>
+{2$$$$red|blue|green}        <span class="r">→ redblue</span></code></pre>
+</section>
+<section id="txt-file">
+<h1>Pick from a TXT file</h1>
+<div class="file-label">wildcards/tag.txt</div>
+<pre><code><span class="c"># Color candidates</span>
+red
+blue
+green</code></pre>
+<div class="file-label">wildcards/clothes/top.txt</div>
+<pre><code>shirt
+jacket
+coat</code></pre>
+<div class="file-label">wildcards/clothes/bottom.txt</div>
+<pre><code>skirt
+pants
+shorts</code></pre>
+<pre><code><span class="c"># Files go in the wildcard folder set in Settings (usually wildcards)</span>
+<span class="c"># Save as UTF-8, one candidate per line. Blank lines and lines starting with # are skipped</span>
+<span class="c"># Write the path relative to that folder, without the extension</span>
+<span class="c"># If the folder is .../wildcards, write __tag__ — do not add wildcards/</span>
+<span class="c"># __wildcards/tag__ would refer to .../wildcards/wildcards/tag.txt</span>
+__tag__ hair                         <span class="r">→ blue hair</span>
+
+<span class="c"># Separate subfolders with /</span>
+__clothes/top__                      <span class="r">→ jacket</span>
+__clothes/top__, __clothes/bottom__  <span class="r">→ shirt, skirt</span>
+
+<span class="c"># Each occurrence is drawn independently, so results can repeat</span>
+__tag__, __tag__                     <span class="r">→ red, red</span></code></pre>
+</section>
+<section id="glob">
+<h1>Pick by searching file names</h1>
+<pre><code><span class="c"># Candidates from every matching file are pooled into one draw</span>
+<span class="c"># This does not search keys inside YAML files</span>
+__clothes/*__                        <span class="r">→ shorts</span>
+
+<span class="c"># The extension can be specified too</span>
+__clothes/*.txt__                    <span class="r">→ coat</span>
+
+<span class="c"># [tb] matches t or b</span>
+__clothes/[tb]*__                    <span class="r">→ pants</span>
+
+<span class="c"># **/ includes subfolders</span>
+__clothes/**/*__                     <span class="r">→ shirt</span></code></pre>
+</section>
+<section id="file-multiple">
+<h1>Pick multiple from files</h1>
+<pre><code><span class="c"># Picks 2 from the referenced candidate list</span>
+<span class="c"># If the list contains the same string more than once, results may repeat</span>
+{2$$__tag__}                       <span class="r">→ red, green</span>
+
+<span class="c"># Count ranges and separators work here too</span>
+{1-3$$__tag__}                     <span class="r">→ blue</span>
+{2$$ + $$__tag__}                  <span class="r">→ blue + red</span>
+
+<span class="c"># Pick from several files at once</span>
+{2$$__clothes/*__}                 <span class="r">→ shirt, pants</span>
+
+<span class="c"># Mix file references and inline candidates</span>
+{__tag__|black} hair               <span class="r">→ green hair</span></code></pre>
+</section>
+<section id="yaml-key">
+<h1>Pick from a YAML key</h1>
+<div class="file-label">wildcards/pack.yaml</div>
+<pre><code>outfit:
+  color:
+    - white
+    - black
+  top:
+    - &quot;__color__ shirt&quot;
+  set:
+    - &quot;__top__, __clothes/bottom__&quot;
+color:
+  - red
+  - blue</code></pre>
+<pre><code><span class="c"># Refer to it as __file/key/child-key__ (.yaml and .yml are supported)</span>
+__pack/outfit/color__      <span class="r">→ white</span>
+
+<span class="c"># __color__ uses the nearer white / black</span>
+<span class="c"># They take priority over red / blue at the root</span>
+__pack/outfit/top__        <span class="r">→ black shirt</span>
+__pack/outfit/set__        <span class="r">→ white shirt, skirt</span>
+
+<span class="c"># Pick multiple from a key&#x27;s candidates</span>
+{2$$__pack/outfit/color__} <span class="r">→ white, black</span>
+
+<span class="c"># A file name alone picks from everything under all keys</span>
+__pack__                  <span class="r">→ black shirt</span>
+
+<span class="c"># The older key-only form still works. To specify the file, start with the file name</span>
+__outfit/top__             <span class="r">→ white shirt</span></code></pre>
+<h3 id="yaml-char">Add multiple character prompts from YAML</h3>
+<div class="file-label">wildcards/characters.yaml</div>
+<pre><code><span class="c"># |- keeps line breaks, storing several lines as one candidate</span>
+<span class="c"># The position can be omitted, as in CHAR: __clothes/top__</span>
+<span class="c"># Write the shared prompt first and put all CHAR: lines at the end</span>
+<span class="c"># Everything after CHAR: up to the next CHAR: or the end belongs to that character</span>
+scene:
+  - |-
+    landscape
+    CHAR:A1: __clothes/top__
+    CHAR:E5: {red|blue} hair</code></pre>
+<pre><code><span class="c"># Write this wildcard in the prompt field</span>
+<span class="c"># Place wildcards that contain CHAR: at the very end of the prompt</span>
+<span class="c"># To add shared tags, put them before it, as in cinematic lighting, __characters/scene__</span>
+<span class="c"># Any regular prompt typed after this wildcard is absorbed into the last character prompt</span>
+<span class="c"># The same happens on a new line. Put anything meant to be shared before the wildcard</span>
+__characters/scene__</code></pre>
+<pre><code><span class="c"># It expands as below, and each CHAR: part is sent to its character prompt</span>
+<span class="c"># CHAR: is this app&#x27;s own notation. It is split into shared and character prompts before sending to the API</span>
+<span class="c"># The main prompt becomes landscape; the characters get jacket / blue hair, etc.</span>
+<span class="c"># With position enabled, A1 is top left and E5 is bottom right (columns A–E, rows 1–5)</span>
+landscape
+CHAR:A1: jacket
+CHAR:E5: blue hair
+
+<span class="c"># Models without structured character support merge it into the main text</span></code></pre>
+<pre><code><span class="c"># Appended after it, cinematic lighting belongs to the last character, not the shared prompt</span>
+__characters/scene__, cinematic lighting
+
+<span class="c"># Appended on a new line, cinematic lighting still belongs to the last character</span>
+__characters/scene__
+cinematic lighting
+
+<span class="c"># To use it as a shared prompt, put it before the wildcard</span>
+cinematic lighting, __characters/scene__</code></pre>
+</section>
+<section id="json-key">
+<h1>Pick from a JSON key</h1>
+<div class="file-label">wildcards/weather.json</div>
+<pre><code>{&quot;sky&quot;: [&quot;sunny&quot;, &quot;cloudy&quot;, &quot;rainy&quot;]}</code></pre>
+<pre><code><span class="c"># Refer to it the same way as YAML</span>
+__weather/sky__ <span class="r">→ cloudy</span></code></pre>
+</section>
+<section id="external">
+<h1>Refer explicitly to an external file</h1>
+<div class="file-label">wildcards/external/color.txt</div>
+<pre><code>purple</code></pre>
+<pre><code><span class="c"># Example added inside outfit in pack.yaml</span>
+external_top:
+  - &quot;__external/color__ shirt&quot;</code></pre>
+<pre><code><span class="c"># A path to an existing external file takes priority</span>
+<span class="c"># Short internal references are searched in this order: same level → parent level → unique suffix match in the same YAML → external</span>
+<span class="c"># If several internal candidates make it ambiguous, the reference is left as is with a warning</span>
+__pack/outfit/external_top__ <span class="r">→ purple shirt</span></code></pre>
+</section>
+<section id="same-name">
+<h1>Refer when the file name and top key match</h1>
+<div class="file-label">wildcards/wardrobe.yaml</div>
+<pre><code>wardrobe:
+  top:
+    - shirt
+    - jacket</code></pre>
+<pre><code><span class="c"># Write both the file name and the top key</span>
+__wardrobe/wardrobe/top__ <span class="r">→ shirt</span>
+
+<span class="c"># The repeated name can also be written once</span>
+__wardrobe/top__          <span class="r">→ jacket</span></code></pre>
+</section>
+<section id="seq">
+<h1>Pick in order with SEQ</h1>
+<pre><code><span class="c"># Write SEQ: explicitly for sequential picks</span>
+<span class="c"># Uses red / blue / green from tag.txt once each</span>
+<span class="c"># After the last one, it starts over from the first</span>
+[SEQ:__tag__]         <span class="r">→ red → blue → green → red …</span>
+
+<span class="c"># :2 uses each candidate twice. Omitted means once; 0 is also treated as once</span>
+[SEQ:__tag__:2]       <span class="r">→ red → red → blue → blue → green → green …</span>
+
+<span class="c"># Use YAML candidates in order</span>
+[SEQ:__pack/outfit/color__] <span class="r">→ white → black → white …</span>
+
+<span class="c"># References inside a single-candidate template are also expanded in order</span>
+[SEQ:__pack/outfit/top__]   <span class="r">→ white shirt → black shirt → white shirt …</span>
+
+<span class="c"># GUI: when typed directly in an input field, it resets to the start and queues one full cycle when generation begins</span>
+<span class="c"># Multiple SEQs generate up to the least common multiple of their cycles. You are asked to confirm before starting if it exceeds 2,000</span>
+<span class="c"># CLI: set the number of images with --count</span>
+<span class="c"># The old [__tag__:2] form is not treated as SEQ. Change it to [SEQ:__tag__:2]</span></code></pre>
+</section>
+<section id="negative">
+<h1>Move to Negative</h1>
+<pre><code><span class="c"># The examples below assume Negative is lowres</span>
+<span class="c"># &lt;!…!&gt; moves the content to the end</span>
+portrait &lt;!watermark!&gt;
+<span class="r">→ Prompt: portrait</span>
+<span class="r">→ Negative: lowres, watermark</span>
+
+<span class="c"># stn moves it to the start</span>
+portrait &lt;ppp:stn&gt;watermark&lt;ppp:/stn&gt;
+<span class="r">→ Prompt: portrait</span>
+<span class="r">→ Negative: watermark, lowres</span>
+
+<span class="c"># s explicitly means the start</span>
+portrait &lt;ppp:stn s&gt;watermark&lt;ppp:/stn&gt;
+<span class="r">→ Prompt: portrait</span>
+<span class="r">→ Negative: watermark, lowres</span>
+
+<span class="c"># e means the end</span>
+portrait &lt;ppp:stn e&gt;watermark&lt;ppp:/stn&gt;
+<span class="r">→ Prompt: portrait</span>
+<span class="r">→ Negative: lowres, watermark</span>
+
+<span class="c"># Only the content of the picked candidate is moved. It can be written inside wildcard candidates too</span>
+{red hair &lt;!blue hair!&gt;|blue hair &lt;!red hair!&gt;}
+<span class="r">→ Prompt: red hair</span>
+<span class="r">→ Negative: lowres, blue hair</span>
+
+<span class="c"># Inside a character field, it moves to that character&#x27;s Negative</span>
+<span class="c"># Move blocks written in the Negative field leave their content in place</span>
+<span class="c"># V5 Full Medium: the target is removed from Prompt, and wildcards / SEQ inside it are not expanded</span>
+<span class="c"># The model&#x27;s fixed default Negative and the original text in the editor / YAML are kept</span>
+<span class="c"># pN / iN, unclosed blocks, and nested move blocks cause an error before sending</span></code></pre>
+</section>
+<section id="emphasis">
+<h1>Tell drawing apart from emphasis</h1>
+<pre><code><span class="c"># [] stays after wildcard expansion and is sent as NovelAI de-emphasis</span>
+<span class="c"># Candidates are still drawn at random as usual, and SEQ does not advance</span>
+[__tag__]       <span class="r">→ [blue]</span>
+[[__tag__]]     <span class="r">→ [[red]]</span>
+
+<span class="c"># Braces without | or $$, and NAI numeric emphasis, are left as is</span>
+{red}           <span class="r">→ {red}</span>
+1.2::red::      <span class="r">→ 1.2::red::</span>
+
+<span class="c"># %% sets a weight. Written alone at the start of a TXT line, it is not a draw weight</span>
+<span class="c"># Write it inside candidates, as in {3%%red|blue}</span>
+3%%red          <span class="r">→ 3%%red</span>
+
+<span class="c"># Empty candidates are skipped. An empty string is never picked</span>
+{red|}          <span class="r">→ red</span>
+
+<span class="c"># Reference names containing ? are not supported. For file name search, use *, ** and [ab]</span>
+<span class="c"># Missing and circular references are left unresolved and logged as warnings</span>
+<span class="c"># Random draw results may change even with a fixed Seed</span>
+<span class="c"># SEQ keeps a fixed Seed. Only when it is -1 is the image generation Seed randomized</span></code></pre>
+</section>
+<br /><br /><br />
+          <footer class="manual-footer">
+            &copy; 2026 NAI Smart Studio Project
+          </footer>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const sections = document.querySelectorAll("section");
+      const navLi = document.querySelectorAll(".nav-links li a");
+      const scrollContainer = document.querySelector(".content-scroll");
+      const sidebar = document.querySelector(".sidebar");
+      const sidebarToggle = document.querySelector(".sidebar-toggle");
+      const sidebarClose = document.querySelector(".sidebar-close");
+      const sidebarOverlay = document.querySelector(".sidebar-overlay");
+      const mobileSidebar = window.matchMedia("(max-width: 780px)");
+      const optionalScreenshots = document.querySelectorAll(
+        ".screenshot-placeholder[data-src]",
+      );
+
+      const setSidebarOpen = (open, restoreFocus = false) => {
+        const shouldOpen = mobileSidebar.matches && open;
+
+        sidebar.classList.toggle("is-open", shouldOpen);
+        sidebarOverlay.classList.toggle("is-open", shouldOpen);
+        document.body.classList.toggle("sidebar-open", shouldOpen);
+        sidebarToggle.setAttribute("aria-expanded", String(shouldOpen));
+        sidebarToggle.setAttribute(
+          "aria-label",
+          shouldOpen
+            ? sidebarToggle.dataset.closeLabel
+            : sidebarToggle.dataset.openLabel,
+        );
+        sidebar.setAttribute(
+          "aria-hidden",
+          String(mobileSidebar.matches && !shouldOpen),
+        );
+        sidebar.inert = mobileSidebar.matches && !shouldOpen;
+
+        if (shouldOpen) {
+          sidebarClose.focus();
+        } else if (restoreFocus && mobileSidebar.matches) {
+          sidebarToggle.focus();
+        }
+      };
+
+      sidebarToggle.addEventListener("click", () => {
+        const isOpen = sidebarToggle.getAttribute("aria-expanded") === "true";
+        setSidebarOpen(!isOpen);
+      });
+
+      sidebarClose.addEventListener("click", () => {
+        setSidebarOpen(false, true);
+      });
+
+      sidebarOverlay.addEventListener("click", () => {
+        setSidebarOpen(false, true);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (
+          event.key === "Escape" &&
+          sidebarToggle.getAttribute("aria-expanded") === "true"
+        ) {
+          setSidebarOpen(false, true);
+        }
+      });
+
+      navLi.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (mobileSidebar.matches) {
+            setSidebarOpen(false);
+          }
+        });
+      });
+
+      const syncSidebarForViewport = () => {
+        setSidebarOpen(false);
+      };
+
+      if (typeof mobileSidebar.addEventListener === "function") {
+        mobileSidebar.addEventListener("change", syncSidebarForViewport);
+      } else {
+        mobileSidebar.addListener(syncSidebarForViewport);
+      }
+
+      syncSidebarForViewport();
+
+      optionalScreenshots.forEach((placeholder) => {
+        const img = new Image();
+        img.className = "screenshot";
+        img.alt = placeholder.dataset.alt || "Screenshot";
+        img.onload = () => {
+          placeholder.parentNode.insertBefore(img, placeholder);
+          placeholder.hidden = true;
+        };
+        img.src = placeholder.dataset.src;
+      });
+
+      scrollContainer.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (scrollContainer.scrollTop >= sectionTop - 150) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        // The last sections can be too short to reach the threshold.
+        if (
+          scrollContainer.scrollTop + scrollContainer.clientHeight >=
+          scrollContainer.scrollHeight - 2
+        ) {
+          current = sections[sections.length - 1].getAttribute("id");
+        }
+
+        navLi.forEach((a) => {
+          a.classList.remove("active");
+          if (a.getAttribute("href") === "#" + current) {
+            a.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,7 +1,6 @@
 <!doctype html>
-
 <html data-site-page="product" data-product="frame-craft" lang="ja">
-  <head>
+<head>
     <script>
       if (!["nekzuk.com", "www.nekzuk.com"].includes(window.location.hostname.toLowerCase())) {
         window["ga-disable-G-040P2W2ZZK"] = true;
@@ -98,13 +97,12 @@
       sizes="512x512"
       type="image/png"
     />
-    <meta content="#6366f1" name="theme-color" />
+    <meta content="#6150a5" name="theme-color" />
     <link
       rel="preconnect"
       href="https://www.googletagmanager.com"
       crossorigin
     />
-    <link rel="preconnect" href="https://i.ytimg.com" crossorigin />
     <!-- Google Analytics -->
     <script
       async
@@ -118,449 +116,6 @@
       gtag("js", new Date());
       gtag("config", "G-040P2W2ZZK");
     </script>
-
-    <link rel="stylesheet" href="assets/product-info-sections.css">
-    <style>
-      :root {
-        --bg: #0f172a;
-        --card: #1e293b;
-        --card2: #172136;
-        --border: #334155;
-        --text: #f1f5f9;
-        --muted: #94a3b8;
-        --muted2: #64748b;
-        --accent: #22d3ee;
-        --primary: #6366f1;
-        --grad: linear-gradient(135deg, var(--primary), #8b5cf6);
-      }
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.7;
-        min-height: 100vh;
-        padding: 2.5rem 1.25rem;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeLegibility;
-      }
-      a {
-        color: var(--accent);
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      .container {
-        max-width: 980px;
-        margin: 0 auto;
-      }
-      .top {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        margin-bottom: 1.25rem;
-      }
-      .small {
-        font-size: 0.9rem;
-        color: var(--muted);
-      }
-      .pill {
-        display: inline-flex;
-        gap: 0.5rem;
-        align-items: center;
-        padding: 0.25rem 0.7rem;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(255, 255, 255, 0.05);
-        color: var(--muted);
-        font-size: 0.85rem;
-      }
-
-      .hero {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 1.1rem;
-        padding: 1.6rem;
-      }
-      .pills {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-        margin-bottom: 1rem;
-      }
-      .heroTop {
-        display: flex;
-        gap: 1rem;
-        align-items: flex-start;
-      }
-
-      .appIcon {
-        width: 110px;
-        height: 110px;
-        border-radius: 24px;
-        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
-        flex: 0 0 auto;
-      }
-      .heroTitle {
-        display: flex;
-        align-items: flex-start;
-        gap: 18px;
-      }
-      .heroTitle > div {
-        max-width: 760px;
-      }
-      .heroTitle h1 {
-        line-height: 1.05;
-      }
-      .heroTitle .title {
-        margin: 0;
-      }
-      .heroTitle .subtitle {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.35;
-        max-width: 640px;
-      }
-
-      .btns {
-        display: flex;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-        margin-top: 1rem;
-        align-items: center;
-      }
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.6rem 1rem;
-        border-radius: 0.7rem;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.06);
-        color: var(--text);
-        text-decoration: none;
-        font-weight: 650;
-        font-size: 0.95rem;
-      }
-      .btn.primary {
-        background: linear-gradient(135deg, #4f46e5, #7c3aed);
-        border-color: transparent;
-      }
-      .btn.sub {
-        background: rgba(34, 211, 238, 0.15);
-        border-color: rgba(34, 211, 238, 0.4);
-        color: var(--accent);
-      }
-      .btn.sub:hover {
-        background: rgba(34, 211, 238, 0.25);
-        text-decoration: none;
-      }
-      .btn.download {
-        background: rgba(34, 211, 238, 0.1);
-        border-color: rgba(34, 211, 238, 0.3);
-        color: var(--accent);
-        font-size: 0.9rem;
-        padding: 0.5rem 0.9rem;
-      }
-      .btn.download:hover {
-        background: rgba(34, 211, 238, 0.2);
-        text-decoration: none;
-      }
-      .btn.ghost {
-        background: transparent;
-      }
-      .price {
-        font-size: 1.1rem;
-        font-weight: 700;
-        color: var(--accent);
-        display: flex;
-        align-items: baseline;
-        gap: 0.5rem;
-        margin-top: 0.6rem;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        margin-top: 1rem;
-      }
-      @media (min-width: 920px) {
-        .grid {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-      .section {
-        margin-top: 1rem;
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 1.1rem;
-        padding: 1.4rem;
-      }
-      .section h2 {
-        font-size: 1.2rem;
-        margin-bottom: 0.7rem;
-      }
-      .section h3 {
-        font-size: 1.05rem;
-        margin: 0.9rem 0 0.4rem;
-      }
-      .section > p,
-      .section > ul,
-      .section > ol,
-      .section > dl,
-      .section > h3 {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-      }
-      .section .hr {
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
-      }
-      .section > .twoCol {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-      }
-      ul {
-        margin: 0.3rem 0 0.8rem 1.25rem;
-        color: var(--muted);
-      }
-      li {
-        margin: 0.25rem 0;
-      }
-      .hr {
-        height: 1px;
-        background: var(--border);
-        margin: 1.1rem 0;
-      }
-      .kpi {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.75rem;
-        margin-top: 0.9rem;
-      }
-      @media (min-width: 720px) {
-        .kpi {
-          grid-template-columns: repeat(4, minmax(0, 1fr));
-        }
-      }
-      .kpi .box {
-        background: var(--card2);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 1rem;
-        padding: 0.85rem;
-      }
-
-      .heroFacts .box {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        gap: 0.22rem;
-      }
-      .heroFacts .box .label {
-        display: block;
-        font-size: 0.75rem;
-        opacity: 0.72;
-        line-height: 1.15;
-      }
-      .heroFacts .box .value {
-        display: block;
-        font-size: 0.98rem;
-        font-weight: 700;
-        line-height: 1.25;
-      }
-
-      .kpi .kv {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-      }
-      .kpi .kv .label {
-        margin: 0;
-      }
-      .section .kpi .kv .label {
-        font-size: 0.75rem;
-        opacity: 0.72;
-        line-height: 1.15;
-      }
-      .kpi .kv .value {
-        margin: 0;
-      }
-      .section .kpi .kv .value {
-        font-size: 0.98rem;
-        font-weight: 700;
-        line-height: 1.25;
-      }
-
-      /* Images */
-      .shot {
-        background: var(--card2);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 1rem;
-        overflow: hidden;
-      }
-      .shot img {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-      .shot .cap {
-        padding: 0.7rem 0.85rem;
-        color: var(--muted);
-        font-size: 0.9rem;
-      }
-
-      .footer {
-        text-align: center;
-        margin-top: 1.4rem;
-        color: var(--muted2);
-        font-size: 0.9rem;
-      }
-
-      a.shot {
-        display: block;
-      }
-      .shot img {
-        width: 100%;
-        height: auto;
-        max-height: 420px;
-        object-fit: contain;
-        background: #0b1220;
-      }
-      .shot .cap {
-        margin-top: 0.45rem;
-      }
-
-      #ui .shot img {
-        max-height: 760px;
-        object-fit: contain;
-      }
-
-      .twoCol {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 18px;
-      }
-      @media (max-width: 820px) {
-        .twoCol {
-          grid-template-columns: 1fr;
-        }
-      }
-      .twoCol > div {
-        padding-left: 0;
-        padding-right: 0;
-      }
-      .note {
-        opacity: 0.9;
-        font-size: 0.92rem;
-        margin-top: 0.5rem;
-      }
-      .section ul,
-      .section ol {
-        margin: 0.8rem 0 0;
-        padding-left: 1.25rem;
-      }
-      .section li {
-        margin: 0.35rem 0;
-      }
-          @media (max-width: 700px) {
-        .heroTitle {
-          padding: 16px 12px 10px;
-          gap: 12px;
-        }
-        .appIcon {
-          width: 72px;
-          height: 72px;
-          border-radius: 16px;
-        }
-      }
-      /* below ~400px the icon and the buy buttons no longer fit side by side */
-      @media (max-width: 400px) {
-        .heroTitle {
-          flex-wrap: wrap;
-        }
-      }
-      /* grid items default to min-width: auto, which stops the body sections
-         shrinking and pushes them out of the container on narrow screens */
-      .grid > * {
-        min-width: 0;
-      }
-      /* p.lang-ja is display:inline, which makes two adjacent notes
-         run together on one line */
-      p.note.lang-ja {
-        display: block;
-      }
-      .purchaseRow {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-        margin-top: 1rem;
-      }
-      .purchaseMethods {
-        display: flex;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-      }
-      .purchaseOption {
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
-        min-width: 9rem;
-      }
-      .purchaseOption .btn {
-        justify-content: center;
-      }
-      .purchaseNote {
-        color: var(--muted);
-        font-size: 0.74rem;
-        line-height: 1.25;
-        text-align: center;
-      }
-      .purchaseExtras {
-        display: flex;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-        padding-left: 0.75rem;
-        border-left: 1px solid var(--border);
-      }
-      @media (max-width: 640px) {
-        .purchaseRow {
-          display: block;
-        }
-        .purchaseMethods {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-        .purchaseOption {
-          min-width: 0;
-        }
-        .purchaseOption .btn {
-          width: 100%;
-        }
-        .purchaseExtras {
-          margin-top: 0.75rem;
-          padding-top: 0.75rem;
-          padding-left: 0;
-          border-top: 1px solid var(--border);
-          border-left: 0;
-        }
-      }
-      @media (max-width: 400px) {
-        .purchaseMethods {
-          grid-template-columns: 1fr;
-        }
-      }
-</style>
     <!-- 構造化データ：SoftwareApplication (Enhanced) -->
     <script type="application/ld+json">
       {
@@ -638,348 +193,87 @@
         ]
       }
     </script>
-    <link rel="stylesheet" href="assets/site-base.css" />
-    <link rel="stylesheet" href="assets/site-light.css" media="(prefers-color-scheme: light)" data-site-light />
+    <link rel="stylesheet" href="assets/automosaic-image.css">
+    <link rel="stylesheet" href="assets/product-page.css">
     <script src="assets/js/site-theme.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="top">
-        <a data-role="back" href="/index_j.html#products"
-          >← <span class="lang-ja">製品一覧</span></a
-        >
-        <div class="site-controls">
-          <div class="small" aria-label="言語切り替え">
-            <a href="frame-craft.html">English</a> /
-            <a href="frame-craft_j.html" aria-current="page">日本語</a>
-          </div>
-          <button class="site-theme-toggle" type="button" aria-label="配色を切り替える" title="配色を切り替える" hidden>
-            <svg class="site-theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
-            <svg class="site-theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
-          </button>
-        </div>
-      </div>
-      <section class="hero">
-        <div class="pills">
-          <span class="pill">Windows</span>
-          <span class="pill">Desktop</span>
-          <span class="pill">コード署名済み</span>
-          <span class="pill">一括処理</span>
-          <span class="pill">オフライン処理</span>
-        </div>
-        <div class="heroTop">
-          <div class="heroTitle">
-            <img
-              alt="Frame Craft icon"
-              class="appIcon"
-              src="assets/icons/optimized/app5_256.webp" width="110" height="110" srcset="assets/icons/optimized/app5_128.webp 128w, assets/icons/optimized/app5_256.webp 256w" sizes="110px" decoding="async"/>
-            <div>
-              <div class="titleRow">
-                <h1 class="title"><span class="lang-ja">Frame Craft</span></h1>
-                <p class="subtitle">
-                  <span class="lang-ja"
-                    >動画から高精度でフレーム抽出やGIF/WEBPアニメ変換が行えるツールです。スクショ取り、アニメ作成、Pixivうごイラストワークフローに最適です。</span
-                  >
-                </p>
-              </div>
-              <div class="price">
-                <span class="lang-ja">¥500</span>
-              </div>
-              <div class="purchaseRow">
-                <div class="purchaseMethods">
-                  <div class="purchaseOption">
-                    <a
-                      class="btn primary lang-ja"
-                      href="https://synekzuk.booth.pm/items/7295171"
-                      rel="noopener"
-                      target="_blank"
-                      >BOOTHで購入</a
-                    >
-                    <span class="purchaseNote lang-ja">ログインが必要</span>
-                  </div>
-                  <div class="purchaseOption">
-                    <a
-                      class="btn lang-ja"
-                      href="https://payhip.com/buy?link=OKynY"
-                      rel="noopener"
-                      target="_blank"
-                      >直接購入</a
-                    >
-                    <span class="purchaseNote lang-ja">カード・PayPal</span>
-                  </div>
-                </div>
-                <div class="purchaseExtras">
-                  <a class="btn sub" href="#trial"
-                    ><span class="lang-ja">体験版</span></a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="kpi heroFacts">
-          <div class="box">
-            <div class="kv">
-              <div class="label lang-ja">主な用途</div>
-              <div class="value lang-ja">フレーム抽出</div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="kv">
-              <div class="label lang-ja">出力形式</div>
-              <div class="value lang-ja">画像 / アニメ</div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="kv">
-              <div class="label lang-ja">処理方式</div>
-              <div class="value lang-ja">バッチ</div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="kv">
-              <div class="label lang-ja">対応形式</div>
-              <div class="value lang-ja">14種類</div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="grid">
-        <section class="section">
-          <h2>
-            <span class="lang-ja">概要</span>
-          </h2>
-          <p class="lang-ja">
-            Frame
-            Craftは、動画やアニメーションファイルから指定したフレームや秒間隔で画像を抽出したり、アニメーション形式（GIF/WEBP）に変換が行えるツールです。正確なフレーム抽出、重複画像削除、アニメーション作成ワークフローを必要とするコンテンツクリエイター向けに設計されています。
-          </p>
-          <div class="hr"></div>
-          <ul class="lang-ja">
-            <li><b>高精度抽出</b> - フレーム間隔や秒数間隔での正確な指定</li>
-            <li>
-              <b>重複削除</b> - パーセプチュアルハッシュ技術による類似画像検出
-            </li>
-            <li><b>バッチ処理</b> - ドラッグ&amp;ドロップで一括処理</li>
-            <li><b>14種類の動画形式</b> - MP4、AVI、MOV、GIF、WebPなど</li>
-            <li>
-              <b>アニメ出力</b> -
-              GIF/WEBP、Pixivうごくイラストや各種サイト用出力モード対応
-            </li>
-            <li><b>CLI対応</b>: GUIに加えてコマンドラインからも実行可能</li>
-            <li><b>アプリ内更新</b> - 新しいバージョンを通知し、アプリ内の操作で更新可能</li>
-          </ul>
-        </section>
-        <section class="section">
-          <h2>
-            <span class="lang-ja">対応形式</span>
-          </h2>
-          <div class="twoCol">
-            <div>
-              <h3><span class="lang-ja">入力形式</span></h3>
-              <ul class="lang-ja">
-                <li>MP4, AVI, MOV</li>
-                <li>MKV, WMV, FLV</li>
-                <li>WebM, MPEG, MPG</li>
-                <li>M4V, TS, OGV</li>
-                <li>GIF, WebP（アニメ）</li>
-              </ul>
-            </div>
-            <div>
-              <h3><span class="lang-ja">出力</span></h3>
-              <ul class="lang-ja">
-                <li>画像: JPG、PNG</li>
-                <li>アニメ: GIF、WEBP</li>
-                <li>
-                  各種サイト用の出力対応 <br />Pixiv/X/Note/Mastodon/
-                  <br />Threads/Zenn/Qiita/Tumblr
-                </li>
-                <li>最終フレーム抽出</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <section class="section">
-          <h2><span class="lang-ja">基本機能</span></h2>
-          <h3><span class="lang-ja">■ 高精度画像抽出</span></h3>
-          <ul class="lang-ja">
-            <li>正確なフレーム間隔や秒数間隔での指定が可能</li>
-            <li>自動FPS検出機能で、動画に応じた最適な抽出を実現</li>
-            <li>Pixivうごイラスト用の出力モードを搭載</li>
-            <li>動画をアニメーション形式（GIF/WEBP）にも変換可能</li>
-          </ul>
-          <div class="hr"></div>
-          <h3><span class="lang-ja">■ 重複画像自動削除</span></h3>
-          <ul class="lang-ja">
-            <li>パーセプチュアルハッシュ技術による高精度な類似画像検出</li>
-            <li>メモリ効率的な処理で大量の画像にも対応</li>
-            <li>重複フレームやほぼ同一のフレームを自動的に削除</li>
-          </ul>
-          <div class="hr"></div>
-          <h3><span class="lang-ja">■ バッチ処理と効率化</span></h3>
-          <ul class="lang-ja">
-            <li>複数動画をドラッグ&amp;ドロップで一括処理</li>
-            <li>リアルタイム進捗表示と詳細ログ出力で作業状況を把握</li>
-            <li>処理状況を一目で監視</li>
-          </ul>
-          <div class="hr"></div>
-          <h3><span class="lang-ja">■ 便利な追加機能</span></h3>
-          <ul class="lang-ja">
-            <li>黒帯自動削除機能で、動画の上下左右の黒帯を自動トリミング</li>
-            <li>直観的なGUIで初心者にも使いやすい設計</li>
-            <li>動画生成の連結始点用の最終フレーム出力</li>
-          </ul>
-        </section>
-        <section class="section" id="ui">
-          <h2>
-            <span class="lang-ja"
-              >基本的な使い方 &amp; UIスクリーンショット</span
-            >
-          </h2>
-          <h3><span class="lang-ja">基本的な使い方</span></h3>
-          <ol class="lang-ja">
-            <li>
-              「動画を追加」ボタンをクリックまたは動画ファイルをドラッグ&amp;ドロップ
-            </li>
-            <li>「抽出を開始」ボタンで処理開始</li>
-          </ol>
-          <p class="note lang-ja">
-            シンプルな2ステップで動画からフレーム抽出やアニメーション変換が簡単に行えます。
-          </p>
-          <div class="hr"></div>
-          <h3><span class="lang-ja">UIスクリーンショット</span></h3>
-          <a
-            class="shot lang-ja"
-            href="assets/Other/craft1.png"
-            rel="noopener"
-            target="_blank"
-          >
-            <img
-              loading="lazy"
-              alt="Frame Craft UI (Japanese)"
-              src="assets/Other/craft1.png" width="1802" height="1398"/>
-            <div class="cap">UI(日本語)</div>
-          </a>
-        </section>
-        <section class="section">
-          <h2><span class="lang-ja">動作環境</span></h2>
-          <ul class="lang-ja">
-            <li>OS: Windows 10 / Windows 11（64bit）</li>
-            <li>RAM: 4GB以上推奨</li>
-            <li>本体容量: 約100MB</li>
-          </ul>
-          <p class="note lang-ja">
-            GPU不要。CPUで動作し、幅広い環境で使用可能です。
-          </p>
-          <div class="hr"></div>
-          <h2 id="trial"><span class="lang-ja">体験版</span></h2>
-          <p class="lang-ja"><b>Windows 10/11</b></p>
-          <p>
-            <a
-              class="btn download"
-              href="https://downloads.nekzuk.com/framecraft/FrameCraft_v1.5_Trial.zip"
-              rel="noopener"
-              target="_blank"
-              >Download</a
-            >
-          </p>
-          <h3><span class="lang-ja">体験版の制限事項</span></h3>
-          <ul class="lang-ja">
-            <li>1動画あたり最大400画像/フレームまで</li>
-            <li>同時処理1動画まで</li>
-            <li>透かし付き出力</li>
-          </ul>
-        </section>
-        <section class="section">
-          <h2>
-            <span class="lang-ja">ライセンス・ご利用上の注意</span>
-          </h2>
-          <h3><span class="lang-ja">ライセンス</span></h3>
-          <ul class="lang-ja">
-            <li><b>個人での商用利用</b>: 本製品の購入で利用可能</li>
-            <li><b>企業での商用利用</b>: <a class="protected-email" href="terms_j.html" data-email-user="nekzuk.software" data-email-domain="gmail.com" data-email-label="メールでご相談ください" data-email-subject="Frame Craft：企業利用のご相談">メールでご相談ください</a></li>
-          </ul>
-          <div class="hr"></div>
-          <h3><span class="lang-ja">重要な注意事項</span></h3>
-          <ul class="lang-ja">
-            <li>処理時間は動画の長さやPCの性能により変動します</li>
-            <li>処理結果は必ずご確認ください</li>
-            <li>
-              フレーム抽出精度は動画の品質やエンコードにより変動する場合があります
-            </li>
-          </ul>
-        </section>
-        <section class="section">
-          <h2><span class="lang-ja">更新情報</span></h2>
-          <div
-            class="kpi"
-            style="
-              grid-template-columns: repeat(2, minmax(0, 1fr));
-              margin-top: 1rem;
-            "
-          >
-            <div class="box">
-              <div class="kv">
-                <div class="label lang-ja">最新バージョン</div>
-                <div class="value">v1.50</div>
-              </div>
-            </div>
-            <div class="box">
-              <div class="kv">
-                <div class="label lang-ja">リリース日</div>
-                <div class="value">2026-06-21</div>
-              </div>
-            </div>
-          </div>
-          <div class="hr"></div>
-          <h3><span class="lang-ja">最新の更新内容</span></h3>
-          <ul class="lang-ja">
-            <li>自動更新に対応</li>
-            <li>プレビュー表示追加</li>
-          </ul>
-          <p style="margin-top: 1rem">
-            <a
-              href="https://note.com/nekzuk/n/n887e34a38c4c"
-              rel="noopener"
-              target="_blank"
-            >
-              <span class="lang-ja">→ 詳細な更新内容を読む</span>
-            </a>
-          </p>
-        </section>
-        <section class="section section-history">
-          <h2><span class="lang-ja">変更履歴</span></h2>
-          <div class="history-table">
-          <div class="history-head lang-ja"><span>バージョン</span><span>リリース日</span><span>更新内容</span></div>
-          <ul class="history-list lang-ja">
-          <li><div class="history-row"><span class="history-version">v1.50</span><time class="history-date" datetime="2026-06-21">2026/06/21</time><a class="history-link" href="https://note.com/nekzuk/n/n887e34a38c4c" rel="noopener" target="_blank">詳細を見る →</a></div></li>
-          <li><div class="history-row"><span class="history-version">v1.40</span><time class="history-date" datetime="2026-05-04">2026/05/04</time><a class="history-link" href="https://note.com/nekzuk/n/n6e02be9105af" rel="noopener" target="_blank">詳細を見る →</a></div></li>
-          <li><div class="history-row"><span class="history-version">v1.30</span><time class="history-date" datetime="2026-03-22">2026/03/22</time><a class="history-link" href="https://note.com/nekzuk/n/n06bae326716f" rel="noopener" target="_blank">詳細を見る →</a></div></li>
-          <li><div class="history-row"><span class="history-version">v1.20</span><time class="history-date" datetime="2025-11-01">2025/11/01</time><a class="history-link" href="https://note.com/nekzuk/n/n079326e4a2e7" rel="noopener" target="_blank">詳細を見る →</a></div></li>
-          <li><div class="history-row"><span class="history-version">v1.10</span><time class="history-date" datetime="2025-10-13">2025/10/13</time><a class="history-link" href="https://note.com/nekzuk/n/nd2f89b3cf901" rel="noopener" target="_blank">詳細を見る →</a></div></li>
-          <li><div class="history-row"><span class="history-version">v1.00</span><time class="history-date" datetime="2025-08-13">2025/08/13</time><a class="history-link" href="https://note.com/nekzuk/n/n3742b9c2905c" rel="noopener" target="_blank">詳細を見る →</a></div></li>
-          </ul>
-          </div>
-        </section>
-      </div>
-      <div class="footer">
-        <div class="lang-ja" style="margin-bottom: 0.75rem">
-          <b>サポート：</b><a href="https://x.com/Synekzuk_AI" rel="noopener" target="_blank"
-            >Twitter/X</a
-          >
-          ·
-          <a
-            href="https://accounts.booth.pm/conversations/49131834/messages"
-            rel="noopener"
-            target="_blank"
-            >BOOTHメッセージ</a
-          >
-          ·
-          <a class="protected-email" data-email-user="nekzuk.software" data-email-domain="gmail.com">nekzuk.software [at] gmail [dot] com</a>
-        </div>
-        © nekzuk Software
-      </div>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index_j.html" aria-label="nekzuk Software トップへ"><img src="assets/favicons/icon.svg" width="29" height="29" alt=""><span>nekzuk Software</span></a>
+    <nav class="main-nav" aria-label="メインナビゲーション"><a href="index_j.html#products">製品一覧</a><a href="#support">サポート</a></nav>
+    <div class="utilities">
+      <nav class="locale" aria-label="言語"><span aria-current="true">日本語</span><span class="slash" aria-hidden="true">/</span><a href="frame-craft.html" lang="en" aria-label="English product page">English</a></nav>
+      <button class="theme-toggle site-theme-toggle" type="button" aria-label="ダークに切り替える" title="ダークに切り替える" hidden>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 13A9 9 0 0 1 11 3 9 9 0 1 0 21 13Z"/></svg>
+      </button>
     </div>
-  <script src="assets/js/site-analytics.js" defer></script>
-  <script src="assets/js/email-protect.js?v=20261005" defer></script>
-  </body>
+  </div>
+</header>
+<main id="main">
+  <div class="wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="product-identity"><img src="assets/icons/optimized/app5_128.webp" width="58" height="58" alt=""><div><p class="product-name"><span class="product-name-base">Frame Craft</span></p><p class="product-edition">動画フレーム抽出・変換</p></div></div>
+        <h1 id="hero-title">動画から、<br><em>欲しい画像を。</em></h1>
+        <p class="hero-description">フレーム番号や秒数の間隔を指定して、動画から画像を正確に抽出。GIF・WebPアニメへの変換や、Pixivうごイラなど投稿先に合わせた出力にも対応したWindows向けツールです。</p>
+        <div class="hero-price"><strong>¥500</strong><span>Windows 10 / 11</span></div>
+        <div class="hero-actions"><a class="button primary" href="#trial">体験版を試す</a><a class="button outline" href="#purchase">購入する</a></div>
+        <p class="trial-caption">体験版：1動画400枚まで・透かし付き</p>
+        <a class="release-link" href="#updates"><span class="status-dot" aria-hidden="true"></span><span class="release-label">v1.50 公開 <span>2026.06.21</span></span></a>
+      </div>
+      <div class="hero-visual hero-ui" id="ui"><div class="preview-toolbar"><span>Frame Craft / 操作画面</span></div><a class="ui-image" href="assets/Other/craft1.png" data-zoom data-zoom-title="Frame Craftの操作画面" aria-label="操作画面を拡大"><img src="assets/Other/craft1.png" width="1802" height="1398" fetchpriority="high" alt="Frame Craftの日本語操作画面。ファイル選択、出力形式、処理設定、オプションの各欄と処理ログ・出力結果の表示欄"></a><p class="image-note">クリックで拡大</p></div>
+    </section>
+    <div class="trust-line"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>PC内で処理（オフライン）</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2 3 6v6c0 5 9 10 9 10s9-5 9-10V6Z"/><path d="m8 12 3 3 5-6"/></svg>コード署名済み</span><span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18m-14 4 3 3-3 3m6 0h4"/></svg>GUI・CLI対応</span><span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 5h12M7 2v3m4 0c-1 5-4 8-8 10m1-7c2 3 4 5 7 7m3 6 4-10 4 10m-7-3h6"/></svg>日本語 / 英語</span></div>
+  </div>
+
+  <nav class="section-nav" aria-label="ページ内ナビゲーション"><div class="wrap section-nav-inner"><a href="#features">特長</a><a href="#how-to">使い方</a><a href="#requirements">動作環境</a><a href="#trial">体験版・購入</a><a href="#updates">更新情報</a></div></nav>
+
+  <section class="wrap section features-section" id="features" aria-labelledby="features-title">
+    <div class="section-heading"><p class="eyebrow">01 <span>できること</span></p><h2 id="features-title">手作業のスクショより、正確に。まとめて。</h2><p>欲しいフレームを正確に取り出し、そのままアニメーションや投稿用の形式に。複数の動画もまとめて処理できます。</p></div>
+    <div class="feature-grid">
+      <article class="feature"><svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4m10 0h4M3 15h4m10 0h4"/></svg><h3>正確に抽出する</h3><p>フレーム単位でも、秒単位でも。</p>
+        <ul class="feature-list"><li><strong>フレーム / 秒の間隔指定</strong><span>フレームごと・秒ごとの間隔で正確に抽出</span></li><li><strong>自動FPS検出</strong><span>動画に合わせて最適な抽出に</span></li><li><strong>最終フレームのみ出力</strong><span>動画生成で次の動画をつなぐ始点用に</span></li></ul></article>
+      <article class="feature"><svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="m10 9 5 3-5 3Z"/></svg><h3>アニメ・投稿用に変換する</h3><p>動画や連番画像を、そのまま使える形式へ。</p>
+        <ul class="feature-list"><li><strong>GIF / WebPアニメ変換</strong><span>動画をアニメーション形式に変換</span></li><li><strong>画像からアニメ作成</strong><span>連番画像からGIF・WebPアニメを作成</span></li><li><strong>投稿先に最適化</strong><span>Pixivうごイラ、X、note、Mastodon、Threads、Zenn、Qiita、Tumblr用の出力</span></li></ul></article>
+      <article class="feature"><svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="13" height="13" rx="1.5"/><path d="M8 21h11a2 2 0 0 0 2-2V8"/></svg><h3>まとめて整える</h3><p>大量の動画・フレームも、手間をかけずに。</p>
+        <ul class="feature-list"><li><strong>重複画像の自動削除</strong><span>似たフレーム・ほぼ同じフレームを自動で削除。類似度のしきい値も調整可能。大量の画像もメモリ効率よく処理</span></li><li><strong>黒帯の自動削除・クロップ</strong><span>上下左右の黒帯を自動でトリミング。手動のクロップ設定にも対応</span></li><li><strong>一括処理</strong><span>複数の動画をドラッグ＆ドロップでまとめて処理。進捗・ログ・出力結果のプレビューを表示</span></li><li><strong>コマンドライン（CLI）</strong><span>コマンドラインからも実行可能</span></li></ul></article>
+    </div>
+    <div class="capability-table">
+      <dl><div><dt>入力形式（14種類）</dt><dd>MP4 / AVI / MOV / MKV / WMV / FLV / WebM / MPEG / MPG / M4V / TS / OGV、GIF・WebP（アニメ）</dd></div><div><dt>出力形式</dt><dd>画像：JPG / PNG<small>アニメ：GIF / WebP</small></dd></div></dl>
+      <dl><div><dt>処理の場所</dt><dd>PC内で処理</dd></div><div><dt>UI・アップデート</dt><dd>日本語 / 英語<small>新しいバージョンを通知し、アプリ内の操作で更新</small></dd></div></dl>
+    </div>
+  </section>
+
+  <section class="section steps-section" id="how-to" aria-labelledby="how-to-title"><div class="wrap">
+    <div class="section-heading"><p class="eyebrow">02 <span>使い方</span></p><h2 id="how-to-title">動画を入れて、開始するだけ。</h2></div>
+    <ol class="steps-row"><li><span class="step-number">1</span><div><h3>動画を追加</h3><p>「動画を追加」ボタン、またはドラッグ＆ドロップで追加。</p></div></li><li><span class="step-number">2</span><div><h3>出力形式と間隔を選ぶ</h3><p>画像・アニメの形式や、抽出間隔を設定。</p></div></li><li><span class="step-number">3</span><div><h3>処理を開始</h3><p>「処理開始」で抽出・変換を実行。</p></div></li></ol>
+  </div></section>
+
+  <section class="wrap section requirements-section" id="requirements" aria-labelledby="requirements-title"><div class="split-heading"><div><p class="eyebrow">03 <span>動作環境</span></p><h2 id="requirements-title">お使いのPCをご確認ください。</h2></div><div class="specifications"><dl><div><dt>OS</dt><dd>Windows 10 / 11 <small>64bit</small></dd></div><div><dt>メモリ</dt><dd>4GB以上推奨</dd></div><div><dt>本体容量</dt><dd>約100MB</dd></div></dl></div></div></section>
+
+  <section class="purchase-section" aria-labelledby="purchase-title"><div class="wrap"><div class="section-heading"><p class="eyebrow" id="purchase-title" role="heading" aria-level="2">04 <span>体験版・購入</span></p></div><div class="purchase-grid">
+    <article class="trial-panel" id="trial"><div class="purchase-kicker">体験版</div><h3>お手元の動画で、仕上がりを確認。</h3><p class="purchase-description">Frame Craft / Windows</p><ul class="check-list"><li>抽出・変換の機能を試せます</li><li class="trial-limitation">1動画あたり最大400画像（フレーム）まで</li><li class="trial-limitation">同時に処理できる動画は1本まで</li><li class="trial-limitation">出力には透かしが入ります</li></ul><a class="button primary download-button" href="https://downloads.nekzuk.com/framecraft/FrameCraft_v1.5_Trial.zip">体験版をダウンロード <svg class="download-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg></a><p class="download-note">v1.50 · ZIPファイル</p></article>
+    <article class="buy-panel" id="purchase"><div class="purchase-kicker">製品版</div><div class="product-price-line"><h3>Frame Craft</h3><strong>¥500</strong></div><p class="purchase-description">ご希望の購入方法をお選びください。</p><div class="purchase-options"><div><a class="button primary" href="https://synekzuk.booth.pm/items/7295171" target="_blank" rel="noopener">BOOTHで購入 <span aria-hidden="true">↗</span></a><small>ログインが必要</small></div><div><a class="button outline" href="https://payhip.com/buy?link=OKynY" target="_blank" rel="noopener">直接購入 <span aria-hidden="true">↗</span></a><small>カード・PayPal</small></div></div><p class="license-note">個人での商用利用は、本製品の購入で利用可能です。<br>企業での商用利用は、<a class="text-link protected-email" data-email-domain="gmail.com" data-email-label="メールでご相談ください" data-email-subject="Frame Craft：企業利用のご相談" data-email-user="nekzuk.software" href="terms_j.html">メールでご相談ください</a>。</p></article>
+  </div><details class="license-details"><summary>ご利用上の注意</summary><div class="details-body"><ul><li>処理時間は動画の長さやPCの性能により変わります。</li><li>フレーム抽出の精度は、動画の品質やエンコードにより変わる場合があります。</li><li>処理結果は必ずご確認ください。</li></ul><a class="text-link" href="terms_j.html">利用規約を読む →</a></div></details></div></section>
+
+  <section class="wrap section updates-section" id="updates" aria-labelledby="updates-title"><div class="split-heading"><div><h2 id="updates-title">更新情報</h2><p class="section-description">最新バージョン <strong>v1.50</strong><br>2026年6月21日公開</p></div><div class="update-content"><h3>自動更新とプレビュー表示に対応しました。</h3><ul class="release-items"><li>自動更新に対応</li><li>プレビュー表示を追加</li></ul><div class="update-links"><a class="text-link" href="https://note.com/nekzuk/n/n887e34a38c4c" target="_blank" rel="noopener">詳しい更新内容を読む ↗</a></div><details class="history"><summary>これまでの変更履歴</summary><ul class="history-list">
+              <li><div class="history-row"><span class="history-version">v1.50</span><time class="history-date" datetime="2026-06-21">2026/06/21</time><a class="history-link" href="https://note.com/nekzuk/n/n887e34a38c4c" rel="noopener" target="_blank">詳細を見る ↗</a></div></li>
+              <li><div class="history-row"><span class="history-version">v1.40</span><time class="history-date" datetime="2026-05-04">2026/05/04</time><a class="history-link" href="https://note.com/nekzuk/n/n6e02be9105af" rel="noopener" target="_blank">詳細を見る ↗</a></div></li>
+              <li><div class="history-row"><span class="history-version">v1.30</span><time class="history-date" datetime="2026-03-22">2026/03/22</time><a class="history-link" href="https://note.com/nekzuk/n/n06bae326716f" rel="noopener" target="_blank">詳細を見る ↗</a></div></li>
+              <li><div class="history-row"><span class="history-version">v1.20</span><time class="history-date" datetime="2025-11-01">2025/11/01</time><a class="history-link" href="https://note.com/nekzuk/n/n079326e4a2e7" rel="noopener" target="_blank">詳細を見る ↗</a></div></li>
+              <li><div class="history-row"><span class="history-version">v1.10</span><time class="history-date" datetime="2025-10-13">2025/10/13</time><a class="history-link" href="https://note.com/nekzuk/n/nd2f89b3cf901" rel="noopener" target="_blank">詳細を見る ↗</a></div></li>
+              <li><div class="history-row"><span class="history-version">v1.00</span><time class="history-date" datetime="2025-08-13">2025/08/13</time><a class="history-link" href="https://note.com/nekzuk/n/n3742b9c2905c" rel="noopener" target="_blank">詳細を見る ↗</a></div></li>
+            </ul></details></div></div></section>
+
+</main>
+<footer class="site-footer" id="support"><div class="wrap"><div class="footer-top"><div><a class="brand" href="index_j.html"><img src="assets/favicons/icon.svg" width="29" height="29" alt=""><span>nekzuk Software</span></a><p>画像・動画制作を支える、デスクトップソフトウェア。</p></div><nav aria-label="お問い合わせ"><a class="protected-email" data-email-domain="gmail.com" data-email-label="メール ↗" data-email-user="nekzuk.software" href="index_j.html#support">メール ↗</a><a href="https://accounts.booth.pm/conversations/49131834/messages" target="_blank" rel="noopener">BOOTH ↗</a><a href="https://x.com/Synekzuk_AI" target="_blank" rel="noopener">X ↗</a></nav></div><div class="footer-bottom"><span>© 2024–2026 nekzuk Software</span><nav aria-label="サイトポリシー"><a href="privacy_j.html">プライバシーポリシー</a><a href="terms_j.html">利用規約</a></nav></div></div></footer>
+<dialog class="image-dialog" aria-labelledby="image-dialog-title"><div class="dialog-top"><p id="image-dialog-title">画像を拡大</p><button class="dialog-close" type="button" aria-label="拡大画像を閉じる">閉じる <span aria-hidden="true">×</span></button></div><img class="dialog-image" alt=""></dialog>
+
+<script src="assets/js/automosaic-image.js" defer></script>
+<script src="assets/js/site-analytics.js" defer></script>
+<script src="assets/js/email-protect.js?v=20261005" defer></script>
+</body>
 </html>

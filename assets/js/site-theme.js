@@ -26,8 +26,8 @@
     lightStyles.forEach((sheet) => { sheet.media = theme === 'light' ? 'all' : 'not all'; });
     const next = theme === 'light' ? 'dark' : 'light';
     const label = root.lang === 'ja'
-      ? (theme === 'light' ? '現在：ライト／ダークに切り替える' : '現在：ダーク／ライトに切り替える')
-      : `Currently ${theme}; switch to ${next} theme`;
+      ? (next === 'dark' ? 'ダークに切り替える' : 'ライトに切り替える')
+      : `Switch to ${next} theme`;
     buttons.forEach((button) => {
       button.setAttribute('aria-label', label);
       button.title = label;

@@ -10,6 +10,15 @@
     <meta name="color-scheme" content="dark light" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NAI Smart Studio - 操作マニュアル</title>
+    <meta name="description" content="NAI Smart Studioの操作マニュアル。初回セットアップ、画像生成、Image-to-Image、連続生成、Wildcards、Tagger、プロンプト検索などの使い方を説明します。" />
+    <link rel="canonical" href="https://nekzuk.com/assets/manual/nai-smart-studio/nai-smart-studio_online_manual_j.html" />
+    <link rel="alternate" hreflang="en" href="https://nekzuk.com/assets/manual/nai-smart-studio/nai-smart-studio_online_manual.html" />
+    <link rel="alternate" hreflang="ja" href="https://nekzuk.com/assets/manual/nai-smart-studio/nai-smart-studio_online_manual_j.html" />
+    <link rel="alternate" hreflang="x-default" href="https://nekzuk.com/assets/manual/nai-smart-studio/nai-smart-studio_online_manual.html" />
+    <link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32" />
+    <link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml" />
+    <link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon" />
+    <meta name="theme-color" content="#6150a5" />
     <!-- Google Analytics -->
     <script
       async
@@ -23,9 +32,8 @@
       gtag("js", new Date());
       gtag("config", "G-040P2W2ZZK");
     </script>
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="../../site-base.css" />
-    <link rel="stylesheet" href="../../site-light.css" media="(prefers-color-scheme: light)" data-site-light />
+    <link rel="stylesheet" href="style.css" />
     <script src="../../js/site-theme.js"></script>
   </head>
   <body>
@@ -39,7 +47,7 @@
       </button>
       <div class="sidebar-header">
         NAI Smart Studio <br />
-        <span style="font-size: 0.8em; color: #565f89">Operation Manual</span>
+        <span style="font-size: 0.8em; color: var(--muted-color)">Operation Manual</span>
       </div>
       <ul class="nav-links">
         <li><a href="#intro" class="active">はじめに</a></li>
@@ -411,6 +419,7 @@
             <li><code>[SEQ:__name__]</code>: 連続生成で候補を順番に使います。</li>
             </ul>
             <p>ファイルは「編集」へ切り替えると内容を修正・保存できます。外部のテキストエディタも使えます。TXTの空行・<code>#</code>行は無視され、<code>CHAR:</code>行は展開後にキャラクタープロンプトへ取り込まれます。</p>
+            <p><a class="ref-link" href="wildcards_reference_j.html">すべての構文と例を見る（ワイルドカード構文リファレンス） →</a></p>
           </section>
 
           <section id="templates">
@@ -636,14 +645,7 @@
           </section>
 
           <br /><br /><br />
-          <footer
-            style="
-              border-top: 1px solid #414868;
-              padding-top: 20px;
-              color: #565f89;
-              text-align: center;
-            "
-          >
+          <footer class="manual-footer">
             &copy; 2026 NAI Smart Studio Project
           </footer>
         </div>
@@ -750,6 +752,14 @@
             current = section.getAttribute("id");
           }
         });
+
+        // The last sections can be too short to reach the threshold.
+        if (
+          scrollContainer.scrollTop + scrollContainer.clientHeight >=
+          scrollContainer.scrollHeight - 2
+        ) {
+          current = sections[sections.length - 1].getAttribute("id");
+        }
 
         navLi.forEach((a) => {
           a.classList.remove("active");
