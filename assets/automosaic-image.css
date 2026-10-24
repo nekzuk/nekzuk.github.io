@@ -175,8 +175,8 @@ details[open]>summary::after{content:"−"}
 .update-links{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:14px;font-size:12px}
 .history{margin-top:25px}
 .history-list{padding:0;margin:0 0 20px;list-style:none}
-.history-row{display:grid;grid-template-columns:70px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--line);font-size:12px}
-.history-version{font-weight:650}
+.history-row{display:grid;grid-template-columns:104px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--line);font-size:12px}
+.history-version{font-weight:650;white-space:nowrap}
 .history-date,.history-empty{color:var(--secondary)}
 .history-link{color:var(--accent);font-weight:600}
 .site-footer{background:var(--soft);border-top:1px solid var(--line);padding:43px 0 26px}
@@ -370,7 +370,7 @@ details[open]>summary::after{content:"−"}
   .companion>a{grid-column:1 / -1;font-size:12px;margin-top:5px}
   .update-content h3{font-size:16px}
   .update-content>p{font-size:12px}
-  .history-row{grid-template-columns:52px 1fr auto;gap:8px;font-size:12px}
+  .history-row{grid-template-columns:92px 1fr auto;gap:8px;font-size:12px}
   .footer-top{display:block}
   .footer-top p{font-size:12px;line-height:1.8;margin-top:12px}
   .footer-top nav{margin-top:23px;gap:26px;font-size:12px}

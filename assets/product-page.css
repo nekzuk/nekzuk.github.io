@@ -43,6 +43,7 @@
 .release-items{margin:15px 0 18px;padding-left:18px;font-size:13px;line-height:1.9}
 .release-items li+li{margin-top:7px}
 .trial-limitation::before{content:'※'!important}
+html[lang="en"] .trial-limitation::before{content:'*'!important}
 
 @media (max-width:1100px){
   .wide-preview .workflow-grid{gap:40px}
@@ -62,9 +63,6 @@
 }
 
 .capability-table dd small{display:block;margin-top:3px;font-size:12px;color:var(--secondary)}
-/* Version ranges such as "v3.20 – v3.21" need a wider first column. */
-.history-row{grid-template-columns:104px 1fr auto}
-@media (max-width:600px){.history-row{grid-template-columns:92px 1fr auto}}
 .sample-toolbar>span,.sample-tabs button{white-space:nowrap}
 /* Wrap AI Paint Cleaner sample controls when the available width is too small. */
 html[data-product="ai-paint-cleaner"] .sample-toolbar{flex-wrap:wrap}
