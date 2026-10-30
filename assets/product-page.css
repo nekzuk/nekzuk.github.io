@@ -25,7 +25,7 @@
 .hero-requirement+.hero-price{margin-top:20px}
 
 /* Landscape processing samples in the hero. */
-.sample-image.landscape{padding:16px}
+.sample-image.landscape{height:auto;aspect-ratio:2 / 1;padding:12px}
 
 /* Landscape application screenshots need a wider preview column. */
 .wide-preview .workflow-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:56px}
@@ -58,7 +58,7 @@ html[lang="en"] .trial-limitation::before{content:'*'!important}
   .video-play-label{bottom:12px;font-size:12px}
   .hero-requirement{font-size:12px;padding:11px 12px}
   .wide-preview .app-preview{max-width:none}
-  .sample-image.landscape{aspect-ratio:1.4 / 1;padding:9px}
+  .sample-image.landscape{aspect-ratio:2 / 1;padding:9px}
   .release-items{font-size:12px}
 }
 

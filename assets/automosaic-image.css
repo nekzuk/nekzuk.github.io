@@ -413,3 +413,16 @@ details[open]>summary::after{content:"−"}
 /* Related-product note sits at the end of the page, after the updates section. */
 .updates-section+.companion{margin-bottom:54px}
 @media (max-width:600px){.updates-section+.companion{margin-bottom:34px}}
+
+/* Spec tables with more than two rows per column. */
+.capability-table:has(dl>div:nth-child(3)) dl{grid-row:span 3}
+.capability-table:has(dl>div:nth-child(4)) dl{grid-row:span 4}
+@media (max-width:600px){.capability-table:has(dl>div:nth-child(3)) dl{grid-row:auto}}
+/* Numbered headings for reviews and updates. */
+.reviews-section h2.eyebrow,.updates-section h2.eyebrow{font-size:12px;font-weight:650;letter-spacing:.045em;line-height:1.6;margin-bottom:0}
+.release-items{margin:15px 0 18px;padding-left:18px;font-size:13px;line-height:1.9}
+.release-items li+li{margin-top:7px}
+@media (max-width:600px){.release-items{font-size:12px}}
+
+/* Keep step numbers from shrinking when the text wraps. */
+.step-number{flex:none}

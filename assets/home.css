@@ -285,3 +285,9 @@ h1 span{color:var(--accent)}
 @media (prefers-color-scheme:dark) {
   :root:not([data-site-theme]){--bg:#172238;--surface:#223047;--soft:#1c2940;--ink:#eeeef0;--muted:#b0b0ba;--line:#334155;--accent:#b6a5f2;--accent-soft:#302b40;--contrast:#211a35;--page-background:radial-gradient(ellipse at 20% 0%,rgba(139,128,202,.07),transparent 60%) fixed var(--bg);color-scheme:dark}
 }
+
+/* Download icon on trial links. */
+.download-link .dl-icon{display:inline-block;vertical-align:-2px;margin-left:3px}
+/* Workflow: align app icons at the top. */
+.workflow-chain{align-items:flex-start}
+.workflow-arrow{margin-top:8px}
