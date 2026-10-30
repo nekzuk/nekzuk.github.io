@@ -19,6 +19,21 @@
     });
   }
 
+
+  // Start the looping sample video only when the play button is pressed.
+  const sampleVideo = document.querySelector('.sample-video');
+  const samplePlay = document.querySelector('.sample-video-play');
+  if (sampleVideo && samplePlay) {
+    sampleVideo.controls = false;
+    samplePlay.hidden = false;
+    samplePlay.addEventListener('click', () => {
+      samplePlay.remove();
+      sampleVideo.controls = true;
+      sampleVideo.play();
+      sampleVideo.focus({ preventScroll: true });
+    });
+  }
+
   const loadButton = document.querySelector('[data-gif]');
   if (!loadButton) return;
   const stage = document.querySelector('.gif-stage');

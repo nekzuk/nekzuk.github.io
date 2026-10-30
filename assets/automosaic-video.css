@@ -205,3 +205,13 @@ html[lang="en"] .format-notes p { grid-template-columns: 105px minmax(0,1fr); }
   .video-results-grid:has(> .video-result-panel + .video-result-panel) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .video-results-grid .video-result-panel { max-width: none; }
 }
+
+/* Looping sample video (general edition). */
+.sample-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #111; }
+.sample-video-demo .gif-stage { min-height: 0; }
+.sample-video-play { position: absolute; inset: 0; z-index: 1; width: 100%; padding: 0; border: 0; background: linear-gradient(transparent 45%, #0006); cursor: pointer; }
+.sample-video-play .video-play { top: 50%; }
+.sample-video-play:hover .video-play { transform: translate(-50%, -50%) scale(1.07); }
+.sample-video-play:focus-visible { outline-offset: -5px; }
+/* Align the example text with the top of the video. */
+.example-grid { align-items: start; }
