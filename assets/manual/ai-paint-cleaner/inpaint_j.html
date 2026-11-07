@@ -1,0 +1,101 @@
+<!doctype html>
+<!-- build.js が自動生成したファイルです。直接編集せず content.ja.js を直して node build.js を実行してください。 -->
+<html data-site-page="manual" data-product="ai-paint-cleaner_online_manual" lang="ja">
+<head>
+<script>
+  if (!["nekzuk.com", "www.nekzuk.com"].includes(window.location.hostname.toLowerCase())) {
+    window["ga-disable-G-040P2W2ZZK"] = true;
+  }
+</script>
+<meta charset="utf-8">
+<meta name="color-scheme" content="dark light">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>インペイント - AI Paint Cleaner 操作マニュアル</title>
+<meta name="description" content="マスク範囲を消す・描き直す・元に戻す。軽量除去から生成AI・外部サービスまで。 マスクで塗った範囲に処理をかけるツールです。「消す（修復・除去）」「描き直す（インペイント）」「元に戻す（差分置換）」のどれをしたいかで、使うカテゴリが変わります。">
+<link rel="canonical" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/inpaint_j.html">
+<link rel="alternate" hreflang="en" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/inpaint.html">
+<link rel="alternate" hreflang="ja" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/inpaint_j.html">
+<link rel="alternate" hreflang="x-default" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/inpaint.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="インペイント - AI Paint Cleaner 操作マニュアル">
+<meta property="og:description" content="マスク範囲を消す・描き直す・元に戻す。軽量除去から生成AI・外部サービスまで。 マスクで塗った範囲に処理をかけるツールです。「消す（修復・除去）」「描き直す（インペイント）」「元に戻す（差分置換）」のどれをしたいかで、使うカテゴリが変わります。">
+<meta property="og:url" content="https://nekzuk.com/assets/manual/ai-paint-cleaner/inpaint_j.html">
+<meta property="og:image" content="https://nekzuk.com/assets/manual/ai-paint-cleaner/images/screen-ja.webp">
+<link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32">
+<link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml">
+<link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon">
+<meta name="theme-color" content="#6150a5">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-040P2W2ZZK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag("js", new Date());
+  gtag("config", "G-040P2W2ZZK");
+</script>
+<link rel="stylesheet" href="../../site-base.css">
+<link rel="stylesheet" href="manual.css">
+<script src="../../js/site-theme.js"></script>
+</head>
+<body data-page="inpaint">
+<header class="top">
+  <a class="brand" href="ai-paint-cleaner_online_manual_j.html"><img src="images/icons/app.png" alt=""><span><b>AI Paint Cleaner</b><small>マニュアル</small></span></a>
+  <a class="back-to-product" href="/ai-paint-cleaner_j.html">← 製品ページに戻る</a>
+  <div class="search"><input id="q" type="search" autocomplete="off" aria-label="機能名・キーワードで検索" placeholder="機能名・キーワードで検索"><div id="res" class="res" hidden></div></div>
+  <div class="site-controls">
+    <div class="language-switch">
+      <a href="inpaint.html" data-keep-hash>English</a>
+      <span class="divider">/</span>
+      <a href="inpaint_j.html" class="current">日本語</a>
+    </div>
+    <button class="site-theme-toggle" type="button" aria-label="配色を切り替える" title="配色を切り替える" hidden>
+      <svg class="site-theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
+      <svg class="site-theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+    </button>
+  </div>
+</header>
+<main id="app" class="detail">
+      <nav class="side"><a class="home" href="ai-paint-cleaner_online_manual_j.html">← トップへ</a><a href="basics_j.html"><img class="" src="images/icons/open.png" alt="">画面と基本操作</a><a href="mosaic_j.html"><img class="" src="images/icons/mosaic_rect.png" alt="">モザイク</a><a href="inpaint_j.html" class="on" aria-current="page"><img class="" src="images/icons/mask.png" alt="">インペイント</a><a href="paint_j.html"><img class="" src="images/icons/pen.png" alt="">ペイント・文字・選択</a><a href="color_j.html"><img class="" src="images/icons/manualcoloradjust.png" alt="">色調補正・AI補正</a><a href="bgremove_j.html"><img class="" src="images/icons/bg_remove.png" alt="">背景除去</a><a href="resize_j.html"><img class="" src="images/icons/resize.png" alt="">リサイズ・形式変換</a><a href="metadata_j.html"><img class="" src="images/icons/metaclean.png" alt="">メタデータ</a><a href="tagger_j.html"><img class="" src="images/icons/tagger1.png" alt="">タグ・説明生成</a><a href="organize_j.html"><img class="" src="images/icons/folder1.png" alt="">選別・ファイル整理</a></nav>
+      <article>
+        <div class="dhead"><img class="" src="images/icons/mask.png" alt=""><h1>インペイント</h1></div>
+        <p class="dlead">マスクで塗った範囲に処理をかけるツールです。「消す（修復・除去）」「描き直す（インペイント）」「元に戻す（差分置換）」のどれをしたいかで、使うカテゴリが変わります。</p>
+        <div class="toc"><a href="#toolbar">ツールバー</a><a href="#categories">カテゴリとモデルの選び方</a><a href="#compare">修復・除去モデルの比較</a><a href="#sdxl-examples">詳細／参照インペイント（SDXL）の例</a><a href="#sdxl">詳細／参照インペイントの設定</a><a href="#gpt-example">GPT／Geminiインペイントの例</a><a href="#external">外部サービス（GPT／Gemini）の設定</a><a href="#novelai-example">NovelAIインペイントの例</a><a href="#novelai">NovelAIインペイントの設定</a><a href="#diff">差分置換</a><a href="#diff-ref">差分置換の参照先</a><a href="#mask">マスクの扱い</a></div>
+        <section class="blk"><h2 id="toolbar">ツールバー</h2><div class="fig" data-fig>
+        <div class="stripscroll"><div class="stripbox" style="max-width:1216.5px;--sw:811px"><div class="pic"><img src="images/ui/inpaint-ja.webp" width="811" height="42" alt="ツールバー" loading="lazy" data-zoom></div>
+          <div class="ticks"><span class="mk" data-n="0" style="left:2.6%">1</span><span class="mk" data-n="1" style="left:7%">2</span><span class="mk" data-n="2" style="left:19.6%">3</span><span class="mk" data-n="3" style="left:48%">4</span><span class="mk" data-n="4" style="left:73.2%">5</span><span class="mk" data-n="5" style="left:92.4%">6</span><span class="mk" data-n="6" style="left:97.3%">7</span></div></div></div>
+        <table class="rows"><tr data-n="0"><td><span class="num">1</span>マスクツール</td><td>左ドラッグで範囲を塗り、右ドラッグで消します。マスク上で <kbd>Shift</kbd>＋ホイールを回すと範囲を拡大／縮小できます。</td></tr><tr data-n="1"><td><span class="num">2</span>AI自動マスク</td><td>ONにすると <kbd>Shift</kbd>＋左クリックで対象をAIが選んでマスクにします（<kbd>Shift</kbd>＋右クリックで除外）。</td></tr><tr data-n="2"><td><span class="num">3</span>カテゴリ</td><td>修復・除去／インペイント／差分置換／その他（<kbd>Ctrl</kbd>+<kbd>↑</kbd><kbd>↓</kbd>）。</td></tr><tr data-n="3"><td><span class="num">4</span>モデル</td><td>カテゴリ内のモデルを選びます（<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>↑</kbd><kbd>↓</kbd>）。よく使うモデルには設定で直接選択キーを割り当てられます。</td></tr><tr data-n="4"><td><span class="num">5</span>サイズ</td><td>マスクの太さ（右クリック＋ホイール）。</td></tr><tr data-n="5"><td><span class="num">6</span>実行</td><td>マスク範囲に処理をかけます（<kbd>Enter</kbd>／ダブルクリック）。</td></tr><tr data-n="6"><td><span class="num">7</span>マスクの全消去</td><td>描いたマスクをすべて消します。</td></tr></table></div></section><section class="blk"><h2 id="categories">カテゴリとモデルの選び方</h2><div class="modes">
+        <div class="mode" style="--mc:#2f9e6e"><h3>修復・除去<small>プロンプト不要・数秒</small></h3>
+          <p>不要物を周囲になじませて消します。うまくいかなければモデルを切り替えて試してください。</p>
+          <dl><dt>除去 (LaMa)</dt><dd>大きな範囲向け。建物・看板・空と境界線</dd><dt>除去 (MIGAN)</dt><dd>最速。複雑な背景や細かいディテール</dd><dt>除去 (MGA)</dt><dd>草木・雲・水面・布地などの質感</dd><dt>除去 (FcF)</dt><dd>壁紙・床などの模様、直線的な構造</dd><dt>修復 (PatchMatch)</dt><dd>周辺の似た模様で補う。小さな不要物・細い傷</dd><dt>修復 (OpenCV Telea)</dt><dd>AIを使わない高速修復。小傷・ゴミ・細い線</dd><dt>補完 (Moebius)</dt><dd>背景を生成して補う。人物や複雑な背景向け（NVIDIA GPU必須、初回約1GB）</dd></dl></div>
+        <div class="mode" style="--mc:#d6457a"><h3>インペイント<small>プロンプトで描き直す</small></h3>
+          <p>左のサイドバーでプロンプトや参照画像を設定します。</p>
+          <dl><dt>詳細インペイント (SDXL)</dt><dd>プロンプトどおりに描き直す。GPU必須、10〜60秒ほど</dd><dt>参照インペイント (SDXL)</dt><dd>元画像（または参照画像）の構図・絵柄を保って描き直す</dd><dt>NovelAIインペイント</dt><dd>マスク範囲をNovelAIで描き直す（NovelAIの契約が必要）</dd><dt>GPT／Geminiインペイント</dt><dd>自然言語（日本語可）で編集。マスクなしなら画像全体を編集</dd></dl></div>
+        <div class="mode" style="--mc:#2f7fd1"><h3>差分置換<small>元に戻す</small></h3>
+          <p>参照元の画像から同じ位置の画素を戻します。元画像が残っている場合の修復に最適です。</p>
+          <dl><dt>差分置換</dt><dd>AutoMosaicの不要なモザイクを外す、編集前に部分的に戻す、など</dd></dl></div>
+        <div class="mode" style="--mc:#6b7686"><h3>その他<small>補助的な処理</small></h3>
+          
+          <dl><dt>背景除去 (部分)</dt><dd>マスク範囲だけ背景除去（背景除去ツールの設定を使用）</dd><dt>モザイク処理</dt><dd>マスク範囲だけモザイク（モザイクツールの設定を使用）</dd><dt>消しゴム</dt><dd>マスク範囲を透明化（透過非対応の形式では白）</dd></dl></div></div></section><section class="blk"><h2 id="compare">修復・除去モデルの比較</h2><figure class="single" style="max-width:1500px"><img src="images/ui/light-inpainting-ja.webp" width="1500" height="855" alt="修復・除去モデルの比較" loading="lazy" data-zoom><figcaption>同じ欠損を各モデルで補った例。処理時間は計測環境での参考値です。</figcaption></figure></section><section class="blk"><h2 id="sdxl-examples">詳細／参照インペイント（SDXL）の例</h2><div class="gallery wide">
+        <figure class="ba"><figcaption><b>詳細インペイント (SDXL)</b><span>プロンプト：school uniform</span></figcaption>
+          <img src="images/ex/sdxl-detail.webp" width="1400" height="696" alt="詳細インペイント (SDXL)" loading="lazy" data-zoom>
+          <p>範囲を大まかに塗ってプロンプトを入れるだけで描き直します。</p></figure>
+        <figure class="ba"><figcaption><b>参照インペイント (SDXL)</b><span>構図・雰囲気を維持</span></figcaption>
+          <img src="images/ex/sdxl-reference.webp" width="1400" height="721" alt="参照インペイント (SDXL)" loading="lazy" data-zoom>
+          <p>参照画像を指定しなければ、元画像そのものを参照します。</p></figure></div></section><section class="blk"><h2 id="sdxl">詳細／参照インペイントの設定</h2><div class="fig sidefig" data-fig style="--pw:280px">
+        <div class="pic"><img src="images/ui/inpaint-sidebar-sdxl-ja.webp" width="473" height="1044" alt="詳細／参照インペイントの設定" loading="lazy" data-zoom><span class="mk" data-n="0" style="left:7%;top:6.3%">1</span><span class="mk" data-n="1" style="left:7%;top:10%">2</span><span class="mk" data-n="2" style="left:7%;top:27.3%">3</span><span class="mk" data-n="3" style="left:7%;top:48.3%">4</span><span class="mk" data-n="4" style="left:7%;top:52.5%">5</span><span class="mk" data-n="5" style="left:7%;top:56.9%">6</span><span class="mk" data-n="6" style="left:7%;top:96%">7</span></div>
+        <div><table class="rows"><tr data-n="0"><td><span class="num">1</span>プリセット</td><td>プロンプトの組み合わせを保存・適用します。</td></tr><tr data-n="1"><td><span class="num">2</span>プロンプト</td><td>描きたい内容。日本語・英語どちらでも入力できます。</td></tr><tr data-n="2"><td><span class="num">3</span>ネガティブプロンプト</td><td>出したくない内容（省略可）。</td></tr><tr data-n="3"><td><span class="num">4</span>モデル</td><td>使用するSDXLモデル。</td></tr><tr data-n="4"><td><span class="num">5</span>生成プリセット</td><td>Small／Medium／Big_Change で書き換えの強さ、High Speed（4step／8step）で速度を選びます。</td></tr><tr data-n="5"><td><span class="num">6</span>詳細パラメーター</td><td>ノイズ除去強度・プロンプト従属度など。基本はプリセットのままでOK。</td></tr><tr data-n="6"><td><span class="num">7</span>生成開始</td><td>マスク範囲に生成を実行します。</td></tr></table><p class="note">設定で「画像の生成情報をインペイント用プロンプトに取り込む」をONにすると、開いた画像のプロンプトが初期値に入ります。参照インペイントでは、参照画像とマスク前処理（original／fill／latent noise）も選べます。</p></div></div></section><section class="blk"><h2 id="gpt-example">GPT／Geminiインペイントの例</h2><figure class="single" style="max-width:900px"><img src="images/ex/gpt-gemini.webp" width="1400" height="722" alt="GPT／Geminiインペイントの例" loading="lazy" data-zoom><figcaption>「背景を海に変更してください」と指示した例。マスクなしで、修正内容と範囲を文章で指示するのがおすすめです。</figcaption></figure></section><section class="blk"><h2 id="external">外部サービス（GPT／Gemini）の設定</h2><div class="fig sidefig" data-fig style="--pw:260px">
+        <div class="pic"><img src="images/ui/gemini-sidebar-ja.webp" width="462" height="1238" alt="外部サービス（GPT／Gemini）の設定" loading="lazy" data-zoom><span class="mk" data-n="0" style="left:4%;top:2.4%">1</span><span class="mk" data-n="1" style="left:4%;top:42.9%">2</span><span class="mk" data-n="2" style="left:4%;top:78.8%">3</span><span class="mk" data-n="3" style="left:4%;top:87.4%">4</span><span class="mk" data-n="4" style="left:4%;top:91.8%">5</span><span class="mk" data-n="5" style="left:50%;top:97.2%">6</span></div>
+        <div><table class="rows"><tr data-n="0"><td><span class="num">1</span>プロンプト</td><td>修正内容を自然言語で指示します（日本語可）。</td></tr><tr data-n="1"><td><span class="num">2</span>参照画像</td><td>ドラッグ＆ドロップか「追加」で、現在の画像に加えて送る画像を指定します。</td></tr><tr data-n="2"><td><span class="num">3</span>モデル</td><td>Gemini：Nano Banana 2.1／2 Lite／Pro。GPT：gpt-image 系。</td></tr><tr data-n="3"><td><span class="num">4</span>生成設定</td><td>Geminiは生成解像度と思考量、GPTは品質・サイズ・透明度の扱いを設定します。</td></tr><tr data-n="4"><td><span class="num">5</span>接続</td><td>APIキーを入力して保存します（このWindowsユーザー用に暗号化して保存）。「APIキー取得手順」「利用額／請求確認」へのリンクもあります。</td></tr><tr data-n="5"><td><span class="num">6</span>生成開始</td><td>画像をサービスに送信して編集します。</td></tr></table><p class="note">GPT／Geminiは従量課金、NovelAIのAnlas消費は契約・生成条件によります。画像は各社のサーバーへ送信されます。</p></div></div></section><section class="blk"><h2 id="novelai-example">NovelAIインペイントの例</h2><figure class="single" style="max-width:760px"><img src="images/ex/novelai-inpaint.webp" width="1220" height="900" alt="NovelAIインペイントの例" loading="lazy" data-zoom><figcaption>背景をマスクで塗り（下中央の小さな画像）、プロンプト「night」で描き直した例。人物はそのままで、マスク範囲だけが夜の景色になります。</figcaption></figure></section><section class="blk"><h2 id="novelai">NovelAIインペイントの設定</h2><div class="fig sidefig" data-fig style="--pw:260px">
+        <div class="pic"><img src="images/ui/novelai-sidebar-ja.webp" width="486" height="1110" alt="NovelAIインペイントの設定" loading="lazy" data-zoom><span class="mk" data-n="0" style="left:7%;top:4.1%">1</span><span class="mk" data-n="1" style="left:7%;top:30.6%">2</span><span class="mk" data-n="2" style="left:7%;top:38.2%">3</span><span class="mk" data-n="3" style="left:7%;top:44.4%">4</span><span class="mk" data-n="4" style="left:7%;top:49.4%">5</span><span class="mk" data-n="5" style="left:7%;top:89.6%">6</span><span class="mk" data-n="6" style="left:8%;top:95.5%">7</span></div>
+        <div><table class="rows"><tr data-n="0"><td><span class="num">1</span>プロンプト／ネガティブプロンプト</td><td>マスク範囲に描きたい内容と、出したくない内容。</td></tr><tr data-n="1"><td><span class="num">2</span>キャラクターを追加</td><td>キャラクターごとにプロンプトを分けて指定できます。</td></tr><tr data-n="2"><td><span class="num">3</span>モデル</td><td>使用するNovelAIのモデル。</td></tr><tr data-n="3"><td><span class="num">4</span>NovelAI接続</td><td>NovelAIのAPIキー（永続トークン）を入力して保存します。</td></tr><tr data-n="4"><td><span class="num">5</span>詳細設定</td><td>送信範囲・処理解像度・インペイント強度・Steps／CFG・Sampler・Seed など。基本は初期値のままでOK。</td></tr><tr data-n="5"><td><span class="num">6</span>画像参照</td><td>参照画像を指定します。</td></tr><tr data-n="6"><td><span class="num">7</span>生成開始</td><td>マスク範囲をNovelAIで描き直します。</td></tr></table><p class="note">NovelAIインペイントはマスク必須で、マスク範囲だけを描き直します。NovelAIの契約が必要で、Anlas消費は契約・生成条件によります。</p></div></div></section><section class="blk"><h2 id="diff">差分置換</h2><p class="para">参照元の画像（モザイク前の画像や編集前の画像）から、同じ位置の画素を戻す処理です。マスクで塗った範囲だけが元に戻ります。</p><p class="para">AutoMosaicの不要なモザイクを消す使い方は、<a href="mosaic_j.html#am-remove">モザイクのページ</a>で説明しています。</p></section><section class="blk"><h2 id="diff-ref">差分置換の参照先</h2><div class="fig sidefig" data-fig style="--pw:420px">
+        <div class="pic"><img src="images/ui/diff-reference-ja.webp" width="649" height="437" alt="差分置換の参照先" loading="lazy" data-zoom><span class="mk" data-n="0" style="left:5%;top:21.2%">1</span><span class="mk" data-n="1" style="left:8%;top:34.4%">2</span><span class="mk" data-n="2" style="left:8%;top:44.7%">3</span><span class="mk" data-n="3" style="left:8%;top:55%">4</span><span class="mk" data-n="4" style="left:5%;top:66.3%">5</span></div>
+        <div><table class="rows"><tr data-n="0"><td><span class="num">1</span>参照先の選択</td><td><kbd>Ctrl</kbd>+<kbd>R</kbd> でこの画面を開きます。</td></tr><tr data-n="1"><td><span class="num">2</span>現在の画像フォルダを使用（自動）</td><td>今の画像を編集前の状態に戻したいとき。</td></tr><tr data-n="2"><td><span class="num">3</span>フォルダを指定</td><td>AutoMosaicの入力フォルダなど、元画像のあるフォルダから同名・類似名の画像を自動で探します。</td></tr><tr data-n="3"><td><span class="num">4</span>画像ファイルを直接指定</td><td>特定の1枚を参照にしたいとき。</td></tr><tr data-n="4"><td><span class="num">5</span>現在の画像ファイルを優先</td><td>参照先が同じフォルダなら、保存済みの現在ファイルを優先して使います。</td></tr></table><p class="note">AutoMosaicのログが同じフォルダにあれば、元画像は自動で設定されます。<kbd>Alt</kbd>+<kbd>R</kbd> を押している間だけ参照画像をキャンバスに表示して、正しい画像か確認できます。</p></div></div></section><section class="blk"><h2 id="mask">マスクの扱い</h2><ul class="tips"><li>処理後のマスクは、設定の「インペイント後のマスク範囲」で「処理後に消去／処理後も維持／Undo時のみ復元」から選べます。</li><li>AI自動マスクのモデル（SAM2.1）や、マスクの広げ方・穴埋めなどは設定の「処理」で調整できます。</li><li>設定で「インペイント設定サイドバーを開いたままにする」をONにすると、モデルを切り替えてもサイドバーが閉じません。</li></ul></section>
+        <div class="pn"><a href="mosaic_j.html">← モザイク</a><a href="paint_j.html">ペイント・文字・選択 →</a></div>
+      </article>
+</main>
+<footer class="foot">AI Paint Cleaner マニュアル · v3.40 対応 · 最終更新 2026-11-04 · <a href="/ai-paint-cleaner_j.html">製品ページ</a> · <a href="/index_j.html">nekzuk Software</a></footer>
+<script src="content.ja.js" defer></script>
+<script src="manual-render.js" defer></script>
+<script src="manual.js" defer></script>
+</body>
+</html>

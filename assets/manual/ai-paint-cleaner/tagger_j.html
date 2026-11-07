@@ -1,0 +1,82 @@
+<!doctype html>
+<!-- build.js が自動生成したファイルです。直接編集せず content.ja.js を直して node build.js を実行してください。 -->
+<html data-site-page="manual" data-product="ai-paint-cleaner_online_manual" lang="ja">
+<head>
+<script>
+  if (!["nekzuk.com", "www.nekzuk.com"].includes(window.location.hostname.toLowerCase())) {
+    window["ga-disable-G-040P2W2ZZK"] = true;
+  }
+</script>
+<meta charset="utf-8">
+<meta name="color-scheme" content="dark light">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>タグ・説明生成 - AI Paint Cleaner 操作マニュアル</title>
+<meta name="description" content="Danbooru形式のタグや英語の説明文を生成。学習データ作りのタグ一括編集も。 画像の内容をAIが読み取り、タグ（Danbooru形式）や英語の説明文（キャプション）を生成します。LoRAなどの学習データ作りや、画像の内容整理に使えます。">
+<link rel="canonical" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/tagger_j.html">
+<link rel="alternate" hreflang="en" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/tagger.html">
+<link rel="alternate" hreflang="ja" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/tagger_j.html">
+<link rel="alternate" hreflang="x-default" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/tagger.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="タグ・説明生成 - AI Paint Cleaner 操作マニュアル">
+<meta property="og:description" content="Danbooru形式のタグや英語の説明文を生成。学習データ作りのタグ一括編集も。 画像の内容をAIが読み取り、タグ（Danbooru形式）や英語の説明文（キャプション）を生成します。LoRAなどの学習データ作りや、画像の内容整理に使えます。">
+<meta property="og:url" content="https://nekzuk.com/assets/manual/ai-paint-cleaner/tagger_j.html">
+<meta property="og:image" content="https://nekzuk.com/assets/manual/ai-paint-cleaner/images/screen-ja.webp">
+<link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32">
+<link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml">
+<link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon">
+<meta name="theme-color" content="#6150a5">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-040P2W2ZZK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag("js", new Date());
+  gtag("config", "G-040P2W2ZZK");
+</script>
+<link rel="stylesheet" href="../../site-base.css">
+<link rel="stylesheet" href="manual.css">
+<script src="../../js/site-theme.js"></script>
+</head>
+<body data-page="tagger">
+<header class="top">
+  <a class="brand" href="ai-paint-cleaner_online_manual_j.html"><img src="images/icons/app.png" alt=""><span><b>AI Paint Cleaner</b><small>マニュアル</small></span></a>
+  <a class="back-to-product" href="/ai-paint-cleaner_j.html">← 製品ページに戻る</a>
+  <div class="search"><input id="q" type="search" autocomplete="off" aria-label="機能名・キーワードで検索" placeholder="機能名・キーワードで検索"><div id="res" class="res" hidden></div></div>
+  <div class="site-controls">
+    <div class="language-switch">
+      <a href="tagger.html" data-keep-hash>English</a>
+      <span class="divider">/</span>
+      <a href="tagger_j.html" class="current">日本語</a>
+    </div>
+    <button class="site-theme-toggle" type="button" aria-label="配色を切り替える" title="配色を切り替える" hidden>
+      <svg class="site-theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
+      <svg class="site-theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+    </button>
+  </div>
+</header>
+<main id="app" class="detail">
+      <nav class="side"><a class="home" href="ai-paint-cleaner_online_manual_j.html">← トップへ</a><a href="basics_j.html"><img class="" src="images/icons/open.png" alt="">画面と基本操作</a><a href="mosaic_j.html"><img class="" src="images/icons/mosaic_rect.png" alt="">モザイク</a><a href="inpaint_j.html"><img class="" src="images/icons/mask.png" alt="">インペイント</a><a href="paint_j.html"><img class="" src="images/icons/pen.png" alt="">ペイント・文字・選択</a><a href="color_j.html"><img class="" src="images/icons/manualcoloradjust.png" alt="">色調補正・AI補正</a><a href="bgremove_j.html"><img class="" src="images/icons/bg_remove.png" alt="">背景除去</a><a href="resize_j.html"><img class="" src="images/icons/resize.png" alt="">リサイズ・形式変換</a><a href="metadata_j.html"><img class="" src="images/icons/metaclean.png" alt="">メタデータ</a><a href="tagger_j.html" class="on" aria-current="page"><img class="" src="images/icons/tagger1.png" alt="">タグ・説明生成</a><a href="organize_j.html"><img class="" src="images/icons/folder1.png" alt="">選別・ファイル整理</a></nav>
+      <article>
+        <div class="dhead"><img class="" src="images/icons/tagger1.png" alt=""><h1>タグ・説明生成</h1></div>
+        <p class="dlead">画像の内容をAIが読み取り、タグ（Danbooru形式）や英語の説明文（キャプション）を生成します。LoRAなどの学習データ作りや、画像の内容整理に使えます。</p>
+        <div class="toc"><a href="#types">2つの生成方式</a><a href="#tags">タグ生成</a><a href="#tagmodels">タグ生成モデル</a><a href="#caption">自然言語生成（キャプション）</a><a href="#capmodels">自然言語生成モデル</a><a href="#outputs">出力先</a><a href="#categories">カテゴリ設定</a><a href="#editor">タグ一括編集</a><a href="#dataset">学習データを作る流れ（例）</a></div>
+        <section class="blk"><h2 id="types">2つの生成方式</h2><div class="tw"><table><tr><th></th><th>タグ生成</th><th>自然言語生成</th></tr><tr><td class="k">出力の例</td><td>1girl, solo, long_hair, blonde_hair, flower, smile …</td><td>A young woman with long blonde hair holds a bouquet of flowers … （英語の文章）</td></tr><tr><td class="k">向いている用途</td><td>Stable Diffusion系の学習用タグ、プロンプト作り</td><td>文章で学習するモデル向けのキャプション、画像の説明</td></tr><tr><td class="k">調整できること</td><td>閾値、出力するカテゴリ</td><td>入力方式（画像のみ／画像＋タグ）、思考 ON／OFF</td></tr><tr><td class="k">出力先</td><td>TXT保存／画像へ埋込／クリップボード</td><td>TXT保存／クリップボード</td></tr></table></div></section><section class="blk"><h2 id="tags">タグ生成</h2><div class="fig" data-fig>
+        <div class="stripscroll"><div class="stripbox" style="max-width:1155px;--sw:825px"><div class="pic"><img src="images/ui/tagger-ja.webp" width="825" height="50" alt="タグ生成" loading="lazy" data-zoom></div>
+          <div class="ticks"><span class="mk" data-n="0" style="left:9.7%">1</span><span class="mk" data-n="1" style="left:33.9%">2</span><span class="mk" data-n="2" style="left:57%">3</span><span class="mk" data-n="3" style="left:66.1%">4</span><span class="mk" data-n="4" style="left:76.4%">5</span><span class="mk" data-n="5" style="left:87.3%">6</span><span class="mk" data-n="6" style="left:92.1%">7</span><span class="mk" data-n="7" style="left:97.2%">8</span></div></div></div>
+        <table class="rows"><tr data-n="0"><td><span class="num">1</span>生成方式</td><td>「タグ生成」を選びます。</td></tr><tr data-n="1"><td><span class="num">2</span>モデル</td><td>タグ生成に使うモデル（下表）。モデルを切り替えると、閾値もそのモデルの初期値になります。</td></tr><tr data-n="2"><td><span class="num">3</span>閾値</td><td>どれくらい確信のあるタグまで出すか。大きくするとタグが減り、小さくすると増えます。</td></tr><tr data-n="3"><td><span class="num">4</span>カテゴリ設定</td><td>出力するカテゴリ（一般・キャラクター・レーティングなど）と、カテゴリごとの閾値を設定します。</td></tr><tr data-n="4"><td><span class="num">5</span>出力先</td><td>TXT保存（画像と同名の .txt）／画像へ埋込／クリップボード（下表）。</td></tr><tr data-n="5"><td><span class="num">6</span>フォルダ</td><td>ONにして実行すると、同じフォルダの画像すべてを処理します（クリップボード出力は不可）。</td></tr><tr data-n="6"><td><span class="num">7</span>実行</td><td>生成して、選んだ出力先に書き出します。</td></tr><tr data-n="7"><td><span class="num">8</span>タグ一括編集</td><td>フォルダ内の .txt タグをまとめて編集します（下記）。</td></tr></table></div></section><section class="blk"><h2 id="tagmodels">タグ生成モデル</h2><p class="lead">どのモデルもアプリには同梱しておらず、初回だけダウンロードします。迷ったら初期モデルの WD EVA02-Large v3 から試してください。</p><div class="tw"><table><tr><th>モデル</th><th>閾値の初期値</th><th>タグ数</th><th>知識の新しさ</th><th>特徴・注意点</th></tr><tr><td class="k">WD EVA02-Large v3</td><td>0.35</td><td>10.9k</td><td>2024年2月</td><td>初期モデル。WD系の定番</td></tr><tr><td class="k">WD EVA02 2026 Canary</td><td>0.55</td><td>16.5k</td><td>2026年5月</td><td>WD EVA02-Large v3 を最新データで追加学習した派生版</td></tr><tr><td class="k">PixAI Tagger v1.0</td><td>0.35</td><td>30.9k</td><td>2026年5月</td><td>高解像度入力の重量級モデル。GPU推奨</td></tr><tr><td class="k">CL Tagger v1.02</td><td>0.55</td><td></td><td></td><td>品質・レーティングのカテゴリも出力</td></tr><tr><td class="k">CL Tagger v2.00</td><td>0.55</td><td>108.0k</td><td>2026年頃（推定）</td><td>10万種類超のタグに対応。独自ライセンスのため手動で配置</td></tr><tr><td class="k">OppaiOracle V1.1</td><td>0.75</td><td>19.3k</td><td>2024年頃（推定）</td><td>誤タグ・タグ抜けを修正したデータで学習</td></tr><tr><td class="k">Z3D-E621 ConvNext</td><td>0.35</td><td></td><td></td><td>e621形式のタグ（ケモノ系の画像向け）</td></tr></table></div></section><section class="blk"><h2 id="caption">自然言語生成（キャプション）</h2><div class="fig" data-fig>
+        <div class="stripscroll"><div class="stripbox" style="max-width:1156.3999999999999px;--sw:826px"><div class="pic"><img src="images/ui/caption-ja.webp" width="826" height="46" alt="自然言語生成（キャプション）" loading="lazy" data-zoom></div>
+          <div class="ticks"><span class="mk" data-n="0" style="left:9.7%">1</span><span class="mk" data-n="1" style="left:31.5%">2</span><span class="mk" data-n="2" style="left:46.2%">3</span><span class="mk" data-n="3" style="left:58.1%">4</span><span class="mk" data-n="4" style="left:76.9%">5</span><span class="mk" data-n="5" style="left:87.4%">6</span><span class="mk" data-n="6" style="left:92%">7</span><span class="mk" data-n="7" style="left:97.1%">8</span></div></div></div>
+        <table class="rows"><tr data-n="0"><td><span class="num">1</span>生成方式</td><td>「自然言語生成」を選ぶと、画像を説明する英語の文章（1段落）を生成します。</td></tr><tr data-n="1"><td><span class="num">2</span>モデル</td><td>説明文の生成に使うモデル（下表）。</td></tr><tr data-n="2"><td><span class="num">3</span>思考 ON／OFF</td><td>ONにすると、画像をよく検討してから文章を作ります。精度は上がりやすい一方、時間がかかります。</td></tr><tr data-n="3"><td><span class="num">4</span>入力方式</td><td>画像のみ／画像＋タグ。画像＋タグでは、タグ生成で選んだモデルと閾値・カテゴリ設定で先にタグを作り、説明文の手がかりにします。</td></tr><tr data-n="4"><td><span class="num">5</span>出力先</td><td>TXT保存（画像名.caption.txt）／クリップボード。</td></tr><tr data-n="5"><td><span class="num">6</span>フォルダ</td><td>ONにして実行すると、同じフォルダの画像すべてを処理します（クリップボード出力は不可）。</td></tr><tr data-n="6"><td><span class="num">7</span>実行</td><td>生成して、選んだ出力先に書き出します。</td></tr><tr data-n="7"><td><span class="num">8</span>タグ一括編集</td><td>タグ用の .txt をまとめて編集します（.caption.txt は対象外）。</td></tr></table></div></section><section class="blk"><h2 id="capmodels">自然言語生成モデル</h2><p class="lead">どのモデル（初期モデルの Florence-2 Base を含む）もアプリには同梱しておらず、初回だけダウンロードします。GPUのメモリ（VRAM）が足りない場合は小さいモデルを選んでください。</p><div class="tw"><table><tr><th>モデル</th><th>初回ダウンロード</th><th>VRAMの目安</th><th>画像＋タグ</th><th>思考</th></tr><tr><td class="k">Florence-2 Base（初期モデル）</td><td>約0.93GB</td><td>—</td><td>—（画像のみ）</td><td>—</td></tr><tr><td class="k">Qwen3.5 2B</td><td>約1.95GB</td><td>4GB</td><td>対応</td><td>対応</td></tr><tr><td class="k">Gemma 4 E2B</td><td>約3.83GB</td><td>4.5GB</td><td>対応</td><td>対応</td></tr><tr><td class="k">LFM3-VL-2B</td><td>約1.43GB</td><td>4GB</td><td>対応</td><td>対応</td></tr><tr><td class="k">JoyCaption Beta One</td><td>約5.36GB</td><td>6.5GB</td><td>対応</td><td>—</td></tr></table></div></section><section class="blk"><h2 id="outputs">出力先</h2><div class="tw"><table><tr><th>出力先</th><th>内容</th></tr><tr><td class="k">TXT保存</td><td>画像と同じフォルダに保存します。Sample.png の場合、タグは Sample.txt、説明文は Sample.caption.txt。</td></tr><tr><td class="k">画像へ埋込</td><td>タグをプロンプトとして画像のメタデータに書き込みます（PNGは parameters、JPEG／WebPはExif）。メタデータ詳細でプロンプトとして表示されます。タグ生成のみ。</td></tr><tr><td class="k">クリップボード</td><td>現在の画像の結果をコピーします。フォルダ一括処理では使えません。</td></tr></table></div></section><section class="blk"><h2 id="categories">カテゴリ設定</h2><div class="fig sidefig" data-fig style="--pw:440px">
+        <div class="pic"><img src="images/ui/tagger-setting-ja.webp" width="700" height="421" alt="カテゴリ設定" loading="lazy" data-zoom><span class="mk" data-n="0" style="left:4%;top:35%">1</span><span class="mk" data-n="1" style="left:35%;top:35%">2</span><span class="mk" data-n="2" style="left:66%;top:35%">3</span><span class="mk" data-n="3" style="left:3%;top:93%">4</span><span class="mk" data-n="4" style="left:75.5%;top:93%">5</span></div>
+        <div><table class="rows"><tr data-n="0"><td><span class="num">1</span>出力するカテゴリ</td><td>チェックしたカテゴリのタグだけを出力します。選べるカテゴリはモデルによって異なります。</td></tr><tr data-n="1"><td><span class="num">2</span>しきい値の指定</td><td>ツールバーの共通しきい値を使うか、カテゴリごとに個別に指定するか。</td></tr><tr data-n="2"><td><span class="num">3</span>個別指定</td><td>カテゴリごとのしきい値。</td></tr><tr data-n="3"><td><span class="num">4</span>リセット</td><td>初期設定に戻します（初期状態ではレーティングを出力しません）。</td></tr><tr data-n="4"><td><span class="num">5</span>保存</td><td>このモデル用の設定として保存します。</td></tr></table></div></div></section><section class="blk"><h2 id="editor">タグ一括編集</h2><div class="fig stack" data-fig style="--pw:1100px">
+        <div class="pic"><img src="images/ui/tageditor-ja.webp" width="1500" height="872" alt="タグ一括編集" loading="lazy" data-zoom><span class="mk" data-n="0" style="left:1.3%;top:5.2%">1</span><span class="mk" data-n="1" style="left:19%;top:5.2%">2</span><span class="mk" data-n="2" style="left:66.3%;top:5.2%">3</span><span class="mk" data-n="3" style="left:18.9%;top:50.5%">4</span><span class="mk" data-n="4" style="left:73%;top:50.5%">5</span><span class="mk" data-n="5" style="left:73%;top:76.8%">6</span></div>
+        <div><table class="rows"><tr data-n="0"><td><span class="num">1</span>画像ファイル一覧</td><td>フォルダ内の画像。<kbd>Ctrl</kbd>／<kbd>Shift</kbd> で複数選択できます。</td></tr><tr data-n="1"><td><span class="num">2</span>画像プレビュー</td><td>選択中の画像。</td></tr><tr data-n="2"><td><span class="num">3</span>画像のタグ</td><td>選択中の画像の .txt に書かれたタグ。カンマ区切りで追加できます（Undo／Redo対応）。</td></tr><tr data-n="3"><td><span class="num">4</span>タグ検索・絞り込み</td><td>フォルダ内の全タグを使用数つきで一覧表示。タグをクリックすると、そのタグを含む／含まない画像に絞り込みます。</td></tr><tr data-n="4"><td><span class="num">5</span>タグの一括削除・置換</td><td>指定したタグを全ての .txt から削除、または別のタグに置き換えます。</td></tr><tr data-n="5"><td><span class="num">6</span>タグの一括追加</td><td>全ての .txt の先頭または末尾にタグを追加します（トリガーワードの追加など）。</td></tr></table></div></div></section><section class="blk"><h2 id="dataset">学習データを作る流れ（例）</h2><ol class="steps"><li>学習に使う画像を1つのフォルダにまとめ、そのうち1枚を開く</li><li>タグ生成で出力先を「TXT保存」、フォルダをONにして実行（全画像に同名の .txt ができます）</li><li>タグ一括編集で、不要なタグの削除・表記ゆれの置換、先頭にトリガーワードの追加</li><li>必要に応じて「ファイル名の変更」で連番にリネーム（.txt も連動して変わります）</li></ol></section>
+        <div class="pn"><a href="metadata_j.html">← メタデータ</a><a href="organize_j.html">選別・ファイル整理 →</a></div>
+      </article>
+</main>
+<footer class="foot">AI Paint Cleaner マニュアル · v3.40 対応 · 最終更新 2026-11-04 · <a href="/ai-paint-cleaner_j.html">製品ページ</a> · <a href="/index_j.html">nekzuk Software</a></footer>
+<script src="content.ja.js" defer></script>
+<script src="manual-render.js" defer></script>
+<script src="manual.js" defer></script>
+</body>
+</html>

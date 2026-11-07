@@ -1,0 +1,104 @@
+<!doctype html>
+<!-- build.js が自動生成したファイルです。直接編集せず content.en.js を直して node build.js を実行してください。 -->
+<html data-site-page="manual" data-product="ai-paint-cleaner_online_manual" lang="en">
+<head>
+<script>
+  if (!["nekzuk.com", "www.nekzuk.com"].includes(window.location.hostname.toLowerCase())) {
+    window["ga-disable-G-040P2W2ZZK"] = true;
+  }
+</script>
+<meta charset="utf-8">
+<meta name="color-scheme" content="dark light">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Color &amp; AI correction - AI Paint Cleaner User Manual</title>
+<meta name="description" content="Manual slider adjustments and AI correction for noise, blur, JPEG artifacts and more. Use manual adjustment to tune brightness and color with sliders, or AI correction to fix specific problems with dedicated models. Both support folder batch processing.">
+<link rel="canonical" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/color.html">
+<link rel="alternate" hreflang="en" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/color.html">
+<link rel="alternate" hreflang="ja" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/color_j.html">
+<link rel="alternate" hreflang="x-default" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/color.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Color &amp; AI correction - AI Paint Cleaner User Manual">
+<meta property="og:description" content="Manual slider adjustments and AI correction for noise, blur, JPEG artifacts and more. Use manual adjustment to tune brightness and color with sliders, or AI correction to fix specific problems with dedicated models. Both support folder batch processing.">
+<meta property="og:url" content="https://nekzuk.com/assets/manual/ai-paint-cleaner/color.html">
+<meta property="og:image" content="https://nekzuk.com/assets/manual/ai-paint-cleaner/images/screen-en.webp">
+<link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32">
+<link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml">
+<link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon">
+<meta name="theme-color" content="#6150a5">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-040P2W2ZZK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag("js", new Date());
+  gtag("config", "G-040P2W2ZZK");
+</script>
+<link rel="stylesheet" href="../../site-base.css">
+<link rel="stylesheet" href="manual.css">
+<script src="../../js/site-theme.js"></script>
+</head>
+<body data-page="color">
+<header class="top">
+  <a class="brand" href="ai-paint-cleaner_online_manual.html"><img src="images/icons/app.png" alt=""><span><b>AI Paint Cleaner</b><small>User Manual</small></span></a>
+  <a class="back-to-product" href="/ai-paint-cleaner.html">← Back to product page</a>
+  <div class="search"><input id="q" type="search" autocomplete="off" aria-label="Search features and keywords" placeholder="Search features and keywords"><div id="res" class="res" hidden></div></div>
+  <div class="site-controls">
+    <div class="language-switch">
+      <a href="color.html" class="current">English</a>
+      <span class="divider">/</span>
+      <a href="color_j.html" data-keep-hash>日本語</a>
+    </div>
+    <button class="site-theme-toggle" type="button" aria-label="Switch theme" title="Switch theme" hidden>
+      <svg class="site-theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
+      <svg class="site-theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+    </button>
+  </div>
+</header>
+<main id="app" class="detail">
+      <nav class="side"><a class="home" href="ai-paint-cleaner_online_manual.html">← Back to top</a><a href="basics.html"><img class="" src="images/icons/open.png" alt="">Screen &amp; basics</a><a href="mosaic.html"><img class="" src="images/icons/mosaic_rect.png" alt="">Mosaic</a><a href="inpaint.html"><img class="" src="images/icons/mask.png" alt="">Inpainting</a><a href="paint.html"><img class="" src="images/icons/pen.png" alt="">Paint, text &amp; selection</a><a href="color.html" class="on" aria-current="page"><img class="" src="images/icons/manualcoloradjust.png" alt="">Color &amp; AI correction</a><a href="bgremove.html"><img class="" src="images/icons/bg_remove.png" alt="">Background removal</a><a href="resize.html"><img class="" src="images/icons/resize.png" alt="">Resize &amp; convert</a><a href="metadata.html"><img class="" src="images/icons/metaclean.png" alt="">Metadata</a><a href="tagger.html"><img class="" src="images/icons/tagger1.png" alt="">Tags &amp; captions</a><a href="organize.html"><img class="" src="images/icons/folder1.png" alt="">Sorting &amp; organizing</a></nav>
+      <article>
+        <div class="dhead"><img class="" src="images/icons/manualcoloradjust.png" alt=""><h1>Color &amp; AI correction</h1></div>
+        <p class="dlead">Use manual adjustment to tune brightness and color with sliders, or AI correction to fix specific problems with dedicated models. Both support folder batch processing.</p>
+        <div class="toc"><a href="#toolbar">Toolbar</a><a href="#manual">Manual color adjustment</a><a href="#ai">AI correction categories</a><a href="#examples">Examples</a></div>
+        <section class="blk"><h2 id="toolbar">Toolbar</h2><div class="fig" data-fig>
+        <div class="stripscroll"><div class="stripbox" style="max-width:1146px;--sw:764px"><div class="pic"><img src="images/ui/color-ai-en.webp" width="764" height="42" alt="Toolbar" loading="lazy" data-zoom></div>
+          <div class="ticks"><span class="mk" data-n="0" style="left:2.6%">1</span><span class="mk" data-n="1" style="left:17.3%">2</span><span class="mk" data-n="2" style="left:42.8%">3</span><span class="mk" data-n="3" style="left:78.1%">4</span><span class="mk" data-n="4" style="left:92.3%">5</span><span class="mk" data-n="5" style="left:97.1%">6</span></div></div></div>
+        <table class="rows"><tr data-n="0"><td><span class="num">1</span>Manual color adjustment</td><td>Opens the manual color adjustment window.</td></tr><tr data-n="1"><td><span class="num">2</span>Category</td><td>Purpose of the AI correction (see below).</td></tr><tr data-n="2"><td><span class="num">3</span>Preset</td><td>Model / preset for the category.</td></tr><tr data-n="3"><td><span class="num">4</span>Strength</td><td>100 applies the result as is, 0 keeps the original. Negative values change in the opposite direction (-200 to 200).</td></tr><tr data-n="4"><td><span class="num">5</span>Folder</td><td>When on, running processes every image in the same folder (you choose to overwrite or save separate files first).</td></tr><tr data-n="5"><td><span class="num">6</span>Run</td><td>Runs the AI correction.</td></tr></table></div></section><section class="blk"><h2 id="manual">Manual color adjustment</h2><div class="fig sidefig" data-fig style="--pw:340px">
+        <div class="pic"><img src="images/ui/manualcolor-en.webp" width="560" height="967" alt="Manual color adjustment" loading="lazy" data-zoom><span class="mk" data-n="0" style="left:5%;top:6.4%">1</span><span class="mk" data-n="1" style="left:5%;top:10%">2</span><span class="mk" data-n="2" style="left:5%;top:27.1%">3</span><span class="mk" data-n="3" style="left:5%;top:38.9%">4</span><span class="mk" data-n="4" style="left:5%;top:58.6%">5</span><span class="mk" data-n="5" style="left:3.5%;top:93.5%">6</span><span class="mk" data-n="6" style="left:77.5%;top:93.5%">7</span><span class="mk" data-n="7" style="left:3.5%;top:96.6%">8</span><span class="mk" data-n="8" style="left:14.5%;top:96.6%">9</span><span class="mk" data-n="9" style="left:41.5%;top:96.6%">10</span></div>
+        <div><table class="rows"><tr data-n="0"><td><span class="num">1</span>Preset</td><td>Save, load and delete named settings.</td></tr><tr data-n="1"><td><span class="num">2</span>Basic adjustments</td><td>Brightness, contrast, saturation, color temperature, tint</td></tr><tr data-n="2"><td><span class="num">3</span>RGB adjustments</td><td>Red, green, blue</td></tr><tr data-n="3"><td><span class="num">4</span>Advanced adjustments</td><td>Gamma, hue shift, clarity, sharpness, shadows, highlights</td></tr><tr data-n="4"><td><span class="num">5</span>Tone mapping</td><td>Overall strength, deepen shadows, accentuate highlights (light / shadow depth)</td></tr><tr data-n="5"><td><span class="num">6</span>Show adjusted result on canvas</td><td>Turn off to compare with the original.</td></tr><tr data-n="6"><td><span class="num">7</span>Expand preview</td><td>Shows before / after previews side by side.</td></tr><tr data-n="7"><td><span class="num">8</span>Apply</td><td>Applies to the current image.</td></tr><tr data-n="8"><td><span class="num">9</span>Apply to Folder Images</td><td>Applies the same settings to every image in the folder.</td></tr><tr data-n="9"><td><span class="num">10</span>Reset</td><td>Resets all values.</td></tr></table></div></div></section><section class="blk"><h2 id="ai">AI correction categories</h2><p class="lead">Choose a category, then a preset, and run. Models are downloaded on first use.</p><div class="tw"><table><tr><th>Category</th><th>Presets</th><th>Use</th></tr><tr><td class="k">Auto Color</td><td>Standard / Black Crush / Black Crush+ / High Quality</td><td>Naturally balances overall color and brightness. Black Crush deepens shadows for contrast.</td></tr><tr><td class="k">Brightness</td><td>Exposure Corr. / Low-Light 1 / Low-Light 2</td><td>Eases blown highlights and crushed shadows; brightens dark images.</td></tr><tr><td class="k">Photo Color</td><td>Color/Tone Corr.1 / Color/Tone Corr.2</td><td>Adjusts color and tone of photos.</td></tr><tr><td class="k">Denoise</td><td>Light / Medium / Strong / Detail Focus / Texture Focus / <kbd>Alt</kbd> Method</td><td>Reduces grain and compression noise. Detail Focus and Texture Focus are for real photos.</td></tr><tr><td class="k">Deblur</td><td>General Blur / JPEG Blur / Motion Deblur / Defocus Deblur</td><td>Fixes camera shake, motion blur and out-of-focus blur.</td></tr><tr><td class="k">JPEG Repair</td><td>Standard / Heavy Compression</td><td>Reduces JPEG block noise and smearing.</td></tr><tr><td class="k">Moire Repair</td><td>Moire Reduction / High-Quality Moire Reduction</td><td>Reduces stripe patterns such as those from photographing screens.</td></tr><tr><td class="k">Color Artifact</td><td>Banding Correction / Purple Fringe Fix</td><td>Reduces color banding (false contours) in gradients and purple fringing on edges.</td></tr></table></div></section><section class="blk"><h2 id="examples">Examples</h2><div class="gallery">
+        <figure class="ba"><figcaption><b>Auto Color</b></figcaption>
+          <div class="pair"><div><img src="images/ex/autocolor-a.webp" width="900" height="900" alt="Auto Color Before" loading="lazy" data-zoom><i>Before</i></div><div><img src="images/ex/autocolor-b.webp" width="900" height="900" alt="Auto Color After" loading="lazy" data-zoom><i>After</i></div></div>
+          </figure>
+        <figure class="ba"><figcaption><b>Photo Color</b></figcaption>
+          <div class="pair"><div><img src="images/ex/photo-a.webp" width="900" height="601" alt="Photo Color Before" loading="lazy" data-zoom><i>Before</i></div><div><img src="images/ex/photo-b.webp" width="900" height="601" alt="Photo Color After" loading="lazy" data-zoom><i>After</i></div></div>
+          </figure>
+        <figure class="ba"><figcaption><b>Auto Color (landscape)</b></figcaption>
+          <div class="pair"><div><img src="images/ex/landscape-a.webp" width="900" height="601" alt="Auto Color (landscape) Before" loading="lazy" data-zoom><i>Before</i></div><div><img src="images/ex/landscape-b.webp" width="900" height="601" alt="Auto Color (landscape) After" loading="lazy" data-zoom><i>After</i></div></div>
+          </figure>
+        <figure class="ba"><figcaption><b>JPEG Repair</b></figcaption>
+          <div class="pair"><div><img src="images/ex/jpeg-a.webp" width="890" height="985" alt="JPEG Repair Before" loading="lazy" data-zoom><i>Before</i></div><div><img src="images/ex/jpeg-b.webp" width="890" height="985" alt="JPEG Repair After" loading="lazy" data-zoom><i>After</i></div></div>
+          </figure>
+        <figure class="ba"><figcaption><b>Denoise</b></figcaption>
+          <div class="pair"><div><img src="images/ex/noise-a.webp" width="900" height="599" alt="Denoise Before" loading="lazy" data-zoom><i>Before</i></div><div><img src="images/ex/noise-b.webp" width="900" height="599" alt="Denoise After" loading="lazy" data-zoom><i>After</i></div></div>
+          </figure>
+        <figure class="ba"><figcaption><b>Deblur (motion)</b></figcaption>
+          <div class="pair"><div><img src="images/ex/motion-a.webp" width="900" height="677" alt="Deblur (motion) Before" loading="lazy" data-zoom><i>Before</i></div><div><img src="images/ex/motion-b.webp" width="900" height="677" alt="Deblur (motion) After" loading="lazy" data-zoom><i>After</i></div></div>
+          </figure>
+        <figure class="ba"><figcaption><b>Deblur (defocus)</b></figcaption>
+          <div class="pair"><div><img src="images/ex/focus-a.webp" width="797" height="979" alt="Deblur (defocus) Before" loading="lazy" data-zoom><i>Before</i></div><div><img src="images/ex/focus-b.webp" width="797" height="979" alt="Deblur (defocus) After" loading="lazy" data-zoom><i>After</i></div></div>
+          </figure>
+        <figure class="ba"><figcaption><b>Low-light correction</b></figcaption>
+          <div class="pair"><div><img src="images/ex/lowlight-a.webp" width="651" height="976" alt="Low-light correction Before" loading="lazy" data-zoom><i>Before</i></div><div><img src="images/ex/lowlight-b.webp" width="651" height="976" alt="Low-light correction After" loading="lazy" data-zoom><i>After</i></div></div>
+          </figure>
+        <figure class="ba"><figcaption><b>Moire Repair</b></figcaption>
+          <div class="pair"><div><img src="images/ex/moire-a.webp" width="900" height="553" alt="Moire Repair Before" loading="lazy" data-zoom><i>Before</i></div><div><img src="images/ex/moire-b.webp" width="900" height="553" alt="Moire Repair After" loading="lazy" data-zoom><i>After</i></div></div>
+          </figure></div></section>
+        <div class="pn"><a href="paint.html">← Paint, text &amp; selection</a><a href="bgremove.html">Background removal →</a></div>
+      </article>
+</main>
+<footer class="foot">AI Paint Cleaner Manual · v3.40 · Last updated 2026-11-04 · <a href="/ai-paint-cleaner.html">Product page</a> · <a href="/">nekzuk Software</a></footer>
+<script src="content.en.js" defer></script>
+<script src="manual-render.js" defer></script>
+<script src="manual.js" defer></script>
+</body>
+</html>

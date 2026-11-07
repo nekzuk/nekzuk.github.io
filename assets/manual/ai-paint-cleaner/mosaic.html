@@ -1,0 +1,86 @@
+<!doctype html>
+<!-- build.js が自動生成したファイルです。直接編集せず content.en.js を直して node build.js を実行してください。 -->
+<html data-site-page="manual" data-product="ai-paint-cleaner_online_manual" lang="en">
+<head>
+<script>
+  if (!["nekzuk.com", "www.nekzuk.com"].includes(window.location.hostname.toLowerCase())) {
+    window["ga-disable-G-040P2W2ZZK"] = true;
+  }
+</script>
+<meta charset="utf-8">
+<meta name="color-scheme" content="dark light">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mosaic - AI Paint Cleaner User Manual</title>
+<meta name="description" content="Mosaic / blur / solid. Preview AutoMosaic results and remove unwanted mosaics. A dedicated tool that applies mosaic, blur or a solid color to the traced area. Tracing with a right-click restores the original pixels (diff replacement), which makes it ideal for finishing images processed by AutoMosaic.">
+<link rel="canonical" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/mosaic.html">
+<link rel="alternate" hreflang="en" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/mosaic.html">
+<link rel="alternate" hreflang="ja" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/mosaic_j.html">
+<link rel="alternate" hreflang="x-default" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/mosaic.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mosaic - AI Paint Cleaner User Manual">
+<meta property="og:description" content="Mosaic / blur / solid. Preview AutoMosaic results and remove unwanted mosaics. A dedicated tool that applies mosaic, blur or a solid color to the traced area. Tracing with a right-click restores the original pixels (diff replacement), which makes it ideal for finishing images processed by AutoMosaic.">
+<meta property="og:url" content="https://nekzuk.com/assets/manual/ai-paint-cleaner/mosaic.html">
+<meta property="og:image" content="https://nekzuk.com/assets/manual/ai-paint-cleaner/images/screen-en.webp">
+<link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32">
+<link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml">
+<link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon">
+<meta name="theme-color" content="#6150a5">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-040P2W2ZZK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag("js", new Date());
+  gtag("config", "G-040P2W2ZZK");
+</script>
+<link rel="stylesheet" href="../../site-base.css">
+<link rel="stylesheet" href="manual.css">
+<script src="../../js/site-theme.js"></script>
+</head>
+<body data-page="mosaic">
+<header class="top">
+  <a class="brand" href="ai-paint-cleaner_online_manual.html"><img src="images/icons/app.png" alt=""><span><b>AI Paint Cleaner</b><small>User Manual</small></span></a>
+  <a class="back-to-product" href="/ai-paint-cleaner.html">← Back to product page</a>
+  <div class="search"><input id="q" type="search" autocomplete="off" aria-label="Search features and keywords" placeholder="Search features and keywords"><div id="res" class="res" hidden></div></div>
+  <div class="site-controls">
+    <div class="language-switch">
+      <a href="mosaic.html" class="current">English</a>
+      <span class="divider">/</span>
+      <a href="mosaic_j.html" data-keep-hash>日本語</a>
+    </div>
+    <button class="site-theme-toggle" type="button" aria-label="Switch theme" title="Switch theme" hidden>
+      <svg class="site-theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
+      <svg class="site-theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+    </button>
+  </div>
+</header>
+<main id="app" class="detail">
+      <nav class="side"><a class="home" href="ai-paint-cleaner_online_manual.html">← Back to top</a><a href="basics.html"><img class="" src="images/icons/open.png" alt="">Screen &amp; basics</a><a href="mosaic.html" class="on" aria-current="page"><img class="" src="images/icons/mosaic_rect.png" alt="">Mosaic</a><a href="inpaint.html"><img class="" src="images/icons/mask.png" alt="">Inpainting</a><a href="paint.html"><img class="" src="images/icons/pen.png" alt="">Paint, text &amp; selection</a><a href="color.html"><img class="" src="images/icons/manualcoloradjust.png" alt="">Color &amp; AI correction</a><a href="bgremove.html"><img class="" src="images/icons/bg_remove.png" alt="">Background removal</a><a href="resize.html"><img class="" src="images/icons/resize.png" alt="">Resize &amp; convert</a><a href="metadata.html"><img class="" src="images/icons/metaclean.png" alt="">Metadata</a><a href="tagger.html"><img class="" src="images/icons/tagger1.png" alt="">Tags &amp; captions</a><a href="organize.html"><img class="" src="images/icons/folder1.png" alt="">Sorting &amp; organizing</a></nav>
+      <article>
+        <div class="dhead"><img class="" src="images/icons/mosaic_rect.png" alt=""><h1>Mosaic</h1></div>
+        <p class="dlead">A dedicated tool that applies mosaic, blur or a solid color to the traced area. Tracing with a right-click restores the original pixels (diff replacement), which makes it ideal for finishing images processed by AutoMosaic.</p>
+        <div class="toc"><a href="#toolbar">Toolbar</a><a href="#kinds">Mosaic types</a><a href="#automosaic">Working with AutoMosaic</a><a href="#am-open">① Open AutoMosaic output images</a><a href="#am-remove">② Remove unwanted AutoMosaic mosaics</a></div>
+        <section class="blk"><h2 id="toolbar">Toolbar</h2><div class="fig" data-fig>
+        <div class="stripscroll"><div class="stripbox" style="max-width:1310.1000000000001px;--sw:1191px"><div class="pic"><img src="images/ui/mosaic-en.webp" width="1191" height="43" alt="Toolbar" loading="lazy" data-zoom></div>
+          <div class="ticks"><span class="mk" data-n="0" style="left:1.8%">1</span><span class="mk" data-n="1" style="left:4.8%">2</span><span class="mk" data-n="2" style="left:7.9%">3</span><span class="mk" data-n="3" style="left:11.3%">4</span><span class="mk" data-n="4" style="left:23%">5</span><span class="mk" data-n="5" style="left:41.9%">6</span><span class="mk" data-n="6" style="left:65.8%">7</span><span class="mk" data-n="7" style="left:75.5%">8</span><span class="mk" data-n="8" style="left:90.2%">9</span></div></div></div>
+        <table class="rows"><tr data-n="0"><td><span class="num">1</span>Mosaic rectangle</td><td>Applies to the rectangle you drag with the left button. Trace with a right-click to restore.</td></tr><tr data-n="1"><td><span class="num">2</span>Mosaic bar</td><td>Applies to the band you drag with the left button. Trace with a right-click to restore. Width: right click + wheel.</td></tr><tr data-n="2"><td><span class="num">3</span>Mosaic pen</td><td>Applies to the area you trace with the left button. Drawing a closed loop fills the inside too. Trace with a right-click to restore.</td></tr><tr data-n="3"><td><span class="num">4</span>AI auto-select</td><td>When on, <kbd>Shift</kbd>+left click lets the AI pick the object and applies the mosaic to it.</td></tr><tr data-n="4"><td><span class="num">5</span>Pen / bar size</td><td>Mosaic pen thickness and mosaic bar width (right click + wheel).</td></tr><tr data-n="5"><td><span class="num">6</span>Type</td><td>Mosaic / Blur / Solid (switch with M / <kbd>Shift</kbd>+<kbd>M</kbd>).</td></tr><tr data-n="6"><td><span class="num">7</span>Size presets</td><td>Frequently used mosaic sizes. Values can be set from 1–99 px in Settings (<kbd>Shift</kbd>+<kbd>,</kbd> / <kbd>Shift</kbd>+<kbd>.</kbd>).</td></tr><tr data-n="7"><td><span class="num">8</span>Auto</td><td>Uses 1/100 of the image's long side as the mosaic size.</td></tr><tr data-n="8"><td><span class="num">9</span>Size</td><td>Fine-tunes the mosaic size (, / .).</td></tr></table></div><p class="note">Right-click restore (diff replacement) and filling closed loops are on by default. You can turn them off under Settings &gt; Drawing.</p></section><section class="blk"><h2 id="kinds">Mosaic types</h2><div class="tw"><table><tr><th>Type</th><th>Description</th></tr><tr><td class="k">Mosaic</td><td>Standard pixelation. Edge blur can be turned on or off in Settings.</td></tr><tr><td class="k">Blur</td><td>Applies a Gaussian blur.</td></tr><tr><td class="k">Solid</td><td>Fills with the palette color. Choose &quot;Full&quot; or &quot;Outline&quot; in Settings and set the outline width.</td></tr></table></div></section><section class="blk"><h2 id="automosaic">Working with AutoMosaic</h2><p class="lead">When you open an image processed by AutoMosaic, these two features are ready automatically.</p><div class="modes">
+        <div class="mode" style="--mc:#2f7fd1"><h3>① Open processed images<small>Auto preview and diff source</small></h3>
+          <p>Just open an AutoMosaic output image: the mosaic areas appear as a preview in the right sidebar, and the original (pre-mosaic) image is set as the diff replacement reference.</p>
+          <a class="more" href="mosaic.html#am-open">Learn more →</a></div>
+        <div class="mode" style="--mc:#d6457a"><h3>② Remove unwanted mosaics<small>Just trace with a right-click</small></h3>
+          <p>Because the reference is already set, tracing an unwanted mosaic restores the original pixels. Use right-click with the mosaic tools, or the &quot;Diff Replace&quot; category in the inpainting tools.</p>
+          <a class="more" href="mosaic.html#am-remove">Learn more →</a></div></div></section><section class="blk"><h2 id="am-open">① Open AutoMosaic output images</h2><ol class="flow"><li><div class="ft"><b>1</b><strong>Turn on &quot;Save Final Preview Image&quot; in AutoMosaic</strong></div><p>Enable it in AutoMosaic's option settings before processing. A Preview folder is created in the output location.</p>
+        <div class="pic" style="--nw:737.5px"><img src="images/ui/am-option-en.webp" width="590" height="164" alt="Turn on &quot;Save Final Preview Image&quot; in AutoMosaic" loading="lazy" data-zoom><span class="ring" style="left:5.3%;top:51.5%"></span></div></li><li><div class="ft"><b>2</b><strong>Open the output images in AI Paint Cleaner</strong></div><p>Open the processed images located next to the Preview folder. Use <kbd>←</kbd> <kbd>→</kbd> to go through them one by one.</p>
+        <div class="pic" style="--nw:480px"><img src="images/ui/am-files.webp" width="352" height="184" alt="Open the output images in AI Paint Cleaner" loading="lazy" data-zoom><span class="hbox" style="left:0.5%;top:18%;width:58%;height:81%"></span></div></li><li><div class="ft"><b>3</b><strong>Preview and diff source appear automatically</strong></div><p>The right sidebar shows a preview of the mosaic areas and the name of the original image used for diff replacement. Hold <kbd>Alt</kbd>+<kbd>P</kbd> to show the preview on the canvas.</p>
+        <div class="pic" style="--nw:2252.5px"><img src="images/ui/am-preview-en.webp" width="1802" height="1035" alt="Preview and diff source appear automatically" loading="lazy" data-zoom><span class="hbox" style="left:64.1%;top:3.8%;width:35.8%;height:62.2%"></span><span class="hbox" style="left:64.1%;top:66.3%;width:35.8%;height:14.4%"></span></div></li></ol></section><section class="blk"><h2 id="am-remove">② Remove unwanted AutoMosaic mosaics</h2><div class="fig stack" data-fig style="--pw:1100px">
+        <div class="pic"><img src="images/ex/am-remove-en.webp" width="1800" height="731" alt="② Remove unwanted AutoMosaic mosaics" loading="lazy" data-zoom><span class="mk" data-n="0" style="left:3.2%;top:9%">1</span><span class="mk" data-n="1" style="left:39.6%;top:76.6%">2</span><span class="mk" data-n="2" style="left:20%;top:46.9%">3</span><span class="mk" data-n="3" style="left:65.7%;top:75.6%">4</span></div>
+        <div><table class="rows"><tr data-n="0"><td><span class="num">1</span>Mosaic tools</td><td>Select a mosaic tool. Tracing with a right-click performs diff replacement (restore). The &quot;Diff Replace&quot; category in the inpainting tools does the same.</td></tr><tr data-n="1"><td><span class="num">2</span>Diff replacement source image</td><td>The original image is set automatically from the AutoMosaic log. If it's the wrong image, change it with <kbd>Ctrl</kbd>+<kbd>R</kbd>.</td></tr><tr data-n="2"><td><span class="num">3</span>Trace with a right-click</td><td>Roughly trace the mosaic you want to remove with a right-click.</td></tr><tr data-n="3"><td><span class="num">4</span>Restored</td><td>Only the traced area returns to the original pixels and the mosaic disappears. Add any missing mosaics by left-dragging.</td></tr></table><p class="note">Hold <kbd>Alt</kbd>+<kbd>R</kbd> to show the reference image on the canvas and check it.</p></div></div></section><section class="blk"><ul class="tips"><li>Turn the automatic preview on or off with &quot;Auto-show AutoMosaic Preview images&quot;, and the automatic source with &quot;Automatically set source image from AutoMosaic log&quot; in Settings.</li></ul></section>
+        <div class="pn"><a href="basics.html">← Screen &amp; basics</a><a href="inpaint.html">Inpainting →</a></div>
+      </article>
+</main>
+<footer class="foot">AI Paint Cleaner Manual · v3.40 · Last updated 2026-11-04 · <a href="/ai-paint-cleaner.html">Product page</a> · <a href="/">nekzuk Software</a></footer>
+<script src="content.en.js" defer></script>
+<script src="manual-render.js" defer></script>
+<script src="manual.js" defer></script>
+</body>
+</html>

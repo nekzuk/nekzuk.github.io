@@ -1,0 +1,84 @@
+<!doctype html>
+<!-- build.js が自動生成したファイルです。直接編集せず content.ja.js を直して node build.js を実行してください。 -->
+<html data-site-page="manual" data-product="ai-paint-cleaner_online_manual" lang="ja">
+<head>
+<script>
+  if (!["nekzuk.com", "www.nekzuk.com"].includes(window.location.hostname.toLowerCase())) {
+    window["ga-disable-G-040P2W2ZZK"] = true;
+  }
+</script>
+<meta charset="utf-8">
+<meta name="color-scheme" content="dark light">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>背景除去 - AI Paint Cleaner 操作マニュアル</title>
+<meta name="description" content="AIで背景を透明・白・ぼかし・指定色に。前景除去や色置換も。 AIが被写体を判別して、背景を透明化したり別の背景に置き換えたりします。選択範囲だけ、マスク範囲だけの処理もできます。">
+<link rel="canonical" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/bgremove_j.html">
+<link rel="alternate" hreflang="en" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/bgremove.html">
+<link rel="alternate" hreflang="ja" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/bgremove_j.html">
+<link rel="alternate" hreflang="x-default" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/bgremove.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="背景除去 - AI Paint Cleaner 操作マニュアル">
+<meta property="og:description" content="AIで背景を透明・白・ぼかし・指定色に。前景除去や色置換も。 AIが被写体を判別して、背景を透明化したり別の背景に置き換えたりします。選択範囲だけ、マスク範囲だけの処理もできます。">
+<meta property="og:url" content="https://nekzuk.com/assets/manual/ai-paint-cleaner/bgremove_j.html">
+<meta property="og:image" content="https://nekzuk.com/assets/manual/ai-paint-cleaner/images/screen-ja.webp">
+<link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32">
+<link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml">
+<link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon">
+<meta name="theme-color" content="#6150a5">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-040P2W2ZZK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag("js", new Date());
+  gtag("config", "G-040P2W2ZZK");
+</script>
+<link rel="stylesheet" href="../../site-base.css">
+<link rel="stylesheet" href="manual.css">
+<script src="../../js/site-theme.js"></script>
+</head>
+<body data-page="bgremove">
+<header class="top">
+  <a class="brand" href="ai-paint-cleaner_online_manual_j.html"><img src="images/icons/app.png" alt=""><span><b>AI Paint Cleaner</b><small>マニュアル</small></span></a>
+  <a class="back-to-product" href="/ai-paint-cleaner_j.html">← 製品ページに戻る</a>
+  <div class="search"><input id="q" type="search" autocomplete="off" aria-label="機能名・キーワードで検索" placeholder="機能名・キーワードで検索"><div id="res" class="res" hidden></div></div>
+  <div class="site-controls">
+    <div class="language-switch">
+      <a href="bgremove.html" data-keep-hash>English</a>
+      <span class="divider">/</span>
+      <a href="bgremove_j.html" class="current">日本語</a>
+    </div>
+    <button class="site-theme-toggle" type="button" aria-label="配色を切り替える" title="配色を切り替える" hidden>
+      <svg class="site-theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
+      <svg class="site-theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+    </button>
+  </div>
+</header>
+<main id="app" class="detail">
+      <nav class="side"><a class="home" href="ai-paint-cleaner_online_manual_j.html">← トップへ</a><a href="basics_j.html"><img class="" src="images/icons/open.png" alt="">画面と基本操作</a><a href="mosaic_j.html"><img class="" src="images/icons/mosaic_rect.png" alt="">モザイク</a><a href="inpaint_j.html"><img class="" src="images/icons/mask.png" alt="">インペイント</a><a href="paint_j.html"><img class="" src="images/icons/pen.png" alt="">ペイント・文字・選択</a><a href="color_j.html"><img class="" src="images/icons/manualcoloradjust.png" alt="">色調補正・AI補正</a><a href="bgremove_j.html" class="on" aria-current="page"><img class="" src="images/icons/bg_remove.png" alt="">背景除去</a><a href="resize_j.html"><img class="" src="images/icons/resize.png" alt="">リサイズ・形式変換</a><a href="metadata_j.html"><img class="" src="images/icons/metaclean.png" alt="">メタデータ</a><a href="tagger_j.html"><img class="" src="images/icons/tagger1.png" alt="">タグ・説明生成</a><a href="organize_j.html"><img class="" src="images/icons/folder1.png" alt="">選別・ファイル整理</a></nav>
+      <article>
+        <div class="dhead"><img class="" src="images/icons/bg_remove.png" alt=""><h1>背景除去</h1></div>
+        <p class="dlead">AIが被写体を判別して、背景を透明化したり別の背景に置き換えたりします。選択範囲だけ、マスク範囲だけの処理もできます。</p>
+        <div class="toc"><a href="#toolbar">ツールバー</a><a href="#models">モデルの選び方</a><a href="#example">処理の例</a><a href="#partial">一部だけ処理する</a></div>
+        <section class="blk"><h2 id="toolbar">ツールバー</h2><div class="fig" data-fig>
+        <div class="stripscroll"><div class="stripbox" style="max-width:621px;--sw:414px"><div class="pic"><img src="images/ui/bgremove-ja.webp" width="414" height="43" alt="ツールバー" loading="lazy" data-zoom></div>
+          <div class="ticks"><span class="mk" data-n="0" style="left:12.6%">1</span><span class="mk" data-n="1" style="left:36.7%">2</span><span class="mk" data-n="2" style="left:70.5%">3</span><span class="mk" data-n="3" style="left:85%">4</span><span class="mk" data-n="4" style="left:94.7%">5</span></div></div></div>
+        <table class="rows"><tr data-n="0"><td><span class="num">1</span>モデル</td><td>背景処理に使うモデル・方式（下表）。</td></tr><tr data-n="1"><td><span class="num">2</span>背景</td><td>透明背景／白背景／ぼかし背景／カラー背景（カラーパレットの色）。</td></tr><tr data-n="2"><td><span class="num">3</span>閾値</td><td>自動、または10（除去範囲が狭い）〜90（広い）。</td></tr><tr data-n="3"><td><span class="num">4</span>フォルダ</td><td>ONにして実行すると、同じフォルダの画像すべてを処理します（実行前に、上書き保存か別ファイルとして保存かを選びます）。</td></tr><tr data-n="4"><td><span class="num">5</span>実行</td><td>背景除去・前景除去・色置換を実行します。</td></tr></table></div></section><section class="blk"><h2 id="models">モデルの選び方</h2><div class="tw"><table><tr><th>モデル</th><th>特徴</th></tr><tr><td class="k">BiRef-D（BiRefNet_dynamic）</td><td>汎用の高精度モデル。髪や細部も比較的きれいに抜けます。まずはこれ。</td></tr><tr><td class="k">BiRef-M（BiRefNet_dynamic-matting）</td><td>境界のマット処理寄り。BiRef-Dで輪郭が硬いときに。</td></tr><tr><td class="k">BEN2</td><td>人物・商品などの境界を細かく抜きます。輪郭や髪を重視するときに。</td></tr><tr><td class="k">base</td><td>汎用の背景除去。安定していますが、細い髪や半透明の境界は粗くなることがあります。</td></tr><tr><td class="k">MVANet</td><td>高精細なモデル。細部に強い一方、処理は重めです。</td></tr><tr><td class="k">前景除去</td><td>通常とは逆に、前景を取り除いて背景側を残します。</td></tr><tr><td class="k">色置換</td><td>AIを使わず、ペン色に近い色を透明・白・指定色に置き換えます。単色背景向け。</td></tr></table></div></section><section class="blk"><h2 id="example">処理の例</h2><div class="gallery">
+        <figure class="ba"><figcaption><b>透明背景</b></figcaption>
+          <div class="pair alpha"><div><img src="images/ex/bg-a.webp" width="900" height="900" alt="透明背景 処理前" loading="lazy" data-zoom><i>処理前</i></div><div><img src="images/ex/bg-b.webp" width="900" height="900" alt="透明背景 処理後" loading="lazy" data-zoom><i>処理後</i></div></div>
+          </figure>
+        <figure class="ba"><figcaption><b>ぼかし背景</b></figcaption>
+          <div class="pair"><div><img src="images/ex/bg2-a.webp" width="900" height="900" alt="ぼかし背景 処理前" loading="lazy" data-zoom><i>処理前</i></div><div><img src="images/ex/bg2-b.webp" width="900" height="900" alt="ぼかし背景 処理後" loading="lazy" data-zoom><i>処理後</i></div></div>
+          </figure>
+        <figure class="ba"><figcaption><b>白背景</b></figcaption>
+          <div class="pair"><div><img src="images/ex/bg3-a.webp" width="900" height="540" alt="白背景 処理前" loading="lazy" data-zoom><i>処理前</i></div><div><img src="images/ex/bg3-b.webp" width="900" height="540" alt="白背景 処理後" loading="lazy" data-zoom><i>処理後</i></div></div>
+          </figure></div></section><section class="blk"><h2 id="partial">一部だけ処理する</h2><ul class="tips"><li>選択ツールで範囲を選び、「選択範囲の処理」メニューの「選択範囲の背景処理」で、その範囲だけを処理できます。</li><li>インペイントの「背景除去 (部分)」を使うと、マスクで塗った範囲だけを処理できます。</li></ul></section>
+        <div class="pn"><a href="color_j.html">← 色調補正・AI補正</a><a href="resize_j.html">リサイズ・形式変換 →</a></div>
+      </article>
+</main>
+<footer class="foot">AI Paint Cleaner マニュアル · v3.40 対応 · 最終更新 2026-11-04 · <a href="/ai-paint-cleaner_j.html">製品ページ</a> · <a href="/index_j.html">nekzuk Software</a></footer>
+<script src="content.ja.js" defer></script>
+<script src="manual-render.js" defer></script>
+<script src="manual.js" defer></script>
+</body>
+</html>

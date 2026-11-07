@@ -1,0 +1,84 @@
+<!doctype html>
+<!-- build.js が自動生成したファイルです。直接編集せず content.en.js を直して node build.js を実行してください。 -->
+<html data-site-page="manual" data-product="ai-paint-cleaner_online_manual" lang="en">
+<head>
+<script>
+  if (!["nekzuk.com", "www.nekzuk.com"].includes(window.location.hostname.toLowerCase())) {
+    window["ga-disable-G-040P2W2ZZK"] = true;
+  }
+</script>
+<meta charset="utf-8">
+<meta name="color-scheme" content="dark light">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Background removal - AI Paint Cleaner User Manual</title>
+<meta name="description" content="AI makes the background transparent, white, blurred or a set color. Foreground removal and color replacement too. The AI detects the subject and makes the background transparent or replaces it. You can also process only a selection or a masked area.">
+<link rel="canonical" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/bgremove.html">
+<link rel="alternate" hreflang="en" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/bgremove.html">
+<link rel="alternate" hreflang="ja" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/bgremove_j.html">
+<link rel="alternate" hreflang="x-default" href="https://nekzuk.com/assets/manual/ai-paint-cleaner/bgremove.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Background removal - AI Paint Cleaner User Manual">
+<meta property="og:description" content="AI makes the background transparent, white, blurred or a set color. Foreground removal and color replacement too. The AI detects the subject and makes the background transparent or replaces it. You can also process only a selection or a masked area.">
+<meta property="og:url" content="https://nekzuk.com/assets/manual/ai-paint-cleaner/bgremove.html">
+<meta property="og:image" content="https://nekzuk.com/assets/manual/ai-paint-cleaner/images/screen-en.webp">
+<link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32">
+<link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml">
+<link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon">
+<meta name="theme-color" content="#6150a5">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-040P2W2ZZK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag("js", new Date());
+  gtag("config", "G-040P2W2ZZK");
+</script>
+<link rel="stylesheet" href="../../site-base.css">
+<link rel="stylesheet" href="manual.css">
+<script src="../../js/site-theme.js"></script>
+</head>
+<body data-page="bgremove">
+<header class="top">
+  <a class="brand" href="ai-paint-cleaner_online_manual.html"><img src="images/icons/app.png" alt=""><span><b>AI Paint Cleaner</b><small>User Manual</small></span></a>
+  <a class="back-to-product" href="/ai-paint-cleaner.html">← Back to product page</a>
+  <div class="search"><input id="q" type="search" autocomplete="off" aria-label="Search features and keywords" placeholder="Search features and keywords"><div id="res" class="res" hidden></div></div>
+  <div class="site-controls">
+    <div class="language-switch">
+      <a href="bgremove.html" class="current">English</a>
+      <span class="divider">/</span>
+      <a href="bgremove_j.html" data-keep-hash>日本語</a>
+    </div>
+    <button class="site-theme-toggle" type="button" aria-label="Switch theme" title="Switch theme" hidden>
+      <svg class="site-theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
+      <svg class="site-theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+    </button>
+  </div>
+</header>
+<main id="app" class="detail">
+      <nav class="side"><a class="home" href="ai-paint-cleaner_online_manual.html">← Back to top</a><a href="basics.html"><img class="" src="images/icons/open.png" alt="">Screen &amp; basics</a><a href="mosaic.html"><img class="" src="images/icons/mosaic_rect.png" alt="">Mosaic</a><a href="inpaint.html"><img class="" src="images/icons/mask.png" alt="">Inpainting</a><a href="paint.html"><img class="" src="images/icons/pen.png" alt="">Paint, text &amp; selection</a><a href="color.html"><img class="" src="images/icons/manualcoloradjust.png" alt="">Color &amp; AI correction</a><a href="bgremove.html" class="on" aria-current="page"><img class="" src="images/icons/bg_remove.png" alt="">Background removal</a><a href="resize.html"><img class="" src="images/icons/resize.png" alt="">Resize &amp; convert</a><a href="metadata.html"><img class="" src="images/icons/metaclean.png" alt="">Metadata</a><a href="tagger.html"><img class="" src="images/icons/tagger1.png" alt="">Tags &amp; captions</a><a href="organize.html"><img class="" src="images/icons/folder1.png" alt="">Sorting &amp; organizing</a></nav>
+      <article>
+        <div class="dhead"><img class="" src="images/icons/bg_remove.png" alt=""><h1>Background removal</h1></div>
+        <p class="dlead">The AI detects the subject and makes the background transparent or replaces it. You can also process only a selection or a masked area.</p>
+        <div class="toc"><a href="#toolbar">Toolbar</a><a href="#models">Choosing a model</a><a href="#example">Examples</a><a href="#partial">Processing only part of the image</a></div>
+        <section class="blk"><h2 id="toolbar">Toolbar</h2><div class="fig" data-fig>
+        <div class="stripscroll"><div class="stripbox" style="max-width:621px;--sw:414px"><div class="pic"><img src="images/ui/bgremove-en.webp" width="414" height="43" alt="Toolbar" loading="lazy" data-zoom></div>
+          <div class="ticks"><span class="mk" data-n="0" style="left:12.6%">1</span><span class="mk" data-n="1" style="left:36.7%">2</span><span class="mk" data-n="2" style="left:70.5%">3</span><span class="mk" data-n="3" style="left:85%">4</span><span class="mk" data-n="4" style="left:94.7%">5</span></div></div></div>
+        <table class="rows"><tr data-n="0"><td><span class="num">1</span>Model</td><td>Model / method for background processing (see below).</td></tr><tr data-n="1"><td><span class="num">2</span>Background</td><td>Transp. / White / Blur / Color (palette color).</td></tr><tr data-n="2"><td><span class="num">3</span>Threshold</td><td>Auto, or 10 (narrow removal) to 90 (wide).</td></tr><tr data-n="3"><td><span class="num">4</span>Folder</td><td>When on, running processes every image in the same folder (you choose to overwrite or save separate files first).</td></tr><tr data-n="4"><td><span class="num">5</span>Run</td><td>Runs background removal, foreground removal or color replacement.</td></tr></table></div></section><section class="blk"><h2 id="models">Choosing a model</h2><div class="tw"><table><tr><th>Model</th><th>Characteristics</th></tr><tr><td class="k">BiRef-D (BiRefNet_dynamic)</td><td>High-accuracy general model. Handles hair and fine detail fairly cleanly. Start here.</td></tr><tr><td class="k">BiRef-M (BiRefNet_dynamic-matting)</td><td>Focused on edge matting. Try it when BiRef-D gives hard edges.</td></tr><tr><td class="k">BEN2</td><td>Detailed edges for people and products. When contours and hair matter.</td></tr><tr><td class="k">base</td><td>General background removal. Stable, but fine hair and semi-transparent edges can be rough.</td></tr><tr><td class="k">MVANet</td><td>High-detail model. Strong on detail but heavier.</td></tr><tr><td class="k">Foreground removal</td><td>The reverse of normal: removes the foreground and keeps the background.</td></tr><tr><td class="k">Color replacement</td><td>No AI. Replaces colors close to the pen color with transparent, white or a set color. For plain backgrounds.</td></tr></table></div></section><section class="blk"><h2 id="example">Examples</h2><div class="gallery">
+        <figure class="ba"><figcaption><b>Transparent background</b></figcaption>
+          <div class="pair alpha"><div><img src="images/ex/bg-a.webp" width="900" height="900" alt="Transparent background Before" loading="lazy" data-zoom><i>Before</i></div><div><img src="images/ex/bg-b.webp" width="900" height="900" alt="Transparent background After" loading="lazy" data-zoom><i>After</i></div></div>
+          </figure>
+        <figure class="ba"><figcaption><b>Blur background</b></figcaption>
+          <div class="pair"><div><img src="images/ex/bg2-a.webp" width="900" height="900" alt="Blur background Before" loading="lazy" data-zoom><i>Before</i></div><div><img src="images/ex/bg2-b.webp" width="900" height="900" alt="Blur background After" loading="lazy" data-zoom><i>After</i></div></div>
+          </figure>
+        <figure class="ba"><figcaption><b>White background</b></figcaption>
+          <div class="pair"><div><img src="images/ex/bg3-a.webp" width="900" height="540" alt="White background Before" loading="lazy" data-zoom><i>Before</i></div><div><img src="images/ex/bg3-b.webp" width="900" height="540" alt="White background After" loading="lazy" data-zoom><i>After</i></div></div>
+          </figure></div></section><section class="blk"><h2 id="partial">Processing only part of the image</h2><ul class="tips"><li>Select an area with a selection tool, then use &quot;Background processing for selection&quot; in the Selection processing menu.</li><li>Use &quot;BGRemove (Part)&quot; in the inpainting tools to process only the masked area.</li></ul></section>
+        <div class="pn"><a href="color.html">← Color &amp; AI correction</a><a href="resize.html">Resize &amp; convert →</a></div>
+      </article>
+</main>
+<footer class="foot">AI Paint Cleaner Manual · v3.40 · Last updated 2026-11-04 · <a href="/ai-paint-cleaner.html">Product page</a> · <a href="/">nekzuk Software</a></footer>
+<script src="content.en.js" defer></script>
+<script src="manual-render.js" defer></script>
+<script src="manual.js" defer></script>
+</body>
+</html>
