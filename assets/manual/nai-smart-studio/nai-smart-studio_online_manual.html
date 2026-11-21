@@ -56,6 +56,7 @@
         <li><a href="#import">Importing Images</a></li>
         <li><a href="#i2i">Image-to-Image</a></li>
         <li><a href="#upscale">Simple Upscale</a></li>
+        <li><a href="#manga">Manga Mode</a></li>
         <li><a href="#batch">Continuous Generation</a></li>
         <li><a href="#vibe">Vibe Transfer</a></li>
         <li><a href="#reference">Precise Reference</a></li>
@@ -98,7 +99,7 @@
             <span aria-hidden="true">&#9776;</span>
             <span>Contents</span>
           </button>
-          <span class="doc-version">V1.50 Documentation</span>
+          <span class="doc-version">V1.60 Documentation</span>
           <div class="site-controls">
             <div class="language-switch">
               <a href="nai-smart-studio_online_manual.html" class="current"
@@ -128,7 +129,7 @@
             <li><strong>Center panel</strong>: View and edit images in Canvas. Other tabs provide tag assistance, prompt search, metadata inspection, and more.</li>
             <li><strong>Right panel</strong>: View saved images in History. Click an image to display it in Canvas, or Shift+click to import its generation settings and other data.</li>
             </ul>
-            <img src="images/000_EN.webp" width="1635" height="873" loading="eager" alt="Main UI" class="screenshot" />
+            <img src="images/000_EN.webp" width="2048" height="1192" loading="eager" alt="Main UI" class="screenshot" />
           </section>
 
           <section id="setup">
@@ -174,10 +175,10 @@
             <li>Select a model and image size, then adjust other parameters as needed.</li>
             <li>Check the estimated Anlas cost on the generation button and click Generate.</li>
             </ol>
-            <img src="images/001_EN.webp" width="2192" height="1511" loading="lazy" alt="Side bar" class="screenshot" />
+            <img src="images/001_EN.webp" width="2192" height="1450" loading="lazy" alt="Side bar" class="screenshot" />
             <h3>Prompt editing</h3>
             <ul>
-            <li><strong>Prompt / Negative</strong>: Enter tags or text. Use Tag Details to inspect tags and the token counter to check prompt length.</li>
+            <li><strong>Prompt / Negative</strong>: Enter tags or text. Use Tag Details to inspect tags and the token counter to check prompt length. Drag the bottom edge of the input field to change its maximum height.</li>
             <li><strong>Characters</strong>: Use Add Character to set individual Prompt / Negative fields and positions. Disable a character to leave it out of generation; collapsing its fields does not disable it.</li>
             <li><strong>Find / Replace</strong>: <span class="kbd">Ctrl + F</span> opens search and <span class="kbd">Ctrl + H</span> opens replace across the main Prompt / Negative and all character fields.</li>
             <li><strong>Comments</strong>: Temporarily exclude text from generation. <span class="kbd">Ctrl + /</span> toggles the selection or the item at the cursor; <span class="kbd">Ctrl + Shift + /</span> or a line-number click toggles whole lines.</li>
@@ -189,12 +190,12 @@
             class="screenshot"
             />
             <ul>
-            <li><strong>Image Setting / Width / Height</strong>: Choose a square, portrait, or landscape preset, or set dimensions in 64px steps. Standard generation allows a long side up to 2048px and a short side up to 1536px.</li>
-            <li><strong>Model</strong>: Select V3 / V4 / V4.5 / V5 (Full / Curated). V4 and later also offer Anime / Furry mode.</li>
+            <li><strong>Image Setting / Width / Height</strong>: Choose a square, portrait, or landscape preset, or set dimensions in 64px steps. Standard generation allows up to 3,145,728 pixels in total (width × height), so sizes such as 2560×768, 1728×1728, and 3072×1024 are also available.</li>
+            <li><strong>Model</strong>: Select V3 / V4 / V4.5 / V5 (Full / Curated / Economy). V4 and later also offer Anime / Furry mode.</li>
             <li><strong>Steps / CFG / Sampler</strong>: Adjust the step count, prompt guidance, and sampling method.</li>
             <li><strong>Seed</strong>: <code>-1</code> is random. A fixed value makes it easier to reuse the same conditions.</li>
             </ul>
-            <p>Advanced options include quality tags and CFG Rescale. V5 also offers light quality tags and transparent backgrounds. The estimated Anlas cost updates when you change the model, size, Steps, or other relevant settings.</p>
+            <p>Advanced options include quality tags and CFG Rescale. V5 also offers light quality tags and transparent backgrounds. The V5 Full Economy model uses fixed Steps, Sampler, and related settings, and does not use Negative. On the Opus plan, the remaining V5 generation allowance is shown at the top right. The estimated Anlas cost updates when you change the model, size, Steps, or other relevant settings.</p>
             <p>Use <span class="kbd">Ctrl + Enter</span> for normal generation or <span class="kbd">Ctrl + Alt + Enter</span> to generate once. To repeat generation, see <a href="#batch">Continuous Generation</a>.</p>
           </section>
 
@@ -203,17 +204,17 @@
 
             <p>Import saved images for editing or reuse their generation settings. Drag and drop an image, press <span class="kbd">Ctrl + O</span>, Shift+click in History, or choose Import from an image’s right-click menu.</p>
             <img
-            src="images/IMPORT_001_EN.webp" width="679" height="1175" loading="lazy"
+            src="images/IMPORT_001_EN.webp" width="679" height="1249" loading="lazy"
             alt="Import Dialog"
             class="screenshot"
             />
             <h3>Choose a destination</h3>
             <ul>
-            <li><strong>Image-to-Image / Inpaint</strong>: Load the image into Canvas as a source image.</li>
+            <li><strong>Image Only I2I / Inpaint</strong>: Load the image into Canvas as a source image.</li>
             <li><strong>Vibe Transfer / Precise Reference</strong>: Add images to reference slots. You can import multiple images at once.</li>
             <li><strong>Tagger</strong>: Infer tags from the image.</li>
             <li><strong>NAI-info</strong>: Inspect the image’s embedded generation information.</li>
-            <li><strong>Metadata</strong>: Select the fields to apply to the current input, such as Prompt, Negative, characters, generation settings, and Seed.</li>
+            <li><strong>Metadata</strong>: Select the fields to apply to the current input, such as Prompt, Negative, characters, generation settings, and Seed. Import Metadata and Image also loads the image into Canvas.</li>
             </ul>
             <p>In the metadata options, enable Use unexpanded prompts to load the original wildcard or randomizer expressions. Leave it off when trying to reproduce the source image.</p>
           </section>
@@ -231,10 +232,10 @@
             <img src="images/002_EN.webp" width="2203" height="1502" loading="lazy" alt="Mask Tools" class="screenshot" />
             <h3>Masks and image editing</h3>
             <ul>
-            <li><strong>Mask</strong>: Mark the area to change with Brush, Rectangle, or Polyline.</li>
-            <li><strong>Focus</strong>: Temporarily enlarge a small area for Inpaint, then merge it back into the source image. The area inside the reference margin is changed. Clear the selection with the frame’s × or a right-click.</li>
+            <li><strong>Mask</strong>: Mark the area to change with Brush, Rectangle, or Polyline. You can also change the brush size with <span class="kbd">Ctrl + wheel</span>.</li>
+            <li><strong>Focus</strong>: Temporarily enlarge a small area for Inpaint, then merge it back into the source image. The area inside the reference margin is changed. Choose the processing size from Standard 1MP / High 1.5MP / Max 2MP. Clear the selection with the frame’s × or a right-click.</li>
             <li><strong>Paint</strong>: Draw directly on the image. Right-click to pick a color from it.</li>
-            <li><strong>Edit</strong>: Crop, resize the canvas, move, scale, or rotate the image.</li>
+            <li><strong>Edit</strong>: Crop, resize the canvas, move, scale, rotate, or flip the image.</li>
             </ul>
             <img src="images/I2I_EDIT_TOOLS_001_EN.webp" width="1504" height="288" loading="lazy" alt="i2i / Inpaint edit tools" class="screenshot" />
             <p>Turn on Split Canvas to show the source on the left and generated results on the right. Use it to generate repeatedly while retaining the source image and mask.</p>
@@ -247,7 +248,7 @@
           <section id="upscale">
             <h1>Simple Upscale</h1>
 
-            <p>Increase the resolution of a Canvas image or refine its details. Choose the custom or official method to suit your purpose.</p>
+            <p>Increase the resolution of a Canvas image or refine its details. Choose a method that regenerates and refines the image, or one that simply enlarges it.</p>
             <h3>How to use it</h3>
             <ol>
             <li>Load an image into Canvas and click Simple Upscale below it.</li>
@@ -255,7 +256,7 @@
             <li>Check the output size and estimated Anlas cost, then run the upscale.</li>
             </ol>
             <img
-            src="images/UPSCALE_001_EN.webp" width="2197" height="1489" loading="lazy"
+            src="images/UPSCALE_001_EN.webp" width="2198" height="1424" loading="lazy"
             alt="Simple Upscale"
             class="screenshot"
             />
@@ -263,8 +264,36 @@
             <ul>
             <li><strong>Custom Upscale</strong>: Requires Opus. Enlarges with RealESRGAN / Waifu2x, then regenerates in tiles. Choose an upscaler, scale (up to 4×), and strength.</li>
             <li><strong>Enhance (Official)</strong>: Choose a scale supported by the model and source image and a level from 1–5. Max is V5-only. Even 1x regenerates the image; Advanced settings let you adjust strength and noise separately.</li>
+            <li><strong>Enlarge</strong>: Enlarges the image as-is without regenerating it. Choose NovelAI official (fixed at 2×), Standard resize, waifu2x, or RealESRGAN, with a scale of up to 4×. Only NovelAI official uses Anlas.</li>
             </ul>
             <div class="note">Anlas cost depends on the method, settings, and remaining allowance. Check the displayed notices and requirements. Stopping may wait for the active operation to return. Results are saved and appear in History.</div>
+          </section>
+
+          <section id="manga">
+            <h1>Manga Mode</h1>
+
+            <p>Place characters on a page divided into panels and generate the whole page, drawing each panel separately. Available with V4 / V4.5 / V5 models.</p>
+            <img src="images/MANGA_001_EN.webp" width="1856" height="1406" loading="lazy" alt="Manga mode" class="screenshot" />
+            <h3>How to use it</h3>
+            <ol>
+            <li>Click Manga in the Normal | Manga switch below Canvas. The first time, a blank page opens at the image size set in the basic parameters.</li>
+            <li>Choose a layout from Templates ▾, or divide panels with Split/merge panels.</li>
+            <li>Add characters with + Character, enter their Prompts, and drag each position marker on the page into the panel where that character should appear.</li>
+            <li>Click Generate.</li>
+            </ol>
+            <p>When there are no characters, Open sample loads an example page. Click Normal to return to the usual Canvas; clicking Manga again resumes where you left off.</p>
+            <h3>Editing the layout</h3>
+            <ul>
+            <li><strong>Split/merge panels</strong>: Drag across a panel to divide it. Hold <span class="kbd">Shift</span> to lock the line horizontal or vertical. Click a line between panels to merge them; click an orange dotted seam to unmerge.</li>
+            <li><strong>Select</strong>: Drag borders and gutter lines to adjust panel size and angle. Select a panel and press <span class="kbd">Delete</span> to remove it.</li>
+            <li><strong>Templates ▾</strong>: Apply a built-in layout. Use Register layout to save the current layout for later.</li>
+            <li><strong>Page settings</strong>: Change margins, panel gaps, and border width.</li>
+            </ul>
+            <h3>Generating</h3>
+            <p>Character Prompts are shared with the characters in Normal mode. Turn a panel OFF with the ON / OFF button at its top-right to keep it as-is. Clear image removes only the image and keeps the layout and Prompts.</p>
+            <h3>Saving and editing again</h3>
+            <p>Saved pages include editing data such as the layout and Prompts. When you import one, Metadata detected (Manga) appears; Import as manga restores the page so you can keep editing.</p>
+            <div class="note">The image size of a page that has an image cannot be changed; click Clear image first. The generation queue is not available in Manga mode; run Prompt Search and Story Prompt queues in Normal mode.</div>
           </section>
 
           <section id="batch">
@@ -303,7 +332,7 @@
           <section id="reference">
             <h1>Precise Reference</h1>
 
-            <p>Use reference images to guide character design or style. Precise Reference works with supported V4.5 models and is unavailable with V5.</p>
+            <p>Use reference images to guide character design or style. Precise Reference works with V4.5 and later models.</p>
             <img
             src="images/004_EN.webp" width="636" height="378" loading="lazy"
             alt="Precision Reference"
@@ -362,7 +391,7 @@
             <ol>
             <li>Search by English tag, Japanese alias, or description, or browse categories such as body, clothing, and expressions.</li>
             <li>Review tag details and related tags.</li>
-            <li>Show the destination Prompt / Negative tab, then double-click a tag or click Add to current tab.</li>
+            <li>Show the destination Prompt / Negative tab, then double-click a tag or click Add to Prompt. Copy to Clipboard copies only the tag.</li>
             </ol>
             <img src="images/PROMPT_HELPER_001_EN.webp" width="2193" height="1572" loading="lazy" alt="Prompt Helper" class="screenshot" />
             <ul>
@@ -375,15 +404,16 @@
             <h1>Story Prompt</h1>
 
             <p>Use NovelAI text generation to turn an outline into a story and image prompts for multiple scenes. Select a text generation model in the Story Prompt tab. Click Check Models to refresh the list of available models.</p>
-            <img src="images/STORY_PROMPT_001_EN.webp" width="1512" height="1415" loading="lazy" alt="Story Prompt Input screen" class="screenshot" />
+            <img src="images/STORY_PROMPT_001_EN.webp" width="1532" height="1408" loading="lazy" alt="Story Prompt Input screen" class="screenshot" />
             <h3>How to use it</h3>
             <ol>
-            <li><strong>Input</strong>: Set the outline, characters, scene count, rating, and Prompt Language, then generate the story.</li>
+            <li><strong>Input</strong>: Set the outline, characters, scene count, and rating, then generate the story.</li>
             <li><strong>Story</strong>: Review and edit the text. You can also regenerate individual scenes.</li>
             <li><strong>Cuts &amp; Prompts</strong>: Use Break into Cuts to split the story into shots, then adjust each cut’s Prompt and image count.</li>
             <li><strong>Generate</strong>: Use Review Plan to select cuts and click Add to Queue. Check the image model and size in the main panel, then click Generate to start processing.</li>
             </ol>
             <p>You can also specify fixed character tags and a Prompt preset. Save and reopen your work as a project, or export Generation YAML, Data YAML, or Data JSON.</p>
+            <p>Set the story language and the image prompt language separately in Settings → Tools → Story Prompt.</p>
           </section>
 
           <section id="wildcards">
@@ -403,6 +433,7 @@
             <li><code>__name__</code> / <code>__folder/name__</code>: Pick from a file.</li>
             <li><code>__file/key__</code>: Pick from a YAML / JSON key.</li>
             <li><code>[SEQ:__name__]</code>: Use candidates in order during continuous generation.</li>
+            <li><code>[SEQ*:__name__]</code>: When a candidate contains several references, go through every combination in order.</li>
             </ul>
             <p>Switch to Edit to modify and save file contents, or use an external text editor. Blank and <code>#</code> lines in TXT files are ignored. After expansion, <code>CHAR:</code> lines become character prompts.</p>
             <p><a class="ref-link" href="wildcards_reference.html">See all syntax and examples (Wildcard Syntax Reference) →</a></p>
@@ -458,7 +489,7 @@
 
             <p>Search prompts by tag conditions and add the results to the generation queue. Use it to try multiple prompt candidates in sequence.</p>
             <h3>Setup</h3>
-            <p>For first use, run setup from Tools or Settings → Search. When setup finishes, enable Prompt Search to display its tab in the center panel. Tagger becomes available too.</p>
+            <p>For first use, run setup from the Tools tab or Settings → Tools. When setup finishes, enable Prompt Search to display its tab in the center panel. Tagger becomes available too.</p>
             <img src="images/008_EN.webp" width="754" height="572" loading="lazy" alt="Setup Wizard" class="screenshot" />
             <div class="note">Initial setup downloads a large dataset. Keep the app open until it finishes.</div>
             <h3>Search and generate</h3>
@@ -480,9 +511,9 @@
 
             <p>Save reusable prompt fragments and insert them as components when needed. Organize quality tags, styles, and common phrases into categories.</p>
             <h3>Setup</h3>
-            <p>Enable Prompt Chunks in Settings and open the setup wizard. Authenticate with email / password or Google login assistance to use the Chunk tab.</p>
+            <p>Enable Prompt Chunks in Settings → Tools and open the setup wizard. Authenticate with email / password or Google login assistance to use the Chunk tab. Turn on Remember login on this PC (encrypted) to skip re-entering your details the next time you log in.</p>
             <img
-            src="images/PROMPT_CHUNKS_SETUP_001_EN.webp" width="780" height="793" loading="lazy"
+            src="images/PROMPT_CHUNKS_SETUP_001_EN.webp" width="783" height="871" loading="lazy"
             alt="Prompt Chunks setup wizard"
             class="screenshot"
             />
@@ -504,23 +535,24 @@
             <h1>Tools</h1>
 
             <p>Set up helper features and enable or disable the tabs you want to use.</p>
-            <img src="images/TOOLS_001_EN.webp" width="1532" height="773" loading="lazy" alt="Tools tab" class="screenshot" />
+            <img src="images/TOOLS_001_EN.webp" width="1529" height="771" loading="lazy" alt="Tools tab" class="screenshot" />
             <p>Hiding a tab keeps its settings, input, and installed data. Canvas and Tools always remain visible.</p>
           </section>
 
           <section id="settings">
             <h1>Settings &amp; Other Features</h1>
 
-            <p>Open File → Settings to configure output locations, input assistance, external integration, and other preferences.</p>
+            <p>Open File → Settings to configure output locations, prompt input, external integration, and other preferences.</p>
             <h3>Main settings</h3>
             <ul>
-            <li><strong>General</strong>: Manage API keys, UI language, output and favorites folders, and other general options.</li>
-            <li><strong>Format / filename</strong>: Set the output format and file naming rules.</li>
-            <li><strong>Assistance</strong>: Configure tag completion, Japanese aliases, highlighting, comma assistance, and related tags.</li>
-            <li><strong>Search / Chunk</strong>: Manage optional features and check setup or authentication status.</li>
+            <li><strong>General</strong>: Manage API keys, UI language, appearance (Auto / Light / Dark), output and favorites folders, the completion sound for continuous generation, emphasis adjustment with Ctrl + mouse wheel, the next billing date shown at the top right, and other general options.</li>
+            <li><strong>Image / History</strong>: Set the output format and file naming rules, plus the History thumbnail size and prompt popup.</li>
+            <li><strong>Prompt</strong>: Configure tag completion, Japanese aliases, highlighting, comma assistance, and related tags.</li>
+            <li><strong>Tools</strong>: Configure Prompt Helper and Story Prompt, and enable Search / Chunk or check their setup and authentication status.</li>
             <li><strong>Others</strong>: Configure logs and storage-related options.</li>
+            <li><strong>About</strong>: Check the current version, check for updates, and open the official website or manual.</li>
             </ul>
-            <p>Click a related tag to add it to Prompt; right-click to add it to Negative or hide it temporarily. <span class="kbd">Ctrl + Space</span> focuses the first suggestion. Change candidate counts and categories in Assistance.</p>
+            <p>Click a related tag to add it to Prompt; right-click to add it to Negative or hide it temporarily. <span class="kbd">Ctrl + Space</span> focuses the first suggestion. Change candidate counts and categories in Prompt. Turn on Also show for character prompts to show suggestions while editing a character Prompt as well (except in Manga mode).</p>
             <img src="images/RELATED_TAG_SUGGEST_001_EN.webp" width="583" height="275" loading="lazy" alt="Related Tag Suggestions" class="screenshot" />
             <h3>Eagle integration</h3>
             <p>If you manage images with Eagle, configure the destination and other options in Integration. Send generated images automatically or use an image’s right-click menu to send it manually, with prompts and generation information as tags and memos.</p>
@@ -528,42 +560,37 @@
             <ul>
             <li><strong>Folder selection</strong>: Changes both the displayed images and the destination for subsequent generated images.</li>
             <li><strong>Click / Shift+click</strong>: Display the image in Canvas / open the import dialog. You can also drag images to import them.</li>
-            <li><strong>Heart</strong>: Copy the image to the favorites folder. Select a destination if one has not been set.</li>
+            <li><strong>Ctrl+Shift+click</strong>: Import without the dialog, using the items you last selected in the import dialog.</li>
+            <li><strong>Display</strong>: In Settings → Image / History, make thumbnails smaller to see more images at once. The prompt popup shown on hover can be limited to while Alt is held, or turned off.</li>
+            <li><strong>Heart</strong>: Copy the image to the favorites folder. Select a destination if one has not been set. If you also set Favorites (no meta) in Settings, a copy with metadata removed is saved as well.</li>
             <li><strong>Select and delete</strong>: Ctrl+click selects multiple images. With History focused, Ctrl+A selects all and Delete moves the selected images to the Recycle Bin.</li>
-            <li><strong>Right-click</strong>: Save, copy, send to Eagle, open the containing folder, or import.</li>
+            <li><strong>Right-click</strong>: Save, save without metadata, copy, send to Eagle, open the containing folder, or import.</li>
             </ul>
             <h3>Settings gallery</h3>
             <div class="gallery">
             <div>
             <h4>General</h4>
-            <img src="images/012_EN.webp" width="1129" height="1060" loading="lazy" alt="General settings" />
+            <img src="images/012_EN.webp" width="1129" height="1187" loading="lazy" alt="General settings" />
             </div>
             <div>
-            <h4>Format / filename</h4>
-            <img src="images/SETTINGS_GENERAL2_001_EN.webp" width="1129" height="1060" loading="lazy" alt="Format / filename settings" class="screenshot" />
+            <h4>Image / History</h4>
+            <img src="images/SETTINGS_GENERAL2_001_EN.webp" width="1129" height="1187" loading="lazy" alt="Image / History settings" class="screenshot" />
             </div>
             <div>
-            <h4>Assistance</h4>
-            <img src="images/013_EN.webp" width="1129" height="1060" loading="lazy" alt="Assistance settings" />
+            <h4>Prompt</h4>
+            <img src="images/013_EN.webp" width="1129" height="1187" loading="lazy" alt="Prompt settings" />
+            </div>
+            <div>
+            <h4>Tools</h4>
+            <img src="images/014_EN.webp" width="1129" height="1187" loading="lazy" alt="Tools settings" />
             </div>
             <div>
             <h4>Integration</h4>
-            <img src="images/011_EN.webp" width="1129" height="1060" loading="lazy" alt="Integration settings" />
-            </div>
-            <div>
-            <h4>Search</h4>
-            <img src="images/014_EN.webp" width="1129" height="1060" loading="lazy" alt="Search Settings" />
-            </div>
-            <div>
-            <h4>Chunk</h4>
-            <img
-            src="images/SETTINGS_CHUNKS_001_EN.webp" width="1129" height="1060" loading="lazy"
-            alt="Chunk settings"
-            />
+            <img src="images/011_EN.webp" width="1129" height="1187" loading="lazy" alt="Integration settings" />
             </div>
             <div>
             <h4>Others</h4>
-            <img src="images/015_EN.webp" width="1129" height="1060" loading="lazy" alt="Other Settings" />
+            <img src="images/015_EN.webp" width="1129" height="1187" loading="lazy" alt="Other Settings" />
             </div>
             </div>
           </section>
@@ -574,7 +601,7 @@
             <p>Also available from the Shortcuts menu. Focus the relevant prompt, image, or History area before using its shortcuts.</p>
 
             <img
-            src="images/SHORTCUTS_001_EN.webp" width="866" height="647" loading="lazy"
+            src="images/SHORTCUTS_001_EN.webp" width="720" height="616" loading="lazy"
             alt="Shortcut List"
             class="screenshot"
             />
@@ -612,13 +639,34 @@
             <li><span class="kbd">Enter / Tab</span>: Confirm</li>
             <li><span class="kbd">Esc</span>: Close</li>
             <li><span class="kbd">↑ / ↓ / PageUp / PageDown</span>: Move between suggestions</li>
+            <li><span class="kbd">Ctrl + Space</span>: Focus the first related tag suggestion</li>
+            </ul>
+
+            <h3>Manga mode</h3>
+
+            <ul>
+            <li><span class="kbd">Ctrl + Z / Ctrl + Y</span>: Undo / Redo edits</li>
+            <li><span class="kbd">Delete</span>: Delete the selected panel</li>
+            </ul>
+
+            <h3>History</h3>
+
+            <ul>
+            <li><span class="kbd">Ctrl + click</span>: Add to or remove from the selection</li>
+            <li><span class="kbd">Ctrl + A</span>: Select all images in the current folder</li>
+            <li><span class="kbd">Delete</span>: Move selected images to the Recycle Bin</li>
+            <li><span class="kbd">Shift + click</span>: Import image information</li>
+            <li><span class="kbd">Ctrl + Shift + click</span>: Import without the dialog</li>
             </ul>
 
             <h3>Image file actions</h3>
 
             <ul>
             <li><span class="kbd">Ctrl + O</span>: Open image</li>
-            <li><span class="kbd">Ctrl + S / Ctrl + C</span>: Save As / copy image</li>
+            <li><span class="kbd">Ctrl + S</span>: Save (choose a location the first time)</li>
+            <li><span class="kbd">Ctrl + Shift + S</span>: Save As</li>
+            <li><span class="kbd">Ctrl + Alt + S</span>: Save Without Metadata</li>
+            <li><span class="kbd">Ctrl + C</span>: Copy image</li>
             <li><span class="kbd">Ctrl + E</span>: Send to Eagle</li>
             <li><span class="kbd">Ctrl + Shift + E</span>: Open containing folder</li>
             </ul>

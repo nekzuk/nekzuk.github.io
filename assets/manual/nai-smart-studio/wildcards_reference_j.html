@@ -126,6 +126,7 @@
 <tr><td><code>__file/key/subkey__</code></td><td>YAML / JSONのキーから選ぶ</td><td><a href="#yaml-key">詳しく →</a></td></tr>
 <tr><td><code>CHAR:A1: …</code></td><td>YAMLからキャラクタープロンプトを追加する</td><td><a href="#yaml-char">詳しく →</a></td></tr>
 <tr><td><code>[SEQ:__name__] / [SEQ:__name__:2]</code></td><td>連続生成で候補を順番に使う</td><td><a href="#seq">詳しく →</a></td></tr>
+<tr><td><code>[SEQ*:__name__]</code></td><td>候補内の複数の参照を全組み合わせで順番に使う</td><td><a href="#seq">詳しく →</a></td></tr>
 <tr><td><code>&lt;!…!&gt; / &lt;ppp:stn&gt;…&lt;ppp:/stn&gt;</code></td><td>Negativeへ移動する</td><td><a href="#negative">詳しく →</a></td></tr>
 <tr><td><code>[__name__]</code></td><td>抽選後も弱調として残す</td><td><a href="#emphasis">詳しく →</a></td></tr>
 </tbody></table></div>
@@ -357,6 +358,16 @@ __wardrobe/top__          <span class="r">→ jacket</span></code></pre>
 
 <span class="c"># 1候補だけのテンプレートに含まれる参照も順番に展開します</span>
 [SEQ:__pack/outfit/top__]   <span class="r">→ white shirt → black shirt → white shirt …</span>
+
+<span class="c"># テンプレートに参照が複数ある場合、各参照を同時に1つずつ進めます</span>
+<span class="c"># 例: coord の中身が "__top__, __bottom__"（top は A1〜A4、bottom は B1・B2）</span>
+[SEQ:__coord__]       <span class="r">→ A1, B1 → A2, B2 → A3, B1 → A4, B2（4通り）</span>
+
+<span class="c"># 全組み合わせを出すには SEQ* を使います。:2 などの回数指定も同じように書けます</span>
+[SEQ*:__coord__]      <span class="r">→ A1, B1 → A1, B2 → A2, B1 → A2, B2 → A3, B1 …（8通り）</span>
+
+<span class="c"># SEQ* は参照先がさらに参照を含む場合も、たどれる限り全組み合わせを出します</span>
+<span class="c"># {A|B} などの抽選構文の中は、ランダムのままです</span>
 
 <span class="c"># GUI: 入力欄へ直接書くと、生成開始時に先頭へ戻して1周分をキューに用意します</span>
 <span class="c"># 複数のSEQは周回数の最小公倍数まで生成します。2,000件を超える場合は開始前に確認します</span>

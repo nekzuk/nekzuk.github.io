@@ -1,5 +1,5 @@
 /* Video-specific layout. The approved image-page stylesheet remains the base. */
-.video-hero { grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr); gap: 52px; padding-block: 38px 40px; }
+.video-hero { grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr); gap: 52px; padding-block: 38px 30px; }
 .video-hero h1 { font-size: clamp(29px, 2.9vw, 40px); line-height: 1.65; }
 .video-hero .hero-description { max-width: 480px; font-size: 15px; }
 .video-hero .product-name { font-size: 25px; gap: 3px 8px; }
@@ -116,7 +116,7 @@ html[lang="en"] .format-notes p { grid-template-columns: 105px minmax(0,1fr); }
   .example-grid, .workflow-grid { gap: 36px; }
 }
 @media (max-width:800px) {
-  .video-hero { grid-template-columns: 1fr; gap: 30px; }
+  .video-hero { grid-template-columns: 1fr; gap: 30px; padding-bottom: 40px; }
   .video-hero .hero-copy, .video-hero .hero-visual { max-width: none; }
   .video-hero h1 { font-size: 38px; }
   .video-hero .hero-description { max-width: 620px; }

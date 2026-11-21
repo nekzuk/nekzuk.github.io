@@ -1,4 +1,7 @@
 /* R18 presentation shares the general edition's page styles. */
+@media (min-width:801px) {
+  .hero-copy { align-self: end; }
+}
 :root{--result-blue:#d9f0fc;--result-amber:#fff0c2;--result-pink:#f7e0ed;--result-rule:#a8cce6;--result-caption:#16628f}
 :root[data-site-theme="dark"]{--result-blue:#244a61;--result-amber:#5a4520;--result-pink:#593e55;--result-rule:#446b88;--result-caption:#96d4fa}
 .detection-overview{padding:28px 30px 24px;border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:7px;background:var(--surface)}

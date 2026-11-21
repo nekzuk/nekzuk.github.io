@@ -126,6 +126,7 @@
 <tr><td><code>__file/key/subkey__</code></td><td>Pick from a YAML / JSON key</td><td><a href="#yaml-key">Details →</a></td></tr>
 <tr><td><code>CHAR:A1: …</code></td><td>Add character prompts from YAML</td><td><a href="#yaml-char">Details →</a></td></tr>
 <tr><td><code>[SEQ:__name__] / [SEQ:__name__:2]</code></td><td>Use candidates in order during continuous generation</td><td><a href="#seq">Details →</a></td></tr>
+<tr><td><code>[SEQ*:__name__]</code></td><td>Go through every combination of the references inside a candidate, in order</td><td><a href="#seq">Details →</a></td></tr>
 <tr><td><code>&lt;!…!&gt; / &lt;ppp:stn&gt;…&lt;ppp:/stn&gt;</code></td><td>Move text to Negative</td><td><a href="#negative">Details →</a></td></tr>
 <tr><td><code>[__name__]</code></td><td>Keep de-emphasis after drawing</td><td><a href="#emphasis">Details →</a></td></tr>
 </tbody></table></div>
@@ -357,6 +358,16 @@ __wardrobe/top__          <span class="r">→ jacket</span></code></pre>
 
 <span class="c"># References inside a single-candidate template are also expanded in order</span>
 [SEQ:__pack/outfit/top__]   <span class="r">→ white shirt → black shirt → white shirt …</span>
+
+<span class="c"># When a template has several references, each one advances by one at the same time</span>
+<span class="c"># Example: coord contains "__top__, __bottom__" (top is A1–A4, bottom is B1 / B2)</span>
+[SEQ:__coord__]       <span class="r">→ A1, B1 → A2, B2 → A3, B1 → A4, B2 (4 results)</span>
+
+<span class="c"># Use SEQ* to get every combination. A repeat count such as :2 works the same way</span>
+[SEQ*:__coord__]      <span class="r">→ A1, B1 → A1, B2 → A2, B1 → A2, B2 → A3, B1 … (8 results)</span>
+
+<span class="c"># SEQ* also follows references inside the referenced candidates and gives every combination it can reach</span>
+<span class="c"># Anything inside a random-pick form such as {A|B} stays random</span>
 
 <span class="c"># GUI: when typed directly in an input field, it resets to the start and queues one full cycle when generation begins</span>
 <span class="c"># Multiple SEQs generate up to the least common multiple of their cycles. You are asked to confirm before starting if it exceeds 2,000</span>

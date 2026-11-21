@@ -18,6 +18,22 @@
 .video-caption{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 12px;align-items:baseline;margin-top:13px;font-size:12px}
 .video-caption a{white-space:nowrap}
 
+/* Keep the original NAI text column beside the larger video.
+   The 20px desktop gutters can reclaim 28px per side from the standard 48px. */
+@media (min-width:1200px) {
+  html[data-product="nai-smart-studio"] .wrap {
+    width:min(1224px,calc(100% - 40px));
+  }
+  html[data-product="nai-smart-studio"] .hero {
+    --original-column-gap:72px;
+    grid-template-columns:calc((min(1160px, 100% - 56px) - var(--original-column-gap)) / 2) minmax(0,640px);
+    justify-content:space-between;
+  }
+}
+@media (min-width:1500px) {
+  html[data-product="nai-smart-studio"] .hero { --original-column-gap:84px; }
+}
+
 /* A prerequisite that must be seen before buying (e.g. a third-party subscription). */
 .hero-requirement{display:flex;gap:10px;align-items:flex-start;margin-top:20px;padding:12px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:5px;background:var(--surface);font-size:13px;line-height:1.8}
 .hero-requirement svg{flex:none;width:18px;height:18px;margin-top:3px;color:var(--accent)}

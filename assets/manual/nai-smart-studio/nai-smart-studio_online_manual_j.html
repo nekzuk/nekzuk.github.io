@@ -56,6 +56,7 @@
         <li><a href="#import">画像インポート</a></li>
         <li><a href="#i2i">Image-to-Image</a></li>
         <li><a href="#upscale">かんたんアップスケール</a></li>
+        <li><a href="#manga">漫画モード</a></li>
         <li><a href="#batch">連続生成</a></li>
         <li><a href="#vibe">NovelAIポーション</a></li>
         <li><a href="#reference">精密参照</a></li>
@@ -98,7 +99,7 @@
             <span aria-hidden="true">&#9776;</span>
             <span>目次</span>
           </button>
-          <span class="doc-version">V1.50ドキュメント</span>
+          <span class="doc-version">V1.60ドキュメント</span>
           <div class="site-controls">
             <div class="language-switch">
               <a href="nai-smart-studio_online_manual.html">English</a>
@@ -128,7 +129,7 @@
             <li><strong>中央パネル</strong>: Canvas で画像を確認・編集します。各タブからタグ入力補助、プロンプト検索、生成情報の確認などを利用できます。</li>
             <li><strong>右パネル</strong>: History に保存画像を表示します。クリックでCanvasに表示し、Shift+クリックで生成設定などを取り込めます。</li>
             </ul>
-            <img src="images/000.webp" width="1635" height="873" loading="eager" alt="Main UI" class="screenshot" />
+            <img src="images/000.webp" width="2048" height="1192" loading="eager" alt="Main UI" class="screenshot" />
           </section>
 
           <section id="setup">
@@ -174,10 +175,10 @@
             <li>モデルと画像サイズを選び、必要に応じて各パラメータを調整します。</li>
             <li>生成ボタンの推定Anlasコストを確認し、「生成」を押します。</li>
             </ol>
-            <img src="images/001.webp" width="2192" height="1511" loading="lazy" alt="Side bar" class="screenshot" />
+            <img src="images/001.webp" width="2192" height="1476" loading="lazy" alt="Side bar" class="screenshot" />
             <h3>プロンプト編集</h3>
             <ul>
-            <li><strong>Prompt / Negative</strong>: タグや文章を入力します。「タグ詳細」でタグ情報、入力欄のトークン表示でプロンプトの量を確認できます。</li>
+            <li><strong>Prompt / Negative</strong>: タグや文章を入力します。「タグ詳細」でタグ情報、入力欄のトークン表示でプロンプトの量を確認できます。入力欄の下端をドラッグすると、欄の高さの上限を変更できます。</li>
             <li><strong>キャラクター</strong>: 「キャラクターを追加」で、人物ごとにPrompt / Negativeと位置を設定できます。使わない欄はOFFにします。折りたたむだけでは生成対象から外れません。</li>
             <li><strong>検索・置換</strong>: <span class="kbd">Ctrl + F</span>で検索、<span class="kbd">Ctrl + H</span>で置換します。メインのPrompt / Negativeと全キャラクターの入力欄が対象です。</li>
             <li><strong>コメント</strong>: 一時的に使わない部分を生成対象から外せます。<span class="kbd">Ctrl + /</span>は選択範囲またはカーソル位置の項目、<span class="kbd">Ctrl + Shift + /</span>または行番号クリックは行全体を切り替えます。</li>
@@ -189,12 +190,12 @@
             class="screenshot"
             />
             <ul>
-            <li><strong>画像設定 / 幅・高さ</strong>: 正方形・縦長・横長などの定型サイズを選ぶか、64px刻みで指定します。通常生成の上限は長辺2048px・短辺1536pxです。</li>
-            <li><strong>モデル</strong>: V3 / V4 / V4.5 / V5（Full / Curated）から選択します。V4以降はアニメ / ケモノも切り替えられます。</li>
+            <li><strong>画像設定 / 幅・高さ</strong>: 正方形・縦長・横長などの定型サイズを選ぶか、64px刻みで指定します。通常生成の上限は幅×高さの合計3,145,728画素です（2560×768、1728×1728、3072×1024なども指定できます）。</li>
+            <li><strong>モデル</strong>: V3 / V4 / V4.5 / V5（Full / Curated / 節約）から選択します。V4以降はアニメ / ケモノも切り替えられます。</li>
             <li><strong>Steps / CFG / Sampler</strong>: 生成のステップ数、プロンプトへの従い方、サンプリング方式を調整します。</li>
             <li><strong>Seed</strong>: <code>-1</code>はランダムです。固定値を指定すると同じ条件を再利用しやすくなります。</li>
             </ul>
-            <p>「詳細オプション」では品質タグやCFG再調整などを設定します。V5では軽めの品質タグと透明背景も選べます。推定Anlasコストは、モデル・サイズ・Stepsなどの変更に合わせて更新されます。</p>
+            <p>「詳細オプション」では品質タグやCFG再調整などを設定します。V5では軽めの品質タグと透明背景も選べます。V5 Fullの節約版はStepsやSamplerなどが固定され、Negativeは使用しません。Opusプランでは、画面右上でV5生成の残量を確認できます。推定Anlasコストは、モデル・サイズ・Stepsなどの変更に合わせて更新されます。</p>
             <p><span class="kbd">Ctrl + Enter</span>で通常生成、<span class="kbd">Ctrl + Alt + Enter</span>で1回だけ生成できます。繰り返し生成する場合は<a href="#batch">連続生成</a>を参照してください。</p>
           </section>
 
@@ -203,17 +204,17 @@
 
             <p>保存画像を編集したり、過去の生成設定を再利用したりするときに使います。ドラッグ＆ドロップ、<span class="kbd">Ctrl + O</span>、HistoryのShift+クリック、画像の右クリックメニューの「インポート」から開けます。</p>
             <img
-            src="images/IMPORT_001.webp" width="679" height="1175" loading="lazy"
+            src="images/IMPORT_001.webp" width="679" height="1249" loading="lazy"
             alt="Import Dialog"
             class="screenshot"
             />
             <h3>取り込み先を選ぶ</h3>
             <ul>
-            <li><strong>Image-to-Image / Inpaint</strong>: 画像をCanvasへ読み込み、元画像として使います。</li>
+            <li><strong>画像のみ I2I / Inpaint</strong>: 画像をCanvasへ読み込み、元画像として使います。</li>
             <li><strong>NovelAIポーション / 精密参照</strong>: 参照画像のスロットへ追加します。複数画像をまとめて取り込めます。</li>
             <li><strong>Tagger</strong>: 画像からタグを推定します。</li>
             <li><strong>NAI-info</strong>: 画像に埋め込まれた生成情報を確認します。</li>
-            <li><strong>メタデータ</strong>: Prompt、Negative、キャラクター、生成設定、Seedなどから、必要な項目を選んで現在の入力へ反映します。</li>
+            <li><strong>メタデータ</strong>: Prompt、Negative、キャラクター、生成設定、Seedなどから、必要な項目を選んで現在の入力へ反映します。「メタデータと画像をインポート」では、反映と同時に画像をCanvasへ読み込みます。</li>
             </ul>
             <p>メタデータの「展開・抽選前で読み込む」をONにすると、元のワイルドカード・抽選式を読み込みます。元画像の再現を優先する場合はOFFにします。</p>
           </section>
@@ -231,10 +232,10 @@
             <img src="images/002.webp" width="2203" height="1501" loading="lazy" alt="Mask Tools" class="screenshot" />
             <h3>マスク・画像編集</h3>
             <ul>
-            <li><strong>マスク</strong>: ブラシ・長方形・折れ線で変更範囲を指定します。</li>
-            <li><strong>フォーカス</strong>: 小さな部分を一時的に拡大してInpaintし、元画像へ合成します。参照余白の内側が変更対象です。枠の×または右クリックで解除できます。</li>
+            <li><strong>マスク</strong>: ブラシ・長方形・折れ線で変更範囲を指定します。ブラシのサイズは<span class="kbd">Ctrl + ホイール</span>でも変更できます。</li>
+            <li><strong>フォーカス</strong>: 小さな部分を一時的に拡大してInpaintし、元画像へ合成します。参照余白の内側が変更対象です。処理サイズは標準 1MP / 高精細 1.5MP / 最高 2MPから選べます。枠の×または右クリックで解除できます。</li>
             <li><strong>ペイント</strong>: 画像へ直接描画します。右クリックで画像の色を取得できます。</li>
-            <li><strong>編集</strong>: 切り取り、キャンバスサイズ変更、移動・拡大縮小・回転ができます。</li>
+            <li><strong>編集</strong>: 切り取り、キャンバスサイズ変更、移動・拡大縮小・回転・反転ができます。</li>
             </ul>
             <img src="images/I2I_EDIT_TOOLS_001.webp" width="1527" height="295" loading="lazy" alt="i2i / Inpaint 編集ツール" class="screenshot" />
             <p>「キャンバス分割」をONにすると、左に元画像、右に生成結果を表示します。元画像とマスクを保ったまま繰り返し生成したいときに使います。</p>
@@ -247,7 +248,7 @@
           <section id="upscale">
             <h1>かんたんアップスケール</h1>
 
-            <p>Canvasの画像を高解像度化したり、描き込みを調整したりする機能です。用途に合わせて独自方式と公式方式を選べます。</p>
+            <p>Canvasの画像を高解像度化したり、描き込みを調整したりする機能です。用途に合わせて、描き直して仕上げる方式と、そのまま拡大する方式を選べます。</p>
             <h3>使い方</h3>
             <ol>
             <li>画像をCanvasへ読み込み、下部の「かんたんアップスケール」を押します。</li>
@@ -255,7 +256,7 @@
             <li>出力サイズと推定Anlasコストを確認し、実行します。</li>
             </ol>
             <img
-            src="images/UPSCALE_001.webp" width="2190" height="1418" loading="lazy"
+            src="images/UPSCALE_001.webp" width="2185" height="1416" loading="lazy"
             alt="Simple Upscale"
             class="screenshot"
             />
@@ -263,8 +264,36 @@
             <ul>
             <li><strong>独自アップスケール</strong>: Opus専用。RealESRGAN / Waifu2xなどで拡大後、分割して再生成します。アップスケーラー、倍率（最大4倍）、強度を指定します。</li>
             <li><strong>品質向上（公式）</strong>: モデルと元画像に対応した倍率と、レベル1～5を選びます。MaxはV5専用です。1xでも再生成し、「高度な設定」では強度とノイズを個別に調整できます。</li>
+            <li><strong>拡大</strong>: 描き直さずに画像をそのまま拡大します。拡大方式はNovelAI公式（2倍固定）・通常拡大・waifu2x・RealESRGANから選び、倍率は最大4倍です。NovelAI公式以外はAnlasを消費しません。</li>
             </ul>
             <div class="note">Anlas消費は方式・設定・契約の残量で変わります。画面に出る注意や利用条件を確認してください。停止操作後も、実行中の処理が戻るまで待つ場合があります。結果は保存され、Historyから確認できます。</div>
+          </section>
+
+          <section id="manga">
+            <h1>漫画モード</h1>
+
+            <p>コマ割りしたページにキャラクターを配置し、コマごとに描き分けて1ページを生成する機能です。V4 / V4.5 / V5系のモデルで利用できます。</p>
+            <img src="images/MANGA_001.webp" width="1859" height="1410" loading="lazy" alt="漫画モード" class="screenshot" />
+            <h3>使い方</h3>
+            <ol>
+            <li>Canvas下部の「通常｜漫画」で「漫画」を押します。初回は基本パラメータの画像サイズで白紙のページが開きます。</li>
+            <li>「テンプレート ▾」からコマ割りを選ぶか、「コマ分割/結合」でコマを分けます。</li>
+            <li>「＋キャラクター」でキャラクターを追加してPromptを入力し、ページ上の位置マーカーを描かせたいコマへドラッグします。</li>
+            <li>「生成」を押します。</li>
+            </ol>
+            <p>キャラクターがいない状態では「サンプルを開く」から作例を読み込めます。「通常」を押すと元のCanvasへ戻り、もう一度「漫画」を押すと前回の続きから再開します。</p>
+            <h3>コマ割りの編集</h3>
+            <ul>
+            <li><strong>コマ分割/結合</strong>: 分けたいコマの上をドラッグして分割します。<span class="kbd">Shift</span>を押すと水平・垂直に固定します。コマの間の線をクリックすると結合し、オレンジの点線をクリックすると結合を解除します。</li>
+            <li><strong>選択</strong>: 枠線やコマ間の線をドラッグして、大きさや傾きを調整します。コマを選んで<span class="kbd">Delete</span>で削除できます。</li>
+            <li><strong>テンプレート ▾</strong>: 標準のコマ割りから選んで適用します。今のコマ割りを「コマ割りを登録」で保存することもできます。</li>
+            <li><strong>ページ設定</strong>: 余白、コマの間隔、枠線の太さを変更します。</li>
+            </ul>
+            <h3>生成</h3>
+            <p>キャラクターのPromptは通常モードのキャラクターと共通です。各コマ右上のON / OFFでOFFにしたコマは、描き直さずに残せます。「白紙に戻す」を押すと、コマ割りとPromptを残したまま画像だけを消せます。</p>
+            <h3>保存と再編集</h3>
+            <p>保存したページにはコマ割りやPromptなどの編集データが含まれます。画像インポートで読み込むと「メタデータが検出されました（漫画）」と表示され、「漫画としてインポート」で編集できる状態に戻せます。</p>
+            <div class="note">画像があるページは画像サイズを変更できないため、「白紙に戻す」を押してから変更します。漫画モードでは生成キューを使えません。Prompt SearchやStory Promptのキューは通常モードで実行してください。</div>
           </section>
 
           <section id="batch">
@@ -303,7 +332,7 @@
           <section id="reference">
             <h1>精密参照</h1>
 
-            <p>キャラクターデザインや絵柄を参照画像へ近づけたいときに使います。V4.5対応モデル向けの機能で、V5では利用できません。</p>
+            <p>キャラクターデザインや絵柄を参照画像へ近づけたいときに使います。V4.5以降のモデルで利用できます。</p>
             <img
             src="images/004.webp" width="614" height="342" loading="lazy"
             alt="Precision Reference"
@@ -362,7 +391,7 @@
             <ol>
             <li>英語タグ・日本語別名・説明文で検索するか、身体・服装・表情などのカテゴリから候補を探します。</li>
             <li>タグの詳細や関連タグを確認します。</li>
-            <li>追加先のPrompt / Negativeを表示し、タグをダブルクリックするか「現在のタブへ追加」を押します。</li>
+            <li>追加先のPrompt / Negativeを表示し、タグをダブルクリックするか「プロンプトに追加」を押します。「クリップボードにコピー」でタグだけをコピーすることもできます。</li>
             </ol>
             <img src="images/PROMPT_HELPER_001.webp" width="2185" height="1501" loading="lazy" alt="Prompt Helper" class="screenshot" />
             <ul>
@@ -375,15 +404,16 @@
             <h1>Story Prompt</h1>
 
             <p>NovelAIのテキスト生成を使い、あらすじから物語と画像生成用Promptを作ります。複数の場面をまとめて画像化したいときに使います。Story Promptタブでテキスト生成モデルを選びます。「モデル確認」で利用可能なモデルの一覧を更新できます。</p>
-            <img src="images/STORY_PROMPT_001.webp" width="1600" height="1408" loading="lazy" alt="Story Promptの入力画面" class="screenshot" />
+            <img src="images/STORY_PROMPT_001.webp" width="1524" height="1408" loading="lazy" alt="Story Promptの入力画面" class="screenshot" />
             <h3>使い方</h3>
             <ol>
-            <li><strong>入力</strong>: あらすじ・登場人物・シーン数・レーティング・Prompt言語を設定し、ストーリーを生成します。</li>
+            <li><strong>入力</strong>: あらすじ・登場人物・シーン数・レーティングを設定し、ストーリーを生成します。</li>
             <li><strong>ストーリー</strong>: 内容を確認・編集します。必要なシーンだけ再生成することもできます。</li>
             <li><strong>カット・プロンプト</strong>: 「カットに分解」で画像にする場面へ分け、各カットのPromptと生成枚数を調整します。</li>
             <li><strong>生成</strong>: 「生成予定を確認」で使うカットを選び、「生成キューに追加」を押します。メイン画面の画像モデル・サイズを確認し、「生成」で処理を開始します。</li>
             </ol>
             <p>登場人物の固定タグやPromptプリセットも指定できます。作業はプロジェクトとして保存・再読込でき、生成用YAMLや保存用YAML / JSONへ書き出せます。</p>
+            <p>ストーリーと画像生成用Promptの言語は、「設定」→「補助機能」→「Story Prompt」でそれぞれ指定します。</p>
           </section>
 
           <section id="wildcards">
@@ -403,6 +433,7 @@
             <li><code>__name__</code> / <code>__folder/name__</code>: ファイルから選択します。</li>
             <li><code>__file/key__</code>: YAML / JSONのキーから選択します。</li>
             <li><code>[SEQ:__name__]</code>: 連続生成で候補を順番に使います。</li>
+            <li><code>[SEQ*:__name__]</code>: 候補の中に参照が複数ある場合に、全組み合わせを順番に使います。</li>
             </ul>
             <p>ファイルは「編集」へ切り替えると内容を修正・保存できます。外部のテキストエディタも使えます。TXTの空行・<code>#</code>行は無視され、<code>CHAR:</code>行は展開後にキャラクタープロンプトへ取り込まれます。</p>
             <p><a class="ref-link" href="wildcards_reference_j.html">すべての構文と例を見る（ワイルドカード構文リファレンス） →</a></p>
@@ -458,7 +489,7 @@
 
             <p>タグ条件でプロンプトを検索し、結果を生成キューへまとめて追加する機能です。複数の候補を順に試して画像を生成したいときに使います。</p>
             <h3>セットアップ</h3>
-            <p>初回はTools、または「設定」→「検索」からセットアップを実行します。完了後にPrompt Searchを有効にすると、中央にタブが表示されます。Taggerも使えるようになります。</p>
+            <p>初回はTools、または「設定」→「補助機能」からセットアップを実行します。完了後にPrompt Searchを有効にすると、中央にタブが表示されます。Taggerも使えるようになります。</p>
             <img src="images/008.webp" width="754" height="572" loading="lazy" alt="Setup Wizard" class="screenshot" />
             <div class="note">初回は大容量データを取得します。完了までアプリを閉じずにお待ちください。</div>
             <h3>検索から生成まで</h3>
@@ -480,9 +511,9 @@
 
             <p>よく使うプロンプト片を保存し、必要なときに部品として挿入する機能です。品質タグ・作風・共通フレーズなどを分類して管理できます。</p>
             <h3>セットアップ</h3>
-            <p>「設定」→「プロンプトチャンク」で有効にし、セットアップウィザードを開きます。メール / パスワードまたはGoogleログイン補助で認証すると、Chunkタブから利用できます。</p>
+            <p>「設定」→「補助機能」→「プロンプトチャンク」で有効にし、セットアップウィザードを開きます。メール / パスワードまたはGoogleログイン補助で認証すると、Chunkタブから利用できます。「ログイン情報をこのPCに保存する（暗号化）」をONにすると、次回の再ログインで入力を省略できます。</p>
             <img
-            src="images/PROMPT_CHUNKS_SETUP_001.webp" width="754" height="772" loading="lazy"
+            src="images/PROMPT_CHUNKS_SETUP_001.webp" width="783" height="850" loading="lazy"
             alt="プロンプトチャンクセットアップ"
             class="screenshot"
             />
@@ -504,23 +535,24 @@
             <h1>Tools</h1>
 
             <p>補助機能のセットアップと、使うタブの有効 / 無効を切り替える画面です。</p>
-            <img src="images/TOOLS_001.webp" width="1525" height="764" loading="lazy" alt="Tools タブ" class="screenshot" />
+            <img src="images/TOOLS_001.webp" width="1528" height="756" loading="lazy" alt="Tools タブ" class="screenshot" />
             <p>非表示にしても設定・入力・データは保持されます。CanvasとToolsは常に表示されます。</p>
           </section>
 
           <section id="settings">
             <h1>設定・その他機能</h1>
 
-            <p>「ファイル」→「設定」から、保存先、入力補助、外部連携などを変更します。</p>
+            <p>「ファイル」→「設定」から、保存先、プロンプト入力、外部連携などを変更します。</p>
             <h3>主な設定</h3>
             <ul>
-            <li><strong>一般</strong>: APIキー、表示言語、画像やお気に入りの保存先などを設定します。</li>
-            <li><strong>画像形式・ファイル名</strong>: 保存形式とファイルの命名規則を設定します。</li>
-            <li><strong>入力補助</strong>: タグ補完、日本語別名、強調表示、カンマ補助、関連タグの表示を調整します。</li>
-            <li><strong>検索 / チャンク</strong>: 追加機能の有効化、セットアップ、認証状況を確認します。</li>
+            <li><strong>一般</strong>: APIキー、表示言語、外観（自動 / ライト / ダーク）、画像やお気に入りの保存先、連続生成の完了通知音、Ctrl+ホイールでの強調変更、右上の次回請求日の表示などを設定します。</li>
+            <li><strong>画像・履歴</strong>: 保存形式とファイルの命名規則、Historyのサムネイルの大きさやプロンプト表示を設定します。</li>
+            <li><strong>プロンプト</strong>: タグ補完、日本語別名、強調表示、カンマ補助、関連タグの表示を調整します。</li>
+            <li><strong>補助機能</strong>: Prompt Helper / Story Promptの設定と、検索 / チャンクの有効化、セットアップ、認証状況の確認を行います。</li>
             <li><strong>その他</strong>: ログや容量に関する設定を変更します。</li>
+            <li><strong>バージョン情報</strong>: 現在のバージョンを確認し、アップデートの確認や公式サイト・マニュアルを開けます。</li>
             </ul>
-            <p>関連タグはクリックでPromptへ追加し、右クリックでNegativeへの追加や一時的な非表示を選べます。<span class="kbd">Ctrl + Space</span>で最初の候補へ移動します。候補数と対象カテゴリは「入力補助」で変更できます。</p>
+            <p>関連タグはクリックでPromptへ追加し、右クリックでNegativeへの追加や一時的な非表示を選べます。<span class="kbd">Ctrl + Space</span>で最初の候補へ移動します。候補数と対象カテゴリは「プロンプト」で変更できます。「キャラクタープロンプトにも表示する」をONにすると、キャラクターのPromptを編集中にも表示します（漫画モードを除く）。</p>
             <img src="images/RELATED_TAG_SUGGEST_001.webp" width="584" height="266" loading="lazy" alt="関連タグ提案" class="screenshot" />
             <h3>Eagle連携</h3>
             <p>Eagleで画像を管理している場合は、「連携」で送信先などを設定します。生成画像の自動送信や、画像の右クリックメニューからの手動送信に対応し、Promptや生成情報をタグ・メモとして付けられます。</p>
@@ -528,42 +560,37 @@
             <ul>
             <li><strong>フォルダ選択</strong>: 表示する画像と、その後の生成画像の保存先を切り替えます。</li>
             <li><strong>クリック / Shift+クリック</strong>: Canvasに表示 / インポート画面を開きます。ドラッグでも取り込めます。</li>
-            <li><strong>ハート</strong>: お気に入り保存先へ画像をコピーします。未設定の場合は保存先を選びます。</li>
+            <li><strong>Ctrl+Shift+クリック</strong>: インポート画面を出さずに、前回インポート画面で選んだ項目を取り込みます。</li>
+            <li><strong>表示</strong>: 設定の「画像・履歴」で、サムネイルを小さくして一度に見える枚数を増やせます。マウスを乗せたときのプロンプト表示は、「Altキーを押している間だけ」または「表示しない」に変更できます。</li>
+            <li><strong>ハート</strong>: お気に入り保存先へ画像をコピーします。未設定の場合は保存先を選びます。設定の「お気に入り (メタ無し)」にもフォルダを指定すると、メタデータを削除した画像も保存します。</li>
             <li><strong>複数選択・削除</strong>: Ctrl+クリックで複数選択できます。Historyにフォーカスがある状態でCtrl+Aは全選択、Deleteは選択画像をごみ箱へ移動します。</li>
-            <li><strong>右クリック</strong>: 保存、コピー、Eagle送信、保存先フォルダを開く、インポートを選べます。</li>
+            <li><strong>右クリック</strong>: 保存、メタデータ無しで保存、コピー、Eagle送信、保存先フォルダを開く、インポートを選べます。</li>
             </ul>
             <h3>設定画面一覧</h3>
             <div class="gallery">
             <div>
             <h4>一般</h4>
-            <img src="images/012.webp" width="1129" height="1060" loading="lazy" alt="一般設定" />
+            <img src="images/012.webp" width="1129" height="1187" loading="lazy" alt="一般設定" />
             </div>
             <div>
-            <h4>画像形式・ファイル名</h4>
-            <img src="images/SETTINGS_GENERAL2_001.webp" width="1129" height="1060" loading="lazy" alt="画像形式・ファイル名の設定" class="screenshot" />
+            <h4>画像・履歴</h4>
+            <img src="images/SETTINGS_GENERAL2_001.webp" width="1129" height="1187" loading="lazy" alt="画像・履歴の設定" class="screenshot" />
             </div>
             <div>
-            <h4>入力補助</h4>
-            <img src="images/013.webp" width="1129" height="1060" loading="lazy" alt="Input Assistance" />
+            <h4>プロンプト</h4>
+            <img src="images/013.webp" width="1129" height="1187" loading="lazy" alt="プロンプト設定" />
+            </div>
+            <div>
+            <h4>補助機能</h4>
+            <img src="images/014.webp" width="1129" height="1187" loading="lazy" alt="補助機能の設定" />
             </div>
             <div>
             <h4>連携</h4>
-            <img src="images/011.webp" width="1129" height="1060" loading="lazy" alt="連携設定" />
-            </div>
-            <div>
-            <h4>検索</h4>
-            <img src="images/014.webp" width="1129" height="1060" loading="lazy" alt="Search Settings" />
-            </div>
-            <div>
-            <h4>チャンク</h4>
-            <img
-            src="images/SETTINGS_CHUNKS_001.webp" width="1129" height="1060" loading="lazy"
-            alt="チャンク設定"
-            />
+            <img src="images/011.webp" width="1129" height="1187" loading="lazy" alt="連携設定" />
             </div>
             <div>
             <h4>その他</h4>
-            <img src="images/015.webp" width="1129" height="1060" loading="lazy" alt="Other Settings" />
+            <img src="images/015.webp" width="1129" height="1187" loading="lazy" alt="Other Settings" />
             </div>
             </div>
           </section>
@@ -574,7 +601,7 @@
             <p>メニュー「ショートカット」からも確認できます。入力欄・画像・Historyなど、操作する場所にフォーカスを合わせて使います。</p>
 
             <img
-            src="images/SHORTCUTS_001.webp" width="875" height="645" loading="lazy"
+            src="images/SHORTCUTS_001.webp" width="724" height="612" loading="lazy"
             alt="Shortcut List"
             class="screenshot"
             />
@@ -612,13 +639,34 @@
             <li><span class="kbd">Enter / Tab</span>: 候補確定</li>
             <li><span class="kbd">Esc</span>: 閉じる</li>
             <li><span class="kbd">↑ / ↓ / PageUp / PageDown</span>: 候補を移動</li>
+            <li><span class="kbd">Ctrl + Space</span>: 関連タグの最初の候補へ移動</li>
+            </ul>
+
+            <h3>漫画モード</h3>
+
+            <ul>
+            <li><span class="kbd">Ctrl + Z / Ctrl + Y</span>: 編集の Undo / Redo</li>
+            <li><span class="kbd">Delete</span>: 選択中のコマを削除</li>
+            </ul>
+
+            <h3>History</h3>
+
+            <ul>
+            <li><span class="kbd">Ctrl + クリック</span>: 選択を追加・解除</li>
+            <li><span class="kbd">Ctrl + A</span>: 表示中フォルダの全画像を選択</li>
+            <li><span class="kbd">Delete</span>: 選択画像をごみ箱へ移動</li>
+            <li><span class="kbd">Shift + クリック</span>: 画像情報を読み込む</li>
+            <li><span class="kbd">Ctrl + Shift + クリック</span>: 確認画面なしで読み込む</li>
             </ul>
 
             <h3>画像ファイル操作</h3>
 
             <ul>
             <li><span class="kbd">Ctrl + O</span>: 画像を開く</li>
-            <li><span class="kbd">Ctrl + S / Ctrl + C</span>: 名前を付けて保存 / 画像をコピー</li>
+            <li><span class="kbd">Ctrl + S</span>: 上書き保存（初回は保存先を選択）</li>
+            <li><span class="kbd">Ctrl + Shift + S</span>: 名前を付けて保存</li>
+            <li><span class="kbd">Ctrl + Alt + S</span>: メタデータ無しで保存</li>
+            <li><span class="kbd">Ctrl + C</span>: 画像をコピー</li>
             <li><span class="kbd">Ctrl + E</span>: Eagleへ送信</li>
             <li><span class="kbd">Ctrl + Shift + E</span>: 保存先フォルダを開く</li>
             </ul>
