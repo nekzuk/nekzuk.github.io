@@ -433,3 +433,9 @@ body{counter-reset:section-number}
 .eyebrow.numbered::before{counter-increment:section-number;content:counter(section-number,decimal-leading-zero) " "}
 /* 購入ボタン下の補足：区切りの良い位置で折り返す */
 .caption-part{display:inline-block}
+/* BOOTHのスキ数（価格行、対応OSの右） */
+.hero-price .booth-likes{display:inline-flex;align-items:baseline;gap:5px;margin:0 0 0 14px;line-height:1.5;white-space:nowrap}
+.hero-price .booth-likes svg{color:#e0457b;flex:none;align-self:center}
+.hero-price .booth-likes b{font-size:15px;font-weight:680;letter-spacing:-.2px;color:var(--ink)}
+.hero-price .booth-likes span{font-size:11px;letter-spacing:.04em}
+@media (max-width:360px){.hero-price:has(.booth-likes){flex-wrap:wrap;row-gap:0}.hero-price .booth-likes{margin-left:0;flex-basis:100%}}

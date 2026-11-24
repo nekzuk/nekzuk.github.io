@@ -134,6 +134,71 @@
     <link rel="stylesheet" href="assets/product-page.css">
     <link rel="stylesheet" href="assets/automosaic-image-en.css">
     <script src="assets/js/site-theme.js"></script>
+    <!-- Structured data: FAQPage -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is it different from AutoMosaic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AutoMosaic applies mosaics to many images automatically in one batch. AI Paint Cleaner is for touching up and finishing images one at a time as you review them, and it can also adjust or add mosaics after AutoMosaic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I fix images without writing a prompt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. With lightweight inpainting, you just select an area and it fills in to match the surroundings in a few seconds or less. To redraw clothing or accessories, use generative inpainting, which takes a prompt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use it without a GPU?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Most lightweight inpainting methods work without a GPU. Running generative inpainting on your PC requires an NVIDIA GPU, and 8 GB or more of VRAM is recommended."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my images sent anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Core features run on your PC and do not send your images anywhere. Images are sent to an external service only when you use a cloud AI feature."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I need to use the cloud AI features?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You need an API key for each service and an internet connection. Usage fees are charged separately by each service."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which image formats are supported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "JPG, PNG, BMP, GIF, WebP, and TIFF. You can also export to PDF."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between the trial and the full version?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The trial lets you try the editing features, but you cannot save images or run batch processing."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -177,7 +242,7 @@
     <div class="wrap trust-line"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>Core features run on your PC</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2 3 6v6c0 5 9 10 9 10s9-5 9-10V6Z"/><path d="m8 12 3 3 5-6"/></svg>Code-signed</span><span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18m-14 4 3 3-3 3m6 0h4"/></svg>GUI &amp; CLI</span><span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 5h12M7 2v3m4 0c-1 5-4 8-8 10m1-7c2 3 4 5 7 7m3 6 4-10 4 10m-7-3h6"/></svg>English / Japanese / Chinese / Korean</span></div>
   </div>
 
-  <nav class="section-nav" aria-label="On this page"><div class="wrap section-nav-inner"><a href="#features">Features</a><a href="#examples">Examples</a><a href="#how-to">How it works</a><a href="#requirements">Requirements</a><a href="#trial">Try &amp; buy</a><a href="#updates">Updates</a></div></nav>
+  <nav class="section-nav" aria-label="On this page"><div class="wrap section-nav-inner"><a href="#features">Features</a><a href="#examples">Examples</a><a href="#how-to">How it works</a><a href="#requirements">Requirements</a><a href="#trial">Try &amp; buy</a><a href="#faq">FAQ</a><a href="#updates">Updates</a></div></nav>
 
   <section class="wrap section features-section" id="features" aria-labelledby="features-title">
     <div class="section-heading"><p class="eyebrow numbered"><span>Features</span></p><h2 id="features-title">Fix, finish, and process in batches.</h2><p>Tools for image editing and finishing, together in one app.</p></div>
@@ -224,6 +289,8 @@
     <article class="trial-panel" id="trial"><div class="purchase-kicker">Trial version</div><h3>Try it on your own images.</h3><p class="purchase-description">AI Paint Cleaner / Windows</p><ul class="check-list"><li>Editing features available</li><li class="trial-limitation">Images cannot be saved</li><li class="trial-limitation">Batch processing cannot be run</li></ul><a class="button primary download-button" href="https://downloads.nekzuk.com/aipaintcleaner/AIPC_340_trial.zip">Download trial version <svg class="download-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg></a><p class="download-note">v3.40 · ZIP file</p></article>
     <article class="buy-panel" id="purchase"><div class="purchase-kicker">Full version</div><div class="product-price-line"><h3>AI Paint Cleaner</h3><strong>$18 <small>USD</small></strong></div><p class="purchase-description">Commercial use by individuals is included.</p><div class="purchase-options"><div><a class="button primary" href="https://payhip.com/buy?link=KVIw4" target="_blank" rel="noopener">Buy Now <span aria-hidden="true">↗</span></a><small>Card / PayPal</small></div></div><a class="text-link store-link" href="https://payhip.com/b/KVIw4" target="_blank" rel="noopener">View product page on Payhip <span aria-hidden="true">↗</span></a><p class="license-note">For corporate or enterprise use, <a class="text-link protected-email" data-email-domain="gmail.com" data-email-label="contact us by email" data-email-subject="AI Paint Cleaner: Corporate licensing inquiry" data-email-user="nekzuk.software" href="terms.html">contact us by email</a> before purchasing.</p></article>
   </div><details class="license-details"><summary>Usage notes</summary><div class="details-body"><ul><li>Processing time depends on your PC and GPU specifications.</li><li>Always review the processed images.</li><li>Cloud AI image editing requires an API key for each service and an internet connection.</li></ul><a class="text-link" href="terms.html">Read the terms of use →</a></div></details></div></section>
+
+  <section class="wrap section faq-section" id="faq" aria-labelledby="faq-title"><div class="compact-heading"><div><h2 class="eyebrow numbered" id="faq-title"><span>FAQ</span></h2></div></div><div class="faq-list"><details><summary>How is it different from AutoMosaic?</summary><div class="details-body"><p>AutoMosaic applies mosaics to many images automatically in one batch. AI Paint Cleaner is for touching up and finishing images one at a time as you review them, and it can also adjust or add mosaics after <a class="text-link" href="automosaic.html">AutoMosaic</a>.</p></div></details><details><summary>Can I fix images without writing a prompt?</summary><div class="details-body"><p>Yes. With lightweight inpainting, you just select an area and it fills in to match the surroundings in a few seconds or less. To redraw clothing or accessories, use generative inpainting, which takes a prompt.</p></div></details><details><summary>Can I use it without a GPU?</summary><div class="details-body"><p>Yes. Most lightweight inpainting methods work without a GPU. Running generative inpainting on your PC requires an NVIDIA GPU, and 8 GB or more of VRAM is recommended.</p></div></details><details><summary>Are my images sent anywhere?</summary><div class="details-body"><p>Core features run on your PC and do not send your images anywhere. Images are sent to an external service only when you use a cloud AI feature.</p></div></details><details><summary>What do I need to use the cloud AI features?</summary><div class="details-body"><p>You need an API key for each service and an internet connection. Usage fees are charged separately by each service.</p></div></details><details><summary>Which image formats are supported?</summary><div class="details-body"><p>JPG, PNG, BMP, GIF, WebP, and TIFF. You can also export to PDF.</p></div></details><details><summary>What is the difference between the trial and the full version?</summary><div class="details-body"><p>The trial lets you try the editing features, but you cannot save images or run batch processing.</p></div></details></div></section>
 
   <section class="wrap section reviews-section" aria-labelledby="reviews-title"><div class="compact-heading"><div><h2 class="eyebrow numbered" id="reviews-title"><span>Buyer reviews</span></h2></div><a class="text-link" href="https://note.com/nekzuk/n/n65d78d31b253?hl=en#620c82ec-edce-4f41-b2d0-1d6c22cb2435" target="_blank" rel="noopener">Read full reviews ↗</a></div><p class="review-source">Highlights summarized from published user reviews.</p><ul class="review-list"><li>Mosaic processing and detailed corrections can be completed quickly with straightforward controls</li><li>Image selection, deletion, cleanup, and mosaic processing fit into one workflow</li><li>AutoMosaic integration simplifies repairing areas that were processed too aggressively</li></ul><details class="review-more"><summary>More review highlights</summary><div class="details-body"><ul><li>Mosaic work takes less time than with previously used tools</li><li>The controls make it easier to produce natural-looking mosaic edges</li><li>AI-assisted pen correction and other editing tools are included without usage fees</li><li>Image conversion, upscaling, and metadata removal are available in one application</li></ul></div></details></section>
 

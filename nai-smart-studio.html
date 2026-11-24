@@ -131,6 +131,71 @@
     <link rel="stylesheet" href="assets/product-page.css">
     <link rel="stylesheet" href="assets/automosaic-image-en.css">
     <script src="assets/js/site-theme.js"></script>
+    <!-- Structured data: FAQPage -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need a NovelAI subscription?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You need a NovelAI subscription (Tablet, Scroll, or Opus) or purchased Anlas. The trial version requires this as well."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it use Anlas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Generation costs the same Anlas as the official web UI, and the Opus plan's free-generation conditions apply in the same way. Proprietary upscaling does not use Anlas (Opus plan only)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is it different from the official NovelAI web UI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It gives you almost all of the official image generation features, plus features the official web UI does not have, such as batch generation, prompt search, Tagger, wildcards, history, and manga mode."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do I get an API key?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Get it from the official NovelAI website, then enter it in the NAI Smart Studio settings. See the online manual for detailed steps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my prompts or images sent anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only the prompts and input or reference images needed for generation are sent to the NovelAI API. nekzuk Software does not collect or store them. Settings, history, and generated images are stored on your PC."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a GPU?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Images are generated on NovelAI's servers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between the trial and the full version?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The trial adds a watermark to generated images."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -175,7 +240,7 @@
     <div class="wrap trust-line"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>Settings, history &amp; images stay on your PC</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2 3 6v6c0 5 9 10 9 10s9-5 9-10V6Z"/><path d="m8 12 3 3 5-6"/></svg>Code-signed</span><span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18m-14 4 3 3-3 3m6 0h4"/></svg>GUI &amp; CLI</span><span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 5h12M7 2v3m4 0c-1 5-4 8-8 10m1-7c2 3 4 5 7 7m3 6 4-10 4 10m-7-3h6"/></svg>English / Japanese / Chinese / Korean</span></div>
   </div>
 
-  <nav class="section-nav" aria-label="On this page"><div class="wrap section-nav-inner"><a href="#features">Features</a><a href="#how-to">How it works</a><a href="#requirements">Requirements</a><a href="#trial">Try &amp; buy</a><a href="#updates">Updates</a></div></nav>
+  <nav class="section-nav" aria-label="On this page"><div class="wrap section-nav-inner"><a href="#features">Features</a><a href="#how-to">How it works</a><a href="#requirements">Requirements</a><a href="#trial">Try &amp; buy</a><a href="#faq">FAQ</a><a href="#updates">Updates</a></div></nav>
 
   <section class="wrap section features-section" id="features" aria-labelledby="features-title">
     <div class="section-heading"><p class="eyebrow numbered"><span>Features</span></p><h2 id="features-title">Beyond the official web UI.</h2><p>Keep NovelAI's image generation features, and add tools for writing prompts, automating generation, and organizing the results.</p></div>
@@ -206,6 +271,8 @@
     <article class="trial-panel" id="trial"><div class="purchase-kicker">Trial version</div><h3>Try the workflow before you buy.</h3><p class="purchase-description">NAI Smart Studio / Windows</p><ul class="check-list"><li class="trial-limitation">A watermark is added to output images</li><li class="trial-limitation">The trial also requires a NovelAI subscription or Anlas</li></ul><a class="button primary download-button" href="https://downloads.nekzuk.com/naiss/NAI_Smart_Studio_V1.60_Trial.zip">Download trial version <svg class="download-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg></a><p class="download-note">v1.60 · ZIP file</p></article>
     <article class="buy-panel" id="purchase"><div class="purchase-kicker">Full version</div><div class="product-price-line"><h3>NAI Smart Studio</h3><strong>$18 <small>USD</small></strong></div><p class="purchase-description">Commercial use by individuals is included.</p><div class="purchase-options"><div><a class="button primary" href="https://payhip.com/buy?link=5mMZp" target="_blank" rel="noopener">Buy Now <span aria-hidden="true">↗</span></a><small>Card / PayPal</small></div></div><a class="text-link store-link" href="https://payhip.com/b/5mMZp" target="_blank" rel="noopener">View product page on Payhip <span aria-hidden="true">↗</span></a><p class="license-note">For corporate or enterprise use, <a class="text-link protected-email" data-email-domain="gmail.com" data-email-label="contact us by email" data-email-subject="NAI Smart Studio: Corporate licensing inquiry" data-email-user="nekzuk.software" href="terms.html">contact us by email</a> before purchasing.</p></article>
   </div><details class="license-details"><summary>Usage notes</summary><div class="details-body"><ul><li>A NovelAI subscription or purchased Anlas is required.</li><li>An internet connection is required (communication with the NovelAI API).</li><li>Please use in accordance with NovelAI's Terms of Service.</li><li>Rights to generated images follow NovelAI's Terms of Service.</li></ul><a class="text-link" href="terms.html">Read the terms of use →</a></div></details></div></section>
+
+  <section class="wrap section faq-section" id="faq" aria-labelledby="faq-title"><div class="compact-heading"><div><h2 class="eyebrow numbered" id="faq-title"><span>FAQ</span></h2></div></div><div class="faq-list"><details><summary>Do I need a NovelAI subscription?</summary><div class="details-body"><p>Yes. You need a NovelAI subscription (Tablet, Scroll, or Opus) or purchased Anlas. The trial version requires this as well.</p></div></details><details><summary>Does it use Anlas?</summary><div class="details-body"><p>Yes. Generation costs the same Anlas as the official web UI, and the Opus plan's free-generation conditions apply in the same way. Proprietary upscaling does not use Anlas (Opus plan only).</p></div></details><details><summary>How is it different from the official NovelAI web UI?</summary><div class="details-body"><p>It gives you almost all of the official image generation features, plus features the official web UI does not have, such as batch generation, prompt search, Tagger, wildcards, history, and manga mode.</p></div></details><details><summary>Where do I get an API key?</summary><div class="details-body"><p>Get it from the official NovelAI website, then enter it in the NAI Smart Studio settings. See the <a class="text-link" href="assets/manual/nai-smart-studio/nai-smart-studio_online_manual.html">online manual</a> for detailed steps.</p></div></details><details><summary>Are my prompts or images sent anywhere?</summary><div class="details-body"><p>Only the prompts and input or reference images needed for generation are sent to the NovelAI API. nekzuk Software does not collect or store them. Settings, history, and generated images are stored on your PC.</p></div></details><details><summary>Do I need a GPU?</summary><div class="details-body"><p>No. Images are generated on NovelAI's servers.</p></div></details><details><summary>What is the difference between the trial and the full version?</summary><div class="details-body"><p>The trial adds a watermark to generated images.</p></div></details></div></section>
 
   <section class="wrap section reviews-section" aria-labelledby="reviews-title"><div class="compact-heading"><div><h2 class="eyebrow numbered" id="reviews-title"><span>Buyer reviews</span></h2></div><a class="text-link" href="https://note.com/nekzuk/n/n63eaa0b4b582?hl=en#f0149e08-24ea-4492-8346-6c80f10d708b" target="_blank" rel="noopener">Read full reviews ↗</a></div><p class="review-source">Highlights summarized from published user reviews.</p><ul class="review-list"><li>Continuous generation, presets, and prompt chunks streamline daily creation</li><li>Features beyond the official web UI make it easier to consolidate browser and API workflows</li><li>Quick responses to NovelAI service changes and continued feature additions are appreciated</li></ul><details class="review-more"><summary>More review highlights</summary><div class="details-body"><ul><li>Tagger and other added tools make everyday work more efficient</li><li>Eagle integration and the quality and usability of upscaling tools are especially useful</li></ul></div></details></section>
 
