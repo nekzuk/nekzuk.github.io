@@ -57,7 +57,17 @@ function page(lang, id) {
 <meta property="og:title" content="${R.esc(title)}">
 <meta property="og:description" content="${R.esc(desc)}">
 <meta property="og:url" content="${BASE}${file(lang)}">
-<meta property="og:image" content="${BASE}images/${M.screen.src.replace(/^images\//, "")}">
+<meta property="og:image" content="https://nekzuk.com/assets/og/ai-paint-cleaner_${lang}.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AI Paint Cleaner">
+<meta property="og:site_name" content="nekzuk Software">
+<meta property="og:locale" content="${lang === "ja" ? "ja_JP" : "en_US"}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@Synekzuk_AI">
+<meta name="twitter:title" content="${R.esc(title)}">
+<meta name="twitter:description" content="${R.esc(desc)}">
+<meta name="twitter:image" content="https://nekzuk.com/assets/og/ai-paint-cleaner_${lang}.png">
 <link href="/assets/favicons/favicon.ico" rel="icon" sizes="32x32">
 <link href="/assets/favicons/icon.svg" rel="icon" type="image/svg+xml">
 <link href="/assets/favicons/apple-touch-icon.png" rel="apple-touch-icon">

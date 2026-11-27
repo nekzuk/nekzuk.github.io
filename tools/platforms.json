@@ -1,0 +1,32 @@
+{
+  "_readme": "対応OSの設定。products の値を [\"windows\"] から [\"windows\", \"mac\"] に変えて python tools/platforms.py を実行すると、その製品のページ（日英）とトップページの記述が書き換わります。mac の表記（TODO の部分）は Mac 版の動作環境が決まったら埋めてください。",
+  "labels": {
+    "windows": {
+      "range_ja": "Windows 10 / 11",
+      "range_en": "Windows 10 / 11",
+      "short_ja": "Windows",
+      "short_en": "Windows",
+      "ld": "Windows 10, Windows 11"
+    },
+    "mac": {
+      "range_ja": "TODO macOS 〇〇以降",
+      "range_en": "TODO macOS 〇〇 or later",
+      "short_ja": "Mac",
+      "short_en": "Mac",
+      "ld": "TODO macOS 〇〇"
+    }
+  },
+  "products": {
+    "automosaic": ["windows"],
+    "automosaic-r18": ["windows"],
+    "automosaic-video": ["windows"],
+    "automosaic-video-r18": ["windows"],
+    "ai-paint-cleaner": ["windows"],
+    "nai-smart-studio": ["windows"],
+    "ai-meta-cleaner": ["windows"],
+    "meta-converter": ["windows"],
+    "frame-craft": ["windows"]
+  },
+  "_site_readme": "トップページ全体の説明文（「制作の手間を減らすWindows向けツール」など）の対応OS。Mac 版を1つでも出したら [\"windows\", \"mac\"] にします。",
+  "site": ["windows"]
+}
